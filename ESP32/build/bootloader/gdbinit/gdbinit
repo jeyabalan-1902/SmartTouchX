@@ -1,0 +1,2 @@
+source C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/bootloader/gdbinit/symbols
+source C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/bootloader/gdbinit/connect

@@ -1,0 +1,13 @@
+idf_component_register(SRCS "esp_app.c"
+                            "src/crc32.c"
+                            "src/flash_cmd.c"
+                            "src/http.c"
+                            "src/mqtt.c"
+                            "src/uart_config.c"
+                            "src/wifi.c"
+                            "src/update_esp.c"
+                            "src/http_server.c"
+                            "src/gpio.c"
+                            "src/nvs.c"
+                    INCLUDE_DIRS "inc"
+                    EMBED_TXTFILES ${project_dir}/main/server_certs/ca_cert.pem)

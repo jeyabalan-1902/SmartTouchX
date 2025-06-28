@@ -1,0 +1,2726 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (504) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (509) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (589) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (589) GPIO: GPIO Initialization![0m
+[0;32mI (589) ESP_APP: UART initialized[0m
+[0;32mI (589) NVS: WiFi credentials found. SSID: , connecting......[0m
+[0;32mI (599) ESP_APP: WiFi credentials not found, starting SoftAP + HTTP Server...[0m
+[0;32mI (6609) wifi:wifi driver task: 3ffc3a14, prio:23, stack:6656, core=0[0m
+[0;32mI (6609) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (6609) wifi:wifi certification version: v7.0[0m
+[0;32mI (6609) wifi:config NVS flash: enabled[0m
+[0;32mI (6609) wifi:config nano formatting: disabled[0m
+[0;32mI (6619) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (6619) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (6629) wifi:Init management short buffer num: 32[0m
+[0;32mI (6629) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (6629) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (6639) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6639) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6649) wifi_init: rx ba win: 6[0m
+[0;32mI (6649) wifi_init: accept mbox: 6[0m
+[0;32mI (6649) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6659) wifi_init: udp mbox: 6[0m
+[0;32mI (6659) wifi_init: tcp mbox: 6[0m
+[0;32mI (6659) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6659) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6669) wifi_init: tcp mss: 1440[0m
+[0;32mI (6669) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6669) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6679) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (6769) wifi:mode : softAP (f4:65:0b:54:5f:6d)[0m
+[0;32mI (6769) wifi:Total power save buffer number: 16[0m
+[0;32mI (6769) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6769) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6779) HTTP: SoftAP started with SSID: onwords-4ltc01[0m
+[0;32mI (6779) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (6789) HTTP: HTTP Server started at 192.168.4.1:8182[0m
+[0;32mI (6789) main_task: Returned from app_main()[0m
+[0;32mI (50769) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (50779) wifi:station: 6c:24:a6:c7:20:a9 join, AID=1, bgn, 20[0m
+[0;32mI (50929) wifi:<ba-add>idx:2 (ifx:1, 6c:24:a6:c7:20:a9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (51029) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (51879) HTTP: Received JSON: {"ssid":"Rnd","password":"nikhil8182"}[0m
+[0;32mI (51879) NVS: Stored SSID: Rnd and Password.[0m
+[0;32mI (52889) wifi:station: 6c:24:a6:c7:20:a9 leave, AID = 1, reason = 2, bss_flags is 33721443, bss:0x3ffb9f9c[0m
+[0;32mI (52889) wifi:new:<1,0>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (52889) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (52959) wifi:flush txq[0m
+[0;32mI (52959) wifi:stop sw txq[0m
+[0;32mI (52959) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (503) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (508) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (589) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (589) GPIO: GPIO Initialization![0m
+[0;32mI (589) ESP_APP: UART initialized[0m
+[0;32mI (599) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (599) NVS: From nvs ssid is Rnd [0m
+[0;32mI (599) NVS: From nvs password is nikhil8182[0m
+[0;32mI (599) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (609) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (619) wifi:wifi driver task: 3ffc3a04, prio:23, stack:6656, core=0[0m
+[0;32mI (619) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (619) wifi:wifi certification version: v7.0[0m
+[0;32mI (629) wifi:config NVS flash: enabled[0m
+[0;32mI (629) wifi:config nano formatting: disabled[0m
+[0;32mI (639) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (639) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (639) wifi:Init management short buffer num: 32[0m
+[0;32mI (649) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (649) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (659) wifi:Init static rx buffer num: 10[0m
+[0;32mI (659) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (669) wifi_init: rx ba win: 6[0m
+[0;32mI (669) wifi_init: accept mbox: 6[0m
+[0;32mI (669) wifi_init: tcpip mbox: 32[0m
+[0;32mI (669) wifi_init: udp mbox: 6[0m
+[0;32mI (679) wifi_init: tcp mbox: 6[0m
+[0;32mI (679) wifi_init: tcp tx win: 5760[0m
+[0;32mI (679) wifi_init: tcp rx win: 5760[0m
+[0;32mI (689) wifi_init: tcp mss: 1440[0m
+[0;32mI (689) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (689) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (699) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (739) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (819) wifi:mode : sta (f4:65:0b:54:5f:6c)[0m
+[0;32mI (819) wifi:enable tsf[0m
+[0;32mI (829) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (1699) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1709) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1719) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1729) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1759) wifi:connected with Rnd, aid = 4, channel 6, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (1759) wifi:security: WPA2-PSK, phy: bgn, rssi: -68[0m
+[0;32mI (1789) wifi:pm start, type: 1[0m
+
+[0;32mI (1789) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1789) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2809) esp_netif_handlers: sta ip: 192.168.1.97, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2809) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (2809) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (2809) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -68[0m
+[0;32mI (2819) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (2829) main_task: Returned from app_main()[0m
+[0;32mI (2839) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (3359) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (3409) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=2050[0m
+[0;32mI (3479) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=2539[0m
+[0;32mI (3479) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=18466[0m
+[0;32mI (3489) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=13972[0m
+[0;32mI (3489) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=31681[0m
+[0;32mI (3509) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=58117[0m
+[0;32mI (3509) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=25899[0m
+[0;32mI (3519) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (3519) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (3519) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (57289) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (57289) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (57289) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (73579) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (73579) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (73579) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (487129) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (487129) MQTT_HANDLER: TOPIC=onwords/4ltc01/firmwareStm[0m
+[0;32mI (487129) MQTT_HANDLER: DATA={"firmware_sts": 1, "firmwareUrl": "http://13.127.193.192/ota/files/4LTC/EDIO_REC_TOOL_20250627_153008.bin/"}[0m
+[0;32mI (487139) MQTT_HANDLER: Firmware update requested: http://13.127.193.192/ota/files/4LTC/EDIO_REC_TOOL_20250627_153008.bin/[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (504) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (509) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (599) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (599) GPIO: GPIO Initialization![0m
+[0;32mI (599) ESP_APP: UART initialized[0m
+[0;32mI (609) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (609) NVS: From nvs ssid is Rnd [0m
+[0;32mI (609) NVS: From nvs password is nikhil8182[0m
+[0;32mI (609) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (619) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (629) wifi:wifi driver task: 3ffc3b0c, prio:23, stack:6656, core=0[0m
+[0;32mI (639) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (639) wifi:wifi certification version: v7.0[0m
+[0;32mI (639) wifi:config NVS flash: enabled[0m
+[0;32mI (639) wifi:config nano formatting: disabled[0m
+[0;32mI (649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (649) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (659) wifi:Init management short buffer num: 32[0m
+[0;32mI (659) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (669) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (669) wifi:Init static rx buffer num: 10[0m
+[0;32mI (669) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (679) wifi_init: rx ba win: 6[0m
+[0;32mI (679) wifi_init: accept mbox: 6[0m
+[0;32mI (679) wifi_init: tcpip mbox: 32[0m
+[0;32mI (689) wifi_init: udp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (699) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (699) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (709) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (709) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (719) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (809) wifi:mode : sta (f4:65:0b:54:5f:6c)[0m
+[0;32mI (809) wifi:enable tsf[0m
+[0;32mI (809) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (909) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (909) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (919) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (979) wifi:state: assoc -> init (0x2c0)[0m
+[0;32mI (989) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (989) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (989) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3409) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (3409) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3469) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3469) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3479) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3499) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3589) wifi:connected with Rnd, aid = 4, channel 6, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (3589) wifi:security: WPA2-PSK, phy: bgn, rssi: -68[0m
+[0;32mI (3589) wifi:pm start, type: 1[0m
+
+[0;32mI (3589) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3669) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4669) esp_netif_handlers: sta ip: 192.168.1.97, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4669) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (4669) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (4669) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -65[0m
+[0;32mI (4679) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (4689) main_task: Returned from app_main()[0m
+[0;32mI (4689) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (4789) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (4839) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=60646[0m
+[0;32mI (4899) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=60662[0m
+[0;32mI (4909) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=59619[0m
+[0;32mI (4909) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=31731[0m
+[0;32mI (4909) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=2645[0m
+[0;32mI (4919) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=18250[0m
+[0;32mI (4919) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=3840[0m
+[0;32mI (4929) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4929) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (4929) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (227199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227259) UART_RX_TASK: Received Byte: 0x04 ('')[0m
+[0;32mI (227269) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (227279) UART_RX_TASK: Received Byte: 0x20 (' ')[0m
+[0;32mI (227289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227339) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (227349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227509) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (227519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227609) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (227619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227699) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (227709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227789) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (227799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227939) UART_RX_TASK: Received Byte: 0x02 ('')[0m
+[0;32mI (227949) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (227959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (227999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228039) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (228049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228199) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (228209) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (228219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228359) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (228369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228439) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (228449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228529) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (228539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228619) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (228629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228699) UART_RX_TASK: Received Byte: 0xDF ('�')[0m
+[0;32mI (228709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228759) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (228769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228839) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (228849) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (228859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228929) UART_RX_TASK: Received Byte: 0x48 ('H')[0m
+[0;32mI (228939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (228999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229019) UART_RX_TASK: Received Byte: 0xA0 ('�')[0m
+[0;32mI (229029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229109) UART_RX_TASK: Received Byte: 0x08 ('')[0m
+[0;32mI (229119) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (229129) UART_RX_TASK: Received Byte: 0x7F ('')[0m
+[0;32mI (229139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229209) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (229219) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (229229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229279) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (229289) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (229299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229369) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (229379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229459) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (229469) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (229479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229539) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (229549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229629) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (229639) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (229649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229699) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (229709) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (229719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229799) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (229809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229879) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (229889) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (229899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229959) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (229969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (229999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230059) UART_RX_TASK: Received Byte: 0xF2 ('�')[0m
+[0;32mI (230069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230159) UART_RX_TASK: Received Byte: 0x08 ('')[0m
+[0;32mI (230169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230229) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (230239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230319) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (230329) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (230339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230399) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (230409) UART_RX_TASK: Received Byte: 0x03 ('')[0m
+[0;32mI (230419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230469) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (230479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230549) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (230559) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (230569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230689) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (230699) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (230709) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (230719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230789) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (230799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230879) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (230889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230979) UART_RX_TASK: Received Byte: 0xFD ('�')[0m
+[0;32mI (230989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (230999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231149) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (231159) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (231169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231229) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (231239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231319) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (231329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231409) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (231419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231509) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (231519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231609) UART_RX_TASK: Received Byte: 0xF6 ('�')[0m
+[0;32mI (231619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231689) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (231699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231779) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (231789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231869) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (231879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231969) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (231979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (231999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232059) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (232069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232139) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (232149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232229) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (232239) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (232249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232309) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (232319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232399) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (232409) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (232419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232489) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (232499) UART_RX_TASK: Received Byte: 0x13 ('')[0m
+[0;32mI (232509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232589) UART_RX_TASK: Received Byte: 0x04 ('')[0m
+[0;32mI (232599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232669) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (232679) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (232689) UART_RX_TASK: Received Byte: 0x08 ('')[0m
+[0;32mI (232699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232769) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (232779) UART_RX_TASK: Received Byte: 0x2F ('/')[0m
+[0;32mI (232789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232859) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (232869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232949) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (232959) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (232969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (232999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233039) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (233049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233099) UART_RX_TASK: Received Byte: 0x50 ('P')[0m
+[0;32mI (233109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233189) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (233199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233279) UART_RX_TASK: Received Byte: 0xA0 ('�')[0m
+[0;32mI (233289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233359) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (233369) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (233379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233439) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (233449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233539) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (233549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233629) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (233639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233799) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (233809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233849) UART_RX_TASK: Received Byte: 0x02 ('')[0m
+[0;32mI (233859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233879) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (233889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233949) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (233959) UART_RX_TASK: Received Byte: 0x20 (' ')[0m
+[0;32mI (233969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (233999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234039) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (234049) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (234059) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (234069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234119) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (234129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234219) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (234229) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (234239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234309) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (234319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234389) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (234399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234479) UART_RX_TASK: Received Byte: 0xF7 ('�')[0m
+[0;32mI (234489) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (234499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234569) UART_RX_TASK: Received Byte: 0xFA ('�')[0m
+[0;32mI (234579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234729) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (234739) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (234749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234819) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (234829) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (234839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234889) UART_RX_TASK: Received Byte: 0xA0 ('�')[0m
+[0;32mI (234899) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (234909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234979) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (234989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (234999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235079) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (235089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235169) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (235179) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (235189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235329) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (235339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235419) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (235429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235519) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (235529) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (235539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235599) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (235609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235689) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (235699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235769) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (235779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235859) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (235869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235959) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (235969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (235999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236039) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (236049) UART_RX_TASK: Received Byte: 0x2B ('+')[0m
+[0;32mI (236059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236109) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (236119) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (236129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236209) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (236219) UART_RX_TASK: Received Byte: 0x02 ('')[0m
+[0;32mI (236229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236309) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (236319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236399) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (236409) UART_RX_TASK: Received Byte: 0x08 ('')[0m
+[0;32mI (236419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236489) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (236499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236589) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (236599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236669) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (236679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236759) UART_RX_TASK: Received Byte: 0xC2 ('�')[0m
+[0;32mI (236769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236849) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (236859) UART_RX_TASK: Received Byte: 0x11 ('')[0m
+[0;32mI (236869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236929) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (236939) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (236949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (236999) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (237009) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (237019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237099) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (237109) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (237119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237179) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (237189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237259) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (237269) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (237279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237429) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (237439) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (237449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237509) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (237519) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (237529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237599) UART_RX_TASK: Received Byte: 0x04 ('')[0m
+[0;32mI (237609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237679) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (237689) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (237699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237819) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (237829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237899) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (237909) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (237919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (237989) UART_RX_TASK: Received Byte: 0xB0 ('�')[0m
+[0;32mI (237999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238039) UART_RX_TASK: Received Byte: 0x20 (' ')[0m
+[0;32mI (238049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238069) UART_RX_TASK: Received Byte: 0xFA ('�')[0m
+[0;32mI (238079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238129) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (238139) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (238149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238199) UART_RX_TASK: Received Byte: 0xA0 ('�')[0m
+[0;32mI (238209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238289) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (238299) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (238309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238369) UART_RX_TASK: Received Byte: 0xFA ('�')[0m
+[0;32mI (238379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238449) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (238459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238519) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (238529) UART_RX_TASK: Received Byte: 0x07 ('')[0m
+[0;32mI (238539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238579) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (238589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238669) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (238679) UART_RX_TASK: Received Byte: 0x20 (' ')[0m
+[0;32mI (238689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238749) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (238759) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (238769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238819) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (238829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238939) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (238949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (238999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239019) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (239029) UART_RX_TASK: Received Byte: 0x10 ('')[0m
+[0;32mI (239039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239229) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (239239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239299) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (239309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239399) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (239409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239459) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (239469) UART_RX_TASK: Received Byte: 0x02 ('')[0m
+[0;32mI (239479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239539) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (239549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239599) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (239609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239659) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (239669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239719) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (239729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239789) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (239799) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (239809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239859) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (239869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239919) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (239929) UART_RX_TASK: Received Byte: 0x10 ('')[0m
+[0;32mI (239939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (239989) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (239999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240069) UART_RX_TASK: Received Byte: 0xD4 ('�')[0m
+[0;32mI (240079) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (240089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240149) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (240159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240229) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (240239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240289) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (240299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240349) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (240359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240429) UART_RX_TASK: Received Byte: 0xFA ('�')[0m
+[0;32mI (240439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240659) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (240669) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (240679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240729) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (240739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240799) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (240809) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (240819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240869) UART_RX_TASK: Received Byte: 0x20 (' ')[0m
+[0;32mI (240879) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (240889) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (240899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240969) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (240979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (240999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241049) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (241059) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (241069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241119) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (241129) UART_RX_TASK: Received Byte: 0x09 ('	')[0m
+[0;32mI (241139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241179) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (241189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241269) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (241279) UART_RX_TASK: Received Byte: 0x03 ('')[0m
+[0;32mI (241289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241359) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (241369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241429) UART_RX_TASK: Received Byte: 0x74 ('t')[0m
+[0;32mI (241439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241499) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (241509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241569) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (241579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241649) UART_RX_TASK: Received Byte: 0x02 ('')[0m
+[0;32mI (241659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241719) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (241729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241779) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (241789) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (241799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241859) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (241869) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (241879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241939) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (241949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (241999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242019) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (242029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242089) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (242099) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (242109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242169) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (242179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242229) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (242239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242289) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (242299) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (242309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242429) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (242439) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (242449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242499) UART_RX_TASK: Received Byte: 0x82 ('�')[0m
+[0;32mI (242509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242589) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (242599) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (242609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242659) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (242669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242729) UART_RX_TASK: Received Byte: 0xFA ('�')[0m
+[0;32mI (242739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242819) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (242829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242889) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (242899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242939) UART_RX_TASK: Received Byte: 0x10 ('')[0m
+[0;32mI (242949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242959) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (242969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (242999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243029) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (243039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243099) UART_RX_TASK: Received Byte: 0x04 ('')[0m
+[0;32mI (243109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243119) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (243129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243209) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (243219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243279) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (243289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243349) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (243359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243489) UART_RX_TASK: Received Byte: 0xF6 ('�')[0m
+[0;32mI (243499) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (243509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243559) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (243569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243619) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (243629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243699) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (243709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243789) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (243799) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (243809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243869) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (243879) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (243889) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (243899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243949) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (243959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (243999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244009) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (244019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244069) UART_RX_TASK: Received Byte: 0xFA ('�')[0m
+[0;32mI (244079) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (244089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244129) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (244139) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (244149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244219) UART_RX_TASK: Received Byte: 0xF2 ('�')[0m
+[0;32mI (244229) UART_RX_TASK: Received Byte: 0x05 ('')[0m
+[0;32mI (244239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244299) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (244309) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (244319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244379) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (244389) UART_RX_TASK: Received Byte: 0x0B ('')[0m
+[0;32mI (244399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244449) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (244459) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (244469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244499) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (244509) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (244519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244529) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244549) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (244559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244569) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (244579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244649) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (244659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244669) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244719) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (244729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244789) UART_RX_TASK: Received Byte: 0xF0 ('�')[0m
+[0;32mI (244799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244879) UART_RX_TASK: Received Byte: 0xA0 ('�')[0m
+[0;32mI (244889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (244979) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (244989) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (244999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245059) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (245069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245149) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (245159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245219) UART_RX_TASK: Received Byte: 0xE0 ('�')[0m
+[0;32mI (245229) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (245239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245269) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (245279) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (245289) UART_RX_TASK: Received Byte: 0x10 ('')[0m
+[0;32mI (245299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245359) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (245369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245429) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245439) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245449) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (245459) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (245469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245509) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245529) UART_RX_TASK: Received Byte: 0xFA ('�')[0m
+[0;32mI (245539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245589) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245609) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (245619) UART_RX_TASK: Received Byte: 0x05 ('')[0m
+[0;32mI (245629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245669) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (245679) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (245689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245739) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (245749) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245759) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245819) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (245829) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245899) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (245909) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245969) UART_RX_TASK: Received Byte: 0xD0 ('�')[0m
+[0;32mI (245979) UART_RX_TASK: Received Byte: 0x04 ('')[0m
+[0;32mI (245989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (245999) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246009) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246039) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (246049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246069) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246079) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246089) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246119) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246139) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (246149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246159) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246219) UART_RX_TASK: Received Byte: 0xE8 ('�')[0m
+[0;32mI (246229) UART_RX_TASK: Received Byte: 0x07 ('')[0m
+[0;32mI (246239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246249) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246289) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (246299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246329) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246369) UART_RX_TASK: Received Byte: 0xFF ('�')[0m
+[0;32mI (246379) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (246389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246429) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (246439) UART_RX_TASK: Received Byte: 0x0A ('[0m
+')
+[0;32mI (246449) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246459) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246469) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246479) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246489) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246499) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246509) UART_RX_TASK: Received Byte: 0xF8 ('�')[0m
+[0;32mI (246519) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246529) UART_RX_TASK: Received Byte: 0x02 ('')[0m
+[0;32mI (246539) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246549) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246559) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246569) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246579) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246589) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (246599) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246609) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246619) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246629) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246639) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246649) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246659) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246669) UART_RX_TASK: Received Byte: 0xFD ('�')[0m
+[0;32mI (246679) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246689) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246699) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246709) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246719) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246729) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246739) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246749) UART_RX_TASK: Received Byte: 0xC0 ('�')[0m
+[0;32mI (246759) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (246769) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246779) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246789) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246799) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246809) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246819) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246829) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (246839) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246849) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246859) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246869) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246879) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246889) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246899) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246909) UART_RX_TASK: Received Byte: 0x80 ('�')[0m
+[0;32mI (246919) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246929) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246939) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246949) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246959) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246969) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246979) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246989) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (246999) UART_RX_TASK: Received Byte: 0xF4 ('�')[0m
+[0;32mI (247009) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+[0;32mI (247019) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247029) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247039) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247049) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247059) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247069) UART_RX_TASK: Received Byte: 0x40 ('@')[0m
+[0;32mI (247079) UART_RX_TASK: Received Byte: 0xFD ('�')[0m
+[0;32mI (247089) UART_RX_TASK: Received Byte: 0x04 ('')[0m
+[0;32mI (247099) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247109) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247119) UART_RX_TASK: Received Byte: 0x08 ('')[0m
+[0;32mI (247129) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247139) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247149) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247159) UART_RX_TASK: Received Byte: 0xFD ('�')[0m
+[0;32mI (247169) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247179) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247189) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247199) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247209) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247219) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247229) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247239) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247249) UART_RX_TASK: Received Byte: 0xFE ('�')[0m
+[0;32mI (247259) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247269) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247279) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247289) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247299) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247309) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247319) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247329) UART_RX_TASK: Received Byte: 0xFC ('�')[0m
+[0;32mI (247339) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247349) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247359) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247369) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247379) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247389) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247399) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247409) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247419) UART_RX_TASK: Received Byte: 0x00 (' ')[0m
+[0;32mI (247429) UART_RX_TASK: Received Byte: 0xF5 ('�')[0m
+[0;32mI (247439) UART_RX_TASK: Received Byte: 0x01 ('')[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (504) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (509) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (599) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (599) GPIO: GPIO Initialization![0m
+[0;32mI (599) ESP_APP: UART initialized[0m
+[0;32mI (609) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (609) NVS: From nvs ssid is Rnd [0m
+[0;32mI (609) NVS: From nvs password is nikhil8182[0m
+[0;32mI (609) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (619) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (629) wifi:wifi driver task: 3ffc3b0c, prio:23, stack:6656, core=0[0m
+[0;32mI (639) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (639) wifi:wifi certification version: v7.0[0m
+[0;32mI (639) wifi:config NVS flash: enabled[0m
+[0;32mI (639) wifi:config nano formatting: disabled[0m
+[0;32mI (649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (649) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (659) wifi:Init management short buffer num: 32[0m
+[0;32mI (659) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (669) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (669) wifi:Init static rx buffer num: 10[0m
+[0;32mI (669) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (679) wifi_init: rx ba win: 6[0m
+[0;32mI (679) wifi_init: accept mbox: 6[0m
+[0;32mI (679) wifi_init: tcpip mbox: 32[0m
+[0;32mI (689) wifi_init: udp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (699) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (699) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (709) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (709) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (719) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (809) wifi:mode : sta (f4:65:0b:54:5f:6c)[0m
+[0;32mI (809) wifi:enable tsf[0m
+[0;32mI (809) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (879) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (879) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (889) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (909) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (919) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (919) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (919) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3339) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (3339) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3439) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3439) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3449) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3479) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3529) wifi:connected with Rnd, aid = 4, channel 6, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (3529) wifi:security: WPA2-PSK, phy: bgn, rssi: -66[0m
+[0;32mI (3529) wifi:pm start, type: 1[0m
+
+[0;32mI (3529) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3639) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4559) esp_netif_handlers: sta ip: 192.168.1.97, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4559) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (4559) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (4559) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -66[0m
+[0;32mI (4569) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (4579) main_task: Returned from app_main()[0m
+[0;32mI (4599) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (8769) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (8829) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=33935[0m
+[0;32mI (8889) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=11209[0m
+[0;32mI (8899) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=33141[0m
+[0;32mI (8909) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=23099[0m
+[0;32mI (8909) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=42335[0m
+[0;32mI (8909) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=57382[0m
+[0;32mI (8919) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=45640[0m
+[0;32mI (8919) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (8919) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (8929) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (13619) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (19529) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (20489) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (21189) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (21909) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (22529) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (23309) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (24009) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (24599) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (25249) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (25779) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (26449) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (27079) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (27559) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (28259) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (31169) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (32149) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (33899) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (36149) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (37829) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (38719) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (39609) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (40569) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (41379) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[1;31mE (97149) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (97149) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (112149) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (112659) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (112699) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=20027[0m
+[0;32mI (112819) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=31833[0m
+[0;32mI (112819) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=11932[0m
+[0;32mI (112819) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=30180[0m
+[0;32mI (112829) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=35042[0m
+[0;32mI (112829) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=26770[0m
+[0;32mI (112839) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=22322[0m
+[0;32mI (112839) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (112839) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (112849) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+����������������������������������������������������������������d Byte: 0x55 ('U')
+����������������������������������������������������������������d Byte: 0x55 ('U')
+[0;32mI (246039) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (247149) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (247929) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+[0;32mI (250199) UART_RX_TASK: Received Byte: 0x55 ('U')[0m
+����������������������������������������������������������������ENT_DATA
+[0;32mI (284749) MQTT_HANDLER: TOPIC=onwords/4ltc01/firmwareStm[0m
+[0;32mI (284749) MQTT_HANDLER: DATA={"firmware_sts": 1, "firmwareUrl": "http://13.127.193.192/ota/files/4LTC/EDIO_REC_TOOL_20250627_153008.bin/"}[0m
+[0;32mI (284759) MQTT_HANDLER: Firmware update requested: http://13.127.193.192/ota/files/4LTC/EDIO_REC_TOOL_20250627_153008.bin/[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (504) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (509) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (599) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (599) GPIO: GPIO Initialization![0m
+[0;32mI (599) ESP_APP: UART initialized[0m
+[0;32mI (609) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (609) NVS: From nvs ssid is Rnd [0m
+[0;32mI (609) NVS: From nvs password is nikhil8182[0m
+[0;32mI (609) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (619) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (629) wifi:wifi driver task: 3ffc3b0c, prio:23, stack:6656, core=0[0m
+[0;32mI (639) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (639) wifi:wifi certification version: v7.0[0m
+[0;32mI (639) wifi:config NVS flash: enabled[0m
+[0;32mI (639) wifi:config nano formatting: disabled[0m
+[0;32mI (649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (649) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (659) wifi:Init management short buffer num: 32[0m
+[0;32mI (659) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (669) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (669) wifi:Init static rx buffer num: 10[0m
+[0;32mI (669) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (679) wifi_init: rx ba win: 6[0m
+[0;32mI (679) wifi_init: accept mbox: 6[0m
+[0;32mI (679) wifi_init: tcpip mbox: 32[0m
+[0;32mI (689) wifi_init: udp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (699) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (699) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (709) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (709) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (719) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (809) wifi:mode : sta (f4:65:0b:54:5f:6c)[0m
+[0;32mI (809) wifi:enable tsf[0m
+[0;32mI (809) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (909) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (909) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (919) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1279) wifi:state: assoc -> init (0x2c0)[0m
+[0;32mI (1289) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1289) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (1289) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3709) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (3709) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3719) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3719) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3729) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3769) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3939) wifi:connected with Rnd, aid = 4, channel 6, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (3939) wifi:security: WPA2-PSK, phy: bgn, rssi: -64[0m
+[0;32mI (3949) wifi:pm start, type: 1[0m
+
+[0;32mI (3949) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3969) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4979) esp_netif_handlers: sta ip: 192.168.1.97, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4979) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (4979) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (4979) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -63[0m
+[0;32mI (4989) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (4999) main_task: Returned from app_main()[0m
+[0;32mI (5009) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5409) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (5469) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=40667[0m
+[0;32mI (5529) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=55989[0m
+[0;32mI (5529) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=29302[0m
+[0;32mI (5539) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=49211[0m
+[0;32mI (5539) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=47490[0m
+[0;32mI (5539) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=17606[0m
+[0;32mI (5549) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43679[0m
+[0;32mI (5549) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (5549) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (5559) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}

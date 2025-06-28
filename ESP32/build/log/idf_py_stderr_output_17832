@@ -1,0 +1,39 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.6.2 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400eb081: esp_netif_create_default_wifi_ap at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_wifi/src/wifi_default.c:376 (discriminator 1)
+[0m
+[0;33m--- 0x4008a60b: _esp_error_check_failed at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081c5d: panic_abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/panic.c:454
+--- 0x4008a615: esp_system_abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/port/esp_system_chip.c:87
+--- 0x40092401: abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/newlib/abort.c:38
+--- 0x4008a60b: _esp_error_check_failed at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/esp_err.c:49
+--- 0x400eb081: esp_netif_create_default_wifi_ap at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_wifi/src/wifi_default.c:376 (discriminator 1)
+--- 0x400dca7b: start_softap at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/http_server.c:63
+--- 0x400db44c: app_main at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/esp_app.c:107
+--- 0x4017dc6f: main_task at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/app_startup.c:208
+--- 0x4008b131: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400eb081: esp_netif_create_default_wifi_ap at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_wifi/src/wifi_default.c:376 (discriminator 1)
+[0m
+[0;33m--- 0x4008a60b: _esp_error_check_failed at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081c5d: panic_abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/panic.c:454
+--- 0x4008a615: esp_system_abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/port/esp_system_chip.c:87
+--- 0x40092401: abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/newlib/abort.c:38
+--- 0x4008a60b: _esp_error_check_failed at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/esp_err.c:49
+--- 0x400eb081: esp_netif_create_default_wifi_ap at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_wifi/src/wifi_default.c:376 (discriminator 1)
+--- 0x400dca7b: start_softap at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/http_server.c:63
+--- 0x400db44c: app_main at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/esp_app.c:107
+--- 0x4017dc6f: main_task at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/app_startup.c:208
+--- 0x4008b131: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0m

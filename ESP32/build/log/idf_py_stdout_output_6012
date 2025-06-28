@@ -1,0 +1,1921 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (504) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (509) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (599) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (599) GPIO: GPIO Initialization![0m
+[0;32mI (599) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (609) ESP_APP: UART initialized[0m
+[0;32mI (609) NVS: WiFi credentials found. SSID: , connecting......[0m
+[0;32mI (609) ESP_APP: WiFi credentials not found, starting SoftAP + HTTP Server...[0m
+[0;32mI (619) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (629) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (639) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (649) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (659) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (669) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (679) GPIO: reset GPIO state 0 and count_reset 7[0m
+[0;32mI (689) GPIO: reset GPIO state 0 and count_reset 8[0m
+[0;32mI (699) GPIO: reset GPIO state 0 and count_reset 9[0m
+[0;32mI (709) GPIO: reset GPIO state 0 and count_reset 10[0m
+[0;32mI (719) GPIO: reset GPIO state 0 and count_reset 11[0m
+[0;32mI (729) GPIO: reset GPIO state 0 and count_reset 12[0m
+[0;32mI (739) GPIO: reset GPIO state 0 and count_reset 13[0m
+[0;32mI (749) GPIO: reset GPIO state 0 and count_reset 14[0m
+[0;32mI (759) GPIO: reset GPIO state 0 and count_reset 15[0m
+[0;32mI (769) GPIO: reset GPIO state 0 and count_reset 16[0m
+[0;32mI (779) GPIO: reset GPIO state 0 and count_reset 17[0m
+[0;32mI (789) GPIO: reset GPIO state 0 and count_reset 18[0m
+[0;32mI (799) GPIO: reset GPIO state 0 and count_reset 19[0m
+[0;32mI (809) GPIO: reset GPIO state 0 and count_reset 20[0m
+[0;32mI (819) GPIO: reset GPIO state 0 and count_reset 21[0m
+[0;32mI (829) GPIO: reset GPIO state 0 and count_reset 22[0m
+[0;32mI (839) GPIO: reset GPIO state 0 and count_reset 23[0m
+[0;32mI (849) GPIO: reset GPIO state 0 and count_reset 24[0m
+[0;32mI (859) GPIO: reset GPIO state 0 and count_reset 25[0m
+[0;32mI (869) GPIO: reset GPIO state 0 and count_reset 26[0m
+[0;32mI (879) GPIO: reset GPIO state 0 and count_reset 27[0m
+[0;32mI (889) GPIO: reset GPIO state 0 and count_reset 28[0m
+[0;32mI (899) GPIO: reset GPIO state 0 and count_reset 29[0m
+[0;32mI (909) GPIO: reset GPIO state 0 and count_reset 30[0m
+[0;32mI (919) GPIO: reset GPIO state 0 and count_reset 31[0m
+[0;32mI (929) GPIO: reset GPIO state 0 and count_reset 32[0m
+[0;32mI (939) GPIO: reset GPIO state 0 and count_reset 33[0m
+[0;32mI (949) GPIO: reset GPIO state 0 and count_reset 34[0m
+[0;32mI (959) GPIO: reset GPIO state 0 and count_reset 35[0m
+[0;32mI (969) GPIO: reset GPIO state 0 and count_reset 36[0m
+[0;32mI (979) GPIO: reset GPIO state 0 and count_reset 37[0m
+[0;32mI (989) GPIO: reset GPIO state 0 and count_reset 38[0m
+[0;32mI (999) GPIO: reset GPIO state 0 and count_reset 39[0m
+[0;32mI (1009) GPIO: reset GPIO state 0 and count_reset 40[0m
+[0;32mI (1019) GPIO: reset GPIO state 0 and count_reset 41[0m
+[0;32mI (1029) GPIO: reset GPIO state 0 and count_reset 42[0m
+[0;32mI (1039) GPIO: reset GPIO state 0 and count_reset 43[0m
+[0;32mI (1049) GPIO: reset GPIO state 0 and count_reset 44[0m
+[0;32mI (1059) GPIO: reset GPIO state 0 and count_reset 45[0m
+[0;32mI (1069) GPIO: reset GPIO state 0 and count_reset 46[0m
+[0;32mI (1079) GPIO: reset GPIO state 0 and count_reset 47[0m
+[0;32mI (1089) GPIO: reset GPIO state 0 and count_reset 48[0m
+[0;32mI (1099) GPIO: reset GPIO state 0 and count_reset 49[0m
+[0;32mI (1109) GPIO: reset GPIO state 0 and count_reset 50[0m
+[0;32mI (1119) GPIO: reset GPIO state 0 and count_reset 51[0m
+[0;32mI (1129) GPIO: reset GPIO state 0 and count_reset 52[0m
+[0;32mI (1139) GPIO: reset GPIO state 0 and count_reset 53[0m
+[0;32mI (1149) GPIO: reset GPIO state 0 and count_reset 54[0m
+[0;32mI (1159) GPIO: reset GPIO state 0 and count_reset 55[0m
+[0;32mI (1169) GPIO: reset GPIO state 0 and count_reset 56[0m
+[0;32mI (1179) GPIO: reset GPIO state 0 and count_reset 57[0m
+[0;32mI (1189) GPIO: reset GPIO state 0 and count_reset 58[0m
+[0;32mI (1199) GPIO: reset GPIO state 0 and count_reset 59[0m
+[0;32mI (1209) GPIO: reset GPIO state 0 and count_reset 60[0m
+[0;32mI (1219) GPIO: reset GPIO state 0 and count_reset 61[0m
+[0;32mI (1229) GPIO: reset GPIO state 0 and count_reset 62[0m
+[0;32mI (1239) GPIO: reset GPIO state 0 and count_reset 63[0m
+[0;32mI (1249) GPIO: reset GPIO state 0 and count_reset 64[0m
+[0;32mI (1259) GPIO: reset GPIO state 0 and count_reset 65[0m
+[0;32mI (1269) GPIO: reset GPIO state 0 and count_reset 66[0m
+[0;32mI (1279) GPIO: reset GPIO state 0 and count_reset 67[0m
+[0;32mI (1289) GPIO: reset GPIO state 0 and count_reset 68[0m
+[0;32mI (1299) GPIO: reset GPIO state 0 and count_reset 69[0m
+[0;32mI (1309) GPIO: reset GPIO state 0 and count_reset 70[0m
+[0;32mI (1319) GPIO: reset GPIO state 0 and count_reset 71[0m
+[0;32mI (1329) GPIO: reset GPIO state 0 and count_reset 72[0m
+[0;32mI (1339) GPIO: reset GPIO state 0 and count_reset 73[0m
+[0;32mI (1349) GPIO: reset GPIO state 0 and count_reset 74[0m
+[0;32mI (1359) GPIO: reset GPIO state 0 and count_reset 75[0m
+[0;32mI (1369) GPIO: reset GPIO state 0 and count_reset 76[0m
+[0;32mI (1379) GPIO: reset GPIO state 0 and count_reset 77[0m
+[0;32mI (1389) GPIO: reset GPIO state 0 and count_reset 78[0m
+[0;32mI (1399) GPIO: reset GPIO state 0 and count_reset 79[0m
+[0;32mI (1409) GPIO: reset GPIO state 0 and count_reset 80[0m
+[0;32mI (1419) GPIO: reset GPIO state 0 and count_reset 81[0m
+[0;32mI (1429) GPIO: reset GPIO state 0 and count_reset 82[0m
+[0;32mI (1439) GPIO: reset GPIO state 0 and count_reset 83[0m
+[0;32mI (1449) GPIO: reset GPIO state 0 and count_reset 84[0m
+[0;32mI (1459) GPIO: reset GPIO state 0 and count_reset 85[0m
+[0;32mI (1469) GPIO: reset GPIO state 0 and count_reset 86[0m
+[0;32mI (1479) GPIO: reset GPIO state 0 and count_reset 87[0m
+[0;32mI (1489) GPIO: reset GPIO state 0 and count_reset 88[0m
+[0;32mI (1499) GPIO: reset GPIO state 0 and count_reset 89[0m
+[0;32mI (1509) GPIO: reset GPIO state 0 and count_reset 90[0m
+[0;32mI (1519) GPIO: reset GPIO state 0 and count_reset 91[0m
+[0;32mI (1529) GPIO: reset GPIO state 0 and count_reset 92[0m
+[0;32mI (1539) GPIO: reset GPIO state 0 and count_reset 93[0m
+[0;32mI (1549) GPIO: reset GPIO state 0 and count_reset 94[0m
+[0;32mI (1559) GPIO: reset GPIO state 0 and count_reset 95[0m
+[0;32mI (1569) GPIO: reset GPIO state 0 and count_reset 96[0m
+[0;32mI (1579) GPIO: reset GPIO state 0 and count_reset 97[0m
+[0;32mI (1589) GPIO: reset GPIO state 0 and count_reset 98[0m
+[0;32mI (1599) GPIO: reset GPIO state 0 and count_reset 99[0m
+[0;32mI (1609) GPIO: reset GPIO state 0 and count_reset 100[0m
+[0;32mI (1619) GPIO: reset GPIO state 0 and count_reset 101[0m
+[0;32mI (1629) GPIO: reset GPIO state 0 and count_reset 102[0m
+[0;32mI (1639) GPIO: reset GPIO state 0 and count_reset 103[0m
+[0;32mI (1649) GPIO: reset GPIO state 0 and count_reset 104[0m
+[0;32mI (1659) GPIO: reset GPIO state 0 and count_reset 105[0m
+[0;32mI (1669) GPIO: reset GPIO state 0 and count_reset 106[0m
+[0;32mI (1679) GPIO: reset GPIO state 0 and count_reset 107[0m
+[0;32mI (1689) GPIO: reset GPIO state 0 and count_reset 108[0m
+[0;32mI (1699) GPIO: reset GPIO state 0 and count_reset 109[0m
+[0;32mI (1709) GPIO: reset GPIO state 0 and count_reset 110[0m
+[0;32mI (1719) GPIO: reset GPIO state 0 and count_reset 111[0m
+[0;32mI (1729) GPIO: reset GPIO state 0 and count_reset 112[0m
+[0;32mI (1739) GPIO: reset GPIO state 0 and count_reset 113[0m
+[0;32mI (1749) GPIO: reset GPIO state 0 and count_reset 114[0m
+[0;32mI (1759) GPIO: reset GPIO state 0 and count_reset 115[0m
+[0;32mI (1769) GPIO: reset GPIO state 0 and count_reset 116[0m
+[0;32mI (1779) GPIO: reset GPIO state 0 and count_reset 117[0m
+[0;32mI (1789) GPIO: reset GPIO state 0 and count_reset 118[0m
+[0;32mI (1799) GPIO: reset GPIO state 0 and count_reset 119[0m
+[0;32mI (1809) GPIO: reset GPIO state 0 and count_reset 120[0m
+[0;32mI (1819) GPIO: reset GPIO state 0 and count_reset 121[0m
+[0;32mI (1829) GPIO: reset GPIO state 0 and count_reset 122[0m
+[0;32mI (1839) GPIO: reset GPIO state 0 and count_reset 123[0m
+[0;32mI (1849) GPIO: reset GPIO state 0 and count_reset 124[0m
+[0;32mI (1859) GPIO: reset GPIO state 0 and count_reset 125[0m
+[0;32mI (1869) GPIO: reset GPIO state 0 and count_reset 126[0m
+[0;32mI (1879) GPIO: reset GPIO state 0 and count_reset 127[0m
+[0;32mI (1889) GPIO: reset GPIO state 0 and count_reset 128[0m
+[0;32mI (1899) GPIO: reset GPIO state 0 and count_reset 129[0m
+[0;32mI (1909) GPIO: reset GPIO state 0 and count_reset 130[0m
+[0;32mI (1919) GPIO: reset GPIO state 0 and count_reset 131[0m
+[0;32mI (1929) GPIO: reset GPIO state 0 and count_reset 132[0m
+[0;32mI (1939) GPIO: reset GPIO state 0 and count_reset 133[0m
+[0;32mI (1949) GPIO: reset GPIO state 0 and count_reset 134[0m
+[0;32mI (1959) GPIO: reset GPIO state 0 and count_reset 135[0m
+[0;32mI (1969) GPIO: reset GPIO state 0 and count_reset 136[0m
+[0;32mI (1979) GPIO: reset GPIO state 0 and count_reset 137[0m
+[0;32mI (1989) GPIO: reset GPIO state 0 and count_reset 138[0m
+[0;32mI (1999) GPIO: reset GPIO state 0 and count_reset 139[0m
+[0;32mI (2009) GPIO: reset GPIO state 0 and count_reset 140[0m
+[0;32mI (2019) GPIO: reset GPIO state 0 and count_reset 141[0m
+[0;32mI (2029) GPIO: reset GPIO state 0 and count_reset 142[0m
+[0;32mI (2039) GPIO: reset GPIO state 0 and count_reset 143[0m
+[0;32mI (2049) GPIO: reset GPIO state 0 and count_reset 144[0m
+[0;32mI (2059) GPIO: reset GPIO state 0 and count_reset 145[0m
+[0;32mI (2069) GPIO: reset GPIO state 0 and count_reset 146[0m
+[0;32mI (2079) GPIO: reset GPIO state 0 and count_reset 147[0m
+[0;32mI (2089) GPIO: reset GPIO state 0 and count_reset 148[0m
+[0;32mI (2099) GPIO: reset GPIO state 0 and count_reset 149[0m
+[0;32mI (2109) GPIO: reset GPIO state 0 and count_reset 150[0m
+[0;32mI (2119) GPIO: reset GPIO state 0 and count_reset 151[0m
+[0;32mI (2129) GPIO: reset GPIO state 0 and count_reset 152[0m
+[0;32mI (2139) GPIO: reset GPIO state 0 and count_reset 153[0m
+[0;32mI (2149) GPIO: reset GPIO state 0 and count_reset 154[0m
+[0;32mI (2159) GPIO: reset GPIO state 0 and count_reset 155[0m
+[0;32mI (2169) GPIO: reset GPIO state 0 and count_reset 156[0m
+[0;32mI (2179) GPIO: reset GPIO state 0 and count_reset 157[0m
+[0;32mI (2189) GPIO: reset GPIO state 0 and count_reset 158[0m
+[0;32mI (2199) GPIO: reset GPIO state 0 and count_reset 159[0m
+[0;32mI (2209) GPIO: reset GPIO state 0 and count_reset 160[0m
+[0;32mI (2219) GPIO: reset GPIO state 0 and count_reset 161[0m
+[0;32mI (2239) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2259) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2279) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2299) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2319) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2339) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2359) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2379) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2399) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2419) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2439) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2459) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2479) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2499) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2519) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2539) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2559) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2579) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2599) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2619) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2639) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2659) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2679) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2699) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2719) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2739) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2759) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2779) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2799) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2819) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2839) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2859) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2879) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2899) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2919) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2939) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2959) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2979) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2999) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3019) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3039) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3059) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3079) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3099) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3119) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3139) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3159) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3179) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3199) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3219) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3239) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3259) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3279) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3299) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3319) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3339) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3359) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3379) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3399) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3419) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3439) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3459) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3479) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3499) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3519) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3539) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3559) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3579) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3599) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3619) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3639) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3659) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3679) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3699) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3719) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3739) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3759) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3779) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3799) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3819) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3839) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3859) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3879) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3899) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3919) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3939) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3959) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3979) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (3999) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4019) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4039) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4059) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4079) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4099) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4119) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4139) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4159) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4179) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4199) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4219) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4239) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4259) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4279) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4289) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (4299) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (4309) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (4319) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (4329) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (4339) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (4349) GPIO: reset GPIO state 0 and count_reset 7[0m
+[0;32mI (4359) GPIO: reset GPIO state 0 and count_reset 8[0m
+[0;32mI (4369) GPIO: reset GPIO state 0 and count_reset 9[0m
+[0;32mI (4379) GPIO: reset GPIO state 0 and count_reset 10[0m
+[0;32mI (4389) GPIO: reset GPIO state 0 and count_reset 11[0m
+[0;32mI (4399) GPIO: reset GPIO state 0 and count_reset 12[0m
+[0;32mI (4409) GPIO: reset GPIO state 0 and count_reset 13[0m
+[0;32mI (4419) GPIO: reset GPIO state 0 and count_reset 14[0m
+[0;32mI (4429) GPIO: reset GPIO state 0 and count_reset 15[0m
+[0;32mI (4439) GPIO: reset GPIO state 0 and count_reset 16[0m
+[0;32mI (4449) GPIO: reset GPIO state 0 and count_reset 17[0m
+[0;32mI (4459) GPIO: reset GPIO state 0 and count_reset 18[0m
+[0;32mI (4469) GPIO: reset GPIO state 0 and count_reset 19[0m
+[0;32mI (4479) GPIO: reset GPIO state 0 and count_reset 20[0m
+[0;32mI (4489) GPIO: reset GPIO state 0 and count_reset 21[0m
+[0;32mI (4499) GPIO: reset GPIO state 0 and count_reset 22[0m
+[0;32mI (4509) GPIO: reset GPIO state 0 and count_reset 23[0m
+[0;32mI (4519) GPIO: reset GPIO state 0 and count_reset 24[0m
+[0;32mI (4529) GPIO: reset GPIO state 0 and count_reset 25[0m
+[0;32mI (4539) GPIO: reset GPIO state 0 and count_reset 26[0m
+[0;32mI (4549) GPIO: reset GPIO state 0 and count_reset 27[0m
+[0;32mI (4559) GPIO: reset GPIO state 0 and count_reset 28[0m
+[0;32mI (4569) GPIO: reset GPIO state 0 and count_reset 29[0m
+[0;32mI (4579) GPIO: reset GPIO state 0 and count_reset 30[0m
+[0;32mI (4589) GPIO: reset GPIO state 0 and count_reset 31[0m
+[0;32mI (4599) GPIO: reset GPIO state 0 and count_reset 32[0m
+[0;32mI (4609) GPIO: reset GPIO state 0 and count_reset 33[0m
+[0;32mI (4619) GPIO: reset GPIO state 0 and count_reset 34[0m
+[0;32mI (4629) GPIO: reset GPIO state 0 and count_reset 35[0m
+[0;32mI (4639) GPIO: reset GPIO state 0 and count_reset 36[0m
+[0;32mI (4649) GPIO: reset GPIO state 0 and count_reset 37[0m
+[0;32mI (4659) GPIO: reset GPIO state 0 and count_reset 38[0m
+[0;32mI (4669) GPIO: reset GPIO state 0 and count_reset 39[0m
+[0;32mI (4679) GPIO: reset GPIO state 0 and count_reset 40[0m
+[0;32mI (4689) GPIO: reset GPIO state 0 and count_reset 41[0m
+[0;32mI (4699) GPIO: reset GPIO state 0 and count_reset 42[0m
+[0;32mI (4709) GPIO: reset GPIO state 0 and count_reset 43[0m
+[0;32mI (4719) GPIO: reset GPIO state 0 and count_reset 44[0m
+[0;32mI (4729) GPIO: reset GPIO state 0 and count_reset 45[0m
+[0;32mI (4739) GPIO: reset GPIO state 0 and count_reset 46[0m
+[0;32mI (4749) GPIO: reset GPIO state 0 and count_reset 47[0m
+[0;32mI (4759) GPIO: reset GPIO state 0 and count_reset 48[0m
+[0;32mI (4769) GPIO: reset GPIO state 0 and count_reset 49[0m
+[0;32mI (4779) GPIO: reset GPIO state 0 and count_reset 50[0m
+[0;32mI (4789) GPIO: reset GPIO state 0 and count_reset 51[0m
+[0;32mI (4799) GPIO: reset GPIO state 0 and count_reset 52[0m
+[0;32mI (4809) GPIO: reset GPIO state 0 and count_reset 53[0m
+[0;32mI (4819) GPIO: reset GPIO state 0 and count_reset 54[0m
+[0;32mI (4829) GPIO: reset GPIO state 0 and count_reset 55[0m
+[0;32mI (4839) GPIO: reset GPIO state 0 and count_reset 56[0m
+[0;32mI (4849) GPIO: reset GPIO state 0 and count_reset 57[0m
+[0;32mI (4859) GPIO: reset GPIO state 0 and count_reset 58[0m
+[0;32mI (4869) GPIO: reset GPIO state 0 and count_reset 59[0m
+[0;32mI (4879) GPIO: reset GPIO state 0 and count_reset 60[0m
+[0;32mI (4889) GPIO: reset GPIO state 0 and count_reset 61[0m
+[0;32mI (4899) GPIO: reset GPIO state 0 and count_reset 62[0m
+[0;32mI (4909) GPIO: reset GPIO state 0 and count_reset 63[0m
+[0;32mI (4919) GPIO: reset GPIO state 0 and count_reset 64[0m
+[0;32mI (4929) GPIO: reset GPIO state 0 and count_reset 65[0m
+[0;32mI (4939) GPIO: reset GPIO state 0 and count_reset 66[0m
+[0;32mI (4949) GPIO: reset GPIO state 0 and count_reset 67[0m
+[0;32mI (4959) GPIO: reset GPIO state 0 and count_reset 68[0m
+[0;32mI (4969) GPIO: reset GPIO state 0 and count_reset 69[0m
+[0;32mI (4979) GPIO: reset GPIO state 0 and count_reset 70[0m
+[0;32mI (4989) GPIO: reset GPIO state 0 and count_reset 71[0m
+[0;32mI (4999) GPIO: reset GPIO state 0 and count_reset 72[0m
+[0;32mI (5009) GPIO: reset GPIO state 0 and count_reset 73[0m
+[0;32mI (5019) GPIO: reset GPIO state 0 and count_reset 74[0m
+[0;32mI (5029) GPIO: reset GPIO state 0 and count_reset 75[0m
+[0;32mI (5039) GPIO: reset GPIO state 0 and count_reset 76[0m
+[0;32mI (5049) GPIO: reset GPIO state 0 and count_reset 77[0m
+[0;32mI (5059) GPIO: reset GPIO state 0 and count_reset 78[0m
+[0;32mI (5069) GPIO: reset GPIO state 0 and count_reset 79[0m
+[0;32mI (5079) GPIO: reset GPIO state 0 and count_reset 80[0m
+[0;32mI (5089) GPIO: reset GPIO state 0 and count_reset 81[0m
+[0;32mI (5099) GPIO: reset GPIO state 0 and count_reset 82[0m
+[0;32mI (5109) GPIO: reset GPIO state 0 and count_reset 83[0m
+[0;32mI (5119) GPIO: reset GPIO state 0 and count_reset 84[0m
+[0;32mI (5129) GPIO: reset GPIO state 0 and count_reset 85[0m
+[0;32mI (5139) GPIO: reset GPIO state 0 and count_reset 86[0m
+[0;32mI (5149) GPIO: reset GPIO state 0 and count_reset 87[0m
+[0;32mI (5159) GPIO: reset GPIO state 0 and count_reset 88[0m
+[0;32mI (5169) GPIO: reset GPIO state 0 and count_reset 89[0m
+[0;32mI (5179) GPIO: reset GPIO state 0 and count_reset 90[0m
+[0;32mI (5189) GPIO: reset GPIO state 0 and count_reset 91[0m
+[0;32mI (5199) GPIO: reset GPIO state 0 and count_reset 92[0m
+[0;32mI (5209) GPIO: reset GPIO state 0 and count_reset 93[0m
+[0;32mI (5219) GPIO: reset GPIO state 0 and count_reset 94[0m
+[0;32mI (5229) GPIO: reset GPIO state 0 and count_reset 95[0m
+[0;32mI (5239) GPIO: reset GPIO state 0 and count_reset 96[0m
+[0;32mI (5249) GPIO: reset GPIO state 0 and count_reset 97[0m
+[0;32mI (5259) GPIO: reset GPIO state 0 and count_reset 98[0m
+[0;32mI (5269) GPIO: reset GPIO state 0 and count_reset 99[0m
+[0;32mI (5279) GPIO: reset GPIO state 0 and count_reset 100[0m
+[0;32mI (5289) GPIO: reset GPIO state 0 and count_reset 101[0m
+[0;32mI (5299) GPIO: reset GPIO state 0 and count_reset 102[0m
+[0;32mI (5309) GPIO: reset GPIO state 0 and count_reset 103[0m
+[0;32mI (5319) GPIO: reset GPIO state 0 and count_reset 104[0m
+[0;32mI (5329) GPIO: reset GPIO state 0 and count_reset 105[0m
+[0;32mI (5339) GPIO: reset GPIO state 0 and count_reset 106[0m
+[0;32mI (5349) GPIO: reset GPIO state 0 and count_reset 107[0m
+[0;32mI (5359) GPIO: reset GPIO state 0 and count_reset 108[0m
+[0;32mI (5369) GPIO: reset GPIO state 0 and count_reset 109[0m
+[0;32mI (5379) GPIO: reset GPIO state 0 and count_reset 110[0m
+[0;32mI (5389) GPIO: reset GPIO state 0 and count_reset 111[0m
+[0;32mI (5399) GPIO: reset GPIO state 0 and count_reset 112[0m
+[0;32mI (5409) GPIO: reset GPIO state 0 and count_reset 113[0m
+[0;32mI (5419) GPIO: reset GPIO state 0 and count_reset 114[0m
+[0;32mI (5429) GPIO: reset GPIO state 0 and count_reset 115[0m
+[0;32mI (5439) GPIO: reset GPIO state 0 and count_reset 116[0m
+[0;32mI (5449) GPIO: reset GPIO state 0 and count_reset 117[0m
+[0;32mI (5459) GPIO: reset GPIO state 0 and count_reset 118[0m
+[0;32mI (5469) GPIO: reset GPIO state 0 and count_reset 119[0m
+[0;32mI (5479) GPIO: reset GPIO state 0 and count_reset 120[0m
+[0;32mI (5489) GPIO: reset GPIO state 0 and count_reset 121[0m
+[0;32mI (5499) GPIO: reset GPIO state 0 and count_reset 122[0m
+[0;32mI (5509) GPIO: reset GPIO state 0 and count_reset 123[0m
+[0;32mI (5519) GPIO: reset GPIO state 0 and count_reset 124[0m
+[0;32mI (5529) GPIO: reset GPIO state 0 and count_reset 125[0m
+[0;32mI (5539) GPIO: reset GPIO state 0 and count_reset 126[0m
+[0;32mI (5549) GPIO: reset GPIO state 0 and count_reset 127[0m
+[0;32mI (5559) GPIO: reset GPIO state 0 and count_reset 128[0m
+[0;32mI (5569) GPIO: reset GPIO state 0 and count_reset 129[0m
+[0;32mI (5579) GPIO: reset GPIO state 0 and count_reset 130[0m
+[0;32mI (5589) GPIO: reset GPIO state 0 and count_reset 131[0m
+[0;32mI (5599) GPIO: reset GPIO state 0 and count_reset 132[0m
+[0;32mI (5609) GPIO: reset GPIO state 0 and count_reset 133[0m
+[0;32mI (5619) GPIO: reset GPIO state 0 and count_reset 134[0m
+[0;32mI (5629) GPIO: reset GPIO state 0 and count_reset 135[0m
+[0;32mI (5639) GPIO: reset GPIO state 0 and count_reset 136[0m
+[0;32mI (5649) GPIO: reset GPIO state 0 and count_reset 137[0m
+[0;32mI (5659) GPIO: reset GPIO state 0 and count_reset 138[0m
+[0;32mI (5669) GPIO: reset GPIO state 0 and count_reset 139[0m
+[0;32mI (5679) GPIO: reset GPIO state 0 and count_reset 140[0m
+[0;32mI (5689) GPIO: reset GPIO state 0 and count_reset 141[0m
+[0;32mI (5699) GPIO: reset GPIO state 0 and count_reset 142[0m
+[0;32mI (5709) GPIO: reset GPIO state 0 and count_reset 143[0m
+[0;32mI (5719) GPIO: reset GPIO state 0 and count_reset 144[0m
+[0;32mI (5729) GPIO: reset GPIO state 0 and count_reset 145[0m
+[0;32mI (5739) GPIO: reset GPIO state 0 and count_reset 146[0m
+[0;32mI (5749) GPIO: reset GPIO state 0 and count_reset 147[0m
+[0;32mI (5759) GPIO: reset GPIO state 0 and count_reset 148[0m
+[0;32mI (5769) GPIO: reset GPIO state 0 and count_reset 149[0m
+[0;32mI (5779) GPIO: reset GPIO state 0 and count_reset 150[0m
+[0;32mI (5789) GPIO: reset GPIO state 0 and count_reset 151[0m
+[0;32mI (5799) GPIO: reset GPIO state 0 and count_reset 152[0m
+[0;32mI (5809) GPIO: reset GPIO state 0 and count_reset 153[0m
+[0;32mI (5819) GPIO: reset GPIO state 0 and count_reset 154[0m
+[0;32mI (5829) GPIO: reset GPIO state 0 and count_reset 155[0m
+[0;32mI (5839) GPIO: reset GPIO state 0 and count_reset 156[0m
+[0;32mI (5849) GPIO: reset GPIO state 0 and count_reset 157[0m
+[0;32mI (5859) GPIO: reset GPIO state 0 and count_reset 158[0m
+[0;32mI (5869) GPIO: reset GPIO state 0 and count_reset 159[0m
+[0;32mI (5879) GPIO: reset GPIO state 0 and count_reset 160[0m
+[0;32mI (5889) GPIO: reset GPIO state 0 and count_reset 161[0m
+[0;32mI (5899) GPIO: reset GPIO state 0 and count_reset 162[0m
+[0;32mI (5909) GPIO: reset GPIO state 0 and count_reset 163[0m
+[0;32mI (5919) GPIO: reset GPIO state 0 and count_reset 164[0m
+[0;32mI (5929) GPIO: reset GPIO state 0 and count_reset 165[0m
+[0;32mI (5939) GPIO: reset GPIO state 0 and count_reset 166[0m
+[0;32mI (5949) GPIO: reset GPIO state 0 and count_reset 167[0m
+[0;32mI (5959) GPIO: reset GPIO state 0 and count_reset 168[0m
+[0;32mI (5969) GPIO: reset GPIO state 0 and count_reset 169[0m
+[0;32mI (5979) GPIO: reset GPIO state 0 and count_reset 170[0m
+[0;32mI (5989) GPIO: reset GPIO state 0 and count_reset 171[0m
+[0;32mI (5999) GPIO: reset GPIO state 0 and count_reset 172[0m
+[0;32mI (6009) GPIO: reset GPIO state 0 and count_reset 173[0m
+[0;32mI (6019) GPIO: reset GPIO state 0 and count_reset 174[0m
+[0;32mI (6029) GPIO: reset GPIO state 0 and count_reset 175[0m
+[0;32mI (6039) GPIO: reset GPIO state 0 and count_reset 176[0m
+[0;32mI (6049) GPIO: reset GPIO state 0 and count_reset 177[0m
+[0;32mI (6059) GPIO: reset GPIO state 0 and count_reset 178[0m
+[0;32mI (6069) GPIO: reset GPIO state 0 and count_reset 179[0m
+[0;32mI (6079) GPIO: reset GPIO state 0 and count_reset 180[0m
+[0;32mI (6089) GPIO: reset GPIO state 0 and count_reset 181[0m
+[0;32mI (6099) GPIO: reset GPIO state 0 and count_reset 182[0m
+[0;32mI (6109) GPIO: reset GPIO state 0 and count_reset 183[0m
+[0;32mI (6119) GPIO: reset GPIO state 0 and count_reset 184[0m
+[0;32mI (6129) GPIO: reset GPIO state 0 and count_reset 185[0m
+[0;32mI (6139) GPIO: reset GPIO state 0 and count_reset 186[0m
+[0;32mI (6149) GPIO: reset GPIO state 0 and count_reset 187[0m
+[0;32mI (6159) GPIO: reset GPIO state 0 and count_reset 188[0m
+[0;32mI (6169) GPIO: reset GPIO state 0 and count_reset 189[0m
+[0;32mI (6179) GPIO: reset GPIO state 0 and count_reset 190[0m
+[0;32mI (6189) GPIO: reset GPIO state 0 and count_reset 191[0m
+[0;32mI (6199) GPIO: reset GPIO state 0 and count_reset 192[0m
+[0;32mI (6209) GPIO: reset GPIO state 0 and count_reset 193[0m
+[0;32mI (6219) GPIO: reset GPIO state 0 and count_reset 194[0m
+[0;32mI (6229) GPIO: reset GPIO state 0 and count_reset 195[0m
+[0;32mI (6239) GPIO: reset GPIO state 0 and count_reset 196[0m
+[0;32mI (6249) GPIO: reset GPIO state 0 and count_reset 197[0m
+[0;32mI (6259) GPIO: reset GPIO state 0 and count_reset 198[0m
+[0;32mI (6269) GPIO: reset GPIO state 0 and count_reset 199[0m
+[0;32mI (6279) GPIO: reset GPIO state 0 and count_reset 200[0m
+[0;32mI (6289) GPIO: reset GPIO state 0 and count_reset 201[0m
+[0;32mI (6299) GPIO: reset GPIO state 0 and count_reset 202[0m
+[0;32mI (6309) GPIO: reset GPIO state 0 and count_reset 203[0m
+[0;32mI (6319) GPIO: reset GPIO state 0 and count_reset 204[0m
+[0;32mI (6329) GPIO: reset GPIO state 0 and count_reset 205[0m
+[0;32mI (6339) GPIO: reset GPIO state 0 and count_reset 206[0m
+[0;32mI (6349) GPIO: reset GPIO state 0 and count_reset 207[0m
+[0;32mI (6359) GPIO: reset GPIO state 0 and count_reset 208[0m
+[0;32mI (6369) GPIO: reset GPIO state 0 and count_reset 209[0m
+[0;32mI (6379) GPIO: reset GPIO state 0 and count_reset 210[0m
+[0;32mI (6389) GPIO: reset GPIO state 0 and count_reset 211[0m
+[0;32mI (6399) GPIO: reset GPIO state 0 and count_reset 212[0m
+[0;32mI (6409) GPIO: reset GPIO state 0 and count_reset 213[0m
+[0;32mI (6419) GPIO: reset GPIO state 0 and count_reset 214[0m
+[0;32mI (6429) GPIO: reset GPIO state 0 and count_reset 215[0m
+[0;32mI (6439) GPIO: reset GPIO state 0 and count_reset 216[0m
+[0;32mI (6449) GPIO: reset GPIO state 0 and count_reset 217[0m
+[0;32mI (6459) GPIO: reset GPIO state 0 and count_reset 218[0m
+[0;32mI (6469) GPIO: reset GPIO state 0 and count_reset 219[0m
+[0;32mI (6479) GPIO: reset GPIO state 0 and count_reset 220[0m
+[0;32mI (6489) GPIO: reset GPIO state 0 and count_reset 221[0m
+[0;32mI (6499) GPIO: reset GPIO state 0 and count_reset 222[0m
+[0;32mI (6509) GPIO: reset GPIO state 0 and count_reset 223[0m
+[0;32mI (6519) GPIO: reset GPIO state 0 and count_reset 224[0m
+[0;32mI (6529) GPIO: reset GPIO state 0 and count_reset 225[0m
+[0;32mI (6539) GPIO: reset GPIO state 0 and count_reset 226[0m
+[0;32mI (6549) GPIO: reset GPIO state 0 and count_reset 227[0m
+[0;32mI (6559) GPIO: reset GPIO state 0 and count_reset 228[0m
+[0;32mI (6569) GPIO: reset GPIO state 0 and count_reset 229[0m
+[0;32mI (6579) GPIO: reset GPIO state 0 and count_reset 230[0m
+[0;32mI (6589) GPIO: reset GPIO state 0 and count_reset 231[0m
+[0;32mI (6599) GPIO: reset GPIO state 0 and count_reset 232[0m
+[0;32mI (6609) GPIO: reset GPIO state 0 and count_reset 233[0m
+[0;32mI (6619) GPIO: reset GPIO state 0 and count_reset 234[0m
+[0;32mI (6629) wifi:wifi driver task: 3ffc3b1c, prio:23, stack:6656, core=0[0m
+[0;32mI (6629) GPIO: reset GPIO state 0 and count_reset 235[0m
+[0;32mI (6639) GPIO: reset GPIO state 0 and count_reset 236[0m
+[0;32mI (6639) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (6639) wifi:wifi certification version: v7.0[0m
+[0;32mI (6639) wifi:config NVS flash: enabled[0m
+[0;32mI (6639) wifi:config nano formatting: disabled[0m
+[0;32mI (6649) GPIO: reset GPIO state 0 and count_reset 237[0m
+[0;32mI (6649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (6659) GPIO: reset GPIO state 0 and count_reset 238[0m
+[0;32mI (6659) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (6669) wifi:Init management short buffer num: 32[0m
+[0;32mI (6669) GPIO: reset GPIO state 0 and count_reset 239[0m
+[0;32mI (6669) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (6679) GPIO: reset GPIO state 0 and count_reset 240[0m
+[0;32mI (6679) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (6689) GPIO: reset GPIO state 0 and count_reset 241[0m
+[0;32mI (6689) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6699) GPIO: reset GPIO state 0 and count_reset 242[0m
+[0;32mI (6699) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6709) GPIO: reset GPIO state 0 and count_reset 243[0m
+[0;32mI (6709) wifi_init: rx ba win: 6[0m
+[0;32mI (6709) wifi_init: accept mbox: 6[0m
+[0;32mI (6719) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6719) GPIO: reset GPIO state 0 and count_reset 244[0m
+[0;32mI (6719) wifi_init: udp mbox: 6[0m
+[0;32mI (6729) GPIO: reset GPIO state 0 and count_reset 245[0m
+[0;32mI (6729) wifi_init: tcp mbox: 6[0m
+[0;32mI (6729) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6739) GPIO: reset GPIO state 0 and count_reset 246[0m
+[0;32mI (6739) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6749) wifi_init: tcp mss: 1440[0m
+[0;32mI (6749) GPIO: reset GPIO state 0 and count_reset 247[0m
+[0;32mI (6749) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6759) GPIO: reset GPIO state 0 and count_reset 248[0m
+[0;32mI (6759) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6769) GPIO: reset GPIO state 0 and count_reset 249[0m
+[0;32mI (6769) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (6779) GPIO: reset GPIO state 0 and count_reset 250[0m
+[0;32mI (6789) GPIO: reset GPIO state 0 and count_reset 251[0m
+[0;32mI (6799) GPIO: reset GPIO state 0 and count_reset 252[0m
+[0;32mI (6809) GPIO: reset GPIO state 0 and count_reset 253[0m
+[0;32mI (6819) GPIO: reset GPIO state 0 and count_reset 254[0m
+[0;32mI (6829) GPIO: reset GPIO state 0 and count_reset 255[0m
+[0;32mI (6839) GPIO: reset GPIO state 0 and count_reset 256[0m
+[0;32mI (6849) GPIO: reset GPIO state 0 and count_reset 257[0m
+[0;32mI (6859) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (6859) GPIO: reset GPIO state 0 and count_reset 258[0m
+[0;32mI (6869) GPIO: reset GPIO state 0 and count_reset 259[0m
+[0;32mI (6879) GPIO: reset GPIO state 0 and count_reset 260[0m
+[0;32mI (6919) GPIO: reset GPIO state 0 and count_reset 261[0m
+[0;32mI (6929) GPIO: reset GPIO state 0 and count_reset 262[0m
+[0;32mI (6939) GPIO: reset GPIO state 0 and count_reset 263[0m
+[0;32mI (6939) wifi:mode : softAP (f4:65:0b:54:5f:6d)[0m
+[0;32mI (6939) wifi:Total power save buffer number: 16[0m
+[0;32mI (6939) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6939) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6949) GPIO: reset GPIO state 0 and count_reset 264[0m
+[0;32mI (6949) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (6949) HTTP: SoftAP started with SSID: onwords-4ltc0001[0m
+[0;32mI (6969) GPIO: reset GPIO state 0 and count_reset 265[0m
+[0;32mI (6969) HTTP: HTTP Server started at 192.168.4.1:8182[0m
+[0;32mI (6969) main_task: Returned from app_main()[0m
+[0;32mI (6979) GPIO: reset GPIO state 0 and count_reset 266[0m
+[0;32mI (6989) GPIO: reset GPIO state 0 and count_reset 267[0m
+[0;32mI (6999) GPIO: reset GPIO state 0 and count_reset 268[0m
+[0;32mI (7009) GPIO: reset GPIO state 0 and count_reset 269[0m
+[0;32mI (7019) GPIO: reset GPIO state 0 and count_reset 270[0m
+[0;32mI (7029) GPIO: reset GPIO state 0 and count_reset 271[0m
+[0;32mI (7039) GPIO: reset GPIO state 0 and count_reset 272[0m
+[0;32mI (7049) GPIO: reset GPIO state 0 and count_reset 273[0m
+[0;32mI (7059) GPIO: reset GPIO state 0 and count_reset 274[0m
+[0;32mI (7069) GPIO: reset GPIO state 0 and count_reset 275[0m
+[0;32mI (7079) GPIO: reset GPIO state 0 and count_reset 276[0m
+[0;32mI (7089) GPIO: reset GPIO state 0 and count_reset 277[0m
+[0;32mI (7099) GPIO: reset GPIO state 0 and count_reset 278[0m
+[0;32mI (7109) GPIO: reset GPIO state 0 and count_reset 279[0m
+[0;32mI (7119) GPIO: reset GPIO state 0 and count_reset 280[0m
+[0;32mI (7129) GPIO: reset GPIO state 0 and count_reset 281[0m
+[0;32mI (7139) GPIO: reset GPIO state 0 and count_reset 282[0m
+[0;32mI (7149) GPIO: reset GPIO state 0 and count_reset 283[0m
+[0;32mI (7159) GPIO: reset GPIO state 0 and count_reset 284[0m
+[0;32mI (7169) GPIO: reset GPIO state 0 and count_reset 285[0m
+[0;32mI (7179) GPIO: reset GPIO state 0 and count_reset 286[0m
+[0;32mI (7189) GPIO: reset GPIO state 0 and count_reset 287[0m
+[0;32mI (7199) GPIO: reset GPIO state 0 and count_reset 288[0m
+[0;32mI (7209) GPIO: reset GPIO state 0 and count_reset 289[0m
+[0;32mI (7219) GPIO: reset GPIO state 0 and count_reset 290[0m
+[0;32mI (7229) GPIO: reset GPIO state 0 and count_reset 291[0m
+[0;32mI (7239) GPIO: reset GPIO state 0 and count_reset 292[0m
+[0;32mI (7249) GPIO: reset GPIO state 0 and count_reset 293[0m
+[0;32mI (7259) GPIO: reset GPIO state 0 and count_reset 294[0m
+[0;32mI (7269) GPIO: reset GPIO state 0 and count_reset 295[0m
+[0;32mI (7279) GPIO: reset GPIO state 0 and count_reset 296[0m
+[0;32mI (7289) GPIO: reset GPIO state 0 and count_reset 297[0m
+[0;32mI (7299) GPIO: reset GPIO state 0 and count_reset 298[0m
+[0;32mI (7309) GPIO: reset GPIO state 0 and count_reset 299[0m
+[0;32mI (7319) GPIO: reset GPIO state 0 and count_reset 300[0m
+[0;32mI (7329) GPIO: reset GPIO state 0 and count_reset 301[0m
+[0;32mI (7339) GPIO: reset GPIO state 0 and count_reset 302[0m
+[0;32mI (7349) GPIO: reset GPIO state 0 and count_reset 303[0m
+[0;32mI (7359) GPIO: reset GPIO state 0 and count_reset 304[0m
+[0;32mI (7369) GPIO: reset GPIO state 0 and count_reset 305[0m
+[0;32mI (7379) GPIO: reset GPIO state 0 and count_reset 306[0m
+[0;32mI (7389) GPIO: reset GPIO state 0 and count_reset 307[0m
+[0;32mI (7399) GPIO: reset GPIO state 0 and count_reset 308[0m
+[0;32mI (7409) GPIO: reset GPIO state 0 and count_reset 309[0m
+[0;32mI (7419) GPIO: reset GPIO state 0 and count_reset 310[0m
+[0;32mI (7429) GPIO: reset GPIO state 0 and count_reset 311[0m
+[0;32mI (7439) GPIO: reset GPIO state 0 and count_reset 312[0m
+[0;32mI (7449) GPIO: reset GPIO state 0 and count_reset 313[0m
+[0;32mI (7459) GPIO: reset GPIO state 0 and count_reset 314[0m
+[0;32mI (7469) GPIO: reset GPIO state 0 and count_reset 315[0m
+[0;32mI (7479) GPIO: reset GPIO state 0 and count_reset 316[0m
+[0;32mI (7489) GPIO: reset GPIO state 0 and count_reset 317[0m
+[0;32mI (7499) GPIO: reset GPIO state 0 and count_reset 318[0m
+[0;32mI (7509) GPIO: reset GPIO state 0 and count_reset 319[0m
+[0;32mI (7519) GPIO: reset GPIO state 0 and count_reset 320[0m
+[0;32mI (7529) GPIO: reset GPIO state 0 and count_reset 321[0m
+[0;32mI (7539) GPIO: reset GPIO state 0 and count_reset 322[0m
+[0;32mI (7549) GPIO: reset GPIO state 0 and count_reset 323[0m
+[0;32mI (7559) GPIO: reset GPIO state 0 and count_reset 324[0m
+[0;32mI (7569) GPIO: reset GPIO state 0 and count_reset 325[0m
+[0;32mI (7579) GPIO: reset GPIO state 0 and count_reset 326[0m
+[0;32mI (7589) GPIO: reset GPIO state 0 and count_reset 327[0m
+[0;32mI (7599) GPIO: reset GPIO state 0 and count_reset 328[0m
+[0;32mI (7609) GPIO: reset GPIO state 0 and count_reset 329[0m
+[0;32mI (7619) GPIO: reset GPIO state 0 and count_reset 330[0m
+[0;32mI (7629) GPIO: reset GPIO state 0 and count_reset 331[0m
+[0;32mI (7639) GPIO: reset GPIO state 0 and count_reset 332[0m
+[0;32mI (7649) GPIO: reset GPIO state 0 and count_reset 333[0m
+[0;32mI (7659) GPIO: reset GPIO state 0 and count_reset 334[0m
+[0;32mI (7669) GPIO: reset GPIO state 0 and count_reset 335[0m
+[0;32mI (7679) GPIO: reset GPIO state 0 and count_reset 336[0m
+[0;32mI (7689) GPIO: reset GPIO state 0 and count_reset 337[0m
+[0;32mI (7699) GPIO: reset GPIO state 0 and count_reset 338[0m
+[0;32mI (7709) GPIO: reset GPIO state 0 and count_reset 339[0m
+[0;32mI (7719) GPIO: reset GPIO state 0 and count_reset 340[0m
+[0;32mI (7729) GPIO: reset GPIO state 0 and count_reset 341[0m
+[0;32mI (7739) GPIO: reset GPIO state 0 and count_reset 342[0m
+[0;32mI (7749) GPIO: reset GPIO state 0 and count_reset 343[0m
+[0;32mI (7759) GPIO: reset GPIO state 0 and count_reset 344[0m
+[0;32mI (7769) GPIO: reset GPIO state 0 and count_reset 345[0m
+[0;32mI (7779) GPIO: reset GPIO state 0 and count_reset 346[0m
+[0;32mI (7789) GPIO: reset GPIO state 0 and count_reset 347[0m
+[0;32mI (7799) GPIO: reset GPIO state 0 and count_reset 348[0m
+[0;32mI (7809) GPIO: reset GPIO state 0 and count_reset 349[0m
+[0;32mI (7819) GPIO: reset GPIO state 0 and count_reset 350[0m
+[0;32mI (7829) GPIO: reset GPIO state 0 and count_reset 351[0m
+[0;32mI (7839) GPIO: reset GPIO state 0 and count_reset 352[0m
+[0;32mI (7849) GPIO: reset GPIO state 0 and count_reset 353[0m
+[0;32mI (7859) GPIO: reset GPIO state 0 and count_reset 354[0m
+[0;32mI (7869) GPIO: reset GPIO state 0 and count_reset 355[0m
+[0;32mI (7879) GPIO: reset GPIO state 0 and count_reset 356[0m
+[0;32mI (7889) GPIO: reset GPIO state 0 and count_reset 357[0m
+[0;32mI (7899) GPIO: reset GPIO state 0 and count_reset 358[0m
+[0;32mI (7909) GPIO: reset GPIO state 0 and count_reset 359[0m
+[0;32mI (7919) GPIO: reset GPIO state 0 and count_reset 360[0m
+[0;32mI (7929) GPIO: reset GPIO state 0 and count_reset 361[0m
+[0;32mI (7939) GPIO: reset GPIO state 0 and count_reset 362[0m
+[0;32mI (7949) GPIO: reset GPIO state 0 and count_reset 363[0m
+[0;32mI (7959) GPIO: reset GPIO state 0 and count_reset 364[0m
+[0;32mI (7969) GPIO: reset GPIO state 0 and count_reset 365[0m
+[0;32mI (7979) GPIO: reset GPIO state 0 and count_reset 366[0m
+[0;32mI (7989) GPIO: reset GPIO state 0 and count_reset 367[0m
+[0;32mI (7999) GPIO: reset GPIO state 0 and count_reset 368[0m
+[0;32mI (8009) GPIO: reset GPIO state 0 and count_reset 369[0m
+[0;32mI (8019) GPIO: reset GPIO state 0 and count_reset 370[0m
+[0;32mI (8029) GPIO: reset GPIO state 0 and count_reset 371[0m
+[0;32mI (8039) GPIO: reset GPIO state 0 and count_reset 372[0m
+[0;32mI (8049) GPIO: reset GPIO state 0 and count_reset 373[0m
+[0;32mI (8059) GPIO: reset GPIO state 0 and count_reset 374[0m
+[0;32mI (8069) GPIO: reset GPIO state 0 and count_reset 375[0m
+[0;32mI (8079) GPIO: reset GPIO state 0 and count_reset 376[0m
+[0;32mI (8089) GPIO: reset GPIO state 0 and count_reset 377[0m
+[0;32mI (8099) GPIO: reset GPIO state 0 and count_reset 378[0m
+[0;32mI (8109) GPIO: reset GPIO state 0 and count_reset 379[0m
+[0;32mI (8119) GPIO: reset GPIO state 0 and count_reset 380[0m
+[0;32mI (8129) GPIO: reset GPIO state 0 and count_reset 381[0m
+[0;32mI (8139) GPIO: reset GPIO state 0 and count_reset 382[0m
+[0;32mI (8149) GPIO: reset GPIO state 0 and count_reset 383[0m
+[0;32mI (8159) GPIO: reset GPIO state 0 and count_reset 384[0m
+[0;32mI (8169) GPIO: reset GPIO state 0 and count_reset 385[0m
+[0;32mI (8179) GPIO: reset GPIO state 0 and count_reset 386[0m
+[0;32mI (8189) GPIO: reset GPIO state 0 and count_reset 387[0m
+[0;32mI (8199) GPIO: reset GPIO state 0 and count_reset 388[0m
+[0;32mI (8209) GPIO: reset GPIO state 0 and count_reset 389[0m
+[0;32mI (8219) GPIO: reset GPIO state 0 and count_reset 390[0m
+[0;32mI (8229) GPIO: reset GPIO state 0 and count_reset 391[0m
+[0;32mI (8239) GPIO: reset GPIO state 0 and count_reset 392[0m
+[0;32mI (8249) GPIO: reset GPIO state 0 and count_reset 393[0m
+[0;32mI (8259) GPIO: reset GPIO state 0 and count_reset 394[0m
+[0;32mI (8269) GPIO: reset GPIO state 0 and count_reset 395[0m
+[0;32mI (8279) GPIO: reset GPIO state 0 and count_reset 396[0m
+[0;32mI (8289) GPIO: reset GPIO state 0 and count_reset 397[0m
+[0;32mI (8299) GPIO: reset GPIO state 0 and count_reset 398[0m
+[0;32mI (8309) GPIO: reset GPIO state 0 and count_reset 399[0m
+[0;32mI (8319) GPIO: reset GPIO state 0 and count_reset 400[0m
+[0;32mI (8329) GPIO: reset GPIO state 0 and count_reset 401[0m
+[0;32mI (8339) GPIO: reset GPIO state 0 and count_reset 402[0m
+[0;32mI (8349) GPIO: reset GPIO state 0 and count_reset 403[0m
+[0;32mI (8359) GPIO: reset GPIO state 0 and count_reset 404[0m
+[0;32mI (8369) GPIO: reset GPIO state 0 and count_reset 405[0m
+[0;32mI (8379) GPIO: reset GPIO state 0 and count_reset 406[0m
+[0;32mI (8389) GPIO: reset GPIO state 0 and count_reset 407[0m
+[0;32mI (8399) GPIO: reset GPIO state 0 and count_reset 408[0m
+[0;32mI (8409) GPIO: reset GPIO state 0 and count_reset 409[0m
+[0;32mI (8419) GPIO: reset GPIO state 0 and count_reset 410[0m
+[0;32mI (8429) GPIO: reset GPIO state 0 and count_reset 411[0m
+[0;32mI (8439) GPIO: reset GPIO state 0 and count_reset 412[0m
+[0;32mI (8449) GPIO: reset GPIO state 0 and count_reset 413[0m
+[0;32mI (8459) GPIO: reset GPIO state 0 and count_reset 414[0m
+[0;32mI (8469) GPIO: reset GPIO state 0 and count_reset 415[0m
+[0;32mI (8479) GPIO: reset GPIO state 0 and count_reset 416[0m
+[0;32mI (8489) GPIO: reset GPIO state 0 and count_reset 417[0m
+[0;32mI (8499) GPIO: reset GPIO state 0 and count_reset 418[0m
+[0;32mI (8509) GPIO: reset GPIO state 0 and count_reset 419[0m
+[0;32mI (8519) GPIO: reset GPIO state 0 and count_reset 420[0m
+[0;32mI (8529) GPIO: reset GPIO state 0 and count_reset 421[0m
+[0;32mI (8539) GPIO: reset GPIO state 0 and count_reset 422[0m
+[0;32mI (8549) GPIO: reset GPIO state 0 and count_reset 423[0m
+[0;32mI (8559) GPIO: reset GPIO state 0 and count_reset 424[0m
+[0;32mI (8569) GPIO: reset GPIO state 0 and count_reset 425[0m
+[0;32mI (8579) GPIO: reset GPIO state 0 and count_reset 426[0m
+[0;32mI (8589) GPIO: reset GPIO state 0 and count_reset 427[0m
+[0;32mI (8599) GPIO: reset GPIO state 0 and count_reset 428[0m
+[0;32mI (8609) GPIO: reset GPIO state 0 and count_reset 429[0m
+[0;32mI (8619) GPIO: reset GPIO state 0 and count_reset 430[0m
+[0;32mI (8629) GPIO: reset GPIO state 0 and count_reset 431[0m
+[0;32mI (8639) GPIO: reset GPIO state 0 and count_reset 432[0m
+[0;32mI (8649) GPIO: reset GPIO state 0 and count_reset 433[0m
+[0;32mI (8659) GPIO: reset GPIO state 0 and count_reset 434[0m
+[0;32mI (8669) GPIO: reset GPIO state 0 and count_reset 435[0m
+[0;32mI (8679) GPIO: reset GPIO state 0 and count_reset 436[0m
+[0;32mI (8689) GPIO: reset GPIO state 0 and count_reset 437[0m
+[0;32mI (8699) GPIO: reset GPIO state 0 and count_reset 438[0m
+[0;32mI (8709) GPIO: reset GPIO state 0 and count_reset 439[0m
+[0;32mI (8719) GPIO: reset GPIO state 0 and count_reset 440[0m
+[0;32mI (8729) GPIO: reset GPIO state 0 and count_reset 441[0m
+[0;32mI (8739) GPIO: reset GPIO state 0 and count_reset 442[0m
+[0;32mI (8749) GPIO: reset GPIO state 0 and count_reset 443[0m
+[0;32mI (8759) GPIO: reset GPIO state 0 and count_reset 444[0m
+[0;32mI (8769) GPIO: reset GPIO state 0 and count_reset 445[0m
+[0;32mI (8779) GPIO: reset GPIO state 0 and count_reset 446[0m
+[0;32mI (8789) GPIO: reset GPIO state 0 and count_reset 447[0m
+[0;32mI (8799) GPIO: reset GPIO state 0 and count_reset 448[0m
+[0;32mI (8809) GPIO: reset GPIO state 0 and count_reset 449[0m
+[0;32mI (8819) GPIO: reset GPIO state 0 and count_reset 450[0m
+[0;32mI (8829) GPIO: reset GPIO state 0 and count_reset 451[0m
+[0;32mI (8839) GPIO: reset GPIO state 0 and count_reset 452[0m
+[0;32mI (8849) GPIO: reset GPIO state 0 and count_reset 453[0m
+[0;32mI (8859) GPIO: reset GPIO state 0 and count_reset 454[0m
+[0;32mI (8869) GPIO: reset GPIO state 0 and count_reset 455[0m
+[0;32mI (8879) GPIO: reset GPIO state 0 and count_reset 456[0m
+[0;32mI (8889) GPIO: reset GPIO state 0 and count_reset 457[0m
+[0;32mI (8899) GPIO: reset GPIO state 0 and count_reset 458[0m
+[0;32mI (8909) GPIO: reset GPIO state 0 and count_reset 459[0m
+[0;32mI (8919) GPIO: reset GPIO state 0 and count_reset 460[0m
+[0;32mI (8929) GPIO: reset GPIO state 0 and count_reset 461[0m
+[0;32mI (8939) GPIO: reset GPIO state 0 and count_reset 462[0m
+[0;32mI (8949) GPIO: reset GPIO state 0 and count_reset 463[0m
+[0;32mI (8959) GPIO: reset GPIO state 0 and count_reset 464[0m
+[0;32mI (8969) GPIO: reset GPIO state 0 and count_reset 465[0m
+[0;32mI (8979) GPIO: reset GPIO state 0 and count_reset 466[0m
+[0;32mI (8989) GPIO: reset GPIO state 0 and count_reset 467[0m
+[0;32mI (8999) GPIO: reset GPIO state 0 and count_reset 468[0m
+[0;32mI (9009) GPIO: reset GPIO state 0 and count_reset 469[0m
+[0;32mI (9019) GPIO: reset GPIO state 0 and count_reset 470[0m
+[0;32mI (9029) GPIO: reset GPIO state 0 and count_reset 471[0m
+[0;32mI (9039) GPIO: reset GPIO state 0 and count_reset 472[0m
+[0;32mI (9049) GPIO: reset GPIO state 0 and count_reset 473[0m
+[0;32mI (9059) GPIO: reset GPIO state 0 and count_reset 474[0m
+[0;32mI (9069) GPIO: reset GPIO state 0 and count_reset 475[0m
+[0;32mI (9079) GPIO: reset GPIO state 0 and count_reset 476[0m
+[0;32mI (9089) GPIO: reset GPIO state 0 and count_reset 477[0m
+[0;32mI (9099) GPIO: reset GPIO state 0 and count_reset 478[0m
+[0;32mI (9109) GPIO: reset GPIO state 0 and count_reset 479[0m
+[0;32mI (9119) GPIO: reset GPIO state 0 and count_reset 480[0m
+[0;32mI (9129) GPIO: reset GPIO state 0 and count_reset 481[0m
+[0;32mI (9139) GPIO: reset GPIO state 0 and count_reset 482[0m
+[0;32mI (9149) GPIO: reset GPIO state 0 and count_reset 483[0m
+[0;32mI (9159) GPIO: reset GPIO state 0 and count_reset 484[0m
+[0;32mI (9169) GPIO: reset GPIO state 0 and count_reset 485[0m
+[0;32mI (9179) GPIO: reset GPIO state 0 and count_reset 486[0m
+[0;32mI (9189) GPIO: reset GPIO state 0 and count_reset 487[0m
+[0;32mI (9199) GPIO: reset GPIO state 0 and count_reset 488[0m
+[0;32mI (9209) GPIO: reset GPIO state 0 and count_reset 489[0m
+[0;32mI (9219) GPIO: reset GPIO state 0 and count_reset 490[0m
+[0;32mI (9229) GPIO: reset GPIO state 0 and count_reset 491[0m
+[0;32mI (9239) GPIO: reset GPIO state 0 and count_reset 492[0m
+[0;32mI (9249) GPIO: reset GPIO state 0 and count_reset 493[0m
+[0;32mI (9259) GPIO: reset GPIO state 0 and count_reset 494[0m
+[0;32mI (9269) GPIO: reset GPIO state 0 and count_reset 495[0m
+[0;32mI (9279) GPIO: reset GPIO state 0 and count_reset 496[0m
+[0;32mI (9289) GPIO: reset GPIO state 0 and count_reset 497[0m
+[0;32mI (9299) GPIO: reset GPIO state 0 and count_reset 498[0m
+[0;32mI (9309) GPIO: reset GPIO state 0 and count_reset 499[0m
+[0;32mI (9309) MQTT_HANDLER:  hard-reset [0m
+[0;32mI (9309) MQTT_HANDLER: hard reset {"id":"4ltc0001"}[0m
+[1;31mE (9309) mqtt_client: Client was not initialized[0m
+[0;32mI (9309) MQTT_HANDLER: hard reset publish successful, msg_id=-1[0m
+[0;33mW (9819) NVS: SSID not found.[0m
+[0;33mW (9819) NVS: Password not found.[0m
+[0;32mI (10819) wifi:flush txq[0m
+[0;32mI (10819) wifi:stop sw txq[0m
+[0;32mI (10819) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (503) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (508) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (599) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (599) GPIO: GPIO Initialization![0m
+[0;32mI (599) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (609) ESP_APP: UART initialized[0m
+[0;32mI (609) NVS: WiFi credentials found. SSID: , connecting......[0m
+[0;32mI (609) ESP_APP: WiFi credentials not found, starting SoftAP + HTTP Server...[0m
+[0;32mI (619) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (639) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (659) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (679) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (699) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (719) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (739) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (759) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (779) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (799) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (819) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (839) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (859) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (879) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (899) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (919) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (939) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (959) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (979) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (999) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1019) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1039) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1059) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1079) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1099) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1119) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1139) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1159) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1179) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1199) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1219) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1239) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1259) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1279) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1299) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1319) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1339) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1359) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1379) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1399) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1419) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1439) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1459) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1479) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1499) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1519) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1539) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1579) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1599) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1619) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1639) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1659) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1679) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1699) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1719) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1739) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1759) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1779) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1799) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1819) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1839) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1859) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1879) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1899) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1919) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1939) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1959) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1979) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1999) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2019) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2039) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2059) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2079) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (2089) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (2099) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (2109) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (2119) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (2129) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (2139) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (2149) GPIO: reset GPIO state 0 and count_reset 7[0m
+[0;32mI (2159) GPIO: reset GPIO state 0 and count_reset 8[0m
+[0;32mI (2169) GPIO: reset GPIO state 0 and count_reset 9[0m
+[0;32mI (2179) GPIO: reset GPIO state 0 and count_reset 10[0m
+[0;32mI (2189) GPIO: reset GPIO state 0 and count_reset 11[0m
+[0;32mI (2199) GPIO: reset GPIO state 0 and count_reset 12[0m
+[0;32mI (2209) GPIO: reset GPIO state 0 and count_reset 13[0m
+[0;32mI (2219) GPIO: reset GPIO state 0 and count_reset 14[0m
+[0;32mI (2229) GPIO: reset GPIO state 0 and count_reset 15[0m
+[0;32mI (2239) GPIO: reset GPIO state 0 and count_reset 16[0m
+[0;32mI (2249) GPIO: reset GPIO state 0 and count_reset 17[0m
+[0;32mI (2259) GPIO: reset GPIO state 0 and count_reset 18[0m
+[0;32mI (2269) GPIO: reset GPIO state 0 and count_reset 19[0m
+[0;32mI (2279) GPIO: reset GPIO state 0 and count_reset 20[0m
+[0;32mI (2289) GPIO: reset GPIO state 0 and count_reset 21[0m
+[0;32mI (2299) GPIO: reset GPIO state 0 and count_reset 22[0m
+[0;32mI (2309) GPIO: reset GPIO state 0 and count_reset 23[0m
+[0;32mI (2319) GPIO: reset GPIO state 0 and count_reset 24[0m
+[0;32mI (2329) GPIO: reset GPIO state 0 and count_reset 25[0m
+[0;32mI (2339) GPIO: reset GPIO state 0 and count_reset 26[0m
+[0;32mI (2349) GPIO: reset GPIO state 0 and count_reset 27[0m
+[0;32mI (2359) GPIO: reset GPIO state 0 and count_reset 28[0m
+[0;32mI (2369) GPIO: reset GPIO state 0 and count_reset 29[0m
+[0;32mI (2379) GPIO: reset GPIO state 0 and count_reset 30[0m
+[0;32mI (2389) GPIO: reset GPIO state 0 and count_reset 31[0m
+[0;32mI (2399) GPIO: reset GPIO state 0 and count_reset 32[0m
+[0;32mI (2409) GPIO: reset GPIO state 0 and count_reset 33[0m
+[0;32mI (2419) GPIO: reset GPIO state 0 and count_reset 34[0m
+[0;32mI (2429) GPIO: reset GPIO state 0 and count_reset 35[0m
+[0;32mI (2439) GPIO: reset GPIO state 0 and count_reset 36[0m
+[0;32mI (2449) GPIO: reset GPIO state 0 and count_reset 37[0m
+[0;32mI (2459) GPIO: reset GPIO state 0 and count_reset 38[0m
+[0;32mI (2469) GPIO: reset GPIO state 0 and count_reset 39[0m
+[0;32mI (2479) GPIO: reset GPIO state 0 and count_reset 40[0m
+[0;32mI (2489) GPIO: reset GPIO state 0 and count_reset 41[0m
+[0;32mI (2499) GPIO: reset GPIO state 0 and count_reset 42[0m
+[0;32mI (2509) GPIO: reset GPIO state 0 and count_reset 43[0m
+[0;32mI (2519) GPIO: reset GPIO state 0 and count_reset 44[0m
+[0;32mI (2529) GPIO: reset GPIO state 0 and count_reset 45[0m
+[0;32mI (2539) GPIO: reset GPIO state 0 and count_reset 46[0m
+[0;32mI (2549) GPIO: reset GPIO state 0 and count_reset 47[0m
+[0;32mI (2559) GPIO: reset GPIO state 0 and count_reset 48[0m
+[0;32mI (2569) GPIO: reset GPIO state 0 and count_reset 49[0m
+[0;32mI (2579) GPIO: reset GPIO state 0 and count_reset 50[0m
+[0;32mI (2589) GPIO: reset GPIO state 0 and count_reset 51[0m
+[0;32mI (2599) GPIO: reset GPIO state 0 and count_reset 52[0m
+[0;32mI (2609) GPIO: reset GPIO state 0 and count_reset 53[0m
+[0;32mI (2619) GPIO: reset GPIO state 0 and count_reset 54[0m
+[0;32mI (2629) GPIO: reset GPIO state 0 and count_reset 55[0m
+[0;32mI (2639) GPIO: reset GPIO state 0 and count_reset 56[0m
+[0;32mI (2649) GPIO: reset GPIO state 0 and count_reset 57[0m
+[0;32mI (2659) GPIO: reset GPIO state 0 and count_reset 58[0m
+[0;32mI (2669) GPIO: reset GPIO state 0 and count_reset 59[0m
+[0;32mI (2679) GPIO: reset GPIO state 0 and count_reset 60[0m
+[0;32mI (2689) GPIO: reset GPIO state 0 and count_reset 61[0m
+[0;32mI (2699) GPIO: reset GPIO state 0 and count_reset 62[0m
+[0;32mI (2709) GPIO: reset GPIO state 0 and count_reset 63[0m
+[0;32mI (2719) GPIO: reset GPIO state 0 and count_reset 64[0m
+[0;32mI (2729) GPIO: reset GPIO state 0 and count_reset 65[0m
+[0;32mI (2739) GPIO: reset GPIO state 0 and count_reset 66[0m
+[0;32mI (2749) GPIO: reset GPIO state 0 and count_reset 67[0m
+[0;32mI (2759) GPIO: reset GPIO state 0 and count_reset 68[0m
+[0;32mI (2769) GPIO: reset GPIO state 0 and count_reset 69[0m
+[0;32mI (2779) GPIO: reset GPIO state 0 and count_reset 70[0m
+[0;32mI (2789) GPIO: reset GPIO state 0 and count_reset 71[0m
+[0;32mI (2799) GPIO: reset GPIO state 0 and count_reset 72[0m
+[0;32mI (2809) GPIO: reset GPIO state 0 and count_reset 73[0m
+[0;32mI (2819) GPIO: reset GPIO state 0 and count_reset 74[0m
+[0;32mI (2829) GPIO: reset GPIO state 0 and count_reset 75[0m
+[0;32mI (2839) GPIO: reset GPIO state 0 and count_reset 76[0m
+[0;32mI (2849) GPIO: reset GPIO state 0 and count_reset 77[0m
+[0;32mI (2859) GPIO: reset GPIO state 0 and count_reset 78[0m
+[0;32mI (2869) GPIO: reset GPIO state 0 and count_reset 79[0m
+[0;32mI (2879) GPIO: reset GPIO state 0 and count_reset 80[0m
+[0;32mI (2889) GPIO: reset GPIO state 0 and count_reset 81[0m
+[0;32mI (2899) GPIO: reset GPIO state 0 and count_reset 82[0m
+[0;32mI (2909) GPIO: reset GPIO state 0 and count_reset 83[0m
+[0;32mI (2919) GPIO: reset GPIO state 0 and count_reset 84[0m
+[0;32mI (2929) GPIO: reset GPIO state 0 and count_reset 85[0m
+[0;32mI (2939) GPIO: reset GPIO state 0 and count_reset 86[0m
+[0;32mI (2949) GPIO: reset GPIO state 0 and count_reset 87[0m
+[0;32mI (2959) GPIO: reset GPIO state 0 and count_reset 88[0m
+[0;32mI (2969) GPIO: reset GPIO state 0 and count_reset 89[0m
+[0;32mI (2979) GPIO: reset GPIO state 0 and count_reset 90[0m
+[0;32mI (2989) GPIO: reset GPIO state 0 and count_reset 91[0m
+[0;32mI (2999) GPIO: reset GPIO state 0 and count_reset 92[0m
+[0;32mI (3009) GPIO: reset GPIO state 0 and count_reset 93[0m
+[0;32mI (3019) GPIO: reset GPIO state 0 and count_reset 94[0m
+[0;32mI (3029) GPIO: reset GPIO state 0 and count_reset 95[0m
+[0;32mI (3039) GPIO: reset GPIO state 0 and count_reset 96[0m
+[0;32mI (3049) GPIO: reset GPIO state 0 and count_reset 97[0m
+[0;32mI (3059) GPIO: reset GPIO state 0 and count_reset 98[0m
+[0;32mI (3069) GPIO: reset GPIO state 0 and count_reset 99[0m
+[0;32mI (3079) GPIO: reset GPIO state 0 and count_reset 100[0m
+[0;32mI (3089) GPIO: reset GPIO state 0 and count_reset 101[0m
+[0;32mI (3099) GPIO: reset GPIO state 0 and count_reset 102[0m
+[0;32mI (3109) GPIO: reset GPIO state 0 and count_reset 103[0m
+[0;32mI (3119) GPIO: reset GPIO state 0 and count_reset 104[0m
+[0;32mI (3129) GPIO: reset GPIO state 0 and count_reset 105[0m
+[0;32mI (3139) GPIO: reset GPIO state 0 and count_reset 106[0m
+[0;32mI (3149) GPIO: reset GPIO state 0 and count_reset 107[0m
+[0;32mI (3159) GPIO: reset GPIO state 0 and count_reset 108[0m
+[0;32mI (3169) GPIO: reset GPIO state 0 and count_reset 109[0m
+[0;32mI (3179) GPIO: reset GPIO state 0 and count_reset 110[0m
+[0;32mI (3189) GPIO: reset GPIO state 0 and count_reset 111[0m
+[0;32mI (3199) GPIO: reset GPIO state 0 and count_reset 112[0m
+[0;32mI (3209) GPIO: reset GPIO state 0 and count_reset 113[0m
+[0;32mI (3219) GPIO: reset GPIO state 0 and count_reset 114[0m
+[0;32mI (3229) GPIO: reset GPIO state 0 and count_reset 115[0m
+[0;32mI (3239) GPIO: reset GPIO state 0 and count_reset 116[0m
+[0;32mI (3249) GPIO: reset GPIO state 0 and count_reset 117[0m
+[0;32mI (3259) GPIO: reset GPIO state 0 and count_reset 118[0m
+[0;32mI (3269) GPIO: reset GPIO state 0 and count_reset 119[0m
+[0;32mI (3279) GPIO: reset GPIO state 0 and count_reset 120[0m
+[0;32mI (3289) GPIO: reset GPIO state 0 and count_reset 121[0m
+[0;32mI (3299) GPIO: reset GPIO state 0 and count_reset 122[0m
+[0;32mI (3309) GPIO: reset GPIO state 0 and count_reset 123[0m
+[0;32mI (3319) GPIO: reset GPIO state 0 and count_reset 124[0m
+[0;32mI (3329) GPIO: reset GPIO state 0 and count_reset 125[0m
+[0;32mI (3339) GPIO: reset GPIO state 0 and count_reset 126[0m
+[0;32mI (3349) GPIO: reset GPIO state 0 and count_reset 127[0m
+[0;32mI (3359) GPIO: reset GPIO state 0 and count_reset 128[0m
+[0;32mI (3369) GPIO: reset GPIO state 0 and count_reset 129[0m
+[0;32mI (3379) GPIO: reset GPIO state 0 and count_reset 130[0m
+[0;32mI (3389) GPIO: reset GPIO state 0 and count_reset 131[0m
+[0;32mI (3399) GPIO: reset GPIO state 0 and count_reset 132[0m
+[0;32mI (3409) GPIO: reset GPIO state 0 and count_reset 133[0m
+[0;32mI (3419) GPIO: reset GPIO state 0 and count_reset 134[0m
+[0;32mI (3429) GPIO: reset GPIO state 0 and count_reset 135[0m
+[0;32mI (3439) GPIO: reset GPIO state 0 and count_reset 136[0m
+[0;32mI (3449) GPIO: reset GPIO state 0 and count_reset 137[0m
+[0;32mI (3459) GPIO: reset GPIO state 0 and count_reset 138[0m
+[0;32mI (3469) GPIO: reset GPIO state 0 and count_reset 139[0m
+[0;32mI (3479) GPIO: reset GPIO state 0 and count_reset 140[0m
+[0;32mI (3489) GPIO: reset GPIO state 0 and count_reset 141[0m
+[0;32mI (3499) GPIO: reset GPIO state 0 and count_reset 142[0m
+[0;32mI (3509) GPIO: reset GPIO state 0 and count_reset 143[0m
+[0;32mI (3519) GPIO: reset GPIO state 0 and count_reset 144[0m
+[0;32mI (3529) GPIO: reset GPIO state 0 and count_reset 145[0m
+[0;32mI (3539) GPIO: reset GPIO state 0 and count_reset 146[0m
+[0;32mI (3549) GPIO: reset GPIO state 0 and count_reset 147[0m
+[0;32mI (3559) GPIO: reset GPIO state 0 and count_reset 148[0m
+[0;32mI (3569) GPIO: reset GPIO state 0 and count_reset 149[0m
+[0;32mI (3579) GPIO: reset GPIO state 0 and count_reset 150[0m
+[0;32mI (3589) GPIO: reset GPIO state 0 and count_reset 151[0m
+[0;32mI (3599) GPIO: reset GPIO state 0 and count_reset 152[0m
+[0;32mI (3609) GPIO: reset GPIO state 0 and count_reset 153[0m
+[0;32mI (3619) GPIO: reset GPIO state 0 and count_reset 154[0m
+[0;32mI (3629) GPIO: reset GPIO state 0 and count_reset 155[0m
+[0;32mI (3639) GPIO: reset GPIO state 0 and count_reset 156[0m
+[0;32mI (3649) GPIO: reset GPIO state 0 and count_reset 157[0m
+[0;32mI (3659) GPIO: reset GPIO state 0 and count_reset 158[0m
+[0;32mI (3669) GPIO: reset GPIO state 0 and count_reset 159[0m
+[0;32mI (3679) GPIO: reset GPIO state 0 and count_reset 160[0m
+[0;32mI (3689) GPIO: reset GPIO state 0 and count_reset 161[0m
+[0;32mI (3699) GPIO: reset GPIO state 0 and count_reset 162[0m
+[0;32mI (3709) GPIO: reset GPIO state 0 and count_reset 163[0m
+[0;32mI (3719) GPIO: reset GPIO state 0 and count_reset 164[0m
+[0;32mI (3729) GPIO: reset GPIO state 0 and count_reset 165[0m
+[0;32mI (3739) GPIO: reset GPIO state 0 and count_reset 166[0m
+[0;32mI (3749) GPIO: reset GPIO state 0 and count_reset 167[0m
+[0;32mI (3759) GPIO: reset GPIO state 0 and count_reset 168[0m
+[0;32mI (3769) GPIO: reset GPIO state 0 and count_reset 169[0m
+[0;32mI (3779) GPIO: reset GPIO state 0 and count_reset 170[0m
+[0;32mI (3789) GPIO: reset GPIO state 0 and count_reset 171[0m
+[0;32mI (3799) GPIO: reset GPIO state 0 and count_reset 172[0m
+[0;32mI (3809) GPIO: reset GPIO state 0 and count_reset 173[0m
+[0;32mI (3819) GPIO: reset GPIO state 0 and count_reset 174[0m
+[0;32mI (3829) GPIO: reset GPIO state 0 and count_reset 175[0m
+[0;32mI (3839) GPIO: reset GPIO state 0 and count_reset 176[0m
+[0;32mI (3849) GPIO: reset GPIO state 0 and count_reset 177[0m
+[0;32mI (3859) GPIO: reset GPIO state 0 and count_reset 178[0m
+[0;32mI (3869) GPIO: reset GPIO state 0 and count_reset 179[0m
+[0;32mI (3879) GPIO: reset GPIO state 0 and count_reset 180[0m
+[0;32mI (3889) GPIO: reset GPIO state 0 and count_reset 181[0m
+[0;32mI (3899) GPIO: reset GPIO state 0 and count_reset 182[0m
+[0;32mI (3909) GPIO: reset GPIO state 0 and count_reset 183[0m
+[0;32mI (3919) GPIO: reset GPIO state 0 and count_reset 184[0m
+[0;32mI (3929) GPIO: reset GPIO state 0 and count_reset 185[0m
+[0;32mI (3939) GPIO: reset GPIO state 0 and count_reset 186[0m
+[0;32mI (3949) GPIO: reset GPIO state 0 and count_reset 187[0m
+[0;32mI (3959) GPIO: reset GPIO state 0 and count_reset 188[0m
+[0;32mI (3969) GPIO: reset GPIO state 0 and count_reset 189[0m
+[0;32mI (3979) GPIO: reset GPIO state 0 and count_reset 190[0m
+[0;32mI (3989) GPIO: reset GPIO state 0 and count_reset 191[0m
+[0;32mI (3999) GPIO: reset GPIO state 0 and count_reset 192[0m
+[0;32mI (4009) GPIO: reset GPIO state 0 and count_reset 193[0m
+[0;32mI (4019) GPIO: reset GPIO state 0 and count_reset 194[0m
+[0;32mI (4029) GPIO: reset GPIO state 0 and count_reset 195[0m
+[0;32mI (4039) GPIO: reset GPIO state 0 and count_reset 196[0m
+[0;32mI (4049) GPIO: reset GPIO state 0 and count_reset 197[0m
+[0;32mI (4059) GPIO: reset GPIO state 0 and count_reset 198[0m
+[0;32mI (4069) GPIO: reset GPIO state 0 and count_reset 199[0m
+[0;32mI (4079) GPIO: reset GPIO state 0 and count_reset 200[0m
+[0;32mI (4089) GPIO: reset GPIO state 0 and count_reset 201[0m
+[0;32mI (4099) GPIO: reset GPIO state 0 and count_reset 202[0m
+[0;32mI (4109) GPIO: reset GPIO state 0 and count_reset 203[0m
+[0;32mI (4119) GPIO: reset GPIO state 0 and count_reset 204[0m
+[0;32mI (4129) GPIO: reset GPIO state 0 and count_reset 205[0m
+[0;32mI (4139) GPIO: reset GPIO state 0 and count_reset 206[0m
+[0;32mI (4149) GPIO: reset GPIO state 0 and count_reset 207[0m
+[0;32mI (4159) GPIO: reset GPIO state 0 and count_reset 208[0m
+[0;32mI (4169) GPIO: reset GPIO state 0 and count_reset 209[0m
+[0;32mI (4179) GPIO: reset GPIO state 0 and count_reset 210[0m
+[0;32mI (4189) GPIO: reset GPIO state 0 and count_reset 211[0m
+[0;32mI (4199) GPIO: reset GPIO state 0 and count_reset 212[0m
+[0;32mI (4209) GPIO: reset GPIO state 0 and count_reset 213[0m
+[0;32mI (4219) GPIO: reset GPIO state 0 and count_reset 214[0m
+[0;32mI (4229) GPIO: reset GPIO state 0 and count_reset 215[0m
+[0;32mI (4239) GPIO: reset GPIO state 0 and count_reset 216[0m
+[0;32mI (4249) GPIO: reset GPIO state 0 and count_reset 217[0m
+[0;32mI (4259) GPIO: reset GPIO state 0 and count_reset 218[0m
+[0;32mI (4269) GPIO: reset GPIO state 0 and count_reset 219[0m
+[0;32mI (4279) GPIO: reset GPIO state 0 and count_reset 220[0m
+[0;32mI (4289) GPIO: reset GPIO state 0 and count_reset 221[0m
+[0;32mI (4299) GPIO: reset GPIO state 0 and count_reset 222[0m
+[0;32mI (4309) GPIO: reset GPIO state 0 and count_reset 223[0m
+[0;32mI (4319) GPIO: reset GPIO state 0 and count_reset 224[0m
+[0;32mI (4329) GPIO: reset GPIO state 0 and count_reset 225[0m
+[0;32mI (4339) GPIO: reset GPIO state 0 and count_reset 226[0m
+[0;32mI (4349) GPIO: reset GPIO state 0 and count_reset 227[0m
+[0;32mI (4359) GPIO: reset GPIO state 0 and count_reset 228[0m
+[0;32mI (4369) GPIO: reset GPIO state 0 and count_reset 229[0m
+[0;32mI (4379) GPIO: reset GPIO state 0 and count_reset 230[0m
+[0;32mI (4389) GPIO: reset GPIO state 0 and count_reset 231[0m
+[0;32mI (4399) GPIO: reset GPIO state 0 and count_reset 232[0m
+[0;32mI (4409) GPIO: reset GPIO state 0 and count_reset 233[0m
+[0;32mI (4419) GPIO: reset GPIO state 0 and count_reset 234[0m
+[0;32mI (4429) GPIO: reset GPIO state 0 and count_reset 235[0m
+[0;32mI (4439) GPIO: reset GPIO state 0 and count_reset 236[0m
+[0;32mI (4449) GPIO: reset GPIO state 0 and count_reset 237[0m
+[0;32mI (4459) GPIO: reset GPIO state 0 and count_reset 238[0m
+[0;32mI (4469) GPIO: reset GPIO state 0 and count_reset 239[0m
+[0;32mI (4479) GPIO: reset GPIO state 0 and count_reset 240[0m
+[0;32mI (4489) GPIO: reset GPIO state 0 and count_reset 241[0m
+[0;32mI (4499) GPIO: reset GPIO state 0 and count_reset 242[0m
+[0;32mI (4509) GPIO: reset GPIO state 0 and count_reset 243[0m
+[0;32mI (4519) GPIO: reset GPIO state 0 and count_reset 244[0m
+[0;32mI (4529) GPIO: reset GPIO state 0 and count_reset 245[0m
+[0;32mI (4539) GPIO: reset GPIO state 0 and count_reset 246[0m
+[0;32mI (4549) GPIO: reset GPIO state 0 and count_reset 247[0m
+[0;32mI (4559) GPIO: reset GPIO state 0 and count_reset 248[0m
+[0;32mI (4569) GPIO: reset GPIO state 0 and count_reset 249[0m
+[0;32mI (4579) GPIO: reset GPIO state 0 and count_reset 250[0m
+[0;32mI (4589) GPIO: reset GPIO state 0 and count_reset 251[0m
+[0;32mI (4599) GPIO: reset GPIO state 0 and count_reset 252[0m
+[0;32mI (4609) GPIO: reset GPIO state 0 and count_reset 253[0m
+[0;32mI (4619) GPIO: reset GPIO state 0 and count_reset 254[0m
+[0;32mI (4629) GPIO: reset GPIO state 0 and count_reset 255[0m
+[0;32mI (4639) GPIO: reset GPIO state 0 and count_reset 256[0m
+[0;32mI (4649) GPIO: reset GPIO state 0 and count_reset 257[0m
+[0;32mI (4659) GPIO: reset GPIO state 0 and count_reset 258[0m
+[0;32mI (4669) GPIO: reset GPIO state 0 and count_reset 259[0m
+[0;32mI (4679) GPIO: reset GPIO state 0 and count_reset 260[0m
+[0;32mI (4689) GPIO: reset GPIO state 0 and count_reset 261[0m
+[0;32mI (4699) GPIO: reset GPIO state 0 and count_reset 262[0m
+[0;32mI (4709) GPIO: reset GPIO state 0 and count_reset 263[0m
+[0;32mI (4729) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (4739) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (4749) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (4759) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (4769) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (4779) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (4789) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (4799) GPIO: reset GPIO state 0 and count_reset 7[0m
+[0;32mI (4809) GPIO: reset GPIO state 0 and count_reset 8[0m
+[0;32mI (4819) GPIO: reset GPIO state 0 and count_reset 9[0m
+[0;32mI (4829) GPIO: reset GPIO state 0 and count_reset 10[0m
+[0;32mI (4839) GPIO: reset GPIO state 0 and count_reset 11[0m
+[0;32mI (4849) GPIO: reset GPIO state 0 and count_reset 12[0m
+[0;32mI (4859) GPIO: reset GPIO state 0 and count_reset 13[0m
+[0;32mI (4869) GPIO: reset GPIO state 0 and count_reset 14[0m
+[0;32mI (4879) GPIO: reset GPIO state 0 and count_reset 15[0m
+[0;32mI (4889) GPIO: reset GPIO state 0 and count_reset 16[0m
+[0;32mI (4899) GPIO: reset GPIO state 0 and count_reset 17[0m
+[0;32mI (4909) GPIO: reset GPIO state 0 and count_reset 18[0m
+[0;32mI (4919) GPIO: reset GPIO state 0 and count_reset 19[0m
+[0;32mI (4929) GPIO: reset GPIO state 0 and count_reset 20[0m
+[0;32mI (4939) GPIO: reset GPIO state 0 and count_reset 21[0m
+[0;32mI (4949) GPIO: reset GPIO state 0 and count_reset 22[0m
+[0;32mI (4959) GPIO: reset GPIO state 0 and count_reset 23[0m
+[0;32mI (4969) GPIO: reset GPIO state 0 and count_reset 24[0m
+[0;32mI (4979) GPIO: reset GPIO state 0 and count_reset 25[0m
+[0;32mI (4989) GPIO: reset GPIO state 0 and count_reset 26[0m
+[0;32mI (4999) GPIO: reset GPIO state 0 and count_reset 27[0m
+[0;32mI (5009) GPIO: reset GPIO state 0 and count_reset 28[0m
+[0;32mI (5019) GPIO: reset GPIO state 0 and count_reset 29[0m
+[0;32mI (5029) GPIO: reset GPIO state 0 and count_reset 30[0m
+[0;32mI (5039) GPIO: reset GPIO state 0 and count_reset 31[0m
+[0;32mI (5049) GPIO: reset GPIO state 0 and count_reset 32[0m
+[0;32mI (5059) GPIO: reset GPIO state 0 and count_reset 33[0m
+[0;32mI (5069) GPIO: reset GPIO state 0 and count_reset 34[0m
+[0;32mI (5079) GPIO: reset GPIO state 0 and count_reset 35[0m
+[0;32mI (5089) GPIO: reset GPIO state 0 and count_reset 36[0m
+[0;32mI (5099) GPIO: reset GPIO state 0 and count_reset 37[0m
+[0;32mI (5109) GPIO: reset GPIO state 0 and count_reset 38[0m
+[0;32mI (5119) GPIO: reset GPIO state 0 and count_reset 39[0m
+[0;32mI (5129) GPIO: reset GPIO state 0 and count_reset 40[0m
+[0;32mI (5139) GPIO: reset GPIO state 0 and count_reset 41[0m
+[0;32mI (5149) GPIO: reset GPIO state 0 and count_reset 42[0m
+[0;32mI (5159) GPIO: reset GPIO state 0 and count_reset 43[0m
+[0;32mI (5169) GPIO: reset GPIO state 0 and count_reset 44[0m
+[0;32mI (5179) GPIO: reset GPIO state 0 and count_reset 45[0m
+[0;32mI (5189) GPIO: reset GPIO state 0 and count_reset 46[0m
+[0;32mI (5199) GPIO: reset GPIO state 0 and count_reset 47[0m
+[0;32mI (5209) GPIO: reset GPIO state 0 and count_reset 48[0m
+[0;32mI (5219) GPIO: reset GPIO state 0 and count_reset 49[0m
+[0;32mI (5229) GPIO: reset GPIO state 0 and count_reset 50[0m
+[0;32mI (5239) GPIO: reset GPIO state 0 and count_reset 51[0m
+[0;32mI (5249) GPIO: reset GPIO state 0 and count_reset 52[0m
+[0;32mI (5259) GPIO: reset GPIO state 0 and count_reset 53[0m
+[0;32mI (5269) GPIO: reset GPIO state 0 and count_reset 54[0m
+[0;32mI (5279) GPIO: reset GPIO state 0 and count_reset 55[0m
+[0;32mI (5289) GPIO: reset GPIO state 0 and count_reset 56[0m
+[0;32mI (5299) GPIO: reset GPIO state 0 and count_reset 57[0m
+[0;32mI (5309) GPIO: reset GPIO state 0 and count_reset 58[0m
+[0;32mI (5319) GPIO: reset GPIO state 0 and count_reset 59[0m
+[0;32mI (5329) GPIO: reset GPIO state 0 and count_reset 60[0m
+[0;32mI (5339) GPIO: reset GPIO state 0 and count_reset 61[0m
+[0;32mI (5349) GPIO: reset GPIO state 0 and count_reset 62[0m
+[0;32mI (5359) GPIO: reset GPIO state 0 and count_reset 63[0m
+[0;32mI (5369) GPIO: reset GPIO state 0 and count_reset 64[0m
+[0;32mI (5379) GPIO: reset GPIO state 0 and count_reset 65[0m
+[0;32mI (5389) GPIO: reset GPIO state 0 and count_reset 66[0m
+[0;32mI (5399) GPIO: reset GPIO state 0 and count_reset 67[0m
+[0;32mI (5409) GPIO: reset GPIO state 0 and count_reset 68[0m
+[0;32mI (5419) GPIO: reset GPIO state 0 and count_reset 69[0m
+[0;32mI (5429) GPIO: reset GPIO state 0 and count_reset 70[0m
+[0;32mI (5439) GPIO: reset GPIO state 0 and count_reset 71[0m
+[0;32mI (5449) GPIO: reset GPIO state 0 and count_reset 72[0m
+[0;32mI (5459) GPIO: reset GPIO state 0 and count_reset 73[0m
+[0;32mI (5469) GPIO: reset GPIO state 0 and count_reset 74[0m
+[0;32mI (5479) GPIO: reset GPIO state 0 and count_reset 75[0m
+[0;32mI (5489) GPIO: reset GPIO state 0 and count_reset 76[0m
+[0;32mI (5499) GPIO: reset GPIO state 0 and count_reset 77[0m
+[0;32mI (5509) GPIO: reset GPIO state 0 and count_reset 78[0m
+[0;32mI (5519) GPIO: reset GPIO state 0 and count_reset 79[0m
+[0;32mI (5529) GPIO: reset GPIO state 0 and count_reset 80[0m
+[0;32mI (5539) GPIO: reset GPIO state 0 and count_reset 81[0m
+[0;32mI (5549) GPIO: reset GPIO state 0 and count_reset 82[0m
+[0;32mI (5559) GPIO: reset GPIO state 0 and count_reset 83[0m
+[0;32mI (5569) GPIO: reset GPIO state 0 and count_reset 84[0m
+[0;32mI (5579) GPIO: reset GPIO state 0 and count_reset 85[0m
+[0;32mI (5589) GPIO: reset GPIO state 0 and count_reset 86[0m
+[0;32mI (5599) GPIO: reset GPIO state 0 and count_reset 87[0m
+[0;32mI (5609) GPIO: reset GPIO state 0 and count_reset 88[0m
+[0;32mI (5619) GPIO: reset GPIO state 0 and count_reset 89[0m
+[0;32mI (5629) GPIO: reset GPIO state 0 and count_reset 90[0m
+[0;32mI (5639) GPIO: reset GPIO state 0 and count_reset 91[0m
+[0;32mI (5649) GPIO: reset GPIO state 0 and count_reset 92[0m
+[0;32mI (5659) GPIO: reset GPIO state 0 and count_reset 93[0m
+[0;32mI (5669) GPIO: reset GPIO state 0 and count_reset 94[0m
+[0;32mI (5679) GPIO: reset GPIO state 0 and count_reset 95[0m
+[0;32mI (5689) GPIO: reset GPIO state 0 and count_reset 96[0m
+[0;32mI (5699) GPIO: reset GPIO state 0 and count_reset 97[0m
+[0;32mI (5709) GPIO: reset GPIO state 0 and count_reset 98[0m
+[0;32mI (5719) GPIO: reset GPIO state 0 and count_reset 99[0m
+[0;32mI (5729) GPIO: reset GPIO state 0 and count_reset 100[0m
+[0;32mI (5739) GPIO: reset GPIO state 0 and count_reset 101[0m
+[0;32mI (5749) GPIO: reset GPIO state 0 and count_reset 102[0m
+[0;32mI (5759) GPIO: reset GPIO state 0 and count_reset 103[0m
+[0;32mI (5769) GPIO: reset GPIO state 0 and count_reset 104[0m
+[0;32mI (5779) GPIO: reset GPIO state 0 and count_reset 105[0m
+[0;32mI (5789) GPIO: reset GPIO state 0 and count_reset 106[0m
+[0;32mI (5799) GPIO: reset GPIO state 0 and count_reset 107[0m
+[0;32mI (5809) GPIO: reset GPIO state 0 and count_reset 108[0m
+[0;32mI (5819) GPIO: reset GPIO state 0 and count_reset 109[0m
+[0;32mI (5829) GPIO: reset GPIO state 0 and count_reset 110[0m
+[0;32mI (5839) GPIO: reset GPIO state 0 and count_reset 111[0m
+[0;32mI (5849) GPIO: reset GPIO state 0 and count_reset 112[0m
+[0;32mI (5859) GPIO: reset GPIO state 0 and count_reset 113[0m
+[0;32mI (5869) GPIO: reset GPIO state 0 and count_reset 114[0m
+[0;32mI (5879) GPIO: reset GPIO state 0 and count_reset 115[0m
+[0;32mI (5889) GPIO: reset GPIO state 0 and count_reset 116[0m
+[0;32mI (5899) GPIO: reset GPIO state 0 and count_reset 117[0m
+[0;32mI (5909) GPIO: reset GPIO state 0 and count_reset 118[0m
+[0;32mI (5919) GPIO: reset GPIO state 0 and count_reset 119[0m
+[0;32mI (5929) GPIO: reset GPIO state 0 and count_reset 120[0m
+[0;32mI (5939) GPIO: reset GPIO state 0 and count_reset 121[0m
+[0;32mI (5949) GPIO: reset GPIO state 0 and count_reset 122[0m
+[0;32mI (5959) GPIO: reset GPIO state 0 and count_reset 123[0m
+[0;32mI (5969) GPIO: reset GPIO state 0 and count_reset 124[0m
+[0;32mI (5979) GPIO: reset GPIO state 0 and count_reset 125[0m
+[0;32mI (5989) GPIO: reset GPIO state 0 and count_reset 126[0m
+[0;32mI (5999) GPIO: reset GPIO state 0 and count_reset 127[0m
+[0;32mI (6009) GPIO: reset GPIO state 0 and count_reset 128[0m
+[0;32mI (6019) GPIO: reset GPIO state 0 and count_reset 129[0m
+[0;32mI (6029) GPIO: reset GPIO state 0 and count_reset 130[0m
+[0;32mI (6039) GPIO: reset GPIO state 0 and count_reset 131[0m
+[0;32mI (6049) GPIO: reset GPIO state 0 and count_reset 132[0m
+[0;32mI (6059) GPIO: reset GPIO state 0 and count_reset 133[0m
+[0;32mI (6069) GPIO: reset GPIO state 0 and count_reset 134[0m
+[0;32mI (6079) GPIO: reset GPIO state 0 and count_reset 135[0m
+[0;32mI (6089) GPIO: reset GPIO state 0 and count_reset 136[0m
+[0;32mI (6099) GPIO: reset GPIO state 0 and count_reset 137[0m
+[0;32mI (6109) GPIO: reset GPIO state 0 and count_reset 138[0m
+[0;32mI (6119) GPIO: reset GPIO state 0 and count_reset 139[0m
+[0;32mI (6129) GPIO: reset GPIO state 0 and count_reset 140[0m
+[0;32mI (6139) GPIO: reset GPIO state 0 and count_reset 141[0m
+[0;32mI (6149) GPIO: reset GPIO state 0 and count_reset 142[0m
+[0;32mI (6159) GPIO: reset GPIO state 0 and count_reset 143[0m
+[0;32mI (6169) GPIO: reset GPIO state 0 and count_reset 144[0m
+[0;32mI (6179) GPIO: reset GPIO state 0 and count_reset 145[0m
+[0;32mI (6189) GPIO: reset GPIO state 0 and count_reset 146[0m
+[0;32mI (6199) GPIO: reset GPIO state 0 and count_reset 147[0m
+[0;32mI (6209) GPIO: reset GPIO state 0 and count_reset 148[0m
+[0;32mI (6219) GPIO: reset GPIO state 0 and count_reset 149[0m
+[0;32mI (6229) GPIO: reset GPIO state 0 and count_reset 150[0m
+[0;32mI (6239) GPIO: reset GPIO state 0 and count_reset 151[0m
+[0;32mI (6249) GPIO: reset GPIO state 0 and count_reset 152[0m
+[0;32mI (6259) GPIO: reset GPIO state 0 and count_reset 153[0m
+[0;32mI (6269) GPIO: reset GPIO state 0 and count_reset 154[0m
+[0;32mI (6279) GPIO: reset GPIO state 0 and count_reset 155[0m
+[0;32mI (6289) GPIO: reset GPIO state 0 and count_reset 156[0m
+[0;32mI (6299) GPIO: reset GPIO state 0 and count_reset 157[0m
+[0;32mI (6309) GPIO: reset GPIO state 0 and count_reset 158[0m
+[0;32mI (6319) GPIO: reset GPIO state 0 and count_reset 159[0m
+[0;32mI (6329) GPIO: reset GPIO state 0 and count_reset 160[0m
+[0;32mI (6339) GPIO: reset GPIO state 0 and count_reset 161[0m
+[0;32mI (6349) GPIO: reset GPIO state 0 and count_reset 162[0m
+[0;32mI (6359) GPIO: reset GPIO state 0 and count_reset 163[0m
+[0;32mI (6369) GPIO: reset GPIO state 0 and count_reset 164[0m
+[0;32mI (6379) GPIO: reset GPIO state 0 and count_reset 165[0m
+[0;32mI (6389) GPIO: reset GPIO state 0 and count_reset 166[0m
+[0;32mI (6399) GPIO: reset GPIO state 0 and count_reset 167[0m
+[0;32mI (6409) GPIO: reset GPIO state 0 and count_reset 168[0m
+[0;32mI (6419) GPIO: reset GPIO state 0 and count_reset 169[0m
+[0;32mI (6429) GPIO: reset GPIO state 0 and count_reset 170[0m
+[0;32mI (6439) GPIO: reset GPIO state 0 and count_reset 171[0m
+[0;32mI (6449) GPIO: reset GPIO state 0 and count_reset 172[0m
+[0;32mI (6459) GPIO: reset GPIO state 0 and count_reset 173[0m
+[0;32mI (6469) GPIO: reset GPIO state 0 and count_reset 174[0m
+[0;32mI (6479) GPIO: reset GPIO state 0 and count_reset 175[0m
+[0;32mI (6489) GPIO: reset GPIO state 0 and count_reset 176[0m
+[0;32mI (6499) GPIO: reset GPIO state 0 and count_reset 177[0m
+[0;32mI (6509) GPIO: reset GPIO state 0 and count_reset 178[0m
+[0;32mI (6519) GPIO: reset GPIO state 0 and count_reset 179[0m
+[0;32mI (6529) GPIO: reset GPIO state 0 and count_reset 180[0m
+[0;32mI (6539) GPIO: reset GPIO state 0 and count_reset 181[0m
+[0;32mI (6549) GPIO: reset GPIO state 0 and count_reset 182[0m
+[0;32mI (6559) GPIO: reset GPIO state 0 and count_reset 183[0m
+[0;32mI (6569) GPIO: reset GPIO state 0 and count_reset 184[0m
+[0;32mI (6579) GPIO: reset GPIO state 0 and count_reset 185[0m
+[0;32mI (6589) GPIO: reset GPIO state 0 and count_reset 186[0m
+[0;32mI (6599) GPIO: reset GPIO state 0 and count_reset 187[0m
+[0;32mI (6609) GPIO: reset GPIO state 0 and count_reset 188[0m
+[0;32mI (6619) GPIO: reset GPIO state 0 and count_reset 189[0m
+[0;32mI (6629) wifi:wifi driver task: 3ffc3b1c, prio:23, stack:6656, core=0[0m
+[0;32mI (6629) GPIO: reset GPIO state 0 and count_reset 190[0m
+[0;32mI (6639) GPIO: reset GPIO state 0 and count_reset 191[0m
+[0;32mI (6639) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (6639) wifi:wifi certification version: v7.0[0m
+[0;32mI (6639) wifi:config NVS flash: enabled[0m
+[0;32mI (6639) wifi:config nano formatting: disabled[0m
+[0;32mI (6649) GPIO: reset GPIO state 0 and count_reset 192[0m
+[0;32mI (6649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (6659) GPIO: reset GPIO state 0 and count_reset 193[0m
+[0;32mI (6659) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (6669) wifi:Init management short buffer num: 32[0m
+[0;32mI (6669) GPIO: reset GPIO state 0 and count_reset 194[0m
+[0;32mI (6669) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (6679) GPIO: reset GPIO state 0 and count_reset 195[0m
+[0;32mI (6679) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (6689) GPIO: reset GPIO state 0 and count_reset 196[0m
+[0;32mI (6689) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6699) GPIO: reset GPIO state 0 and count_reset 197[0m
+[0;32mI (6699) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6709) GPIO: reset GPIO state 0 and count_reset 198[0m
+[0;32mI (6709) wifi_init: rx ba win: 6[0m
+[0;32mI (6709) wifi_init: accept mbox: 6[0m
+[0;32mI (6719) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6719) GPIO: reset GPIO state 0 and count_reset 199[0m
+[0;32mI (6719) wifi_init: udp mbox: 6[0m
+[0;32mI (6729) GPIO: reset GPIO state 0 and count_reset 200[0m
+[0;32mI (6729) wifi_init: tcp mbox: 6[0m
+[0;32mI (6729) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6739) GPIO: reset GPIO state 0 and count_reset 201[0m
+[0;32mI (6739) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6749) wifi_init: tcp mss: 1440[0m
+[0;32mI (6749) GPIO: reset GPIO state 0 and count_reset 202[0m
+[0;32mI (6749) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6759) GPIO: reset GPIO state 0 and count_reset 203[0m
+[0;32mI (6759) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6769) GPIO: reset GPIO state 0 and count_reset 204[0m
+[0;32mI (6769) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (6779) GPIO: reset GPIO state 0 and count_reset 205[0m
+[0;32mI (6789) GPIO: reset GPIO state 0 and count_reset 206[0m
+[0;32mI (6799) GPIO: reset GPIO state 0 and count_reset 207[0m
+[0;32mI (6809) GPIO: reset GPIO state 0 and count_reset 208[0m
+[0;32mI (6819) GPIO: reset GPIO state 0 and count_reset 209[0m
+[0;32mI (6829) GPIO: reset GPIO state 0 and count_reset 210[0m
+[0;32mI (6839) GPIO: reset GPIO state 0 and count_reset 211[0m
+[0;32mI (6849) GPIO: reset GPIO state 0 and count_reset 212[0m
+[0;32mI (6859) GPIO: reset GPIO state 0 and count_reset 213[0m
+[0;32mI (6859) wifi:mode : softAP (f4:65:0b:54:5f:6d)[0m
+[0;32mI (6859) wifi:Total power save buffer number: 16[0m
+[0;32mI (6859) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6859) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6869) GPIO: reset GPIO state 0 and count_reset 214[0m
+[0;32mI (6869) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (6869) HTTP: SoftAP started with SSID: onwords-4ltc0001[0m
+[0;32mI (6889) GPIO: reset GPIO state 0 and count_reset 215[0m
+[0;32mI (6889) HTTP: HTTP Server started at 192.168.4.1:8182[0m
+[0;32mI (6889) main_task: Returned from app_main()[0m
+[0;32mI (6899) GPIO: reset GPIO state 0 and count_reset 216[0m
+[0;32mI (6909) GPIO: reset GPIO state 0 and count_reset 217[0m
+[0;32mI (6919) GPIO: reset GPIO state 0 and count_reset 218[0m
+[0;32mI (6929) GPIO: reset GPIO state 0 and count_reset 219[0m
+[0;32mI (6939) GPIO: reset GPIO state 0 and count_reset 220[0m
+[0;32mI (6949) GPIO: reset GPIO state 0 and count_reset 221[0m
+[0;32mI (6959) GPIO: reset GPIO state 0 and count_reset 222[0m
+[0;32mI (6969) GPIO: reset GPIO state 0 and count_reset 223[0m
+[0;32mI (6979) GPIO: reset GPIO state 0 and count_reset 224[0m
+[0;32mI (6989) GPIO: reset GPIO state 0 and count_reset 225[0m
+[0;32mI (6999) GPIO: reset GPIO state 0 and count_reset 226[0m
+[0;32mI (7009) GPIO: reset GPIO state 0 and count_reset 227[0m
+[0;32mI (7029) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7049) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7069) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7089) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7109) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7129) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7149) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7169) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7189) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7209) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7229) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7249) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7269) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7289) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7309) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7329) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7349) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7369) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7389) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7409) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7429) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7449) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7469) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7489) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7509) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7529) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7549) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7569) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7589) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7609) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7629) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7639) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (7659) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7669) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (7689) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7699) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (7709) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (7719) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (7729) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (7739) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (7749) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (7769) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7779) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (7789) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (7809) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7829) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7849) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7869) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7879) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (7889) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (7909) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7929) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7949) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7969) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7989) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (7999) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (8009) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (8019) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (8029) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (8039) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (8049) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (8059) GPIO: reset GPIO state 0 and count_reset 7[0m
+[0;32mI (8069) GPIO: reset GPIO state 0 and count_reset 8[0m
+[0;32mI (8079) GPIO: reset GPIO state 0 and count_reset 9[0m
+[0;32mI (8089) GPIO: reset GPIO state 0 and count_reset 10[0m
+[0;32mI (8099) GPIO: reset GPIO state 0 and count_reset 11[0m
+[0;32mI (8109) GPIO: reset GPIO state 0 and count_reset 12[0m
+[0;32mI (8119) GPIO: reset GPIO state 0 and count_reset 13[0m
+[0;32mI (8129) GPIO: reset GPIO state 0 and count_reset 14[0m
+[0;32mI (8139) GPIO: reset GPIO state 0 and count_reset 15[0m
+[0;32mI (8149) GPIO: reset GPIO state 0 and count_reset 16[0m
+[0;32mI (8159) GPIO: reset GPIO state 0 and count_reset 17[0m
+[0;32mI (8169) GPIO: reset GPIO state 0 and count_reset 18[0m
+[0;32mI (8189) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8209) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8229) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8249) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8269) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8289) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8309) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8329) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8349) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8369) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8389) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8409) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8429) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8449) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8469) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8489) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8509) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8529) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8549) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8569) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8589) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8609) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8629) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8649) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8669) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8689) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8709) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8729) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8749) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8769) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8789) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8809) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8829) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8849) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8869) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8889) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8909) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8929) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8949) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8969) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (8989) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9009) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9029) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9049) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9069) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9089) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9109) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9129) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9149) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9169) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9189) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9209) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9229) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9249) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9269) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9289) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9309) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9329) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9349) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9369) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9389) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9409) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9429) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9449) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9469) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9489) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9509) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9529) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9549) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9569) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9589) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9609) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9629) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9649) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9669) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9689) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9709) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9729) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9749) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9769) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9789) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9809) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9829) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9849) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9869) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9889) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9909) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9929) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9949) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9969) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (9989) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10009) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10029) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10049) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10069) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10089) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10109) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10129) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10149) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10169) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10189) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10209) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10229) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10249) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10269) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10289) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10309) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10329) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10349) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10369) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10389) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10409) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10649) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10669) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10689) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10709) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10729) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10749) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10769) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10789) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10809) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (10819) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (10829) GPIO: reset GPIO state 0 and count_reset 2[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (504) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (509) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (599) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (599) GPIO: GPIO Initialization![0m
+[0;32mI (599) ESP_APP: UART initialized[0m
+[0;32mI (609) NVS: WiFi credentials found. SSID: , connecting......[0m
+[0;32mI (609) ESP_APP: WiFi credentials not found, starting SoftAP + HTTP Server...[0m
+[0;32mI (6619) wifi:wifi driver task: 3ffc3b1c, prio:23, stack:6656, core=0[0m
+[0;32mI (6629) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (6629) wifi:wifi certification version: v7.0[0m
+[0;32mI (6629) wifi:config NVS flash: enabled[0m
+[0;32mI (6629) wifi:config nano formatting: disabled[0m
+[0;32mI (6639) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (6639) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (6649) wifi:Init management short buffer num: 32[0m
+[0;32mI (6649) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (6649) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (6659) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6659) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6669) wifi_init: rx ba win: 6[0m
+[0;32mI (6669) wifi_init: accept mbox: 6[0m
+[0;32mI (6669) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6679) wifi_init: udp mbox: 6[0m
+[0;32mI (6679) wifi_init: tcp mbox: 6[0m
+[0;32mI (6679) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6679) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6689) wifi_init: tcp mss: 1440[0m
+[0;32mI (6689) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6689) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6699) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (6789) wifi:mode : softAP (f4:65:0b:54:5f:6d)[0m
+[0;32mI (6789) wifi:Total power save buffer number: 16[0m
+[0;32mI (6789) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6789) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6789) HTTP: SoftAP started with SSID: onwords-4ltc0001[0m
+[0;32mI (6799) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (6809) HTTP: HTTP Server started at 192.168.4.1:8182[0m
+[0;32mI (6809) main_task: Returned from app_main()[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2496ch (149868) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=000349b8 vaddr=3ffb0000 size=03f20h ( 16160) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=000388e0 vaddr=40080000 size=07738h ( 30520) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b253ch (730428) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f2564 vaddr=40087738 size=111c8h ( 70088) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (477) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (496) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      1[0m
+[0;32mI (504) app_init: Compile time:     Jun 27 2025 17:21:05[0m
+[0;32mI (509) app_init: ELF file SHA256:  395b4a39e...[0m
+[0;32mI (513) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v3.1[0m
+I (529) heap_init: Initializing. RAM available for dynamic allocation:
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8BE8 len 00027418 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (599) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (599) GPIO: GPIO Initialization![0m
+[0;32mI (599) ESP_APP: UART initialized[0m
+[0;32mI (609) NVS: WiFi credentials found. SSID: , connecting......[0m
+[0;32mI (609) ESP_APP: WiFi credentials not found, starting SoftAP + HTTP Server...[0m
+[0;32mI (6619) wifi:wifi driver task: 3ffc3b1c, prio:23, stack:6656, core=0[0m
+[0;32mI (6629) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (6629) wifi:wifi certification version: v7.0[0m
+[0;32mI (6629) wifi:config NVS flash: enabled[0m
+[0;32mI (6629) wifi:config nano formatting: disabled[0m
+[0;32mI (6639) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (6639) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (6649) wifi:Init management short buffer num: 32[0m
+[0;32mI (6649) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (6649) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (6659) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6659) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6669) wifi_init: rx ba win: 6[0m
+[0;32mI (6669) wifi_init: accept mbox: 6[0m
+[0;32mI (6669) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6679) wifi_init: udp mbox: 6[0m
+[0;32mI (6679) wifi_init: tcp mbox: 6[0m
+[0;32mI (6679) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6679) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6689) wifi_init: tcp mss: 1440[0m
+[0;32mI (6689) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6689) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6699) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (6779) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (6809) wifi:mode : softAP (f4:65:0b:54:5f:6d)[0m
+[0;32mI (6809) wifi:Total power save buffer number: 16[0m
+[0;32mI (6809) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6819) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6819) HTTP: SoftAP started with SSID: onwords-4ltc0001[0m
+[0;32mI (6819) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (6839) HTTP: HTTP Server started at 192.168.4.1:8182[0m
+[0;32mI (6839) main_task: Returned from app_main()[0m

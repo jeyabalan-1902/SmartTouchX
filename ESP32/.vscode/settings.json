@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "nvs.h": "c",
+        "esp_app.h": "c"
+    }
+}

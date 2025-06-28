@@ -1,0 +1,108 @@
+[1/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/crc32.c.obj
+[2/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/uart_config.c.obj
+[3/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp_app.c.obj
+[4/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/http.c.obj
+[5/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/mqtt.c.obj
+[6/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/flash_cmd.c.obj
+[7/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/wifi.c.obj
+C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/wifi.c:111:13: warning: 'wifi_event_handler' defined but not used [-Wunused-function]
+  111 | static void wifi_event_handler(void* arg, esp_event_base_t event_base,
+      |             ^~~~~~~~~~~~~~~~~~
+[8/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/http_server.c.obj
+[9/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/update_esp.c.obj
+[10/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/gpio.c.obj
+[11/20] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\kjeya\Documents\MCU_INTEGRATION\ESP32\build\bootloader\esp-idf\esptool_py && C:\ESP_IDF_v5.4.1\python_env\idf5.4_py3.13_env\Scripts\python.exe C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[12/20] No install step for 'bootloader'
+[13/20] Completed 'bootloader'
+[14/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/src/nvs.c.obj
+[15/20] Linking C static library esp-idf\main\libmain.a
+[16/20] Generating ld/sections.ld
+[17/20] Linking CXX executable esp_app.elf
+[18/20] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp_app.bin
+[19/20] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\kjeya\Documents\MCU_INTEGRATION\ESP32\build\esp-idf\esptool_py && C:\ESP_IDF_v5.4.1\python_env\idf5.4_py3.13_env\Scripts\python.exe C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/partition_table/partition-table.bin C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp_app.bin"
+esp_app.bin binary size 0xf3750 bytes. Smallest app partition is 0x100000 bytes. 0xc8b0 bytes (5%) free.
+Warning: The smallest app partition is nearly full (5% free space left)!
+[19/20] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\ESP_IDF_v5.4.1\frameworks\esp-idf-v5.4.1\components\esptool_py && C:\ESP_IDF_v5.4.1\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1 -D SERIAL_TOOL=C:/ESP_IDF_v5.4.1/python_env/idf5.4_py3.13_env/Scripts/python.exe;;C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build -P C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM4 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x10000 esp_app.bin 0x8000 partition_table/partition-table.bin 0xd000 ota_data_initial.bin
+esptool.py v4.8.1
+Serial port COM4
+Connecting.......
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: f4:65:0b:54:5f:6c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00103fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000d000 to 0x0000efff...
+SHA digest in image updated
+Compressed 25984 bytes to 16385...
+Writing at 0x00001000... (50 %)
+Writing at 0x00007580... (100 %)
+Wrote 25984 bytes (16385 compressed) at 0x00001000 in 0.8 seconds (effective 266.2 kbit/s)...
+Hash of data verified.
+Compressed 997200 bytes to 621875...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d2f4... (5 %)
+Writing at 0x0002923e... (7 %)
+Writing at 0x0003223d... (10 %)
+Writing at 0x0003b90e... (13 %)
+Writing at 0x00041515... (15 %)
+Writing at 0x00046ed6... (18 %)
+Writing at 0x0004cdcd... (21 %)
+Writing at 0x000529d7... (23 %)
+Writing at 0x000586c1... (26 %)
+Writing at 0x0005e949... (28 %)
+Writing at 0x0006461c... (31 %)
+Writing at 0x0006a27a... (34 %)
+Writing at 0x000700d2... (36 %)
+Writing at 0x00076794... (39 %)
+Writing at 0x0007c6d9... (42 %)
+Writing at 0x000823ce... (44 %)
+Writing at 0x0008773a... (47 %)
+Writing at 0x0008c95c... (50 %)
+Writing at 0x0009213b... (52 %)
+Writing at 0x000978ca... (55 %)
+Writing at 0x0009cca3... (57 %)
+Writing at 0x000a21fb... (60 %)
+Writing at 0x000a7dba... (63 %)
+Writing at 0x000ad7dd... (65 %)
+Writing at 0x000b3126... (68 %)
+Writing at 0x000b8e32... (71 %)
+Writing at 0x000bec25... (73 %)
+Writing at 0x000c4385... (76 %)
+Writing at 0x000ca1cb... (78 %)
+Writing at 0x000cfcd3... (81 %)
+Writing at 0x000d566b... (84 %)
+Writing at 0x000db485... (86 %)
+Writing at 0x000e52b1... (89 %)
+Writing at 0x000ecca2... (92 %)
+Writing at 0x000f296f... (94 %)
+Writing at 0x000f8a0c... (97 %)
+Writing at 0x000fe2ab... (100 %)
+Wrote 997200 bytes (621875 compressed) at 0x00010000 in 16.1 seconds (effective 496.3 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 138...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (138 compressed) at 0x00008000 in 0.1 seconds (effective 452.5 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000d000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000d000 in 0.0 seconds (effective 2414.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
