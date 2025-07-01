@@ -70,6 +70,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                             ESP_LOGI(TAG, "Firmware update requested: %s", firmwareUrl->valuestring);
                             strncpy(firmware_url, firmwareUrl->valuestring, sizeof(firmware_url) - 1);
                             firmware_update_requested = true;
+                            ESP_LOGI(TAG, "firmware update request : %d", firmware_update_requested);
                         }
                     }
                     cJSON_Delete(json);
@@ -139,7 +140,7 @@ void mqtt_topics(void)
 void mqtt_app_start(char *product_id) {
     mqtt_topics();
     esp_mqtt_client_config_t mqtt_cfg = {
-        .broker.address.uri = BROKER_URL,
+        .broker.address.uri = MQTT_URL,
         .credentials.client_id = product_id,
     };
     mqtt_cfg.session.keepalive = 30;

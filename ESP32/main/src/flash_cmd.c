@@ -7,7 +7,7 @@ esp_err_t send_sync_command(void) {
     ESP_LOGI(TAG, "Sending sync command (0x50) twice with 1000ms interval");
     
     uart_flush_rx_buffer();
-    
+      
     for (int i = 0; i < 2; i++) {
         ESP_LOGI(TAG, "Sending sync command %d/2", i + 1);
         uart_write_byte(0x50);
@@ -83,7 +83,7 @@ esp_err_t send_flash_erase_command(uint8_t sector, uint8_t num_sectors) {
 
 esp_err_t send_mem_write_command(uint32_t base_address, uint8_t *data, uint8_t length) {
     ESP_LOGD(TAG, "Command ==> BL_MEM_WRITE - Address: 0x%08" PRIx32 ", Length: %d", base_address, length);
-    ota_status_led = 1;
+    
     uart_flush_rx_buffer();
     
     uint32_t mem_write_cmd_total_len = COMMAND_BL_MEM_WRITE_BASE_LEN + length + 4; 
@@ -154,6 +154,8 @@ esp_err_t flash_downloaded_firmware(void) {
         ESP_LOGE(TAG, "No firmware data to flash");
         return ESP_FAIL;
     }
+
+    uart_reinit();
     
     send_mqtt_status(update_status, "Starting", "STM32 firmware flashing started");
     ESP_LOGI(TAG, "Starting STM32 firmware flashing");
@@ -168,10 +170,10 @@ esp_err_t flash_downloaded_firmware(void) {
     }
     
     // Step 2: Get version
-    ESP_LOGI(TAG, "Step 2: Checking Chip ID version");
+    ESP_LOGI(TAG, "Step 2: Checking bootloader version");
     if (send_get_cid_command() != ESP_OK) {
-        ESP_LOGE(TAG, "Get chip id command failed");
-        send_mqtt_status(update_status, "Failed", "Chip ID get failed");
+        ESP_LOGE(TAG, "Get version command failed");
+        send_mqtt_status(update_status, "Failed", "Bootloader version get failed");
         return ESP_FAIL;
     }
     
@@ -186,6 +188,7 @@ esp_err_t flash_downloaded_firmware(void) {
     // Step 4: Write firmware data
     ESP_LOGI(TAG, "Step 4: Writing firmware data (%zu bytes)", bytes_downloaded);
     send_mqtt_status(update_status, "Starting", "Firmware writing started");
+    ota_status_led = 1;
     uint32_t base_mem_address = FLASH_BASE_ADDRESS;
     size_t bytes_remaining = bytes_downloaded;
     size_t bytes_sent = 0;
@@ -248,21 +251,4 @@ esp_err_t flash_downloaded_firmware(void) {
     
     ESP_LOGI(TAG, "STM32 firmware update completed successfully!");
     return ESP_OK;
-}
-
-esp_err_t flash_stm32_firmware(void) {
-    ESP_LOGI(TAG, "Starting STM32 firmware update process");
-    
-    if (download_firmware(firmware_url) != ESP_OK) {
-        ESP_LOGE(TAG, "Firmware download failed");
-        return ESP_FAIL;
-    }
-    
-    esp_err_t result = flash_downloaded_firmware();
-    
-    if (download_buffer) {
-        free(download_buffer);
-        download_buffer = NULL;
-    }  
-    return result;
 }

@@ -1,0 +1,148 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun 27 2025 17:22:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (93) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24acch (150220) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=00034af4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (165) esp_image: segment 2: paddr=00034b18 vaddr=3ffb0000 size=03f50h ( 16208) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00038a70 vaddr=40080000 size=075a8h ( 30120) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b269ch (730780) map[0m
+[0;32mI (438) esp_image: segment 5: paddr=000f26c4 vaddr=400875a8 size=11358h ( 70488) load[0m
+[0;32mI (477) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (478) boot: Disabling RNG early entropy source...[0m
+[0;32mI (488) cpu_start: Multicore app[0m
+[0;32mI (496) cpu_start: Pro cpu start user code[0m
+[0;32mI (496) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (496) app_init: Application information:[0m
+[0;32mI (497) app_init: Project name:     esp_app[0m
+[0;32mI (500) app_init: App version:      60a89a9-dirty[0m
+[0;32mI (505) app_init: Compile time:     Jun 28 2025 17:49:38[0m
+[0;32mI (510) app_init: ELF file SHA256:  e198b47ea...[0m
+[0;32mI (514) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (519) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (522) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (526) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (530) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (537) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (542) heap_init: At 3FFB8C18 len 000273E8 (156 KiB): DRAM[0m
+[0;32mI (547) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (552) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (558) heap_init: At 40098900 len 00007700 (29 KiB): IRAM[0m
+[0;32mI (565) spi_flash: detected chip: generic[0m
+[0;32mI (567) spi_flash: flash io: dio[0m
+[0;32mI (571) main_task: Started on CPU0[0m
+[0;32mI (581) main_task: Calling app_main()[0m
+[0;32mI (601) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (601) GPIO: GPIO Initialization![0m
+[0;32mI (611) ESP_APP: UART initialized[0m
+[0;32mI (611) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (611) NVS: From nvs ssid is Rnd [0m
+[0;32mI (611) NVS: From nvs password is nikhil8182[0m
+[0;32mI (621) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (621) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (641) wifi:wifi driver task: 3ffc5528, prio:23, stack:6656, core=0[0m
+[0;32mI (651) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (651) wifi:wifi certification version: v7.0[0m
+[0;32mI (651) wifi:config NVS flash: enabled[0m
+[0;32mI (651) wifi:config nano formatting: disabled[0m
+[0;32mI (661) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (661) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (661) wifi:Init management short buffer num: 32[0m
+[0;32mI (671) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (671) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (681) wifi:Init static rx buffer num: 10[0m
+[0;32mI (681) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (691) wifi_init: rx ba win: 6[0m
+[0;32mI (691) wifi_init: accept mbox: 6[0m
+[0;32mI (691) wifi_init: tcpip mbox: 32[0m
+[0;32mI (691) wifi_init: udp mbox: 6[0m
+[0;32mI (701) wifi_init: tcp mbox: 6[0m
+[0;32mI (701) wifi_init: tcp tx win: 5760[0m
+[0;32mI (701) wifi_init: tcp rx win: 5760[0m
+[0;32mI (701) wifi_init: tcp mss: 1440[0m
+[0;32mI (711) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (711) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (721) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (731) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (811) wifi:mode : sta (f4:65:0b:54:5f:6c)[0m
+[0;32mI (811) wifi:enable tsf[0m
+[0;32mI (821) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (871) wifi:new:<10,0>, old:<1,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (871) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (901) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (911) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (961) wifi:connected with Rnd, aid = 6, channel 10, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (961) wifi:security: WPA2-PSK, phy: bgn, rssi: -62[0m
+[0;32mI (971) wifi:pm start, type: 1[0m
+
+[0;32mI (971) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (981) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2101) esp_netif_handlers: sta ip: 192.168.1.97, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2101) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (2101) WIFI_HANDLER: got ip:192.168.1.97[0m
+[0;32mI (2101) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -64[0m
+[0;32mI (2111) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (2121) main_task: Returned from app_main()[0m
+[0;32mI (2121) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2691) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (2771) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=60819[0m
+[0;32mI (2811) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=56053[0m
+[0;32mI (2841) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=34144[0m
+[0;32mI (2841) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=48042[0m
+[0;32mI (2841) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=4667[0m
+[0;32mI (2851) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=60750[0m
+[0;32mI (2851) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=62925[0m
+[0;32mI (2861) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (2861) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (2861) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (18801) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (18801) MQTT_HANDLER: TOPIC=onwords/4ltc01/firmwareStm[0m
+[0;32mI (18801) MQTT_HANDLER: DATA={"firmware_sts": 1, "firmwareUrl": "http://13.127.193.192/ota/files/4LTC/STM32_DISPLAY_APP_20250701_164305.bin/"}[0m
+[0;32mI (18811) MQTT_HANDLER: Firmware update requested: http://13.127.193.192/ota/files/4LTC/STM32_DISPLAY_APP_20250701_164305.bin/[0m
+[0;32mI (18821) MQTT_HANDLER: firmware update request : 1[0m
+[0;32mI (19611) ESP_APP: Processing firmware update request[0m
+[0;32mI (19611) ESP_APP: Cancelling uart receive task before OTA[0m
+[0;32mI (19611) ESP_APP: Starting STM32 firmware update process[0m
+[0;32mI (19611) HTTP_HANDLER: Downloading firmware from: http://13.127.193.192/ota/files/4LTC/STM32_DISPLAY_APP_20250701_164305.bin/[0m
+[0;32mI (19691) HTTP_HANDLER: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (19691) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=56658[0m
+[0;32mI (19741) HTTP_HANDLER: Firmware size: 39164 bytes[0m
+[0;32mI (19741) HTTP_HANDLER: Allocated download buffer: 39164 bytes for 39164 byte firmware[0m
+[0;32mI (20471) HTTP_HANDLER: HTTP download completed. Total bytes: 39164/39164[0m
+[0;32mI (20471) HTTP_HANDLER: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (20471) HTTP_HANDLER: Firmware download completed successfully. Size: 39164 bytes[0m
+[0;32mI (20481) FLASH_CMD: Starting STM32 firmware flashing[0m
+[0;32mI (20481) FLASH_CMD: Step 1: Sending sync commands[0m
+[0;32mI (20491) FLASH_CMD: Sending sync command (0x50) twice with 1000ms interval[0m
+[0;32mI (20531) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=29102[0m
+[0;32mI (20581) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=1630[0m
+[0;32mI (20581) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=18917[0m

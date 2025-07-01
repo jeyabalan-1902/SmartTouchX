@@ -9,5 +9,6 @@ idf_component_register(SRCS "esp_app.c"
                             "src/http_server.c"
                             "src/gpio.c"
                             "src/nvs.c"
-                    INCLUDE_DIRS "inc"
+                            "secret/mqtt_config.c"
+                    INCLUDE_DIRS "inc" "secret"
                     EMBED_TXTFILES ${project_dir}/main/server_certs/ca_cert.pem)

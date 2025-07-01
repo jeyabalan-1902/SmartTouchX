@@ -1,0 +1,123 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM10 instead...[0m
+[0;33m--- esp-idf-monitor 1.6.2 on \\.\COM10 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x4008525a: esp_crosscore_isr at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/crosscore_int.c:73
+--- 0x400835d1: _xt_lowint1 at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7169: uart_ll_get_txfifo_len at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/hal/esp32/include/hal/uart_ll.h:428
+---  (inlined by) uart_tx_char at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:190
+--- 0x400d789b: uart_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d9d95: console_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_vfs_console/vfs_console.c:71
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x4016673d: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+--- 0x40172d8f: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+---  (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+--- 0x401727a6: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+--- 0x40166bcd: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+--- 0x40181009: esp_log_writev at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:34
+--- 0x40090e41: esp_log_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:44
+--- 0x400dc77d: uart_rx_task at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c:96 (discriminator 1)
+--- 0x4008b131: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4008525a: esp_crosscore_isr at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/crosscore_int.c:73
+--- 0x400835d1: _xt_lowint1 at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7161: uart_tx_char at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:188
+--- 0x400d789b: uart_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d9d95: console_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_vfs_console/vfs_console.c:71
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x4016673d: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+--- 0x40172d8f: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+---  (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+--- 0x401727a6: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+--- 0x40166bcd: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+--- 0x40181009: esp_log_writev at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:34
+--- 0x40090e41: esp_log_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:44
+--- 0x400dc77d: uart_rx_task at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c:96 (discriminator 1)
+--- 0x4008b131: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4008525a: esp_crosscore_isr at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/crosscore_int.c:73
+--- 0x400835d1: _xt_lowint1 at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7161: uart_tx_char at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:188
+--- 0x400d789b: uart_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d9d95: console_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_vfs_console/vfs_console.c:71
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x4016673d: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+--- 0x40172d8f: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+---  (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+--- 0x401727a6: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+--- 0x40166bcd: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+--- 0x40181009: esp_log_writev at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:34
+--- 0x40090e41: esp_log_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:44
+--- 0x400dc811: uart_rx_task at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c:119 (discriminator 1)
+--- 0x4008b131: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4008525a: esp_crosscore_isr at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/crosscore_int.c:73
+--- 0x400835d1: _xt_lowint1 at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7161: uart_tx_char at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:188
+--- 0x400d789b: uart_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d9d95: console_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_vfs_console/vfs_console.c:71
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x4016673d: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+--- 0x40172d8f: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+---  (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+--- 0x401727a6: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+--- 0x40166bcd: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+--- 0x40181009: esp_log_writev at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:34
+--- 0x40090e41: esp_log_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:44
+--- 0x400dc77d: uart_rx_task at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c:96 (discriminator 1)
+--- 0x4008b131: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4008525a: esp_crosscore_isr at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/crosscore_int.c:73
+--- 0x400835d1: _xt_lowint1 at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7161: uart_tx_char at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:188
+--- 0x400d789b: uart_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d9d95: console_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_vfs_console/vfs_console.c:71
+--- 0x400da82a: esp_vfs_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/vfs/vfs.c:945 (discriminator 4)
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x4016673d: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+--- 0x40172d8f: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+---  (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+--- 0x401727a6: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+--- 0x40166bcd: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+--- 0x40181009: esp_log_writev at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:34
+--- 0x40090e41: esp_log_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/log/src/os/log_write.c:44
+--- 0x400dc77d: uart_rx_task at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c:96 (discriminator 1)
+--- 0x4008b131: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0m

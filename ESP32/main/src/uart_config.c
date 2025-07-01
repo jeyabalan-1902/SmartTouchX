@@ -3,6 +3,8 @@
 
 static const char *TAG = "UART_CONFIG";
 
+TaskHandle_t uartTaskHandle;
+
 void uart_init(void) {
     const uart_config_t uart_config = {
         .baud_rate = UART_BAUD_RATE,
@@ -16,8 +18,27 @@ void uart_init(void) {
     ESP_ERROR_CHECK(uart_driver_install(UART_PORT_NUM, UART_BUF_SIZE * 2, 0, 0, NULL, 0));
     ESP_ERROR_CHECK(uart_param_config(UART_PORT_NUM, &uart_config));
     ESP_ERROR_CHECK(uart_set_pin(UART_PORT_NUM, UART_TX_PIN, UART_RX_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE));
+}
 
-   // xTaskCreatePinnedToCore(uart_rx_task, "UART receiver", 4*1024, NULL, 8, NULL, 1);
+void uart_reinit(void)
+{ 
+    uart_flush_input(UART_PORT_NUM);                     // Flush input
+    uart_driver_delete(UART_PORT_NUM);                   // Remove driver (clears everything)
+    vTaskDelay(pdMS_TO_TICKS(50));                       // Small delay to settle
+
+    // Reinstall UART driver for OTA communication
+    const uart_config_t uart_config = {
+        .baud_rate = UART_BAUD_RATE,
+        .data_bits = UART_DATA_8_BITS,
+        .parity    = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+        .source_clk = UART_SCLK_DEFAULT,
+    };
+
+    ESP_ERROR_CHECK(uart_driver_install(UART_PORT_NUM, UART_BUF_SIZE * 2, 0, 0, NULL, 0));
+    ESP_ERROR_CHECK(uart_param_config(UART_PORT_NUM, &uart_config));
+    ESP_ERROR_CHECK(uart_set_pin(UART_PORT_NUM, UART_TX_PIN, UART_RX_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE));
 }
 
 void uart_write_byte(uint8_t data) {
@@ -35,8 +56,9 @@ int uart_read_bytes_timeout(uint8_t *data, size_t length, int timeout_ms) {
 }
 
 void uart_flush_rx_buffer(void) {
-    uart_flush_input(UART_PORT_NUM);
-    vTaskDelay(pdMS_TO_TICKS(10));
+    uart_flush_input(UART_PORT_NUM);             // clear RX
+    uart_wait_tx_done(UART_PORT_NUM, pdMS_TO_TICKS(100));  // wait for TX to finish (important)
+    vTaskDelay(pdMS_TO_TICKS(50));
 }
 
 esp_err_t send_bootloader_packet(uint8_t *packet, size_t total_len) {
@@ -83,13 +105,40 @@ esp_err_t read_bootloader_reply(uint8_t command_code, uint8_t *response_data, si
     }
 }
 
-void uart_rx_task(void *pvParameters) {
-    uint8_t rx_byte;
+
+void uart_rx_task(void *arg)
+{
+    uint8_t data;
+
     while (1) {
-        int len = uart_read_bytes(UART_PORT_NUM, &rx_byte, 1, pdMS_TO_TICKS(100));
+        int len = uart_read_bytes(UART_PORT_NUM, &data, 1, pdMS_TO_TICKS(100)); 
         if (len > 0) {
-            ESP_LOGI("UART_RX_TASK", "Received Byte: 0x%02X ('%c')", rx_byte, rx_byte);
+            ESP_LOGI(TAG, "Received byte: 0x%02X", data);
+            switch (data) {
+                case DEVICE_1:
+                    ESP_LOGI(TAG, "DEVICE_1 command received");
+                    // handle DEVICE_1
+                    break;
+
+                case DEVICE_2:
+                    ESP_LOGI(TAG, "DEVICE_2 command received");
+                    // handle DEVICE_2
+                    break;
+
+                case DEVICE_3:
+                    ESP_LOGI(TAG, "DEVICE_3 command received");
+                    // handle DEVICE_3
+                    break;
+
+                case DEVICE_4:
+                    ESP_LOGI(TAG, "DEVICE_4 command received");
+                    // handle DEVICE_4
+                    break;
+
+                default:
+                    ESP_LOGW(TAG, "Unknown command: 0x%02X", data);
+                    break;
+            }
         }
-        vTaskDelay(pdMS_TO_TICKS(10)); 
     }
 }

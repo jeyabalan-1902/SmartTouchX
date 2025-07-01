@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "esp_app",
-    "project_version":    "1",
+    "project_version":    "60a89a9-dirty",
     "project_path":       "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32",
     "idf_path":           "C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1",
     "build_dir":          "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build",
@@ -1195,8 +1195,8 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/esp_app.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/crc32.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/flash_cmd.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/http.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/mqtt.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/wifi.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/update_esp.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/http_server.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/gpio.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/nvs.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/ca_cert.pem.S" ],
-            "include_dirs": [ "inc" ]
+            "sources": [ "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/esp_app.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/crc32.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/flash_cmd.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/http.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/mqtt.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/wifi.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/update_esp.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/http_server.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/gpio.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/nvs.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/secret/mqtt_config.c", "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/ca_cert.pem.S" ],
+            "include_dirs": [ "inc", "secret" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2845,7 +2845,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "inc" ]
+            "include_dirs": [ "inc", "secret" ]
         }
     },
     "debug_prefix_map_gdbinit": "",
