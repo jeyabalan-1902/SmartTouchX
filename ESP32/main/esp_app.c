@@ -20,9 +20,28 @@ int ota_status_led = 0;
 char *product_id = NULL;
 char *product_type = NULL;
 
+extern TaskHandle_t uartTaskHandle;
+
 static const char *TAG = "ESP_APP";
 static const char *TAG_CON = "RECONNECT";
 
+static esp_err_t flash_stm32_firmware(void) {
+    ESP_LOGI(TAG, "Starting STM32 firmware update process");
+    
+    if (download_firmware(firmware_url) != ESP_OK) {
+        ESP_LOGE(TAG, "Firmware download failed");
+        return ESP_FAIL;
+    }
+    
+    esp_err_t result = flash_downloaded_firmware();
+    
+    if (download_buffer) {
+        free(download_buffer);
+        download_buffer = NULL;
+    }
+    
+    return result;
+}
 
 static void firmware_update_task(void *pvParameters) 
 {
@@ -30,19 +49,39 @@ static void firmware_update_task(void *pvParameters)
         if (firmware_update_requested) { 
             firmware_update_requested = false;
             ESP_LOGI(TAG, "Processing firmware update request");
-            
+
+            // Step 1: Stop UART RX Task
+            if (uartTaskHandle != NULL) {
+                ESP_LOGI(TAG, "Cancelling uart receive task before OTA");
+                vTaskDelete(uartTaskHandle);
+                uartTaskHandle = NULL;
+            }
+
+            // uart_reinit();
+
+            // Step 2: Run Firmware Update
             if (flash_stm32_firmware() == ESP_OK) {
                 ESP_LOGI(TAG, "Firmware update completed successfully");
                 ota_status_led = 0;
                 send_mqtt_status(update_status, "Success", "STM32 firmware updated successfully");
+                ESP_LOGI(TAG, "Restarting uart receive task after OTA");
+                uart_reinit();
+                xTaskCreatePinnedToCore(uart_rx_task, "UART reception Task", 2048, NULL, 6, &uartTaskHandle, 1);
             } else {
                 ESP_LOGE(TAG, "Firmware update failed");
+                ota_status_led = 0;
                 send_mqtt_status(update_status, "Failed", "STM32 firmware update failed");
+                if (uartTaskHandle == NULL) {
+                    ESP_LOGI(TAG, "Restarting uart receive task after OTA failure");
+                    uart_reinit();
+                    xTaskCreatePinnedToCore(uart_rx_task, "UART reception Task", 2048, NULL, 6, &uartTaskHandle, 1);
+                }
             }
         }       
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+
 
 static void connection_check(void *pvParameters)
 {
@@ -91,6 +130,10 @@ void app_main(void) {
     uart_init();
     ESP_LOGI(TAG, "UART initialized");
 
+    xTaskCreatePinnedToCore(firmware_update_task, "firmware_update", 8192, NULL, 5, NULL, 1); 
+    
+    xTaskCreatePinnedToCore(uart_rx_task,"UART reception Task", 2048, NULL, 6, &uartTaskHandle, 1);
+    
     if (is_wifi_credentials_available())
     {
         wifi_connection_init();
@@ -98,7 +141,6 @@ void app_main(void) {
         if(wifi_state)
         {
             mqtt_app_start(product_id);
-            xTaskCreatePinnedToCore(firmware_update_task, "firmware_update", 8192, NULL, 5, NULL, 1);
         }      
         xTaskCreatePinnedToCore(connection_check, "connection_check", 4*1024, NULL , 4, NULL, 1);
     }
@@ -109,5 +151,5 @@ void app_main(void) {
         http_led_anim();
         start_softap();
         start_http_server();
-    }  
+    } 
 }
