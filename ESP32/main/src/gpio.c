@@ -10,32 +10,42 @@ int count_reset;
 void http_led_anim()
 {
     gpio_set_level(STATUS_LED, 1);
+    gpio_set_level(RGB_LED, 1);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     gpio_set_level(STATUS_LED, 0);
+    gpio_set_level(RGB_LED, 0);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     gpio_set_level(STATUS_LED, 1);
+    gpio_set_level(RGB_LED, 1);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     gpio_set_level(STATUS_LED, 0);
+    gpio_set_level(RGB_LED, 0);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     gpio_set_level(STATUS_LED, 1);
+    gpio_set_level(RGB_LED, 1);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     gpio_set_level(STATUS_LED, 0);
+    gpio_set_level(RGB_LED, 0);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
 }
 
 void wifi_disconnect_led_anim()
 {
     gpio_set_level(STATUS_LED, 1);
+    gpio_set_level(RGB_LED, 1);
     vTaskDelay(200 / portTICK_PERIOD_MS);
     gpio_set_level(STATUS_LED, 0);
+    gpio_set_level(RGB_LED, 0);
     vTaskDelay(200 / portTICK_PERIOD_MS);
 }
 
 void mqtt_disconnect_led_anim()
 {
     gpio_set_level(STATUS_LED, 1);
+    gpio_set_level(RGB_LED, 1);
     vTaskDelay(500 / portTICK_PERIOD_MS);
     gpio_set_level(STATUS_LED, 0);
+    gpio_set_level(RGB_LED, 0);
     vTaskDelay(500 / portTICK_PERIOD_MS);
 }
 
@@ -44,12 +54,15 @@ void wifi_mqtt_paired_Led_anim()
     if(!ota_status_led)
     {
         gpio_set_level(STATUS_LED, 1);
+        gpio_set_level(RGB_LED, 1);
     }
     else 
     {
         gpio_set_level(STATUS_LED, 1);
+        gpio_set_level(RGB_LED, 1);
         vTaskDelay(50 / portTICK_PERIOD_MS);
         gpio_set_level(STATUS_LED, 0);
+        gpio_set_level(RGB_LED, 0);
         vTaskDelay(50 / portTICK_PERIOD_MS);
     }
 }

@@ -1,0 +1,23 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM10 instead...[0m
+[0;33m--- esp-idf-monitor 1.6.2 on \\.\COM10 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40375c60: esp_restart_noos at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x4200f9aa: uart_reinit at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c:35 (discriminator 1)
+[0m
+[0;33m--- 0x4037d5af: _esp_error_check_failed at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40375d21: panic_abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/panic.c:454
+--- 0x4037d5b9: esp_system_abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/port/esp_system_chip.c:87
+--- 0x403858ed: abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/newlib/abort.c:38
+--- 0x4037d5af: _esp_error_check_failed at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/esp_err.c:49
+--- 0x4200f9aa: uart_reinit at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/uart_config.c:35 (discriminator 1)
+--- 0x4200ed5d: flash_downloaded_firmware at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/flash_cmd.c:158
+--- 0x4200e6b9: flash_stm32_firmware at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/esp_app.c:37
+--- 0x4200e752: firmware_update_task at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/esp_app.c:67
+--- 0x4037e0c5: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4037ae2a: esp_cpu_wait_for_intr at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_hw_support/cpu.c:64
+[0m
+[0m

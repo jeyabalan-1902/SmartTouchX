@@ -2,8 +2,9 @@
 #include "uart_config.h"
 
 static const char *TAG = "UART_CONFIG";
-
+extern volatile bool uart_exit;
 TaskHandle_t uartTaskHandle;
+char status_data[50];
 
 void uart_init(void) {
     const uart_config_t uart_config = {
@@ -22,10 +23,6 @@ void uart_init(void) {
 
 void uart_reinit(void)
 { 
-    uart_flush_input(UART_PORT_NUM);                     // Flush input
-    uart_driver_delete(UART_PORT_NUM);                   // Remove driver (clears everything)
-    vTaskDelay(pdMS_TO_TICKS(50));                       // Small delay to settle
-
     // Reinstall UART driver for OTA communication
     const uart_config_t uart_config = {
         .baud_rate = UART_BAUD_RATE,
@@ -105,40 +102,48 @@ esp_err_t read_bootloader_reply(uint8_t command_code, uint8_t *response_data, si
     }
 }
 
+void uart_task_delete(void)
+{
+    if (uartTaskHandle != NULL) {
+        ESP_LOGI(TAG, "Cancelling uart receive task before OTA");
+        uart_exit = true;
+        while (uartTaskHandle != NULL) {
+            vTaskDelay(pdMS_TO_TICKS(10));
+        }
+        uart_driver_delete(UART_PORT_NUM);
+        vTaskDelay(pdMS_TO_TICKS(50));
+    }
+}
+
 
 void uart_rx_task(void *arg)
 {
-    uint8_t data;
+    uint8_t byte;
+    char json_buffer[BUF_SIZE] = {0};
+    int index = 0;
 
-    while (1) {
-        int len = uart_read_bytes(UART_PORT_NUM, &data, 1, pdMS_TO_TICKS(100)); 
+    while (!uart_exit) {
+        int len = uart_read_bytes(UART_PORT_NUM, &byte, 1, pdMS_TO_TICKS(100)); 
         if (len > 0) {
-            ESP_LOGI(TAG, "Received byte: 0x%02X", data);
-            switch (data) {
-                case DEVICE_1:
-                    ESP_LOGI(TAG, "DEVICE_1 command received");
-                    // handle DEVICE_1
-                    break;
+            if (byte == '\n' || byte == '\r') {
+                if (index > 0) {
+                    json_buffer[index] = '\0'; 
+                    ESP_LOGI(TAG, "Received JSON: %s", json_buffer);
 
-                case DEVICE_2:
-                    ESP_LOGI(TAG, "DEVICE_2 command received");
-                    // handle DEVICE_2
-                    break;
+                    esp_mqtt_client_publish(mqtt_client, current_status, json_buffer, 0, 1, 0);
 
-                case DEVICE_3:
-                    ESP_LOGI(TAG, "DEVICE_3 command received");
-                    // handle DEVICE_3
-                    break;
-
-                case DEVICE_4:
-                    ESP_LOGI(TAG, "DEVICE_4 command received");
-                    // handle DEVICE_4
-                    break;
-
-                default:
-                    ESP_LOGW(TAG, "Unknown command: 0x%02X", data);
-                    break;
+                    index = 0;
+                    memset(json_buffer, 0, sizeof(json_buffer));
+                }
+            }
+            else {
+                if (index < BUF_SIZE - 1) {
+                    json_buffer[index++] = byte;
+                }
             }
         }
     }
+    ESP_LOGI(TAG, "UART RX task exiting");
+    uartTaskHandle = NULL;
+    vTaskDelete(NULL); 
 }
