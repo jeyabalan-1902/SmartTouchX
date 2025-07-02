@@ -154,8 +154,6 @@ esp_err_t flash_downloaded_firmware(void) {
         ESP_LOGE(TAG, "No firmware data to flash");
         return ESP_FAIL;
     }
-
-    uart_reinit();
     
     send_mqtt_status(update_status, "Starting", "STM32 firmware flashing started");
     ESP_LOGI(TAG, "Starting STM32 firmware flashing");

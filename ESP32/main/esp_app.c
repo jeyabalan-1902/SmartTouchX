@@ -19,6 +19,7 @@ uint16_t connection_count;
 int ota_status_led = 0;
 char *product_id = NULL;
 char *product_type = NULL;
+volatile bool uart_exit = false;
 
 extern TaskHandle_t uartTaskHandle;
 
@@ -50,32 +51,22 @@ static void firmware_update_task(void *pvParameters)
             firmware_update_requested = false;
             ESP_LOGI(TAG, "Processing firmware update request");
 
-            // Step 1: Stop UART RX Task
-            if (uartTaskHandle != NULL) {
-                ESP_LOGI(TAG, "Cancelling uart receive task before OTA");
-                vTaskDelete(uartTaskHandle);
-                uartTaskHandle = NULL;
-            }
+            uart_task_delete();
+            
+            uart_reinit();
 
-            // uart_reinit();
-
-            // Step 2: Run Firmware Update
             if (flash_stm32_firmware() == ESP_OK) {
                 ESP_LOGI(TAG, "Firmware update completed successfully");
                 ota_status_led = 0;
                 send_mqtt_status(update_status, "Success", "STM32 firmware updated successfully");
-                ESP_LOGI(TAG, "Restarting uart receive task after OTA");
-                uart_reinit();
-                xTaskCreatePinnedToCore(uart_rx_task, "UART reception Task", 2048, NULL, 6, &uartTaskHandle, 1);
+                uart_exit = false;
+                xTaskCreatePinnedToCore(uart_rx_task, "UART reception Task", 8192, NULL, 6, &uartTaskHandle, 1);
             } else {
                 ESP_LOGE(TAG, "Firmware update failed");
                 ota_status_led = 0;
                 send_mqtt_status(update_status, "Failed", "STM32 firmware update failed");
-                if (uartTaskHandle == NULL) {
-                    ESP_LOGI(TAG, "Restarting uart receive task after OTA failure");
-                    uart_reinit();
-                    xTaskCreatePinnedToCore(uart_rx_task, "UART reception Task", 2048, NULL, 6, &uartTaskHandle, 1);
-                }
+                uart_exit = false;
+                xTaskCreatePinnedToCore(uart_rx_task, "UART reception Task", 8192, NULL, 6, &uartTaskHandle, 1);
             }
         }       
         vTaskDelay(pdMS_TO_TICKS(1000));
@@ -132,7 +123,7 @@ void app_main(void) {
 
     xTaskCreatePinnedToCore(firmware_update_task, "firmware_update", 8192, NULL, 5, NULL, 1); 
     
-    xTaskCreatePinnedToCore(uart_rx_task,"UART reception Task", 2048, NULL, 6, &uartTaskHandle, 1);
+    xTaskCreatePinnedToCore(uart_rx_task,"UART reception Task", 8192, NULL, 6, &uartTaskHandle, 1);
     
     if (is_wifi_credentials_available())
     {

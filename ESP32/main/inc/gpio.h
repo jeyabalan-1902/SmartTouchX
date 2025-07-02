@@ -6,7 +6,8 @@
 #include "wifi.h"
 
 #define STATUS_LED  4
-#define RESET_GPIO  32
+#define RGB_LED     38
+#define RESET_GPIO  19
 
 void gpio_task_init(void);
 void http_led_anim();
