@@ -11,6 +11,7 @@
 #include "main.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
 
@@ -20,6 +21,7 @@
 #include "semphr.h"
 
 #include "display_app.h"
+#include "cJSON.h"
 
 #define BOOT_CMD    0x50
 #define DEVICE_1    0x55
