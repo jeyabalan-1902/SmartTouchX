@@ -1,5 +1,7 @@
 "./Core/Src/GFX_FUNCTIONS.o"
 "./Core/Src/ST7735.o"
+"./Core/Src/cJSON.o"
+"./Core/Src/cJSON_Utils.o"
 "./Core/Src/display_app.o"
 "./Core/Src/fonts.o"
 "./Core/Src/main.o"

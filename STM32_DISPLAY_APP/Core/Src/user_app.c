@@ -46,39 +46,109 @@ void setup_freeRTOS(void)
 
 void SPI_handler(void *param)
 {
-    uint8_t localSpiRxBuffer[2];
-    uint8_t uartTx;
+    uint8_t localSpiRxBuffer[3] = {0};
+    uint8_t deviceState;
+    GPIO_PinState state;
+
     while (1) {
         if (xQueueReceive(spiQueue, localSpiRxBuffer, portMAX_DELAY) == pdTRUE)
         {
             printf("SPI Data Received: %s\n", localSpiRxBuffer);
             if (strcmp((char *)localSpiRxBuffer, "L1") == 0)
             {
+            	print_To_display("Device 1 operation");
                 HAL_GPIO_TogglePin(TOUCH_LED1_GPIO_Port, TOUCH_LED1_Pin);
-                uartTx = DEVICE_1;
-                HAL_UART_Transmit(&huart3, &uartTx, sizeof(uartTx), HAL_MAX_DELAY);
-                print_To_display("Device 1 operation");
+                state = HAL_GPIO_ReadPin(TOUCH_LED1_GPIO_Port, TOUCH_LED1_Pin);
+                deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+
+                cJSON *jsonObj = cJSON_CreateObject();
+				if (jsonObj != NULL)
+				{
+					cJSON_AddNumberToObject(jsonObj, "device1", deviceState);
+
+					char *jsonStr = cJSON_PrintUnformatted(jsonObj);
+					if (jsonStr != NULL)
+					{
+						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
+						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
+						printf("JSON Sent via UART: %s\n", jsonStr);
+						free(jsonStr);
+					}
+
+					cJSON_Delete(jsonObj);
+				}
             }
             else if(strcmp((char *)localSpiRxBuffer, "L2") == 0)
             {
-            	HAL_GPIO_TogglePin(TOUCH_LED2_GPIO_Port, TOUCH_LED2_Pin);
-            	uartTx = DEVICE_2;
-				HAL_UART_Transmit(&huart3, &uartTx, sizeof(uartTx), HAL_MAX_DELAY);
             	print_To_display("Device 2 operation");
+            	HAL_GPIO_TogglePin(TOUCH_LED2_GPIO_Port, TOUCH_LED2_Pin);
+            	state = HAL_GPIO_ReadPin(TOUCH_LED2_GPIO_Port, TOUCH_LED2_Pin);
+				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+
+				cJSON *jsonObj = cJSON_CreateObject();
+				if (jsonObj != NULL)
+				{
+					cJSON_AddNumberToObject(jsonObj, "device2", deviceState);
+
+					char *jsonStr = cJSON_PrintUnformatted(jsonObj);
+					if (jsonStr != NULL)
+					{
+						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
+						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
+						printf("JSON Sent via UART: %s\n", jsonStr);
+						free(jsonStr);
+					}
+
+					cJSON_Delete(jsonObj);
+				}
             }
             else if(strcmp((char *)localSpiRxBuffer, "L3") == 0)
             {
+            	print_To_display("Device 3 operation");
 				HAL_GPIO_TogglePin(TOUCH_LED3_GPIO_Port, TOUCH_LED3_Pin);
-				uartTx = DEVICE_3;
-				HAL_UART_Transmit(&huart3, &uartTx, sizeof(uartTx), HAL_MAX_DELAY);
-				print_To_display("Device 3 operation");
+				state = HAL_GPIO_ReadPin(TOUCH_LED3_GPIO_Port, TOUCH_LED3_Pin);
+				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+
+				cJSON *jsonObj = cJSON_CreateObject();
+				if (jsonObj != NULL)
+				{
+					cJSON_AddNumberToObject(jsonObj, "device3", deviceState);
+
+					char *jsonStr = cJSON_PrintUnformatted(jsonObj);
+					if (jsonStr != NULL)
+					{
+						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
+						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
+						printf("JSON Sent via UART: %s\n", jsonStr);
+						free(jsonStr);
+					}
+
+					cJSON_Delete(jsonObj);
+				}
 			}
             else if(strcmp((char *)localSpiRxBuffer, "L4") == 0)
             {
+            	print_To_display("Device 4 operation");
 				HAL_GPIO_TogglePin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin);
-				uartTx = DEVICE_4;
-				HAL_UART_Transmit(&huart3, &uartTx, sizeof(uartTx), HAL_MAX_DELAY);
-				print_To_display("Device 4 operation");
+				state = HAL_GPIO_ReadPin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin);
+				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+
+				cJSON *jsonObj = cJSON_CreateObject();
+				if (jsonObj != NULL)
+				{
+					cJSON_AddNumberToObject(jsonObj, "device4", deviceState);
+
+					char *jsonStr = cJSON_PrintUnformatted(jsonObj);
+					if (jsonStr != NULL)
+					{
+						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
+						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
+						printf("JSON Sent via UART: %s\n", jsonStr);
+						free(jsonStr);
+					}
+
+					cJSON_Delete(jsonObj);
+				}
 			}
             else
             {
