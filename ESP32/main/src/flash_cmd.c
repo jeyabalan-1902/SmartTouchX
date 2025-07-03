@@ -193,15 +193,10 @@ esp_err_t flash_downloaded_firmware(void) {
     uint8_t *data_ptr = download_buffer;
     int retry_count = 0;
     const int max_retries = 3;
+    int last_percent_reported = -1;
     
     while (bytes_remaining > 0) {
-        size_t len_to_read;
-        
-        if (bytes_remaining >= 128) {
-            len_to_read = 128;
-        } else {
-            len_to_read = bytes_remaining;
-        }
+        size_t len_to_read = (bytes_remaining >= 128) ? 128 : bytes_remaining;
         
         ESP_LOGI(TAG, "base mem address = 0x%08" PRIx32, base_mem_address);
         ESP_LOGI(TAG, "bytes_so_far_sent:%zu -- bytes_remaining:%zu", bytes_sent, bytes_remaining);
@@ -215,14 +210,18 @@ esp_err_t flash_downloaded_firmware(void) {
             bytes_remaining -= len_to_read;
             retry_count = 0;
             float progress_percentage = (float)bytes_sent * 100.0 / bytes_downloaded;
-    
-            char status_firm[300];
-            snprintf(status_firm, sizeof(status_firm), "Flash progress: %zu/%zu bytes (%.1f%%)", 
-                    bytes_sent, bytes_downloaded, progress_percentage);
+            int progress_step = ((int)progress_percentage / 10) * 10;
+            if (progress_step != last_percent_reported) {
+            last_percent_reported = progress_step;
+
+            char status_firm[128];
+            snprintf(status_firm, sizeof(status_firm),
+                     "Flash progress: %zu/%zu bytes (%d%%)",
+                     bytes_sent, bytes_downloaded, progress_step);
+
             send_mqtt_status(update_status, "Writing", status_firm);
-            
-            ESP_LOGI(TAG, "Flash progress: %zu/%zu bytes (%.1f%%)", 
-                    bytes_sent, bytes_downloaded, progress_percentage);
+            ESP_LOGI(TAG, "%s", status_firm);
+        }
         } 
         else {
             retry_count++;

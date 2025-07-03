@@ -95,7 +95,79 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                 }
             }
         }
-        
+        else if(strncmp(get_current_status, event->topic, event->topic_len) == 0)
+        {
+            char *json_string = malloc(event->data_len + 1);
+            if(json_string)
+            {
+                memcpy(json_string, event->data, event->data_len);
+                json_string[event->data_len] = '\0';
+                uart_write_bytes(UART_PORT_NUM, json_string, strlen(json_string));
+                uart_write_bytes(UART_PORT_NUM, "\n", 1);
+                memset(json_string, 0, sizeof(json_string));
+            }
+        }
+        else if (strncmp(get_status, event->topic, event->topic_len) == 0)
+        {
+            char *json_string = malloc(event->data_len + 1);
+            if (json_string) {
+                memcpy(json_string, event->data, event->data_len);
+                json_string[event->data_len] = '\0';
+
+                cJSON *json = cJSON_Parse(json_string);
+                if (json) {
+                    const char *device_keys[] = {"device1", "device2", "device3", "device4"};
+                    int device_count = 0;
+                    for (int i = 0; i < 4; ++i) {
+                        cJSON *device_item = cJSON_GetObjectItem(json, device_keys[i]);
+                        if (cJSON_IsNumber(device_item)) {
+                            device_count++;
+                        }
+                    }
+
+                    if (device_count == 1) {
+                        for (int i = 0; i < 4; ++i) {
+                            cJSON *device_item = cJSON_GetObjectItem(json, device_keys[i]);
+                            if (cJSON_IsNumber(device_item)) {
+                                cJSON *single_json = cJSON_CreateObject();
+                                cJSON_AddNumberToObject(single_json, device_keys[i], device_item->valueint);
+
+                                char *resp_str = cJSON_PrintUnformatted(single_json);
+                                if (resp_str) {
+                                    uart_write_bytes(UART_PORT_NUM, resp_str, strlen(resp_str));
+                                    uart_write_bytes(UART_PORT_NUM, "\n", 1);
+                                    free(resp_str);
+                                }
+
+                                cJSON_Delete(single_json);
+                                break;
+                            }
+                        }
+                    } else if (device_count > 1) {
+                        cJSON *combined_json = cJSON_CreateObject();
+
+                        for (int i = 0; i < 4; ++i) {
+                            cJSON *device_item = cJSON_GetObjectItem(json, device_keys[i]);
+                            if (cJSON_IsNumber(device_item)) {
+                                cJSON_AddNumberToObject(combined_json, device_keys[i], device_item->valueint);
+                            }
+                        }
+
+                        char *resp_str = cJSON_PrintUnformatted(combined_json);
+                        if (resp_str) {
+                            uart_write_bytes(UART_PORT_NUM, resp_str, strlen(resp_str));
+                            uart_write_bytes(UART_PORT_NUM, "\n", 1);
+                            free(resp_str);
+                        }
+
+                        cJSON_Delete(combined_json);
+                    }
+
+                    cJSON_Delete(json);
+                }
+                free(json_string);
+            }
+        }
         break;
     case MQTT_EVENT_ERROR:
         ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
