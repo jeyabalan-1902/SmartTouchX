@@ -1,0 +1,5 @@
+../Core/Src/display_app.c:13:6:InitializeDisplay	2
+../Core/Src/display_app.c:30:6:ClearDisplay	2
+../Core/Src/display_app.c:45:6:ScrollDisplay	4
+../Core/Src/display_app.c:65:6:DisplayMessage	3
+../Core/Src/display_app.c:84:6:print_To_display	1

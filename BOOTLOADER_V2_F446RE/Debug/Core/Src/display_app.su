@@ -1,0 +1,5 @@
+../Core/Src/display_app.c:13:6:InitializeDisplay	32	static
+../Core/Src/display_app.c:30:6:ClearDisplay	32	static
+../Core/Src/display_app.c:45:6:ScrollDisplay	32	static
+../Core/Src/display_app.c:65:6:DisplayMessage	32	static
+../Core/Src/display_app.c:84:6:print_To_display	96	static
