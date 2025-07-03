@@ -23,26 +23,14 @@
 #include "display_app.h"
 #include "cJSON.h"
 
-#define BOOT_CMD    0x50
-#define DEVICE_1    0x55
-#define DEVICE_2    0X56
-#define DEVICE_3    0x57
-#define DEVICE_4    0X58
+#define UART_RING_BUFFER_SIZE 256
 
+#define BOOT_CMD    0x50
 
 extern SPI_HandleTypeDef hspi1;
 extern SPI_HandleTypeDef hspi2;
 extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
-
-extern uint8_t uartRxBuffer[1];
-extern uint8_t spiRxBuffer[2];
-
-extern volatile uint8_t dataReceived;
-extern volatile uint8_t light1State;
-extern volatile uint8_t light2State;
-extern volatile uint8_t light3State;
-extern volatile uint8_t light4State;
 
 void setup_freeRTOS(void);
 void SPI_handler(void *param);
