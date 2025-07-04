@@ -1,0 +1,242 @@
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+alized
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jul  1 2025 10:29:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=36efch (225020) map[0m
+[0;32mI (167) esp_image: segment 1: paddr=00046f24 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (168) esp_image: segment 2: paddr=00046f48 vaddr=3ffbdb60 size=05dech ( 24044) load[0m
+[0;32mI (180) esp_image: segment 3: paddr=0004cd3c vaddr=40080000 size=032dch ( 13020) load[0m
+[0;32mI (185) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=100708h (1050376) map[0m
+[0;32mI (545) esp_image: segment 5: paddr=00150730 vaddr=400832dc size=1bcbch (113852) load[0m
+[0;32mI (605) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (605) boot: Disabling RNG early entropy source...[0m
+[0;32mI (615) cpu_start: Multicore app[0m
+[0;32mI (624) cpu_start: Pro cpu start user code[0m
+[0;32mI (624) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (624) app_init: Application information:[0m
+[0;32mI (624) app_init: Project name:     3chgate_app[0m
+[0;32mI (628) app_init: App version:      c12d938-dirty[0m
+[0;32mI (632) app_init: Compile time:     Jul  1 2025 10:28:57[0m
+[0;32mI (637) app_init: ELF file SHA256:  9093ab0e9...[0m
+[0;32mI (642) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (646) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (650) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (654) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (658) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (664) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (669) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (674) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (679) heap_init: At 3FFCC460 len 00013BA0 (78 KiB): DRAM[0m
+[0;32mI (685) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (690) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (696) heap_init: At 4009EF98 len 00001068 (4 KiB): IRAM[0m
+[0;32mI (702) spi_flash: detected chip: generic[0m
+[0;32mI (704) spi_flash: flash io: dio[0m
+[0;32mI (708) coexist: coex firmware version: e727207[0m
+[0;32mI (712) main_task: Started on CPU0[0m
+[0;32mI (722) main_task: Calling app_main()[0m
+[0;32mI (742) GPIO: configured GPIO![0m
+[0;32mI (742) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (742) GPIO: GPIO LED![0m
+[0;32mI (752) NVS: WiFi credentials found. SSID: .bin, connecting......[0m
+[0;32mI (752) NVS: From nvs ssid is .bin [0m
+[0;32mI (752) NVS: From nvs password is bala@1902[0m
+[0;32mI (762) WIFI_CON: wifi ssid .bin password bala@1902[0m
+[0;32mI (762) WIFI: Hostname set to Onwords-3chgate001[0m
+[0;32mI (782) wifi:wifi driver task: 3ffd14e4, prio:23, stack:6656, core=0[0m
+[0;32mI (792) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (792) wifi:wifi certification version: v7.0[0m
+[0;32mI (792) wifi:config NVS flash: enabled[0m
+[0;32mI (792) wifi:config nano formatting: disabled[0m
+[0;32mI (792) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (802) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (802) wifi:Init management short buffer num: 32[0m
+[0;32mI (812) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (812) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (822) wifi:Init static rx buffer num: 10[0m
+[0;32mI (822) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (832) wifi_init: rx ba win: 6[0m
+[0;32mI (832) wifi_init: accept mbox: 6[0m
+[0;32mI (832) wifi_init: tcpip mbox: 32[0m
+[0;32mI (832) wifi_init: udp mbox: 6[0m
+[0;32mI (842) wifi_init: tcp mbox: 6[0m
+[0;32mI (842) wifi_init: tcp tx win: 5760[0m
+[0;32mI (842) wifi_init: tcp rx win: 5760[0m
+[0;32mI (842) wifi_init: tcp mss: 1440[0m
+[0;32mI (852) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (852) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (862) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (872) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (952) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1022) wifi:mode : sta (a0:b7:65:20:c1:a0)[0m
+[0;32mI (1022) wifi:enable tsf[0m
+[0;32mI (1032) WIFI_CON: wifi_init_sta finished.[0m
+[0;32mI (3452) WIFI_CON: retry to connect to the AP[0m
+[0;32mI (3452) WIFI_CON: connect to the AP fail[0m
+[0;32mI (5862) WIFI_CON: retry to connect to the AP[0m
+[0;32mI (5862) WIFI_CON: connect to the AP fail[0m
+[0;32mI (8282) WIFI_CON: retry to connect to the AP[0m
+[0;32mI (8282) WIFI_CON: connect to the AP fail[0m
+[0;32mI (10702) WIFI_CON: retry to connect to the AP[0m
+[0;32mI (10702) WIFI_CON: connect to the AP fail[0m

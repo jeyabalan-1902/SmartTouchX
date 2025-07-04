@@ -4,6 +4,7 @@
 #include "esp_app.h"
 #include "mqtt_config.h"
 #include "uart_config.h"
+#include "ble.h"
 
 void mqtt_app_start(char *product_id);
 void send_mqtt_status(const char* topic, const char* status, const char* message);

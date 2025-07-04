@@ -6,6 +6,7 @@
 #include "nvs.h"
 #include "http_server.h"
 #include "gpio.h"
+#include "ble.h"
 
 
 bool firmware_update_requested = false;
@@ -20,9 +21,10 @@ int ota_status_led = 0;
 char *product_id = NULL;
 char *product_type = NULL;
 volatile bool uart_exit = false;
+int ble_enabled = 0;
 
 extern TaskHandle_t uartTaskHandle;
-
+extern bool ble_initialized; 
 static const char *TAG = "ESP_APP";
 static const char *TAG_CON = "RECONNECT";
 
@@ -39,9 +41,26 @@ static esp_err_t flash_stm32_firmware(void) {
     if (download_buffer) {
         free(download_buffer);
         download_buffer = NULL;
-    }
-    
+    }  
     return result;
+}
+
+void start_ble_fallback(void) {
+    if (!ble_enabled) {
+        ESP_LOGI(TAG, "WiFi disconnected, enabling BLE advertising...");
+        ble_init();
+        ble_enabled = 1;
+        ESP_LOGI(TAG, "Ble_enabled: %d", ble_enabled);
+    }
+}
+
+void stop_ble_fallback(void) {
+    if (ble_enabled) {
+        ESP_LOGI(TAG, "WiFi connected, stopping BLE fallback...");
+        ble_deinit();
+        ble_enabled = 0;
+        ESP_LOGI(TAG, "Ble_enabled: %d", ble_enabled);
+    }
 }
 
 static void firmware_update_task(void *pvParameters) 
@@ -83,10 +102,10 @@ static void connection_check(void *pvParameters)
             if (mqtt_status == 0)
             {
                 mqtt_count++;
-                ESP_LOGI(TAG_CON,"Error wifi. wifi reconnects in %d",mqtt_count-30);
+                //ESP_LOGI(TAG_CON,"Error wifi. wifi reconnects in %d",mqtt_count-30);
             }
             connection_count++;
-            ESP_LOGI(TAG_CON,"Error mqtt. mqtt reconnects in %d",connection_count-30);
+            //ESP_LOGI(TAG_CON,"Error mqtt. mqtt reconnects in %d",connection_count-30);
         }
         else
         {
@@ -121,9 +140,9 @@ void app_main(void) {
     uart_init();
     ESP_LOGI(TAG, "UART initialized");
 
-    xTaskCreatePinnedToCore(firmware_update_task, "firmware_update", 8192, NULL, 5, NULL, 1); 
+    xTaskCreatePinnedToCore(firmware_update_task, "firmware_update", 8192, NULL, 3, NULL, 1); 
     
-    xTaskCreatePinnedToCore(uart_rx_task,"UART reception Task", 8192, NULL, 6, &uartTaskHandle, 1);
+    xTaskCreatePinnedToCore(uart_rx_task,"UART reception Task", 8192, NULL, 5, &uartTaskHandle, 1);
     
     if (is_wifi_credentials_available())
     {
@@ -132,8 +151,12 @@ void app_main(void) {
         if(wifi_state)
         {
             mqtt_app_start(product_id);
+        }
+        else 
+        {
+            start_ble_fallback();
         }      
-        xTaskCreatePinnedToCore(connection_check, "connection_check", 4*1024, NULL , 4, NULL, 1);
+        xTaskCreatePinnedToCore(connection_check, "connection_check", 4*1024, NULL , 6, NULL, 1);
     }
     else
     {

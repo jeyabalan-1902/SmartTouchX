@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include <stddef.h>
 #include <stdbool.h>
 #include <inttypes.h>
 #include <math.h>
@@ -34,6 +35,12 @@
 #include "esp_ota_ops.h"
 #include "esp_https_ota.h"
 #include <sys/socket.h>
+#include "esp_bt.h"
+#include "esp_gap_ble_api.h"
+#include "esp_gatts_api.h"
+#include "esp_bt_defs.h"
+#include "esp_bt_main.h"
+#include "esp_gatt_common_api.h"
 
 extern bool firmware_update_requested;
 extern char firmware_url[256];
@@ -46,6 +53,9 @@ extern uint16_t connection_count;
 extern int ota_status_led;
 extern char *product_id;
 extern char *product_type;
+
+extern void start_ble_fallback(void);
+extern void stop_ble_fallback(void);
 
 
 #endif
