@@ -1,0 +1,871 @@
+Wr�j
+[0;32mI (34) boot.esp32s3: Boot �ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (72) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (78) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (85) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00020020 vaddr=3c0c0020 size=252f4h (152308) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0004531c vaddr=3fc9ae00 size=04a44h ( 19012) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=00049d68 vaddr=40374000 size=062b0h ( 25264) load[0m
+[0;32mI (139) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=b3450h (734288) map[0m
+[0;32mI (270) esp_image: segment 4: paddr=00103478 vaddr=4037a2b0 size=10ab0h ( 68272) load[0m
+[0;32mI (285) esp_image: segment 5: paddr=00113f30 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (294) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (294) boot: Disabling RNG early entropy source...[0m
+[0;32mI (304) cpu_start: Multicore app[0m
+[0;32mI (313) cpu_start: Pro cpu start user code[0m
+[0;32mI (313) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (313) app_init: Application information:[0m
+[0;32mI (313) app_init: Project name:     esp_app[0m
+[0;32mI (317) app_init: App version:      8b3074f-dirty[0m
+[0;32mI (322) app_init: Compile time:     Jul  3 2025 17:46:43[0m
+[0;32mI (327) app_init: ELF file SHA256:  ceb506f91...[0m
+[0;32mI (331) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (335) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (339) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (343) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (347) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (353) heap_init: At 3FCA3EF8 len 00045818 (278 KiB): RAM[0m
+[0;32mI (359) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (364) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (369) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (375) spi_flash: detected chip: boya[0m
+[0;32mI (378) spi_flash: flash io: dio[0m
+[0;32mI (381) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (387) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (394) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+[0;32mI (454) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (454) GPIO: GPIO Initialization![0m
+[0;32mI (454) ESP_APP: UART initialized[0m
+[0;32mI (454) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (464) NVS: From nvs ssid is Rnd [0m
+[0;32mI (464) NVS: From nvs password is nikhil8182[0m
+[0;32mI (464) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (474) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (474) pp: pp rom version: e7ae62f[0m
+[0;32mI (484) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (494) wifi:wifi driver task: 3fcb4258, prio:23, stack:6656, core=0[0m
+[0;32mI (504) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (504) wifi:wifi certification version: v7.0[0m
+[0;32mI (504) wifi:config NVS flash: enabled[0m
+[0;32mI (504) wifi:config nano formatting: disabled[0m
+[0;32mI (504) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (514) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (514) wifi:Init management short buffer num: 32[0m
+[0;32mI (524) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (524) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (524) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (534) wifi:Init static rx buffer num: 10[0m
+[0;32mI (534) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (544) wifi_init: rx ba win: 6[0m
+[0;32mI (544) wifi_init: accept mbox: 6[0m
+[0;32mI (544) wifi_init: tcpip mbox: 32[0m
+[0;32mI (544) wifi_init: udp mbox: 6[0m
+[0;32mI (554) wifi_init: tcp mbox: 6[0m
+[0;32mI (554) wifi_init: tcp tx win: 5760[0m
+[0;32mI (554) wifi_init: tcp rx win: 5760[0m
+[0;32mI (564) wifi_init: tcp mss: 1440[0m
+[0;32mI (564) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (564) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (574) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (584) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (624) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (624) wifi:enable tsf[0m
+[0;32mI (624) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (644) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (644) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (654) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (664) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (694) wifi:connected with Rnd, aid = 1, channel 2, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (694) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (694) wifi:pm start, type: 1[0m
+
+[0;32mI (694) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (704) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (784) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1734) esp_netif_handlers: sta ip: 192.168.1.227, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (1734) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (1734) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (1734) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -43[0m
+[0;32mI (1744) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1744) main_task: Returned from app_main()[0m
+[0;32mI (1754) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2334) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (2434) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=36963[0m
+[0;32mI (2494) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=8444[0m
+[0;32mI (2494) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=48031[0m
+[0;32mI (2504) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=11994[0m
+[0;32mI (2504) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=54120[0m
+[0;32mI (2504) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=38811[0m
+[0;32mI (2514) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=59677[0m
+[0;32mI (2514) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (2514) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (2524) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (16764) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (16764) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (16764) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (16784) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (16794) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (16794) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (16794) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (16874) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=9247[0m
+[0;32mI (16874) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (16874) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (16874) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (16934) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14833[0m
+[0;32mI (16934) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=54990[0m
+[0;32mI (16944) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14608[0m
+[0;32mI (16944) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (16944) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (16944) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (16954) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (16954) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (16964) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (16964) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (16964) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (16974) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (19844) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (19854) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (19854) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545051591}[0m
+[0;32mI (19864) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (19944) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=11910[0m
+[0;32mI (19944) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (19944) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (19944) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (20554) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (20554) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (20554) MQTT_HANDLER: DATA={"device4":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545052369}[0m
+[0;32mI (20574) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (20664) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=36130[0m
+[0;32mI (20664) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (20664) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (20664) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (21274) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (21274) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (21274) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545053052}[0m
+[0;32mI (21294) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (21784) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=2222[0m
+[0;32mI (21794) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (21794) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (21794) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (21884) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (21884) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (21894) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545053625}[0m
+[0;32mI (21904) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (21994) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=12139[0m
+[0;32mI (21994) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (21994) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (21994) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (23014) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (23014) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (23014) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545054842}[0m
+[0;32mI (23034) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (23114) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=36996[0m
+[0;32mI (23124) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (23124) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (23124) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (23834) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (23834) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (23834) MQTT_HANDLER: DATA={"device2":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545055558}[0m
+[0;32mI (23854) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (23934) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=4605[0m
+[0;32mI (23944) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (23944) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (23944) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (24244) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (24244) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (24244) MQTT_HANDLER: DATA={"device3":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545056084}[0m
+[0;32mI (24264) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (24344) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=28025[0m
+[0;32mI (24354) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (24354) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (24354) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (24754) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (24754) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (24754) MQTT_HANDLER: DATA={"device4":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545056529}[0m
+[0;32mI (24774) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (24964) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23794[0m
+[0;32mI (24964) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (24964) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (24964) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (26044) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (26204) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=24609[0m
+[0;32mI (26214) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (26214) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (26214) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (26614) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (26704) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23273[0m
+[0;32mI (26704) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (26704) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (26704) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (27424) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (27524) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=10317[0m
+[0;32mI (27524) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (27524) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (27524) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (28154) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (28234) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14376[0m
+[0;32mI (28244) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (28244) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (28244) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (29784) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (29874) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=19928[0m
+[0;32mI (29884) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (29884) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (29884) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (30524) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (30694) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=9632[0m
+[0;32mI (30694) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (30694) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (30704) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (31314) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (31414) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=9980[0m
+[0;32mI (31414) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (31414) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (31414) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (31904) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (32024) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52365[0m
+[0;32mI (32034) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (32034) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (32034) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (34814) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (34894) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=49133[0m
+[0;32mI (34904) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (34904) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (34904) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (35624) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (35714) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=60236[0m
+[0;32mI (35714) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (35714) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (35714) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (36634) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (36734) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=30373[0m
+[0;32mI (36744) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (36744) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (36744) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (37324) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (37454) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=63873[0m
+[0;32mI (37454) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (37454) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (37454) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (64994) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (64994) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (64994) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (65014) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (65014) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (65014) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (65014) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (65204) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=21533[0m
+[0;32mI (65204) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=7725[0m
+[0;32mI (65214) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=57326[0m
+[0;32mI (65304) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=8541[0m
+[0;32mI (65314) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (65314) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (65314) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (65314) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (65324) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (65324) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (65334) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (65334) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (65334) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (65344) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (65344) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (65344) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (67764) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (67764) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (67764) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (67784) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (67794) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (67794) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (67794) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (67874) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27447[0m
+[0;32mI (67874) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (67874) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (67874) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (68384) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43680[0m
+[0;32mI (68384) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=57539[0m
+[0;32mI (68384) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=53937[0m
+[0;32mI (68394) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (68394) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (68394) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (68404) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (68404) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (68404) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (68414) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (68414) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (68414) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (84044) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (84044) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (84044) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (84064) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (84064) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (84074) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (84074) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (84154) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43786[0m
+[0;32mI (84154) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (84154) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (84154) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (84274) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=65487[0m
+[0;32mI (84354) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43753[0m
+[0;32mI (84364) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=10658[0m
+[0;32mI (84364) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (84364) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (84364) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (84374) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (84374) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (84374) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (84384) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (84384) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (84394) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (140684) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (141084) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=65260[0m
+[0;32mI (141084) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (141084) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (141084) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (142094) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (143444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35140[0m
+[0;32mI (143444) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (143444) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (143444) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (143544) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (143544) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (143544) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (143774) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (143954) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=62556[0m
+[0;32mI (143954) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (143954) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (143954) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (144644) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (144824) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=55260[0m
+[0;32mI (144824) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (144824) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (144824) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (192164) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (192664) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (192694) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=21374[0m
+[0;32mI (192704) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (192704) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (192704) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (192804) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23234[0m
+[0;32mI (193414) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (193414) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (193414) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (193484) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (194034) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=42831[0m
+[0;32mI (194034) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (194034) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (194034) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (194074) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (194334) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40490[0m
+[0;32mI (194344) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (194344) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (194344) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (194704) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (194764) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35296[0m
+[0;32mI (194764) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (194764) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (194764) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (195224) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (195294) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=61461[0m
+[0;32mI (195294) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (195294) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (195294) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (195814) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (195884) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58534[0m
+[0;32mI (195884) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (195884) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (195884) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (196164) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (196284) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58321[0m
+[0;32mI (196284) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (196284) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (196284) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (204674) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (204674) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (204674) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (204694) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (204694) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (204694) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (204694) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (206834) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34416[0m
+[0;32mI (206834) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (206834) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (206844) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (206934) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (206934) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (206934) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (206944) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27705[0m
+[0;32mI (206944) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52805[0m
+[0;32mI (206954) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=339[0m
+[0;32mI (206954) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (206964) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (206964) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (206964) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (206974) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (206974) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (206984) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (206984) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (206984) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (206994) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (207004) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (207004) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (207004) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (207014) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (207014) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (207024) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (207444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=42681[0m
+[0;32mI (207444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=21476[0m
+[0;32mI (207454) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=48535[0m
+[0;32mI (207454) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=15343[0m
+[0;32mI (207584) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (207584) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (207584) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (207594) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (207594) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (207594) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (207604) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (207604) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (207604) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (207614) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (207614) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (207624) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (208474) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (208474) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (208474) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545240240}[0m
+[0;32mI (208484) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (208574) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=50755[0m
+[0;32mI (208574) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (208574) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (208574) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (209184) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (209184) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (209184) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545240849}[0m
+[0;32mI (209204) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (209394) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=287[0m
+[0;32mI (209394) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (209394) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (209394) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (209904) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (209904) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (209904) MQTT_HANDLER: DATA={"device4":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545241742}[0m
+[0;32mI (209924) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (210004) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=64273[0m
+[0;32mI (210014) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (210014) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (210014) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (210514) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (210514) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (210514) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545242283}[0m
+[0;32mI (210534) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (210624) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=12332[0m
+[0;32mI (210624) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (210624) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (210624) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (214604) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (214604) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (214604) MQTT_HANDLER: DATA={"device4":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545245349}[0m
+[0;32mI (214624) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (214624) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (214624) MQTT_HANDLER: DATA={"device2":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545245615}[0m
+[0;32mI (214624) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (214644) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (214814) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58125[0m
+[0;32mI (214824) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (214824) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (214824) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (214924) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=60409[0m
+[0;32mI (214924) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (214924) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (214924) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (215544) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (215544) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (215544) MQTT_HANDLER: DATA={"device3":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545247398}[0m
+[0;32mI (215564) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (216764) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=20124[0m
+[0;32mI (216764) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (216764) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (216764) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (216774) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (216774) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (216784) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.93.141","time_stamp":1751545247816}[0m
+[0;32mI (216804) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (217174) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=19665[0m
+[0;32mI (217174) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (217174) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (217174) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (449654) UART_CONFIG: Received JSON: [0m
+[0;32mI (450134) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=60204[0m
+[0;32mI (450134) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (450134) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (450134) MQTT_HANDLER: DATA=[0m
+[0;32mI (450274) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (450444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14157[0m
+[0;32mI (450444) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (450454) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (450454) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (451104) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (451264) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=569[0m
+[0;32mI (451264) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (451274) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (451274) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (451904) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (452084) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=4105[0m
+[0;32mI (452084) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (452084) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (452094) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (460194) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (460654) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (461354) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (461634) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (461694) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=60269[0m
+[0;32mI (461694) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39940[0m
+[0;32mI (461704) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=64685[0m
+[0;32mI (461704) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (461704) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (461714) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (461714) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (461714) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (461724) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (461734) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (461734) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (461734) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (461814) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40807[0m
+[0;32mI (461814) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (461814) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (461814) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (834034) UART_CONFIG: Received JSON: [0m
+[0;32mI (834454) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=25735[0m
+[0;32mI (834454) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (834454) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (834454) MQTT_HANDLER: DATA=[0m
+[0;32mI (834584) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (834764) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39086[0m
+[0;32mI (834774) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (834774) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (834774) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (837274) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (837344) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34388[0m
+[0;32mI (837344) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (837344) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (837344) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (837874) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (838044) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39638[0m
+[0;32mI (838044) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (838044) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (838044) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (839394) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (839474) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=45511[0m
+[0;32mI (839484) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (839484) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (839484) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (839814) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (839994) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52317[0m
+[0;32mI (839994) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (840004) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (840004) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (840324) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (840504) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=30230[0m
+[0;32mI (840504) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (840504) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (840504) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (840804) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (840914) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=48180[0m
+[0;32mI (840914) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (840914) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (840914) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (1001394) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1001784) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=7937[0m
+[0;32mI (1001784) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1001784) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1001784) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1001954) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1002094) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=48549[0m
+[0;32mI (1002094) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1002094) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1002094) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1002964) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (1003044) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=12428[0m
+[0;32mI (1003044) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1003044) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1003044) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (1003324) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (1003424) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=42629[0m
+[0;32mI (1003424) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1003424) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1003424) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (1003954) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1004044) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=17646[0m
+[0;32mI (1004044) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1004044) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1004044) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1004504) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1004574) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47048[0m
+[0;32mI (1004574) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1004574) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1004574) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1005104) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (1005184) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35685[0m
+[0;32mI (1005184) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1005184) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1005184) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (1005494) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (1005574) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58121[0m
+[0;32mI (1005574) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1005574) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1005574) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (1006004) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1006084) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=18472[0m
+[0;32mI (1006094) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1006094) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1006094) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1006664) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1006804) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40670[0m
+[0;32mI (1006814) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1006814) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1006814) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1007364) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1007524) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=33878[0m
+[0;32mI (1007524) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1007524) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1007524) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1007944) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1008034) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=21578[0m
+[0;32mI (1008034) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1008034) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1008034) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1008214) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1008344) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=15289[0m
+[0;32mI (1008344) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1008344) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1008344) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1010124) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1010284) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34723[0m
+[0;32mI (1010284) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1010284) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1010284) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1010474) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1010594) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=28966[0m
+[0;32mI (1010594) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1010594) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1010594) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1010764) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1010854) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=54980[0m
+[0;32mI (1010864) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1010864) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1010864) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1011284) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1011414) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=45014[0m
+[0;32mI (1011414) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1011414) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1011414) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1011484) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1011724) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=13341[0m
+[0;32mI (1011724) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1011724) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1011724) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1011854) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1012024) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=61191[0m
+[0;32mI (1012034) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1012034) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1012034) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1012174) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1012334) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=7568[0m
+[0;32mI (1012334) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1012334) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1012334) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1013844) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1013984) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=12203[0m
+[0;32mI (1013984) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1013984) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1013984) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1021364) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1021444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=9187[0m
+[0;32mI (1021454) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1021454) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1021454) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1022114) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1022264) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=16023[0m
+[0;32mI (1022274) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1022274) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1022274) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1022474) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1022674) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39295[0m
+[0;32mI (1022684) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1022684) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1022684) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1023024) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1023184) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40891[0m
+[0;32mI (1023194) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1023194) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1023194) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1023254) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1023494) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=60840[0m
+[0;32mI (1023494) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1023494) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1023504) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1023604) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1023804) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39447[0m
+[0;32mI (1023804) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1023804) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1023804) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1023884) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1024114) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27154[0m
+[0;32mI (1024114) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1024114) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1024114) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1024174) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1024414) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=26980[0m
+[0;32mI (1024424) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1024424) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1024424) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1026074) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1026154) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=8163[0m
+[0;32mI (1026164) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1026164) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1026164) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1026774) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1026874) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=30208[0m
+[0;32mI (1026874) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1026874) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1026874) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1027044) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1027184) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23664[0m
+[0;32mI (1027184) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1027184) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1027184) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1028574) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1028714) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58272[0m
+[0;32mI (1028724) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1028724) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1028724) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1028784) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1029024) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=29291[0m
+[0;32mI (1029024) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1029024) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1029024) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1171644) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1172084) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1172194) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=19490[0m
+[0;32mI (1172194) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1172204) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1172204) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1172284) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=7861[0m
+[0;32mI (1172394) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1172394) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1172394) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1173664) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (1173824) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52325[0m
+[0;32mI (1173834) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1173834) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1173834) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (1174034) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (1174134) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58689[0m
+[0;32mI (1174134) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1174134) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1174134) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (1257864) UART_CONFIG: Received JSON: [0m
+[0;32mI (1258304) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35261[0m
+[0;32mI (1258304) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1258304) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1258304) MQTT_HANDLER: DATA=[0m
+[0;32mI (1258704) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1258824) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34790[0m
+[0;32mI (1258824) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1258824) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1258824) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1259264) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1259434) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=29347[0m
+[0;32mI (1259434) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1259434) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1259434) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1260004) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (1260064) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34234[0m
+[0;32mI (1260064) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1260064) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1260074) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (1261294) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (1261374) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=56457[0m
+[0;32mI (1261384) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1261384) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1261384) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (1261944) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1262094) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27982[0m
+[0;32mI (1262094) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1262094) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1262104) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1262474) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1262604) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=25895[0m
+[0;32mI (1262614) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1262614) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1262614) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1263024) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (1263124) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=21859[0m
+[0;32mI (1263124) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1263124) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1263124) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (1264174) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (1264344) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35081[0m
+[0;32mI (1264354) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1264354) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1264354) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (1264664) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1264754) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=25279[0m
+[0;32mI (1264764) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1264764) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1264764) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (1265194) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1265374) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=29165[0m
+[0;32mI (1265374) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1265374) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1265374) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (1265714) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (1265884) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=31274[0m
+[0;32mI (1265884) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1265884) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1265884) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (1266914) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (1267014) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=63474[0m
+[0;32mI (1267014) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1267014) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1267014) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (1268194) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1268344) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34040[0m
+[0;32mI (1268344) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1268344) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1268344) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (1268624) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1268754) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=56027[0m
+[0;32mI (1268754) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1268754) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1268754) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (1269304) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (1269484) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=4964[0m
+[0;32mI (1269484) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1269484) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1269484) MQTT_HANDLER: DATA={"device2":0}[0m

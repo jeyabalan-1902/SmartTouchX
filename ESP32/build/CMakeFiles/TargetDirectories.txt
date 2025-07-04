@@ -565,6 +565,7 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_wifi/CMakeFiles
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_wifi/CMakeFiles/install.dir
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_wifi/CMakeFiles/install/local.dir
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_wifi/CMakeFiles/install/strip.dir
+C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/bt/CMakeFiles/edit_cache.dir
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/bt/CMakeFiles/list_install_components.dir
