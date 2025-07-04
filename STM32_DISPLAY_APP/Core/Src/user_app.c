@@ -193,20 +193,23 @@ void UART_handler(void *param)
                         	cJSON *getCurrentStatus = cJSON_GetObjectItem(json, "request");
                         	if(strcmp(getCurrentStatus->valuestring, "getCurrentStatus") == 0)
                         	{
-                        		for (int i = 0; i < 4; i++)
-                        		{
-                        			GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
-									cJSON *resp = cJSON_CreateObject();
+                        		cJSON *resp = cJSON_CreateObject();
+
+								for (int i = 0; i < 4; i++)
+								{
+									GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
 									cJSON_AddNumberToObject(resp, devices[i], (state == GPIO_PIN_SET) ? 1 : 0);
-									char *respStr = cJSON_PrintUnformatted(resp);
-									if (respStr)
-									{
-										HAL_UART_Transmit(&huart3, (uint8_t *)respStr, strlen(respStr), HAL_MAX_DELAY);
-										HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
-										free(respStr);
-									}
-									cJSON_Delete(resp);
-                        		}
+								}
+
+								char *respStr = cJSON_PrintUnformatted(resp);
+								if (respStr)
+								{
+									HAL_UART_Transmit(&huart3, (uint8_t *)respStr, strlen(respStr), HAL_MAX_DELAY);
+									HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
+									free(respStr);
+								}
+
+								cJSON_Delete(resp);
                         	}
                         	else
                         	{
