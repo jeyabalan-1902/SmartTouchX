@@ -2,5 +2,5 @@
 ../Core/Src/user_app.c:20:6:setup_freeRTOS	4
 ../Core/Src/user_app.c:38:6:SPI_handler	18
 ../Core/Src/user_app.c:156:6:UART_handler	16
-../Core/Src/user_app.c:266:6:HAL_SPI_RxCpltCallback	3
-../Core/Src/user_app.c:278:6:HAL_UART_RxCpltCallback	3
+../Core/Src/user_app.c:269:6:HAL_SPI_RxCpltCallback	3
+../Core/Src/user_app.c:281:6:HAL_UART_RxCpltCallback	3

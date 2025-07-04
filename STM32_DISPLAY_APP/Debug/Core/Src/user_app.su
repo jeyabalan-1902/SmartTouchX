@@ -2,5 +2,5 @@
 ../Core/Src/user_app.c:20:6:setup_freeRTOS	32	static,ignoring_inline_asm
 ../Core/Src/user_app.c:38:6:SPI_handler	56	static
 ../Core/Src/user_app.c:156:6:UART_handler	288	static
-../Core/Src/user_app.c:266:6:HAL_SPI_RxCpltCallback	24	static,ignoring_inline_asm
-../Core/Src/user_app.c:278:6:HAL_UART_RxCpltCallback	24	static
+../Core/Src/user_app.c:269:6:HAL_SPI_RxCpltCallback	24	static,ignoring_inline_asm
+../Core/Src/user_app.c:281:6:HAL_UART_RxCpltCallback	24	static

@@ -24,8 +24,8 @@ void InitializeDisplay(void)
     current_line = 0;
 
     // Display header
-    ST7735_WriteString(5, 5, "Application v3.0", Font_7x10, GREEN, BLACK);
-    ST7735_WriteString(5, 18, "----TOUCH APP----", Font_7x10, YELLOW, BLACK);
+    ST7735_WriteString(5, 5, "-ONWORDS TOUCH BOARD-", Font_7x10, YELLOW, BLACK);
+    ST7735_WriteString(5, 18, "    VERSION v3.0", Font_7x10, RED, BLACK);
     printf("Touch application running\n");
 }
 
@@ -36,8 +36,8 @@ void ClearDisplay(void)
     current_line = 0;
 
     // Redraw header
-    ST7735_WriteString(5, 5, "Application v3.0", Font_7x10, GREEN, BLACK);
-    ST7735_WriteString(5, 18, "----TOUCH APP----", Font_7x10, YELLOW, BLACK);
+    ST7735_WriteString(5, 5, "-ONWORDS TOUCH BOARD-", Font_7x10, YELLOW, BLACK);
+	ST7735_WriteString(5, 18, "    VERSION v3.0", Font_7x10, RED, BLACK);
 
     // Clear display buffer
     for(int i = 0; i < MAX_DISPLAY_LINES; i++) {

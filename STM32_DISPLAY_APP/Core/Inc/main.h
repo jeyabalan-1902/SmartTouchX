@@ -59,12 +59,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define TOUCH_LED3_Pin GPIO_PIN_1
 #define TOUCH_LED3_GPIO_Port GPIOH
-#define TOUCH_LED4_Pin GPIO_PIN_0
-#define TOUCH_LED4_GPIO_Port GPIOC
 #define TOUCH_LED2_Pin GPIO_PIN_2
 #define TOUCH_LED2_GPIO_Port GPIOC
 #define TOUCH_LED1_Pin GPIO_PIN_3
 #define TOUCH_LED1_GPIO_Port GPIOC
+#define TOUCH_LED4_Pin GPIO_PIN_14
+#define TOUCH_LED4_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
