@@ -1,0 +1,325 @@
+Wr�j
+[0;32mI (34) boot.esp32s3: Boot SPI�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (72) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (78) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (85) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3a0d4h (237780) map[0m
+[0;32mI (144) esp_image: segment 1: paddr=0005a0fc vaddr=3fc9f300 size=053e0h ( 21472) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0005f4e4 vaddr=40374000 size=00b34h (  2868) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=1053cch (1070028) map[0m
+[0;32mI (344) esp_image: segment 4: paddr=001653f4 vaddr=40374b34 size=1a794h (108436) load[0m
+[0;32mI (368) esp_image: segment 5: paddr=0017fb90 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (379) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (379) boot: Disabling RNG early entropy source...[0m
+[0;32mI (389) cpu_start: Multicore app[0m
+[0;32mI (398) cpu_start: Pro cpu start user code[0m
+[0;32mI (398) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (398) app_init: Application information:[0m
+[0;32mI (398) app_init: Project name:     esp_app[0m
+[0;32mI (402) app_init: App version:      8b3074f-dirty[0m
+[0;32mI (406) app_init: Compile time:     Jul  4 2025 17:32:09[0m
+[0;32mI (411) app_init: ELF file SHA256:  6486e6800...[0m
+[0;32mI (416) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (420) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (424) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (428) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (432) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (438) heap_init: At 3FCAC4F8 len 0003D218 (244 KiB): RAM[0m
+[0;32mI (443) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (448) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (454) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (460) spi_flash: detected chip: boya[0m
+[0;32mI (462) spi_flash: flash io: dio[0m
+[0;32mI (466) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (472) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (478) coexist: coex firmware version: e727207[0m
+[0;32mI (509) coexist: coexist rom version e7ae62f[0m
+[0;32mI (510) main_task: Started on CPU0[0m
+[0;32mI (520) main_task: Calling app_main()[0m
+[0;32mI (540) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (540) GPIO: GPIO Initialization![0m
+[0;32mI (540) ESP_APP: UART initialized[0m
+[0;32mI (540) NVS: WiFi credentials found. SSID: .bin, connecting......[0m
+[0;32mI (550) NVS: From nvs ssid is .bin [0m
+[0;32mI (550) NVS: From nvs password is bala@1902[0m
+[0;32mI (550) WIFI_HANDLER: wifi ssid .bin password bala@1902[0m
+[0;32mI (560) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (560) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (580) wifi:wifi driver task: 3fcbc6f4, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (620) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (630) wifi_init: accept mbox: 6[0m
+[0;32mI (630) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (650) wifi_init: tcp mss: 1440[0m
+[0;32mI (650) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (660) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (670) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (720) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (800) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (800) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (830) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (870) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (880) wifi:connected with .bin, aid = 5, channel 7, BW20, bssid = 6c:24:a6:c7:20:a9[0m
+[0;32mI (880) wifi:security: WPA2-PSK, phy: bgn, rssi: -34[0m
+[0;32mI (890) wifi:pm start, type: 1[0m
+
+[0;32mI (890) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (890) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (900) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (910) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (950) wifi:<ba-add>idx:0 (ifx:0, 6c:24:a6:c7:20:a9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2010) esp_netif_handlers: sta ip: 192.168.43.236, mask: 255.255.255.0, gw: 192.168.43.168[0m
+[0;32mI (2010) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (2010) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (2010) WIFI_HANDLER: connected to ap SSID:.bin password:bala@1902 rssi value : -36[0m
+[0;32mI (2020) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (2020) main_task: Returned from app_main()[0m
+[0;32mI (2870) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (2950) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=4034[0m
+[0;32mI (3210) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=16867[0m
+[0;32mI (3220) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=894[0m
+[0;32mI (3220) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=51722[0m
+[0;32mI (3220) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=32496[0m
+[0;32mI (3230) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=61885[0m
+[0;32mI (3230) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=19328[0m
+[0;32mI (3240) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (3240) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (3240) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (13610) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (13610) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (13610) MQTT_HANDLER: DATA={"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.84.238","time_stamp":1751631689404,"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (13640) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (13640) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (13650) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (13650) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (13730) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=12463[0m
+[0;32mI (13740) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (13740) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (13740) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (13920) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=53725[0m
+[0;32mI (13930) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58253[0m
+[0;32mI (13930) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47282[0m
+[0;32mI (13930) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (13930) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (13940) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (13950) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (13950) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (13950) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (13960) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (13960) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (13960) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (14730) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (14730) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (14730) MQTT_HANDLER: DATA={"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.106.84.238","time_stamp":1751631690600,"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (14750) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (14760) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (14760) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (14850) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (14860) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58526[0m
+[0;32mI (14860) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (14860) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (14860) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (15030) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23079[0m
+[0;32mI (15040) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=33850[0m
+[0;32mI (15040) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=33704[0m
+[0;32mI (15040) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (15040) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (15050) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (15060) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (15060) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (15060) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (15070) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (15070) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (15070) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (19740) wifi:state: run -> init (0x3c0)[0m
+[0;32mI (19750) wifi:pm stop, total sleep time: 14934228 us / 18859452 us[0m
+
+[0;32mI (19750) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (19750) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19760) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (19760) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (19760) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (19770) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (19780) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[1;31mE (19780) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (19780) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19790) ESP_APP: WiFi disconnected, enabling BLE advertising...[0m
+[0;32mI (19790) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (19800) BLE_INIT: BT controller compile version [d74042a][0m
+[0;32mI (19810) BLE_INIT: Bluetooth MAC: cc:8d:a2:0c:e2:22[0m
+[0;32mI (19810) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (19840) BLE_APP: BLE initialized successfully[0m
+[0;32mI (19840) ESP_APP: Ble_enabled: 1[0m
+[0;32mI (19840) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (19840) BLE_APP: REGISTER_APP_EVT, status 0, app_id 0[0m
+[1;31mE (19850) BT_BTC: btc128_to_bta_uuid: Unknown UUID length 0![0m
+[0;32mI (19850) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (19860) wifi:state: run -> init (0x3a0)[0m
+[1;31mE (19860) BT_BTC: btc128_to_bta_uuid: Unknown UUID length 0![0m
+[0;32mI (19870) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19870) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (19880) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (19880) BLE_APP: create attribute table successfully, the number handle = 8[0m
+[0;32mI (19890) BLE_APP: Service handle: 40[0m
+[0;32mI (19890) BLE_APP: Status char handle: 42[0m
+[0;32mI (19890) BLE_APP: Command char handle: 45[0m
+[0;32mI (19900) BLE_APP: Response char handle: 47[0m
+[0;32mI (19910) BLE_APP: SERVICE_START_EVT, status 0, service_handle 40[0m
+[0;32mI (19910) BLE_APP: Advertising start successfully[0m
+[0;32mI (24570) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (24570) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (24570) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (29380) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (29390) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (29390) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (29850) MQTT_HANDLER: Other event id:7[0m
+[1;31mE (29850) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (29850) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (29850) mqtt_client: Error transport connect[0m
+[0;32mI (29850) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (29860) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (30250) BLE_APP: ESP_GATTS_CONNECT_EVT, conn_id = 0[0m
+[0;32mI (30250) BLE_APP: 6a 2e 4b 08 de d0[0m
+[0;32mI (30890) BLE_APP: update connection params status = 0, min_int = 16, max_int = 32,conn_int = 32,latency = 0, timeout = 400[0m
+[0;32mI (31410) BLE_APP: update connection params status = 0, min_int = 0, max_int = 0,conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (31630) BLE_APP: update connection params status = 0, min_int = 0, max_int = 0,conn_int = 32,latency = 0, timeout = 400[0m
+[0;32mI (34200) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (34200) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (34200) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (34520) mqtt_client: Client force reconnect requested[0m
+[1;31mE (34520) wifi:I (34520) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (34520) mqtt_client: Client force reconnect requested[0m
+[0;32mI (39020) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (39020) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (39020) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (39790) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=1, len=15, is_prep=0[0m
+[0;32mI (39790) BLE_APP: 7b 22 64 65 76 69 63 65 20 31 22 3a 20 31 7d[0m
+[0;32mI (39790) BLE_APP: Processing JSON command: {"device 1": 1}[0m
+[0;32mI (39800) BLE_APP: Processing BLE command: {"device 1": 1}[0m
+[1;31mE (41520) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (41520) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (41520) mqtt_client: Error transport connect[0m
+[0;32mI (41520) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (41530) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (43830) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (43830) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (43830) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (48650) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (48650) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (48650) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (49530) mqtt_client: Client force reconnect requested[0m
+[1;31mE (49530) wifi:I (49530) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (49530) mqtt_client: Client force reconnect requested[0m
+[0;32mI (53460) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (53470) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (53470) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (56530) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (56530) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (56530) mqtt_client: Error transport connect[0m
+[0;32mI (56530) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (56540) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (58280) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (58280) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (58280) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (59780) wifi:new:<6,0>, old:<7,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (59790) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (59840) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (59860) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (59980) wifi:connected with .bin, aid = 1, channel 6, BW20, bssid = 6c:24:a6:c7:20:a9[0m
+[0;32mI (59980) wifi:security: WPA2-PSK, phy: bgn, rssi: -31[0m
+[0;32mI (60000) wifi:pm start, type: 1[0m
+
+[0;32mI (60000) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (60000) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (60010) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (60020) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (60180) wifi:<ba-add>idx:0 (ifx:0, 6c:24:a6:c7:20:a9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (61630) esp_netif_handlers: sta ip: 192.168.43.236, mask: 255.255.255.0, gw: 192.168.43.253[0m
+[0;32mI (61630) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (61630) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (71540) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (71860) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (71870) ESP_APP: WiFi connected, stopping BLE fallback...[0m
+[0;32mI (71870) BLE_APP: Stop adv successfully[0m
+[0;33mW (71870) BT_HCI: hci cmd send: disconnect: hdl 0x1, rsn:0x13[0m
+[0;32mI (71880) BLE_APP: ESP_GATTS_DISCONNECT_EVT, reason = 22[0m
+[0;32mI (71880) BLE_APP: Advertising start successfully[0m
+[0;33mW (71990) BT_HCI: hcif disc complete: hdl 0x1, rsn 0x16[0m
+[0;32mI (73000) BLE_APP: BLE deinitialized[0m
+[0;32mI (73000) ESP_APP: Ble_enabled: 0[0m
+[0;32mI (73130) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=286[0m
+[0;32mI (73210) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=42022[0m
+[0;32mI (73220) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=54759[0m
+[0;32mI (73220) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=51030[0m
+[0;32mI (73220) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=47942[0m
+[0;32mI (73230) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=28590[0m
+[0;32mI (73230) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=603[0m
+[0;32mI (73240) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (73240) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (73240) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (78530) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (78530) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (78530) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (78550) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (78800) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=31052[0m
+[0;32mI (78800) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (78800) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (78800) MQTT_HANDLER: DATA={"device1":0,"device2":0,"device3":0,"device4":0}[0m

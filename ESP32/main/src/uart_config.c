@@ -129,8 +129,11 @@ void uart_rx_task(void *arg)
                 if (index > 0) {
                     json_buffer[index] = '\0'; 
                     ESP_LOGI(TAG, "Received JSON: %s", json_buffer);
-
                     esp_mqtt_client_publish(mqtt_client, current_status, json_buffer, 0, 1, 0);
+                    if(ble_status())
+                    {
+                        ble_send_response(json_buffer);
+                    }
 
                     index = 0;
                     memset(json_buffer, 0, sizeof(json_buffer));

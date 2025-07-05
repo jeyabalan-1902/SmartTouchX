@@ -185,29 +185,63 @@ void ble_send_current_status(void) {
 
 void ble_process_command(char* data) {
     ESP_LOGI(TAG_BLE, "Processing BLE command: %s", data);
-    char response[200];
-    
-    // Call the same JSON processing function used by MQTT
-    // char *result = json_execution(data, response);
-    // ESP_LOGI(TAG_BLE, "json_execution returned: %s", result);
-    // ESP_LOGI(TAG_BLE, "Response generated: %s", response);
-    
-    // if (strcmp(result, "1") == 0) {
-    //     // Execute gate operation
-    //     ESP_LOGI(TAG_BLE, "Executing gate operation via BLE");
-    //     write_io();
-    //     ble_send_response(response);
-    //     ESP_LOGI(TAG_BLE, "BLE Command executed successfully: %s", response);
-    // } else if (strcmp(result, "2") == 0) {
-    //     // Status request response
-    //     ble_send_response(response);
-    //     ESP_LOGI(TAG_BLE, "BLE Status response sent: %s", response);
-    // } else {
-    //     ESP_LOGI(TAG_BLE, "BLE Command processing failed, result: %s", result);
-    //     // Send error response
-    //     char error_response[] = "{\"error\": \"command_failed\"}";
-    //     ble_send_response(error_response);
-    // }
+    cJSON *json = cJSON_Parse(data);
+    if (json) {
+
+        cJSON *getCurrentStatus = cJSON_GetObjectItem(json, "request");
+        if(getCurrentStatus)
+        {
+            uart_write_bytes(UART_PORT_NUM, data, strlen(data));
+            uart_write_bytes(UART_PORT_NUM, "\n", 1);
+        }
+        const char *device_keys[] = {"device1", "device2", "device3", "device4"};
+        int device_count = 0;
+        for (int i = 0; i < 4; ++i) {
+            cJSON *device_item = cJSON_GetObjectItem(json, device_keys[i]);
+            if (cJSON_IsNumber(device_item)) {
+                device_count++;
+            }
+        }
+
+        if (device_count == 1) {
+            for (int i = 0; i < 4; ++i) {
+                cJSON *device_item = cJSON_GetObjectItem(json, device_keys[i]);
+                if (cJSON_IsNumber(device_item)) {
+                    cJSON *single_json = cJSON_CreateObject();
+                    cJSON_AddNumberToObject(single_json, device_keys[i], device_item->valueint);
+
+                    char *resp_str = cJSON_PrintUnformatted(single_json);
+                    if (resp_str) {
+                        uart_write_bytes(UART_PORT_NUM, resp_str, strlen(resp_str));
+                        uart_write_bytes(UART_PORT_NUM, "\n", 1);
+                        free(resp_str);
+                    }
+
+                    cJSON_Delete(single_json);
+                    break;
+                }
+            }
+        } else if (device_count > 1) {
+            cJSON *combined_json = cJSON_CreateObject();
+
+            for (int i = 0; i < 4; ++i) {
+                cJSON *device_item = cJSON_GetObjectItem(json, device_keys[i]);
+                if (cJSON_IsNumber(device_item)) {
+                    cJSON_AddNumberToObject(combined_json, device_keys[i], device_item->valueint);
+                }
+            }
+
+            char *resp_str = cJSON_PrintUnformatted(combined_json);
+            if (resp_str) {
+                uart_write_bytes(UART_PORT_NUM, resp_str, strlen(resp_str));
+                uart_write_bytes(UART_PORT_NUM, "\n", 1);
+                free(resp_str);
+            }
+
+            cJSON_Delete(combined_json);
+        }
+        cJSON_Delete(json);
+    } 
 }
 
 void ble_send_response(const char* response) {

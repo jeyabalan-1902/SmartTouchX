@@ -6,6 +6,7 @@
 #include "mqtt.h"
 #include "nvs.h"
 #include "wifi.h"
+#include "uart_config.h"
 
 #define GATTS_NUM_HANDLE_A          8
 #define TEST_MANUFACTURER_DATA_LEN  17

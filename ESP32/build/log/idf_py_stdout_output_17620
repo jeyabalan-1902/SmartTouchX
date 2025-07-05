@@ -1,0 +1,2054 @@
+ij
+[0;32mI (34) boot.esp32s3: Boot SPI Sp�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (72) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (78) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (85) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3a1c4h (238020) map[0m
+[0;32mI (144) esp_image: segment 1: paddr=0005a1ec vaddr=3fc9f300 size=053e0h ( 21472) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0005f5d4 vaddr=40374000 size=00a44h (  2628) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=105640h (1070656) map[0m
+[0;32mI (344) esp_image: segment 4: paddr=00165668 vaddr=40374a44 size=1a884h (108676) load[0m
+[0;32mI (368) esp_image: segment 5: paddr=0017fef4 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (379) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (379) boot: Disabling RNG early entropy source...[0m
+[0;32mI (389) cpu_start: Multicore app[0m
+[0;32mI (398) cpu_start: Pro cpu start user code[0m
+[0;32mI (398) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (398) app_init: Application information:[0m
+[0;32mI (398) app_init: Project name:     esp_app[0m
+[0;32mI (402) app_init: App version:      e553e85-dirty[0m
+[0;32mI (407) app_init: Compile time:     Jul  5 2025 16:07:57[0m
+[0;32mI (412) app_init: ELF file SHA256:  4c1e5ddec...[0m
+[0;32mI (416) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (420) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (424) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (428) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (432) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (438) heap_init: At 3FCAC4F8 len 0003D218 (244 KiB): RAM[0m
+[0;32mI (443) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (449) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (454) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (460) spi_flash: detected chip: boya[0m
+[0;32mI (463) spi_flash: flash io: dio[0m
+[0;32mI (466) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (472) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (479) coexist: coex firmware version: e727207[0m
+[0;32mI (509) coexist: coexist rom version e7ae62f[0m
+[0;32mI (510) main_task: Started on CPU0[0m
+[0;32mI (520) main_task: Calling app_main()[0m
+[0;32mI (540) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (540) GPIO: GPIO Initialization![0m
+[0;32mI (540) ESP_APP: UART initialized[0m
+[0;32mI (540) NVS: WiFi credentials found. SSID: .bin, connecting......[0m
+[0;32mI (550) NVS: From nvs ssid is .bin [0m
+[0;32mI (550) NVS: From nvs password is bala@1902[0m
+[0;32mI (550) WIFI_HANDLER: wifi ssid .bin password bala@1902[0m
+[0;32mI (560) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (560) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (580) wifi:wifi driver task: 3fcbc778, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (620) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (630) wifi_init: accept mbox: 6[0m
+[0;32mI (630) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (650) wifi_init: tcp mss: 1440[0m
+[0;32mI (650) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (660) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (670) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (720) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (740) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (740) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (770) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (800) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (830) wifi:connected with .bin, aid = 4, channel 4, BW20, bssid = 6c:24:a6:c7:20:a9[0m
+[0;32mI (830) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (840) wifi:pm start, type: 1[0m
+
+[0;32mI (840) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (850) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (860) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (860) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (890) wifi:<ba-add>idx:0 (ifx:0, 6c:24:a6:c7:20:a9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1910) esp_netif_handlers: sta ip: 192.168.43.236, mask: 255.255.255.0, gw: 192.168.43.3[0m
+[0;32mI (1910) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (1910) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (1910) WIFI_HANDLER: connected to ap SSID:.bin password:bala@1902 rssi value : -39[0m
+[0;32mI (1920) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1920) main_task: Returned from app_main()[0m
+[0;32mI (2290) wifi:<ba-add>idx:1 (ifx:0, 6c:24:a6:c7:20:a9), tid:4, ssn:0, winSize:64[0m
+[0;32mI (2360) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (2540) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=8364[0m
+[0;32mI (2790) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=2838[0m
+[0;32mI (2800) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=63506[0m
+[0;32mI (2800) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=64767[0m
+[0;32mI (2800) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=9716[0m
+[0;32mI (2810) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=29523[0m
+[0;32mI (2810) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=32767[0m
+[0;32mI (2820) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (2820) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (2820) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (6840) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (7100) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=44194[0m
+[0;32mI (7100) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (7100) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (7100) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (10810) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (10900) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=55742[0m
+[0;32mI (10900) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (10900) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (10900) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (11960) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (12040) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=48354[0m
+[0;32mI (12050) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (12050) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (12050) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (12850) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (12940) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=64548[0m
+[0;32mI (12950) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (12950) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (12950) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (20920) wifi:state: run -> init (0x3c0)[0m
+[0;32mI (20930) wifi:pm stop, total sleep time: 15990916 us / 20087367 us[0m
+
+[0;32mI (20930) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (20930) wifi:<ba-del>idx:1, tid:4[0m
+[0;32mI (20930) wifi:new:<4,0>, old:<4,0>, ap:<255,255>, sta:<4,0>, prof:1, snd_ch_cfg:0x0[0m
+[1;31mE (20940) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (20940) WIFI_HANDLER: retry to connect to the AP[0m
+[1;31mE (20940) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (20950) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (20960) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[1;31mE (20960) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (20970) ESP_APP: WiFi disconnected, enabling BLE advertising...[0m
+[0;32mI (20980) BLE_INIT: BT controller compile version [d74042a][0m
+[0;32mI (20980) BLE_INIT: Bluetooth MAC: cc:8d:a2:0c:e2:22[0m
+[0;32mI (21010) BLE_APP: BLE initialized successfully[0m
+[0;32mI (21010) ESP_APP: Ble_enabled: 1[0m
+[0;32mI (21010) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (21010) BLE_APP: REGISTER_APP_EVT, status 0, app_id 0[0m
+[1;31mE (21010) BT_BTC: btc128_to_bta_uuid: Unknown UUID length 0![0m
+[1;31mE (21020) BT_BTC: btc128_to_bta_uuid: Unknown UUID length 0![0m
+[0;32mI (21030) BLE_APP: create attribute table successfully, the number handle = 8[0m
+[0;32mI (21030) BLE_APP: Service handle: 40[0m
+[0;32mI (21030) BLE_APP: Status char handle: 42[0m
+[0;32mI (21040) BLE_APP: Command char handle: 45[0m
+[0;32mI (21040) BLE_APP: Response char handle: 47[0m
+[0;32mI (21050) BLE_APP: SERVICE_START_EVT, status 0, service_handle 40[0m
+[0;32mI (21050) BLE_APP: Advertising start successfully[0m
+[0;32mI (24690) BLE_APP: ESP_GATTS_CONNECT_EVT, conn_id = 0[0m
+[0;32mI (24690) BLE_APP: 41 5e 5d 93 63 5a[0m
+[0;32mI (25250) BLE_APP: update connection params status = 0, min_int = 16, max_int = 32,conn_int = 32,latency = 0, timeout = 400[0m
+[0;32mI (25630) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (25640) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (25640) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (25730) BLE_APP: update connection params status = 0, min_int = 0, max_int = 0,conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (25930) BLE_APP: update connection params status = 0, min_int = 0, max_int = 0,conn_int = 24,latency = 0, timeout = 400[0m
+[0;32mI (30450) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (30450) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (30450) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (31010) MQTT_HANDLER: Other event id:7[0m
+[1;31mE (31010) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (31010) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (31010) mqtt_client: Error transport connect[0m
+[0;32mI (31010) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (31020) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (35270) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (35270) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (35270) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (35920) mqtt_client: Client force reconnect requested[0m
+[1;31mE (35920) wifi:I (35920) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (35920) mqtt_client: Client force reconnect requested[0m
+[0;32mI (40080) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (40090) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (40090) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (41470) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=1, len=15, is_prep=0[0m
+[0;32mI (41470) BLE_APP: 7b 22 64 65 76 69 63 65 20 31 22 3a 20 30 7d[0m
+[0;32mI (41480) BLE_APP: Processing JSON command: {"device 1": 0}[0m
+[0;32mI (41480) BLE_APP: Processing BLE command: {"device 1": 0}[0m
+[1;31mE (42920) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (42920) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (42920) mqtt_client: Error transport connect[0m
+[0;32mI (42920) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (42930) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (44900) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (44900) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (44900) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (49720) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (49720) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (49720) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (50930) mqtt_client: Client force reconnect requested[0m
+[1;31mE (50930) wifi:I (50930) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (50930) mqtt_client: Client force reconnect requested[0m
+[0;32mI (54530) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (54530) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (54530) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (57930) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (57930) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (57930) mqtt_client: Error transport connect[0m
+[0;32mI (57930) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (57940) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (59350) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (59350) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (59350) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (64160) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (64170) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (64170) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (65940) mqtt_client: Client force reconnect requested[0m
+[1;31mE (65940) wifi:I (65940) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (65940) mqtt_client: Client force reconnect requested[0m
+[0;32mI (68980) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (68980) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (68980) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (72940) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (72940) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (72940) mqtt_client: Error transport connect[0m
+[0;32mI (72940) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (72950) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (73800) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (73800) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (73800) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (78610) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (78620) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (78620) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (80950) mqtt_client: Client force reconnect requested[0m
+[1;31mE (80950) wifi:I (80950) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (80950) mqtt_client: Client force reconnect requested[0m
+[0;32mI (83430) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (83430) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (83430) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (87950) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (87950) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (87950) mqtt_client: Error transport connect[0m
+[0;32mI (87950) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (87960) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (88250) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (88250) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (88250) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (93060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (93060) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (93070) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (95960) mqtt_client: Client force reconnect requested[0m
+[1;31mE (95960) wifi:sta is connecting, return error[0m
+[0;32mI (95960) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (95960) mqtt_client: Client force reconnect requested[0m
+[0;32mI (95980) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=2, len=14, is_prep=0[0m
+[0;32mI (95990) BLE_APP: 7b 22 64 65 76 69 63 65 31 22 3a 20 30 7d[0m
+[0;32mI (95990) BLE_APP: Processing JSON command: {"device1": 0}[0m
+[0;32mI (95990) BLE_APP: Processing BLE command: {"device1": 0}[0m
+[0;32mI (96010) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (97880) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (97880) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (97880) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (102690) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (102700) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (102700) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (102960) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (102960) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (102960) mqtt_client: Error transport connect[0m
+[0;32mI (102960) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (102970) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (102970) BLE_APP: Updating response characteristic with: {"device1":0}[0m
+[0;32mI (102980) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (107510) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (107510) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (107510) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (110270) BLE_APP: ESP_GATTS_READ_EVT[0m
+[0;32mI (110970) mqtt_client: Client force reconnect requested[0m
+[1;31mE (110970) wifi:I (110970) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (110970) mqtt_client: Client force reconnect requested[0m
+[0;32mI (112330) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (112330) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (112330) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (117140) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (117150) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (117150) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (117970) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (117970) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (117970) mqtt_client: Error transport connect[0m
+[0;32mI (117970) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (117980) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (121960) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (121960) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (121960) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (125980) mqtt_client: Client force reconnect requested[0m
+[1;31mE (125980) wifi:sta is connecting, return error[0m
+[0;32mI (125980) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (125980) mqtt_client: Client force reconnect requested[0m
+[0;32mI (126780) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (126780) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (126780) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (131590) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (131600) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (131600) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (132980) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (132980) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (132980) mqtt_client: Error transport connect[0m
+[0;32mI (132980) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (132990) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (136410) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (136410) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (136410) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (140990) mqtt_client: Client force reconnect requested[0m
+[1;31mE (140990) wifi:sta is connecting, return error[0m
+[0;32mI (140990) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (140990) mqtt_client: Client force reconnect requested[0m
+[0;32mI (141230) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (141230) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (141230) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (146040) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (146040) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (146040) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (147470) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=4, len=14, is_prep=0[0m
+[0;32mI (147470) BLE_APP: 7b 22 64 65 76 69 63 65 32 22 3a 20 30 7d[0m
+[0;32mI (147470) BLE_APP: Processing JSON command: {"device2": 0}[0m
+[0;32mI (147470) BLE_APP: Processing BLE command: {"device2": 0}[0m
+[0;32mI (147490) UART_CONFIG: Received JSON: {"device2":0}[0m
+[1;31mE (147990) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (147990) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (147990) mqtt_client: Error transport connect[0m
+[0;32mI (147990) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (148000) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (148000) BLE_APP: Updating response characteristic with: {"device2":0}[0m
+[0;32mI (148010) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (150860) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (150860) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (150860) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (155670) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (155680) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (155680) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (156000) mqtt_client: Client force reconnect requested[0m
+[1;31mE (156000) wifi:I (156000) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (156000) mqtt_client: Client force reconnect requested[0m
+[0;32mI (160490) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (160490) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (160490) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (163000) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (163000) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (163000) mqtt_client: Error transport connect[0m
+[0;32mI (163000) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (163010) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (165310) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (165310) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (165310) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (170120) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (170130) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (170130) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (171010) mqtt_client: Client force reconnect requested[0m
+[1;31mE (171010) wifi:sta is connecting, return errorI (171010) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (171010) mqtt_client: Client force reconnect requested[0m
+[0;32mI (174940) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (174940) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (174940) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (178010) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (178010) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (178010) mqtt_client: Error transport connect[0m
+[0;32mI (178010) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (178020) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (179760) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (179760) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (179760) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (182450) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=5, len=14, is_prep=0[0m
+[0;32mI (182450) BLE_APP: 7b 22 64 65 76 69 63 65 33 22 3a 20 30 7d[0m
+[0;32mI (182450) BLE_APP: Processing JSON command: {"device3": 0}[0m
+[0;32mI (182450) BLE_APP: Processing BLE command: {"device3": 0}[0m
+[0;32mI (182470) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (182470) BLE_APP: Updating response characteristic with: {"device3":0}[0m
+[0;32mI (182470) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (184570) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (184580) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (184580) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (186020) mqtt_client: Client force reconnect requested[0m
+[0;32mI (186020) MQTT_HANDLER: Other event id:7[0m
+[1;31mE (186020) wifi:sta is connecting, return error[0m
+[0;32mI (186020) mqtt_client: Client force reconnect requested[0m
+[0;32mI (189390) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (189390) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (189390) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (193020) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (193020) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (193020) mqtt_client: Error transport connect[0m
+[0;32mI (193020) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (193030) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (194210) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (194210) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (194210) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (199020) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (199020) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (199020) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (201030) mqtt_client: Client force reconnect requested[0m
+[1;31mE (201030) wifi:I (201030) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (201030) mqtt_client: Client force reconnect requested[0m
+[0;32mI (203840) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (203840) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (203840) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (208030) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (208030) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (208030) mqtt_client: Error transport connect[0m
+[0;32mI (208030) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (208040) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (208650) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (208660) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (208660) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (213470) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (213470) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (213470) WIFI_HANDLER: connect to the AP fail[0m
+[0;33mW (214120) BT_GATT: gatt_ind_ack_timeout send ack now[0m
+[0;32mI (216040) mqtt_client: Client force reconnect requested[0m
+[1;31mE (216040) wifi:I (216040) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (216040) mqtt_client: Client force reconnect requested[0m
+[0;32mI (218290) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (218290) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (218290) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (223040) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (223040) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (223040) mqtt_client: Error transport connect[0m
+[0;32mI (223040) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (223050) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (223100) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (223110) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (223110) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (227920) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (227920) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (227920) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (231050) mqtt_client: Client force reconnect requested[0m
+[1;31mE (231050) wifi:sta is connecting, return errorI (231050) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (231050) mqtt_client: Client force reconnect requested[0m
+[0;32mI (231860) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=6, len=14, is_prep=0[0m
+[0;32mI (231860) BLE_APP: 7b 22 64 65 76 69 63 65 31 22 3a 20 31 7d[0m
+[0;32mI (231860) BLE_APP: Processing JSON command: {"device1": 1}[0m
+[0;32mI (231870) BLE_APP: Processing BLE command: {"device1": 1}[0m
+[0;32mI (231880) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (232740) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (232740) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (232740) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (234530) BLE_APP: ESP_GATTS_READ_EVT[0m
+[0;32mI (237110) BLE_APP: ESP_GATTS_READ_EVT[0m
+[0;32mI (237550) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (237550) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (237560) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (238050) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (238050) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (238050) mqtt_client: Error transport connect[0m
+[0;32mI (238050) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (238060) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (238060) BLE_APP: Updating response characteristic with: {"device1":1}[0m
+[0;32mI (238070) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (238130) BLE_APP: ESP_GATTS_READ_EVT[0m
+[0;32mI (239300) BLE_APP: ESP_GATTS_READ_EVT[0m
+[0;32mI (242370) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (242370) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (242370) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (246060) mqtt_client: Client force reconnect requested[0m
+[1;31mE (246060) wifi:sta is connecting, return errorI (246060) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (246060) mqtt_client: Client force reconnect requested[0m
+[0;32mI (247180) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (247190) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (247190) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (252000) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (252000) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (252000) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (253060) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (253060) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (253060) mqtt_client: Error transport connect[0m
+[0;32mI (253060) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (253070) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (256820) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (256820) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (256820) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (261070) mqtt_client: Client force reconnect requested[0m
+[1;31mE (261070) wifi:sta is connecting, return error[0m
+[0;32mI (261070) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (261070) mqtt_client: Client force reconnect requested[0m
+[0;32mI (261630) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (261640) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (261640) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (266450) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (266450) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (266450) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (268070) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (268070) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (268070) mqtt_client: Error transport connect[0m
+[0;32mI (268070) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (268080) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (271270) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (271270) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (271270) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (276080) mqtt_client: Client force reconnect requested[0m
+[1;31mE (276080) wifi:sta is connecting, return error[0m
+[0;32mI (276080) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (276080) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+[0;32mI (276080) mqtt_client: Client force reconnect requested[0m
+
+[0;32mI (276100) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (276100) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (280910) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (280910) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (280910) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (283080) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (283080) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (283080) mqtt_client: Error transport connect[0m
+[0;32mI (283080) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (283090) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (285740) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (285740) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (285740) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (290550) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (290560) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (290560) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (291090) mqtt_client: Client force reconnect requested[0m
+[1;31mE (291090) wifi:I (291090) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (291090) mqtt_client: Client force reconnect requested[0m
+[0;32mI (295370) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (295370) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (295370) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (298090) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (298090) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (298090) mqtt_client: Error transport connect[0m
+[0;32mI (298090) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (298100) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (300190) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (300190) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (300190) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (305000) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (305010) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (305010) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (306100) mqtt_client: Client force reconnect requested[0m
+[1;31mE (306100) wifi:I (306100) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (306100) mqtt_client: Client force reconnect requested[0m
+[0;32mI (309820) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (309820) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (309820) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (313100) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (313100) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (313100) mqtt_client: Error transport connect[0m
+[0;32mI (313100) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (313110) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (314640) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (314640) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (314640) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (319450) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (319450) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (319450) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (321110) mqtt_client: Client force reconnect requested[0m
+[1;31mE (321110) wifi:I (321110) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (321110) mqtt_client: Client force reconnect requested[0m
+[0;32mI (324270) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (324270) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (324270) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (328110) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (328110) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (328110) mqtt_client: Error transport connect[0m
+[0;32mI (328110) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (328120) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (329080) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (329090) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (329090) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (333900) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (333900) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (333900) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (336120) mqtt_client: Client force reconnect requested[0m
+[1;31mE (336120) wifi:I (336120) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (336120) mqtt_client: Client force reconnect requested[0m
+[0;32mI (338720) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (338720) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (338720) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (343120) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (343120) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (343120) mqtt_client: Error transport connect[0m
+[0;32mI (343120) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (343130) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (343530) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (343540) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (343540) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (348350) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (348350) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (348350) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (351130) mqtt_client: Client force reconnect requested[0m
+[1;31mE (351130) wifi:sta is connecting, return errorI (351130) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (351130) mqtt_client: Client force reconnect requested[0m
+[0;32mI (353170) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (353170) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (353170) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (357980) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (357980) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (357980) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (358130) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (358130) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (358130) mqtt_client: Error transport connect[0m
+[0;32mI (358130) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (358140) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (362800) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (362800) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (362800) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (366140) mqtt_client: Client force reconnect requested[0m
+[1;31mE (366140) wifi:sta is connecting, return errorI (366140) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (366140) mqtt_client: Client force reconnect requested[0m
+[0;32mI (367610) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (367620) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (367620) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (372430) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (372430) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (372430) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (373140) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (373140) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (373140) mqtt_client: Error transport connect[0m
+[0;32mI (373140) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (373150) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (376220) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=11, len=18, is_prep=1[0m
+[0;32mI (376220) BLE_APP: PREP_WRITE_EVT: handle=45, offset=0, len=18[0m
+[0;32mI (376370) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=12, len=18, is_prep=1[0m
+[0;32mI (376370) BLE_APP: PREP_WRITE_EVT: handle=45, offset=18, len=18[0m
+[0;32mI (376520) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=13, len=16, is_prep=1[0m
+[0;32mI (376520) BLE_APP: PREP_WRITE_EVT: handle=45, offset=36, len=16[0m
+[0;32mI (376640) BLE_APP: ESP_GATTS_EXEC_WRITE_EVT: exec_write_flag=1[0m
+[0;32mI (376640) BLE_APP: Executing prepared write: {"device1":1, "device2":1, "device3":1, "device4":1}[0m
+[0;32mI (376640) BLE_APP: Processing BLE command: {"device1":1, "device2":1, "device3":1, "device4":1}[0m
+[0;32mI (376670) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (376670) BLE_APP: Updating response characteristic with: {"device1":1}[0m
+[0;32mI (376670) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (376680) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (376680) BLE_APP: Updating response characteristic with: {"device2":1}[0m
+[0;32mI (376690) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (376690) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (376700) BLE_APP: Updating response characteristic with: {"device3":1}[0m
+[0;32mI (376700) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (376710) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (376710) BLE_APP: Updating response characteristic with: {"device4":1}[0m
+[0;32mI (376720) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (377250) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (377250) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (377250) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (381150) mqtt_client: Client force reconnect requested[0m
+[1;31mE (381150) wifi:sta is connecting, return errorI (381150) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (381150) mqtt_client: Client force reconnect requested[0m
+[0;32mI (382060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (382070) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (382070) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (386880) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (386880) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (386880) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (388150) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (388150) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (388150) mqtt_client: Error transport connect[0m
+[0;32mI (388150) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (388160) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (391700) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (391700) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (391700) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (396160) mqtt_client: Client force reconnect requested[0m
+[1;31mE (396160) wifi:sta is connecting, return errorI (396160) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (396160) mqtt_client: Client force reconnect requested[0m
+[0;32mI (396510) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (396510) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (396520) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (398480) BLE_APP: ESP_GATTS_READ_EVT[0m
+[0;32mI (399500) BLE_APP: ESP_GATTS_READ_EVT[0m
+[0;32mI (401330) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (401330) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (401330) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (403160) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (403160) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (403160) mqtt_client: Error transport connect[0m
+[0;32mI (403160) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (403170) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (406150) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (406150) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (406150) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (410960) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (410960) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (410960) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (411170) mqtt_client: Client force reconnect requested[0m
+[1;31mE (411170) wifi:I (411170) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (411170) mqtt_client: Client force reconnect requested[0m
+[0;32mI (415780) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (415780) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (415780) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (418170) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (418170) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (418170) mqtt_client: Error transport connect[0m
+[0;32mI (418170) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (418180) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (420590) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (420600) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (420600) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (425410) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (425410) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (425410) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (426180) mqtt_client: Client force reconnect requested[0m
+[1;31mE (426180) wifi:I (426180) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (426180) mqtt_client: Client force reconnect requested[0m
+[0;32mI (430230) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (430230) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (430230) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (433180) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (433180) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (433180) mqtt_client: Error transport connect[0m
+[0;32mI (433180) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (433190) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (435040) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (435040) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (435050) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (439860) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (439860) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (439860) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (441190) mqtt_client: Client force reconnect requested[0m
+[1;31mE (441190) wifi:I (441190) MQTT_HANDLER: Other event id:7[0m
+sta is connecting, return error
+[0;32mI (441190) mqtt_client: Client force reconnect requested[0m
+[0;32mI (444670) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (444680) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (444680) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (448190) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (448190) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (448190) mqtt_client: Error transport connect[0m
+[0;32mI (448190) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (448200) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (448400) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=17, len=18, is_prep=1[0m
+[0;32mI (448400) BLE_APP: PREP_WRITE_EVT: handle=45, offset=0, len=18[0m
+[0;32mI (448460) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=18, len=18, is_prep=1[0m
+[0;32mI (448460) BLE_APP: PREP_WRITE_EVT: handle=45, offset=18, len=18[0m
+[0;32mI (448520) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=19, len=16, is_prep=1[0m
+[0;32mI (448520) BLE_APP: PREP_WRITE_EVT: handle=45, offset=36, len=16[0m
+[0;32mI (448640) BLE_APP: ESP_GATTS_EXEC_WRITE_EVT: exec_write_flag=1[0m
+[0;32mI (448640) BLE_APP: Executing prepared write: {"device1":0, "device2":0, "device3":0, "device4":0}[0m
+[0;32mI (448650) BLE_APP: Processing BLE command: {"device1":0, "device2":0, "device3":0, "device4":0}[0m
+[0;32mI (448670) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (448670) BLE_APP: Updating response characteristic with: {"device1":0}[0m
+[0;32mI (448670) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (448760) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (448760) BLE_APP: Updating response characteristic with: {"device2":0}[0m
+[0;32mI (448760) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (448770) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (448770) BLE_APP: Updating response characteristic with: {"device3":0}[0m
+[0;32mI (448780) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (448780) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (448790) BLE_APP: Updating response characteristic with: {"device4":0}[0m
+[0;32mI (448790) BLE_APP: BLE Response updated successfully[0m
+[0;32mI (449490) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (449490) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (449490) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (454310) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (454310) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (454310) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (456200) mqtt_client: Client force reconnect requested[0m
+[1;31mE (456200) wifi:sta is connecting, return errorI (456200) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (456200) mqtt_client: Client force reconnect requested[0m
+[0;32mI (459120) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (459130) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (459130) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (463200) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (463200) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (463200) mqtt_client: Error transport connect[0m
+[0;32mI (463200) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (463210) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (463940) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (463940) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (463940) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (468760) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (468760) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (468760) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (471210) mqtt_client: Client force reconnect requested[0m
+[1;31mE (471210) wifi:sta is connecting, return errorI (471210) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (471210) mqtt_client: Client force reconnect requested[0m
+[0;32mI (473570) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (473580) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (473580) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (478210) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (478210) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (478210) mqtt_client: Error transport connect[0m
+[0;32mI (478210) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (478220) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (478390) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (478390) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (478390) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (483210) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (483210) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (483210) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (486220) mqtt_client: Client force reconnect requested[0m
+[1;31mE (486220) wifi:sta is connecting, return errorI (486220) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (486220) mqtt_client: Client force reconnect requested[0m
+[0;32mI (488020) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (488020) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (488030) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (492840) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (492840) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (492840) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (493220) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (493220) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (493220) mqtt_client: Error transport connect[0m
+[0;32mI (493220) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (493230) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (497650) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (497660) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (497660) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (501230) mqtt_client: Client force reconnect requested[0m
+[1;31mE (501230) wifi:sta is connecting, return errorI (501230) MQTT_HANDLER: Other event id:7[0m
+
+[0;32mI (501230) mqtt_client: Client force reconnect requested[0m
+[0;32mI (502470) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (502470) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (508230) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (508230) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (508230) mqtt_client: Error transport connect[0m
+[0;32mI (508230) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (508240) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (516240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (516240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (516240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (521060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (521060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (523240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (523240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (523240) mqtt_client: Error transport connect[0m
+[0;32mI (523240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (523250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (531240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (531240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (531240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (536060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (536060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (538240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (538240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (538240) mqtt_client: Error transport connect[0m
+[0;32mI (538240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (538250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (546240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (546240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (546240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (551060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (551060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (553240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (553240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (553240) mqtt_client: Error transport connect[0m
+[0;32mI (553240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (553250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (561240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (561240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (561240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (566060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (566060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (568240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (568240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (568240) mqtt_client: Error transport connect[0m
+[0;32mI (568240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (568250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (576240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (576240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (576240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (581060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (581060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (583240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (583240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (583240) mqtt_client: Error transport connect[0m
+[0;32mI (583240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (583250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (591240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (591240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (591240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (596060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (596060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (598240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (598240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (598240) mqtt_client: Error transport connect[0m
+[0;32mI (598240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (598250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (606240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (606240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (606240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (611060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (611060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (613240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (613240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (613240) mqtt_client: Error transport connect[0m
+[0;32mI (613240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (613250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (621240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (621240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (621240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (626060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (626060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (628240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (628240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (628240) mqtt_client: Error transport connect[0m
+[0;32mI (628240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (628250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (636240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (636240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (636240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (638400) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=21, len=18, is_prep=1[0m
+[0;32mI (638400) BLE_APP: PREP_WRITE_EVT: handle=45, offset=0, len=18[0m
+[0;32mI (638520) BLE_APP: WRITE_EVT: handle=45, conn_id=0, trans_id=22, len=13, is_prep=1[0m
+[0;32mI (638520) BLE_APP: PREP_WRITE_EVT: handle=45, offset=18, len=13[0m
+[0;32mI (638580) BLE_APP: ESP_GATTS_EXEC_WRITE_EVT: exec_write_flag=1[0m
+[0;32mI (638580) BLE_APP: Executing prepared write: {"request": "getCurrentStatus"}[0m
+[0;32mI (638580) BLE_APP: Processing BLE command: {"request": "getCurrentStatus"}[0m
+[0;32mI (641060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (641060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (643240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (643240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (643240) mqtt_client: Error transport connect[0m
+[0;32mI (643240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (643250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (651240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (651240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (651240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (656060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (656060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (658240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (658240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (658240) mqtt_client: Error transport connect[0m
+[0;32mI (658240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (658250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (666240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (666240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (666240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (671060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (671060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (673240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (673240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (673240) mqtt_client: Error transport connect[0m
+[0;32mI (673240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (673250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (681240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (681240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (681240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (686060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (686060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (688240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (688240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (688240) mqtt_client: Error transport connect[0m
+[0;32mI (688240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (688250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (696240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (696240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (696240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (701060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (701060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (703240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (703240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (703240) mqtt_client: Error transport connect[0m
+[0;32mI (703240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (703250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (711240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (711240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (711240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (716060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (716060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (718240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (718240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (718240) mqtt_client: Error transport connect[0m
+[0;32mI (718240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (718250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (726240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (726240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (726240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (731060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (731060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (733240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (733240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (733240) mqtt_client: Error transport connect[0m
+[0;32mI (733240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (733250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (741240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (741240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (741240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (746060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (746060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (748240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (748240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (748240) mqtt_client: Error transport connect[0m
+[0;32mI (748240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (748250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (756240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (756240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (756240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (761060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (761060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (763240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (763240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (763240) mqtt_client: Error transport connect[0m
+[0;32mI (763240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (763250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (771240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (771240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (771240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (776060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (776060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (778240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (778240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (778240) mqtt_client: Error transport connect[0m
+[0;32mI (778240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (778250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (786240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (786240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (786240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (791060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (791060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (793240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (793240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (793240) mqtt_client: Error transport connect[0m
+[0;32mI (793240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (793250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (801240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (801240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (801240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (806060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (806060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (808240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (808240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (808240) mqtt_client: Error transport connect[0m
+[0;32mI (808240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (808250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (816240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (816240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (816240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (821060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (821060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (823240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (823240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (823240) mqtt_client: Error transport connect[0m
+[0;32mI (823240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (823250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (831240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (831240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (831240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (836060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (836060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (838240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (838240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (838240) mqtt_client: Error transport connect[0m
+[0;32mI (838240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (838250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (846240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (846240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (846240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (851060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (851060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (853240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (853240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (853240) mqtt_client: Error transport connect[0m
+[0;32mI (853240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (853250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (861240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (861240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (861240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (866060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (866060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (868240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (868240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (868240) mqtt_client: Error transport connect[0m
+[0;32mI (868240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (868250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (876240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (876240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (876240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (881060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (881060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (883240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (883240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (883240) mqtt_client: Error transport connect[0m
+[0;32mI (883240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (883250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (891240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (891240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (891240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (896060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (896060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (898240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (898240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (898240) mqtt_client: Error transport connect[0m
+[0;32mI (898240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (898250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (906240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (906240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (906240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (911060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (911060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (913240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (913240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (913240) mqtt_client: Error transport connect[0m
+[0;32mI (913240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (913250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (921240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (921240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (921240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (926060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (926060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (928240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (928240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (928240) mqtt_client: Error transport connect[0m
+[0;32mI (928240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (928250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (936240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (936240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (936240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (941060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (941060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (943240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (943240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (943240) mqtt_client: Error transport connect[0m
+[0;32mI (943240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (943250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (951240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (951240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (951240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (956060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (956060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (958240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (958240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (958240) mqtt_client: Error transport connect[0m
+[0;32mI (958240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (958250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (966240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (966240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (966240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (971060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (971060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (973240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (973240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (973240) mqtt_client: Error transport connect[0m
+[0;32mI (973240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (973250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (981240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (981240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (981240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (986060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (986060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (988240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (988240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (988240) mqtt_client: Error transport connect[0m
+[0;32mI (988240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (988250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (996240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (996240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (996240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1001060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1001060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1003240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1003240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1003240) mqtt_client: Error transport connect[0m
+[0;32mI (1003240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1003250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1011240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1011240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1011240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1016060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1016060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1018240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1018240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1018240) mqtt_client: Error transport connect[0m
+[0;32mI (1018240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1018250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1026240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1026240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1026240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1031060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1031060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1033240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1033240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1033240) mqtt_client: Error transport connect[0m
+[0;32mI (1033240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1033250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1041240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1041240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1041240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1046060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1046060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1048240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1048240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1048240) mqtt_client: Error transport connect[0m
+[0;32mI (1048240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1048250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1056240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1056240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1056240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1061060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1061060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1063240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1063240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1063240) mqtt_client: Error transport connect[0m
+[0;32mI (1063240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1063250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1071240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1071240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1071240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1076060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1076060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1078240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1078240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1078240) mqtt_client: Error transport connect[0m
+[0;32mI (1078240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1078250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1086240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1086240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1086240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1091060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1091060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1093240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1093240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1093240) mqtt_client: Error transport connect[0m
+[0;32mI (1093240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1093250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1101240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1101240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1101240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1106060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1106060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1108240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1108240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1108240) mqtt_client: Error transport connect[0m
+[0;32mI (1108240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1108250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1116240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1116240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1116240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1121060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1121060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1123240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1123240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1123240) mqtt_client: Error transport connect[0m
+[0;32mI (1123240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1123250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1131240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1131240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1131240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1136060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1136060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1138240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1138240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1138240) mqtt_client: Error transport connect[0m
+[0;32mI (1138240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1138250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1146240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1146240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1146240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1151060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1151060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1153240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1153240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1153240) mqtt_client: Error transport connect[0m
+[0;32mI (1153240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1153250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1161240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1161240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1161240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1166060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1166060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1168240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1168240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1168240) mqtt_client: Error transport connect[0m
+[0;32mI (1168240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1168250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1176240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1176240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1176240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1181060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1181060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1183240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1183240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1183240) mqtt_client: Error transport connect[0m
+[0;32mI (1183240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1183250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1191240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1191240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1191240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1196060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1196060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1198240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1198240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1198240) mqtt_client: Error transport connect[0m
+[0;32mI (1198240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1198250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1206240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1206240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1206240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1211060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1211060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1213240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1213240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1213240) mqtt_client: Error transport connect[0m
+[0;32mI (1213240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1213250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1221240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1221240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1221240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1226060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1226060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1228240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1228240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1228240) mqtt_client: Error transport connect[0m
+[0;32mI (1228240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1228250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1236240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1236240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1236240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1241060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1241060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1243240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1243240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1243240) mqtt_client: Error transport connect[0m
+[0;32mI (1243240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1243250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1251240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1251240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1251240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1256060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1256060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1258240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1258240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1258240) mqtt_client: Error transport connect[0m
+[0;32mI (1258240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1258250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1266240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1266240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1266240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1271060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1271060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1273240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1273240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1273240) mqtt_client: Error transport connect[0m
+[0;32mI (1273240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1273250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1281240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1281240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1281240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1286060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1286060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1288240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1288240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1288240) mqtt_client: Error transport connect[0m
+[0;32mI (1288240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1288250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1296240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1296240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1296240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1301060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1301060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1303240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1303240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1303240) mqtt_client: Error transport connect[0m
+[0;32mI (1303240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1303250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1311240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1311240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1311240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1316060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1316060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1318240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1318240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1318240) mqtt_client: Error transport connect[0m
+[0;32mI (1318240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1318250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1326240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1326240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1326240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1331060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1331060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1333240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1333240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1333240) mqtt_client: Error transport connect[0m
+[0;32mI (1333240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1333250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1341240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1341240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1341240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1346060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1346060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1348240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1348240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1348240) mqtt_client: Error transport connect[0m
+[0;32mI (1348240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1348250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1356240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1356240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1356240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1361060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1361060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1363240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1363240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1363240) mqtt_client: Error transport connect[0m
+[0;32mI (1363240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1363250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1371240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1371240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1371240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1376060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1376060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1378240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1378240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1378240) mqtt_client: Error transport connect[0m
+[0;32mI (1378240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1378250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1386240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1386240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1386240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1391060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1391060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1393240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1393240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1393240) mqtt_client: Error transport connect[0m
+[0;32mI (1393240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1393250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1401240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1401240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1401240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1406060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1406060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1408240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1408240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1408240) mqtt_client: Error transport connect[0m
+[0;32mI (1408240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1408250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1416240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1416240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1416240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1421060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1421060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1423240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1423240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1423240) mqtt_client: Error transport connect[0m
+[0;32mI (1423240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1423250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1431240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1431240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1431240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1436060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1436060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1438240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1438240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1438240) mqtt_client: Error transport connect[0m
+[0;32mI (1438240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1438250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1446240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1446240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1446240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1451060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1451060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1453240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1453240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1453240) mqtt_client: Error transport connect[0m
+[0;32mI (1453240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1453250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1461240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1461240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1461240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1466060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1466060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1468240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1468240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1468240) mqtt_client: Error transport connect[0m
+[0;32mI (1468240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1468250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1476240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1476240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1476240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1481060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1481060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1483240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1483240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1483240) mqtt_client: Error transport connect[0m
+[0;32mI (1483240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1483250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1491240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1491240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1491240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1496060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1496060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1498240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1498240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1498240) mqtt_client: Error transport connect[0m
+[0;32mI (1498240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1498250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1506240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1506240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1506240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1511060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1511060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1513240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1513240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1513240) mqtt_client: Error transport connect[0m
+[0;32mI (1513240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1513250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1521240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1521240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1521240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1526060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1526060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1528240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1528240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1528240) mqtt_client: Error transport connect[0m
+[0;32mI (1528240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1528250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1536240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1536240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1536240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1541060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1541060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1543240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1543240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1543240) mqtt_client: Error transport connect[0m
+[0;32mI (1543240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1543250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1551240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1551240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1551240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1556060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1556060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1558240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1558240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1558240) mqtt_client: Error transport connect[0m
+[0;32mI (1558240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1558250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1566240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1566240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1566240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1571060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1571060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1573240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1573240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1573240) mqtt_client: Error transport connect[0m
+[0;32mI (1573240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1573250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1581240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1581240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1581240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1586060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1586060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1588240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1588240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1588240) mqtt_client: Error transport connect[0m
+[0;32mI (1588240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1588250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1596240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1596240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1596240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1601060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1601060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1603240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1603240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1603240) mqtt_client: Error transport connect[0m
+[0;32mI (1603240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1603250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1611240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1611240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1611240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1616060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1616060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1618240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1618240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1618240) mqtt_client: Error transport connect[0m
+[0;32mI (1618240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1618250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1626240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1626240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1626240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1631060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1631060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1633240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1633240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1633240) mqtt_client: Error transport connect[0m
+[0;32mI (1633240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1633250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1641240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1641240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1641240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1646060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1646060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1648240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1648240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1648240) mqtt_client: Error transport connect[0m
+[0;32mI (1648240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1648250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1656240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1656240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1656240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1661060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1661060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1663240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1663240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1663240) mqtt_client: Error transport connect[0m
+[0;32mI (1663240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1663250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1671240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1671240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1671240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1676060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1676060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1678240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1678240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1678240) mqtt_client: Error transport connect[0m
+[0;32mI (1678240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1678250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1686240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1686240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1686240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1691060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1691060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1693240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1693240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1693240) mqtt_client: Error transport connect[0m
+[0;32mI (1693240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1693250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1701240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1701240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1701240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1706060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1706060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1708240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1708240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1708240) mqtt_client: Error transport connect[0m
+[0;32mI (1708240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1708250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1716240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1716240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1716240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1721060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1721060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1723240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1723240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1723240) mqtt_client: Error transport connect[0m
+[0;32mI (1723240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1723250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1731240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1731240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1731240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1736060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1736060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1738240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1738240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1738240) mqtt_client: Error transport connect[0m
+[0;32mI (1738240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1738250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1746240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1746240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1746240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1751060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1751060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1753240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1753240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1753240) mqtt_client: Error transport connect[0m
+[0;32mI (1753240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1753250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1761240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1761240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1761240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1766060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1766060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1768240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1768240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1768240) mqtt_client: Error transport connect[0m
+[0;32mI (1768240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1768250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1776240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1776240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1776240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1781060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1781060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1783240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1783240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1783240) mqtt_client: Error transport connect[0m
+[0;32mI (1783240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1783250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1791240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1791240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1791240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1796060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1796060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1798240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1798240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1798240) mqtt_client: Error transport connect[0m
+[0;32mI (1798240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1798250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1806240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1806240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1806240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1811060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1811060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1813240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1813240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1813240) mqtt_client: Error transport connect[0m
+[0;32mI (1813240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1813250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1821240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1821240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1821240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1826060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1826060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1828240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1828240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1828240) mqtt_client: Error transport connect[0m
+[0;32mI (1828240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1828250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1836240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1836240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1836240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1841060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1841060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1843240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1843240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1843240) mqtt_client: Error transport connect[0m
+[0;32mI (1843240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1843250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1851240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1851240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1851240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1856060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1856060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1858240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1858240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1858240) mqtt_client: Error transport connect[0m
+[0;32mI (1858240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1858250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1866240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1866240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1866240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1871060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1871060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1873240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1873240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1873240) mqtt_client: Error transport connect[0m
+[0;32mI (1873240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1873250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1881240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1881240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1881240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1886060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1886060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1888240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1888240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1888240) mqtt_client: Error transport connect[0m
+[0;32mI (1888240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1888250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1896240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1896240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1896240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1901060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1901060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1903240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1903240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1903240) mqtt_client: Error transport connect[0m
+[0;32mI (1903240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1903250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1911240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1911240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1911240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1916060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1916060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1918240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1918240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1918240) mqtt_client: Error transport connect[0m
+[0;32mI (1918240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1918250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1926240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1926240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1926240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1931060) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (1931060) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1933240) esp-tls: couldn't get hostname for :mqtt.onwords.in: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1933240) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1933240) mqtt_client: Error transport connect[0m
+[0;32mI (1933240) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[0;32mI (1933250) MQTT_HANDLER: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1941240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1941240) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1941240) mqtt_client: Client force reconnect requested[0m
+[0;32mI (1942450) wifi:new:<6,0>, old:<4,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1942450) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1942470) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1942500) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1942570) wifi:connected with .bin, aid = 2, channel 6, BW20, bssid = 6c:24:a6:c7:20:a9[0m
+[0;32mI (1942570) wifi:security: WPA2-PSK, phy: bgn, rssi: -33[0m
+[0;32mI (1942580) wifi:pm start, type: 1[0m
+
+[0;32mI (1942580) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1942580) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1942590) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1942600) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1942690) wifi:<ba-add>idx:0 (ifx:0, 6c:24:a6:c7:20:a9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1943760) esp_netif_handlers: sta ip: 192.168.43.236, mask: 255.255.255.0, gw: 192.168.43.33[0m
+[0;32mI (1943760) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (1943760) WIFI_HANDLER: got ip:192.168.43.236[0m
+[0;32mI (1945650) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (1945650) ESP_APP: WiFi connected, stopping BLE fallback...[0m
+[0;33mW (1945650) BT_HCI: hci cmd send: disconnect: hdl 0x1, rsn:0x13[0m
+[0;32mI (1945650) BLE_APP: Stop adv successfully[0m
+[0;32mI (1945660) BLE_APP: ESP_GATTS_DISCONNECT_EVT, reason = 22[0m
+[0;32mI (1945660) BLE_APP: Advertising start successfully[0m
+[0;33mW (1945710) BT_HCI: hcif disc complete: hdl 0x1, rsn 0x16[0m
+[0;32mI (1946710) BLE_APP: BLE deinitialized[0m
+[0;32mI (1946710) ESP_APP: Ble_enabled: 0[0m
+[0;32mI (1946820) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=27272[0m
+[0;32mI (1946920) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=32047[0m
+[0;32mI (1946930) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=8648[0m
+[0;32mI (1946930) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=61707[0m
+[0;32mI (1946930) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=23105[0m
+[0;32mI (1946940) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=59723[0m
+[0;32mI (1946940) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=1223[0m
+[0;32mI (1946950) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1946950) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1946950) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
