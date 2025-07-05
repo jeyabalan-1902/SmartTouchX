@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "esp_app",
-    "project_version":    "8b3074f-dirty",
+    "project_version":    "e553e85-dirty",
     "project_path":       "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32",
     "idf_path":           "C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1",
     "build_dir":          "C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build",

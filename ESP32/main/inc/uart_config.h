@@ -5,6 +5,7 @@
 #include "crc32.h"
 #include "flash_cmd.h"
 #include "mqtt.h"
+#include "ble.h"
 
 #define UART_PORT_NUM                   UART_NUM_1
 #define UART_BAUD_RATE                  115200
