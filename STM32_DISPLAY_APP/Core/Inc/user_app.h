@@ -20,6 +20,7 @@
 #include "queue.h"
 #include "semphr.h"
 
+#include "TFT_MENU.h"
 #include "display_app.h"
 #include "cJSON.h"
 
@@ -35,6 +36,7 @@ extern UART_HandleTypeDef huart3;
 void setup_freeRTOS(void);
 void SPI_handler(void *param);
 void UART_handler(void *param);
+void Display_Handler(void *param);
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 
