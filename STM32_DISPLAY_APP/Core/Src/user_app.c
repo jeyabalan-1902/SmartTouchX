@@ -17,6 +17,7 @@ static uint8_t uartRxByte;
 
 uint8_t spiRxBuffer[2];
 
+
 void setup_freeRTOS(void)
 {
 	spiQueue = xQueueCreate(10, sizeof(spiRxBuffer));
@@ -32,7 +33,18 @@ void setup_freeRTOS(void)
 	status = xTaskCreate(UART_handler, "UARTHandler", 1024, NULL, 4, NULL);
 	configASSERT(status == pdPASS);
 
+	status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 3, NULL);
+	configASSERT(status == pdPASS);
+
 	vTaskStartScheduler();
+}
+
+void Display_Handler(void *param)
+{
+	while(1)
+	{
+		Menu_Handler();
+	}
 }
 
 void SPI_handler(void *param)
@@ -148,7 +160,7 @@ void SPI_handler(void *param)
             }
             memset(localSpiRxBuffer, 0, sizeof(localSpiRxBuffer));
             snprintf(displayMsg, sizeof(displayMsg), "Device %d %s", deviceNo, (deviceState == 1) ? "ON" : "OFF");
-			print_To_display(displayMsg);
+			//print_To_display(displayMsg);
         }
     }
 }
@@ -226,7 +238,7 @@ void UART_handler(void *param)
 
 										char displayMsg[32];
 										snprintf(displayMsg, sizeof(displayMsg), "Device %d %s", i + 1, (state == GPIO_PIN_SET) ? "ON" : "OFF");
-										print_To_display(displayMsg);
+										//print_To_display(displayMsg);
 									}
 								}
                         		char *respStr = cJSON_PrintUnformatted(resp);

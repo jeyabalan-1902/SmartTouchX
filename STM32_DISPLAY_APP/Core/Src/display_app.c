@@ -27,6 +27,11 @@ void InitializeDisplay(void)
     ST7735_WriteString(5, 5, "-ONWORDS TOUCH BOARD-", Font_7x10, YELLOW, BLACK);
     ST7735_WriteString(5, 18, "    VERSION v3.0", Font_7x10, RED, BLACK);
     printf("Touch application running\n");
+
+    HAL_Delay(1000);
+
+    HomeMenu();
+
 }
 
 
