@@ -13,6 +13,7 @@
 #include <string.h>
 
 #include "main.h"
+#include "user_app.h"
 #include "ST7735.h"
 #include "fonts.h"
 #include "GFX_FUNCTIONS.h"

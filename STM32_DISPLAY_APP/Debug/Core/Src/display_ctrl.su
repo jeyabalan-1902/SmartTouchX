@@ -1,0 +1,15 @@
+../Core/Src/display_ctrl.c:20:6:drawCleanButton	48	static
+../Core/Src/display_ctrl.c:33:6:drawTitleBar	48	static
+../Core/Src/display_ctrl.c:46:6:drawStatusInfo	32	static
+../Core/Src/display_ctrl.c:52:6:displayMainMenu	24	static
+../Core/Src/display_ctrl.c:69:6:displayTotalControlMenu	56	static
+../Core/Src/display_ctrl.c:98:6:displaySeparateControlMenu	48	static
+../Core/Src/display_ctrl.c:121:6:displayDeviceControlMenu	88	static
+../Core/Src/display_ctrl.c:151:6:setDeviceState	48	static
+../Core/Src/display_ctrl.c:209:6:setAllDevicesState	64	static
+../Core/Src/display_ctrl.c:264:6:syncDisplayDeviceStates	16	static
+../Core/Src/display_ctrl.c:273:6:showActionFeedback	32	static
+../Core/Src/display_ctrl.c:281:6:handleNavigation	72	static
+../Core/Src/display_ctrl.c:423:6:HAL_GPIO_EXTI_Callback	16	static
+../Core/Src/display_ctrl.c:443:6:Menu_Handler	8	static
+../Core/Src/display_ctrl.c:449:6:initializeMenu	16	static

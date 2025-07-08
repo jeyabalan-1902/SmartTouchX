@@ -1,0 +1,15 @@
+../Core/Src/display_ctrl.c:20:6:drawCleanButton	2
+../Core/Src/display_ctrl.c:33:6:drawTitleBar	2
+../Core/Src/display_ctrl.c:46:6:drawStatusInfo	1
+../Core/Src/display_ctrl.c:52:6:displayMainMenu	3
+../Core/Src/display_ctrl.c:69:6:displayTotalControlMenu	5
+../Core/Src/display_ctrl.c:98:6:displaySeparateControlMenu	5
+../Core/Src/display_ctrl.c:121:6:displayDeviceControlMenu	5
+../Core/Src/display_ctrl.c:151:6:setDeviceState	9
+../Core/Src/display_ctrl.c:209:6:setAllDevicesState	10
+../Core/Src/display_ctrl.c:264:6:syncDisplayDeviceStates	3
+../Core/Src/display_ctrl.c:273:6:showActionFeedback	1
+../Core/Src/display_ctrl.c:281:6:handleNavigation	31
+../Core/Src/display_ctrl.c:423:6:HAL_GPIO_EXTI_Callback	4
+../Core/Src/display_ctrl.c:443:6:Menu_Handler	1
+../Core/Src/display_ctrl.c:449:6:initializeMenu	2

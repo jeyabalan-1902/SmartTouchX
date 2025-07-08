@@ -7,10 +7,10 @@
 C_SRCS += \
 ../Core/Src/GFX_FUNCTIONS.c \
 ../Core/Src/ST7735.c \
-../Core/Src/TFT_MENU.c \
 ../Core/Src/cJSON.c \
 ../Core/Src/cJSON_Utils.c \
 ../Core/Src/display_app.c \
+../Core/Src/display_ctrl.c \
 ../Core/Src/fonts.c \
 ../Core/Src/main.c \
 ../Core/Src/stm32f4xx_hal_msp.c \
@@ -23,10 +23,10 @@ C_SRCS += \
 OBJS += \
 ./Core/Src/GFX_FUNCTIONS.o \
 ./Core/Src/ST7735.o \
-./Core/Src/TFT_MENU.o \
 ./Core/Src/cJSON.o \
 ./Core/Src/cJSON_Utils.o \
 ./Core/Src/display_app.o \
+./Core/Src/display_ctrl.o \
 ./Core/Src/fonts.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
@@ -39,10 +39,10 @@ OBJS += \
 C_DEPS += \
 ./Core/Src/GFX_FUNCTIONS.d \
 ./Core/Src/ST7735.d \
-./Core/Src/TFT_MENU.d \
 ./Core/Src/cJSON.d \
 ./Core/Src/cJSON_Utils.d \
 ./Core/Src/display_app.d \
+./Core/Src/display_ctrl.d \
 ./Core/Src/fonts.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f4xx_hal_msp.d \
@@ -60,7 +60,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/GFX_FUNCTIONS.cyclo ./Core/Src/GFX_FUNCTIONS.d ./Core/Src/GFX_FUNCTIONS.o ./Core/Src/GFX_FUNCTIONS.su ./Core/Src/ST7735.cyclo ./Core/Src/ST7735.d ./Core/Src/ST7735.o ./Core/Src/ST7735.su ./Core/Src/TFT_MENU.cyclo ./Core/Src/TFT_MENU.d ./Core/Src/TFT_MENU.o ./Core/Src/TFT_MENU.su ./Core/Src/cJSON.cyclo ./Core/Src/cJSON.d ./Core/Src/cJSON.o ./Core/Src/cJSON.su ./Core/Src/cJSON_Utils.cyclo ./Core/Src/cJSON_Utils.d ./Core/Src/cJSON_Utils.o ./Core/Src/cJSON_Utils.su ./Core/Src/display_app.cyclo ./Core/Src/display_app.d ./Core/Src/display_app.o ./Core/Src/display_app.su ./Core/Src/fonts.cyclo ./Core/Src/fonts.d ./Core/Src/fonts.o ./Core/Src/fonts.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_hal_timebase_tim.cyclo ./Core/Src/stm32f4xx_hal_timebase_tim.d ./Core/Src/stm32f4xx_hal_timebase_tim.o ./Core/Src/stm32f4xx_hal_timebase_tim.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/user_app.cyclo ./Core/Src/user_app.d ./Core/Src/user_app.o ./Core/Src/user_app.su
+	-$(RM) ./Core/Src/GFX_FUNCTIONS.cyclo ./Core/Src/GFX_FUNCTIONS.d ./Core/Src/GFX_FUNCTIONS.o ./Core/Src/GFX_FUNCTIONS.su ./Core/Src/ST7735.cyclo ./Core/Src/ST7735.d ./Core/Src/ST7735.o ./Core/Src/ST7735.su ./Core/Src/cJSON.cyclo ./Core/Src/cJSON.d ./Core/Src/cJSON.o ./Core/Src/cJSON.su ./Core/Src/cJSON_Utils.cyclo ./Core/Src/cJSON_Utils.d ./Core/Src/cJSON_Utils.o ./Core/Src/cJSON_Utils.su ./Core/Src/display_app.cyclo ./Core/Src/display_app.d ./Core/Src/display_app.o ./Core/Src/display_app.su ./Core/Src/display_ctrl.cyclo ./Core/Src/display_ctrl.d ./Core/Src/display_ctrl.o ./Core/Src/display_ctrl.su ./Core/Src/fonts.cyclo ./Core/Src/fonts.d ./Core/Src/fonts.o ./Core/Src/fonts.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_hal_timebase_tim.cyclo ./Core/Src/stm32f4xx_hal_timebase_tim.d ./Core/Src/stm32f4xx_hal_timebase_tim.o ./Core/Src/stm32f4xx_hal_timebase_tim.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/user_app.cyclo ./Core/Src/user_app.d ./Core/Src/user_app.o ./Core/Src/user_app.su
 
 .PHONY: clean-Core-2f-Src
 
