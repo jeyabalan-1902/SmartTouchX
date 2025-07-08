@@ -1,5 +1,5 @@
 ../Core/Src/display_app.c:13:6:InitializeDisplay	32	static
-../Core/Src/display_app.c:38:6:ClearDisplay	32	static
-../Core/Src/display_app.c:53:6:ScrollDisplay	32	static
-../Core/Src/display_app.c:73:6:DisplayMessage	32	static
-../Core/Src/display_app.c:93:6:print_To_display	96	static
+../Core/Src/display_app.c:36:6:ClearDisplay	32	static
+../Core/Src/display_app.c:51:6:ScrollDisplay	32	static
+../Core/Src/display_app.c:71:6:DisplayMessage	32	static
+../Core/Src/display_app.c:91:6:print_To_display	96	static

@@ -30,8 +30,6 @@ void InitializeDisplay(void)
 
     HAL_Delay(1000);
 
-    HomeMenu();
-
 }
 
 

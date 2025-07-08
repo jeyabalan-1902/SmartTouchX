@@ -8,6 +8,8 @@
 #include "user_app.h"
 
 QueueHandle_t spiQueue;
+QueueHandle_t jsonTxQueue;
+SemaphoreHandle_t deviceStateMutex;
 BaseType_t status;
 
 static uint8_t uartRingBuffer[UART_RING_BUFFER_SIZE];
@@ -52,8 +54,7 @@ void SPI_handler(void *param)
     uint8_t localSpiRxBuffer[3] = {0};
     uint8_t deviceState;
     GPIO_PinState state;
-    char displayMsg[32];
-    int deviceNo;
+    int deviceIndex = -1;
 
     while (1) {
         if (xQueueReceive(spiQueue, localSpiRxBuffer, portMAX_DELAY) == pdTRUE)
@@ -61,10 +62,15 @@ void SPI_handler(void *param)
             printf("SPI Data Received: %s\n", localSpiRxBuffer);
             if (strcmp((char *)localSpiRxBuffer, "L1") == 0)
             {
-            	deviceNo = 1;
-                HAL_GPIO_TogglePin(TOUCH_LED1_GPIO_Port, TOUCH_LED1_Pin);
-                state = HAL_GPIO_ReadPin(TOUCH_LED1_GPIO_Port, TOUCH_LED1_Pin);
-                deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+            	if(xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
+            	{
+            		deviceIndex = 0;
+            		HAL_GPIO_TogglePin(TOUCH_LED1_GPIO_Port, TOUCH_LED1_Pin);
+					state = HAL_GPIO_ReadPin(TOUCH_LED1_GPIO_Port, TOUCH_LED1_Pin);
+					deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+                    global_device_states[deviceIndex] = deviceState;
+                    xSemaphoreGive(deviceStateMutex);
+            	}
 
                 cJSON *jsonObj = cJSON_CreateObject();
 				if (jsonObj != NULL)
@@ -84,10 +90,15 @@ void SPI_handler(void *param)
             }
             else if(strcmp((char *)localSpiRxBuffer, "L2") == 0)
             {
-            	deviceNo = 2;
-            	HAL_GPIO_TogglePin(TOUCH_LED2_GPIO_Port, TOUCH_LED2_Pin);
-            	state = HAL_GPIO_ReadPin(TOUCH_LED2_GPIO_Port, TOUCH_LED2_Pin);
-				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+            	if(xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
+				{
+					deviceIndex = 1;
+					HAL_GPIO_TogglePin(TOUCH_LED2_GPIO_Port, TOUCH_LED2_Pin);
+					state = HAL_GPIO_ReadPin(TOUCH_LED2_GPIO_Port, TOUCH_LED2_Pin);
+					deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+					global_device_states[deviceIndex] = deviceState;
+					xSemaphoreGive(deviceStateMutex);
+				}
 
 				cJSON *jsonObj = cJSON_CreateObject();
 				if (jsonObj != NULL)
@@ -108,10 +119,15 @@ void SPI_handler(void *param)
             }
             else if(strcmp((char *)localSpiRxBuffer, "L3") == 0)
             {
-            	deviceNo = 3;
-				HAL_GPIO_TogglePin(TOUCH_LED3_GPIO_Port, TOUCH_LED3_Pin);
-				state = HAL_GPIO_ReadPin(TOUCH_LED3_GPIO_Port, TOUCH_LED3_Pin);
-				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+            	if(xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
+				{
+					deviceIndex = 2;
+					HAL_GPIO_TogglePin(TOUCH_LED3_GPIO_Port, TOUCH_LED3_Pin);
+					state = HAL_GPIO_ReadPin(TOUCH_LED3_GPIO_Port, TOUCH_LED3_Pin);
+					deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+					global_device_states[deviceIndex] = deviceState;
+					xSemaphoreGive(deviceStateMutex);
+				}
 
 				cJSON *jsonObj = cJSON_CreateObject();
 				if (jsonObj != NULL)
@@ -132,10 +148,15 @@ void SPI_handler(void *param)
 			}
             else if(strcmp((char *)localSpiRxBuffer, "L4") == 0)
             {
-            	deviceNo = 4;
-				HAL_GPIO_TogglePin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin);
-				state = HAL_GPIO_ReadPin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin);
-				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+            	if(xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
+				{
+					deviceIndex = 3;
+					HAL_GPIO_TogglePin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin);
+					state = HAL_GPIO_ReadPin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin);
+					deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
+					global_device_states[deviceIndex] = deviceState;
+					xSemaphoreGive(deviceStateMutex);
+				}
 
 				cJSON *jsonObj = cJSON_CreateObject();
 				if (jsonObj != NULL)
@@ -159,8 +180,7 @@ void SPI_handler(void *param)
             	printf("junk data received on SPI\r\n");
             }
             memset(localSpiRxBuffer, 0, sizeof(localSpiRxBuffer));
-            snprintf(displayMsg, sizeof(displayMsg), "Device %d %s", deviceNo, (deviceState == 1) ? "ON" : "OFF");
-			//print_To_display(displayMsg);
+            updateToDisplayMenu();
         }
     }
 }
@@ -207,10 +227,12 @@ void UART_handler(void *param)
                         	{
                         		cJSON *resp = cJSON_CreateObject();
 
-								for (int i = 0; i < 4; i++)
-								{
-									GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
-									cJSON_AddNumberToObject(resp, devices[i], (state == GPIO_PIN_SET) ? 1 : 0);
+                        		if (xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE) {
+									for (int i = 0; i < 4; i++)
+									{
+										cJSON_AddNumberToObject(resp, devices[i], global_device_states[i]);
+									}
+									xSemaphoreGive(deviceStateMutex);
 								}
 
 								char *respStr = cJSON_PrintUnformatted(resp);
@@ -225,30 +247,32 @@ void UART_handler(void *param)
                         	}
                         	else
                         	{
-                        		cJSON *resp = cJSON_CreateObject();
-                        		for (int i = 0; i < 4; i++)
-								{
-									cJSON *item = cJSON_GetObjectItem(json, devices[i]);
-									if (cJSON_IsNumber(item))
+                        		if (xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
+                        		{
+                        			cJSON *resp = cJSON_CreateObject();
+									for (int i = 0; i < 4; i++)
 									{
-										HAL_GPIO_WritePin(ports[i], pins[i], item->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
-										GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
-
-										cJSON_AddNumberToObject(resp, devices[i], (state == GPIO_PIN_SET) ? 1 : 0);
-
-										char displayMsg[32];
-										snprintf(displayMsg, sizeof(displayMsg), "Device %d %s", i + 1, (state == GPIO_PIN_SET) ? "ON" : "OFF");
-										//print_To_display(displayMsg);
+										cJSON *item = cJSON_GetObjectItem(json, devices[i]);
+										if (cJSON_IsNumber(item))
+										{
+											HAL_GPIO_WritePin(ports[i], pins[i], item->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
+											GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
+											global_device_states[i] = (state == GPIO_PIN_SET) ? 1 : 0;
+											cJSON_AddNumberToObject(resp, devices[i], global_device_states[i]);
+											printf("UART: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
+										}
 									}
-								}
-                        		char *respStr = cJSON_PrintUnformatted(resp);
-								if (respStr)
-								{
-									HAL_UART_Transmit(&huart3, (uint8_t *)respStr, strlen(respStr), HAL_MAX_DELAY);
-									HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
-									free(respStr);
-								}
-								cJSON_Delete(resp);
+									xSemaphoreGive(deviceStateMutex);
+									char *respStr = cJSON_PrintUnformatted(resp);
+									if (respStr)
+									{
+										HAL_UART_Transmit(&huart3, (uint8_t *)respStr, strlen(respStr), HAL_MAX_DELAY);
+										HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
+										free(respStr);
+									}
+									cJSON_Delete(resp);
+									updateToDisplayMenu();
+                        		}
                         	}
                             cJSON_Delete(json);
                         }
@@ -305,6 +329,25 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
         HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
     }
+}
+
+void updateToDisplayMenu(void)
+{
+	if(current_menu == MENU_TOTAL_CONTROL)
+	{
+		last_selection = -1;
+		displayTotalControlMenu();
+	}
+	else if(current_menu == MENU_SEPARATE_CONTROL)
+	{
+		last_selection = -1;
+		displaySeparateControlMenu();
+	}
+	else if(current_menu == MENU_DEVICE_CONTROL)
+	{
+		last_selection = -1;
+		displayDeviceControlMenu();
+	}
 }
 
 
