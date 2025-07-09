@@ -35,14 +35,21 @@ typedef enum {
     MENU_DEVICE_CONTROL
 } menu_state_t;
 
-
 // Menu configuration
 #define MAIN_MENU_OPTIONS 2
 #define TOTAL_CONTROL_OPTIONS 3
 #define SEPARATE_CONTROL_OPTIONS 5
-#define DEVICE_CONTROL_OPTIONS 3
+#define DEVICE_CONTROL_OPTIONS 4
 
-// External variables
+
+#define MAX_DISPLAY_LINES 8
+#define LINE_HEIGHT       12
+#define CHAR_WIDTH        7
+
+#define BL_DEBUG_MSG_EN
+
+extern uint8_t current_line;
+extern char display_buffer[MAX_DISPLAY_LINES][23];
 extern int current_menu;
 extern int current_selection;
 extern int current_device;
@@ -67,6 +74,21 @@ void displayDeviceControlMenu(void);
 // Button drawing functions
 void drawButton(int x, int y, int width, int height, char* text, int selected);
 
+void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id);
+void updateButtonSelection(int old_selection, int new_selection);
+void drawTitleBar(char* title);
+
+// Optimized update functions
+void updateStatusInfo(char* status, uint16_t color);
+void updateDeviceStatusText(int device_index, bool is_on);
+void updateDeviceCount(int total_on);
+void updateDeviceControlStatus(int device, bool is_on);
+
+// Fast update functions
+void fastUpdateDeviceList(void);
+void fastUpdateTotalControl(void);
+void fastUpdateDeviceControl(void);
+
 // Device control functions
 void setDeviceState(int device, int state);
 void setAllDevicesState(int state);
@@ -74,20 +96,11 @@ void syncDisplayDeviceStates(void);
 // GPIO interrupt callback
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 
-// Legacy functions (for backward compatibility if needed)
-void Test_Button_unselect(void);
-void Test_Button_select(void);
-void Page2_Button_unselect(void);
-void Page2_Button_select(void);
-void back_Button_unselect(void);
-void back_Button_select(void);
-void ledon_Button_unselect(void);
-void ledon_Button_select(void);
-void ledoff_Button_unselect(void);
-void ledoff_Button_select(void);
-void HomeMenu(void);
-void TestMenu(void);
-void Page2Menu(void);
 
+
+void print_To_display(char *format,...);
+void DisplayMessage(const char* message);
+void ScrollDisplay(void);
+void ClearDisplay(void);
 
 #endif /* INC_DISPLAY_CTRL_H_ */

@@ -90,6 +90,7 @@ extern SPI_HandleTypeDef hspi1;
 #define YELLOW  0xFFE0
 #define WHITE   0xFFFF
 #define GRAY    0X2104
+#define ORANGE  0xFD20
 #define color565(r, g, b) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3))
 
 // call before initializing any SPI devices

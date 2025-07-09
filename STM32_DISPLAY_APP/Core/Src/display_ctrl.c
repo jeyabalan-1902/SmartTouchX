@@ -11,11 +11,119 @@ int current_menu = MENU_MAIN;
 int current_selection = 0;
 int current_device = 0;
 int last_selection = -1;
+uint8_t current_line = 0;
+char display_buffer[MAX_DISPLAY_LINES][23];
+int last_menu = -1;
 
 int downbutton = 0, upbutton = 0, enter = 0;
 
 volatile int global_device_states[4] = {0, 0, 0, 0};// 0=OFF, 1=ON
 int device_states[4] = {0, 0, 0, 0};
+int last_device_states[4] = {-1, -1, -1, -1};
+
+bool menu_drawn = false;
+bool buttons_drawn = false;
+
+typedef struct {
+    int x, y, width, height;
+    int button_id;
+    char text[25];
+} button_position_t;
+
+button_position_t current_buttons[6];
+int button_count = 0;
+
+
+void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id) {
+    fillRect(x-1, y-1, width+2, height+2, BLACK);
+
+    if (selected) {
+        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
+        fillRoundRect(x, y, width, height, 3, GREEN);
+        ST7735_WriteString(x+5, y+4, text, Font_7x10, BLACK, GREEN);
+    } else {
+        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
+        fillRoundRect(x, y, width, height, 3, GRAY);
+        ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
+    }
+
+    // Store button position AND TEXT for future updates
+    if (button_id < 6) {
+        current_buttons[button_id].x = x;
+        current_buttons[button_id].y = y;
+        current_buttons[button_id].width = width;
+        current_buttons[button_id].height = height;
+        current_buttons[button_id].button_id = button_id;
+        strncpy(current_buttons[button_id].text, text, 24);
+        current_buttons[button_id].text[24] = '\0';
+    }
+}
+
+void updateButtonSelection(int old_selection, int new_selection) {
+    // Update old button (unselect)
+    if (old_selection >= 0 && old_selection < button_count) {
+        button_position_t *old_btn = &current_buttons[old_selection];
+
+        // Clear and redraw unselected button with text
+        fillRect(old_btn->x-1, old_btn->y-1, old_btn->width+2, old_btn->height+2, BLACK);
+        drawRoundRect(old_btn->x-1, old_btn->y-1, old_btn->width+2, old_btn->height+2, 3, WHITE);
+        fillRoundRect(old_btn->x, old_btn->y, old_btn->width, old_btn->height, 3, GRAY);
+        ST7735_WriteString(old_btn->x+5, old_btn->y+4, old_btn->text, Font_7x10, WHITE, GRAY);
+    }
+
+    // Update new button (select)
+    if (new_selection >= 0 && new_selection < button_count) {
+        button_position_t *new_btn = &current_buttons[new_selection];
+
+        // Clear and redraw selected button with text
+        fillRect(new_btn->x-1, new_btn->y-1, new_btn->width+2, new_btn->height+2, BLACK);
+        drawRoundRect(new_btn->x-1, new_btn->y-1, new_btn->width+2, new_btn->height+2, 3, WHITE);
+        fillRoundRect(new_btn->x, new_btn->y, new_btn->width, new_btn->height, 3, GREEN);
+        ST7735_WriteString(new_btn->x+5, new_btn->y+4, new_btn->text, Font_7x10, BLACK, GREEN);
+    }
+}
+
+void updateDeviceStatusText(int device_index, bool is_on) {
+    int text_x = MARGIN_X + 5;
+    int text_y = TITLE_HEIGHT + 10 + device_index * 20 + 4;
+
+    // Clear old status text area
+    fillRect(text_x + 70, text_y, 40, 10, GRAY); // Clear [ON/OFF] area only
+
+    // Write new status
+    char status[8];
+    snprintf(status, sizeof(status), "[%s]", is_on ? "ON" : "OFF");
+    ST7735_WriteString(text_x + 70, text_y, status, Font_7x10, WHITE, GRAY);
+}
+
+void updateStatusInfo(char* status, uint16_t color) {
+    // Clear only the status area
+    fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
+    ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
+}
+
+// Update individual device count in total control
+void updateDeviceCount(int total_on) {
+    char status[35];
+    if(total_on > 0)
+    {
+    	snprintf(status, sizeof(status), "Status: %d/4 devices", total_on);
+    	updateStatusInfo(status, GREEN);
+    }
+    else
+    {
+    	snprintf(status, sizeof(status), "Status: %d/4 devices", total_on);
+		updateStatusInfo(status, RED);
+    }
+}
+
+// Update device control status
+void updateDeviceControlStatus(int device, bool is_on) {
+    char status[25];
+    snprintf(status, sizeof(status), "Status: %s", is_on ? "ON" : "OFF");
+    uint16_t status_color = is_on ? GREEN : RED;
+    updateStatusInfo(status, status_color);
+}
 
 void drawCleanButton(int x, int y, int width, int height, char* text, int selected) {
     if (selected) {
@@ -28,7 +136,6 @@ void drawCleanButton(int x, int y, int width, int height, char* text, int select
         ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
     }
 }
-
 
 void drawTitleBar(char* title) {
     fillRect(0, 0, DISPLAY_WIDTH, TITLE_HEIGHT, BLUE);
@@ -50,102 +157,180 @@ void drawStatusInfo(char* status, uint16_t color) {
 
 
 void displayMainMenu(void) {
-    if (last_selection != current_selection || last_selection == -1) {
-        ST7735_SetRotation(1);
-        fillScreen(BLACK);
+	if (current_menu != last_menu || !menu_drawn) {
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
+		drawTitleBar("HOME MENU");
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+	}
 
-        drawTitleBar("HOME MENU");
+	// Draw buttons only if not drawn or selection changed
+	if (!buttons_drawn || last_selection != current_selection) {
+		int start_y = TITLE_HEIGHT + 15;
+		button_count = 2;
 
-        int start_y = TITLE_HEIGHT + 15;
-        drawCleanButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "GROUP CONTROL", (current_selection == 0));
-        drawCleanButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "DEVICE LIST", (current_selection == 1));
+		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"MASTER CONTROL", (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"DEVICE LIST", (current_selection == 1), 1);
 
-        last_selection = current_selection;
-    }
+		buttons_drawn = true;
+	}
+
+	last_selection = current_selection;
 }
 
 void displayTotalControlMenu(void) {
-    if (last_selection != current_selection || last_selection == -1) {
-    	syncDisplayDeviceStates();
-        ST7735_SetRotation(1);
-        fillScreen(BLACK);
+	bool states_changed = false;
+	syncDisplayDeviceStates();
 
-        drawTitleBar("GROUP CONTROL");
+	for (int i = 0; i < 4; i++) {
+		if (device_states[i] != last_device_states[i]) {
+			states_changed = true;
+			last_device_states[i] = device_states[i];
+		}
+	}
 
-        int total_on = 0;
-        for (int i = 0; i < 4; i++) {
-            if (device_states[i]) total_on++;
-        }
+	// Only full redraw if menu changed
+	if (current_menu != last_menu || !menu_drawn) {
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
+		drawTitleBar("MASTER CONTROL");
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+		states_changed = true; // Force status update on menu change
+	}
 
-        char status[25];
-        snprintf(status, sizeof(status), "Active: %d/4 devices", total_on);
-        drawStatusInfo(status, CYAN);
+	// Update device count if states changed
+	if (states_changed) {
+		int total_on = 0;
+		for (int i = 0; i < 4; i++) {
+			if (device_states[i]) total_on++;
+		}
+		updateDeviceCount(total_on);
+	}
 
-        int start_y = TITLE_HEIGHT + 25;
-        drawCleanButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "TOTAL ON", (current_selection == 0));
-        drawCleanButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "TOTAL OFF", (current_selection == 1));
-        drawCleanButton(MARGIN_X, start_y + BUTTON_SPACING*2, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "GO BACK", (current_selection == 2));
+	// Draw buttons only if needed
+	if (!buttons_drawn) {
+		int start_y = TITLE_HEIGHT + 25;
+		button_count = 3;
 
-        last_selection = current_selection;
-    }
+		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"TOTAL ON", (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"TOTAL OFF", (current_selection == 1), 1);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING*2, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"GO BACK", (current_selection == 2), 2);
+
+		buttons_drawn = true;
+	} else if (last_selection != current_selection) {
+		// Only update button highlighting
+		updateButtonSelection(last_selection, current_selection);
+	}
+
+	last_selection = current_selection;
 }
 
 void displaySeparateControlMenu(void) {
-    if (last_selection != current_selection || last_selection == -1) {
-    	syncDisplayDeviceStates();
-        ST7735_SetRotation(1);
-        fillScreen(BLACK);
+	bool states_changed = false;
+	syncDisplayDeviceStates();
 
-        drawTitleBar("DEVICE LIST");
-        int start_y = TITLE_HEIGHT + 10;
-        char device_text[20];
+	for (int i = 0; i < 4; i++) {
+		if (device_states[i] != last_device_states[i]) {
+			states_changed = true;
+			last_device_states[i] = device_states[i];
+		}
+	}
 
-        for (int i = 0; i < 4; i++) {
-            snprintf(device_text, sizeof(device_text), "DEVICE %d [%s]",
-                    i + 1, device_states[i] ? "ON" : "OFF");
-            drawCleanButton(MARGIN_X, start_y + i * 20, BUTTON_WIDTH, 16,
-                           device_text, (current_selection == i));
-        }
-        drawCleanButton(MARGIN_X, start_y + 4 * 20, BUTTON_WIDTH, 16,
-                       "GO BACK", (current_selection == 4));
+	// Only full redraw if menu changed
+	if (current_menu != last_menu || !menu_drawn) {
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
+		drawTitleBar("DEVICE LIST");
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+		states_changed = true; // Force update on menu change
+	}
 
-        last_selection = current_selection;
-    }
+	// Draw buttons only if needed
+	if (!buttons_drawn || states_changed) {
+		int start_y = TITLE_HEIGHT + 10;
+		button_count = 5;
+
+		for (int i = 0; i < 4; i++) {
+			char device_text[20];
+			snprintf(device_text, sizeof(device_text), "DEVICE %d [%s]",
+					i + 1, device_states[i] ? "ON" : "OFF");
+			drawSingleButton(MARGIN_X, start_y + i * 20, BUTTON_WIDTH, 16,
+						   device_text, (current_selection == i), i);
+		}
+
+		drawSingleButton(MARGIN_X, start_y + 4 * 20, BUTTON_WIDTH, 16,
+					   "GO BACK", (current_selection == 4), 4);
+
+		buttons_drawn = true;
+	} else if (last_selection != current_selection) {
+		// Only update button highlighting
+		updateButtonSelection(last_selection, current_selection);
+	}
+
+	last_selection = current_selection;
 }
 
 void displayDeviceControlMenu(void) {
-    if (last_selection != current_selection || last_selection == -1) {
-    	syncDisplayDeviceStates();
-        ST7735_SetRotation(1);
-        fillScreen(BLACK);
+	bool state_changed = false;
+	syncDisplayDeviceStates();
 
-        char title[30];
-        snprintf(title, sizeof(title), "DEVICE %d CONTROL", current_device + 1);
-        drawTitleBar(title);
+	if (device_states[current_device] != last_device_states[current_device]) {
+		state_changed = true;
+		last_device_states[current_device] = device_states[current_device];
+	}
 
-        char status[25];
-        snprintf(status, sizeof(status), "Status: %s",
-                device_states[current_device] ? "ON" : "OFF");
-        uint16_t status_color = device_states[current_device] ? GREEN : RED;
-        drawStatusInfo(status, status_color);
+	// Only full redraw if menu changed
+	if (current_menu != last_menu || !menu_drawn) {
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
 
-        int start_y = TITLE_HEIGHT + 25;
-        drawCleanButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "TURN ON", (current_selection == 0));
-        drawCleanButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "TURN OFF", (current_selection == 1));
-        drawCleanButton(MARGIN_X, start_y + BUTTON_SPACING*2, BUTTON_WIDTH, BUTTON_HEIGHT,
-                       "GO BACK", (current_selection == 2));
+		char title[30];
+		snprintf(title, sizeof(title), "DEVICE %d CONTROL", current_device + 1);
+		drawTitleBar(title);
 
-        last_selection = current_selection;
-    }
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+		state_changed = true; // Force status update on menu change
+	}
+
+	// Update device status if changed
+	if (state_changed) {
+		updateDeviceControlStatus(current_device, device_states[current_device]);
+	}
+
+	// Draw buttons only if needed
+	if (!buttons_drawn) {
+		int start_y = TITLE_HEIGHT + 25;
+		button_count = 4;
+
+		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"TURN ON", (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"TURN OFF", (current_selection == 1), 1);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING*2, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"GO BACK", (current_selection == 2), 2);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING*3, BUTTON_WIDTH, BUTTON_HEIGHT,
+						"GO TO HOME", (current_selection == 3), 3);
+
+		buttons_drawn = true;
+	} else if (last_selection != current_selection) {
+		updateButtonSelection(last_selection, current_selection);
+	}
+
+	last_selection = current_selection;
 }
-
 
 
 void setDeviceState(int device, int state) {
@@ -202,7 +387,7 @@ void setDeviceState(int device, int state) {
 		}
 		cJSON_Delete(resp);
 
-		printf("Display: Device %d set to %s\n", device + 1, state ? "ON" : "OFF");
+		printf("DISPLAY: Device %d set to %s\n", device + 1, state ? "ON" : "OFF");
 	}
 }
 
@@ -257,7 +442,7 @@ void setAllDevicesState(int state) {
 		}
 		cJSON_Delete(resp);
 
-        printf("Display: All devices set to %s\n", state ? "ON" : "OFF");
+        printf("DISPLAY: All devices set to %s\n", state ? "ON" : "OFF");
     }
 }
 
@@ -301,42 +486,53 @@ void handleNavigation(void) {
 
     if (upbutton) {
         HAL_Delay(200);
+        int old_selection = current_selection;
         current_selection = (current_selection - 1 + max_options) % max_options;
         upbutton = 0;
 
+        // Quick highlight update instead of full redraw
         switch(current_menu) {
             case MENU_MAIN:
-                displayMainMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
             case MENU_TOTAL_CONTROL:
-                displayTotalControlMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
             case MENU_SEPARATE_CONTROL:
-                displaySeparateControlMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
             case MENU_DEVICE_CONTROL:
-                displayDeviceControlMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
         }
     }
 
     if (downbutton) {
         HAL_Delay(200);
+        int old_selection = current_selection;
         current_selection = (current_selection + 1) % max_options;
         downbutton = 0;
 
         switch(current_menu) {
             case MENU_MAIN:
-                displayMainMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
             case MENU_TOTAL_CONTROL:
-                displayTotalControlMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
             case MENU_SEPARATE_CONTROL:
-                displaySeparateControlMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
             case MENU_DEVICE_CONTROL:
-                displayDeviceControlMenu();
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
                 break;
         }
     }
@@ -350,12 +546,12 @@ void handleNavigation(void) {
                 if (current_selection == 0) {
                     current_menu = MENU_TOTAL_CONTROL;
                     current_selection = 0;
-                    last_selection = -1;
+                    menu_drawn = false; // Force menu redraw
                     displayTotalControlMenu();
                 } else if (current_selection == 1) {
                     current_menu = MENU_SEPARATE_CONTROL;
                     current_selection = 0;
-                    last_selection = -1;
+                    menu_drawn = false; // Force menu redraw
                     displaySeparateControlMenu();
                 }
                 break;
@@ -363,18 +559,14 @@ void handleNavigation(void) {
             case MENU_TOTAL_CONTROL:
                 if (current_selection == 0) {
                     setAllDevicesState(1);
-                    showActionFeedback("All Devices ON", GREEN);
-                    last_selection = -1;
-                    displayTotalControlMenu();
                 } else if (current_selection == 1) {
                     setAllDevicesState(0);
-                    showActionFeedback("All Devices OFF", RED);
-                    last_selection = -1;
-                    displayTotalControlMenu();
                 } else if (current_selection == 2) {
                     current_menu = MENU_MAIN;
                     current_selection = 0;
-                    last_selection = -1;
+                    menu_drawn = false; // Force menu redraw
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
                     displayMainMenu();
                 }
                 break;
@@ -384,12 +576,14 @@ void handleNavigation(void) {
                     current_device = current_selection;
                     current_menu = MENU_DEVICE_CONTROL;
                     current_selection = 0;
-                    last_selection = -1;
+                    menu_drawn = false; // Force menu redraw
                     displayDeviceControlMenu();
                 } else if (current_selection == 4) {
                     current_menu = MENU_MAIN;
                     current_selection = 0;
-                    last_selection = -1;
+                    menu_drawn = false; // Force menu redraw
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
                     displayMainMenu();
                 }
                 break;
@@ -397,27 +591,44 @@ void handleNavigation(void) {
             case MENU_DEVICE_CONTROL:
                 if (current_selection == 0) {
                     setDeviceState(current_device, 1);
-                    char msg[25];
-                    snprintf(msg, sizeof(msg), "Device %d ON", current_device + 1);
-                    showActionFeedback(msg, GREEN);
-                    last_selection = -1;
-                    displayDeviceControlMenu();
                 } else if (current_selection == 1) {
                     setDeviceState(current_device, 0);
-                    char msg[25];
-                    snprintf(msg, sizeof(msg), "Device %d OFF", current_device + 1);
-                    showActionFeedback(msg, RED);
-                    last_selection = -1;
-                    displayDeviceControlMenu();
                 } else if (current_selection == 2) {
                     current_menu = MENU_SEPARATE_CONTROL;
                     current_selection = current_device;
-                    last_selection = -1;
+                    menu_drawn = false; // Force menu redraw
                     displaySeparateControlMenu();
+                }else if (current_selection == 3) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false; // Force menu redraw
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
                 }
                 break;
         }
     }
+}
+
+
+void Menu_Handler(void) {
+    switch(current_menu) {
+        case MENU_MAIN:
+            displayMainMenu();
+            break;
+        case MENU_TOTAL_CONTROL:
+            displayTotalControlMenu();
+            break;
+        case MENU_SEPARATE_CONTROL:
+            displaySeparateControlMenu();
+            break;
+        case MENU_DEVICE_CONTROL:
+            displayDeviceControlMenu();
+            break;
+    }
+
+    handleNavigation();
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
@@ -440,22 +651,131 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
     }
 }
 
-void Menu_Handler(void) {
-    handleNavigation();
-}
-
-
 
 void initializeMenu(void) {
-	printf("display_init\n\r");
+    printf("display_init\n\r");
     current_menu = MENU_MAIN;
     current_selection = 0;
     current_device = 0;
     last_selection = -1;
+    last_menu = -1;
+    menu_drawn = false;
+    buttons_drawn = false;
 
+    // Initialize device states
     for (int i = 0; i < 4; i++) {
         device_states[i] = 0;
+        last_device_states[i] = -1; // Force update on first display
         setDeviceState(i, 0);
     }
+
     displayMainMenu();
 }
+
+void fastUpdateDeviceList(void) {
+    if (current_menu == MENU_SEPARATE_CONTROL) {
+        for (int i = 0; i < 4; i++) {
+            if (device_states[i] != last_device_states[i]) {
+                updateDeviceStatusText(i, device_states[i]);
+                last_device_states[i] = device_states[i];
+            }
+        }
+    }
+}
+
+// Fast status update for total control
+void fastUpdateTotalControl(void) {
+    if (current_menu == MENU_TOTAL_CONTROL) {
+        int total_on = 0;
+        for (int i = 0; i < 4; i++) {
+            if (device_states[i]) total_on++;
+        }
+        updateDeviceCount(total_on);
+    }
+}
+
+// Fast status update for device control
+void fastUpdateDeviceControl(void) {
+    if (current_menu == MENU_DEVICE_CONTROL) {
+        updateDeviceControlStatus(current_device, device_states[current_device]);
+    }
+}
+
+void ClearDisplay(void)
+{
+    fillScreen(BLACK);
+    current_line = 0;
+
+    // Redraw header
+    ST7735_WriteString(5, 5, "-ONWORDS TOUCH BOARD-", Font_7x10, YELLOW, BLACK);
+	ST7735_WriteString(5, 18, "    VERSION v3.0", Font_7x10, RED, BLACK);
+
+    // Clear display buffer
+    for(int i = 0; i < MAX_DISPLAY_LINES; i++) {
+        memset(display_buffer[i], 0, 23);
+    }
+}
+
+void ScrollDisplay(void)
+{
+    for(int i = 0; i < MAX_DISPLAY_LINES - 1; i++) {
+        strcpy(display_buffer[i], display_buffer[i + 1]);
+    }
+
+    // Clear the last line
+    memset(display_buffer[MAX_DISPLAY_LINES - 1], 0, 23);
+
+    // Redraw all lines
+    fillRect(0, 30, DISPLAY_WIDTH, MAX_DISPLAY_LINES * LINE_HEIGHT, BLACK);
+
+    for(int i = 0; i < MAX_DISPLAY_LINES; i++) {
+        if(strlen(display_buffer[i]) > 0) {
+            ST7735_WriteString(5, 30 + (i * LINE_HEIGHT), display_buffer[i], Font_7x10, WHITE, BLACK);
+        }
+    }
+}
+
+
+void DisplayMessage(const char* message)
+{
+    if(!message) return;
+
+    // If we've reached the bottom, scroll up
+    if(current_line >= MAX_DISPLAY_LINES) {
+        ClearDisplay();
+        //current_line = MAX_DISPLAY_LINES - 1;
+        current_line = 0;
+    }
+
+    strncpy(display_buffer[current_line], message, 22);
+    display_buffer[current_line][22] = '\0';
+
+    // Display the message
+    ST7735_WriteString(5, 30 + (current_line * LINE_HEIGHT), display_buffer[current_line], Font_7x10, WHITE, BLACK);
+
+    current_line++;
+}
+
+void print_To_display(char *format,...)
+{
+#ifdef BL_DEBUG_MSG_EN
+	char str[80];
+
+	/*Extract the the argument list using VA apis */
+	va_list args;
+	va_start(args, format);
+	vsprintf(str, format,args);
+	// Also display on screen
+	DisplayMessage(str);
+	va_end(args);
+#else
+    // If debug is disabled, still show on display
+    char str[80];
+    va_list args;
+    va_start(args, format);
+    vsprintf(str, format, args);
+    DisplayMessage(str);
+    va_end(args);
+#endif
+}
+
