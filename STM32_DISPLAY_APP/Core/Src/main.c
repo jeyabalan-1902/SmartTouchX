@@ -105,19 +105,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  ST7735_Init(0);
-  ST7735_SetRotation(1);
-  fillScreen(BLACK);
-  ST7735_WriteString(10, 10, "ONWORDS", Font_16x26, WHITE, BLACK);
-  HAL_Delay(3000);
-  deviceStateMutex = xSemaphoreCreateMutex();
-  for (int i = 0; i < 4; i++) {
-	  global_device_states[i] = 0;
-	  device_states[i] = 0;
-  }
-
-  initializeMenu();
-  setup_freeRTOS();
+  user_app_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -14,14 +14,15 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include "freeRTOS.h"
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
 
-#include "display_app.h"
 #include "display_ctrl.h"
+#include "onwords_logo.h"
 #include "cJSON.h"
 
 #define UART_RING_BUFFER_SIZE 256
@@ -42,5 +43,6 @@ void Display_Handler(void *param);
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 void updateToDisplayMenu(void);
+void user_app_init(void);
 
 #endif /* INC_USER_APP_H_ */

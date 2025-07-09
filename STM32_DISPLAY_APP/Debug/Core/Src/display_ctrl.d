@@ -43,8 +43,8 @@ Core/Src/display_ctrl.o: ../Core/Src/display_ctrl.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
- ../Core/Inc/display_app.h ../Core/Inc/ST7735.h ../Core/Inc/fonts.h \
- ../Core/Inc/GFX_FUNCTIONS.h ../Core/Inc/display_ctrl.h \
+ ../Core/Inc/display_ctrl.h ../Core/Inc/onwords_logo.h \
+ ../Core/Inc/ST7735.h ../Core/Inc/fonts.h ../Core/Inc/GFX_FUNCTIONS.h \
  ../Core/Inc/cJSON.h
 ../Core/Inc/display_ctrl.h:
 ../Core/Inc/main.h:
@@ -91,9 +91,9 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h:
-../Core/Inc/display_app.h:
+../Core/Inc/display_ctrl.h:
+../Core/Inc/onwords_logo.h:
 ../Core/Inc/ST7735.h:
 ../Core/Inc/fonts.h:
 ../Core/Inc/GFX_FUNCTIONS.h:
-../Core/Inc/display_ctrl.h:
 ../Core/Inc/cJSON.h:

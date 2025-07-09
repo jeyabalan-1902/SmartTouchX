@@ -28,7 +28,6 @@ void setup_freeRTOS(void)
 	HAL_SPI_Receive_IT(&hspi2, spiRxBuffer, sizeof(spiRxBuffer));
 	HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
 
-
 	status = xTaskCreate(SPI_handler, "SPIHandler", 512, NULL, 5, NULL);
 	configASSERT(status == pdPASS);
 
@@ -39,6 +38,22 @@ void setup_freeRTOS(void)
 	configASSERT(status == pdPASS);
 
 	vTaskStartScheduler();
+}
+
+void user_app_init(void)
+{
+	ST7735_Init(0);
+	ST7735_SetRotation(1);
+	fillScreen(BLACK);
+	showStartupLogoAndMenu();
+	deviceStateMutex = xSemaphoreCreateMutex();
+	for (int i = 0; i < 4; i++) {
+	  global_device_states[i] = 0;
+	  device_states[i] = 0;
+	}
+
+	initializeMenu();
+	setup_freeRTOS();
 }
 
 void Display_Handler(void *param)
@@ -59,7 +74,6 @@ void SPI_handler(void *param)
     while (1) {
         if (xQueueReceive(spiQueue, localSpiRxBuffer, portMAX_DELAY) == pdTRUE)
         {
-            printf("SPI Data Received: %s\n", localSpiRxBuffer);
             if (strcmp((char *)localSpiRxBuffer, "L1") == 0)
             {
             	if(xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
@@ -81,7 +95,6 @@ void SPI_handler(void *param)
 					{
 						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
 						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
-						printf("JSON Sent via UART: %s\n", jsonStr);
 						free(jsonStr);
 					}
 
@@ -110,7 +123,6 @@ void SPI_handler(void *param)
 					{
 						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
 						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
-						printf("JSON Sent via UART: %s\n", jsonStr);
 						free(jsonStr);
 					}
 
@@ -139,7 +151,6 @@ void SPI_handler(void *param)
 					{
 						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
 						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
-						printf("JSON Sent via UART: %s\n", jsonStr);
 						free(jsonStr);
 					}
 
@@ -168,7 +179,6 @@ void SPI_handler(void *param)
 					{
 						HAL_UART_Transmit(&huart3, (uint8_t *)jsonStr, strlen(jsonStr), HAL_MAX_DELAY);
 						HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
-						printf("JSON Sent via UART: %s\n", jsonStr);
 						free(jsonStr);
 					}
 
@@ -180,6 +190,7 @@ void SPI_handler(void *param)
             	printf("junk data received on SPI\r\n");
             }
             memset(localSpiRxBuffer, 0, sizeof(localSpiRxBuffer));
+            printf("TOUCH: Device %d set to %s\n", deviceIndex + 1, global_device_states[deviceIndex] ? "ON" : "OFF");
             updateToDisplayMenu();
         }
     }
@@ -259,7 +270,7 @@ void UART_handler(void *param)
 											GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
 											global_device_states[i] = (state == GPIO_PIN_SET) ? 1 : 0;
 											cJSON_AddNumberToObject(resp, devices[i], global_device_states[i]);
-											printf("UART: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
+											printf("ESP: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
 										}
 									}
 									xSemaphoreGive(deviceStateMutex);
@@ -335,17 +346,17 @@ void updateToDisplayMenu(void)
 {
 	if(current_menu == MENU_TOTAL_CONTROL)
 	{
-		last_selection = -1;
+		last_selection = current_selection;
 		displayTotalControlMenu();
 	}
 	else if(current_menu == MENU_SEPARATE_CONTROL)
 	{
-		last_selection = -1;
+		last_selection = current_selection;
 		displaySeparateControlMenu();
 	}
 	else if(current_menu == MENU_DEVICE_CONTROL)
 	{
-		last_selection = -1;
+		last_selection = current_selection;
 		displayDeviceControlMenu();
 	}
 }
