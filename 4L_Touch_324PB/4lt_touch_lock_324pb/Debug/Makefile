@@ -63,6 +63,8 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../atmel_start.c \
+../cJSON.c \
+../cJSON_Utils.c \
 ../driver_isr.c \
 ../examples/src/spi_basic_example.c \
 ../examples/src/touch_example.c \
@@ -86,6 +88,8 @@ ASM_SRCS +=
 
 OBJS +=  \
 atmel_start.o \
+cJSON.o \
+cJSON_Utils.o \
 driver_isr.o \
 examples/src/spi_basic_example.o \
 examples/src/touch_example.o \
@@ -102,6 +106,8 @@ src/usart_basic.o
 
 OBJS_AS_ARGS +=  \
 atmel_start.o \
+cJSON.o \
+cJSON_Utils.o \
 driver_isr.o \
 examples/src/spi_basic_example.o \
 examples/src/touch_example.o \
@@ -118,6 +124,8 @@ src/usart_basic.o
 
 C_DEPS +=  \
 atmel_start.d \
+cJSON.d \
+cJSON_Utils.d \
 driver_isr.d \
 examples/src/spi_basic_example.d \
 examples/src/touch_example.d \
@@ -134,6 +142,8 @@ src/usart_basic.d
 
 C_DEPS_AS_ARGS +=  \
 atmel_start.d \
+cJSON.d \
+cJSON_Utils.d \
 driver_isr.d \
 examples/src/spi_basic_example.d \
 examples/src/touch_example.d \
@@ -163,6 +173,20 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 ./atmel_start.o: .././atmel_start.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../Config" -I"../examples/include" -I"../include" -I"../utils" -I"../utils/assembler" -I".." -I"../documentation" -I"../qtouch" -I"../qtouch/datastreamer" -I"../qtouch/include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pb -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.6.364\gcc\dev\atmega324pb" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./cJSON.o: .././cJSON.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../Config" -I"../examples/include" -I"../include" -I"../utils" -I"../utils/assembler" -I".." -I"../documentation" -I"../qtouch" -I"../qtouch/datastreamer" -I"../qtouch/include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pb -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.6.364\gcc\dev\atmega324pb" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./cJSON_Utils.o: .././cJSON_Utils.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../Config" -I"../examples/include" -I"../include" -I"../utils" -I"../utils/assembler" -I".." -I"../documentation" -I"../qtouch" -I"../qtouch/datastreamer" -I"../qtouch/include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pb -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.6.364\gcc\dev\atmega324pb" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

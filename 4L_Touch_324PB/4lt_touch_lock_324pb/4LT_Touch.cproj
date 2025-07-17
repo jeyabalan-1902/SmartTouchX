@@ -336,6 +336,18 @@
     <Compile Include="atmel_start.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="cJSON.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cJSON.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cJSON_Utils.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cJSON_Utils.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Config\clock_config.h">
       <SubType>compile</SubType>
     </Compile>
