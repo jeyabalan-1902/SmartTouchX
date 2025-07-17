@@ -63,6 +63,10 @@ void Error_Handler(void);
 #define TOUCH_LED2_GPIO_Port GPIOC
 #define TOUCH_LED1_Pin GPIO_PIN_3
 #define TOUCH_LED1_GPIO_Port GPIOC
+#define DISP_BACKLIT_Pin GPIO_PIN_0
+#define DISP_BACKLIT_GPIO_Port GPIOA
+#define TI_SS_Pin GPIO_PIN_1
+#define TI_SS_GPIO_Port GPIOB
 #define TOUCH_LED4_Pin GPIO_PIN_14
 #define TOUCH_LED4_GPIO_Port GPIOB
 

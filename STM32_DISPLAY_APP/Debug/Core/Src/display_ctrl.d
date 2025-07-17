@@ -29,6 +29,7 @@ Core/Src/display_ctrl.o: ../Core/Src/display_ctrl.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+ ../Core/Inc/ST7735.h ../Core/Inc/fonts.h ../Core/Inc/GFX_FUNCTIONS.h \
  ../Core/Inc/user_app.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/freeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
@@ -43,9 +44,8 @@ Core/Src/display_ctrl.o: ../Core/Src/display_ctrl.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
- ../Core/Inc/display_ctrl.h ../Core/Inc/onwords_logo.h \
- ../Core/Inc/ST7735.h ../Core/Inc/fonts.h ../Core/Inc/GFX_FUNCTIONS.h \
- ../Core/Inc/cJSON.h
+ ../Core/Inc/cJSON.h ../Core/Inc/onwords_logo.h ../Core/Inc/user_app.h \
+ ../Core/Inc/uart_rec.h
 ../Core/Inc/display_ctrl.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -77,6 +77,9 @@ Core/Src/display_ctrl.o: ../Core/Src/display_ctrl.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+../Core/Inc/ST7735.h:
+../Core/Inc/fonts.h:
+../Core/Inc/GFX_FUNCTIONS.h:
 ../Core/Inc/user_app.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/freeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -91,9 +94,7 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h:
-../Core/Inc/display_ctrl.h:
-../Core/Inc/onwords_logo.h:
-../Core/Inc/ST7735.h:
-../Core/Inc/fonts.h:
-../Core/Inc/GFX_FUNCTIONS.h:
 ../Core/Inc/cJSON.h:
+../Core/Inc/onwords_logo.h:
+../Core/Inc/user_app.h:
+../Core/Inc/uart_rec.h:
