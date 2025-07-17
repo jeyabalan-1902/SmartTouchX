@@ -6,6 +6,9 @@
  */
 
 #include "display_ctrl.h"
+#include "user_app.h"
+#include "onwords_logo.h"
+#include "uart_rec.h"
 
 int current_menu = MENU_MAIN;
 int current_selection = 0;
@@ -17,7 +20,7 @@ int last_menu = -1;
 
 int downbutton = 0, upbutton = 0, enter = 0;
 
-volatile int global_device_states[4] = {0, 0, 0, 0};// 0=OFF, 1=ON
+// 0=OFF, 1=ON
 int device_states[4] = {0, 0, 0, 0};
 int last_device_states[4] = {-1, -1, -1, -1};
 
@@ -32,6 +35,33 @@ typedef struct {
 
 button_position_t current_buttons[6];
 int button_count = 0;
+
+void Display_Handler(void *param)
+{
+	while(1)
+	{
+		Menu_Handler();
+	}
+}
+
+void updateToDisplayMenu(void)
+{
+	if(current_menu == MENU_TOTAL_CONTROL)
+	{
+		last_selection = current_selection;
+		displayTotalControlMenu();
+	}
+	else if(current_menu == MENU_SEPARATE_CONTROL)
+	{
+		last_selection = current_selection;
+		displaySeparateControlMenu();
+	}
+	else if(current_menu == MENU_DEVICE_CONTROL)
+	{
+		last_selection = current_selection;
+		displayDeviceControlMenu();
+	}
+}
 
 
 void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id) {
@@ -86,23 +116,17 @@ void updateButtonSelection(int old_selection, int new_selection) {
 void updateDeviceStatusText(int device_index, bool is_on) {
     int text_x = MARGIN_X + 5;
     int text_y = TITLE_HEIGHT + 10 + device_index * 20 + 4;
-
-    // Clear old status text area
-    fillRect(text_x + 70, text_y, 40, 10, GRAY); // Clear [ON/OFF] area only
-
-    // Write new status
+    fillRect(text_x + 70, text_y, 40, 10, GRAY);
     char status[8];
     snprintf(status, sizeof(status), "[%s]", is_on ? "ON" : "OFF");
     ST7735_WriteString(text_x + 70, text_y, status, Font_7x10, WHITE, GRAY);
 }
 
 void updateStatusInfo(char* status, uint16_t color) {
-    // Clear only the status area
     fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
     ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
 }
 
-// Update individual device count in total control
 void updateDeviceCount(int total_on) {
     char status[35];
     if(total_on > 0)
@@ -117,7 +141,6 @@ void updateDeviceCount(int total_on) {
     }
 }
 
-// Update device control status
 void updateDeviceControlStatus(int device, bool is_on) {
     char status[25];
     snprintf(status, sizeof(status), "Status: %s", is_on ? "ON" : "OFF");
@@ -166,7 +189,6 @@ void displayMainMenu(void) {
 		last_menu = current_menu;
 	}
 
-	// Draw buttons only if not drawn or selection changed
 	if (!buttons_drawn || last_selection != current_selection) {
 		int start_y = TITLE_HEIGHT + 15;
 		button_count = 2;
@@ -193,7 +215,6 @@ void displayTotalControlMenu(void) {
 		}
 	}
 
-	// Only full redraw if menu changed
 	if (current_menu != last_menu || !menu_drawn) {
 		ST7735_SetRotation(1);
 		fillScreen(BLACK);
@@ -201,10 +222,9 @@ void displayTotalControlMenu(void) {
 		menu_drawn = true;
 		buttons_drawn = false;
 		last_menu = current_menu;
-		states_changed = true; // Force status update on menu change
+		states_changed = true;
 	}
 
-	// Update device count if states changed
 	if (states_changed) {
 		int total_on = 0;
 		for (int i = 0; i < 4; i++) {
@@ -213,7 +233,6 @@ void displayTotalControlMenu(void) {
 		updateDeviceCount(total_on);
 	}
 
-	// Draw buttons only if needed
 	if (!buttons_drawn) {
 		int start_y = TITLE_HEIGHT + 25;
 		button_count = 3;
@@ -227,7 +246,6 @@ void displayTotalControlMenu(void) {
 
 		buttons_drawn = true;
 	} else if (last_selection != current_selection) {
-		// Only update button highlighting
 		updateButtonSelection(last_selection, current_selection);
 	}
 
@@ -245,7 +263,6 @@ void displaySeparateControlMenu(void) {
 		}
 	}
 
-	// Only full redraw if menu changed
 	if (current_menu != last_menu || !menu_drawn) {
 		ST7735_SetRotation(1);
 		fillScreen(BLACK);
@@ -253,10 +270,9 @@ void displaySeparateControlMenu(void) {
 		menu_drawn = true;
 		buttons_drawn = false;
 		last_menu = current_menu;
-		states_changed = true; // Force update on menu change
+		states_changed = true;
 	}
 
-	// Draw buttons only if needed
 	if (!buttons_drawn || states_changed) {
 		int start_y = TITLE_HEIGHT + 10;
 		button_count = 5;
@@ -274,7 +290,6 @@ void displaySeparateControlMenu(void) {
 
 		buttons_drawn = true;
 	} else if (last_selection != current_selection) {
-		// Only update button highlighting
 		updateButtonSelection(last_selection, current_selection);
 	}
 
@@ -290,7 +305,6 @@ void displayDeviceControlMenu(void) {
 		last_device_states[current_device] = device_states[current_device];
 	}
 
-	// Only full redraw if menu changed
 	if (current_menu != last_menu || !menu_drawn) {
 		ST7735_SetRotation(1);
 		fillScreen(BLACK);
@@ -302,15 +316,13 @@ void displayDeviceControlMenu(void) {
 		menu_drawn = true;
 		buttons_drawn = false;
 		last_menu = current_menu;
-		state_changed = true; // Force status update on menu change
+		state_changed = true;
 	}
 
-	// Update device status if changed
 	if (state_changed) {
 		updateDeviceControlStatus(current_device, device_states[current_device]);
 	}
 
-	// Draw buttons only if needed
 	if (!buttons_drawn) {
 		int start_y = TITLE_HEIGHT + 25;
 		button_count = 4;

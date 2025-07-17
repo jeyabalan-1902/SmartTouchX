@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
-#include "user_app.h"
 #include "stm32f4xx_hal.h"
 #include "ST7735.h"
 #include "fonts.h"
@@ -56,7 +55,7 @@ extern int current_device;
 extern int last_selection;
 extern int downbutton, upbutton, enter;
 extern int device_states[4];
-extern volatile int global_device_states[4];
+
 
 // Function prototypes
 
@@ -93,6 +92,8 @@ void fastUpdateDeviceControl(void);
 void setDeviceState(int device, int state);
 void setAllDevicesState(int state);
 void syncDisplayDeviceStates(void);
+void Display_Handler(void *param);
+void updateToDisplayMenu(void);
 // GPIO interrupt callback
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 

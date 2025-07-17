@@ -1,9 +1,2 @@
-../Drivers/CMSIS/Include/core_cm4.h:1938:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
-../Core/Src/user_app.c:23:6:setup_freeRTOS	32	static,ignoring_inline_asm
-../Core/Src/user_app.c:43:6:user_app_init	16	static
-../Core/Src/user_app.c:59:6:Display_Handler	16	static
-../Core/Src/user_app.c:67:6:SPI_handler	64	static
-../Core/Src/user_app.c:199:6:UART_handler	240	static
-../Core/Src/user_app.c:317:6:HAL_SPI_RxCpltCallback	24	static,ignoring_inline_asm
-../Core/Src/user_app.c:329:6:HAL_UART_RxCpltCallback	24	static
-../Core/Src/user_app.c:345:6:updateToDisplayMenu	8	static
+../Core/Src/user_app.c:24:6:setup_freeRTOS	32	static,ignoring_inline_asm
+../Core/Src/user_app.c:41:6:user_app_init	16	static
