@@ -4,6 +4,10 @@
 
 atmel_start.c
 
+cJSON.c
+
+cJSON_Utils.c
+
 driver_isr.c
 
 examples\src\spi_basic_example.c

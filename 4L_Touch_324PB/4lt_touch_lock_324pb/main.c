@@ -1,17 +1,17 @@
 #define F_CPU 8000000UL
+#include <stdio.h>
+#include <stdlib.h>
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include <atmel_start.h>
 #include "touch.h"
+#include "cJSON.h"
 
 #define SPI_SS_PIN PB4 // SS pin connected to PB4
 #define SPI_MOSI_PIN PB5 // MOSI pin connected to PB5
 #define SPI_MISO_PIN PB6 // MISO pin connected to PB6
 #define SPI_SCK_PIN PB7 // SCK pin connected to PB7
-
-#define POLYNOMIAL 0x07  // CRC polynomial
-#define INIT_CRC 0x00
 
 // Function declarations
 void touchpin1();
@@ -24,8 +24,7 @@ void SPI_MasterTransmit(uint8_t data);
 void SPI_MasterInit();
 void timer1_init() ;
 uint8_t calculateCRC(uint8_t *data, size_t length);
-
-
+void sendDeviceJson(const char* deviceName);
 
 // Capacitive touch related variables
 extern volatile uint8_t measurement_done_touch;
@@ -50,21 +49,6 @@ int main(void)
 	return 0;
 }
 
-uint8_t calculateCRC(uint8_t *data, size_t length) {
-	uint8_t crc = INIT_CRC;
-	for (size_t i = 0; i < length; i++) {
-		crc ^= data[i];
-		for (uint8_t j = 0; j < 8; j++) {
-			if (crc & 0x80) {
-				crc = (crc << 1) ^ POLYNOMIAL;
-				} else {
-				crc <<= 1;
-			}
-		}
-	}
-	return crc;
-}
-
 void timer1_init() {
 	TCCR1B |= (1 << WGM12);
 	OCR1A = 65535; 
@@ -86,6 +70,21 @@ void SPI_MasterTransmit(uint8_t data) {
 	PORTB |= (1 << SPI_SS_PIN);
 }
 
+void sendDeviceJson(const char* deviceName) {
+	cJSON *root = cJSON_CreateObject();
+	if (root == NULL) return;
+
+	cJSON_AddStringToObject(root, "device", deviceName);
+
+	char *jsonStr = cJSON_PrintUnformatted(root);
+	if (jsonStr != NULL) {
+		SPI_MasterTransmitString(jsonStr);
+		SPI_MasterTransmit('\n'); 
+		cJSON_free(jsonStr);               
+	}
+	cJSON_Delete(root); 
+}
+
 
 
 void loop() {
@@ -97,9 +96,8 @@ void loop() {
 		touchpin3();
 		touchpin4();
 
-		// Check if both touchpin1 (second_counter) and touchpin3 (second_counter_2) have been pressed for 10 seconds
 		if (second_counter >= 200 && second_counter_2 >= 200) {
-			SPI_MasterTransmitString("H1");                     // Transmits "H1"
+			sendDeviceJson("D1");
 			second_counter = 0;
 			second_counter_2 = 0;
 			touch_counter_1 = 0;
@@ -115,7 +113,7 @@ void touchpin1() {
 		second_counter = 0;
 		touch_counter_1 = 1;
 		if (touch_counter_1 == 1) {
-			SPI_MasterTransmitString("L1");                     // Transmits "L1"
+			sendDeviceJson("L1");
 			second_counter = 0;
 			touch_counter_1 = 0;
 		}
@@ -132,7 +130,7 @@ void touchpin2() {
 		second_counter_2 = 0;
 		touch_counter_2 = 1;
 		if (touch_counter_2 == 1) {
-			SPI_MasterTransmitString("L2");                     // Transmits "L2"
+			sendDeviceJson("L2");
 			second_counter_2 = 0;
 			touch_counter_2 = 0;
 		}
@@ -143,18 +141,18 @@ void touchpin2() {
 }
 
 void touchpin3() {
-		previous_key_status_3 = key_status_3;
-		key_status_3= get_sensor_state(2) & 0x80;
-		if (key_status_3 && !previous_key_status_3) {
-			touch_counter_3++;
-			if (touch_counter_3 == 1) {
-				SPI_MasterTransmitString("L3");                     // Transmits "L3"
-			}
-			else if (touch_counter_3 == 2) {
-				SPI_MasterTransmitString("L3");                     // Transmits "L3"
-				touch_counter_3 = 0;
-			}
-        }
+	previous_key_status_3 = key_status_3;
+	key_status_3= get_sensor_state(2) & 0x80;
+	if (key_status_3 && !previous_key_status_3) {
+		touch_counter_3++;
+		if (touch_counter_3 == 1) {
+			sendDeviceJson("L3");
+		}
+		else if (touch_counter_3 == 2) {
+			sendDeviceJson("L3");
+			touch_counter_3 = 0;
+		}
+    }
 }
 
 void touchpin4() {
@@ -163,10 +161,10 @@ void touchpin4() {
     if (key_status_4 && !previous_key_status_4) {
 	    touch_counter_4++;
 	    if (touch_counter_4 == 1) {
-		    SPI_MasterTransmitString("L4");                     // Transmits "L4"
+		    sendDeviceJson("L4");
 	    }
 	    else if (touch_counter_4 == 2) {
-		    SPI_MasterTransmitString("L4");                     // Transmits "L4"
+		    sendDeviceJson("L4");
 		    touch_counter_4 = 0;
 	    }
     }
@@ -175,6 +173,6 @@ void touchpin4() {
 void SPI_MasterTransmitString(const char* str) {
 	for (int i = 0; str[i] != '\0'; i++) {
 		SPI_MasterTransmit(str[i]);
-		_delay_ms(100);
+		_delay_ms(1);
 	}
 }
