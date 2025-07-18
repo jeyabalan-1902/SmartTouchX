@@ -77,8 +77,13 @@ void wifi_init_sta(void)
         .sta = {
             .ssid = EXAMPLE_ESP_STA_WIFI_SSID,
             .password = EXAMPLE_ESP_STA_WIFI_PASS,
-            .sae_pwe_h2e = ESP_WIFI_SAE_MODE,
-            .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
+            .threshold.authmode = WIFI_AUTH_WPA2_PSK, 
+            .pmf_cfg = {
+                .capable = true,
+                .required = false
+            },
+            .sae_pwe_h2e = WPA3_SAE_PWE_BOTH,
+            .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER
         },
     };
     memcpy(wifi_config.sta.ssid, ssid, sizeof(wifi_config.sta.ssid));
