@@ -127,6 +127,22 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         }
                     }
 
+                    cJSON *wifi_led = cJSON_GetObjectItem(json, "wifi_led");
+                    if(cJSON_IsNumber(wifi_led))
+                    {
+                        cJSON *displayControl = cJSON_CreateObject();
+                        cJSON_AddNumberToObject(displayControl, "backlit", wifi_led->valueint);
+                        char *resp_str = cJSON_PrintUnformatted(displayControl);
+                        if (resp_str) {
+                            uart_write_bytes(UART_PORT_NUM, resp_str, strlen(resp_str));
+                            uart_write_bytes(UART_PORT_NUM, "\n", 1);
+                            free(resp_str);
+                        }
+
+                        cJSON_Delete(displayControl);
+                        break;
+                    }
+
                     if (device_count == 1) {
                         for (int i = 0; i < 4; ++i) {
                             cJSON *device_item = cJSON_GetObjectItem(json, device_keys[i]);

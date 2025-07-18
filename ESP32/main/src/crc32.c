@@ -4,6 +4,7 @@ uint8_t word_to_byte(uint32_t addr, int index) {
     return (uint8_t)((addr >> (8 * (index - 1))) & 0x000000FF);
 }
 
+/*stm32 f4 series crc calculation*/
 uint32_t get_crc(uint8_t *buff, uint32_t len) {
     uint32_t Crc = 0xFFFFFFFF;
     
