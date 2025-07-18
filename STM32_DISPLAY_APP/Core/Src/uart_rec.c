@@ -97,26 +97,44 @@ void handle_get_status_request(void)
 void handle_device_control(cJSON *json)
 {
     cJSON *resp = cJSON_CreateObject();
+    cJSON *Display = cJSON_GetObjectItem(json, "backlit");
 
-    if (xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
-    {
-        for (int i = 0; i < DEVICE_COUNT; i++)
-        {
-            cJSON *item = cJSON_GetObjectItem(json, devices[i]);
-            if (cJSON_IsNumber(item))
-            {
-                HAL_GPIO_WritePin(ports[i], pins[i], item->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
-                GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
-                global_device_states[i] = (state == GPIO_PIN_SET) ? 1 : 0;
-                cJSON_AddNumberToObject(resp, devices[i], global_device_states[i]);
-                printf("ESP: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
-            }
-        }
-        xSemaphoreGive(deviceStateMutex);
-    }
+    if(Display)
+	{
+		if (cJSON_IsNumber(Display))
+		{
+			GPIO_PinState state = HAL_GPIO_ReadPin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
+			uint8_t dispState = (state == GPIO_PIN_SET) ? 1 : 0;
+			if(dispState == 1)
+			{
+				return;
+			}
+			else
+			{
+				HAL_GPIO_WritePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin, Display->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
+			}
+		}
+	}
 
-    send_json_response(resp);
-    cJSON_Delete(resp);
+
+	if (xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
+	{
+		for (int i = 0; i < DEVICE_COUNT; i++)
+		{
+			cJSON *Device = cJSON_GetObjectItem(json, devices[i]);
+			if (cJSON_IsNumber(Device))
+			{
+				HAL_GPIO_WritePin(ports[i], pins[i], Device->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
+				GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
+				global_device_states[i] = (state == GPIO_PIN_SET) ? 1 : 0;
+				cJSON_AddNumberToObject(resp, devices[i], global_device_states[i]);
+				printf("ESP: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
+			}
+		}
+		xSemaphoreGive(deviceStateMutex);
+	}
+	send_json_response(resp);
+	cJSON_Delete(resp);
 }
 
 void process_json(uint8_t *jsonBuffer)
@@ -137,7 +155,6 @@ void process_json(uint8_t *jsonBuffer)
     {
         handle_device_control(json);
     }
-
     cJSON_Delete(json);
 }
 
