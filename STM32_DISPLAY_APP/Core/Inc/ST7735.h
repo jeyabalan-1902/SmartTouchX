@@ -7,13 +7,13 @@
 
 
 extern SPI_HandleTypeDef hspi1;
-#define ST7735_SPI_PORT hspi1
+#define ST7735_SPI_PORT  hspi1
 
 /****** PIN DEFINES ******/
-#define CS_PORT GPIOA
-#define CS_PIN  GPIO_PIN_1
-#define DC_PORT GPIOC
-#define DC_PIN  GPIO_PIN_4
+#define CS_PORT  GPIOA
+#define CS_PIN   GPIO_PIN_1
+#define DC_PORT  GPIOC
+#define DC_PIN   GPIO_PIN_4
 #define RST_PORT GPIOA
 #define RST_PIN  GPIO_PIN_4
 
@@ -21,8 +21,8 @@ extern SPI_HandleTypeDef hspi1;
 //#define ST7735_IS_160X80 1
 //#define ST7735_IS_128X128 1
 #define ST7735_IS_160X128 1
-#define ST7735_WIDTH  128
-#define ST7735_HEIGHT 160
+#define ST7735_WIDTH      128
+#define ST7735_HEIGHT     160
 
 #define DELAY 0x80
 
@@ -81,16 +81,16 @@ extern SPI_HandleTypeDef hspi1;
 #define ST7735_GMCTRN1 0xE1
 
 // Color definitions
-#define	BLACK   0x0000
-#define	BLUE    0x001F
-#define	RED     0xF800
-#define	GREEN   0x07E0
-#define CYAN    0x07FF
-#define MAGENTA 0xF81F
-#define YELLOW  0xFFE0
-#define WHITE   0xFFFF
-#define GRAY    0X2104
-#define ORANGE  0xFD20
+#define	BLACK    0x0000
+#define	BLUE     0x001F
+#define	RED      0xF800
+#define	GREEN    0x07E0
+#define CYAN     0x07FF
+#define MAGENTA  0xF81F
+#define YELLOW   0xFFE0
+#define WHITE    0xFFFF
+#define GRAY     0X2104
+#define ORANGE   0xFD20
 #define color565(r, g, b) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3))
 
 // call before initializing any SPI devices

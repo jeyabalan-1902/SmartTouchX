@@ -124,8 +124,9 @@ void handle_device_control(cJSON *json)
 			cJSON *Device = cJSON_GetObjectItem(json, devices[i]);
 			if (cJSON_IsNumber(Device))
 			{
-				HAL_GPIO_WritePin(ports[i], pins[i], Device->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
-				GPIO_PinState state = HAL_GPIO_ReadPin(ports[i], pins[i]);
+				HAL_GPIO_WritePin(led_ports[i], led_pins[i], Device->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
+				HAL_GPIO_WritePin(relay_ports[i], relay_pins[i], Device->valueint ? GPIO_PIN_SET : GPIO_PIN_RESET);
+				GPIO_PinState state = HAL_GPIO_ReadPin(led_ports[i], led_pins[i]);
 				global_device_states[i] = (state == GPIO_PIN_SET) ? 1 : 0;
 				cJSON_AddNumberToObject(resp, devices[i], global_device_states[i]);
 				printf("ESP: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
@@ -160,16 +161,16 @@ void process_json(uint8_t *jsonBuffer)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    if (huart->Instance == USART3) {
+    if (huart->Instance == USART3)
+    {
         uint16_t nextHead = (uartHead + 1) % UART_RING_BUFFER_SIZE;
-
-        if (nextHead != uartTail) {
+        if (nextHead != uartTail)
+        {
             uartRingBuffer[uartHead] = uartRxByte;
             uartHead = nextHead;
         } else {
             printf("UART ring buffer overflow!\n");
         }
-
         HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
     }
 }

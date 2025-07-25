@@ -380,10 +380,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, TOUCH_LED2_Pin|TOUCH_LED1_Pin|GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4|L_RELAY_1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, TI_SS_Pin|TOUCH_LED4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, L_RELAY_4_Pin|L_RELAY_3_Pin|L_RELAY_2_Pin|TOUCH_LED4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : TOUCH_LED3_Pin */
   GPIO_InitStruct.Pin = TOUCH_LED3_Pin;
@@ -399,15 +399,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : DISP_BACKLIT_Pin PA1 PA4 */
-  GPIO_InitStruct.Pin = DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4;
+  /*Configure GPIO pins : DISP_BACKLIT_Pin PA1 PA4 L_RELAY_1_Pin */
+  GPIO_InitStruct.Pin = DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4|L_RELAY_1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : TI_SS_Pin TOUCH_LED4_Pin */
-  GPIO_InitStruct.Pin = TI_SS_Pin|TOUCH_LED4_Pin;
+  /*Configure GPIO pins : L_RELAY_4_Pin L_RELAY_3_Pin L_RELAY_2_Pin TOUCH_LED4_Pin */
+  GPIO_InitStruct.Pin = L_RELAY_4_Pin|L_RELAY_3_Pin|L_RELAY_2_Pin|TOUCH_LED4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -471,8 +471,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.
