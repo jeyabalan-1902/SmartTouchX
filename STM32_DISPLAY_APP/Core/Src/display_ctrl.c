@@ -64,21 +64,26 @@ void updateToDisplayMenu(void)
 }
 
 
-void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id) {
+void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id)
+{
     fillRect(x-1, y-1, width+2, height+2, BLACK);
 
-    if (selected) {
+    if (selected)
+    {
         drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
         fillRoundRect(x, y, width, height, 3, GREEN);
         ST7735_WriteString(x+5, y+4, text, Font_7x10, BLACK, GREEN);
-    } else {
+    }
+    else
+    {
         drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
         fillRoundRect(x, y, width, height, 3, GRAY);
         ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
     }
 
     // Store button position AND TEXT for future updates
-    if (button_id < 6) {
+    if (button_id < 6)
+    {
         current_buttons[button_id].x = x;
         current_buttons[button_id].y = y;
         current_buttons[button_id].width = width;
@@ -89,9 +94,12 @@ void drawSingleButton(int x, int y, int width, int height, char* text, int selec
     }
 }
 
-void updateButtonSelection(int old_selection, int new_selection) {
+void updateButtonSelection(int old_selection, int new_selection)
+
+{
     // Update old button (unselect)
-    if (old_selection >= 0 && old_selection < button_count) {
+    if (old_selection >= 0 && old_selection < button_count)
+    {
         button_position_t *old_btn = &current_buttons[old_selection];
 
         // Clear and redraw unselected button with text
@@ -102,7 +110,8 @@ void updateButtonSelection(int old_selection, int new_selection) {
     }
 
     // Update new button (select)
-    if (new_selection >= 0 && new_selection < button_count) {
+    if (new_selection >= 0 && new_selection < button_count)
+    {
         button_position_t *new_btn = &current_buttons[new_selection];
 
         // Clear and redraw selected button with text
@@ -113,7 +122,8 @@ void updateButtonSelection(int old_selection, int new_selection) {
     }
 }
 
-void updateDeviceStatusText(int device_index, bool is_on) {
+void updateDeviceStatusText(int device_index, bool is_on)
+{
     int text_x = MARGIN_X + 5;
     int text_y = TITLE_HEIGHT + 10 + device_index * 20 + 4;
     fillRect(text_x + 70, text_y, 40, 10, GRAY);
@@ -122,12 +132,14 @@ void updateDeviceStatusText(int device_index, bool is_on) {
     ST7735_WriteString(text_x + 70, text_y, status, Font_7x10, WHITE, GRAY);
 }
 
-void updateStatusInfo(char* status, uint16_t color) {
+void updateStatusInfo(char* status, uint16_t color)
+{
     fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
     ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
 }
 
-void updateDeviceCount(int total_on) {
+void updateDeviceCount(int total_on)
+{
     char status[35];
     if(total_on > 0)
     {
@@ -141,19 +153,24 @@ void updateDeviceCount(int total_on) {
     }
 }
 
-void updateDeviceControlStatus(int device, bool is_on) {
+void updateDeviceControlStatus(int device, bool is_on)
+{
     char status[25];
     snprintf(status, sizeof(status), "Status: %s", is_on ? "ON" : "OFF");
     uint16_t status_color = is_on ? GREEN : RED;
     updateStatusInfo(status, status_color);
 }
 
-void drawCleanButton(int x, int y, int width, int height, char* text, int selected) {
-    if (selected) {
+void drawCleanButton(int x, int y, int width, int height, char* text, int selected)
+{
+    if (selected)
+    {
         drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
         fillRoundRect(x, y, width, height, 3, GREEN);
         ST7735_WriteString(x+5, y+4, text, Font_7x10, BLACK, GREEN);
-    } else {
+    }
+    else
+    {
         drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
         fillRoundRect(x, y, width, height, 3, GRAY);
         ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
@@ -179,8 +196,10 @@ void drawStatusInfo(char* status, uint16_t color) {
 }
 
 
-void displayMainMenu(void) {
-	if (current_menu != last_menu || !menu_drawn) {
+void displayMainMenu(void)
+{
+	if (current_menu != last_menu || !menu_drawn)
+	{
 		ST7735_SetRotation(1);
 		fillScreen(BLACK);
 		drawTitleBar("HOME MENU");
@@ -189,7 +208,8 @@ void displayMainMenu(void) {
 		last_menu = current_menu;
 	}
 
-	if (!buttons_drawn || last_selection != current_selection) {
+	if (!buttons_drawn || last_selection != current_selection)
+	{
 		int start_y = TITLE_HEIGHT + 15;
 		button_count = 2;
 
@@ -204,18 +224,22 @@ void displayMainMenu(void) {
 	last_selection = current_selection;
 }
 
-void displayTotalControlMenu(void) {
+void displayTotalControlMenu(void)
+{
 	bool states_changed = false;
 	syncDisplayDeviceStates();
 
-	for (int i = 0; i < 4; i++) {
-		if (device_states[i] != last_device_states[i]) {
+	for (int i = 0; i < 4; i++)
+	{
+		if (device_states[i] != last_device_states[i])
+		{
 			states_changed = true;
 			last_device_states[i] = device_states[i];
 		}
 	}
 
-	if (current_menu != last_menu || !menu_drawn) {
+	if (current_menu != last_menu || !menu_drawn)
+	{
 		ST7735_SetRotation(1);
 		fillScreen(BLACK);
 		drawTitleBar("MASTER CONTROL");
@@ -225,15 +249,18 @@ void displayTotalControlMenu(void) {
 		states_changed = true;
 	}
 
-	if (states_changed) {
+	if (states_changed)
+	{
 		int total_on = 0;
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++)
+		{
 			if (device_states[i]) total_on++;
 		}
 		updateDeviceCount(total_on);
 	}
 
-	if (!buttons_drawn) {
+	if (!buttons_drawn)
+	{
 		int start_y = TITLE_HEIGHT + 25;
 		button_count = 3;
 
@@ -245,14 +272,17 @@ void displayTotalControlMenu(void) {
 						"GO BACK", (current_selection == 2), 2);
 
 		buttons_drawn = true;
-	} else if (last_selection != current_selection) {
+	}
+	else if (last_selection != current_selection)
+	{
 		updateButtonSelection(last_selection, current_selection);
 	}
 
 	last_selection = current_selection;
 }
 
-void displaySeparateControlMenu(void) {
+void displaySeparateControlMenu(void)
+{
 	bool states_changed = false;
 	syncDisplayDeviceStates();
 
@@ -277,7 +307,8 @@ void displaySeparateControlMenu(void) {
 		int start_y = TITLE_HEIGHT + 10;
 		button_count = 5;
 
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++)
+		{
 			char device_text[20];
 			snprintf(device_text, sizeof(device_text), "DEVICE %d [%s]",
 					i + 1, device_states[i] ? "ON" : "OFF");
@@ -346,29 +377,38 @@ void displayDeviceControlMenu(void) {
 
 
 void setDeviceState(int device, int state) {
-    GPIO_TypeDef* gpio_port;
-    uint16_t gpio_pin;
+    GPIO_TypeDef* gpio_led_port;
+    GPIO_TypeDef *gpio_relay_port;
+    uint16_t gpio_led_pin, gpio_relay_pin;
     char deviceItem[15];
 
     switch(device) {
         case 0:
-            gpio_port = TOUCH_LED1_GPIO_Port;
-            gpio_pin = TOUCH_LED1_Pin;
+            gpio_led_port = TOUCH_LED1_GPIO_Port;
+            gpio_relay_port = L_RELAY_1_GPIO_Port;
+            gpio_led_pin = TOUCH_LED1_Pin;
+            gpio_relay_pin = L_RELAY_1_Pin;
             sprintf(deviceItem, "device1");
             break;
         case 1:
-            gpio_port = TOUCH_LED2_GPIO_Port;
-            gpio_pin = TOUCH_LED2_Pin;
+            gpio_led_port = TOUCH_LED2_GPIO_Port;
+            gpio_relay_port = L_RELAY_2_GPIO_Port;
+            gpio_led_pin = TOUCH_LED2_Pin;
+            gpio_relay_pin = L_RELAY_2_Pin;
             sprintf(deviceItem, "device2");
             break;
         case 2:
-            gpio_port = TOUCH_LED3_GPIO_Port;
-            gpio_pin = TOUCH_LED3_Pin;
+            gpio_led_port = TOUCH_LED3_GPIO_Port;
+            gpio_relay_port = L_RELAY_3_GPIO_Port;
+            gpio_led_pin = TOUCH_LED3_Pin;
+            gpio_relay_pin = L_RELAY_3_Pin;
             sprintf(deviceItem, "device3");
             break;
         case 3:
-            gpio_port = TOUCH_LED4_GPIO_Port;
-            gpio_pin = TOUCH_LED4_Pin;
+            gpio_led_port = TOUCH_LED4_GPIO_Port;
+            gpio_relay_port = L_RELAY_4_GPIO_Port;
+            gpio_led_pin = TOUCH_LED4_Pin;
+            gpio_relay_pin = L_RELAY_4_Pin;
             sprintf(deviceItem, "device4");
             break;
         default:
@@ -377,11 +417,13 @@ void setDeviceState(int device, int state) {
 
     if (xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE) {
 		if (state) {
-			HAL_GPIO_WritePin(gpio_port, gpio_pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(gpio_led_port, gpio_led_pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(gpio_relay_port, gpio_relay_pin, GPIO_PIN_SET);
 			global_device_states[device] = 1;
 			device_states[device] = 1;
 		} else {
-			HAL_GPIO_WritePin(gpio_port, gpio_pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(gpio_led_port, gpio_led_pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(gpio_relay_port, gpio_relay_pin, GPIO_PIN_RESET);
 			global_device_states[device] = 0;
 			device_states[device] = 0;
 		}
@@ -408,35 +450,46 @@ void setAllDevicesState(int state) {
 	cJSON *resp = cJSON_CreateObject();
     if (xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE) {
         for (int i = 0; i < 4; i++) {
-            GPIO_TypeDef* gpio_port;
-            uint16_t gpio_pin;
+        	GPIO_TypeDef* gpio_led_port;
+        	GPIO_TypeDef *gpio_relay_port;
+			uint16_t gpio_led_pin, gpio_relay_pin;
 
             switch(i) {
                 case 0:
-                    gpio_port = TOUCH_LED1_GPIO_Port;
-                    gpio_pin = TOUCH_LED1_Pin;
+                	gpio_led_port = TOUCH_LED1_GPIO_Port;
+					gpio_relay_port = L_RELAY_1_GPIO_Port;
+					gpio_led_pin = TOUCH_LED1_Pin;
+					gpio_relay_pin = L_RELAY_1_Pin;
                     break;
                 case 1:
-                    gpio_port = TOUCH_LED2_GPIO_Port;
-                    gpio_pin = TOUCH_LED2_Pin;
+                	gpio_led_port = TOUCH_LED2_GPIO_Port;
+					gpio_relay_port = L_RELAY_2_GPIO_Port;
+					gpio_led_pin = TOUCH_LED2_Pin;
+					gpio_relay_pin = L_RELAY_2_Pin;
                     break;
                 case 2:
-                    gpio_port = TOUCH_LED3_GPIO_Port;
-                    gpio_pin = TOUCH_LED3_Pin;
+                	gpio_led_port = TOUCH_LED3_GPIO_Port;
+					gpio_relay_port = L_RELAY_3_GPIO_Port;
+					gpio_led_pin = TOUCH_LED3_Pin;
+					gpio_relay_pin = L_RELAY_3_Pin;
                     break;
                 case 3:
-                    gpio_port = TOUCH_LED4_GPIO_Port;
-                    gpio_pin = TOUCH_LED4_Pin;
+                	gpio_led_port = TOUCH_LED4_GPIO_Port;
+					gpio_relay_port = L_RELAY_4_GPIO_Port;
+					gpio_led_pin = TOUCH_LED4_Pin;
+					gpio_relay_pin = L_RELAY_4_Pin;
                     break;
             }
 
             if (state) {
-                HAL_GPIO_WritePin(gpio_port, gpio_pin, GPIO_PIN_SET);
+            	HAL_GPIO_WritePin(gpio_led_port, gpio_led_pin, GPIO_PIN_SET);
+				HAL_GPIO_WritePin(gpio_relay_port, gpio_relay_pin, GPIO_PIN_SET);
                 global_device_states[i] = 1;
                 device_states[i] = 1;
                 cJSON_AddNumberToObject(resp, devices[i], device_states[i]);
             } else {
-                HAL_GPIO_WritePin(gpio_port, gpio_pin, GPIO_PIN_RESET);
+            	HAL_GPIO_WritePin(gpio_led_port, gpio_led_pin, GPIO_PIN_RESET);
+				HAL_GPIO_WritePin(gpio_relay_port, gpio_relay_pin, GPIO_PIN_RESET);
                 global_device_states[i] = 0;
                 device_states[i] = 0;
                 cJSON_AddNumberToObject(resp, devices[i], device_states[i]);

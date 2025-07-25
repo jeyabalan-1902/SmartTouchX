@@ -28,8 +28,10 @@
 
 
 extern const char *devices[DEVICE_COUNT];
-extern GPIO_TypeDef* ports[DEVICE_COUNT];
-extern uint16_t pins[DEVICE_COUNT];
+extern GPIO_TypeDef* led_ports[DEVICE_COUNT];
+extern uint16_t led_pins[DEVICE_COUNT];
+extern GPIO_TypeDef* relay_ports[DEVICE_COUNT];
+extern uint16_t relay_pins[DEVICE_COUNT];
 extern volatile int global_device_states[4];
 
 extern SPI_HandleTypeDef hspi1;

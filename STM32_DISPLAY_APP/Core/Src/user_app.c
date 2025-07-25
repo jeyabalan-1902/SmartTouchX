@@ -16,8 +16,10 @@ SemaphoreHandle_t deviceStateMutex;
 BaseType_t status;
 
 const char *devices[DEVICE_COUNT] = {"device1", "device2", "device3", "device4"};
-GPIO_TypeDef* ports[DEVICE_COUNT] = {TOUCH_LED1_GPIO_Port, TOUCH_LED2_GPIO_Port, TOUCH_LED3_GPIO_Port, TOUCH_LED4_GPIO_Port};
-uint16_t pins[DEVICE_COUNT] = {TOUCH_LED1_Pin, TOUCH_LED2_Pin, TOUCH_LED3_Pin, TOUCH_LED4_Pin};
+GPIO_TypeDef* led_ports[DEVICE_COUNT] = {TOUCH_LED1_GPIO_Port, TOUCH_LED2_GPIO_Port, TOUCH_LED3_GPIO_Port, TOUCH_LED4_GPIO_Port};
+GPIO_TypeDef* relay_ports[DEVICE_COUNT] = {L_RELAY_1_GPIO_Port, L_RELAY_2_GPIO_Port, L_RELAY_3_GPIO_Port, L_RELAY_4_GPIO_Port};
+uint16_t led_pins[DEVICE_COUNT] = {TOUCH_LED1_Pin, TOUCH_LED2_Pin, TOUCH_LED3_Pin, TOUCH_LED4_Pin};
+uint16_t relay_pins[DEVICE_COUNT] = {L_RELAY_1_Pin, L_RELAY_2_Pin, L_RELAY_3_Pin, L_RELAY_4_Pin};
 volatile int global_device_states[4] = {0, 0, 0, 0};
 
 
@@ -49,7 +51,6 @@ void user_app_init(void)
 	  global_device_states[i] = 0;
 	  device_states[i] = 0;
 	}
-	HAL_GPIO_WritePin(TI_SS_GPIO_Port, TI_SS_Pin, GPIO_PIN_SET);
 	initializeMenu();
 	setup_freeRTOS();
 }

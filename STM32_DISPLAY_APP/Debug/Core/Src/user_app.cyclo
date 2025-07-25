@@ -1,2 +1,2 @@
-../Core/Src/user_app.c:24:6:setup_freeRTOS	4
-../Core/Src/user_app.c:41:6:user_app_init	2
+../Core/Src/user_app.c:26:6:setup_freeRTOS	4
+../Core/Src/user_app.c:43:6:user_app_init	2

@@ -88,8 +88,9 @@ void process_spi_json(uint8_t *jsonBuffer)
 			cJSON *status = cJSON_CreateObject();
 			if(xSemaphoreTake(deviceStateMutex, pdMS_TO_TICKS(100)) == pdTRUE)
 			{
-				HAL_GPIO_TogglePin(ports[deviceIndex], pins[deviceIndex]);
-				state = HAL_GPIO_ReadPin(ports[deviceIndex], pins[deviceIndex]);
+				HAL_GPIO_TogglePin(led_ports[deviceIndex], led_pins[deviceIndex]);
+				HAL_GPIO_TogglePin(relay_ports[deviceIndex], relay_pins[deviceIndex]);
+				state = HAL_GPIO_ReadPin(led_ports[deviceIndex], led_pins[deviceIndex]);
 				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
 				global_device_states[deviceIndex] = deviceState;
 				cJSON_AddNumberToObject(status, devices[deviceIndex], global_device_states[deviceIndex]);
@@ -105,7 +106,8 @@ void process_spi_json(uint8_t *jsonBuffer)
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
 {
-    if (hspi->Instance == SPI2) {
+    if (hspi->Instance == SPI2)
+    {
         uint16_t nextHead = (spiHead + 1) % SPI_RING_BUFFER_SIZE;
         if(nextHead != spiTail)
         {

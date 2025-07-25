@@ -18,13 +18,13 @@
 
 
 // Display dimensions for 1.8" ST7735
-#define DISPLAY_WIDTH 160
+#define DISPLAY_WIDTH  160
 #define DISPLAY_HEIGHT 128
-#define BUTTON_WIDTH 140
-#define BUTTON_HEIGHT 18
+#define BUTTON_WIDTH   140
+#define BUTTON_HEIGHT  18
 #define BUTTON_SPACING 22
-#define MARGIN_X 10
-#define TITLE_HEIGHT 15
+#define MARGIN_X       10
+#define TITLE_HEIGHT   15
 
 // Menu state enumeration
 typedef enum {
@@ -35,10 +35,10 @@ typedef enum {
 } menu_state_t;
 
 // Menu configuration
-#define MAIN_MENU_OPTIONS 2
-#define TOTAL_CONTROL_OPTIONS 3
+#define MAIN_MENU_OPTIONS        2
+#define TOTAL_CONTROL_OPTIONS    3
 #define SEPARATE_CONTROL_OPTIONS 5
-#define DEVICE_CONTROL_OPTIONS 4
+#define DEVICE_CONTROL_OPTIONS   4
 
 
 #define MAX_DISPLAY_LINES 8
