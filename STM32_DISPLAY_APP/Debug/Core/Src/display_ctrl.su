@@ -21,10 +21,10 @@
 ../Core/Src/display_ctrl.c:680:6:Menu_Handler	8	static
 ../Core/Src/display_ctrl.c:699:6:HAL_GPIO_EXTI_Callback	16	static
 ../Core/Src/display_ctrl.c:720:6:initializeMenu	16	static
-../Core/Src/display_ctrl.c:740:6:fastUpdateDeviceList	16	static
-../Core/Src/display_ctrl.c:752:6:fastUpdateTotalControl	16	static
-../Core/Src/display_ctrl.c:763:6:fastUpdateDeviceControl	8	static
-../Core/Src/display_ctrl.c:769:6:ClearDisplay	32	static
-../Core/Src/display_ctrl.c:784:6:ScrollDisplay	32	static
-../Core/Src/display_ctrl.c:804:6:DisplayMessage	32	static
-../Core/Src/display_ctrl.c:824:6:print_To_display	96	static
+../Core/Src/display_ctrl.c:738:6:fastUpdateDeviceList	16	static
+../Core/Src/display_ctrl.c:750:6:fastUpdateTotalControl	16	static
+../Core/Src/display_ctrl.c:761:6:fastUpdateDeviceControl	8	static
+../Core/Src/display_ctrl.c:767:6:ClearDisplay	32	static
+../Core/Src/display_ctrl.c:782:6:ScrollDisplay	32	static
+../Core/Src/display_ctrl.c:802:6:DisplayMessage	32	static
+../Core/Src/display_ctrl.c:822:6:print_To_display	96	static

@@ -23,7 +23,7 @@
 ../RTOS/freeRTOS/tasks.c:2522:17:uxTaskGetSystemState	4
 ../RTOS/freeRTOS/tasks.c:2627:12:xTaskCatchUpTicks	2
 ../RTOS/freeRTOS/tasks.c:2725:12:xTaskIncrementTick	11
-../RTOS/freeRTOS/tasks.c:3010:6:vTaskSwitchContext	4
+../RTOS/freeRTOS/tasks.c:3010:6:vTaskSwitchContext	8
 ../RTOS/freeRTOS/tasks.c:3086:6:vTaskPlaceOnEventList	2
 ../RTOS/freeRTOS/tasks.c:3104:6:vTaskPlaceOnUnorderedEventList	3
 ../RTOS/freeRTOS/tasks.c:3132:10:vTaskPlaceOnEventListRestricted	3
@@ -48,6 +48,8 @@
 ../RTOS/freeRTOS/tasks.c:4056:16:xTaskPriorityInherit	7
 ../RTOS/freeRTOS/tasks.c:4146:16:xTaskPriorityDisinherit	7
 ../RTOS/freeRTOS/tasks.c:4226:10:vTaskPriorityDisinheritAfterTimeout	10
+../RTOS/freeRTOS/tasks.c:4395:19:prvWriteNameToBuffer	2
+../RTOS/freeRTOS/tasks.c:4422:10:vTaskList	8
 ../RTOS/freeRTOS/tasks.c:4651:12:uxTaskResetEventItemValue	1
 ../RTOS/freeRTOS/tasks.c:4667:18:pvTaskIncrementMutexHeldCount	2
 ../RTOS/freeRTOS/tasks.c:4684:14:ulTaskGenericNotifyTake	6

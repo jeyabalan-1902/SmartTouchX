@@ -441,7 +441,7 @@ void setDeviceState(int device, int state) {
 		}
 		cJSON_Delete(resp);
 
-		printf("DISPLAY: Device %d set to %s\n", device + 1, state ? "ON" : "OFF");
+		safe_printf("DISPLAY: Device %d set to %s\n", device + 1, state ? "ON" : "OFF");
 	}
 }
 
@@ -507,7 +507,7 @@ void setAllDevicesState(int state) {
 		}
 		cJSON_Delete(resp);
 
-        printf("DISPLAY: All devices set to %s\n", state ? "ON" : "OFF");
+        safe_printf("DISPLAY: All devices set to %s\n", state ? "ON" : "OFF");
     }
 }
 
@@ -718,7 +718,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 
 
 void initializeMenu(void) {
-    printf("display_init\n\r");
+    safe_printf("display_init\n\r");
     current_menu = MENU_MAIN;
     current_selection = 0;
     current_device = 0;
@@ -727,13 +727,11 @@ void initializeMenu(void) {
     menu_drawn = false;
     buttons_drawn = false;
 
-    // Initialize device states
     for (int i = 0; i < 4; i++) {
         device_states[i] = 0;
-        last_device_states[i] = -1; // Force update on first display
+        last_device_states[i] = -1;
         setDeviceState(i, 0);
     }
-
     displayMainMenu();
 }
 
