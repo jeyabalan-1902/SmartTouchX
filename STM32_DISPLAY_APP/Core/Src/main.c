@@ -44,6 +44,7 @@ SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi3;
 
+UART_HandleTypeDef huart4;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
@@ -59,18 +60,14 @@ static void MX_SPI2_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_SPI3_Init(void);
+static void MX_UART4_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define PRINTF   int __io_putchar(int ch)
-PRINTF
-{
-	HAL_UART_Transmit(&huart2, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
-	return ch;
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -107,6 +104,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_SPI3_Init();
+  MX_UART4_Init();
   /* USER CODE BEGIN 2 */
   user_app_init();
   /* USER CODE END 2 */
@@ -290,6 +288,39 @@ static void MX_SPI3_Init(void)
 }
 
 /**
+  * @brief UART4 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_UART4_Init(void)
+{
+
+  /* USER CODE BEGIN UART4_Init 0 */
+
+  /* USER CODE END UART4_Init 0 */
+
+  /* USER CODE BEGIN UART4_Init 1 */
+
+  /* USER CODE END UART4_Init 1 */
+  huart4.Instance = UART4;
+  huart4.Init.BaudRate = 115200;
+  huart4.Init.WordLength = UART_WORDLENGTH_8B;
+  huart4.Init.StopBits = UART_STOPBITS_1;
+  huart4.Init.Parity = UART_PARITY_NONE;
+  huart4.Init.Mode = UART_MODE_TX_RX;
+  huart4.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart4.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN UART4_Init 2 */
+
+  /* USER CODE END UART4_Init 2 */
+
+}
+
+/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -377,13 +408,19 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(TOUCH_LED3_GPIO_Port, TOUCH_LED3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, TOUCH_LED2_Pin|TOUCH_LED1_Pin|GPIO_PIN_4, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, TOUCH_LED2_Pin|TOUCH_LED1_Pin|GPIO_PIN_4|L_RELAY_4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4|L_RELAY_1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, L_RELAY_4_Pin|L_RELAY_3_Pin|L_RELAY_2_Pin|TOUCH_LED4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, L_RELAY_2_Pin|L_RELAY_1_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(L_RELAY_3_GPIO_Port, L_RELAY_3_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : TOUCH_LED3_Pin */
   GPIO_InitStruct.Pin = TOUCH_LED3_Pin;
@@ -392,26 +429,35 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(TOUCH_LED3_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : TOUCH_LED2_Pin TOUCH_LED1_Pin PC4 */
-  GPIO_InitStruct.Pin = TOUCH_LED2_Pin|TOUCH_LED1_Pin|GPIO_PIN_4;
+  /*Configure GPIO pins : TOUCH_LED2_Pin TOUCH_LED1_Pin PC4 L_RELAY_2_Pin
+                           L_RELAY_1_Pin */
+  GPIO_InitStruct.Pin = TOUCH_LED2_Pin|TOUCH_LED1_Pin|GPIO_PIN_4|L_RELAY_2_Pin
+                          |L_RELAY_1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : DISP_BACKLIT_Pin PA1 PA4 L_RELAY_1_Pin */
-  GPIO_InitStruct.Pin = DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4|L_RELAY_1_Pin;
+  /*Configure GPIO pins : DISP_BACKLIT_Pin PA1 PA4 */
+  GPIO_InitStruct.Pin = DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : L_RELAY_4_Pin L_RELAY_3_Pin L_RELAY_2_Pin TOUCH_LED4_Pin */
-  GPIO_InitStruct.Pin = L_RELAY_4_Pin|L_RELAY_3_Pin|L_RELAY_2_Pin|TOUCH_LED4_Pin;
+  /*Configure GPIO pins : TOUCH_LED4_Pin L_RELAY_3_Pin */
+  GPIO_InitStruct.Pin = TOUCH_LED4_Pin|L_RELAY_3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : L_RELAY_4_Pin */
+  GPIO_InitStruct.Pin = L_RELAY_4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(L_RELAY_4_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA9 PA10 PA11 */
   GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11;

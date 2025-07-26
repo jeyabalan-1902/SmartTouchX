@@ -20,7 +20,6 @@ void SPI_Handler(void *param)
     uint8_t jsonBuffer[SPI_RING_BUFFER_SIZE];
     uint8_t index = 0;
     bool collecting = false;
-
     while (1)
     {
         if(spiHead != spiTail)
@@ -42,7 +41,7 @@ void SPI_Handler(void *param)
         			if(byte == '}')
         			{
         				jsonBuffer[index] = '\0';
-        				printf("JSON received: %s\n", jsonBuffer);
+        				safe_printf("JSON received: %s\n", jsonBuffer);
         				process_spi_json(jsonBuffer);
         				collecting = false;
         				index = 0;
@@ -94,7 +93,7 @@ void process_spi_json(uint8_t *jsonBuffer)
 				deviceState = (state == GPIO_PIN_SET) ? 1 : 0;
 				global_device_states[deviceIndex] = deviceState;
 				cJSON_AddNumberToObject(status, devices[deviceIndex], global_device_states[deviceIndex]);
-				printf("TOUCH: Device %d set to %s\n", deviceIndex + 1, global_device_states[deviceIndex] ? "ON" : "OFF");
+				safe_printf("TOUCH: Device %d set to %s\n", deviceIndex + 1, global_device_states[deviceIndex] ? "ON" : "OFF");
 				xSemaphoreGive(deviceStateMutex);
 			}
 			updateToDisplayMenu();
@@ -116,7 +115,7 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
         }
         else
         {
-        	printf("SPI ring buffer overflow\n");
+        	safe_printf("SPI ring buffer overflow\n");
         }
         HAL_SPI_Receive_IT(&hspi2, &spiRxByte, 1);
     }

@@ -42,7 +42,8 @@ Core/Src/uart_rec.o: ../Core/Src/uart_rec.c ../Core/Inc/uart_rec.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
  ../Core/Inc/cJSON.h ../Core/Inc/user_app.h ../Core/Inc/display_ctrl.h \
- ../Core/Inc/ST7735.h ../Core/Inc/fonts.h ../Core/Inc/GFX_FUNCTIONS.h
+ ../Core/Inc/ST7735.h ../Core/Inc/fonts.h ../Core/Inc/GFX_FUNCTIONS.h \
+ ../Core/Inc/MQTTSim800.h
 ../Core/Inc/uart_rec.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -93,3 +94,4 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 ../Core/Inc/ST7735.h:
 ../Core/Inc/fonts.h:
 ../Core/Inc/GFX_FUNCTIONS.h:
+../Core/Inc/MQTTSim800.h:

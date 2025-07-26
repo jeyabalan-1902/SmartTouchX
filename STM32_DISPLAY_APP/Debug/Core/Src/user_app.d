@@ -44,7 +44,7 @@ Core/Src/user_app.o: ../Core/Src/user_app.c ../Core/Inc/user_app.h \
  ../Core/Inc/cJSON.h ../Core/Inc/uart_rec.h ../Core/Inc/spi_rec.h \
  ../Core/Inc/display_ctrl.h ../Core/Inc/ST7735.h ../Core/Inc/fonts.h \
  ../Core/Inc/GFX_FUNCTIONS.h ../Core/Inc/onwords_logo.h \
- ../Core/Inc/user_app.h
+ ../Core/Inc/user_app.h ../Core/Inc/MQTTSim800.h ../Core/Inc/gsm_app.h
 ../Core/Inc/user_app.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -98,3 +98,5 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 ../Core/Inc/GFX_FUNCTIONS.h:
 ../Core/Inc/onwords_logo.h:
 ../Core/Inc/user_app.h:
+../Core/Inc/MQTTSim800.h:
+../Core/Inc/gsm_app.h:

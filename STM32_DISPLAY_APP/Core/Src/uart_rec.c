@@ -8,6 +8,7 @@
 #include "uart_rec.h"
 #include "user_app.h"
 #include "display_ctrl.h"
+#include "MQTTSim800.h"
 
 uint8_t uartRingBuffer[UART_RING_BUFFER_SIZE];
 volatile uint16_t uartHead = 0;
@@ -19,7 +20,6 @@ void UART_Handler(void *param)
     uint8_t jsonBuffer[JSON_BUFFER_SIZE];
     uint8_t index = 0;
     bool collecting = false;
-
     while (1)
     {
         if (uartHead != uartTail)
@@ -42,7 +42,7 @@ void UART_Handler(void *param)
                     if (byte == '}')
                     {
                         jsonBuffer[index] = '\0';
-                        printf("JSON received: %s\n", jsonBuffer);
+                        safe_printf("JSON received: %s\n", jsonBuffer);
                         process_json(jsonBuffer);
                         collecting = false;
                         index = 0;
@@ -72,7 +72,7 @@ void send_json_response(cJSON *jsonObj)
     char *response = cJSON_PrintUnformatted(jsonObj);
     if (response)
     {
-    	printf("Device State JSON: %s\n", response);
+    	safe_printf("Device State JSON: %s\n", response);
         HAL_UART_Transmit(&huart3, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
         HAL_UART_Transmit(&huart3, (uint8_t *)"\n", 1, HAL_MAX_DELAY);
         free(response);
@@ -129,7 +129,7 @@ void handle_device_control(cJSON *json)
 				GPIO_PinState state = HAL_GPIO_ReadPin(led_ports[i], led_pins[i]);
 				global_device_states[i] = (state == GPIO_PIN_SET) ? 1 : 0;
 				cJSON_AddNumberToObject(resp, devices[i], global_device_states[i]);
-				printf("ESP: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
+				safe_printf("ESP: Device %d set to %s\n", i + 1, global_device_states[i] ? "ON" : "OFF");
 			}
 		}
 		xSemaphoreGive(deviceStateMutex);
@@ -143,7 +143,7 @@ void process_json(uint8_t *jsonBuffer)
     cJSON *json = cJSON_Parse((char *)jsonBuffer);
     if (!json)
     {
-        printf("Invalid JSON!\n");
+        safe_printf("Invalid JSON!\n");
         return;
     }
 
@@ -169,8 +169,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             uartRingBuffer[uartHead] = uartRxByte;
             uartHead = nextHead;
         } else {
-            printf("UART ring buffer overflow!\n");
+            safe_printf("UART ring buffer overflow!\n");
         }
         HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
+    }
+
+    else if(huart == UART_SIM800)
+    {
+    	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		Sim800_RxCallBack();
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
     }
 }
