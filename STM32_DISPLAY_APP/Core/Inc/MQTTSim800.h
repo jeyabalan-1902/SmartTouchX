@@ -58,8 +58,27 @@ typedef struct {
     mqttReceive_t mqttReceive;
 } SIM800_t;
 
+
+typedef enum{
+	MQTT_STATE_INIT = 0,
+	MQTT_STATE_CGATT_ATTACH,
+	MQTT_STATE_APN_CONFIG,
+	MQTT_STATE_CIICR_BRINGUP,
+	MQTT_STATE_GET_IP,
+	MQTT_STATE_TCP_CONNECT,
+	MQTT_STATE_WAIT_TCP_RESPONSE,
+	MQTT_STATE_MQTT_CONNECT,
+	MQTT_STATE_MQTT_CONNECTED,
+	MQTT_STATE_IDLE,
+	MQTT_STATE_RECONNECT
+}mqtt_state_t;
+
+extern mqtt_state_t mqttState;
+extern int mqttError;
+
 extern uint8_t rx_data;
 
+void SIM800_MQTT_StateMachineHandler(void);
 void Sim800_RxCallBack(void);
 
 void clearRxBuffer(void);

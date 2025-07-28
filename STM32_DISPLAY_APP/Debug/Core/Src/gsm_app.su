@@ -1,3 +1,3 @@
-../Core/Src/gsm_app.c:13:6:GSM_init	4	static
-../Core/Src/gsm_app.c:26:6:GSM_MQTT_Task	32	static
-../Core/Src/gsm_app.c:67:10:millis	8	static
+../Core/Src/gsm_app.c:17:6:GSM_init	4	static
+../Core/Src/gsm_app.c:30:6:GSM_MQTT_Task	32	static
+../Core/Src/gsm_app.c:85:10:millis	8	static
