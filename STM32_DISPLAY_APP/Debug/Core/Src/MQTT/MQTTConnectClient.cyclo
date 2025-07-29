@@ -1,0 +1,6 @@
+../Core/Src/MQTT/MQTTConnectClient.c:26:5:MQTTSerialize_connectLength	8
+../Core/Src/MQTT/MQTTConnectClient.c:57:5:MQTTSerialize_connect	11
+../Core/Src/MQTT/MQTTConnectClient.c:131:5:MQTTDeserialize_connack	3
+../Core/Src/MQTT/MQTTConnectClient.c:168:5:MQTTSerialize_zero	2
+../Core/Src/MQTT/MQTTConnectClient.c:198:5:MQTTSerialize_disconnect	1
+../Core/Src/MQTT/MQTTConnectClient.c:210:5:MQTTSerialize_pingreq	1

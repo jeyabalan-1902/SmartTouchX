@@ -1,0 +1,6 @@
+../Core/Src/MQTT/MQTTSerializePublish.c:30:5:MQTTSerialize_publishLength	2
+../Core/Src/MQTT/MQTTSerializePublish.c:54:5:MQTTSerialize_publish	3
+../Core/Src/MQTT/MQTTSerializePublish.c:103:5:MQTTSerialize_ack	2
+../Core/Src/MQTT/MQTTSerializePublish.c:136:5:MQTTSerialize_puback	1
+../Core/Src/MQTT/MQTTSerializePublish.c:150:5:MQTTSerialize_pubrel	1
+../Core/Src/MQTT/MQTTSerializePublish.c:163:5:MQTTSerialize_pubcomp	1

@@ -14,6 +14,9 @@ RM := rm -rf
 -include RTOS/freeRTOS/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
+-include Core/Src/cJSON/subdir.mk
+-include Core/Src/ST7735/subdir.mk
+-include Core/Src/MQTT/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
 

@@ -1,5 +1,6 @@
 Core/Src/spi_rec.o: ../Core/Src/spi_rec.c ../Core/Inc/spi_rec.h \
- ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ ../Core/Inc/cJSON/cJSON.h ../Core/Inc/main.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -41,10 +42,11 @@ Core/Src/spi_rec.o: ../Core/Src/spi_rec.c ../Core/Inc/spi_rec.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
- ../Core/Inc/cJSON.h ../Core/Inc/user_app.h ../Core/Inc/uart_rec.h \
- ../Core/Inc/display_ctrl.h ../Core/Inc/ST7735.h ../Core/Inc/fonts.h \
- ../Core/Inc/GFX_FUNCTIONS.h
+ ../Core/Inc/user_app.h ../Core/Inc/uart_rec.h ../Core/Inc/display_ctrl.h \
+ ../Core/Inc/ST7735/fonts.h ../Core/Inc/ST7735/GFX_FUNCTIONS.h \
+ ../Core/Inc/ST7735/ST7735.h
 ../Core/Inc/spi_rec.h:
+../Core/Inc/cJSON/cJSON.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -88,10 +90,9 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h:
-../Core/Inc/cJSON.h:
 ../Core/Inc/user_app.h:
 ../Core/Inc/uart_rec.h:
 ../Core/Inc/display_ctrl.h:
-../Core/Inc/ST7735.h:
-../Core/Inc/fonts.h:
-../Core/Inc/GFX_FUNCTIONS.h:
+../Core/Inc/ST7735/fonts.h:
+../Core/Inc/ST7735/GFX_FUNCTIONS.h:
+../Core/Inc/ST7735/ST7735.h:
