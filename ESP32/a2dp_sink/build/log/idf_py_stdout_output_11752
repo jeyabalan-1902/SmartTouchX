@@ -1,0 +1,1023 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jul 29 2025 22:03:31[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2a92ch (174380) map[0m
+[0;32mI (150) esp_image: segment 1: paddr=0003a954 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=0003a978 vaddr=3ffbdb60 size=04be0h ( 19424) load[0m
+[0;32mI (161) esp_image: segment 3: paddr=0003f560 vaddr=40080000 size=00ab8h (  2744) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8f3ch (692028) map[0m
+[0;32mI (405) esp_image: segment 5: paddr=000e8f64 vaddr=40080ab8 size=17334h ( 95028) load[0m
+[0;32mI (454) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (454) boot: Disabling RNG early entropy source...[0m
+[0;32mI (465) cpu_start: Multicore app[0m
+[0;32mI (473) cpu_start: Pro cpu start user code[0m
+[0;32mI (473) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (473) app_init: Application information:[0m
+[0;32mI (473) app_init: Project name:     a2dp_sink[0m
+[0;32mI (477) app_init: App version:      1[0m
+[0;32mI (481) app_init: Compile time:     Jul 29 2025 22:01:05[0m
+[0;32mI (486) app_init: ELF file SHA256:  4c00d03d2...[0m
+[0;32mI (490) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (494) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (498) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (502) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (506) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (512) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (517) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (523) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFCC348 len 00013CB8 (79 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 40097DEC len 00008214 (32 KiB): IRAM[0m
+[0;32mI (551) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (569) coexist: coex firmware version: e727207[0m
+[0;32mI (573) main_task: Started on CPU0[0m
+[0;32mI (583) main_task: Calling app_main()[0m
+[0;32mI (603) BTDM_INIT: BT controller compile version [dc1cd58][0m
+[0;32mI (603) BTDM_INIT: Bluetooth MAC: a0:b7:65:20:c1:a2[0m
+[0;32mI (613) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (693) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1323) BT_AV: Own address:[a0:b7:65:20:c1:a2][0m
+[0;33mW (1333) BT_BTC: A2DP Enable with AVRC[0m
+[0;32mI (1353) BT_AV: A2DP PROF STATE: Init Complete[0m
+[0;32mI (1353) BT_AV: event: 10[0m
+[0;32mI (1353) BT_AV: event: 10[0m
+[0;32mI (1353) BT_AV: event: 10[0m
+[0;32mI (1353) BT_AV: Get delay report value: delay_value: 1200 * 1/10 ms[0m
+[0;32mI (1353) BT_AV: event: 23[0m
+[0;32mI (1363) BT_AV: Set delay report value: success, delay_value: 1250 * 1/10 ms[0m
+[0;32mI (1363) main_task: Returned from app_main()[0m
+[0;33mW (29393) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;32mI (29403) BT_AV: ESP_BT_GAP_ACL_CONN_CMPL_STAT_EVT Connected to [8c:92:ad:09:ab:01], status: 0x0[0m
+[0;32mI (29503) BT_AV: Encryption mode to [8c:92:ad:09:ab:01] changed to E0[0m
+[0;32mI (29563) BT_AV: A2DP connection state: Connecting, [8c:92:ad:09:ab:01][0m
+[0;33mW (29633) BT_APPL: new conn_srvc id:19, app_id:0[0m
+[0;32mI (29643) BT_AV: A2DP audio stream configuration, codec type: 0[0m
+[0;32mI (29643) BT_AV: Configure audio player: 21-15-2-35[0m
+[0;32mI (29643) BT_AV: Audio player configured, sample rate: 44100[0m
+[0;32mI (29643) BT_AV: protocol service capabilities configured: 0x1 [0m
+[0;32mI (29653) BT_AV: Peer device support delay reporting[0m
+[0;32mI (29653) RC_TG: AVRC conn_state evt: state 1, [8c:92:ad:09:ab:01][0m
+[0;32mI (29663) BT_AV: A2DP connection state: Connected, [8c:92:ad:09:ab:01][0m
+[0;32mI (29673) BT_APP_CORE: ringbuffer data empty! mode changed: RINGBUFFER_MODE_PREFETCHING[0m
+[0;32mI (29663) RC_TG: start volume change simulation[0m
+[0;32mI (29683) RC_CT: AVRC conn_state event: state 1, [8c:92:ad:09:ab:01][0m
+[0;32mI (29693) RC_CT: AVRC remote features 24b, TG features 11[0m
+[0;32mI (29693) RC_TG: AVRC remote features: 24b, CT features: 2[0m
+[0;32mI (29703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (29703) RC_CT: remote rn_cap: count 6, bitmask 0xf06[0m
+[0;32mI (29753) RC_CT: AVRC metadata rsp: attribute id 0x1, VIKRAM - OST Jukebox | Kamal Haasan | ANIRUDH RAVICHANDER | Vijay Sethupathi | Lokesh Kanagaraj[0m
+[0;32mI (29753) RC_CT: AVRC metadata rsp: attribute id 0x2, Sony Music South[0m
+[0;32mI (29903) BT_LOG: bta_av_link_role_ok hndl:x41 role:1 conn_audio:x1 bits:1 features:x864b[0m
+
+[0;33mW (29903) BT_APPL: new conn_srvc id:19, app_id:1[0m
+[0;32mI (29903) BT_AV: A2DP audio state: Started[0m
+[0;32mI (30063) BT_APP_CORE: ringbuffer data increased! mode changed: RINGBUFFER_MODE_PROCESSING[0m
+[0;32mI (31783) RC_CT: AVRC event notification: 1[0m
+[0;32mI (31783) BT_AV: Playback status changed: 0x1[0m
+[0;32mI (32263) BT_AV: Audio packet count: 100[0m
+[0;32mI (32783) RC_CT: AVRC event notification: 1[0m
+[0;32mI (32783) BT_AV: Playback status changed: 0x2[0m
+[0;32mI (33523) RC_CT: AVRC event notification: 1[0m
+[0;32mI (33523) BT_AV: Playback status changed: 0x1[0m
+[0;32mI (34583) BT_AV: Audio packet count: 200[0m
+[0;32mI (36903) BT_AV: Audio packet count: 300[0m
+[0;32mI (39223) BT_AV: Audio packet count: 400[0m
+[0;32mI (39683) RC_TG: Volume is set locally to: 3%[0m
+[0;32mI (39733) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (41423) RC_CT: AVRC event notification: 1[0m
+[0;32mI (41423) BT_AV: Playback status changed: 0x2[0m
+[0;32mI (41543) BT_AV: Audio packet count: 500[0m
+[0;32mI (43873) BT_AV: Audio packet count: 600[0m
+[0;32mI (46193) BT_AV: Audio packet count: 700[0m
+[0;32mI (48513) BT_AV: Audio packet count: 800[0m
+[0;32mI (49683) RC_TG: Volume is set locally to: 7%[0m
+[0;32mI (49703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (50833) BT_AV: Audio packet count: 900[0m
+[0;32mI (51823) BT_AV: A2DP audio state: Suspended[0m
+[0;32mI (51903) BT_APP_CORE: ringbuffer underflowed! mode changed: RINGBUFFER_MODE_PREFETCHING[0m
+[0;33mW (55013) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (55043) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (55043) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (59683) RC_TG: Volume is set locally to: 11%[0m
+[0;33mW (59813) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (59823) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;32mI (59823) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;33mW (63013) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (63023) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (63023) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (69683) RC_TG: Volume is set locally to: 15%[0m
+[0;33mW (69803) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (69813) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (69813) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;33mW (73013) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (73043) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (73043) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (79683) RC_TG: Volume is set locally to: 19%[0m
+[0;33mW (79793) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (79803) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;32mI (79803) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (82593) RC_CT: AVRC event notification: 2[0m
+[0;32mI (82593) RC_CT: AVRC event notification: 1[0m
+[0;32mI (82593) BT_AV: Playback status changed: 0x0[0m
+[0;32mI (82603) RC_CT: AVRC metadata rsp: attribute id 0x1, [0m
+[0;32mI (82603) RC_CT: AVRC metadata rsp: attribute id 0x2, [0m
+[0;32mI (82603) RC_CT: AVRC metadata rsp: attribute id 0x4, [0m
+[0;33mW (82993) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (83003) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x24[0m
+[1;31mE (83003) BT_APPL: bta_dm_pm_btm_status hci_status=36[0m
+[0;32mI (83013) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;32mI (89683) RC_TG: Volume is set locally to: 23%[0m
+[0;32mI (89763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (99683) RC_TG: Volume is set locally to: 27%[0m
+[0;32mI (99763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (109683) RC_TG: Volume is set locally to: 31%[0m
+[0;32mI (109763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (119683) RC_TG: Volume is set locally to: 35%[0m
+[0;32mI (119763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (129683) RC_TG: Volume is set locally to: 39%[0m
+[0;32mI (129783) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (129993) BT_LOG: bta_av_link_role_ok hndl:x41 role:1 conn_audio:x1 bits:1 features:x864b[0m
+
+[0;32mI (129993) BT_AV: A2DP audio state: Started[0m
+[0;32mI (130133) BT_APP_CORE: ringbuffer data increased! mode changed: RINGBUFFER_MODE_PROCESSING[0m
+[0;32mI (132333) BT_AV: Audio packet count: 100[0m
+[0;32mI (134653) BT_AV: Audio packet count: 200[0m
+[0;32mI (136973) BT_AV: Audio packet count: 300[0m
+[0;32mI (139293) BT_AV: Audio packet count: 400[0m
+[0;32mI (139683) RC_TG: Volume is set locally to: 43%[0m
+[0;32mI (139703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (140213) BT_AV: A2DP audio state: Suspended[0m
+[0;32mI (140293) BT_APP_CORE: ringbuffer underflowed! mode changed: RINGBUFFER_MODE_PREFETCHING[0m
+[0;33mW (143403) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (143423) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (143423) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (149683) RC_TG: Volume is set locally to: 47%[0m
+[0;33mW (149763) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (149763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (149773) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;33mW (152963) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (152973) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (152973) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (159683) RC_TG: Volume is set locally to: 51%[0m
+[0;33mW (159753) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (159753) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (159753) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;33mW (162953) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (162983) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (162983) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (167783) RC_TG: AVRC set absolute volume: 50%[0m
+[0;32mI (167783) RC_TG: Volume is set by remote controller to: 50%[0m
+[0;33mW (167853) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (167853) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;32mI (167933) RC_TG: AVRC set absolute volume: 48%[0m
+[0;32mI (167933) RC_TG: Volume is set by remote controller to: 48%[0m
+[0;32mI (168493) RC_TG: AVRC set absolute volume: 45%[0m
+[0;32mI (168493) RC_TG: Volume is set by remote controller to: 45%[0m
+[0;32mI (168693) RC_TG: AVRC set absolute volume: 44%[0m
+[0;32mI (168693) RC_TG: Volume is set by remote controller to: 44%[0m
+[0;32mI (169633) RC_CT: AVRC event notification: 1[0m
+[0;32mI (169633) BT_AV: Playback status changed: 0x1[0m
+[0;32mI (169633) RC_CT: AVRC event notification: 2[0m
+[0;32mI (169633) BT_LOG: bta_av_link_role_ok hndl:x41 role:1 conn_audio:x1 bits:1 features:x864b[0m
+
+[0;32mI (169653) BT_AV: A2DP audio state: Started[0m
+[0;32mI (169653) RC_CT: AVRC metadata rsp: attribute id 0x1, Monica - Lyric Video| COOLIE | Superstar Rajinikanth | Sun Pictures | Lokesh | Anirudh | Pooja Hegde[0m
+[0;32mI (169663) RC_CT: AVRC metadata rsp: attribute id 0x2, Sun TV[0m
+[0;32mI (169683) RC_TG: Volume is set locally to: 48%[0m
+[0;32mI (169713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (169773) BT_APP_CORE: ringbuffer data increased! mode changed: RINGBUFFER_MODE_PROCESSING[0m
+[0;32mI (171083) RC_TG: AVRC set absolute volume: 45%[0m
+[0;32mI (171083) RC_TG: Volume is set by remote controller to: 45%[0m
+[0;32mI (171283) RC_TG: AVRC set absolute volume: 44%[0m
+[0;32mI (171283) RC_TG: Volume is set by remote controller to: 44%[0m
+[0;32mI (171703) RC_TG: AVRC set absolute volume: 41%[0m
+[0;32mI (171703) RC_TG: Volume is set by remote controller to: 41%[0m
+[0;32mI (171993) BT_AV: Audio packet count: 100[0m
+[0;32mI (172093) RC_TG: AVRC set absolute volume: 40%[0m
+[0;32mI (172093) RC_TG: Volume is set by remote controller to: 40%[0m
+[0;32mI (172883) RC_TG: AVRC set absolute volume: 37%[0m
+[0;32mI (172883) RC_TG: Volume is set by remote controller to: 37%[0m
+[0;32mI (173103) RC_TG: AVRC set absolute volume: 36%[0m
+[0;32mI (173103) RC_TG: Volume is set by remote controller to: 36%[0m
+[0;32mI (173293) RC_TG: AVRC set absolute volume: 33%[0m
+[0;32mI (173293) RC_TG: Volume is set by remote controller to: 33%[0m
+[0;32mI (173603) RC_TG: AVRC set absolute volume: 32%[0m
+[0;32mI (173603) RC_TG: Volume is set by remote controller to: 32%[0m
+[0;32mI (173813) RC_TG: AVRC set absolute volume: 29%[0m
+[0;32mI (173813) RC_TG: Volume is set by remote controller to: 29%[0m
+[0;32mI (174303) BT_AV: Audio packet count: 200[0m
+[0;32mI (174963) RC_TG: AVRC set absolute volume: 28%[0m
+[0;32mI (174963) RC_TG: Volume is set by remote controller to: 28%[0m
+[0;32mI (175193) RC_TG: AVRC set absolute volume: 25%[0m
+[0;32mI (175193) RC_TG: Volume is set by remote controller to: 25%[0m
+[0;32mI (175953) RC_TG: AVRC set absolute volume: 23%[0m
+[0;32mI (175953) RC_TG: Volume is set by remote controller to: 23%[0m
+[0;32mI (176183) RC_TG: AVRC set absolute volume: 22%[0m
+[0;32mI (176183) RC_TG: Volume is set by remote controller to: 22%[0m
+[0;32mI (176623) BT_AV: Audio packet count: 300[0m
+[0;32mI (178943) BT_AV: Audio packet count: 400[0m
+[0;32mI (179683) RC_TG: Volume is set locally to: 25%[0m
+[0;32mI (179713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (181263) BT_AV: Audio packet count: 500[0m
+[0;32mI (183583) BT_AV: Audio packet count: 600[0m
+[0;32mI (185913) BT_AV: Audio packet count: 700[0m
+[0;32mI (188233) BT_AV: Audio packet count: 800[0m
+[0;32mI (189683) RC_TG: Volume is set locally to: 29%[0m
+[0;32mI (189723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (190543) BT_AV: Audio packet count: 900[0m
+[0;32mI (192863) BT_AV: Audio packet count: 1000[0m
+[0;32mI (195193) BT_AV: Audio packet count: 1100[0m
+[0;32mI (197513) BT_AV: Audio packet count: 1200[0m
+[0;32mI (199683) RC_TG: Volume is set locally to: 33%[0m
+[0;32mI (199703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (199833) BT_AV: Audio packet count: 1300[0m
+[0;32mI (202163) BT_AV: Audio packet count: 1400[0m
+[0;32mI (204473) BT_AV: Audio packet count: 1500[0m
+[0;32mI (205553) RC_TG: AVRC set absolute volume: 36%[0m
+[0;32mI (205553) RC_TG: Volume is set by remote controller to: 36%[0m
+[0;32mI (205783) RC_TG: AVRC set absolute volume: 37%[0m
+[0;32mI (205783) RC_TG: Volume is set by remote controller to: 37%[0m
+[0;32mI (206473) RC_TG: AVRC set absolute volume: 40%[0m
+[0;32mI (206473) RC_TG: Volume is set by remote controller to: 40%[0m
+[0;32mI (206803) BT_AV: Audio packet count: 1600[0m
+[0;32mI (206853) RC_TG: AVRC set absolute volume: 41%[0m
+[0;32mI (206853) RC_TG: Volume is set by remote controller to: 41%[0m
+[0;32mI (209123) BT_AV: Audio packet count: 1700[0m
+[0;32mI (209683) RC_TG: Volume is set locally to: 45%[0m
+[0;32mI (209703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (211443) BT_AV: Audio packet count: 1800[0m
+[0;32mI (213763) BT_AV: Audio packet count: 1900[0m
+[0;32mI (216083) BT_AV: Audio packet count: 2000[0m
+[0;32mI (218413) BT_AV: Audio packet count: 2100[0m
+[0;32mI (219683) RC_TG: Volume is set locally to: 49%[0m
+[0;32mI (219703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (220723) BT_AV: Audio packet count: 2200[0m
+[0;32mI (223053) BT_AV: Audio packet count: 2300[0m
+[0;32mI (225363) BT_AV: Audio packet count: 2400[0m
+[0;32mI (227683) BT_AV: Audio packet count: 2500[0m
+[0;32mI (229683) RC_TG: Volume is set locally to: 53%[0m
+[0;32mI (229723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (230013) BT_AV: Audio packet count: 2600[0m
+[0;32mI (232333) BT_AV: Audio packet count: 2700[0m
+[0;32mI (234653) BT_AV: Audio packet count: 2800[0m
+[0;32mI (236973) BT_AV: Audio packet count: 2900[0m
+[0;32mI (239293) BT_AV: Audio packet count: 3000[0m
+[0;32mI (239683) RC_TG: Volume is set locally to: 57%[0m
+[0;32mI (239703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (241623) BT_AV: Audio packet count: 3100[0m
+[0;32mI (243943) BT_AV: Audio packet count: 3200[0m
+[0;32mI (246263) BT_AV: Audio packet count: 3300[0m
+[0;32mI (248583) BT_AV: Audio packet count: 3400[0m
+[0;32mI (249683) RC_TG: Volume is set locally to: 61%[0m
+[0;32mI (249693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (250903) BT_AV: Audio packet count: 3500[0m
+[0;32mI (253233) BT_AV: Audio packet count: 3600[0m
+[0;32mI (255553) BT_AV: Audio packet count: 3700[0m
+[0;32mI (257873) BT_AV: Audio packet count: 3800[0m
+[0;32mI (259683) RC_TG: Volume is set locally to: 65%[0m
+[0;32mI (259703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (260193) BT_AV: Audio packet count: 3900[0m
+[0;32mI (262503) BT_AV: Audio packet count: 4000[0m
+[0;32mI (264833) BT_AV: Audio packet count: 4100[0m
+[0;32mI (267163) BT_AV: Audio packet count: 4200[0m
+[0;32mI (269473) BT_AV: Audio packet count: 4300[0m
+[0;32mI (269683) RC_TG: Volume is set locally to: 69%[0m
+[0;32mI (269713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (271793) BT_AV: Audio packet count: 4400[0m
+[0;32mI (274113) BT_AV: Audio packet count: 4500[0m
+[0;32mI (276443) BT_AV: Audio packet count: 4600[0m
+[0;32mI (278763) BT_AV: Audio packet count: 4700[0m
+[0;32mI (279683) RC_TG: Volume is set locally to: 73%[0m
+[0;32mI (279703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (281083) BT_AV: Audio packet count: 4800[0m
+[0;32mI (283403) BT_AV: Audio packet count: 4900[0m
+[0;32mI (285723) BT_AV: Audio packet count: 5000[0m
+[0;32mI (288053) BT_AV: Audio packet count: 5100[0m
+[0;32mI (289683) RC_TG: Volume is set locally to: 77%[0m
+[0;32mI (289703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (290373) BT_AV: Audio packet count: 5200[0m
+[0;32mI (292693) BT_AV: Audio packet count: 5300[0m
+[0;32mI (295013) BT_AV: Audio packet count: 5400[0m
+[0;32mI (297333) BT_AV: Audio packet count: 5500[0m
+[0;32mI (299653) BT_AV: Audio packet count: 5600[0m
+[0;32mI (299683) RC_TG: Volume is set locally to: 81%[0m
+[0;32mI (299703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (301973) BT_AV: Audio packet count: 5700[0m
+[0;32mI (304303) BT_AV: Audio packet count: 5800[0m
+[0;32mI (306613) BT_AV: Audio packet count: 5900[0m
+[0;32mI (308933) BT_AV: Audio packet count: 6000[0m
+[0;32mI (309683) RC_TG: Volume is set locally to: 85%[0m
+[0;32mI (309713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (311263) BT_AV: Audio packet count: 6100[0m
+[0;32mI (313583) BT_AV: Audio packet count: 6200[0m
+[0;32mI (315903) BT_AV: Audio packet count: 6300[0m
+[0;32mI (318223) BT_AV: Audio packet count: 6400[0m
+[0;32mI (319683) RC_TG: Volume is set locally to: 88%[0m
+[0;32mI (319693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (320543) BT_AV: Audio packet count: 6500[0m
+[0;32mI (322873) BT_AV: Audio packet count: 6600[0m
+[0;32mI (325193) BT_AV: Audio packet count: 6700[0m
+[0;32mI (327513) BT_AV: Audio packet count: 6800[0m
+[0;32mI (329683) RC_TG: Volume is set locally to: 92%[0m
+[0;32mI (329703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (329823) BT_AV: Audio packet count: 6900[0m
+[0;32mI (332143) BT_AV: Audio packet count: 7000[0m
+[0;32mI (334503) BT_AV: Audio packet count: 7100[0m
+[0;32mI (336793) BT_AV: Audio packet count: 7200[0m
+[0;32mI (339113) BT_AV: Audio packet count: 7300[0m
+[0;32mI (339683) RC_TG: Volume is set locally to: 96%[0m
+[0;32mI (339703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (341433) BT_AV: Audio packet count: 7400[0m
+[0;32mI (343753) BT_AV: Audio packet count: 7500[0m
+[0;32mI (346083) BT_AV: Audio packet count: 7600[0m
+[0;32mI (348403) BT_AV: Audio packet count: 7700[0m
+[0;32mI (349683) RC_TG: Volume is set locally to: 0%[0m
+[0;32mI (349713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (350723) BT_AV: Audio packet count: 7800[0m
+[0;32mI (353043) BT_AV: Audio packet count: 7900[0m
+[0;32mI (355363) BT_AV: Audio packet count: 8000[0m
+[0;32mI (357693) BT_AV: Audio packet count: 8100[0m
+[0;32mI (359683) RC_TG: Volume is set locally to: 3%[0m
+[0;32mI (359713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (360013) BT_AV: Audio packet count: 8200[0m
+[0;32mI (362333) BT_AV: Audio packet count: 8300[0m
+[0;32mI (364653) BT_AV: Audio packet count: 8400[0m
+[0;32mI (366973) BT_AV: Audio packet count: 8500[0m
+[0;32mI (369303) BT_AV: Audio packet count: 8600[0m
+[0;32mI (369683) RC_TG: Volume is set locally to: 7%[0m
+[0;32mI (369713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (371623) BT_AV: Audio packet count: 8700[0m
+[0;32mI (373933) BT_AV: Audio packet count: 8800[0m
+[0;32mI (376253) BT_AV: Audio packet count: 8900[0m
+[0;32mI (378583) BT_AV: Audio packet count: 9000[0m
+[0;32mI (379683) RC_TG: Volume is set locally to: 11%[0m
+[0;32mI (379703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (380903) BT_AV: Audio packet count: 9100[0m
+[0;32mI (383223) BT_AV: Audio packet count: 9200[0m
+[0;32mI (384213) RC_CT: AVRC event notification: 1[0m
+[0;32mI (384213) BT_AV: Playback status changed: 0x0[0m
+[0;32mI (384653) RC_CT: AVRC event notification: 1[0m
+[0;32mI (384653) BT_AV: Playback status changed: 0x1[0m
+[0;32mI (384653) RC_CT: AVRC event notification: 2[0m
+[0;32mI (384693) RC_CT: AVRC metadata rsp: attribute id 0x1, Pottala Muttaye | Thalaivan Thalaivii | Vijay Sethupathi,Nithya Menen |Pandiraaj |Santhosh Narayanan[0m
+[0;32mI (384693) RC_CT: AVRC metadata rsp: attribute id 0x2, Think Music India[0m
+[0;32mI (385543) BT_AV: Audio packet count: 9300[0m
+[0;32mI (387863) BT_AV: Audio packet count: 9400[0m
+[0;32mI (389683) RC_TG: Volume is set locally to: 15%[0m
+[0;32mI (389703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (390183) BT_AV: Audio packet count: 9500[0m
+[0;32mI (392523) BT_AV: Audio packet count: 9600[0m
+[0;32mI (394833) BT_AV: Audio packet count: 9700[0m
+[0;32mI (397153) BT_AV: Audio packet count: 9800[0m
+[0;32mI (399473) BT_AV: Audio packet count: 9900[0m
+[0;32mI (399683) RC_TG: Volume is set locally to: 19%[0m
+[0;32mI (399703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (401793) BT_AV: Audio packet count: 10000[0m
+[0;32mI (404123) BT_AV: Audio packet count: 10100[0m
+[0;32mI (406443) BT_AV: Audio packet count: 10200[0m
+[0;32mI (408753) BT_AV: Audio packet count: 10300[0m
+[0;32mI (409683) RC_TG: Volume is set locally to: 23%[0m
+[0;32mI (409713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (411073) BT_AV: Audio packet count: 10400[0m
+[0;32mI (413393) BT_AV: Audio packet count: 10500[0m
+[0;32mI (415723) BT_AV: Audio packet count: 10600[0m
+[0;32mI (418043) BT_AV: Audio packet count: 10700[0m
+[0;32mI (419683) RC_TG: Volume is set locally to: 27%[0m
+[0;32mI (419703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (420363) BT_AV: Audio packet count: 10800[0m
+[0;32mI (422683) BT_AV: Audio packet count: 10900[0m
+[0;32mI (425003) BT_AV: Audio packet count: 11000[0m
+[0;32mI (427333) BT_AV: Audio packet count: 11100[0m
+[0;32mI (429653) BT_AV: Audio packet count: 11200[0m
+[0;32mI (429683) RC_TG: Volume is set locally to: 31%[0m
+[0;32mI (429703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (431973) BT_AV: Audio packet count: 11300[0m
+[0;32mI (434293) BT_AV: Audio packet count: 11400[0m
+[0;32mI (436613) BT_AV: Audio packet count: 11500[0m
+[0;32mI (438943) BT_AV: Audio packet count: 11600[0m
+[0;32mI (439683) RC_TG: Volume is set locally to: 35%[0m
+[0;32mI (439703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (441263) BT_AV: Audio packet count: 11700[0m
+[0;32mI (443583) BT_AV: Audio packet count: 11800[0m
+[0;32mI (445903) BT_AV: Audio packet count: 11900[0m
+[0;32mI (448213) BT_AV: Audio packet count: 12000[0m
+[0;32mI (449683) RC_TG: Volume is set locally to: 39%[0m
+[0;32mI (449713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (450553) BT_AV: Audio packet count: 12100[0m
+[0;32mI (452863) BT_AV: Audio packet count: 12200[0m
+[0;32mI (455183) BT_AV: Audio packet count: 12300[0m
+[0;32mI (457503) BT_AV: Audio packet count: 12400[0m
+[0;32mI (459683) RC_TG: Volume is set locally to: 43%[0m
+[0;32mI (459703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (459833) BT_AV: Audio packet count: 12500[0m
+[0;32mI (462153) BT_AV: Audio packet count: 12600[0m
+[0;32mI (464473) BT_AV: Audio packet count: 12700[0m
+[0;32mI (466793) BT_AV: Audio packet count: 12800[0m
+[0;32mI (469113) BT_AV: Audio packet count: 12900[0m
+[0;32mI (469683) RC_TG: Volume is set locally to: 47%[0m
+[0;32mI (469703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (471433) BT_AV: Audio packet count: 13000[0m
+[0;32mI (473763) BT_AV: Audio packet count: 13100[0m
+[0;32mI (476083) BT_AV: Audio packet count: 13200[0m
+[0;32mI (478403) BT_AV: Audio packet count: 13300[0m
+[0;32mI (479683) RC_TG: Volume is set locally to: 51%[0m
+[0;32mI (479703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (480723) BT_AV: Audio packet count: 13400[0m
+[0;32mI (483043) BT_AV: Audio packet count: 13500[0m
+[0;32mI (485363) BT_AV: Audio packet count: 13600[0m
+[0;32mI (487683) BT_AV: Audio packet count: 13700[0m
+[0;32mI (489683) RC_TG: Volume is set locally to: 55%[0m
+[0;32mI (489713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (490003) BT_AV: Audio packet count: 13800[0m
+[0;32mI (492323) BT_AV: Audio packet count: 13900[0m
+[0;32mI (494653) BT_AV: Audio packet count: 14000[0m
+[0;32mI (496973) BT_AV: Audio packet count: 14100[0m
+[0;32mI (499293) BT_AV: Audio packet count: 14200[0m
+[0;32mI (499683) RC_TG: Volume is set locally to: 59%[0m
+[0;32mI (499713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (501613) BT_AV: Audio packet count: 14300[0m
+[0;32mI (503933) BT_AV: Audio packet count: 14400[0m
+[0;32mI (506253) BT_AV: Audio packet count: 14500[0m
+[0;32mI (508583) BT_AV: Audio packet count: 14600[0m
+[0;32mI (509683) RC_TG: Volume is set locally to: 62%[0m
+[0;32mI (509693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (510903) BT_AV: Audio packet count: 14700[0m
+[0;33mW (513103) BT_APP_CORE: ringbuffer overflowed, ready to decrease data! mode changed: RINGBUFFER_MODE_DROPPING[0m
+[0;33mW (513133) BT_APP_CORE: ringbuffer is full, drop this packet![0m
+[0;33mW (513153) BT_APP_CORE: ringbuffer is full, drop this packet![0m
+[0;32mI (513153) BT_APP_CORE: ringbuffer data decreased! mode changed: RINGBUFFER_MODE_PROCESSING[0m
+[0;32mI (513223) BT_AV: Audio packet count: 14800[0m
+[0;32mI (515543) BT_AV: Audio packet count: 14900[0m
+[0;32mI (517863) BT_AV: Audio packet count: 15000[0m
+[0;32mI (519683) RC_TG: Volume is set locally to: 66%[0m
+[0;32mI (519703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (520193) BT_AV: Audio packet count: 15100[0m
+[0;32mI (522513) BT_AV: Audio packet count: 15200[0m
+[0;32mI (524833) BT_AV: Audio packet count: 15300[0m
+[0;32mI (527143) BT_AV: Audio packet count: 15400[0m
+[0;32mI (529463) BT_AV: Audio packet count: 15500[0m
+[0;32mI (529683) RC_TG: Volume is set locally to: 70%[0m
+[0;32mI (529703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (531793) BT_AV: Audio packet count: 15600[0m
+[0;32mI (534113) BT_AV: Audio packet count: 15700[0m
+[0;32mI (536433) BT_AV: Audio packet count: 15800[0m
+[0;32mI (538753) BT_AV: Audio packet count: 15900[0m
+[0;32mI (539683) RC_TG: Volume is set locally to: 74%[0m
+[0;32mI (539713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (541073) BT_AV: Audio packet count: 16000[0m
+[0;32mI (543403) BT_AV: Audio packet count: 16100[0m
+[0;32mI (545723) BT_AV: Audio packet count: 16200[0m
+[0;32mI (548043) BT_AV: Audio packet count: 16300[0m
+[0;32mI (549683) RC_TG: Volume is set locally to: 78%[0m
+[0;32mI (549713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (550363) BT_AV: Audio packet count: 16400[0m
+[0;32mI (552683) BT_AV: Audio packet count: 16500[0m
+[0;32mI (555013) BT_AV: Audio packet count: 16600[0m
+[0;32mI (557333) BT_AV: Audio packet count: 16700[0m
+[0;32mI (559653) BT_AV: Audio packet count: 16800[0m
+[0;32mI (559683) RC_TG: Volume is set locally to: 82%[0m
+[0;32mI (559693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (561963) BT_AV: Audio packet count: 16900[0m
+[0;32mI (564283) BT_AV: Audio packet count: 17000[0m
+[0;32mI (566613) BT_AV: Audio packet count: 17100[0m
+[0;32mI (568943) BT_AV: Audio packet count: 17200[0m
+[0;32mI (569683) RC_TG: Volume is set locally to: 86%[0m
+[0;32mI (569703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (571253) BT_AV: Audio packet count: 17300[0m
+[0;32mI (573573) BT_AV: Audio packet count: 17400[0m
+[0;32mI (575893) BT_AV: Audio packet count: 17500[0m
+[0;32mI (578223) BT_AV: Audio packet count: 17600[0m
+[0;32mI (579683) RC_TG: Volume is set locally to: 90%[0m
+[0;32mI (579703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (580543) BT_AV: Audio packet count: 17700[0m
+[0;32mI (582863) BT_AV: Audio packet count: 17800[0m
+[0;32mI (585183) BT_AV: Audio packet count: 17900[0m
+[0;32mI (587503) BT_AV: Audio packet count: 18000[0m
+[0;32mI (589683) RC_TG: Volume is set locally to: 94%[0m
+[0;32mI (589693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (589833) BT_AV: Audio packet count: 18100[0m
+[0;32mI (592153) BT_AV: Audio packet count: 18200[0m
+[0;32mI (594473) BT_AV: Audio packet count: 18300[0m
+[0;32mI (596793) BT_AV: Audio packet count: 18400[0m
+[0;32mI (599113) BT_AV: Audio packet count: 18500[0m
+[0;32mI (599683) RC_TG: Volume is set locally to: 98%[0m
+[0;32mI (599723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (601433) BT_AV: Audio packet count: 18600[0m
+[0;32mI (603753) BT_AV: Audio packet count: 18700[0m
+[0;32mI (606073) BT_AV: Audio packet count: 18800[0m
+[0;32mI (608393) BT_AV: Audio packet count: 18900[0m
+[0;32mI (609683) RC_TG: Volume is set locally to: 1%[0m
+[0;32mI (609703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (610713) BT_AV: Audio packet count: 19000[0m
+[0;32mI (613043) BT_AV: Audio packet count: 19100[0m
+[0;32mI (615363) BT_AV: Audio packet count: 19200[0m
+[0;32mI (617683) BT_AV: Audio packet count: 19300[0m
+[0;32mI (619683) RC_TG: Volume is set locally to: 5%[0m
+[0;32mI (619713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (620003) BT_AV: Audio packet count: 19400[0m
+[0;32mI (622323) BT_AV: Audio packet count: 19500[0m
+[0;32mI (622633) RC_CT: AVRC event notification: 1[0m
+[0;32mI (622633) BT_AV: Playback status changed: 0x0[0m
+[0;32mI (623073) RC_CT: AVRC event notification: 1[0m
+[0;32mI (623073) BT_AV: Playback status changed: 0x1[0m
+[0;32mI (623073) RC_CT: AVRC event notification: 2[0m
+[0;32mI (623103) RC_CT: AVRC metadata rsp: attribute id 0x1, Narivetta - Minnalvala Video Song | Tovino Thomas, Anuraj Manohar, Jakes Bejoy, Sid Sriram, Sithara[0m
+[0;32mI (623103) RC_CT: AVRC metadata rsp: attribute id 0x2, Sony Music South[0m
+[0;32mI (624653) BT_AV: Audio packet count: 19600[0m
+[0;32mI (626973) BT_AV: Audio packet count: 19700[0m
+[0;32mI (629293) BT_AV: Audio packet count: 19800[0m
+[0;32mI (629683) RC_TG: Volume is set locally to: 9%[0m
+[0;32mI (629703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (631613) BT_AV: Audio packet count: 19900[0m
+[0;32mI (633933) BT_AV: Audio packet count: 20000[0m
+[0;32mI (636263) BT_AV: Audio packet count: 20100[0m
+[0;32mI (638573) BT_AV: Audio packet count: 20200[0m
+[0;32mI (639683) RC_TG: Volume is set locally to: 13%[0m
+[0;32mI (639713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (640893) BT_AV: Audio packet count: 20300[0m
+[0;32mI (643213) BT_AV: Audio packet count: 20400[0m
+[0;32mI (645533) BT_AV: Audio packet count: 20500[0m
+[0;32mI (647863) BT_AV: Audio packet count: 20600[0m
+[0;32mI (649683) RC_TG: Volume is set locally to: 17%[0m
+[0;32mI (649703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (650183) BT_AV: Audio packet count: 20700[0m
+[0;32mI (652503) BT_AV: Audio packet count: 20800[0m
+[0;32mI (654823) BT_AV: Audio packet count: 20900[0m
+[0;32mI (657143) BT_AV: Audio packet count: 21000[0m
+[0;32mI (659483) BT_AV: Audio packet count: 21100[0m
+[0;32mI (659683) RC_TG: Volume is set locally to: 21%[0m
+[0;32mI (659713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (661793) BT_AV: Audio packet count: 21200[0m
+[0;32mI (664113) BT_AV: Audio packet count: 21300[0m
+[0;32mI (666433) BT_AV: Audio packet count: 21400[0m
+[0;32mI (668753) BT_AV: Audio packet count: 21500[0m
+[0;32mI (669683) RC_TG: Volume is set locally to: 25%[0m
+[0;32mI (669723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (671083) BT_AV: Audio packet count: 21600[0m
+[0;32mI (673403) BT_AV: Audio packet count: 21700[0m
+[0;32mI (675723) BT_AV: Audio packet count: 21800[0m
+[0;32mI (678043) BT_AV: Audio packet count: 21900[0m
+[0;32mI (679683) RC_TG: Volume is set locally to: 29%[0m
+[0;32mI (679713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (680363) BT_AV: Audio packet count: 22000[0m
+[0;32mI (682683) BT_AV: Audio packet count: 22100[0m
+[0;32mI (685003) BT_AV: Audio packet count: 22200[0m
+[0;32mI (687323) BT_AV: Audio packet count: 22300[0m
+[0;32mI (689643) BT_AV: Audio packet count: 22400[0m
+[0;32mI (689683) RC_TG: Volume is set locally to: 33%[0m
+[0;32mI (689693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (691963) BT_AV: Audio packet count: 22500[0m
+[0;32mI (694303) BT_AV: Audio packet count: 22600[0m
+[0;32mI (696613) BT_AV: Audio packet count: 22700[0m
+[0;32mI (698933) BT_AV: Audio packet count: 22800[0m
+[0;32mI (699683) RC_TG: Volume is set locally to: 37%[0m
+[0;32mI (699703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (701253) BT_AV: Audio packet count: 22900[0m
+[0;32mI (703573) BT_AV: Audio packet count: 23000[0m
+[0;32mI (705903) BT_AV: Audio packet count: 23100[0m
+[0;32mI (708223) BT_AV: Audio packet count: 23200[0m
+[0;32mI (709683) RC_TG: Volume is set locally to: 40%[0m
+[0;32mI (709703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (710543) BT_AV: Audio packet count: 23300[0m
+[0;32mI (712853) BT_AV: Audio packet count: 23400[0m
+[0;32mI (715183) BT_AV: Audio packet count: 23500[0m
+[0;32mI (717503) BT_AV: Audio packet count: 23600[0m
+[0;32mI (719683) RC_TG: Volume is set locally to: 44%[0m
+[0;32mI (719713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (719823) BT_AV: Audio packet count: 23700[0m
+[0;32mI (722143) BT_AV: Audio packet count: 23800[0m
+[0;32mI (724463) BT_AV: Audio packet count: 23900[0m
+[0;32mI (726783) BT_AV: Audio packet count: 24000[0m
+[0;32mI (729113) BT_AV: Audio packet count: 24100[0m
+[0;32mI (729683) RC_TG: Volume is set locally to: 48%[0m
+[0;32mI (729703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (731433) BT_AV: Audio packet count: 24200[0m
+[0;32mI (733753) BT_AV: Audio packet count: 24300[0m
+[0;32mI (736073) BT_AV: Audio packet count: 24400[0m
+[0;32mI (738393) BT_AV: Audio packet count: 24500[0m
+[0;32mI (739683) RC_TG: Volume is set locally to: 52%[0m
+[0;32mI (739723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (740723) BT_AV: Audio packet count: 24600[0m
+[0;32mI (743043) BT_AV: Audio packet count: 24700[0m
+[0;32mI (745363) BT_AV: Audio packet count: 24800[0m
+[0;32mI (747683) BT_AV: Audio packet count: 24900[0m
+[0;32mI (749683) RC_TG: Volume is set locally to: 56%[0m
+[0;32mI (749713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (750003) BT_AV: Audio packet count: 25000[0m
+[0;32mI (752333) BT_AV: Audio packet count: 25100[0m
+[0;32mI (754643) BT_AV: Audio packet count: 25200[0m
+[0;32mI (756963) BT_AV: Audio packet count: 25300[0m
+[0;32mI (759283) BT_AV: Audio packet count: 25400[0m
+[0;32mI (759683) RC_TG: Volume is set locally to: 60%[0m
+[0;32mI (759713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (761603) BT_AV: Audio packet count: 25500[0m
+[0;32mI (763933) BT_AV: Audio packet count: 25600[0m
+[0;32mI (766253) BT_AV: Audio packet count: 25700[0m
+[0;32mI (768573) BT_AV: Audio packet count: 25800[0m
+[0;32mI (769683) RC_TG: Volume is set locally to: 64%[0m
+[0;32mI (769713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (770893) BT_AV: Audio packet count: 25900[0m
+[0;32mI (773213) BT_AV: Audio packet count: 26000[0m
+[0;32mI (775543) BT_AV: Audio packet count: 26100[0m
+[0;32mI (777863) BT_AV: Audio packet count: 26200[0m
+[0;32mI (779683) RC_TG: Volume is set locally to: 68%[0m
+[0;32mI (779723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;33mW (779853) BT_APP_CORE: ringbuffer overflowed, ready to decrease data! mode changed: RINGBUFFER_MODE_DROPPING[0m
+[0;33mW (779883) BT_APP_CORE: ringbuffer is full, drop this packet![0m
+[0;32mI (779883) BT_APP_CORE: ringbuffer data decreased! mode changed: RINGBUFFER_MODE_PROCESSING[0m
+[0;32mI (780183) BT_AV: Audio packet count: 26300[0m
+[0;32mI (782503) BT_AV: Audio packet count: 26400[0m
+[0;32mI (784823) BT_AV: Audio packet count: 26500[0m
+[0;32mI (787143) BT_AV: Audio packet count: 26600[0m
+[0;32mI (789473) BT_AV: Audio packet count: 26700[0m
+[0;32mI (789683) RC_TG: Volume is set locally to: 72%[0m
+[0;32mI (789703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (791783) BT_AV: Audio packet count: 26800[0m
+[0;32mI (794103) BT_AV: Audio packet count: 26900[0m
+[0;32mI (796433) BT_AV: Audio packet count: 27000[0m
+[0;32mI (798753) BT_AV: Audio packet count: 27100[0m
+[0;32mI (799683) RC_TG: Volume is set locally to: 76%[0m
+[0;32mI (799723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (801073) BT_AV: Audio packet count: 27200[0m
+[0;32mI (803393) BT_AV: Audio packet count: 27300[0m
+[0;32mI (805713) BT_AV: Audio packet count: 27400[0m
+[0;32mI (808033) BT_AV: Audio packet count: 27500[0m
+[0;32mI (809683) RC_TG: Volume is set locally to: 80%[0m
+[0;32mI (809713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (810363) BT_AV: Audio packet count: 27600[0m
+[0;32mI (812683) BT_AV: Audio packet count: 27700[0m
+[0;32mI (815003) BT_AV: Audio packet count: 27800[0m
+[0;32mI (817323) BT_AV: Audio packet count: 27900[0m
+[0;32mI (819643) BT_AV: Audio packet count: 28000[0m
+[0;32mI (819683) RC_TG: Volume is set locally to: 84%[0m
+[0;32mI (819713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (821973) BT_AV: Audio packet count: 28100[0m
+[0;32mI (824293) BT_AV: Audio packet count: 28200[0m
+[0;32mI (826613) BT_AV: Audio packet count: 28300[0m
+[0;32mI (828923) BT_AV: Audio packet count: 28400[0m
+[0;32mI (829683) RC_TG: Volume is set locally to: 88%[0m
+[0;32mI (829703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (831243) BT_AV: Audio packet count: 28500[0m
+[0;32mI (833573) BT_AV: Audio packet count: 28600[0m
+[0;32mI (835893) BT_AV: Audio packet count: 28700[0m
+[0;32mI (838213) BT_AV: Audio packet count: 28800[0m
+[0;32mI (839683) RC_TG: Volume is set locally to: 92%[0m
+[0;32mI (839703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (840533) BT_AV: Audio packet count: 28900[0m
+[0;32mI (842853) BT_AV: Audio packet count: 29000[0m
+[0;32mI (845183) BT_AV: Audio packet count: 29100[0m
+[0;32mI (847503) BT_AV: Audio packet count: 29200[0m
+[0;32mI (849683) RC_TG: Volume is set locally to: 96%[0m
+[0;32mI (849713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (849823) BT_AV: Audio packet count: 29300[0m
+[0;32mI (851803) RC_CT: AVRC event notification: 1[0m
+[0;32mI (851803) BT_AV: Playback status changed: 0x0[0m
+[0;32mI (852143) BT_AV: Audio packet count: 29400[0m
+[0;32mI (852273) BT_AV: A2DP audio state: Suspended[0m
+[0;32mI (852353) BT_LOG: bta_av_link_role_ok hndl:x41 role:1 conn_audio:x1 bits:1 features:x864b[0m
+
+[0;32mI (852363) BT_AV: A2DP audio state: Started[0m
+[0;32mI (852383) RC_CT: AVRC event notification: 1[0m
+[0;32mI (852383) BT_AV: Playback status changed: 0x1[0m
+[0;32mI (852383) RC_CT: AVRC event notification: 2[0m
+[0;32mI (852393) RC_CT: AVRC metadata rsp: attribute id 0x1, THE ONE - RETRO | Suriya | Karthik Subbaraj | Santhosh Narayanan | Sid Sriram | SVDP | Vivek[0m
+[0;32mI (852403) BT_APP_CORE: ringbuffer underflowed! mode changed: RINGBUFFER_MODE_PREFETCHING[0m
+[0;32mI (852403) RC_CT: AVRC metadata rsp: attribute id 0x2, T-Series Tamil[0m
+[0;32mI (852493) BT_APP_CORE: ringbuffer data increased! mode changed: RINGBUFFER_MODE_PROCESSING[0m
+[0;32mI (854703) BT_AV: Audio packet count: 100[0m
+[0;32mI (857033) BT_AV: Audio packet count: 200[0m
+[0;32mI (859343) BT_AV: Audio packet count: 300[0m
+[0;32mI (859683) RC_TG: Volume is set locally to: 100%[0m
+[0;32mI (859693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (861663) BT_AV: Audio packet count: 400[0m
+[0;32mI (863983) BT_AV: Audio packet count: 500[0m
+[0;32mI (866313) BT_AV: Audio packet count: 600[0m
+[0;32mI (868623) BT_AV: Audio packet count: 700[0m
+[0;32mI (869683) RC_TG: Volume is set locally to: 3%[0m
+[0;32mI (869703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (870943) BT_AV: Audio packet count: 800[0m
+[0;32mI (873273) BT_AV: Audio packet count: 900[0m
+[0;32mI (875583) BT_AV: Audio packet count: 1000[0m
+[0;32mI (877913) BT_AV: Audio packet count: 1100[0m
+[0;32mI (879683) RC_TG: Volume is set locally to: 7%[0m
+[0;32mI (879703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (880233) BT_AV: Audio packet count: 1200[0m
+[0;32mI (882553) BT_AV: Audio packet count: 1300[0m
+[0;32mI (884873) BT_AV: Audio packet count: 1400[0m
+[0;32mI (887193) BT_AV: Audio packet count: 1500[0m
+[0;32mI (889523) BT_AV: Audio packet count: 1600[0m
+[0;32mI (889683) RC_TG: Volume is set locally to: 11%[0m
+[0;32mI (889703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (891843) BT_AV: Audio packet count: 1700[0m
+[0;32mI (894163) BT_AV: Audio packet count: 1800[0m
+[0;32mI (896483) BT_AV: Audio packet count: 1900[0m
+[0;32mI (898803) BT_AV: Audio packet count: 2000[0m
+[0;32mI (899683) RC_TG: Volume is set locally to: 14%[0m
+[0;32mI (899703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (901133) BT_AV: Audio packet count: 2100[0m
+[0;32mI (903453) BT_AV: Audio packet count: 2200[0m
+[0;32mI (905773) BT_AV: Audio packet count: 2300[0m
+[0;32mI (908093) BT_AV: Audio packet count: 2400[0m
+[0;32mI (909683) RC_TG: Volume is set locally to: 18%[0m
+[0;32mI (909713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (910413) BT_AV: Audio packet count: 2500[0m
+[0;32mI (912733) BT_AV: Audio packet count: 2600[0m
+[0;32mI (915053) BT_AV: Audio packet count: 2700[0m
+[0;32mI (917373) BT_AV: Audio packet count: 2800[0m
+[0;32mI (919683) RC_TG: Volume is set locally to: 22%[0m
+[0;32mI (919703) BT_AV: Audio packet count: 2900[0m
+[0;32mI (919703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (922013) BT_AV: Audio packet count: 3000[0m
+[0;32mI (924343) BT_AV: Audio packet count: 3100[0m
+[0;32mI (926663) BT_AV: Audio packet count: 3200[0m
+[0;32mI (928983) BT_AV: Audio packet count: 3300[0m
+[0;32mI (929683) RC_TG: Volume is set locally to: 26%[0m
+[0;32mI (929703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (931303) BT_AV: Audio packet count: 3400[0m
+[0;32mI (933623) BT_AV: Audio packet count: 3500[0m
+[0;32mI (935963) BT_AV: Audio packet count: 3600[0m
+[0;32mI (938273) BT_AV: Audio packet count: 3700[0m
+[0;32mI (939683) RC_TG: Volume is set locally to: 30%[0m
+[0;32mI (939713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (940593) BT_AV: Audio packet count: 3800[0m
+[0;32mI (942913) BT_AV: Audio packet count: 3900[0m
+[0;32mI (945233) BT_AV: Audio packet count: 4000[0m
+[0;32mI (947563) BT_AV: Audio packet count: 4100[0m
+[0;32mI (949683) RC_TG: Volume is set locally to: 34%[0m
+[0;32mI (949723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (949873) BT_AV: Audio packet count: 4200[0m
+[0;32mI (952193) BT_AV: Audio packet count: 4300[0m
+[0;32mI (954523) BT_AV: Audio packet count: 4400[0m
+[0;32mI (956833) BT_AV: Audio packet count: 4500[0m
+[0;32mI (959163) BT_AV: Audio packet count: 4600[0m
+[0;32mI (959683) RC_TG: Volume is set locally to: 38%[0m
+[0;32mI (959703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (961483) BT_AV: Audio packet count: 4700[0m
+[0;32mI (963803) BT_AV: Audio packet count: 4800[0m
+[0;32mI (966123) BT_AV: Audio packet count: 4900[0m
+[0;32mI (968443) BT_AV: Audio packet count: 5000[0m
+[0;32mI (969683) RC_TG: Volume is set locally to: 42%[0m
+[0;32mI (969703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (970773) BT_AV: Audio packet count: 5100[0m
+[0;32mI (973093) BT_AV: Audio packet count: 5200[0m
+[0;32mI (975413) BT_AV: Audio packet count: 5300[0m
+[0;32mI (977733) BT_AV: Audio packet count: 5400[0m
+[0;32mI (979683) RC_TG: Volume is set locally to: 46%[0m
+[0;32mI (979713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (980053) BT_AV: Audio packet count: 5500[0m
+[0;32mI (982383) BT_AV: Audio packet count: 5600[0m
+[0;32mI (984703) BT_AV: Audio packet count: 5700[0m
+[0;32mI (987013) BT_AV: Audio packet count: 5800[0m
+[0;32mI (989333) BT_AV: Audio packet count: 5900[0m
+[0;32mI (989683) RC_TG: Volume is set locally to: 50%[0m
+[0;32mI (989723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (991653) BT_AV: Audio packet count: 6000[0m
+[0;32mI (993993) BT_AV: Audio packet count: 6100[0m
+[0;32mI (996303) BT_AV: Audio packet count: 6200[0m
+[0;32mI (998623) BT_AV: Audio packet count: 6300[0m
+[0;32mI (999683) RC_TG: Volume is set locally to: 54%[0m
+[0;32mI (999703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1000943) BT_AV: Audio packet count: 6400[0m
+[0;32mI (1003263) BT_AV: Audio packet count: 6500[0m
+[0;32mI (1005593) BT_AV: Audio packet count: 6600[0m
+[0;32mI (1007913) BT_AV: Audio packet count: 6700[0m
+[0;32mI (1009683) RC_TG: Volume is set locally to: 58%[0m
+[0;32mI (1009703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1010233) BT_AV: Audio packet count: 6800[0m
+[0;32mI (1012553) BT_AV: Audio packet count: 6900[0m
+[0;32mI (1014873) BT_AV: Audio packet count: 7000[0m
+[0;32mI (1017203) BT_AV: Audio packet count: 7100[0m
+[0;32mI (1019523) BT_AV: Audio packet count: 7200[0m
+[0;32mI (1019683) RC_TG: Volume is set locally to: 62%[0m
+[0;32mI (1019703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1021843) BT_AV: Audio packet count: 7300[0m
+[0;32mI (1024163) BT_AV: Audio packet count: 7400[0m
+[0;32mI (1026483) BT_AV: Audio packet count: 7500[0m
+[0;32mI (1028803) BT_AV: Audio packet count: 7600[0m
+[0;32mI (1029683) RC_TG: Volume is set locally to: 66%[0m
+[0;32mI (1029733) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1031123) BT_AV: Audio packet count: 7700[0m
+[0;32mI (1033443) BT_AV: Audio packet count: 7800[0m
+[0;32mI (1035763) BT_AV: Audio packet count: 7900[0m
+[0;32mI (1038083) BT_AV: Audio packet count: 8000[0m
+[0;32mI (1039683) RC_TG: Volume is set locally to: 70%[0m
+[0;32mI (1039703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1040413) BT_AV: Audio packet count: 8100[0m
+[0;32mI (1042733) BT_AV: Audio packet count: 8200[0m
+[0;32mI (1045053) BT_AV: Audio packet count: 8300[0m
+[0;32mI (1047373) BT_AV: Audio packet count: 8400[0m
+[0;32mI (1049683) RC_TG: Volume is set locally to: 74%[0m
+[0;32mI (1049693) BT_AV: Audio packet count: 8500[0m
+[0;32mI (1049693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1052023) BT_AV: Audio packet count: 8600[0m
+[0;32mI (1054343) BT_AV: Audio packet count: 8700[0m
+[0;32mI (1056663) BT_AV: Audio packet count: 8800[0m
+[0;32mI (1058983) BT_AV: Audio packet count: 8900[0m
+[0;32mI (1059683) RC_TG: Volume is set locally to: 77%[0m
+[0;32mI (1059703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1061303) BT_AV: Audio packet count: 9000[0m
+[0;32mI (1063623) BT_AV: Audio packet count: 9100[0m
+[0;32mI (1065943) BT_AV: Audio packet count: 9200[0m
+[0;32mI (1068263) BT_AV: Audio packet count: 9300[0m
+[0;32mI (1069683) RC_TG: Volume is set locally to: 81%[0m
+[0;32mI (1069713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1070593) BT_AV: Audio packet count: 9400[0m
+[0;32mI (1072903) BT_AV: Audio packet count: 9500[0m
+[0;32mI (1075233) BT_AV: Audio packet count: 9600[0m
+[0;32mI (1077553) BT_AV: Audio packet count: 9700[0m
+[0;32mI (1079683) RC_TG: Volume is set locally to: 85%[0m
+[0;32mI (1079713) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1079873) BT_AV: Audio packet count: 9800[0m
+[0;32mI (1082193) BT_AV: Audio packet count: 9900[0m
+[0;32mI (1084513) BT_AV: Audio packet count: 10000[0m
+[0;32mI (1086843) BT_AV: Audio packet count: 10100[0m
+[0;32mI (1089163) BT_AV: Audio packet count: 10200[0m
+[0;32mI (1089683) RC_TG: Volume is set locally to: 89%[0m
+[0;32mI (1089693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1091483) BT_AV: Audio packet count: 10300[0m
+[0;32mI (1093803) BT_AV: Audio packet count: 10400[0m
+[0;32mI (1093803) RC_CT: AVRC event notification: 1[0m
+[0;32mI (1093803) BT_AV: Playback status changed: 0x0[0m
+[0;32mI (1094293) BT_AV: A2DP audio state: Suspended[0m
+[0;32mI (1094443) BT_APP_CORE: ringbuffer underflowed! mode changed: RINGBUFFER_MODE_PREFETCHING[0m
+[0;33mW (1097483) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (1097513) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (1097513) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;33mW (1098443) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (1098453) BT_LOG: bta_av_link_role_ok hndl:x41 role:1 conn_audio:x1 bits:1 features:x864b[0m
+
+[0;32mI (1098453) BT_AV: A2DP audio state: Started[0m
+[0;32mI (1098453) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;32mI (1098473) RC_CT: AVRC event notification: 1[0m
+[0;32mI (1098473) BT_AV: Playback status changed: 0x1[0m
+[0;32mI (1098473) RC_CT: AVRC event notification: 2[0m
+[0;32mI (1098513) RC_CT: AVRC metadata rsp: attribute id 0x1, Pathikichu Video Song | Vidaamuyarchi  | Ajith Kumar | Trisha | Anirudh Ravichander[0m
+[0;32mI (1098513) RC_CT: AVRC metadata rsp: attribute id 0x2, Sony Music South[0m
+[0;32mI (1098573) BT_APP_CORE: ringbuffer data increased! mode changed: RINGBUFFER_MODE_PROCESSING[0m
+[0;32mI (1099683) RC_TG: Volume is set locally to: 93%[0m
+[0;32mI (1099693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1100783) BT_AV: Audio packet count: 100[0m
+[0;32mI (1103103) BT_AV: Audio packet count: 200[0m
+[0;32mI (1105423) BT_AV: Audio packet count: 300[0m
+[0;32mI (1107743) BT_AV: Audio packet count: 400[0m
+[0;32mI (1109683) RC_TG: Volume is set locally to: 97%[0m
+[0;32mI (1109723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1110073) BT_AV: Audio packet count: 500[0m
+[0;32mI (1112393) BT_AV: Audio packet count: 600[0m
+[0;32mI (1114713) BT_AV: Audio packet count: 700[0m
+[0;32mI (1117033) BT_AV: Audio packet count: 800[0m
+[0;32mI (1119353) BT_AV: Audio packet count: 900[0m
+[0;32mI (1119683) RC_TG: Volume is set locally to: 0%[0m
+[0;32mI (1119703) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1121683) BT_AV: Audio packet count: 1000[0m
+[0;32mI (1124003) BT_AV: Audio packet count: 1100[0m
+[0;32mI (1126313) BT_AV: Audio packet count: 1200[0m
+[0;32mI (1128633) BT_AV: Audio packet count: 1300[0m
+[0;32mI (1129683) RC_TG: Volume is set locally to: 4%[0m
+[0;32mI (1129723) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1130953) BT_AV: Audio packet count: 1400[0m
+[0;32mI (1133283) BT_AV: Audio packet count: 1500[0m
+[0;32mI (1135613) BT_AV: Audio packet count: 1600[0m
+[0;32mI (1137923) BT_AV: Audio packet count: 1700[0m
+[0;32mI (1139283) RC_CT: AVRC event notification: 1[0m
+[0;32mI (1139283) BT_AV: Playback status changed: 0x2[0m
+[0;32mI (1139683) RC_TG: Volume is set locally to: 8%[0m
+[0;32mI (1139693) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1140243) BT_AV: Audio packet count: 1800[0m
+[0;32mI (1142133) RC_CT: AVRC event notification: 1[0m
+[0;32mI (1142133) BT_AV: Playback status changed: 0x0[0m
+[0;32mI (1142283) BT_AV: A2DP audio state: Suspended[0m
+[0;32mI (1142383) BT_APP_CORE: ringbuffer underflowed! mode changed: RINGBUFFER_MODE_PREFETCHING[0m
+[0;33mW (1145483) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (1145493) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (1145503) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (1149683) RC_TG: Volume is set locally to: 12%[0m
+[0;32mI (1149773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;33mW (1149773) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (1149783) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;33mW (1152973) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (1153003) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (1153003) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (1159683) RC_TG: Volume is set locally to: 16%[0m
+[0;33mW (1159793) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (1159803) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1159803) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;33mW (1163003) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (1163023) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 54, status 0x0[0m
+[0;32mI (1163023) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2, interval: 33.75 ms[0m
+[0;32mI (1169683) RC_TG: Volume is set locally to: 20%[0m
+[0;33mW (1169783) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0[0m
+[0;32mI (1169793) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;32mI (1169793) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;33mW (1172993) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(30 54)[0m
+[0;33mW (1172993) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x24[0m
+[1;31mE (1172993) BT_APPL: bta_dm_pm_btm_status hci_status=36[0m
+[0;32mI (1172993) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0, interval: 0.00 ms[0m
+[0;32mI (1179683) RC_TG: Volume is set locally to: 24%[0m
+[0;32mI (1179763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1189683) RC_TG: Volume is set locally to: 28%[0m
+[0;32mI (1189773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1199683) RC_TG: Volume is set locally to: 32%[0m
+[0;32mI (1199783) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1209683) RC_TG: Volume is set locally to: 36%[0m
+[0;32mI (1209773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1219683) RC_TG: Volume is set locally to: 40%[0m
+[0;32mI (1219773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1229683) RC_TG: Volume is set locally to: 44%[0m
+[0;32mI (1229773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1239683) RC_TG: Volume is set locally to: 48%[0m
+[0;32mI (1239763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1249683) RC_TG: Volume is set locally to: 51%[0m
+[0;32mI (1249773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1259683) RC_TG: Volume is set locally to: 55%[0m
+[0;32mI (1259773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1269683) RC_TG: Volume is set locally to: 59%[0m
+[0;32mI (1269763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1279683) RC_TG: Volume is set locally to: 63%[0m
+[0;32mI (1279773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1289683) RC_TG: Volume is set locally to: 67%[0m
+[0;32mI (1289763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1299683) RC_TG: Volume is set locally to: 71%[0m
+[0;32mI (1299753) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1309683) RC_TG: Volume is set locally to: 75%[0m
+[0;32mI (1309793) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1319683) RC_TG: Volume is set locally to: 79%[0m
+[0;32mI (1319763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1329683) RC_TG: Volume is set locally to: 83%[0m
+[0;32mI (1329763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1339683) RC_TG: Volume is set locally to: 87%[0m
+[0;32mI (1339773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1349683) RC_TG: Volume is set locally to: 91%[0m
+[0;32mI (1349773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1359683) RC_TG: Volume is set locally to: 95%[0m
+[0;32mI (1359773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1369683) RC_TG: Volume is set locally to: 99%[0m
+[0;32mI (1369763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1379683) RC_TG: Volume is set locally to: 2%[0m
+[0;32mI (1379763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1389683) RC_TG: Volume is set locally to: 6%[0m
+[0;32mI (1389773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1399683) RC_TG: Volume is set locally to: 10%[0m
+[0;32mI (1399763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1409683) RC_TG: Volume is set locally to: 14%[0m
+[0;32mI (1409763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1419683) RC_TG: Volume is set locally to: 18%[0m
+[0;32mI (1419753) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1429683) RC_TG: Volume is set locally to: 22%[0m
+[0;32mI (1429753) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1439683) RC_TG: Volume is set locally to: 25%[0m
+[0;32mI (1439763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1449683) RC_TG: Volume is set locally to: 29%[0m
+[0;32mI (1449763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1459683) RC_TG: Volume is set locally to: 33%[0m
+[0;32mI (1459763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1469683) RC_TG: Volume is set locally to: 37%[0m
+[0;32mI (1469783) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1479683) RC_TG: Volume is set locally to: 41%[0m
+[0;32mI (1479773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1489683) RC_TG: Volume is set locally to: 45%[0m
+[0;32mI (1489763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1499683) RC_TG: Volume is set locally to: 49%[0m
+[0;32mI (1499793) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1509683) RC_TG: Volume is set locally to: 53%[0m
+[0;32mI (1509783) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1519683) RC_TG: Volume is set locally to: 57%[0m
+[0;32mI (1519763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1529683) RC_TG: Volume is set locally to: 61%[0m
+[0;32mI (1529773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1539683) RC_TG: Volume is set locally to: 65%[0m
+[0;32mI (1539773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1549683) RC_TG: Volume is set locally to: 69%[0m
+[0;32mI (1549773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1559683) RC_TG: Volume is set locally to: 73%[0m
+[0;32mI (1559773) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1569683) RC_TG: Volume is set locally to: 77%[0m
+[0;32mI (1569763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
+[0;32mI (1579683) RC_TG: Volume is set locally to: 81%[0m
+[0;32mI (1579763) RC_TG: AVRC register event notification: 13, param: 0x0[0m
