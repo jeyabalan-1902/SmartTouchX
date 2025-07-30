@@ -1,0 +1,34 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM10 instead...[0m
+[0;33m--- esp-idf-monitor 1.6.2 on \\.\COM10 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[1;31m--- Error: ClearCommError failed (PermissionError(13, 'Access is denied.', None, 5))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 7942205f22fa600475dbf4a5378c9e9eb45b5a4c92abd439ec254bec564b2179[0m
+[0;33m--- 0x40081cc5: panic_abort at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/panic.c:466
+--- 0x4008fdb5: esp_rom_set_cpu_ticks_per_us at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_rom/patches/esp_rom_sys.c:98
+--- 0x40095f61: esp_ptr_in_drom at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_hw_support/include/esp_memory_utils.h:335
+---  (inlined by) __assert_func at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/newlib/assert.c:62
+--- 0x40090ace: spinlock_acquire at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_hw_support/include/spinlock.h:106 (discriminator 1)
+---  (inlined by) xPortEnterCriticalTimeout at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+--- 0x4008f801: prvCopyItemAllowSplit at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_ringbuf/ringbuf.c:450
+--- 0x4008fa8f: xRingbufferCreate at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_ringbuf/ringbuf.c:944
+--- 0x400da43a: write_ringbuf at C:/Users/kjeya/Documents/ESP_IDF_v5.4_projects/a2dp_sink/main/bt_app_core.c:237
+--- 0x400da084: bt_av_hdl_avrc_tg_evt at C:/Users/kjeya/Documents/ESP_IDF_v5.4_projects/a2dp_sink/main/bt_app_av.c:578 (discriminator 1)
+--- 0x4011bd8d: btc_a2dp_sink_handle_inc_media at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c:531
+--- 0x4011be04: btc_a2dp_sink_handle_inc_media at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c:560
+--- 0x40113902: osi_thread_run at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/bt/common/osi/thread.c:163
+--- 0x401137d7: osi_mutex_global_deinit at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/bt/common/osi/mutex.c:88
+--- 0x40090861: xQueueReceiveFromISR at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/queue.c:2193
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 7942205f22fa600475dbf4a5378c9e9eb45b5a4c92abd439ec254bec564b2179[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 7942205f22fa600475dbf4a5378c9e9eb45b5a4c92abd439ec254bec564b2179[0m
+[1;31m--- Error: ClearCommError failed (PermissionError(13, 'Access is denied.', None, 5))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m

@@ -1,0 +1,132 @@
+�j
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 8ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xa (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (72) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (78) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (85) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3a1e4h (238052) map[0m
+[0;32mI (144) esp_image: segment 1: paddr=0005a20c vaddr=3fc9f300 size=053e0h ( 21472) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0005f5f4 vaddr=40374000 size=00a24h (  2596) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=1056d0h (1070800) map[0m
+[0;32mI (344) esp_image: segment 4: paddr=001656f8 vaddr=40374a24 size=1a8a4h (108708) load[0m
+[0;32mI (368) esp_image: segment 5: paddr=0017ffa4 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (379) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (379) boot: Disabling RNG early entropy source...[0m
+[0;32mI (389) cpu_start: Multicore app[0m
+[0;32mI (398) cpu_start: Pro cpu start user code[0m
+[0;32mI (398) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (398) app_init: Application information:[0m
+[0;32mI (398) app_init: Project name:     esp_app[0m
+[0;32mI (402) app_init: App version:      dae0502-dirty[0m
+[0;32mI (407) app_init: Compile time:     Jul 26 2025 10:21:44[0m
+[0;32mI (412) app_init: ELF file SHA256:  057f4943d...[0m
+[0;32mI (416) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (420) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (424) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (428) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (432) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (438) heap_init: At 3FCAC4F8 len 0003D218 (244 KiB): RAM[0m
+[0;32mI (443) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (449) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (454) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (460) spi_flash: detected chip: boya[0m
+[0;32mI (463) spi_flash: flash io: dio[0m
+[0;32mI (466) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (472) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (479) coexist: coex firmware version: e727207[0m
+[0;32mI (509) coexist: coexist rom version e7ae62f[0m
+[0;32mI (510) main_task: Started on CPU0[0m
+[0;32mI (520) main_task: Calling app_main()[0m
+[0;32mI (540) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (540) GPIO: GPIO Initialization![0m
+[0;32mI (540) ESP_APP: UART initialized[0m
+[0;32mI (540) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (550) NVS: From nvs ssid is Rnd [0m
+[0;32mI (550) NVS: From nvs password is nikhil8182[0m
+[0;32mI (550) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (560) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (560) pp: pp rom version: e7ae62f[0m
+[0;32mI (560) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (580) wifi:wifi driver task: 3fcbc778, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (620) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (630) wifi_init: accept mbox: 6[0m
+[0;32mI (630) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (650) wifi_init: tcp mss: 1440[0m
+[0;32mI (650) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (660) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (700) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (700) wifi:enable tsf[0m
+[0;32mI (700) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (710) wifi:new:<10,0>, old:<1,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (710) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (710) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (730) wifi:state: assoc -> init (0x2c0)[0m
+[0;32mI (740) wifi:new:<10,0>, old:<10,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (740) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (740) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3150) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (3150) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3160) wifi:new:<10,0>, old:<10,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3160) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3170) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3180) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3200) wifi:connected with Rnd, aid = 8, channel 10, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (3200) wifi:security: WPA2-PSK, phy: bgn, rssi: -65[0m
+[0;32mI (3210) wifi:pm start, type: 1[0m
+
+[0;32mI (3210) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3220) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (3250) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4260) esp_netif_handlers: sta ip: 192.168.1.227, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4260) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (4260) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (4260) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -69[0m
+[0;32mI (4270) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (4270) main_task: Returned from app_main()[0m
+[0;32mI (4280) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (4690) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (4740) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=46908[0m
+[0;32mI (4790) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=13818[0m
+[0;32mI (4790) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=63399[0m
+[0;32mI (4790) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=32571[0m
+[0;32mI (4790) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=7631[0m
+[0;32mI (4800) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40501[0m
