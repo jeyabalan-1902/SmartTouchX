@@ -1,0 +1,7 @@
+../Drivers/CMSIS/Include/core_cm4.h:1938:34:__NVIC_SystemReset	1
+../Core/Src/APP/uart_rec.c:18:6:UART_Handler	6
+../Core/Src/APP/uart_rec.c:70:6:send_json_response	2
+../Core/Src/APP/uart_rec.c:82:6:handle_get_status_request	3
+../Core/Src/APP/uart_rec.c:97:6:handle_device_control	8
+../Core/Src/APP/uart_rec.c:141:6:process_json	4
+../Core/Src/APP/uart_rec.c:162:6:HAL_UART_RxCpltCallback	5

@@ -23,12 +23,18 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+Core/Src/APP \
 Core/Src/MQTT \
+Core/Src/RFM \
 Core/Src/ST7735 \
 Core/Src/cJSON \
 Core/Src \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
+FATFS/App \
+FATFS/Target \
+Middlewares/Third_Party/FatFs/src \
+Middlewares/Third_Party/FatFs/src/option \
 RTOS/freeRTOS \
 RTOS/freeRTOS/portable/GCC/ARM_CM4F \
 RTOS/freeRTOS/portable/MemMang \

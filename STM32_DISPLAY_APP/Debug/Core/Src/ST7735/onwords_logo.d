@@ -1,6 +1,6 @@
 Core/Src/ST7735/onwords_logo.o: ../Core/Src/ST7735/onwords_logo.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/ST7735/onwords_logo.h \
- ../Core/Inc/user_app.h ../Core/Inc/cJSON/cJSON.h ../Core/Inc/main.h \
+ ../Core/Inc/APP/user_app.h ../Core/Inc/cJSON/cJSON.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -46,7 +46,7 @@ Core/Src/ST7735/onwords_logo.o: ../Core/Src/ST7735/onwords_logo.c \
  ../Core/Inc/ST7735/GFX_FUNCTIONS.h ../Core/Inc/ST7735/ST7735.h \
  ../Core/Inc/ST7735/fonts.h
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/ST7735/onwords_logo.h:
-../Core/Inc/user_app.h:
+../Core/Inc/APP/user_app.h:
 ../Core/Inc/cJSON/cJSON.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:

@@ -1,3 +1,0 @@
-../Core/Src/gsm_app.c:17:6:GSM_init	1
-../Core/Src/gsm_app.c:30:6:GSM_MQTT_Task	9
-../Core/Src/gsm_app.c:85:10:millis	1
