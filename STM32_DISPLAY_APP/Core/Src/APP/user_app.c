@@ -11,6 +11,7 @@
 #include <APP/uart_rec.h>
 #include <APP/user_app.h>
 #include <MQTTSim800.h>
+#include <rfm69_app.h>
 #include <onwords_logo.h>
 
 
@@ -35,6 +36,9 @@ void setup_freeRTOS(void)
 	HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
 
 	status = xTaskCreate(SPI_Handler, "SPIHandler", 512, NULL, 5, NULL);
+	configASSERT(status == pdPASS);
+
+	status = xTaskCreate(RFM_Task, "RFM69Handler", 256, NULL, 6, NULL);
 	configASSERT(status == pdPASS);
 
 	status = xTaskCreate(UART_Handler, "UARTHandler", 1024, NULL, 4, NULL);

@@ -1,0 +1,5 @@
+../Core/Src/APP/user_app.c:32:6:setup_freeRTOS	6
+../Core/Src/APP/user_app.c:56:6:user_app_init	2
+../Core/Src/APP/user_app.c:74:6:vApplicationStackOverflowHook	1
+../Core/Src/APP/user_app.c:80:6:print_task_info	1
+../Core/Src/APP/user_app.c:89:6:safe_printf	3

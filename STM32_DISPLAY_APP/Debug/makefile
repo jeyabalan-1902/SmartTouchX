@@ -12,11 +12,17 @@ RM := rm -rf
 -include RTOS/freeRTOS/portable/MemMang/subdir.mk
 -include RTOS/freeRTOS/portable/GCC/ARM_CM4F/subdir.mk
 -include RTOS/freeRTOS/subdir.mk
+-include Middlewares/Third_Party/FatFs/src/option/subdir.mk
+-include Middlewares/Third_Party/FatFs/src/subdir.mk
+-include FATFS/Target/subdir.mk
+-include FATFS/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/cJSON/subdir.mk
 -include Core/Src/ST7735/subdir.mk
+-include Core/Src/RFM/subdir.mk
 -include Core/Src/MQTT/subdir.mk
+-include Core/Src/APP/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
 

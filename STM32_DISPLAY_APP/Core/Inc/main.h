@@ -65,6 +65,12 @@ void Error_Handler(void);
 #define TOUCH_LED1_GPIO_Port GPIOC
 #define DISP_BACKLIT_Pin GPIO_PIN_0
 #define DISP_BACKLIT_GPIO_Port GPIOA
+#define RF_MOSI_Pin GPIO_PIN_0
+#define RF_MOSI_GPIO_Port GPIOB
+#define RF_CS_Pin GPIO_PIN_1
+#define RF_CS_GPIO_Port GPIOB
+#define RF_RST_Pin GPIO_PIN_2
+#define RF_RST_GPIO_Port GPIOB
 #define TOUCH_LED4_Pin GPIO_PIN_14
 #define TOUCH_LED4_GPIO_Port GPIOB
 #define L_RELAY_4_Pin GPIO_PIN_6
@@ -73,6 +79,10 @@ void Error_Handler(void);
 #define L_RELAY_2_GPIO_Port GPIOC
 #define L_RELAY_1_Pin GPIO_PIN_9
 #define L_RELAY_1_GPIO_Port GPIOC
+#define RF_SCK_Pin GPIO_PIN_3
+#define RF_SCK_GPIO_Port GPIOB
+#define RF_MISO_Pin GPIO_PIN_4
+#define RF_MISO_GPIO_Port GPIOB
 #define L_RELAY_3_Pin GPIO_PIN_8
 #define L_RELAY_3_GPIO_Port GPIOB
 

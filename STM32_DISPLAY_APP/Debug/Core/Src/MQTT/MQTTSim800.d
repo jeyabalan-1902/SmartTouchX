@@ -1,10 +1,6 @@
 Core/Src/MQTT/MQTTSim800.o: ../Core/Src/MQTT/MQTTSim800.c \
- ../Core/Inc/MQTT/MQTTPacket.h ../Core/Inc/MQTT/MQTTConnect.h \
- ../Core/Inc/MQTT/MQTTPublish.h ../Core/Inc/MQTT/MQTTSubscribe.h \
- ../Core/Inc/MQTT/MQTTUnsubscribe.h ../Core/Inc/MQTT/MQTTFormat.h \
- ../Core/Inc/MQTT/StackTrace.h \
- C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/MQTT/MQTTSim800.h \
- ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ ../Core/Inc/APP/user_app.h ../Core/Inc/cJSON/cJSON.h ../Core/Inc/main.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -33,7 +29,6 @@ Core/Src/MQTT/MQTTSim800.o: ../Core/Src/MQTT/MQTTSim800.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/user_app.h ../Core/Inc/cJSON/cJSON.h ../Core/Inc/main.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/freeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/projdefs.h \
@@ -46,15 +41,14 @@ Core/Src/MQTT/MQTTSim800.o: ../Core/Src/MQTT/MQTTSim800.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h \
- C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h
-../Core/Inc/MQTT/MQTTPacket.h:
-../Core/Inc/MQTT/MQTTConnect.h:
-../Core/Inc/MQTT/MQTTPublish.h:
-../Core/Inc/MQTT/MQTTSubscribe.h:
-../Core/Inc/MQTT/MQTTUnsubscribe.h:
-../Core/Inc/MQTT/MQTTFormat.h:
-../Core/Inc/MQTT/StackTrace.h:
-C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/MQTT/MQTTSim800.h:
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
+ ../Core/Inc/MQTT/MQTTPacket.h ../Core/Inc/MQTT/MQTTConnect.h \
+ ../Core/Inc/MQTT/MQTTPublish.h ../Core/Inc/MQTT/MQTTSubscribe.h \
+ ../Core/Inc/MQTT/MQTTUnsubscribe.h ../Core/Inc/MQTT/MQTTFormat.h \
+ ../Core/Inc/MQTT/StackTrace.h \
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/MQTT/MQTTSim800.h
+../Core/Inc/APP/user_app.h:
+../Core/Inc/cJSON/cJSON.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -85,9 +79,6 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/MQTT/MQTTSim
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Inc/user_app.h:
-../Core/Inc/cJSON/cJSON.h:
-../Core/Inc/main.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/freeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/projdefs.h:
@@ -101,3 +92,11 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h:
+../Core/Inc/MQTT/MQTTPacket.h:
+../Core/Inc/MQTT/MQTTConnect.h:
+../Core/Inc/MQTT/MQTTPublish.h:
+../Core/Inc/MQTT/MQTTSubscribe.h:
+../Core/Inc/MQTT/MQTTUnsubscribe.h:
+../Core/Inc/MQTT/MQTTFormat.h:
+../Core/Inc/MQTT/StackTrace.h:
+C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/MQTT/MQTTSim800.h:

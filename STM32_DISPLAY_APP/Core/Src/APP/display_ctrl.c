@@ -63,139 +63,6 @@ void updateToDisplayMenu(void)
 	}
 }
 
-
-void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id)
-{
-    fillRect(x-1, y-1, width+2, height+2, BLACK);
-
-    if (selected)
-    {
-        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
-        fillRoundRect(x, y, width, height, 3, GREEN);
-        ST7735_WriteString(x+5, y+4, text, Font_7x10, BLACK, GREEN);
-    }
-    else
-    {
-        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
-        fillRoundRect(x, y, width, height, 3, GRAY);
-        ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
-    }
-
-    // Store button position AND TEXT for future updates
-    if (button_id < 6)
-    {
-        current_buttons[button_id].x = x;
-        current_buttons[button_id].y = y;
-        current_buttons[button_id].width = width;
-        current_buttons[button_id].height = height;
-        current_buttons[button_id].button_id = button_id;
-        strncpy(current_buttons[button_id].text, text, 24);
-        current_buttons[button_id].text[24] = '\0';
-    }
-}
-
-void updateButtonSelection(int old_selection, int new_selection)
-
-{
-    // Update old button (unselect)
-    if (old_selection >= 0 && old_selection < button_count)
-    {
-        button_position_t *old_btn = &current_buttons[old_selection];
-
-        // Clear and redraw unselected button with text
-        fillRect(old_btn->x-1, old_btn->y-1, old_btn->width+2, old_btn->height+2, BLACK);
-        drawRoundRect(old_btn->x-1, old_btn->y-1, old_btn->width+2, old_btn->height+2, 3, WHITE);
-        fillRoundRect(old_btn->x, old_btn->y, old_btn->width, old_btn->height, 3, GRAY);
-        ST7735_WriteString(old_btn->x+5, old_btn->y+4, old_btn->text, Font_7x10, WHITE, GRAY);
-    }
-
-    // Update new button (select)
-    if (new_selection >= 0 && new_selection < button_count)
-    {
-        button_position_t *new_btn = &current_buttons[new_selection];
-
-        // Clear and redraw selected button with text
-        fillRect(new_btn->x-1, new_btn->y-1, new_btn->width+2, new_btn->height+2, BLACK);
-        drawRoundRect(new_btn->x-1, new_btn->y-1, new_btn->width+2, new_btn->height+2, 3, WHITE);
-        fillRoundRect(new_btn->x, new_btn->y, new_btn->width, new_btn->height, 3, GREEN);
-        ST7735_WriteString(new_btn->x+5, new_btn->y+4, new_btn->text, Font_7x10, BLACK, GREEN);
-    }
-}
-
-void updateDeviceStatusText(int device_index, bool is_on)
-{
-    int text_x = MARGIN_X + 5;
-    int text_y = TITLE_HEIGHT + 10 + device_index * 20 + 4;
-    fillRect(text_x + 70, text_y, 40, 10, GRAY);
-    char status[8];
-    snprintf(status, sizeof(status), "[%s]", is_on ? "ON" : "OFF");
-    ST7735_WriteString(text_x + 70, text_y, status, Font_7x10, WHITE, GRAY);
-}
-
-void updateStatusInfo(char* status, uint16_t color)
-{
-    fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
-    ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
-}
-
-void updateDeviceCount(int total_on)
-{
-    char status[35];
-    if(total_on > 0)
-    {
-    	snprintf(status, sizeof(status), "Status: %d/4 devices", total_on);
-    	updateStatusInfo(status, GREEN);
-    }
-    else
-    {
-    	snprintf(status, sizeof(status), "Status: %d/4 devices", total_on);
-		updateStatusInfo(status, RED);
-    }
-}
-
-void updateDeviceControlStatus(int device, bool is_on)
-{
-    char status[25];
-    snprintf(status, sizeof(status), "Status: %s", is_on ? "ON" : "OFF");
-    uint16_t status_color = is_on ? GREEN : RED;
-    updateStatusInfo(status, status_color);
-}
-
-void drawCleanButton(int x, int y, int width, int height, char* text, int selected)
-{
-    if (selected)
-    {
-        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
-        fillRoundRect(x, y, width, height, 3, GREEN);
-        ST7735_WriteString(x+5, y+4, text, Font_7x10, BLACK, GREEN);
-    }
-    else
-    {
-        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
-        fillRoundRect(x, y, width, height, 3, GRAY);
-        ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
-    }
-}
-
-void drawTitleBar(char* title) {
-    fillRect(0, 0, DISPLAY_WIDTH, TITLE_HEIGHT, BLUE);
-    int title_length = strlen(title);
-    int title_width = title_length * 7;
-    int center_x = (DISPLAY_WIDTH - title_width) / 2;
-
-    if (center_x < 2) center_x = 2;
-
-    ST7735_WriteString(center_x, 2, title, Font_7x10, WHITE, BLUE);
-
-    drawLine(0, TITLE_HEIGHT, DISPLAY_WIDTH, TITLE_HEIGHT, WHITE);
-}
-
-void drawStatusInfo(char* status, uint16_t color) {
-    fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
-    ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
-}
-
-
 void displayMainMenu(void)
 {
 	if (current_menu != last_menu || !menu_drawn)
@@ -841,4 +708,137 @@ void print_To_display(char *format,...)
     va_end(args);
 #endif
 }
+
+
+void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id)
+{
+    fillRect(x-1, y-1, width+2, height+2, BLACK);
+
+    if (selected)
+    {
+        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
+        fillRoundRect(x, y, width, height, 3, GREEN);
+        ST7735_WriteString(x+5, y+4, text, Font_7x10, BLACK, GREEN);
+    }
+    else
+    {
+        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
+        fillRoundRect(x, y, width, height, 3, GRAY);
+        ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
+    }
+
+    // Store button position AND TEXT for future updates
+    if (button_id < 6)
+    {
+        current_buttons[button_id].x = x;
+        current_buttons[button_id].y = y;
+        current_buttons[button_id].width = width;
+        current_buttons[button_id].height = height;
+        current_buttons[button_id].button_id = button_id;
+        strncpy(current_buttons[button_id].text, text, 24);
+        current_buttons[button_id].text[24] = '\0';
+    }
+}
+
+void updateButtonSelection(int old_selection, int new_selection)
+
+{
+    // Update old button (unselect)
+    if (old_selection >= 0 && old_selection < button_count)
+    {
+        button_position_t *old_btn = &current_buttons[old_selection];
+
+        // Clear and redraw unselected button with text
+        fillRect(old_btn->x-1, old_btn->y-1, old_btn->width+2, old_btn->height+2, BLACK);
+        drawRoundRect(old_btn->x-1, old_btn->y-1, old_btn->width+2, old_btn->height+2, 3, WHITE);
+        fillRoundRect(old_btn->x, old_btn->y, old_btn->width, old_btn->height, 3, GRAY);
+        ST7735_WriteString(old_btn->x+5, old_btn->y+4, old_btn->text, Font_7x10, WHITE, GRAY);
+    }
+
+    // Update new button (select)
+    if (new_selection >= 0 && new_selection < button_count)
+    {
+        button_position_t *new_btn = &current_buttons[new_selection];
+
+        // Clear and redraw selected button with text
+        fillRect(new_btn->x-1, new_btn->y-1, new_btn->width+2, new_btn->height+2, BLACK);
+        drawRoundRect(new_btn->x-1, new_btn->y-1, new_btn->width+2, new_btn->height+2, 3, WHITE);
+        fillRoundRect(new_btn->x, new_btn->y, new_btn->width, new_btn->height, 3, GREEN);
+        ST7735_WriteString(new_btn->x+5, new_btn->y+4, new_btn->text, Font_7x10, BLACK, GREEN);
+    }
+}
+
+void updateDeviceStatusText(int device_index, bool is_on)
+{
+    int text_x = MARGIN_X + 5;
+    int text_y = TITLE_HEIGHT + 10 + device_index * 20 + 4;
+    fillRect(text_x + 70, text_y, 40, 10, GRAY);
+    char status[8];
+    snprintf(status, sizeof(status), "[%s]", is_on ? "ON" : "OFF");
+    ST7735_WriteString(text_x + 70, text_y, status, Font_7x10, WHITE, GRAY);
+}
+
+void updateStatusInfo(char* status, uint16_t color)
+{
+    fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
+    ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
+}
+
+void updateDeviceCount(int total_on)
+{
+    char status[35];
+    if(total_on > 0)
+    {
+    	snprintf(status, sizeof(status), "Status: %d/4 devices", total_on);
+    	updateStatusInfo(status, GREEN);
+    }
+    else
+    {
+    	snprintf(status, sizeof(status), "Status: %d/4 devices", total_on);
+		updateStatusInfo(status, RED);
+    }
+}
+
+void updateDeviceControlStatus(int device, bool is_on)
+{
+    char status[25];
+    snprintf(status, sizeof(status), "Status: %s", is_on ? "ON" : "OFF");
+    uint16_t status_color = is_on ? GREEN : RED;
+    updateStatusInfo(status, status_color);
+}
+
+void drawCleanButton(int x, int y, int width, int height, char* text, int selected)
+{
+    if (selected)
+    {
+        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
+        fillRoundRect(x, y, width, height, 3, GREEN);
+        ST7735_WriteString(x+5, y+4, text, Font_7x10, BLACK, GREEN);
+    }
+    else
+    {
+        drawRoundRect(x-1, y-1, width+2, height+2, 3, WHITE);
+        fillRoundRect(x, y, width, height, 3, GRAY);
+        ST7735_WriteString(x+5, y+4, text, Font_7x10, WHITE, GRAY);
+    }
+}
+
+void drawTitleBar(char* title) {
+    fillRect(0, 0, DISPLAY_WIDTH, TITLE_HEIGHT, BLUE);
+    int title_length = strlen(title);
+    int title_width = title_length * 7;
+    int center_x = (DISPLAY_WIDTH - title_width) / 2;
+
+    if (center_x < 2) center_x = 2;
+
+    ST7735_WriteString(center_x, 2, title, Font_7x10, WHITE, BLUE);
+
+    drawLine(0, TITLE_HEIGHT, DISPLAY_WIDTH, TITLE_HEIGHT, WHITE);
+}
+
+void drawStatusInfo(char* status, uint16_t color) {
+    fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
+    ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
+}
+
 

@@ -17,7 +17,6 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <APP/user_app.h>
 #include "main.h"
 #include "fatfs.h"
 
@@ -415,7 +414,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(TOUCH_LED4_GPIO_Port, TOUCH_LED4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, RF_CS_Pin|RF_RST_Pin|TOUCH_LED4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, L_RELAY_2_Pin|L_RELAY_1_Pin, GPIO_PIN_SET);
@@ -446,8 +445,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : TOUCH_LED4_Pin L_RELAY_3_Pin */
-  GPIO_InitStruct.Pin = TOUCH_LED4_Pin|L_RELAY_3_Pin;
+  /*Configure GPIO pins : RF_CS_Pin RF_RST_Pin TOUCH_LED4_Pin L_RELAY_3_Pin */
+  GPIO_InitStruct.Pin = RF_CS_Pin|RF_RST_Pin|TOUCH_LED4_Pin|L_RELAY_3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
