@@ -28,7 +28,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         ESP_LOGI(TAG, "MQTT_SERVER_CONNECTED");
         mqtt_status = 1;
         stop_ble_fallback();
-        esp_mqtt_client_subscribe(client, current_status, 1);
+        //esp_mqtt_client_subscribe(client, current_status, 1);
         esp_mqtt_client_subscribe(client, get_current_status, 1);
         esp_mqtt_client_subscribe(client, get_status, 1);
         esp_mqtt_client_subscribe(client, soft_Reset, 1);
