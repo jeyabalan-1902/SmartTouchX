@@ -26,6 +26,8 @@ static uint8_t PrevState = 0;
 uint8_t EncryptionKey[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
 		0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
 
+int count;
+
 void RFM_Task(void)
 {
 	while(1)
@@ -142,11 +144,21 @@ bool RF69_RxData(void)
 
 			if (strstr((char *)buf, "Control#1"))
 			{
-				setAllDevicesState(1);
+				count++;
+				if(count == 1)
+				{
+					setAllDevicesState(1);
+				}
+				else if(count == 2)
+				{
+					setAllDevicesState(0);
+					count = 0;
+				}
+
 			}
 			else if(strstr((char *)buf, "Control#0"))
 			{
-				setAllDevicesState(0);
+				HAL_GPIO_TogglePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
 			}
 		}
 		else
