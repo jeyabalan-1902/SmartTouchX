@@ -1,6 +1,6 @@
 Core/Src/APP/user_app.o: ../Core/Src/APP/user_app.c \
- ../Core/Inc/APP/display_ctrl.h ../Core/Inc/ST7735/fonts.h \
- ../Core/Inc/ST7735/GFX_FUNCTIONS.h ../Core/Inc/ST7735/ST7735.h \
+ ../Core/Inc/APP/gsm_app.h ../Core/Inc/APP/user_app.h \
+ ../Core/Inc/cJSON/cJSON.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -30,8 +30,6 @@ Core/Src/APP/user_app.o: ../Core/Src/APP/user_app.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/main.h ../Core/Inc/APP/gsm_app.h ../Core/Inc/APP/spi_rec.h \
- ../Core/Inc/cJSON/cJSON.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/freeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/projdefs.h \
@@ -45,14 +43,17 @@ Core/Src/APP/user_app.o: ../Core/Src/APP/user_app.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
- ../Core/Inc/APP/uart_rec.h ../Core/Inc/APP/user_app.h \
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/display_spi_app.h \
+ ../Core/Inc/DISPLAY/fonts.h ../Core/Inc/DISPLAY/GFX_FUNCTIONS.h \
+ ../Core/Inc/DISPLAY/ST7735.h ../Core/Inc/DISPLAY/onwords_logo.h \
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/MQTT/MQTTSim800.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/rfm69_app.h \
- C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/ST7735/onwords_logo.h
-../Core/Inc/APP/display_ctrl.h:
-../Core/Inc/ST7735/fonts.h:
-../Core/Inc/ST7735/GFX_FUNCTIONS.h:
-../Core/Inc/ST7735/ST7735.h:
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/touch_spi_app.h
+../Core/Inc/APP/gsm_app.h:
+../Core/Inc/APP/user_app.h:
+../Core/Inc/cJSON/cJSON.h:
+../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -82,10 +83,6 @@ Core/Src/APP/user_app.o: ../Core/Src/APP/user_app.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Inc/main.h:
-../Core/Inc/APP/gsm_app.h:
-../Core/Inc/APP/spi_rec.h:
-../Core/Inc/cJSON/cJSON.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/freeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/projdefs.h:
@@ -99,8 +96,12 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h:
-../Core/Inc/APP/uart_rec.h:
-../Core/Inc/APP/user_app.h:
+C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/display_spi_app.h:
+../Core/Inc/DISPLAY/fonts.h:
+../Core/Inc/DISPLAY/GFX_FUNCTIONS.h:
+../Core/Inc/DISPLAY/ST7735.h:
+../Core/Inc/DISPLAY/onwords_logo.h:
+C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/MQTT/MQTTSim800.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/rfm69_app.h:
-C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/ST7735/onwords_logo.h:
+C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/touch_spi_app.h:

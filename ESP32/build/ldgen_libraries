@@ -68,6 +68,7 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_http_client/lib
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_http_server/libesp_http_server.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_https_ota/libesp_https_ota.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_https_server/libesp_https_server.a
+C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_psram/libesp_psram.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp_lcd/libesp_lcd.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/protobuf-c/libprotobuf-c.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/protocomm/libprotocomm.a
@@ -84,4 +85,5 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/spiffs/libspiffs.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/touch_element/libtouch_element.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/usb/libusb.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/esp-picotts/libesp-picotts.a
 C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/build/esp-idf/main/libmain.a

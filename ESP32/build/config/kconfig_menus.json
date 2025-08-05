@@ -31600,6 +31600,144 @@
                 "id": "component-config-wi-fi-provisioning-manager",
                 "title": "Wi-Fi Provisioning Manager",
                 "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_LANGUAGE>",
+                                "help": null,
+                                "id": "PICOTTS_LANGUAGE_EN_GB",
+                                "name": "PICOTTS_LANGUAGE_EN_GB",
+                                "range": null,
+                                "title": "English (en-GB)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_LANGUAGE>",
+                                "help": null,
+                                "id": "PICOTTS_LANGUAGE_EN_US",
+                                "name": "PICOTTS_LANGUAGE_EN_US",
+                                "range": null,
+                                "title": "English (en-US)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_LANGUAGE>",
+                                "help": null,
+                                "id": "PICOTTS_LANGUAGE_DE_DE",
+                                "name": "PICOTTS_LANGUAGE_DE_DE",
+                                "range": null,
+                                "title": "German (de-DE)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_LANGUAGE>",
+                                "help": null,
+                                "id": "PICOTTS_LANGUAGE_ES_ES",
+                                "name": "PICOTTS_LANGUAGE_ES_ES",
+                                "range": null,
+                                "title": "Spanish (es-ES)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_LANGUAGE>",
+                                "help": null,
+                                "id": "PICOTTS_LANGUAGE_FR_FR",
+                                "name": "PICOTTS_LANGUAGE_FR_FR",
+                                "range": null,
+                                "title": "French (fr-FR)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_LANGUAGE>",
+                                "help": null,
+                                "id": "PICOTTS_LANGUAGE_IT_IT",
+                                "name": "PICOTTS_LANGUAGE_IT_IT",
+                                "range": null,
+                                "title": "Italian (it-IT)",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "component-config-pico-tts-voice-language",
+                        "name": "PICOTTS_LANGUAGE",
+                        "title": "Voice language",
+                        "type": "choice"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_RESOURCE_MODE>",
+                                "help": null,
+                                "id": "PICOTTS_RESOURCE_MODE_EMBED",
+                                "name": "PICOTTS_RESOURCE_MODE_EMBED",
+                                "range": null,
+                                "title": "Embed into application binary",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice PICOTTS_RESOURCE_MODE>",
+                                "help": null,
+                                "id": "PICOTTS_RESOURCE_MODE_PARTITION",
+                                "name": "PICOTTS_RESOURCE_MODE_PARTITION",
+                                "range": null,
+                                "title": "Load resources from raw partitions",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "component-config-pico-tts-resource-storage-mode",
+                        "name": "PICOTTS_RESOURCE_MODE",
+                        "title": "Resource storage mode",
+                        "type": "choice"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Partition name where the Text Analysis (TA) resource blob is\nlocated. This needs to be flashed separately from the application.",
+                        "id": "PICOTTS_TA_PARTITION",
+                        "name": "PICOTTS_TA_PARTITION",
+                        "range": null,
+                        "title": "TA resource partition name",
+                        "type": "string"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Partition name where the Signal Generator (SG) resource blob is\nlocated. This needs to be flashed separately from the application.",
+                        "id": "PICOTTS_SG_PARTITION",
+                        "name": "PICOTTS_SG_PARTITION",
+                        "range": null,
+                        "title": "SG resource partition name",
+                        "type": "string"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "The size of the TTS input quueue used to transfer the text to be\nspoken over to the TTS engine. A larger size makes it less likely\nthat the picotts_add() function will block, but of course has the\ndownside of using up more memory.",
+                        "id": "PICOTTS_INPUT_QUEUE_SIZE",
+                        "name": "PICOTTS_INPUT_QUEUE_SIZE",
+                        "range": null,
+                        "title": "TTS input queue size",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-pico-tts",
+                "title": "Pico TTS",
+                "type": "menu"
             }
         ],
         "depends_on": null,

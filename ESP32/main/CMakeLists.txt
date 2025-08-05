@@ -10,8 +10,9 @@ idf_component_register(SRCS "esp_app.c"
                             "src/gpio.c"
                             "src/nvs.c"
                             "src/ble.c"
+                            "src/bsp_audio.c"
                             "secret/mqtt_config.c"
                     INCLUDE_DIRS "inc" "secret"
                     EMBED_TXTFILES ${project_dir}/main/server_certs/ca_cert.pem
                     REQUIRES mbedtls nvs_flash esp_wifi esp_event mqtt json esp_http_server esp_driver_uart esp_driver_gpio
-                    PRIV_REQUIRES app_update esp_http_client esp_https_ota protocomm bt)
+                    PRIV_REQUIRES app_update esp_http_client esp_https_ota protocomm bt esp-picotts driver)

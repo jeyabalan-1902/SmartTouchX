@@ -1,10 +1,13 @@
 
 #include "uart_config.h"
+#include "picotts.h"
+#include "bsp_audio.h"
 
 static const char *TAG = "UART_CONFIG";
 extern volatile bool uart_exit;
 TaskHandle_t uartTaskHandle;
 char status_data[50];
+extern SemaphoreHandle_t tts_done_sem;
 
 void uart_init(void) {
     const uart_config_t uart_config = {
@@ -128,24 +131,31 @@ void uart_rx_task(void *arg)
             if (byte == '\n' || byte == '\r') {
                 if (index > 0) {
                     json_buffer[index] = '\0'; 
-                    ESP_LOGI(TAG, "Received JSON: %s", json_buffer);
-                    esp_mqtt_client_publish(mqtt_client, current_status, json_buffer, 0, 1, 0);
-                    if(ble_status())
-                    {
-                        ble_send_response(json_buffer);
+                    ESP_LOGI(TAG, "Received: %s", json_buffer);
+
+                    cJSON *root = cJSON_Parse(json_buffer);
+
+                    if (root) {
+                        esp_mqtt_client_publish(mqtt_client, current_status, json_buffer, 0, 1, 0);
+                        if (ble_status()) {
+                            ble_send_response(json_buffer);
+                        }
+                        cJSON_Delete(root);
+                    } else {
+                        speak_async(json_buffer);
                     }
 
                     index = 0;
                     memset(json_buffer, 0, sizeof(json_buffer));
                 }
-            }
-            else {
+            } else {
                 if (index < BUF_SIZE - 1) {
                     json_buffer[index++] = byte;
                 }
             }
         }
     }
+
     ESP_LOGI(TAG, "UART RX task exiting");
     uartTaskHandle = NULL;
     vTaskDelete(NULL); 

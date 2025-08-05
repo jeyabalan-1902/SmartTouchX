@@ -1,0 +1,1363 @@
+Wr�j
+[0;32mI (34) boot.es�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xa (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (72) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (78) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (85) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3a1d4h (238036) map[0m
+[0;32mI (144) esp_image: segment 1: paddr=0005a1fc vaddr=3fc9f300 size=053e0h ( 21472) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0005f5e4 vaddr=40374000 size=00a34h (  2612) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=105670h (1070704) map[0m
+[0;32mI (344) esp_image: segment 4: paddr=00165698 vaddr=40374a34 size=1a894h (108692) load[0m
+[0;32mI (368) esp_image: segment 5: paddr=0017ff34 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (379) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (379) boot: Disabling RNG early entropy source...[0m
+[0;32mI (389) cpu_start: Multicore app[0m
+[0;32mI (398) cpu_start: Pro cpu start user code[0m
+[0;32mI (398) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (398) app_init: Application information:[0m
+[0;32mI (398) app_init: Project name:     esp_app[0m
+[0;32mI (402) app_init: App version:      e470870-dirty[0m
+[0;32mI (407) app_init: Compile time:     Jul  8 2025 09:35:10[0m
+[0;32mI (412) app_init: ELF file SHA256:  1af2edffa...[0m
+[0;32mI (416) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (420) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (424) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (428) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (432) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (438) heap_init: At 3FCAC4F8 len 0003D218 (244 KiB): RAM[0m
+[0;32mI (443) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (449) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (454) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (460) spi_flash: detected chip: boya[0m
+[0;32mI (463) spi_flash: flash io: dio[0m
+[0;32mI (466) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (472) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (479) coexist: coex firmware version: e727207[0m
+[0;32mI (509) coexist: coexist rom version e7ae62f[0m
+[0;32mI (510) main_task: Started on CPU0[0m
+[0;32mI (520) main_task: Calling app_main()[0m
+[0;32mI (540) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (540) GPIO: GPIO Initialization![0m
+[0;32mI (540) ESP_APP: UART initialized[0m
+[0;32mI (540) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (550) NVS: From nvs ssid is Rnd [0m
+[0;32mI (550) NVS: From nvs password is nikhil8182[0m
+[0;32mI (550) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (560) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (560) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (580) wifi:wifi driver task: 3fcbc778, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (620) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (630) wifi_init: accept mbox: 6[0m
+[0;32mI (630) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (650) wifi_init: tcp mss: 1440[0m
+[0;32mI (650) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (660) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (700) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (760) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (760) wifi:enable tsf[0m
+[0;32mI (760) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (770) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (770) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (780) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (870) wifi:state: assoc -> init (0x2c0)[0m
+[0;32mI (880) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (880) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (880) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3290) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (3290) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3360) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3360) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3370) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3380) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3410) wifi:connected with Rnd, aid = 4, channel 6, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (3410) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (3410) wifi:pm start, type: 1[0m
+
+[0;32mI (3410) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3420) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (3460) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4450) esp_netif_handlers: sta ip: 192.168.1.227, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4450) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (4450) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (4450) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -56[0m
+[0;32mI (4460) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (4460) main_task: Returned from app_main()[0m
+[0;32mI (4470) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (4860) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (4900) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=56227[0m
+[0;32mI (4940) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=44288[0m
+[0;32mI (4940) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=16177[0m
+[0;32mI (4940) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=7717[0m
+[0;32mI (4940) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=525[0m
+[0;32mI (4950) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=7547[0m
+[0;32mI (4950) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47414[0m
+[0;32mI (4960) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4960) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (4960) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (1401480) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1401480) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1401480) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1401500) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1401540) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14838[0m
+[0;32mI (1401550) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1401550) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1401550) MQTT_HANDLER: DATA={"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1408230) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1408230) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1408230) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752813938684}[0m
+[0;32mI (1408250) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (1408290) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=22291[0m
+[0;32mI (1408300) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1408300) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1408300) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (1412740) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1412740) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1412740) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752813943153}[0m
+[0;32mI (1412770) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (1412810) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=46597[0m
+[0;32mI (1412810) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1412810) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1412810) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (1435470) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1435470) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1435470) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1435490) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1435550) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=5402[0m
+[0;32mI (1435550) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1435550) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1435550) MQTT_HANDLER: DATA={"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1478060) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1478060) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1478060) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1478090) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1478120) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=3973[0m
+[0;32mI (1478130) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1478130) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1478130) MQTT_HANDLER: DATA={"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1481750) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1481760) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1481760) MQTT_HANDLER: DATA={"id":"4ltc01","wifi_led":1,"client_id":"syam@onwords.in","ip":"49.206.118.102","time_stamp":1752814014058}[0m
+[0;32mI (1504800) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1504800) MQTT_HANDLER: TOPIC=onwords/4ltc01/softReset[0m
+[0;32mI (1504800) MQTT_HANDLER: DATA={"id":"4ltc01","reset":true,"client_id":"syam@onwords.in","ip":"49.206.118.102","time_stamp":1752814037023}[0m
+[0;32mI (1532140) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1532140) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1532140) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1532160) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1532200) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58827[0m
+[0;32mI (1532200) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1532200) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (1532200) MQTT_HANDLER: DATA={"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1556190) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556210) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556230) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556250) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556270) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556290) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556310) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556330) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556350) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556370) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556390) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556410) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556430) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556450) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556470) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556490) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556510) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556530) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556550) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556570) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556590) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556610) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556630) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556650) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556670) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556690) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556710) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556730) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556750) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556770) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556790) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556810) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556830) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556850) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556870) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556890) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556910) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556930) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556950) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556970) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1556990) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557010) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557030) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557050) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557070) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557090) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557110) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557130) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557150) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557170) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557190) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557210) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557230) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557250) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557270) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557290) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557310) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557330) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557350) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557370) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557390) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557410) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557430) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557450) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557470) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557490) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557510) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557530) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557550) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557570) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557590) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557610) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557630) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557650) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557670) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557690) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557710) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557730) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557750) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557770) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557790) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557810) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557830) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557850) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557870) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557890) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557910) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557930) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557950) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557970) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1557990) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558010) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558030) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558050) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558070) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558090) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558110) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558130) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558150) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558170) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558190) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558210) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558230) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558250) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558270) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558290) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558310) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558330) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558350) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558370) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558390) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558410) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558430) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558450) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558470) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558490) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558510) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558530) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558550) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558570) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558590) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558610) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558630) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558650) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558670) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558690) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558710) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558730) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558750) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558770) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558790) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558810) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558830) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558850) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558870) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558890) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558910) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558930) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558950) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558970) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1558990) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559010) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559030) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559050) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559070) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559090) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559110) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559130) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559150) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559170) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559190) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559210) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559230) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559250) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559270) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559280) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (1559290) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (1559310) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559330) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559350) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559370) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559390) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559410) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559430) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559440) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (1559450) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (1559460) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (1559470) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (1559480) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (1559490) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (1559500) GPIO: reset GPIO state 0 and count_reset 7[0m
+[0;32mI (1559510) GPIO: reset GPIO state 0 and count_reset 8[0m
+[0;32mI (1559520) GPIO: reset GPIO state 0 and count_reset 9[0m
+[0;32mI (1559530) GPIO: reset GPIO state 0 and count_reset 10[0m
+[0;32mI (1559540) GPIO: reset GPIO state 0 and count_reset 11[0m
+[0;32mI (1559550) GPIO: reset GPIO state 0 and count_reset 12[0m
+[0;32mI (1559560) GPIO: reset GPIO state 0 and count_reset 13[0m
+[0;32mI (1559570) GPIO: reset GPIO state 0 and count_reset 14[0m
+[0;32mI (1559580) GPIO: reset GPIO state 0 and count_reset 15[0m
+[0;32mI (1559590) GPIO: reset GPIO state 0 and count_reset 16[0m
+[0;32mI (1559610) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559630) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559650) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559670) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559690) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559710) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559730) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559750) GPIO: reset GPIO state 0 and count_reset 0[0m
+[0;32mI (1559760) GPIO: reset GPIO state 0 and count_reset 1[0m
+[0;32mI (1559770) GPIO: reset GPIO state 0 and count_reset 2[0m
+[0;32mI (1559780) GPIO: reset GPIO state 0 and count_reset 3[0m
+[0;32mI (1559790) GPIO: reset GPIO state 0 and count_reset 4[0m
+[0;32mI (1559800) GPIO: reset GPIO state 0 and count_reset 5[0m
+[0;32mI (1559810) GPIO: reset GPIO state 0 and count_reset 6[0m
+[0;32mI (1559820) GPIO: reset GPIO state 0 and count_reset 7[0m
+[0;32mI (1559830) GPIO: reset GPIO state 0 and count_reset 8[0m
+[0;32mI (1559840) GPIO: reset GPIO state 0 and count_reset 9[0m
+[0;32mI (1559850) GPIO: reset GPIO state 0 and count_reset 10[0m
+[0;32mI (1559860) GPIO: reset GPIO state 0 and count_reset 11[0m
+[0;32mI (1559870) GPIO: reset GPIO state 0 and count_reset 12[0m
+[0;32mI (1559880) GPIO: reset GPIO state 0 and count_reset 13[0m
+[0;32mI (1559890) GPIO: reset GPIO state 0 and count_reset 14[0m
+[0;32mI (1559900) GPIO: reset GPIO state 0 and count_reset 15[0m
+[0;32mI (1559910) GPIO: reset GPIO state 0 and count_reset 16[0m
+[0;32mI (1559920) GPIO: reset GPIO state 0 and count_reset 17[0m
+[0;32mI (1559930) GPIO: reset GPIO state 0 and count_reset 18[0m
+[0;32mI (1559940) GPIO: reset GPIO state 0 and count_reset 19[0m
+[0;32mI (1559950) GPIO: reset GPIO state 0 and count_reset 20[0m
+[0;32mI (1559960) GPIO: reset GPIO state 0 and count_reset 21[0m
+[0;32mI (1559970) GPIO: reset GPIO state 0 and count_reset 22[0m
+[0;32mI (1559980) GPIO: reset GPIO state 0 and count_reset 23[0m
+[0;32mI (1559990) GPIO: reset GPIO state 0 and count_reset 24[0m
+[0;32mI (1560000) GPIO: reset GPIO state 0 and count_reset 25[0m
+[0;32mI (1560010) GPIO: reset GPIO state 0 and count_reset 26[0m
+[0;32mI (1560020) GPIO: reset GPIO state 0 and count_reset 27[0m
+[0;32mI (1560030) GPIO: reset GPIO state 0 and count_reset 28[0m
+[0;32mI (1560040) GPIO: reset GPIO state 0 and count_reset 29[0m
+[0;32mI (1560050) GPIO: reset GPIO state 0 and count_reset 30[0m
+[0;32mI (1560060) GPIO: reset GPIO state 0 and count_reset 31[0m
+[0;32mI (1560070) GPIO: reset GPIO state 0 and count_reset 32[0m
+[0;32mI (1560080) GPIO: reset GPIO state 0 and count_reset 33[0m
+[0;32mI (1560090) GPIO: reset GPIO state 0 and count_reset 34[0m
+[0;32mI (1560100) GPIO: reset GPIO state 0 and count_reset 35[0m
+[0;32mI (1560110) GPIO: reset GPIO state 0 and count_reset 36[0m
+[0;32mI (1560120) GPIO: reset GPIO state 0 and count_reset 37[0m
+[0;32mI (1560130) GPIO: reset GPIO state 0 and count_reset 38[0m
+[0;32mI (1560140) GPIO: reset GPIO state 0 and count_reset 39[0m
+[0;32mI (1560150) GPIO: reset GPIO state 0 and count_reset 40[0m
+[0;32mI (1560160) GPIO: reset GPIO state 0 and count_reset 41[0m
+[0;32mI (1560170) GPIO: reset GPIO state 0 and count_reset 42[0m
+[0;32mI (1560180) GPIO: reset GPIO state 0 and count_reset 43[0m
+[0;32mI (1560190) GPIO: reset GPIO state 0 and count_reset 44[0m
+[0;32mI (1560200) GPIO: reset GPIO state 0 and count_reset 45[0m
+[0;32mI (1560210) GPIO: reset GPIO state 0 and count_reset 46[0m
+[0;32mI (1560220) GPIO: reset GPIO state 0 and count_reset 47[0m
+[0;32mI (1560230) GPIO: reset GPIO state 0 and count_reset 48[0m
+[0;32mI (1560240) GPIO: reset GPIO state 0 and count_reset 49[0m
+[0;32mI (1560250) GPIO: reset GPIO state 0 and count_reset 50[0m
+[0;32mI (1560260) GPIO: reset GPIO state 0 and count_reset 51[0m
+[0;32mI (1560270) GPIO: reset GPIO state 0 and count_reset 52[0m
+[0;32mI (1560280) GPIO: reset GPIO state 0 and count_reset 53[0m
+[0;32mI (1560290) GPIO: reset GPIO state 0 and count_reset 54[0m
+[0;32mI (1560300) GPIO: reset GPIO state 0 and count_reset 55[0m
+[0;32mI (1560310) GPIO: reset GPIO state 0 and count_reset 56[0m
+[0;32mI (1560320) GPIO: reset GPIO state 0 and count_reset 57[0m
+[0;32mI (1560330) GPIO: reset GPIO state 0 and count_reset 58[0m
+[0;32mI (1560340) GPIO: reset GPIO state 0 and count_reset 59[0m
+[0;32mI (1560350) GPIO: reset GPIO state 0 and count_reset 60[0m
+[0;32mI (1560360) GPIO: reset GPIO state 0 and count_reset 61[0m
+[0;32mI (1560370) GPIO: reset GPIO state 0 and count_reset 62[0m
+[0;32mI (1560380) GPIO: reset GPIO state 0 and count_reset 63[0m
+[0;32mI (1560390) GPIO: reset GPIO state 0 and count_reset 64[0m
+[0;32mI (1560400) GPIO: reset GPIO state 0 and count_reset 65[0m
+[0;32mI (1560410) GPIO: reset GPIO state 0 and count_reset 66[0m
+[0;32mI (1560420) GPIO: reset GPIO state 0 and count_reset 67[0m
+[0;32mI (1560430) GPIO: reset GPIO state 0 and count_reset 68[0m
+[0;32mI (1560440) GPIO: reset GPIO state 0 and count_reset 69[0m
+[0;32mI (1560450) GPIO: reset GPIO state 0 and count_reset 70[0m
+[0;32mI (1560460) GPIO: reset GPIO state 0 and count_reset 71[0m
+[0;32mI (1560470) GPIO: reset GPIO state 0 and count_reset 72[0m
+[0;32mI (1560480) GPIO: reset GPIO state 0 and count_reset 73[0m
+[0;32mI (1560490) GPIO: reset GPIO state 0 and count_reset 74[0m
+[0;32mI (1560500) GPIO: reset GPIO state 0 and count_reset 75[0m
+[0;32mI (1560510) GPIO: reset GPIO state 0 and count_reset 76[0m
+[0;32mI (1560520) GPIO: reset GPIO state 0 and count_reset 77[0m
+[0;32mI (1560530) GPIO: reset GPIO state 0 and count_reset 78[0m
+[0;32mI (1560540) GPIO: reset GPIO state 0 and count_reset 79[0m
+[0;32mI (1560550) GPIO: reset GPIO state 0 and count_reset 80[0m
+[0;32mI (1560560) GPIO: reset GPIO state 0 and count_reset 81[0m
+[0;32mI (1560570) GPIO: reset GPIO state 0 and count_reset 82[0m
+[0;32mI (1560580) GPIO: reset GPIO state 0 and count_reset 83[0m
+[0;32mI (1560590) GPIO: reset GPIO state 0 and count_reset 84[0m
+[0;32mI (1560600) GPIO: reset GPIO state 0 and count_reset 85[0m
+[0;32mI (1560610) GPIO: reset GPIO state 0 and count_reset 86[0m
+[0;32mI (1560620) GPIO: reset GPIO state 0 and count_reset 87[0m
+[0;32mI (1560630) GPIO: reset GPIO state 0 and count_reset 88[0m
+[0;32mI (1560640) GPIO: reset GPIO state 0 and count_reset 89[0m
+[0;32mI (1560650) GPIO: reset GPIO state 0 and count_reset 90[0m
+[0;32mI (1560660) GPIO: reset GPIO state 0 and count_reset 91[0m
+[0;32mI (1560670) GPIO: reset GPIO state 0 and count_reset 92[0m
+[0;32mI (1560680) GPIO: reset GPIO state 0 and count_reset 93[0m
+[0;32mI (1560690) GPIO: reset GPIO state 0 and count_reset 94[0m
+[0;32mI (1560700) GPIO: reset GPIO state 0 and count_reset 95[0m
+[0;32mI (1560710) GPIO: reset GPIO state 0 and count_reset 96[0m
+[0;32mI (1560720) GPIO: reset GPIO state 0 and count_reset 97[0m
+[0;32mI (1560730) GPIO: reset GPIO state 0 and count_reset 98[0m
+[0;32mI (1560740) GPIO: reset GPIO state 0 and count_reset 99[0m
+[0;32mI (1560750) GPIO: reset GPIO state 0 and count_reset 100[0m
+[0;32mI (1560760) GPIO: reset GPIO state 0 and count_reset 101[0m
+[0;32mI (1560770) GPIO: reset GPIO state 0 and count_reset 102[0m
+[0;32mI (1560780) GPIO: reset GPIO state 0 and count_reset 103[0m
+[0;32mI (1560790) GPIO: reset GPIO state 0 and count_reset 104[0m
+[0;32mI (1560800) GPIO: reset GPIO state 0 and count_reset 105[0m
+[0;32mI (1560810) GPIO: reset GPIO state 0 and count_reset 106[0m
+[0;32mI (1560820) GPIO: reset GPIO state 0 and count_reset 107[0m
+[0;32mI (1560830) GPIO: reset GPIO state 0 and count_reset 108[0m
+[0;32mI (1560840) GPIO: reset GPIO state 0 and count_reset 109[0m
+[0;32mI (1560850) GPIO: reset GPIO state 0 and count_reset 110[0m
+[0;32mI (1560860) GPIO: reset GPIO state 0 and count_reset 111[0m
+[0;32mI (1560870) GPIO: reset GPIO state 0 and count_reset 112[0m
+[0;32mI (1560880) GPIO: reset GPIO state 0 and count_reset 113[0m
+[0;32mI (1560890) GPIO: reset GPIO state 0 and count_reset 114[0m
+[0;32mI (1560900) GPIO: reset GPIO state 0 and count_reset 115[0m
+[0;32mI (1560910) GPIO: reset GPIO state 0 and count_reset 116[0m
+[0;32mI (1560920) GPIO: reset GPIO state 0 and count_reset 117[0m
+[0;32mI (1560930) GPIO: reset GPIO state 0 and count_reset 118[0m
+[0;32mI (1560940) GPIO: reset GPIO state 0 and count_reset 119[0m
+[0;32mI (1560950) GPIO: reset GPIO state 0 and count_reset 120[0m
+[0;32mI (1560960) GPIO: reset GPIO state 0 and count_reset 121[0m
+[0;32mI (1560970) GPIO: reset GPIO state 0 and count_reset 122[0m
+[0;32mI (1560980) GPIO: reset GPIO state 0 and count_reset 123[0m
+[0;32mI (1560990) GPIO: reset GPIO state 0 and count_reset 124[0m
+[0;32mI (1561000) GPIO: reset GPIO state 0 and count_reset 125[0m
+[0;32mI (1561010) GPIO: reset GPIO state 0 and count_reset 126[0m
+[0;32mI (1561020) GPIO: reset GPIO state 0 and count_reset 127[0m
+[0;32mI (1561030) GPIO: reset GPIO state 0 and count_reset 128[0m
+[0;32mI (1561040) GPIO: reset GPIO state 0 and count_reset 129[0m
+[0;32mI (1561050) GPIO: reset GPIO state 0 and count_reset 130[0m
+[0;32mI (1561060) GPIO: reset GPIO state 0 and count_reset 131[0m
+[0;32mI (1561070) GPIO: reset GPIO state 0 and count_reset 132[0m
+[0;32mI (1561080) GPIO: reset GPIO state 0 and count_reset 133[0m
+[0;32mI (1561090) GPIO: reset GPIO state 0 and count_reset 134[0m
+[0;32mI (1561100) GPIO: reset GPIO state 0 and count_reset 135[0m
+[0;32mI (1561110) GPIO: reset GPIO state 0 and count_reset 136[0m
+[0;32mI (1561120) GPIO: reset GPIO state 0 and count_reset 137[0m
+[0;32mI (1561130) GPIO: reset GPIO state 0 and count_reset 138[0m
+[0;32mI (1561140) GPIO: reset GPIO state 0 and count_reset 139[0m
+[0;32mI (1561150) GPIO: reset GPIO state 0 and count_reset 140[0m
+[0;32mI (1561160) GPIO: reset GPIO state 0 and count_reset 141[0m
+[0;32mI (1561170) GPIO: reset GPIO state 0 and count_reset 142[0m
+[0;32mI (1561180) GPIO: reset GPIO state 0 and count_reset 143[0m
+[0;32mI (1561190) GPIO: reset GPIO state 0 and count_reset 144[0m
+[0;32mI (1561200) GPIO: reset GPIO state 0 and count_reset 145[0m
+[0;32mI (1561210) GPIO: reset GPIO state 0 and count_reset 146[0m
+[0;32mI (1561220) GPIO: reset GPIO state 0 and count_reset 147[0m
+[0;32mI (1561230) GPIO: reset GPIO state 0 and count_reset 148[0m
+[0;32mI (1561240) GPIO: reset GPIO state 0 and count_reset 149[0m
+[0;32mI (1561250) GPIO: reset GPIO state 0 and count_reset 150[0m
+[0;32mI (1561260) GPIO: reset GPIO state 0 and count_reset 151[0m
+[0;32mI (1561270) GPIO: reset GPIO state 0 and count_reset 152[0m
+[0;32mI (1561280) GPIO: reset GPIO state 0 and count_reset 153[0m
+[0;32mI (1561290) GPIO: reset GPIO state 0 and count_reset 154[0m
+[0;32mI (1561300) GPIO: reset GPIO state 0 and count_reset 155[0m
+[0;32mI (1561310) GPIO: reset GPIO state 0 and count_reset 156[0m
+[0;32mI (1561320) GPIO: reset GPIO state 0 and count_reset 157[0m
+[0;32mI (1561330) GPIO: reset GPIO state 0 and count_reset 158[0m
+[0;32mI (1561340) GPIO: reset GPIO state 0 and count_reset 159[0m
+[0;32mI (1561350) GPIO: reset GPIO state 0 and count_reset 160[0m
+[0;32mI (1561360) GPIO: reset GPIO state 0 and count_reset 161[0m
+[0;32mI (1561370) GPIO: reset GPIO state 0 and count_reset 162[0m
+[0;32mI (1561380) GPIO: reset GPIO state 0 and count_reset 163[0m
+[0;32mI (1561390) GPIO: reset GPIO state 0 and count_reset 164[0m
+[0;32mI (1561400) GPIO: reset GPIO state 0 and count_reset 165[0m
+[0;32mI (1561410) GPIO: reset GPIO state 0 and count_reset 166[0m
+[0;32mI (1561420) GPIO: reset GPIO state 0 and count_reset 167[0m
+[0;32mI (1561430) GPIO: reset GPIO state 0 and count_reset 168[0m
+[0;32mI (1561440) GPIO: reset GPIO state 0 and count_reset 169[0m
+[0;32mI (1561450) GPIO: reset GPIO state 0 and count_reset 170[0m
+[0;32mI (1561460) GPIO: reset GPIO state 0 and count_reset 171[0m
+[0;32mI (1561470) GPIO: reset GPIO state 0 and count_reset 172[0m
+[0;32mI (1561480) GPIO: reset GPIO state 0 and count_reset 173[0m
+[0;32mI (1561490) GPIO: reset GPIO state 0 and count_reset 174[0m
+[0;32mI (1561500) GPIO: reset GPIO state 0 and count_reset 175[0m
+[0;32mI (1561510) GPIO: reset GPIO state 0 and count_reset 176[0m
+[0;32mI (1561520) GPIO: reset GPIO state 0 and count_reset 177[0m
+[0;32mI (1561530) GPIO: reset GPIO state 0 and count_reset 178[0m
+[0;32mI (1561540) GPIO: reset GPIO state 0 and count_reset 179[0m
+[0;32mI (1561550) GPIO: reset GPIO state 0 and count_reset 180[0m
+[0;32mI (1561560) GPIO: reset GPIO state 0 and count_reset 181[0m
+[0;32mI (1561570) GPIO: reset GPIO state 0 and count_reset 182[0m
+[0;32mI (1561580) GPIO: reset GPIO state 0 and count_reset 183[0m
+[0;32mI (1561590) GPIO: reset GPIO state 0 and count_reset 184[0m
+[0;32mI (1561600) GPIO: reset GPIO state 0 and count_reset 185[0m
+[0;32mI (1561610) GPIO: reset GPIO state 0 and count_reset 186[0m
+[0;32mI (1561620) GPIO: reset GPIO state 0 and count_reset 187[0m
+[0;32mI (1561630) GPIO: reset GPIO state 0 and count_reset 188[0m
+[0;32mI (1561640) GPIO: reset GPIO state 0 and count_reset 189[0m
+[0;32mI (1561650) GPIO: reset GPIO state 0 and count_reset 190[0m
+[0;32mI (1561660) GPIO: reset GPIO state 0 and count_reset 191[0m
+[0;32mI (1561670) GPIO: reset GPIO state 0 and count_reset 192[0m
+[0;32mI (1561680) GPIO: reset GPIO state 0 and count_reset 193[0m
+[0;32mI (1561690) GPIO: reset GPIO state 0 and count_reset 194[0m
+[0;32mI (1561700) GPIO: reset GPIO state 0 and count_reset 195[0m
+[0;32mI (1561710) GPIO: reset GPIO state 0 and count_reset 196[0m
+[0;32mI (1561720) GPIO: reset GPIO state 0 and count_reset 197[0m
+[0;32mI (1561730) GPIO: reset GPIO state 0 and count_reset 198[0m
+[0;32mI (1561740) GPIO: reset GPIO state 0 and count_reset 199[0m
+[0;32mI (1561750) GPIO: reset GPIO state 0 and count_reset 200[0m
+[0;32mI (1561760) GPIO: reset GPIO state 0 and count_reset 201[0m
+[0;32mI (1561770) GPIO: reset GPIO state 0 and count_reset 202[0m
+[0;32mI (1561780) GPIO: reset GPIO state 0 and count_reset 203[0m
+[0;32mI (1561790) GPIO: reset GPIO state 0 and count_reset 204[0m
+[0;32mI (1561800) GPIO: reset GPIO state 0 and count_reset 205[0m
+[0;32mI (1561810) GPIO: reset GPIO state 0 and count_reset 206[0m
+[0;32mI (1561820) GPIO: reset GPIO state 0 and count_reset 207[0m
+[0;32mI (1561830) GPIO: reset GPIO state 0 and count_reset 208[0m
+[0;32mI (1561840) GPIO: reset GPIO state 0 and count_reset 209[0m
+[0;32mI (1561850) GPIO: reset GPIO state 0 and count_reset 210[0m
+[0;32mI (1561860) GPIO: reset GPIO state 0 and count_reset 211[0m
+[0;32mI (1561870) GPIO: reset GPIO state 0 and count_reset 212[0m
+[0;32mI (1561880) GPIO: reset GPIO state 0 and count_reset 213[0m
+[0;32mI (1561890) GPIO: reset GPIO state 0 and count_reset 214[0m
+[0;32mI (1561900) GPIO: reset GPIO state 0 and count_reset 215[0m
+[0;32mI (1561910) GPIO: reset GPIO state 0 and count_reset 216[0m
+[0;32mI (1561920) GPIO: reset GPIO state 0 and count_reset 217[0m
+[0;32mI (1561930) GPIO: reset GPIO state 0 and count_reset 218[0m
+[0;32mI (1561940) GPIO: reset GPIO state 0 and count_reset 219[0m
+[0;32mI (1561950) GPIO: reset GPIO state 0 and count_reset 220[0m
+[0;32mI (1561960) GPIO: reset GPIO state 0 and count_reset 221[0m
+[0;32mI (1561970) GPIO: reset GPIO state 0 and count_reset 222[0m
+[0;32mI (1561980) GPIO: reset GPIO state 0 and count_reset 223[0m
+[0;32mI (1561990) GPIO: reset GPIO state 0 and count_reset 224[0m
+[0;32mI (1562000) GPIO: reset GPIO state 0 and count_reset 225[0m
+[0;32mI (1562010) GPIO: reset GPIO state 0 and count_reset 226[0m
+[0;32mI (1562020) GPIO: reset GPIO state 0 and count_reset 227[0m
+[0;32mI (1562030) GPIO: reset GPIO state 0 and count_reset 228[0m
+[0;32mI (1562040) GPIO: reset GPIO state 0 and count_reset 229[0m
+[0;32mI (1562050) GPIO: reset GPIO state 0 and count_reset 230[0m
+[0;32mI (1562060) GPIO: reset GPIO state 0 and count_reset 231[0m
+[0;32mI (1562070) GPIO: reset GPIO state 0 and count_reset 232[0m
+[0;32mI (1562080) GPIO: reset GPIO state 0 and count_reset 233[0m
+[0;32mI (1562090) GPIO: reset GPIO state 0 and count_reset 234[0m
+[0;32mI (1562100) GPIO: reset GPIO state 0 and count_reset 235[0m
+[0;32mI (1562110) GPIO: reset GPIO state 0 and count_reset 236[0m
+[0;32mI (1562120) GPIO: reset GPIO state 0 and count_reset 237[0m
+[0;32mI (1562130) GPIO: reset GPIO state 0 and count_reset 238[0m
+[0;32mI (1562140) GPIO: reset GPIO state 0 and count_reset 239[0m
+[0;32mI (1562150) GPIO: reset GPIO state 0 and count_reset 240[0m
+[0;32mI (1562160) GPIO: reset GPIO state 0 and count_reset 241[0m
+[0;32mI (1562170) GPIO: reset GPIO state 0 and count_reset 242[0m
+[0;32mI (1562180) GPIO: reset GPIO state 0 and count_reset 243[0m
+[0;32mI (1562190) GPIO: reset GPIO state 0 and count_reset 244[0m
+[0;32mI (1562200) GPIO: reset GPIO state 0 and count_reset 245[0m
+[0;32mI (1562210) GPIO: reset GPIO state 0 and count_reset 246[0m
+[0;32mI (1562220) GPIO: reset GPIO state 0 and count_reset 247[0m
+[0;32mI (1562230) GPIO: reset GPIO state 0 and count_reset 248[0m
+[0;32mI (1562240) GPIO: reset GPIO state 0 and count_reset 249[0m
+[0;32mI (1562250) GPIO: reset GPIO state 0 and count_reset 250[0m
+[0;32mI (1562260) GPIO: reset GPIO state 0 and count_reset 251[0m
+[0;32mI (1562270) GPIO: reset GPIO state 0 and count_reset 252[0m
+[0;32mI (1562280) GPIO: reset GPIO state 0 and count_reset 253[0m
+[0;32mI (1562290) GPIO: reset GPIO state 0 and count_reset 254[0m
+[0;32mI (1562300) GPIO: reset GPIO state 0 and count_reset 255[0m
+[0;32mI (1562310) GPIO: reset GPIO state 0 and count_reset 256[0m
+[0;32mI (1562320) GPIO: reset GPIO state 0 and count_reset 257[0m
+[0;32mI (1562330) GPIO: reset GPIO state 0 and count_reset 258[0m
+[0;32mI (1562340) GPIO: reset GPIO state 0 and count_reset 259[0m
+[0;32mI (1562350) GPIO: reset GPIO state 0 and count_reset 260[0m
+[0;32mI (1562360) GPIO: reset GPIO state 0 and count_reset 261[0m
+[0;32mI (1562370) GPIO: reset GPIO state 0 and count_reset 262[0m
+[0;32mI (1562380) GPIO: reset GPIO state 0 and count_reset 263[0m
+[0;32mI (1562390) GPIO: reset GPIO state 0 and count_reset 264[0m
+[0;32mI (1562400) GPIO: reset GPIO state 0 and count_reset 265[0m
+[0;32mI (1562410) GPIO: reset GPIO state 0 and count_reset 266[0m
+[0;32mI (1562420) GPIO: reset GPIO state 0 and count_reset 267[0m
+[0;32mI (1562430) GPIO: reset GPIO state 0 and count_reset 268[0m
+[0;32mI (1562440) GPIO: reset GPIO state 0 and count_reset 269[0m
+[0;32mI (1562450) GPIO: reset GPIO state 0 and count_reset 270[0m
+[0;32mI (1562460) GPIO: reset GPIO state 0 and count_reset 271[0m
+[0;32mI (1562470) GPIO: reset GPIO state 0 and count_reset 272[0m
+[0;32mI (1562480) GPIO: reset GPIO state 0 and count_reset 273[0m
+[0;32mI (1562490) GPIO: reset GPIO state 0 and count_reset 274[0m
+[0;32mI (1562500) GPIO: reset GPIO state 0 and count_reset 275[0m
+[0;32mI (1562510) GPIO: reset GPIO state 0 and count_reset 276[0m
+[0;32mI (1562520) GPIO: reset GPIO state 0 and count_reset 277[0m
+[0;32mI (1562530) GPIO: reset GPIO state 0 and count_reset 278[0m
+[0;32mI (1562540) GPIO: reset GPIO state 0 and count_reset 279[0m
+[0;32mI (1562550) GPIO: reset GPIO state 0 and count_reset 280[0m
+[0;32mI (1562560) GPIO: reset GPIO state 0 and count_reset 281[0m
+[0;32mI (1562570) GPIO: reset GPIO state 0 and count_reset 282[0m
+[0;32mI (1562580) GPIO: reset GPIO state 0 and count_reset 283[0m
+[0;32mI (1562590) GPIO: reset GPIO state 0 and count_reset 284[0m
+[0;32mI (1562600) GPIO: reset GPIO state 0 and count_reset 285[0m
+[0;32mI (1562610) GPIO: reset GPIO state 0 and count_reset 286[0m
+[0;32mI (1562620) GPIO: reset GPIO state 0 and count_reset 287[0m
+[0;32mI (1562630) GPIO: reset GPIO state 0 and count_reset 288[0m
+[0;32mI (1562640) GPIO: reset GPIO state 0 and count_reset 289[0m
+[0;32mI (1562650) GPIO: reset GPIO state 0 and count_reset 290[0m
+[0;32mI (1562660) GPIO: reset GPIO state 0 and count_reset 291[0m
+[0;32mI (1562670) GPIO: reset GPIO state 0 and count_reset 292[0m
+[0;32mI (1562680) GPIO: reset GPIO state 0 and count_reset 293[0m
+[0;32mI (1562690) GPIO: reset GPIO state 0 and count_reset 294[0m
+[0;32mI (1562700) GPIO: reset GPIO state 0 and count_reset 295[0m
+[0;32mI (1562710) GPIO: reset GPIO state 0 and count_reset 296[0m
+[0;32mI (1562720) GPIO: reset GPIO state 0 and count_reset 297[0m
+[0;32mI (1562730) GPIO: reset GPIO state 0 and count_reset 298[0m
+[0;32mI (1562740) GPIO: reset GPIO state 0 and count_reset 299[0m
+[0;32mI (1562750) GPIO: reset GPIO state 0 and count_reset 300[0m
+[0;32mI (1562760) GPIO: reset GPIO state 0 and count_reset 301[0m
+[0;32mI (1562770) GPIO: reset GPIO state 0 and count_reset 302[0m
+[0;32mI (1562780) GPIO: reset GPIO state 0 and count_reset 303[0m
+[0;32mI (1562790) GPIO: reset GPIO state 0 and count_reset 304[0m
+[0;32mI (1562800) GPIO: reset GPIO state 0 and count_reset 305[0m
+[0;32mI (1562810) GPIO: reset GPIO state 0 and count_reset 306[0m
+[0;32mI (1562820) GPIO: reset GPIO state 0 and count_reset 307[0m
+[0;32mI (1562830) GPIO: reset GPIO state 0 and count_reset 308[0m
+[0;32mI (1562840) GPIO: reset GPIO state 0 and count_reset 309[0m
+[0;32mI (1562850) GPIO: reset GPIO state 0 and count_reset 310[0m
+[0;32mI (1562860) GPIO: reset GPIO state 0 and count_reset 311[0m
+[0;32mI (1562870) GPIO: reset GPIO state 0 and count_reset 312[0m
+[0;32mI (1562880) GPIO: reset GPIO state 0 and count_reset 313[0m
+[0;32mI (1562890) GPIO: reset GPIO state 0 and count_reset 314[0m
+[0;32mI (1562900) GPIO: reset GPIO state 0 and count_reset 315[0m
+[0;32mI (1562910) GPIO: reset GPIO state 0 and count_reset 316[0m
+[0;32mI (1562920) GPIO: reset GPIO state 0 and count_reset 317[0m
+[0;32mI (1562930) GPIO: reset GPIO state 0 and count_reset 318[0m
+[0;32mI (1562940) GPIO: reset GPIO state 0 and count_reset 319[0m
+[0;32mI (1562950) GPIO: reset GPIO state 0 and count_reset 320[0m
+[0;32mI (1562960) GPIO: reset GPIO state 0 and count_reset 321[0m
+[0;32mI (1562970) GPIO: reset GPIO state 0 and count_reset 322[0m
+[0;32mI (1562980) GPIO: reset GPIO state 0 and count_reset 323[0m
+[0;32mI (1562990) GPIO: reset GPIO state 0 and count_reset 324[0m
+[0;32mI (1563000) GPIO: reset GPIO state 0 and count_reset 325[0m
+[0;32mI (1563010) GPIO: reset GPIO state 0 and count_reset 326[0m
+[0;32mI (1563020) GPIO: reset GPIO state 0 and count_reset 327[0m
+[0;32mI (1563030) GPIO: reset GPIO state 0 and count_reset 328[0m
+[0;32mI (1563040) GPIO: reset GPIO state 0 and count_reset 329[0m
+[0;32mI (1563050) GPIO: reset GPIO state 0 and count_reset 330[0m
+[0;32mI (1563060) GPIO: reset GPIO state 0 and count_reset 331[0m
+[0;32mI (1563070) GPIO: reset GPIO state 0 and count_reset 332[0m
+[0;32mI (1563080) GPIO: reset GPIO state 0 and count_reset 333[0m
+[0;32mI (1563090) GPIO: reset GPIO state 0 and count_reset 334[0m
+[0;32mI (1563100) GPIO: reset GPIO state 0 and count_reset 335[0m
+[0;32mI (1563110) GPIO: reset GPIO state 0 and count_reset 336[0m
+[0;32mI (1563120) GPIO: reset GPIO state 0 and count_reset 337[0m
+[0;32mI (1563130) GPIO: reset GPIO state 0 and count_reset 338[0m
+[0;32mI (1563140) GPIO: reset GPIO state 0 and count_reset 339[0m
+[0;32mI (1563150) GPIO: reset GPIO state 0 and count_reset 340[0m
+[0;32mI (1563160) GPIO: reset GPIO state 0 and count_reset 341[0m
+[0;32mI (1563170) GPIO: reset GPIO state 0 and count_reset 342[0m
+[0;32mI (1563180) GPIO: reset GPIO state 0 and count_reset 343[0m
+[0;32mI (1563190) GPIO: reset GPIO state 0 and count_reset 344[0m
+[0;32mI (1563200) GPIO: reset GPIO state 0 and count_reset 345[0m
+[0;32mI (1563210) GPIO: reset GPIO state 0 and count_reset 346[0m
+[0;32mI (1563220) GPIO: reset GPIO state 0 and count_reset 347[0m
+[0;32mI (1563230) GPIO: reset GPIO state 0 and count_reset 348[0m
+[0;32mI (1563240) GPIO: reset GPIO state 0 and count_reset 349[0m
+[0;32mI (1563250) GPIO: reset GPIO state 0 and count_reset 350[0m
+[0;32mI (1563260) GPIO: reset GPIO state 0 and count_reset 351[0m
+[0;32mI (1563270) GPIO: reset GPIO state 0 and count_reset 352[0m
+[0;32mI (1563280) GPIO: reset GPIO state 0 and count_reset 353[0m
+[0;32mI (1563290) GPIO: reset GPIO state 0 and count_reset 354[0m
+[0;32mI (1563300) GPIO: reset GPIO state 0 and count_reset 355[0m
+[0;32mI (1563310) GPIO: reset GPIO state 0 and count_reset 356[0m
+[0;32mI (1563320) GPIO: reset GPIO state 0 and count_reset 357[0m
+[0;32mI (1563330) GPIO: reset GPIO state 0 and count_reset 358[0m
+[0;32mI (1563340) GPIO: reset GPIO state 0 and count_reset 359[0m
+[0;32mI (1563350) GPIO: reset GPIO state 0 and count_reset 360[0m
+[0;32mI (1563360) GPIO: reset GPIO state 0 and count_reset 361[0m
+[0;32mI (1563370) GPIO: reset GPIO state 0 and count_reset 362[0m
+[0;32mI (1563380) GPIO: reset GPIO state 0 and count_reset 363[0m
+[0;32mI (1563390) GPIO: reset GPIO state 0 and count_reset 364[0m
+[0;32mI (1563400) GPIO: reset GPIO state 0 and count_reset 365[0m
+[0;32mI (1563410) GPIO: reset GPIO state 0 and count_reset 366[0m
+[0;32mI (1563420) GPIO: reset GPIO state 0 and count_reset 367[0m
+[0;32mI (1563430) GPIO: reset GPIO state 0 and count_reset 368[0m
+[0;32mI (1563440) GPIO: reset GPIO state 0 and count_reset 369[0m
+[0;32mI (1563450) GPIO: reset GPIO state 0 and count_reset 370[0m
+[0;32mI (1563460) GPIO: reset GPIO state 0 and count_reset 371[0m
+[0;32mI (1563470) GPIO: reset GPIO state 0 and count_reset 372[0m
+[0;32mI (1563480) GPIO: reset GPIO state 0 and count_reset 373[0m
+[0;32mI (1563490) GPIO: reset GPIO state 0 and count_reset 374[0m
+[0;32mI (1563500) GPIO: reset GPIO state 0 and count_reset 375[0m
+[0;32mI (1563510) GPIO: reset GPIO state 0 and count_reset 376[0m
+[0;32mI (1563520) GPIO: reset GPIO state 0 and count_reset 377[0m
+[0;32mI (1563530) GPIO: reset GPIO state 0 and count_reset 378[0m
+[0;32mI (1563540) GPIO: reset GPIO state 0 and count_reset 379[0m
+[0;32mI (1563550) GPIO: reset GPIO state 0 and count_reset 380[0m
+[0;32mI (1563560) GPIO: reset GPIO state 0 and count_reset 381[0m
+[0;32mI (1563570) GPIO: reset GPIO state 0 and count_reset 382[0m
+[0;32mI (1563580) GPIO: reset GPIO state 0 and count_reset 383[0m
+[0;32mI (1563590) GPIO: reset GPIO state 0 and count_reset 384[0m
+[0;32mI (1563600) GPIO: reset GPIO state 0 and count_reset 385[0m
+[0;32mI (1563610) GPIO: reset GPIO state 0 and count_reset 386[0m
+[0;32mI (1563620) GPIO: reset GPIO state 0 and count_reset 387[0m
+[0;32mI (1563630) GPIO: reset GPIO state 0 and count_reset 388[0m
+[0;32mI (1563640) GPIO: reset GPIO state 0 and count_reset 389[0m
+[0;32mI (1563650) GPIO: reset GPIO state 0 and count_reset 390[0m
+[0;32mI (1563660) GPIO: reset GPIO state 0 and count_reset 391[0m
+[0;32mI (1563670) GPIO: reset GPIO state 0 and count_reset 392[0m
+[0;32mI (1563680) GPIO: reset GPIO state 0 and count_reset 393[0m
+[0;32mI (1563690) GPIO: reset GPIO state 0 and count_reset 394[0m
+[0;32mI (1563700) GPIO: reset GPIO state 0 and count_reset 395[0m
+[0;32mI (1563710) GPIO: reset GPIO state 0 and count_reset 396[0m
+[0;32mI (1563720) GPIO: reset GPIO state 0 and count_reset 397[0m
+[0;32mI (1563730) GPIO: reset GPIO state 0 and count_reset 398[0m
+[0;32mI (1563740) GPIO: reset GPIO state 0 and count_reset 399[0m
+[0;32mI (1563750) GPIO: reset GPIO state 0 and count_reset 400[0m
+[0;32mI (1563760) GPIO: reset GPIO state 0 and count_reset 401[0m
+[0;32mI (1563770) GPIO: reset GPIO state 0 and count_reset 402[0m
+[0;32mI (1563780) GPIO: reset GPIO state 0 and count_reset 403[0m
+[0;32mI (1563790) GPIO: reset GPIO state 0 and count_reset 404[0m
+[0;32mI (1563800) GPIO: reset GPIO state 0 and count_reset 405[0m
+[0;32mI (1563810) GPIO: reset GPIO state 0 and count_reset 406[0m
+[0;32mI (1563820) GPIO: reset GPIO state 0 and count_reset 407[0m
+[0;32mI (1563830) GPIO: reset GPIO state 0 and count_reset 408[0m
+[0;32mI (1563840) GPIO: reset GPIO state 0 and count_reset 409[0m
+[0;32mI (1563850) GPIO: reset GPIO state 0 and count_reset 410[0m
+[0;32mI (1563860) GPIO: reset GPIO state 0 and count_reset 411[0m
+[0;32mI (1563870) GPIO: reset GPIO state 0 and count_reset 412[0m
+[0;32mI (1563880) GPIO: reset GPIO state 0 and count_reset 413[0m
+[0;32mI (1563890) GPIO: reset GPIO state 0 and count_reset 414[0m
+[0;32mI (1563900) GPIO: reset GPIO state 0 and count_reset 415[0m
+[0;32mI (1563910) GPIO: reset GPIO state 0 and count_reset 416[0m
+[0;32mI (1563920) GPIO: reset GPIO state 0 and count_reset 417[0m
+[0;32mI (1563930) GPIO: reset GPIO state 0 and count_reset 418[0m
+[0;32mI (1563940) GPIO: reset GPIO state 0 and count_reset 419[0m
+[0;32mI (1563950) GPIO: reset GPIO state 0 and count_reset 420[0m
+[0;32mI (1563960) GPIO: reset GPIO state 0 and count_reset 421[0m
+[0;32mI (1563970) GPIO: reset GPIO state 0 and count_reset 422[0m
+[0;32mI (1563980) GPIO: reset GPIO state 0 and count_reset 423[0m
+[0;32mI (1563990) GPIO: reset GPIO state 0 and count_reset 424[0m
+[0;32mI (1564000) GPIO: reset GPIO state 0 and count_reset 425[0m
+[0;32mI (1564010) GPIO: reset GPIO state 0 and count_reset 426[0m
+[0;32mI (1564020) GPIO: reset GPIO state 0 and count_reset 427[0m
+[0;32mI (1564030) GPIO: reset GPIO state 0 and count_reset 428[0m
+[0;32mI (1564040) GPIO: reset GPIO state 0 and count_reset 429[0m
+[0;32mI (1564050) GPIO: reset GPIO state 0 and count_reset 430[0m
+[0;32mI (1564060) GPIO: reset GPIO state 0 and count_reset 431[0m
+[0;32mI (1564070) GPIO: reset GPIO state 0 and count_reset 432[0m
+[0;32mI (1564080) GPIO: reset GPIO state 0 and count_reset 433[0m
+[0;32mI (1564090) GPIO: reset GPIO state 0 and count_reset 434[0m
+[0;32mI (1564100) GPIO: reset GPIO state 0 and count_reset 435[0m
+[0;32mI (1564110) GPIO: reset GPIO state 0 and count_reset 436[0m
+[0;32mI (1564120) GPIO: reset GPIO state 0 and count_reset 437[0m
+[0;32mI (1564130) GPIO: reset GPIO state 0 and count_reset 438[0m
+[0;32mI (1564140) GPIO: reset GPIO state 0 and count_reset 439[0m
+[0;32mI (1564150) GPIO: reset GPIO state 0 and count_reset 440[0m
+[0;32mI (1564160) GPIO: reset GPIO state 0 and count_reset 441[0m
+[0;32mI (1564170) GPIO: reset GPIO state 0 and count_reset 442[0m
+[0;32mI (1564180) GPIO: reset GPIO state 0 and count_reset 443[0m
+[0;32mI (1564190) GPIO: reset GPIO state 0 and count_reset 444[0m
+[0;32mI (1564200) GPIO: reset GPIO state 0 and count_reset 445[0m
+[0;32mI (1564210) GPIO: reset GPIO state 0 and count_reset 446[0m
+[0;32mI (1564220) GPIO: reset GPIO state 0 and count_reset 447[0m
+[0;32mI (1564230) GPIO: reset GPIO state 0 and count_reset 448[0m
+[0;32mI (1564240) GPIO: reset GPIO state 0 and count_reset 449[0m
+[0;32mI (1564250) GPIO: reset GPIO state 0 and count_reset 450[0m
+[0;32mI (1564260) GPIO: reset GPIO state 0 and count_reset 451[0m
+[0;32mI (1564270) GPIO: reset GPIO state 0 and count_reset 452[0m
+[0;32mI (1564280) GPIO: reset GPIO state 0 and count_reset 453[0m
+[0;32mI (1564290) GPIO: reset GPIO state 0 and count_reset 454[0m
+[0;32mI (1564300) GPIO: reset GPIO state 0 and count_reset 455[0m
+[0;32mI (1564310) GPIO: reset GPIO state 0 and count_reset 456[0m
+[0;32mI (1564320) GPIO: reset GPIO state 0 and count_reset 457[0m
+[0;32mI (1564330) GPIO: reset GPIO state 0 and count_reset 458[0m
+[0;32mI (1564340) GPIO: reset GPIO state 0 and count_reset 459[0m
+[0;32mI (1564350) GPIO: reset GPIO state 0 and count_reset 460[0m
+[0;32mI (1564360) GPIO: reset GPIO state 0 and count_reset 461[0m
+[0;32mI (1564370) GPIO: reset GPIO state 0 and count_reset 462[0m
+[0;32mI (1564380) GPIO: reset GPIO state 0 and count_reset 463[0m
+[0;32mI (1564390) GPIO: reset GPIO state 0 and count_reset 464[0m
+[0;32mI (1564400) GPIO: reset GPIO state 0 and count_reset 465[0m
+[0;32mI (1564410) GPIO: reset GPIO state 0 and count_reset 466[0m
+[0;32mI (1564420) GPIO: reset GPIO state 0 and count_reset 467[0m
+[0;32mI (1564430) GPIO: reset GPIO state 0 and count_reset 468[0m
+[0;32mI (1564440) GPIO: reset GPIO state 0 and count_reset 469[0m
+[0;32mI (1564450) GPIO: reset GPIO state 0 and count_reset 470[0m
+[0;32mI (1564460) GPIO: reset GPIO state 0 and count_reset 471[0m
+[0;32mI (1564470) GPIO: reset GPIO state 0 and count_reset 472[0m
+[0;32mI (1564480) GPIO: reset GPIO state 0 and count_reset 473[0m
+[0;32mI (1564490) GPIO: reset GPIO state 0 and count_reset 474[0m
+[0;32mI (1564500) GPIO: reset GPIO state 0 and count_reset 475[0m
+[0;32mI (1564510) GPIO: reset GPIO state 0 and count_reset 476[0m
+[0;32mI (1564520) GPIO: reset GPIO state 0 and count_reset 477[0m
+[0;32mI (1564530) GPIO: reset GPIO state 0 and count_reset 478[0m
+[0;32mI (1564540) GPIO: reset GPIO state 0 and count_reset 479[0m
+[0;32mI (1564550) GPIO: reset GPIO state 0 and count_reset 480[0m
+[0;32mI (1564560) GPIO: reset GPIO state 0 and count_reset 481[0m
+[0;32mI (1564570) GPIO: reset GPIO state 0 and count_reset 482[0m
+[0;32mI (1564580) GPIO: reset GPIO state 0 and count_reset 483[0m
+[0;32mI (1564590) GPIO: reset GPIO state 0 and count_reset 484[0m
+[0;32mI (1564600) GPIO: reset GPIO state 0 and count_reset 485[0m
+[0;32mI (1564610) GPIO: reset GPIO state 0 and count_reset 486[0m
+[0;32mI (1564620) GPIO: reset GPIO state 0 and count_reset 487[0m
+[0;32mI (1564630) GPIO: reset GPIO state 0 and count_reset 488[0m
+[0;32mI (1564640) GPIO: reset GPIO state 0 and count_reset 489[0m
+[0;32mI (1564650) GPIO: reset GPIO state 0 and count_reset 490[0m
+[0;32mI (1564660) GPIO: reset GPIO state 0 and count_reset 491[0m
+[0;32mI (1564670) GPIO: reset GPIO state 0 and count_reset 492[0m
+[0;32mI (1564680) GPIO: reset GPIO state 0 and count_reset 493[0m
+[0;32mI (1564690) GPIO: reset GPIO state 0 and count_reset 494[0m
+[0;32mI (1564700) GPIO: reset GPIO state 0 and count_reset 495[0m
+[0;32mI (1564710) GPIO: reset GPIO state 0 and count_reset 496[0m
+[0;32mI (1564720) GPIO: reset GPIO state 0 and count_reset 497[0m
+[0;32mI (1564730) GPIO: reset GPIO state 0 and count_reset 498[0m
+[0;32mI (1564740) GPIO: reset GPIO state 0 and count_reset 499[0m
+[0;32mI (1564740) MQTT_HANDLER:  hard-reset [0m
+[0;32mI (1564740) MQTT_HANDLER: hard reset {"id":"4ltc01"}[0m
+[0;32mI (1564740) MQTT_HANDLER: hard reset publish successful, msg_id=23073[0m
+[0;32mI (1565080) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23073[0m
+[0;32mI (1565260) NVS: SSID erased successfully.[0m
+[0;32mI (1565260) NVS: Password erased successfully.[0m
+[0;32mI (1566260) wifi:state: run -> init (0x0)[0m
+[0;32mI (1566270) wifi:pm stop, total sleep time: 1403426389 us / 1562854430 us[0m
+
+[0;32mI (1566270) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (1566270) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1566280) WIFI_HANDLER: retry to connect to the AP[0m
+[1;31mE (1566280) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (1566280) WIFI_HANDLER: connect to the AP fail[0m
+[1;31mE (1566290) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (1566300) MQTT_HANDLER: MQTT_EVENT_ERROR[0m
+[1;31mE (1566300) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (1566310) ESP_APP: WiFi disconnected, enabling BLE advertising...[0m
+[0;32mI (1566320) BLE_INIT: BT controller compile version [d74042a][0m
+[0;32mI (1566320) BLE_INIT: Bluetooth MAC: cc:8d:a2:0c:e2:22[0m
+[0;32mI (1566330) wifi:flush txq[0m
+[0;32mI (1566330) wifi:stop sw txq[0m
+[0;32mI (1566330) wifi:lmac stop hw txq[0m
+ �ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xa (SPI_FAST_FLASH_BOOT)
+Saved PC:0x42006031
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.2[0m
+[0;32mI (35) boot: efuse block revision: v1.3[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (46) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (50) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (70) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (76) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (83) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (89) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (96) boot: End of partition table[0m
+[0;32mI (99) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3a1d4h (238036) map[0m
+[0;32mI (149) esp_image: segment 1: paddr=0005a1fc vaddr=3fc9f300 size=053e0h ( 21472) load[0m
+[0;32mI (153) esp_image: segment 2: paddr=0005f5e4 vaddr=40374000 size=00a34h (  2612) load[0m
+[0;32mI (154) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=105670h (1070704) map[0m
+[0;32mI (350) esp_image: segment 4: paddr=00165698 vaddr=40374a34 size=1a894h (108692) load[0m
+[0;32mI (374) esp_image: segment 5: paddr=0017ff34 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (384) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (385) boot: Disabling RNG early entropy source...[0m
+[0;32mI (395) cpu_start: Multicore app[0m
+[0;32mI (404) cpu_start: Pro cpu start user code[0m
+[0;32mI (404) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (404) app_init: Application information:[0m
+[0;32mI (404) app_init: Project name:     esp_app[0m
+[0;32mI (408) app_init: App version:      e470870-dirty[0m
+[0;32mI (412) app_init: Compile time:     Jul  8 2025 09:35:10[0m
+[0;32mI (417) app_init: ELF file SHA256:  1af2edffa...[0m
+[0;32mI (422) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (426) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (430) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (434) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (438) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (444) heap_init: At 3FCAC4F8 len 0003D218 (244 KiB): RAM[0m
+[0;32mI (449) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (454) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (459) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (466) spi_flash: detected chip: boya[0m
+[0;32mI (468) spi_flash: flash io: dio[0m
+[0;32mI (471) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (478) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (484) coexist: coex firmware version: e727207[0m
+[0;32mI (515) coexist: coexist rom version e7ae62f[0m
+[0;32mI (516) main_task: Started on CPU0[0m
+[0;32mI (526) main_task: Calling app_main()[0m
+[0;32mI (546) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (546) GPIO: GPIO Initialization![0m
+[0;32mI (546) ESP_APP: UART initialized[0m
+[0;32mI (546) NVS: WiFi credentials found. SSID: , connecting......[0m
+[0;32mI (546) ESP_APP: WiFi credentials not found, starting SoftAP + HTTP Server...[0m
+[0;32mI (6556) pp: pp rom version: e7ae62f[0m
+[0;32mI (6556) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (6566) wifi:wifi driver task: 3fcbc788, prio:23, stack:6656, core=0[0m
+[0;32mI (6576) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (6576) wifi:wifi certification version: v7.0[0m
+[0;32mI (6576) wifi:config NVS flash: enabled[0m
+[0;32mI (6576) wifi:config nano formatting: disabled[0m
+[0;32mI (6576) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (6586) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (6586) wifi:Init management short buffer num: 32[0m
+[0;32mI (6596) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (6596) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (6596) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (6606) wifi:Init static rx buffer num: 10[0m
+[0;32mI (6606) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (6616) wifi_init: rx ba win: 6[0m
+[0;32mI (6616) wifi_init: accept mbox: 6[0m
+[0;32mI (6616) wifi_init: tcpip mbox: 32[0m
+[0;32mI (6616) wifi_init: udp mbox: 6[0m
+[0;32mI (6626) wifi_init: tcp mbox: 6[0m
+[0;32mI (6626) wifi_init: tcp tx win: 5760[0m
+[0;32mI (6626) wifi_init: tcp rx win: 5760[0m
+[0;32mI (6636) wifi_init: tcp mss: 1440[0m
+[0;32mI (6636) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (6636) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (6646) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (6686) wifi:mode : softAP (cc:8d:a2:0c:e2:21)[0m
+[0;32mI (6686) wifi:Total power save buffer number: 16[0m
+[0;32mI (6686) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6686) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (6696) HTTP: SoftAP started with SSID: onwords-4ltc01[0m
+[0;32mI (6696) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (6706) HTTP: HTTP Server started at 192.168.4.1:8182[0m
+[0;32mI (6706) main_task: Returned from app_main()[0m
+[0;32mI (120396) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (120396) wifi:station: 6c:24:a6:c7:20:a9 join, AID=1, bgn, 20[0m
+[0;32mI (120516) wifi:<ba-add>idx:2 (ifx:1, 6c:24:a6:c7:20:a9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (120556) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (121956) HTTP: Received JSON: {"ssid":"Rnd","password":"nikhil8182"}[0m
+[0;32mI (121966) NVS: Stored SSID: Rnd and Password.[0m
+[0;32mI (122966) wifi:station: 6c:24:a6:c7:20:a9 leave, AID = 1, reason = 2, bss_flags is 33721443, bss:0x3fcaeff0[0m
+[0;32mI (122966) wifi:new:<1,0>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (122966) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (123026) wifi:flush txq[0m
+[0;32mI (123026) wifi:stop sw txq[0m
+[0;32mI (123026) wifi:lmac stop hw txq[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xa (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375cac
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.2[0m
+[0;32mI (35) boot: efuse block revision: v1.3[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (46) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (50) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (70) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (76) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (83) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (89) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (96) boot: End of partition table[0m
+[0;32mI (99) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3a1d4h (238036) map[0m
+[0;32mI (148) esp_image: segment 1: paddr=0005a1fc vaddr=3fc9f300 size=053e0h ( 21472) load[0m
+[0;32mI (153) esp_image: segment 2: paddr=0005f5e4 vaddr=40374000 size=00a34h (  2612) load[0m
+[0;32mI (154) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=105670h (1070704) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=00165698 vaddr=40374a34 size=1a894h (108692) load[0m
+[0;32mI (372) esp_image: segment 5: paddr=0017ff34 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (383) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (383) boot: Disabling RNG early entropy source...[0m
+[0;32mI (393) cpu_start: Multicore app[0m
+[0;32mI (403) cpu_start: Pro cpu start user code[0m
+[0;32mI (403) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (403) app_init: Application information:[0m
+[0;32mI (403) app_init: Project name:     esp_app[0m
+[0;32mI (407) app_init: App version:      e470870-dirty[0m
+[0;32mI (411) app_init: Compile time:     Jul  8 2025 09:35:10[0m
+[0;32mI (416) app_init: ELF file SHA256:  1af2edffa...[0m
+[0;32mI (420) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (425) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (429) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (433) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (436) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (443) heap_init: At 3FCAC4F8 len 0003D218 (244 KiB): RAM[0m
+[0;32mI (448) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (453) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (458) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (465) spi_flash: detected chip: boya[0m
+[0;32mI (467) spi_flash: flash io: dio[0m
+[0;32mI (470) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (476) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (483) coexist: coex firmware version: e727207[0m
+[0;32mI (514) coexist: coexist rom version e7ae62f[0m
+[0;32mI (514) main_task: Started on CPU0[0m
+[0;32mI (524) main_task: Calling app_main()[0m
+[0;32mI (544) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (544) GPIO: GPIO Initialization![0m
+[0;32mI (544) ESP_APP: UART initialized[0m
+[0;32mI (544) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (554) NVS: From nvs ssid is Rnd [0m
+[0;32mI (554) NVS: From nvs password is nikhil8182[0m
+[0;32mI (554) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (564) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (564) pp: pp rom version: e7ae62f[0m
+[0;32mI (574) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (584) wifi:wifi driver task: 3fcbc778, prio:23, stack:6656, core=0[0m
+[0;32mI (594) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (594) wifi:wifi certification version: v7.0[0m
+[0;32mI (594) wifi:config NVS flash: enabled[0m
+[0;32mI (594) wifi:config nano formatting: disabled[0m
+[0;32mI (594) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (604) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (604) wifi:Init management short buffer num: 32[0m
+[0;32mI (604) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (614) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (614) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (624) wifi:Init static rx buffer num: 10[0m
+[0;32mI (624) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (634) wifi_init: rx ba win: 6[0m
+[0;32mI (634) wifi_init: accept mbox: 6[0m
+[0;32mI (634) wifi_init: tcpip mbox: 32[0m
+[0;32mI (634) wifi_init: udp mbox: 6[0m
+[0;32mI (644) wifi_init: tcp mbox: 6[0m
+[0;32mI (644) wifi_init: tcp tx win: 5760[0m
+[0;32mI (644) wifi_init: tcp rx win: 5760[0m
+[0;32mI (654) wifi_init: tcp mss: 1440[0m
+[0;32mI (654) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (654) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (664) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (714) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (714) wifi:enable tsf[0m
+[0;32mI (714) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (724) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (724) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (734) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (744) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (774) wifi:connected with Rnd, aid = 4, channel 6, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (774) wifi:security: WPA2-PSK, phy: bgn, rssi: -52[0m
+[0;32mI (784) wifi:pm start, type: 1[0m
+
+[0;32mI (784) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (794) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (814) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (874) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1824) esp_netif_handlers: sta ip: 192.168.1.227, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (1824) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (1824) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (1824) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -55[0m
+[0;32mI (1834) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (1834) main_task: Returned from app_main()[0m
+[0;32mI (9464) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (9494) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=13088[0m
+[0;32mI (9534) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=17011[0m
+[0;32mI (9534) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=33400[0m
+[0;32mI (9544) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=49337[0m
+[0;32mI (9544) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=35551[0m
+[0;32mI (9544) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=53547[0m
+[0;32mI (9554) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=795[0m
+[0;32mI (9554) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (9564) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (9564) MQTT_HANDLER: DATA={[0m
+	"status":	"Connected",
+	"message":	"Device connected with Mqtt Broker"
+}
+[0;32mI (89054) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (89054) MQTT_HANDLER: TOPIC=onwords/4ltc01/softReset[0m
+[0;32mI (89054) MQTT_HANDLER: DATA={"id":"4ltc01","reset":true,"client_id":"syam@onwords.in","ip":"49.206.118.102","time_stamp":1752814310988}[0m
+[0;32mI (103384) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (103384) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (103384) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (103404) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (103444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=8510[0m
+[0;32mI (103444) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (103444) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (103444) MQTT_HANDLER: DATA={"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (125434) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (125434) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (125434) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (125464) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (125504) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34245[0m
+[0;32mI (125504) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (125504) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (125504) MQTT_HANDLER: DATA={"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (131644) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (131644) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (131644) MQTT_HANDLER: DATA={"id":"4ltc01","wifi_led":1,"client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814351393}[0m
+[0;32mI (143314) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (143314) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (143314) MQTT_HANDLER: DATA={"device4":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814363113}[0m
+[0;32mI (143344) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (143384) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52668[0m
+[0;32mI (143384) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (143384) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (143384) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (143444) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (143444) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (143444) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814363606}[0m
+[0;32mI (143464) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (143514) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=2967[0m
+[0;32mI (143514) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (143514) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (143514) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (144964) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (144964) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (144964) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814365094}[0m
+[0;32mI (144984) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (145024) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=62138[0m
+[0;32mI (145024) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (145024) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (145024) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (145374) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (145374) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (145374) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814365436}[0m
+[0;32mI (145404) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (145444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=50192[0m
+[0;32mI (145444) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (145444) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (145444) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (152444) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (152444) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (152444) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (152464) UART_CONFIG: Received JSON: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (152504) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52918[0m
+[0;32mI (152514) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (152514) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (152514) MQTT_HANDLER: DATA={"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (153664) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (153664) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (153664) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814373760}[0m
+[0;32mI (153694) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (153724) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23560[0m
+[0;32mI (153734) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (153734) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (153734) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (154284) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (154284) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (154284) MQTT_HANDLER: DATA={"device2":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814374353}[0m
+[0;32mI (154304) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (154344) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=53281[0m
+[0;32mI (154344) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (154344) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (154344) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (154694) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (154694) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (154694) MQTT_HANDLER: DATA={"device3":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814374789}[0m
+[0;32mI (154714) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (154754) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=63639[0m
+[0;32mI (154764) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (154764) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (154764) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (154894) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (154894) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (154894) MQTT_HANDLER: DATA={"device4":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814375017}[0m
+[0;32mI (154924) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (154954) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52019[0m
+[0;32mI (154964) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (154964) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (154964) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (155614) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (155614) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (155614) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814375745}[0m
+[0;32mI (155634) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (155674) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43334[0m
+[0;32mI (155674) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (155674) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (155684) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (156024) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (156024) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (156024) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814376162}[0m
+[0;32mI (156054) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (156094) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=7170[0m
+[0;32mI (156094) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (156094) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (156094) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (156434) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (156434) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (156434) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814376493}[0m
+[0;32mI (156454) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (156464) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (156464) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (156464) MQTT_HANDLER: DATA={"device4":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814376617}[0m
+[0;32mI (156484) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (156494) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52087[0m
+[0;32mI (156494) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (156494) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (156494) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (156524) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=51890[0m
+[0;32mI (156534) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (156534) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (156534) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (157454) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (157454) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (157454) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814377528}[0m
+[0;32mI (157484) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (157524) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=17123[0m
+[0;32mI (157524) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (157524) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (157524) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (157664) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (157664) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (157664) MQTT_HANDLER: DATA={"device2":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814377751}[0m
+[0;32mI (157684) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (157724) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=30067[0m
+[0;32mI (157724) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (157724) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (157724) MQTT_HANDLER: DATA={"device2":0}[0m
+[0;32mI (157864) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (157864) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (157864) MQTT_HANDLER: DATA={"device3":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814378018}[0m
+[0;32mI (157894) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (157934) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=42688[0m
+[0;32mI (157934) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (157934) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (157934) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (158074) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (158074) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (158074) MQTT_HANDLER: DATA={"device4":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814378161}[0m
+[0;32mI (158094) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (158134) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=53530[0m
+[0;32mI (158134) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (158134) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (158134) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (234624) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (234964) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=24142[0m
+[0;32mI (234974) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (234974) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (234974) MQTT_HANDLER: DATA={"device1":1}[0m
+[0;32mI (235374) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (235414) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14697[0m
+[0;32mI (235414) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (235414) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (235414) MQTT_HANDLER: DATA={"device3":1}[0m
+[0;32mI (235734) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (235774) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35214[0m
+[0;32mI (235774) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (235774) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (235774) MQTT_HANDLER: DATA={"device4":1}[0m
+[0;32mI (236364) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (236404) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=24234[0m
+[0;32mI (236404) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (236404) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (236404) MQTT_HANDLER: DATA={"device2":1}[0m
+[0;32mI (241724) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (241724) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (241724) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (241754) UART_CONFIG: Received JSON: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (241814) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=31053[0m
+[0;32mI (241814) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (241814) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (241814) MQTT_HANDLER: DATA={"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (315374) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (315384) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (315384) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (315404) UART_CONFIG: Received JSON: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (315444) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=10960[0m
+[0;32mI (315444) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (315444) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (315444) MQTT_HANDLER: DATA={"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (317714) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (317714) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (317714) MQTT_HANDLER: DATA={"id":"4ltc01","wifi_led":1,"client_id":"jeyabalan@onwords.in","ip":"42.104.213.152","time_stamp":1752814537773}[0m
+[0;32mI (633434) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (633474) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=13383[0m
+[0;32mI (633484) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (633484) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (633484) MQTT_HANDLER: DATA={"device3":0}[0m
+[0;32mI (634284) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (634324) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=41260[0m
+[0;32mI (634324) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (634324) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (634324) MQTT_HANDLER: DATA={"device4":0}[0m
+[0;32mI (635214) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (635254) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40585[0m
+[0;32mI (635254) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (635264) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (635264) MQTT_HANDLER: DATA={"device1":0}[0m
+[0;32mI (635604) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (635644) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=25872[0m
+[0;32mI (635644) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (635644) MQTT_HANDLER: TOPIC=onwords/4ltc01/currentStatus[0m
+[0;32mI (635644) MQTT_HANDLER: DATA={"device2":0}[0m

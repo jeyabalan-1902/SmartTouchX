@@ -1,0 +1,14 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.6.2 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4037d572: esp_crosscore_isr at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/esp_system/crosscore_int.c:73
+--- 0x4037be71: _xt_lowint1 at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/xtensa/xtensa_vectors.S:1240
+--- 0x403830a2: xQueueGenericSend at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/queue.c:936 (discriminator 1)
+--- 0x42091b81: i2s_write at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/driver/deprecated/i2s_legacy.c:1737
+--- 0x420124ed: bsp_audio_write at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/src/bsp_audio.c:36
+--- 0x4200ef69: audio_samples_callback at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/main/esp_app.c:168
+--- 0x420656b1: esp_pico_run at C:/Users/kjeya/Documents/MCU_INTEGRATION/ESP32/components/esp-picotts/esp_picotts.c:192
+--- 0x40383869: vPortTaskWrapper at C:/ESP_IDF_v5.4.1/frameworks/esp-idf-v5.4.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0m

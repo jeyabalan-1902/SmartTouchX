@@ -307,21 +307,21 @@ void readFifo()
 	Data = RH_RF69_REG_00_FIFO;
 	HAL_SPI_Transmit(&hspi3, &Data, sizeof(Data), 100) ;			// Send the start address with the write mask off
 	HAL_SPI_Receive(&hspi3, &payloadlen, sizeof(payloadlen), 100);	// First byte is payload len (counting the headers)
-	safe_printf("PayloadLen:%d\n",payloadlen);
+	//safe_printf("PayloadLen:%d\n",payloadlen);
 	if (payloadlen <= RH_RF69_MAX_ENCRYPTABLE_PAYLOAD_LEN && payloadlen >= RH_RF69_HEADER_LEN)
 	{
 		HAL_SPI_Receive(&hspi3, &_rxHeaderTo, sizeof(_rxHeaderTo), 100);
-		printf("_rxHeaderTo:%d\n",_rxHeaderTo);
+		//safe_printf("_rxHeaderTo:%d\n",_rxHeaderTo);
 		// Check addressing
 		if (_promiscuous ||	_rxHeaderTo == _thisAddress ||_rxHeaderTo == RH_BROADCAST_ADDRESS)
 		{
 			// Get the rest of the headers
 			HAL_SPI_Receive(&hspi3, &_rxHeaderFrom, sizeof(_rxHeaderFrom), 1000);
-			safe_printf("_rxHeaderFrom:%d\n",_rxHeaderFrom);
+			//safe_printf("_rxHeaderFrom:%d\n",_rxHeaderFrom);
 			HAL_SPI_Receive(&hspi3, &_rxHeaderId, sizeof(_rxHeaderId), 1000);
-			safe_printf("_rxHeaderId:%d\n",_rxHeaderId);
+			//safe_printf("_rxHeaderId:%d\n",_rxHeaderId);
 			HAL_SPI_Receive(&hspi3, &_rxHeaderFlags, sizeof(_rxHeaderFlags), 1000);
-			safe_printf("_rxHeaderFlags:%d\n",_rxHeaderFlags);
+			//safe_printf("_rxHeaderFlags:%d\n",_rxHeaderFlags);
 
 			// And now the real payload
 			for (_bufLen = 0; _bufLen < (payloadlen - RH_RF69_HEADER_LEN); _bufLen++)
@@ -367,7 +367,7 @@ void setOpMode(uint8_t mode)
 	opmode &= ~RH_RF69_OPMODE_MODE;
 	opmode |= (mode & RH_RF69_OPMODE_MODE);
 	spiWrite(RH_RF69_REG_01_OPMODE, opmode);
-	safe_printf("setOpMode=%x\n", opmode);
+	//safe_printf("setOpMode=%x\n", opmode);
 
 	// Wait for mode to change.
 	while (!(spiRead(RH_RF69_REG_27_IRQFLAGS1) & RH_RF69_IRQFLAGS1_MODEREADY))
@@ -559,7 +559,7 @@ bool available()
 		setModeIdle();
 		// Save it in our buffer
 		readFifo();
-		safe_printf("PAYLOADREADY\n");
+		//safe_printf("PAYLOADREADY\n");
 	}
 	setModeRx(); // Make sure we are receiving
 	return _rxBufValid;

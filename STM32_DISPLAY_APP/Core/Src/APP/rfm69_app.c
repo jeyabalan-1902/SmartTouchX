@@ -6,6 +6,7 @@
  */
 
 
+#include <display_spi_app.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -17,7 +18,6 @@
 #include "stm32f4xx_hal.h"
 #include "freeRTOS.h"
 #include "user_app.h"
-#include "display_ctrl.h"
 
 extern SPI_HandleTypeDef hspi3;
 extern UART_HandleTypeDef huart2;
@@ -28,7 +28,7 @@ uint8_t EncryptionKey[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
 
 int count;
 
-void RFM_Task(void)
+void RFM_Task(void *parameter)
 {
 	while(1)
 	{
@@ -131,7 +131,8 @@ bool RF69_RxData(void)
 
 		uint8_t buf[RH_RF69_MAX_MESSAGE_LEN];
 		uint8_t len = sizeof(buf);
-		safe_printf("Data Available..\r\n");
+		char src_name[] = "RFM";
+		//safe_printf("Data Available..\r\n");
 		if (recv1(buf, &len))
 		{
 			if (!len)
@@ -139,19 +140,19 @@ bool RF69_RxData(void)
 				buf[len] = 0;
 			}
 
-			safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
-			safe_printf("RSSI: %d\n", lastRssi());
+			//safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
+			safe_printf("RFM RSSI: %d\n", lastRssi());
 
 			if (strstr((char *)buf, "Control#1"))
 			{
 				count++;
 				if(count == 1)
 				{
-					setAllDevicesState(1);
+					setAllDevicesState(1, src_name);
 				}
 				else if(count == 2)
 				{
-					setAllDevicesState(0);
+					setAllDevicesState(0, src_name);
 					count = 0;
 				}
 
@@ -159,6 +160,8 @@ bool RF69_RxData(void)
 			else if(strstr((char *)buf, "Control#0"))
 			{
 				HAL_GPIO_TogglePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
+				GPIO_PinState state = HAL_GPIO_ReadPin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
+				safe_printf("RFM: Display Backlit is %s",(state == GPIO_PIN_SET) ? "ON" : "OFF");
 			}
 		}
 		else

@@ -7,6 +7,10 @@
 #include "http_server.h"
 #include "gpio.h"
 #include "ble.h"
+#include "picotts.h"
+#include "bsp_audio.h"
+
+#define TTS_MSG_MAX_LEN 128
 
 
 bool firmware_update_requested = false;
@@ -27,6 +31,40 @@ extern TaskHandle_t uartTaskHandle;
 extern bool ble_initialized; 
 static const char *TAG = "ESP_APP";
 static const char *TAG_CON = "RECONNECT";
+SemaphoreHandle_t tts_done_sem = NULL;
+QueueHandle_t tts_queue = NULL;
+
+void tts_idle_callback(void)
+{
+    if (tts_done_sem) {
+        xSemaphoreGive(tts_done_sem);
+    }
+}
+
+static void tts_task(void *arg)
+{
+    char msg[TTS_MSG_MAX_LEN];
+
+    bsp_audio_init();
+    tts_done_sem = xSemaphoreCreateBinary();
+    picotts_set_idle_notify(tts_idle_callback);
+    picotts_init(8, audio_samples_callback, 1); // core 1
+
+    while (1) {
+        if (xQueueReceive(tts_queue, msg, portMAX_DELAY)) {
+            ESP_LOGI("TTS", "Speaking: %s", msg);
+            picotts_add(msg, strlen(msg) + 1);
+            xSemaphoreTake(tts_done_sem, portMAX_DELAY);
+        }
+    }
+}
+
+void speak_async(const char *text)
+{
+    if (tts_queue && strlen(text) < TTS_MSG_MAX_LEN) {
+        xQueueSend(tts_queue, text, portMAX_DELAY);
+    }
+}
 
 static esp_err_t flash_stm32_firmware(void) {
     ESP_LOGI(TAG, "Starting STM32 firmware update process");
@@ -126,6 +164,10 @@ static void connection_check(void *pvParameters)
     }
 }
 
+void audio_samples_callback(int16_t *buffer, unsigned count) {
+    bsp_audio_write(buffer, count);
+}
+
 void app_main(void) {
     esp_log_level_set("*", ESP_LOG_DEBUG); 
     ESP_ERROR_CHECK(nvs_flash_init());
@@ -139,6 +181,9 @@ void app_main(void) {
     get_pid();
     uart_init();
     ESP_LOGI(TAG, "UART initialized");
+
+    tts_queue = xQueueCreate(5, TTS_MSG_MAX_LEN);
+    xTaskCreatePinnedToCore(tts_task, "tts_task", 8192, NULL, 7, NULL, 1);
 
     xTaskCreatePinnedToCore(firmware_update_task, "firmware_update", 8192, NULL, 3, NULL, 1); 
     

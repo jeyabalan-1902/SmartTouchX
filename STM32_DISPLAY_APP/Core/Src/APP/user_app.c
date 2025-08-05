@@ -5,14 +5,14 @@
  *      Author: kjeyabalan
  */
 
-#include <APP/display_ctrl.h>
 #include <APP/gsm_app.h>
-#include <APP/spi_rec.h>
-#include <APP/uart_rec.h>
 #include <APP/user_app.h>
+#include <display_spi_app.h>
+#include <DISPLAY/onwords_logo.h>
+#include <esp32_uart_app.h>
 #include <MQTTSim800.h>
 #include <rfm69_app.h>
-#include <onwords_logo.h>
+#include <touch_spi_app.h>
 
 
 SemaphoreHandle_t deviceStateMutex;

@@ -1,0 +1,2537 @@
+�RB��J��ѹesp32s3: B�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xa (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul  3 2025 17:27:08[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (72) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (78) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (85) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00020020 vaddr=3c110020 size=3a1e4h (238052) map[0m
+[0;32mI (144) esp_image: segment 1: paddr=0005a20c vaddr=3fc9f300 size=053e0h ( 21472) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0005f5f4 vaddr=40374000 size=00a24h (  2596) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=1056d0h (1070800) map[0m
+[0;32mI (344) esp_image: segment 4: paddr=001656f8 vaddr=40374a24 size=1a8a4h (108708) load[0m
+[0;32mI (368) esp_image: segment 5: paddr=0017ffa4 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (379) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (379) boot: Disabling RNG early entropy source...[0m
+[0;32mI (389) cpu_start: Multicore app[0m
+[0;32mI (398) cpu_start: Pro cpu start user code[0m
+[0;32mI (398) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (398) app_init: Application information:[0m
+[0;32mI (398) app_init: Project name:     esp_app[0m
+[0;32mI (402) app_init: App version:      dae0502-dirty[0m
+[0;32mI (407) app_init: Compile time:     Jul 26 2025 10:21:44[0m
+[0;32mI (412) app_init: ELF file SHA256:  057f4943d...[0m
+[0;32mI (416) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (420) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (424) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (428) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (432) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (438) heap_init: At 3FCAC4F8 len 0003D218 (244 KiB): RAM[0m
+[0;32mI (443) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (449) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (454) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (460) spi_flash: detected chip: boya[0m
+[0;32mI (463) spi_flash: flash io: dio[0m
+[0;32mI (466) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (472) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (479) coexist: coex firmware version: e727207[0m
+[0;32mI (509) coexist: coexist rom version e7ae62f[0m
+[0;32mI (510) main_task: Started on CPU0[0m
+[0;32mI (520) main_task: Calling app_main()[0m
+[0;32mI (540) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (540) GPIO: GPIO Initialization![0m
+[0;32mI (540) ESP_APP: UART initialized[0m
+[0;32mI (540) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (550) NVS: From nvs ssid is Rnd [0m
+[0;32mI (550) NVS: From nvs password is nikhil8182[0m
+[0;32mI (550) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (560) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (560) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (580) wifi:wifi driver task: 3fcbc7fc, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (620) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (630) wifi_init: accept mbox: 6[0m
+[0;32mI (630) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (650) wifi_init: tcp mss: 1440[0m
+[0;32mI (650) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (660) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (700) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (700) wifi:enable tsf[0m
+[0;32mI (700) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (710) wifi:new:<10,0>, old:<1,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (710) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (720) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (740) wifi:state: assoc -> init (0x2c0)[0m
+[0;32mI (750) wifi:new:<10,0>, old:<10,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (750) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3160) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (3160) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (3160) wifi:new:<10,0>, old:<10,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3170) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3180) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3190) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3210) wifi:connected with Rnd, aid = 4, channel 10, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (3210) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (3210) wifi:pm start, type: 1[0m
+
+[0;32mI (3210) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3220) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (3270) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4250) esp_netif_handlers: sta ip: 192.168.1.227, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4250) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (4250) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (4250) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -53[0m
+[0;32mI (4260) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (4260) main_task: Returned from app_main()[0m
+[0;32mI (4270) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (4810) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (4910) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=31636[0m
+[0;32mI (5010) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=42319[0m
+[0;32mI (5090) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=20774[0m
+[0;32mI (5090) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=62672[0m
+[0;32mI (5090) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=12966[0m
+[0;32mI (5100) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=18797[0m
+[0;32mI (18530) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (18530) MQTT_HANDLER: TOPIC=onwords/4ltc01/firmwareStm[0m
+[0;32mI (18530) MQTT_HANDLER: DATA={"firmware_sts":1, "firmwareUrl":"http://13.127.193.192/ota/files/4LTC/STM32_DISPLAY_APP_20250804_164341.bin/"}[0m
+[0;32mI (18540) MQTT_HANDLER: Firmware update requested: http://13.127.193.192/ota/files/4LTC/STM32_DISPLAY_APP_20250804_164341.bin/[0m
+[0;32mI (18550) MQTT_HANDLER: firmware update request : 1[0m
+[0;32mI (18560) ESP_APP: Processing firmware update request[0m
+[0;32mI (18560) UART_CONFIG: Cancelling uart receive task before OTA[0m
+[0;32mI (18650) UART_CONFIG: UART RX task exiting[0m
+[0;33mW (18700) uart: GPIO 17 is not usable, maybe used by others[0m
+[0;33mW (18700) uart: GPIO 18 is not usable, maybe used by others[0m
+[0;32mI (18700) ESP_APP: Starting STM32 firmware update process[0m
+[0;32mI (18710) HTTP_HANDLER: Downloading firmware from: http://13.127.193.192/ota/files/4LTC/STM32_DISPLAY_APP_20250804_164341.bin/[0m
+[0;32mI (18770) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=28837[0m
+[1;31mE (36830) esp-tls: [sock=55] delayed connect error: Software caused connection abort[0m
+[1;31mE (36830) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (36830) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (36830) HTTP_HANDLER: HTTP_EVENT_ERROR[0m
+[0;32mI (36840) HTTP_HANDLER: HTTP_EVENT_DISCONNECTED[0m
+[1;31mE (36840) HTTP_HANDLER: Firmware download failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (36850) ESP_APP: Firmware download failed[0m
+[1;31mE (36850) ESP_APP: Firmware update failed[0m
+[0;32mI (36920) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40451[0m
+[0;32mI (37000) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35215[0m
+[0;32mI (348660) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (349040) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=45657[0m
+[0;32mI (352870) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (352920) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=31543[0m
+[0;32mI (361680) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (361680) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (361680) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (361690) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (361740) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=55628[0m
+[0;32mI (871450) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (871450) MQTT_HANDLER: TOPIC=onwords/4ltc01/firmwareStm[0m
+[0;32mI (871450) MQTT_HANDLER: DATA={"firmware_sts":1, "firmwareUrl":"http://ota.onwords.in:8080/4LTC/STM32_DISPLAY_APP.bin"}[0m
+[0;32mI (871460) MQTT_HANDLER: Firmware update requested: http://ota.onwords.in:8080/4LTC/STM32_DISPLAY_APP.bin[0m
+[0;32mI (871470) MQTT_HANDLER: firmware update request : 1[0m
+[0;32mI (871860) ESP_APP: Processing firmware update request[0m
+[0;32mI (871860) UART_CONFIG: Cancelling uart receive task before OTA[0m
+[0;32mI (871890) UART_CONFIG: UART RX task exiting[0m
+[0;33mW (871940) uart: GPIO 17 is not usable, maybe used by others[0m
+[0;33mW (871940) uart: GPIO 18 is not usable, maybe used by others[0m
+[0;32mI (871940) ESP_APP: Starting STM32 firmware update process[0m
+[0;32mI (871950) HTTP_HANDLER: Downloading firmware from: http://ota.onwords.in:8080/4LTC/STM32_DISPLAY_APP.bin[0m
+[0;32mI (872110) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34868[0m
+[0;32mI (872120) HTTP_HANDLER: HTTP_EVENT_ON_CONNECTED[0m
+[0;32mI (872290) HTTP_HANDLER: Firmware size: 96356 bytes[0m
+[0;32mI (872290) HTTP_HANDLER: Allocated download buffer: 96356 bytes for 96356 byte firmware[0m
+[0;32mI (872290) HTTP_HANDLER: Downloaded: 2048/96356 bytes (2.1%)[0m
+[0;32mI (872300) HTTP_HANDLER: Downloaded: 4096/96356 bytes (4.3%)[0m
+[0;32mI (875860) HTTP_HANDLER: HTTP download completed. Total bytes: 96356/96356[0m
+[0;32mI (875860) HTTP_HANDLER: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (875860) HTTP_HANDLER: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (875860) HTTP_HANDLER: Firmware download completed successfully. Size: 96356 bytes[0m
+[0;32mI (875870) FLASH_CMD: Starting STM32 firmware flashing[0m
+[0;32mI (875870) FLASH_CMD: Step 1: Sending sync commands[0m
+[0;32mI (875880) FLASH_CMD: Sending sync command (0x50) twice with 1000ms interval[0m
+[0;32mI (875920) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52887[0m
+[0;32mI (875930) FLASH_CMD: Sending sync command 1/2[0m
+[0;32mI (875980) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=65033[0m
+[0;32mI (875980) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=32764[0m
+[0;32mI (876930) FLASH_CMD: Sending sync command 2/2[0m
+[0;32mI (878430) FLASH_CMD: Step 2: Checking bootloader version[0m
+[0;32mI (878430) FLASH_CMD: Command ==> BL_GET_CID[0m
+[0;32mI (878500) UART_CONFIG: CRC: SUCCESS Len: 2[0m
+[0;32mI (878500) FLASH_CMD: Chip ID: 0x0421[0m
+[0;32mI (878500) FLASH_CMD: Step 3: Erasing flash sectors[0m
+[0;32mI (878500) FLASH_CMD: Command ==> BL_FLASH_ERASE[0m
+[0;32mI (878570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (878780) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43324[0m
+[0;32mI (878920) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27084[0m
+[0;32mI (878930) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=2303[0m
+[0;32mI (878930) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=9027[0m
+[0;32mI (879550) FLASH_CMD: Erase Status: Success Code: Flash_HAL_OK[0m
+[0;32mI (879560) FLASH_CMD: Step 4: Writing firmware data (96356 bytes)[0m
+[0;32mI (879560) FLASH_CMD: base mem address = 0x08008000[0m
+[0;32mI (879560) FLASH_CMD: bytes_so_far_sent:0 -- bytes_remaining:96356[0m
+[0;32mI (879620) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=53210[0m
+[0;32mI (879660) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=64666[0m
+[0;32mI (879720) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (879720) FLASH_CMD: Flash progress: 128/96356 bytes (0%)[0m
+[0;32mI (879720) FLASH_CMD: base mem address = 0x08008080[0m
+[0;32mI (879720) FLASH_CMD: bytes_so_far_sent:128 -- bytes_remaining:96228[0m
+[0;32mI (879780) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=41644[0m
+[0;32mI (879890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (879890) FLASH_CMD: base mem address = 0x08008100[0m
+[0;32mI (879890) FLASH_CMD: bytes_so_far_sent:256 -- bytes_remaining:96100[0m
+[0;32mI (880050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (880050) FLASH_CMD: base mem address = 0x08008180[0m
+[0;32mI (880050) FLASH_CMD: bytes_so_far_sent:384 -- bytes_remaining:95972[0m
+[0;32mI (880210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (880210) FLASH_CMD: base mem address = 0x08008200[0m
+[0;32mI (880210) FLASH_CMD: bytes_so_far_sent:512 -- bytes_remaining:95844[0m
+[0;32mI (880370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (880370) FLASH_CMD: base mem address = 0x08008280[0m
+[0;32mI (880370) FLASH_CMD: bytes_so_far_sent:640 -- bytes_remaining:95716[0m
+[0;32mI (880530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (880530) FLASH_CMD: base mem address = 0x08008300[0m
+[0;32mI (880530) FLASH_CMD: bytes_so_far_sent:768 -- bytes_remaining:95588[0m
+[0;32mI (880690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (880690) FLASH_CMD: base mem address = 0x08008380[0m
+[0;32mI (880690) FLASH_CMD: bytes_so_far_sent:896 -- bytes_remaining:95460[0m
+[0;32mI (880850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (880850) FLASH_CMD: base mem address = 0x08008400[0m
+[0;32mI (880850) FLASH_CMD: bytes_so_far_sent:1024 -- bytes_remaining:95332[0m
+[0;32mI (881010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (881010) FLASH_CMD: base mem address = 0x08008480[0m
+[0;32mI (881010) FLASH_CMD: bytes_so_far_sent:1152 -- bytes_remaining:95204[0m
+[0;32mI (881170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (881170) FLASH_CMD: base mem address = 0x08008500[0m
+[0;32mI (881170) FLASH_CMD: bytes_so_far_sent:1280 -- bytes_remaining:95076[0m
+[0;32mI (881330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (881330) FLASH_CMD: base mem address = 0x08008580[0m
+[0;32mI (881330) FLASH_CMD: bytes_so_far_sent:1408 -- bytes_remaining:94948[0m
+[0;32mI (881490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (881490) FLASH_CMD: base mem address = 0x08008600[0m
+[0;32mI (881490) FLASH_CMD: bytes_so_far_sent:1536 -- bytes_remaining:94820[0m
+[0;32mI (881650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (881650) FLASH_CMD: base mem address = 0x08008680[0m
+[0;32mI (881650) FLASH_CMD: bytes_so_far_sent:1664 -- bytes_remaining:94692[0m
+[0;32mI (881810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (881810) FLASH_CMD: base mem address = 0x08008700[0m
+[0;32mI (881810) FLASH_CMD: bytes_so_far_sent:1792 -- bytes_remaining:94564[0m
+[0;32mI (881970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (881970) FLASH_CMD: base mem address = 0x08008780[0m
+[0;32mI (881970) FLASH_CMD: bytes_so_far_sent:1920 -- bytes_remaining:94436[0m
+[0;32mI (882130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (882130) FLASH_CMD: base mem address = 0x08008800[0m
+[0;32mI (882130) FLASH_CMD: bytes_so_far_sent:2048 -- bytes_remaining:94308[0m
+[0;32mI (882290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (882290) FLASH_CMD: base mem address = 0x08008880[0m
+[0;32mI (882290) FLASH_CMD: bytes_so_far_sent:2176 -- bytes_remaining:94180[0m
+[0;32mI (882450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (882450) FLASH_CMD: base mem address = 0x08008900[0m
+[0;32mI (882450) FLASH_CMD: bytes_so_far_sent:2304 -- bytes_remaining:94052[0m
+[0;32mI (882610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (882610) FLASH_CMD: base mem address = 0x08008980[0m
+[0;32mI (882610) FLASH_CMD: bytes_so_far_sent:2432 -- bytes_remaining:93924[0m
+[0;32mI (882770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (882770) FLASH_CMD: base mem address = 0x08008a00[0m
+[0;32mI (882770) FLASH_CMD: bytes_so_far_sent:2560 -- bytes_remaining:93796[0m
+[0;32mI (882930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (882930) FLASH_CMD: base mem address = 0x08008a80[0m
+[0;32mI (882930) FLASH_CMD: bytes_so_far_sent:2688 -- bytes_remaining:93668[0m
+[0;32mI (883090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (883090) FLASH_CMD: base mem address = 0x08008b00[0m
+[0;32mI (883090) FLASH_CMD: bytes_so_far_sent:2816 -- bytes_remaining:93540[0m
+[0;32mI (883250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (883250) FLASH_CMD: base mem address = 0x08008b80[0m
+[0;32mI (883250) FLASH_CMD: bytes_so_far_sent:2944 -- bytes_remaining:93412[0m
+[0;32mI (883410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (883410) FLASH_CMD: base mem address = 0x08008c00[0m
+[0;32mI (883410) FLASH_CMD: bytes_so_far_sent:3072 -- bytes_remaining:93284[0m
+[0;32mI (883570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (883570) FLASH_CMD: base mem address = 0x08008c80[0m
+[0;32mI (883570) FLASH_CMD: bytes_so_far_sent:3200 -- bytes_remaining:93156[0m
+[0;32mI (883730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (883730) FLASH_CMD: base mem address = 0x08008d00[0m
+[0;32mI (883730) FLASH_CMD: bytes_so_far_sent:3328 -- bytes_remaining:93028[0m
+[0;32mI (883890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (883890) FLASH_CMD: base mem address = 0x08008d80[0m
+[0;32mI (883890) FLASH_CMD: bytes_so_far_sent:3456 -- bytes_remaining:92900[0m
+[0;32mI (884050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (884050) FLASH_CMD: base mem address = 0x08008e00[0m
+[0;32mI (884050) FLASH_CMD: bytes_so_far_sent:3584 -- bytes_remaining:92772[0m
+[0;32mI (884210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (884210) FLASH_CMD: base mem address = 0x08008e80[0m
+[0;32mI (884210) FLASH_CMD: bytes_so_far_sent:3712 -- bytes_remaining:92644[0m
+[0;32mI (884370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (884370) FLASH_CMD: base mem address = 0x08008f00[0m
+[0;32mI (884370) FLASH_CMD: bytes_so_far_sent:3840 -- bytes_remaining:92516[0m
+[0;32mI (884530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (884530) FLASH_CMD: base mem address = 0x08008f80[0m
+[0;32mI (884530) FLASH_CMD: bytes_so_far_sent:3968 -- bytes_remaining:92388[0m
+[0;32mI (884690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (884690) FLASH_CMD: base mem address = 0x08009000[0m
+[0;32mI (884690) FLASH_CMD: bytes_so_far_sent:4096 -- bytes_remaining:92260[0m
+[0;32mI (884850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (884850) FLASH_CMD: base mem address = 0x08009080[0m
+[0;32mI (884850) FLASH_CMD: bytes_so_far_sent:4224 -- bytes_remaining:92132[0m
+[0;32mI (885010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (885010) FLASH_CMD: base mem address = 0x08009100[0m
+[0;32mI (885010) FLASH_CMD: bytes_so_far_sent:4352 -- bytes_remaining:92004[0m
+[0;32mI (885170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (885170) FLASH_CMD: base mem address = 0x08009180[0m
+[0;32mI (885170) FLASH_CMD: bytes_so_far_sent:4480 -- bytes_remaining:91876[0m
+[0;32mI (885330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (885330) FLASH_CMD: base mem address = 0x08009200[0m
+[0;32mI (885330) FLASH_CMD: bytes_so_far_sent:4608 -- bytes_remaining:91748[0m
+[0;32mI (885490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (885490) FLASH_CMD: base mem address = 0x08009280[0m
+[0;32mI (885490) FLASH_CMD: bytes_so_far_sent:4736 -- bytes_remaining:91620[0m
+[0;32mI (885650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (885650) FLASH_CMD: base mem address = 0x08009300[0m
+[0;32mI (885650) FLASH_CMD: bytes_so_far_sent:4864 -- bytes_remaining:91492[0m
+[0;32mI (885810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (885810) FLASH_CMD: base mem address = 0x08009380[0m
+[0;32mI (885810) FLASH_CMD: bytes_so_far_sent:4992 -- bytes_remaining:91364[0m
+[0;32mI (885970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (885970) FLASH_CMD: base mem address = 0x08009400[0m
+[0;32mI (885970) FLASH_CMD: bytes_so_far_sent:5120 -- bytes_remaining:91236[0m
+[0;32mI (886130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (886130) FLASH_CMD: base mem address = 0x08009480[0m
+[0;32mI (886130) FLASH_CMD: bytes_so_far_sent:5248 -- bytes_remaining:91108[0m
+[0;32mI (886290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (886290) FLASH_CMD: base mem address = 0x08009500[0m
+[0;32mI (886290) FLASH_CMD: bytes_so_far_sent:5376 -- bytes_remaining:90980[0m
+[0;32mI (886450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (886450) FLASH_CMD: base mem address = 0x08009580[0m
+[0;32mI (886450) FLASH_CMD: bytes_so_far_sent:5504 -- bytes_remaining:90852[0m
+[0;32mI (886610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (886610) FLASH_CMD: base mem address = 0x08009600[0m
+[0;32mI (886610) FLASH_CMD: bytes_so_far_sent:5632 -- bytes_remaining:90724[0m
+[0;32mI (886770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (886770) FLASH_CMD: base mem address = 0x08009680[0m
+[0;32mI (886770) FLASH_CMD: bytes_so_far_sent:5760 -- bytes_remaining:90596[0m
+[0;32mI (886930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (886930) FLASH_CMD: base mem address = 0x08009700[0m
+[0;32mI (886930) FLASH_CMD: bytes_so_far_sent:5888 -- bytes_remaining:90468[0m
+[0;32mI (887090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (887090) FLASH_CMD: base mem address = 0x08009780[0m
+[0;32mI (887090) FLASH_CMD: bytes_so_far_sent:6016 -- bytes_remaining:90340[0m
+[0;32mI (887250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (887250) FLASH_CMD: base mem address = 0x08009800[0m
+[0;32mI (887250) FLASH_CMD: bytes_so_far_sent:6144 -- bytes_remaining:90212[0m
+[0;32mI (887410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (887410) FLASH_CMD: base mem address = 0x08009880[0m
+[0;32mI (887410) FLASH_CMD: bytes_so_far_sent:6272 -- bytes_remaining:90084[0m
+[0;32mI (887570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (887570) FLASH_CMD: base mem address = 0x08009900[0m
+[0;32mI (887570) FLASH_CMD: bytes_so_far_sent:6400 -- bytes_remaining:89956[0m
+[0;32mI (887730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (887730) FLASH_CMD: base mem address = 0x08009980[0m
+[0;32mI (887730) FLASH_CMD: bytes_so_far_sent:6528 -- bytes_remaining:89828[0m
+[0;32mI (887890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (887890) FLASH_CMD: base mem address = 0x08009a00[0m
+[0;32mI (887890) FLASH_CMD: bytes_so_far_sent:6656 -- bytes_remaining:89700[0m
+[0;32mI (888050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (888050) FLASH_CMD: base mem address = 0x08009a80[0m
+[0;32mI (888050) FLASH_CMD: bytes_so_far_sent:6784 -- bytes_remaining:89572[0m
+[0;32mI (888210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (888210) FLASH_CMD: base mem address = 0x08009b00[0m
+[0;32mI (888210) FLASH_CMD: bytes_so_far_sent:6912 -- bytes_remaining:89444[0m
+[0;32mI (888370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (888370) FLASH_CMD: base mem address = 0x08009b80[0m
+[0;32mI (888370) FLASH_CMD: bytes_so_far_sent:7040 -- bytes_remaining:89316[0m
+[0;32mI (888530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (888530) FLASH_CMD: base mem address = 0x08009c00[0m
+[0;32mI (888530) FLASH_CMD: bytes_so_far_sent:7168 -- bytes_remaining:89188[0m
+[0;32mI (888690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (888690) FLASH_CMD: base mem address = 0x08009c80[0m
+[0;32mI (888690) FLASH_CMD: bytes_so_far_sent:7296 -- bytes_remaining:89060[0m
+[0;32mI (888850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (888850) FLASH_CMD: base mem address = 0x08009d00[0m
+[0;32mI (888850) FLASH_CMD: bytes_so_far_sent:7424 -- bytes_remaining:88932[0m
+[0;32mI (889010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (889010) FLASH_CMD: base mem address = 0x08009d80[0m
+[0;32mI (889010) FLASH_CMD: bytes_so_far_sent:7552 -- bytes_remaining:88804[0m
+[0;32mI (889170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (889170) FLASH_CMD: base mem address = 0x08009e00[0m
+[0;32mI (889170) FLASH_CMD: bytes_so_far_sent:7680 -- bytes_remaining:88676[0m
+[0;32mI (889330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (889330) FLASH_CMD: base mem address = 0x08009e80[0m
+[0;32mI (889330) FLASH_CMD: bytes_so_far_sent:7808 -- bytes_remaining:88548[0m
+[0;32mI (889490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (889490) FLASH_CMD: base mem address = 0x08009f00[0m
+[0;32mI (889490) FLASH_CMD: bytes_so_far_sent:7936 -- bytes_remaining:88420[0m
+[0;32mI (889650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (889650) FLASH_CMD: base mem address = 0x08009f80[0m
+[0;32mI (889650) FLASH_CMD: bytes_so_far_sent:8064 -- bytes_remaining:88292[0m
+[0;32mI (889810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (889810) FLASH_CMD: base mem address = 0x0800a000[0m
+[0;32mI (889810) FLASH_CMD: bytes_so_far_sent:8192 -- bytes_remaining:88164[0m
+[0;32mI (889970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (889970) FLASH_CMD: base mem address = 0x0800a080[0m
+[0;32mI (889970) FLASH_CMD: bytes_so_far_sent:8320 -- bytes_remaining:88036[0m
+[0;32mI (890130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (890130) FLASH_CMD: base mem address = 0x0800a100[0m
+[0;32mI (890130) FLASH_CMD: bytes_so_far_sent:8448 -- bytes_remaining:87908[0m
+[0;32mI (890290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (890290) FLASH_CMD: base mem address = 0x0800a180[0m
+[0;32mI (890290) FLASH_CMD: bytes_so_far_sent:8576 -- bytes_remaining:87780[0m
+[0;32mI (890450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (890450) FLASH_CMD: base mem address = 0x0800a200[0m
+[0;32mI (890450) FLASH_CMD: bytes_so_far_sent:8704 -- bytes_remaining:87652[0m
+[0;32mI (890610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (890610) FLASH_CMD: base mem address = 0x0800a280[0m
+[0;32mI (890610) FLASH_CMD: bytes_so_far_sent:8832 -- bytes_remaining:87524[0m
+[0;32mI (890770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (890770) FLASH_CMD: base mem address = 0x0800a300[0m
+[0;32mI (890770) FLASH_CMD: bytes_so_far_sent:8960 -- bytes_remaining:87396[0m
+[0;32mI (890930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (890930) FLASH_CMD: base mem address = 0x0800a380[0m
+[0;32mI (890930) FLASH_CMD: bytes_so_far_sent:9088 -- bytes_remaining:87268[0m
+[0;32mI (891090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (891090) FLASH_CMD: base mem address = 0x0800a400[0m
+[0;32mI (891090) FLASH_CMD: bytes_so_far_sent:9216 -- bytes_remaining:87140[0m
+[0;32mI (891250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (891250) FLASH_CMD: base mem address = 0x0800a480[0m
+[0;32mI (891250) FLASH_CMD: bytes_so_far_sent:9344 -- bytes_remaining:87012[0m
+[0;32mI (891410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (891410) FLASH_CMD: base mem address = 0x0800a500[0m
+[0;32mI (891410) FLASH_CMD: bytes_so_far_sent:9472 -- bytes_remaining:86884[0m
+[0;32mI (891570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (891570) FLASH_CMD: base mem address = 0x0800a580[0m
+[0;32mI (891570) FLASH_CMD: bytes_so_far_sent:9600 -- bytes_remaining:86756[0m
+[0;32mI (891730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (891730) FLASH_CMD: Flash progress: 9728/96356 bytes (10%)[0m
+[0;32mI (891730) FLASH_CMD: base mem address = 0x0800a600[0m
+[0;32mI (891730) FLASH_CMD: bytes_so_far_sent:9728 -- bytes_remaining:86628[0m
+[0;32mI (891900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (891900) FLASH_CMD: base mem address = 0x0800a680[0m
+[0;32mI (891900) FLASH_CMD: bytes_so_far_sent:9856 -- bytes_remaining:86500[0m
+[0;32mI (892060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (892060) FLASH_CMD: base mem address = 0x0800a700[0m
+[0;32mI (892060) FLASH_CMD: bytes_so_far_sent:9984 -- bytes_remaining:86372[0m
+[0;32mI (892080) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=17517[0m
+[0;32mI (892220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (892220) FLASH_CMD: base mem address = 0x0800a780[0m
+[0;32mI (892220) FLASH_CMD: bytes_so_far_sent:10112 -- bytes_remaining:86244[0m
+[0;32mI (892380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (892380) FLASH_CMD: base mem address = 0x0800a800[0m
+[0;32mI (892380) FLASH_CMD: bytes_so_far_sent:10240 -- bytes_remaining:86116[0m
+[0;32mI (892540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (892540) FLASH_CMD: base mem address = 0x0800a880[0m
+[0;32mI (892540) FLASH_CMD: bytes_so_far_sent:10368 -- bytes_remaining:85988[0m
+[0;32mI (892700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (892700) FLASH_CMD: base mem address = 0x0800a900[0m
+[0;32mI (892700) FLASH_CMD: bytes_so_far_sent:10496 -- bytes_remaining:85860[0m
+[0;32mI (892860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (892860) FLASH_CMD: base mem address = 0x0800a980[0m
+[0;32mI (892860) FLASH_CMD: bytes_so_far_sent:10624 -- bytes_remaining:85732[0m
+[0;32mI (893020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (893020) FLASH_CMD: base mem address = 0x0800aa00[0m
+[0;32mI (893020) FLASH_CMD: bytes_so_far_sent:10752 -- bytes_remaining:85604[0m
+[0;32mI (893180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (893180) FLASH_CMD: base mem address = 0x0800aa80[0m
+[0;32mI (893180) FLASH_CMD: bytes_so_far_sent:10880 -- bytes_remaining:85476[0m
+[0;32mI (893340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (893340) FLASH_CMD: base mem address = 0x0800ab00[0m
+[0;32mI (893340) FLASH_CMD: bytes_so_far_sent:11008 -- bytes_remaining:85348[0m
+[0;32mI (893500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (893500) FLASH_CMD: base mem address = 0x0800ab80[0m
+[0;32mI (893500) FLASH_CMD: bytes_so_far_sent:11136 -- bytes_remaining:85220[0m
+[0;32mI (893660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (893660) FLASH_CMD: base mem address = 0x0800ac00[0m
+[0;32mI (893660) FLASH_CMD: bytes_so_far_sent:11264 -- bytes_remaining:85092[0m
+[0;32mI (893820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (893820) FLASH_CMD: base mem address = 0x0800ac80[0m
+[0;32mI (893820) FLASH_CMD: bytes_so_far_sent:11392 -- bytes_remaining:84964[0m
+[0;32mI (893980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (893980) FLASH_CMD: base mem address = 0x0800ad00[0m
+[0;32mI (893980) FLASH_CMD: bytes_so_far_sent:11520 -- bytes_remaining:84836[0m
+[0;32mI (894140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (894140) FLASH_CMD: base mem address = 0x0800ad80[0m
+[0;32mI (894140) FLASH_CMD: bytes_so_far_sent:11648 -- bytes_remaining:84708[0m
+[0;32mI (894300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (894300) FLASH_CMD: base mem address = 0x0800ae00[0m
+[0;32mI (894300) FLASH_CMD: bytes_so_far_sent:11776 -- bytes_remaining:84580[0m
+[0;32mI (894460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (894460) FLASH_CMD: base mem address = 0x0800ae80[0m
+[0;32mI (894460) FLASH_CMD: bytes_so_far_sent:11904 -- bytes_remaining:84452[0m
+[0;32mI (894620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (894620) FLASH_CMD: base mem address = 0x0800af00[0m
+[0;32mI (894620) FLASH_CMD: bytes_so_far_sent:12032 -- bytes_remaining:84324[0m
+[0;32mI (894780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (894780) FLASH_CMD: base mem address = 0x0800af80[0m
+[0;32mI (894780) FLASH_CMD: bytes_so_far_sent:12160 -- bytes_remaining:84196[0m
+[0;32mI (894940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (894940) FLASH_CMD: base mem address = 0x0800b000[0m
+[0;32mI (894940) FLASH_CMD: bytes_so_far_sent:12288 -- bytes_remaining:84068[0m
+[0;32mI (895100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (895100) FLASH_CMD: base mem address = 0x0800b080[0m
+[0;32mI (895100) FLASH_CMD: bytes_so_far_sent:12416 -- bytes_remaining:83940[0m
+[0;32mI (895260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (895260) FLASH_CMD: base mem address = 0x0800b100[0m
+[0;32mI (895260) FLASH_CMD: bytes_so_far_sent:12544 -- bytes_remaining:83812[0m
+[0;32mI (895420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (895420) FLASH_CMD: base mem address = 0x0800b180[0m
+[0;32mI (895420) FLASH_CMD: bytes_so_far_sent:12672 -- bytes_remaining:83684[0m
+[0;32mI (895580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (895580) FLASH_CMD: base mem address = 0x0800b200[0m
+[0;32mI (895580) FLASH_CMD: bytes_so_far_sent:12800 -- bytes_remaining:83556[0m
+[0;32mI (895740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (895740) FLASH_CMD: base mem address = 0x0800b280[0m
+[0;32mI (895740) FLASH_CMD: bytes_so_far_sent:12928 -- bytes_remaining:83428[0m
+[0;32mI (895900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (895900) FLASH_CMD: base mem address = 0x0800b300[0m
+[0;32mI (895900) FLASH_CMD: bytes_so_far_sent:13056 -- bytes_remaining:83300[0m
+[0;32mI (896060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (896060) FLASH_CMD: base mem address = 0x0800b380[0m
+[0;32mI (896060) FLASH_CMD: bytes_so_far_sent:13184 -- bytes_remaining:83172[0m
+[0;32mI (896220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (896220) FLASH_CMD: base mem address = 0x0800b400[0m
+[0;32mI (896220) FLASH_CMD: bytes_so_far_sent:13312 -- bytes_remaining:83044[0m
+[0;32mI (896380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (896380) FLASH_CMD: base mem address = 0x0800b480[0m
+[0;32mI (896380) FLASH_CMD: bytes_so_far_sent:13440 -- bytes_remaining:82916[0m
+[0;32mI (896540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (896540) FLASH_CMD: base mem address = 0x0800b500[0m
+[0;32mI (896540) FLASH_CMD: bytes_so_far_sent:13568 -- bytes_remaining:82788[0m
+[0;32mI (896700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (896700) FLASH_CMD: base mem address = 0x0800b580[0m
+[0;32mI (896700) FLASH_CMD: bytes_so_far_sent:13696 -- bytes_remaining:82660[0m
+[0;32mI (896860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (896860) FLASH_CMD: base mem address = 0x0800b600[0m
+[0;32mI (896860) FLASH_CMD: bytes_so_far_sent:13824 -- bytes_remaining:82532[0m
+[0;32mI (897020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (897020) FLASH_CMD: base mem address = 0x0800b680[0m
+[0;32mI (897020) FLASH_CMD: bytes_so_far_sent:13952 -- bytes_remaining:82404[0m
+[0;32mI (897180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (897180) FLASH_CMD: base mem address = 0x0800b700[0m
+[0;32mI (897180) FLASH_CMD: bytes_so_far_sent:14080 -- bytes_remaining:82276[0m
+[0;32mI (897340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (897340) FLASH_CMD: base mem address = 0x0800b780[0m
+[0;32mI (897340) FLASH_CMD: bytes_so_far_sent:14208 -- bytes_remaining:82148[0m
+[0;32mI (897500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (897500) FLASH_CMD: base mem address = 0x0800b800[0m
+[0;32mI (897500) FLASH_CMD: bytes_so_far_sent:14336 -- bytes_remaining:82020[0m
+[0;32mI (897660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (897660) FLASH_CMD: base mem address = 0x0800b880[0m
+[0;32mI (897660) FLASH_CMD: bytes_so_far_sent:14464 -- bytes_remaining:81892[0m
+[0;32mI (897820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (897820) FLASH_CMD: base mem address = 0x0800b900[0m
+[0;32mI (897820) FLASH_CMD: bytes_so_far_sent:14592 -- bytes_remaining:81764[0m
+[0;32mI (897980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (897980) FLASH_CMD: base mem address = 0x0800b980[0m
+[0;32mI (897980) FLASH_CMD: bytes_so_far_sent:14720 -- bytes_remaining:81636[0m
+[0;32mI (898140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (898140) FLASH_CMD: base mem address = 0x0800ba00[0m
+[0;32mI (898140) FLASH_CMD: bytes_so_far_sent:14848 -- bytes_remaining:81508[0m
+[0;32mI (898300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (898300) FLASH_CMD: base mem address = 0x0800ba80[0m
+[0;32mI (898300) FLASH_CMD: bytes_so_far_sent:14976 -- bytes_remaining:81380[0m
+[0;32mI (898460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (898460) FLASH_CMD: base mem address = 0x0800bb00[0m
+[0;32mI (898460) FLASH_CMD: bytes_so_far_sent:15104 -- bytes_remaining:81252[0m
+[0;32mI (898620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (898620) FLASH_CMD: base mem address = 0x0800bb80[0m
+[0;32mI (898620) FLASH_CMD: bytes_so_far_sent:15232 -- bytes_remaining:81124[0m
+[0;32mI (898780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (898780) FLASH_CMD: base mem address = 0x0800bc00[0m
+[0;32mI (898780) FLASH_CMD: bytes_so_far_sent:15360 -- bytes_remaining:80996[0m
+[0;32mI (898940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (898940) FLASH_CMD: base mem address = 0x0800bc80[0m
+[0;32mI (898940) FLASH_CMD: bytes_so_far_sent:15488 -- bytes_remaining:80868[0m
+[0;32mI (899100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (899100) FLASH_CMD: base mem address = 0x0800bd00[0m
+[0;32mI (899100) FLASH_CMD: bytes_so_far_sent:15616 -- bytes_remaining:80740[0m
+[0;32mI (899260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (899260) FLASH_CMD: base mem address = 0x0800bd80[0m
+[0;32mI (899260) FLASH_CMD: bytes_so_far_sent:15744 -- bytes_remaining:80612[0m
+[0;32mI (899420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (899420) FLASH_CMD: base mem address = 0x0800be00[0m
+[0;32mI (899420) FLASH_CMD: bytes_so_far_sent:15872 -- bytes_remaining:80484[0m
+[0;32mI (899580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (899580) FLASH_CMD: base mem address = 0x0800be80[0m
+[0;32mI (899580) FLASH_CMD: bytes_so_far_sent:16000 -- bytes_remaining:80356[0m
+[0;32mI (899740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (899740) FLASH_CMD: base mem address = 0x0800bf00[0m
+[0;32mI (899740) FLASH_CMD: bytes_so_far_sent:16128 -- bytes_remaining:80228[0m
+[0;32mI (899900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (899900) FLASH_CMD: base mem address = 0x0800bf80[0m
+[0;32mI (899900) FLASH_CMD: bytes_so_far_sent:16256 -- bytes_remaining:80100[0m
+[0;32mI (900060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (900060) FLASH_CMD: base mem address = 0x0800c000[0m
+[0;32mI (900060) FLASH_CMD: bytes_so_far_sent:16384 -- bytes_remaining:79972[0m
+[0;32mI (900220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (900220) FLASH_CMD: base mem address = 0x0800c080[0m
+[0;32mI (900220) FLASH_CMD: bytes_so_far_sent:16512 -- bytes_remaining:79844[0m
+[0;32mI (900380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (900380) FLASH_CMD: base mem address = 0x0800c100[0m
+[0;32mI (900380) FLASH_CMD: bytes_so_far_sent:16640 -- bytes_remaining:79716[0m
+[0;32mI (900540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (900540) FLASH_CMD: base mem address = 0x0800c180[0m
+[0;32mI (900540) FLASH_CMD: bytes_so_far_sent:16768 -- bytes_remaining:79588[0m
+[0;32mI (900700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (900700) FLASH_CMD: base mem address = 0x0800c200[0m
+[0;32mI (900700) FLASH_CMD: bytes_so_far_sent:16896 -- bytes_remaining:79460[0m
+[0;32mI (900860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (900860) FLASH_CMD: base mem address = 0x0800c280[0m
+[0;32mI (900860) FLASH_CMD: bytes_so_far_sent:17024 -- bytes_remaining:79332[0m
+[0;32mI (901020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (901020) FLASH_CMD: base mem address = 0x0800c300[0m
+[0;32mI (901020) FLASH_CMD: bytes_so_far_sent:17152 -- bytes_remaining:79204[0m
+[0;32mI (901180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (901180) FLASH_CMD: base mem address = 0x0800c380[0m
+[0;32mI (901180) FLASH_CMD: bytes_so_far_sent:17280 -- bytes_remaining:79076[0m
+[0;32mI (901340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (901340) FLASH_CMD: base mem address = 0x0800c400[0m
+[0;32mI (901340) FLASH_CMD: bytes_so_far_sent:17408 -- bytes_remaining:78948[0m
+[0;32mI (901500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (901500) FLASH_CMD: base mem address = 0x0800c480[0m
+[0;32mI (901500) FLASH_CMD: bytes_so_far_sent:17536 -- bytes_remaining:78820[0m
+[0;32mI (901660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (901660) FLASH_CMD: base mem address = 0x0800c500[0m
+[0;32mI (901660) FLASH_CMD: bytes_so_far_sent:17664 -- bytes_remaining:78692[0m
+[0;32mI (901820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (901820) FLASH_CMD: base mem address = 0x0800c580[0m
+[0;32mI (901820) FLASH_CMD: bytes_so_far_sent:17792 -- bytes_remaining:78564[0m
+[0;32mI (901980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (901980) FLASH_CMD: base mem address = 0x0800c600[0m
+[0;32mI (901980) FLASH_CMD: bytes_so_far_sent:17920 -- bytes_remaining:78436[0m
+[0;32mI (902140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (902140) FLASH_CMD: base mem address = 0x0800c680[0m
+[0;32mI (902140) FLASH_CMD: bytes_so_far_sent:18048 -- bytes_remaining:78308[0m
+[0;32mI (902300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (902300) FLASH_CMD: base mem address = 0x0800c700[0m
+[0;32mI (902300) FLASH_CMD: bytes_so_far_sent:18176 -- bytes_remaining:78180[0m
+[0;32mI (902460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (902460) FLASH_CMD: base mem address = 0x0800c780[0m
+[0;32mI (902460) FLASH_CMD: bytes_so_far_sent:18304 -- bytes_remaining:78052[0m
+[0;32mI (902620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (902620) FLASH_CMD: base mem address = 0x0800c800[0m
+[0;32mI (902620) FLASH_CMD: bytes_so_far_sent:18432 -- bytes_remaining:77924[0m
+[0;32mI (902780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (902780) FLASH_CMD: base mem address = 0x0800c880[0m
+[0;32mI (902780) FLASH_CMD: bytes_so_far_sent:18560 -- bytes_remaining:77796[0m
+[0;32mI (902940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (902940) FLASH_CMD: base mem address = 0x0800c900[0m
+[0;32mI (902940) FLASH_CMD: bytes_so_far_sent:18688 -- bytes_remaining:77668[0m
+[0;32mI (903100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (903100) FLASH_CMD: base mem address = 0x0800c980[0m
+[0;32mI (903100) FLASH_CMD: bytes_so_far_sent:18816 -- bytes_remaining:77540[0m
+[0;32mI (903260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (903260) FLASH_CMD: base mem address = 0x0800ca00[0m
+[0;32mI (903260) FLASH_CMD: bytes_so_far_sent:18944 -- bytes_remaining:77412[0m
+[0;32mI (903420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (903420) FLASH_CMD: base mem address = 0x0800ca80[0m
+[0;32mI (903420) FLASH_CMD: bytes_so_far_sent:19072 -- bytes_remaining:77284[0m
+[0;32mI (903580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (903580) FLASH_CMD: base mem address = 0x0800cb00[0m
+[0;32mI (903580) FLASH_CMD: bytes_so_far_sent:19200 -- bytes_remaining:77156[0m
+[0;32mI (903740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (903740) FLASH_CMD: Flash progress: 19328/96356 bytes (20%)[0m
+[0;32mI (903740) FLASH_CMD: base mem address = 0x0800cb80[0m
+[0;32mI (903740) FLASH_CMD: bytes_so_far_sent:19328 -- bytes_remaining:77028[0m
+[0;32mI (903910) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (903910) FLASH_CMD: base mem address = 0x0800cc00[0m
+[0;32mI (903910) FLASH_CMD: bytes_so_far_sent:19456 -- bytes_remaining:76900[0m
+[0;32mI (904070) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (904070) FLASH_CMD: base mem address = 0x0800cc80[0m
+[0;32mI (904070) FLASH_CMD: bytes_so_far_sent:19584 -- bytes_remaining:76772[0m
+[0;32mI (904090) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58454[0m
+[0;32mI (904230) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (904230) FLASH_CMD: base mem address = 0x0800cd00[0m
+[0;32mI (904230) FLASH_CMD: bytes_so_far_sent:19712 -- bytes_remaining:76644[0m
+[0;32mI (904390) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (904390) FLASH_CMD: base mem address = 0x0800cd80[0m
+[0;32mI (904390) FLASH_CMD: bytes_so_far_sent:19840 -- bytes_remaining:76516[0m
+[0;32mI (904550) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (904550) FLASH_CMD: base mem address = 0x0800ce00[0m
+[0;32mI (904550) FLASH_CMD: bytes_so_far_sent:19968 -- bytes_remaining:76388[0m
+[0;32mI (904710) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (904710) FLASH_CMD: base mem address = 0x0800ce80[0m
+[0;32mI (904710) FLASH_CMD: bytes_so_far_sent:20096 -- bytes_remaining:76260[0m
+[0;32mI (904870) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (904870) FLASH_CMD: base mem address = 0x0800cf00[0m
+[0;32mI (904870) FLASH_CMD: bytes_so_far_sent:20224 -- bytes_remaining:76132[0m
+[0;32mI (905030) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (905030) FLASH_CMD: base mem address = 0x0800cf80[0m
+[0;32mI (905030) FLASH_CMD: bytes_so_far_sent:20352 -- bytes_remaining:76004[0m
+[0;32mI (905190) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (905190) FLASH_CMD: base mem address = 0x0800d000[0m
+[0;32mI (905190) FLASH_CMD: bytes_so_far_sent:20480 -- bytes_remaining:75876[0m
+[0;32mI (905350) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (905350) FLASH_CMD: base mem address = 0x0800d080[0m
+[0;32mI (905350) FLASH_CMD: bytes_so_far_sent:20608 -- bytes_remaining:75748[0m
+[0;32mI (905510) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (905510) FLASH_CMD: base mem address = 0x0800d100[0m
+[0;32mI (905510) FLASH_CMD: bytes_so_far_sent:20736 -- bytes_remaining:75620[0m
+[0;32mI (905670) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (905670) FLASH_CMD: base mem address = 0x0800d180[0m
+[0;32mI (905670) FLASH_CMD: bytes_so_far_sent:20864 -- bytes_remaining:75492[0m
+[0;32mI (905830) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (905830) FLASH_CMD: base mem address = 0x0800d200[0m
+[0;32mI (905830) FLASH_CMD: bytes_so_far_sent:20992 -- bytes_remaining:75364[0m
+[0;32mI (905990) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (905990) FLASH_CMD: base mem address = 0x0800d280[0m
+[0;32mI (905990) FLASH_CMD: bytes_so_far_sent:21120 -- bytes_remaining:75236[0m
+[0;32mI (906150) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (906150) FLASH_CMD: base mem address = 0x0800d300[0m
+[0;32mI (906150) FLASH_CMD: bytes_so_far_sent:21248 -- bytes_remaining:75108[0m
+[0;32mI (906310) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (906310) FLASH_CMD: base mem address = 0x0800d380[0m
+[0;32mI (906310) FLASH_CMD: bytes_so_far_sent:21376 -- bytes_remaining:74980[0m
+[0;32mI (906470) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (906470) FLASH_CMD: base mem address = 0x0800d400[0m
+[0;32mI (906470) FLASH_CMD: bytes_so_far_sent:21504 -- bytes_remaining:74852[0m
+[0;32mI (906630) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (906630) FLASH_CMD: base mem address = 0x0800d480[0m
+[0;32mI (906630) FLASH_CMD: bytes_so_far_sent:21632 -- bytes_remaining:74724[0m
+[0;32mI (906790) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (906790) FLASH_CMD: base mem address = 0x0800d500[0m
+[0;32mI (906790) FLASH_CMD: bytes_so_far_sent:21760 -- bytes_remaining:74596[0m
+[0;32mI (906950) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (906950) FLASH_CMD: base mem address = 0x0800d580[0m
+[0;32mI (906950) FLASH_CMD: bytes_so_far_sent:21888 -- bytes_remaining:74468[0m
+[0;32mI (907110) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (907110) FLASH_CMD: base mem address = 0x0800d600[0m
+[0;32mI (907110) FLASH_CMD: bytes_so_far_sent:22016 -- bytes_remaining:74340[0m
+[0;32mI (907270) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (907270) FLASH_CMD: base mem address = 0x0800d680[0m
+[0;32mI (907270) FLASH_CMD: bytes_so_far_sent:22144 -- bytes_remaining:74212[0m
+[0;32mI (907430) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (907430) FLASH_CMD: base mem address = 0x0800d700[0m
+[0;32mI (907430) FLASH_CMD: bytes_so_far_sent:22272 -- bytes_remaining:74084[0m
+[0;32mI (907590) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (907590) FLASH_CMD: base mem address = 0x0800d780[0m
+[0;32mI (907590) FLASH_CMD: bytes_so_far_sent:22400 -- bytes_remaining:73956[0m
+[0;32mI (907750) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (907750) FLASH_CMD: base mem address = 0x0800d800[0m
+[0;32mI (907750) FLASH_CMD: bytes_so_far_sent:22528 -- bytes_remaining:73828[0m
+[0;32mI (907910) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (907910) FLASH_CMD: base mem address = 0x0800d880[0m
+[0;32mI (907910) FLASH_CMD: bytes_so_far_sent:22656 -- bytes_remaining:73700[0m
+[0;32mI (908070) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (908070) FLASH_CMD: base mem address = 0x0800d900[0m
+[0;32mI (908070) FLASH_CMD: bytes_so_far_sent:22784 -- bytes_remaining:73572[0m
+[0;32mI (908230) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (908230) FLASH_CMD: base mem address = 0x0800d980[0m
+[0;32mI (908230) FLASH_CMD: bytes_so_far_sent:22912 -- bytes_remaining:73444[0m
+[0;32mI (908390) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (908390) FLASH_CMD: base mem address = 0x0800da00[0m
+[0;32mI (908390) FLASH_CMD: bytes_so_far_sent:23040 -- bytes_remaining:73316[0m
+[0;32mI (908550) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (908550) FLASH_CMD: base mem address = 0x0800da80[0m
+[0;32mI (908550) FLASH_CMD: bytes_so_far_sent:23168 -- bytes_remaining:73188[0m
+[0;32mI (908710) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (908710) FLASH_CMD: base mem address = 0x0800db00[0m
+[0;32mI (908710) FLASH_CMD: bytes_so_far_sent:23296 -- bytes_remaining:73060[0m
+[0;32mI (908870) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (908870) FLASH_CMD: base mem address = 0x0800db80[0m
+[0;32mI (908870) FLASH_CMD: bytes_so_far_sent:23424 -- bytes_remaining:72932[0m
+[0;32mI (909030) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (909030) FLASH_CMD: base mem address = 0x0800dc00[0m
+[0;32mI (909030) FLASH_CMD: bytes_so_far_sent:23552 -- bytes_remaining:72804[0m
+[0;32mI (909190) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (909190) FLASH_CMD: base mem address = 0x0800dc80[0m
+[0;32mI (909190) FLASH_CMD: bytes_so_far_sent:23680 -- bytes_remaining:72676[0m
+[0;32mI (909350) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (909350) FLASH_CMD: base mem address = 0x0800dd00[0m
+[0;32mI (909350) FLASH_CMD: bytes_so_far_sent:23808 -- bytes_remaining:72548[0m
+[0;32mI (909510) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (909510) FLASH_CMD: base mem address = 0x0800dd80[0m
+[0;32mI (909510) FLASH_CMD: bytes_so_far_sent:23936 -- bytes_remaining:72420[0m
+[0;32mI (909670) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (909670) FLASH_CMD: base mem address = 0x0800de00[0m
+[0;32mI (909670) FLASH_CMD: bytes_so_far_sent:24064 -- bytes_remaining:72292[0m
+[0;32mI (909830) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (909830) FLASH_CMD: base mem address = 0x0800de80[0m
+[0;32mI (909830) FLASH_CMD: bytes_so_far_sent:24192 -- bytes_remaining:72164[0m
+[0;32mI (909990) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (909990) FLASH_CMD: base mem address = 0x0800df00[0m
+[0;32mI (909990) FLASH_CMD: bytes_so_far_sent:24320 -- bytes_remaining:72036[0m
+[0;32mI (910150) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (910150) FLASH_CMD: base mem address = 0x0800df80[0m
+[0;32mI (910150) FLASH_CMD: bytes_so_far_sent:24448 -- bytes_remaining:71908[0m
+[0;32mI (910310) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (910310) FLASH_CMD: base mem address = 0x0800e000[0m
+[0;32mI (910310) FLASH_CMD: bytes_so_far_sent:24576 -- bytes_remaining:71780[0m
+[0;32mI (910470) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (910470) FLASH_CMD: base mem address = 0x0800e080[0m
+[0;32mI (910470) FLASH_CMD: bytes_so_far_sent:24704 -- bytes_remaining:71652[0m
+[0;32mI (910630) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (910630) FLASH_CMD: base mem address = 0x0800e100[0m
+[0;32mI (910630) FLASH_CMD: bytes_so_far_sent:24832 -- bytes_remaining:71524[0m
+[0;32mI (910790) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (910790) FLASH_CMD: base mem address = 0x0800e180[0m
+[0;32mI (910790) FLASH_CMD: bytes_so_far_sent:24960 -- bytes_remaining:71396[0m
+[0;32mI (910950) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (910950) FLASH_CMD: base mem address = 0x0800e200[0m
+[0;32mI (910950) FLASH_CMD: bytes_so_far_sent:25088 -- bytes_remaining:71268[0m
+[0;32mI (911110) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (911110) FLASH_CMD: base mem address = 0x0800e280[0m
+[0;32mI (911110) FLASH_CMD: bytes_so_far_sent:25216 -- bytes_remaining:71140[0m
+[0;32mI (911270) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (911270) FLASH_CMD: base mem address = 0x0800e300[0m
+[0;32mI (911270) FLASH_CMD: bytes_so_far_sent:25344 -- bytes_remaining:71012[0m
+[0;32mI (911430) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (911430) FLASH_CMD: base mem address = 0x0800e380[0m
+[0;32mI (911430) FLASH_CMD: bytes_so_far_sent:25472 -- bytes_remaining:70884[0m
+[0;32mI (911590) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (911590) FLASH_CMD: base mem address = 0x0800e400[0m
+[0;32mI (911590) FLASH_CMD: bytes_so_far_sent:25600 -- bytes_remaining:70756[0m
+[0;32mI (911750) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (911750) FLASH_CMD: base mem address = 0x0800e480[0m
+[0;32mI (911750) FLASH_CMD: bytes_so_far_sent:25728 -- bytes_remaining:70628[0m
+[0;32mI (911910) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (911910) FLASH_CMD: base mem address = 0x0800e500[0m
+[0;32mI (911910) FLASH_CMD: bytes_so_far_sent:25856 -- bytes_remaining:70500[0m
+[0;32mI (912070) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (912070) FLASH_CMD: base mem address = 0x0800e580[0m
+[0;32mI (912070) FLASH_CMD: bytes_so_far_sent:25984 -- bytes_remaining:70372[0m
+[0;32mI (912230) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (912230) FLASH_CMD: base mem address = 0x0800e600[0m
+[0;32mI (912230) FLASH_CMD: bytes_so_far_sent:26112 -- bytes_remaining:70244[0m
+[0;32mI (912390) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (912390) FLASH_CMD: base mem address = 0x0800e680[0m
+[0;32mI (912390) FLASH_CMD: bytes_so_far_sent:26240 -- bytes_remaining:70116[0m
+[0;32mI (912550) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (912550) FLASH_CMD: base mem address = 0x0800e700[0m
+[0;32mI (912550) FLASH_CMD: bytes_so_far_sent:26368 -- bytes_remaining:69988[0m
+[0;32mI (912710) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (912710) FLASH_CMD: base mem address = 0x0800e780[0m
+[0;32mI (912710) FLASH_CMD: bytes_so_far_sent:26496 -- bytes_remaining:69860[0m
+[0;32mI (912870) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (912870) FLASH_CMD: base mem address = 0x0800e800[0m
+[0;32mI (912870) FLASH_CMD: bytes_so_far_sent:26624 -- bytes_remaining:69732[0m
+[0;32mI (913030) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (913030) FLASH_CMD: base mem address = 0x0800e880[0m
+[0;32mI (913030) FLASH_CMD: bytes_so_far_sent:26752 -- bytes_remaining:69604[0m
+[0;32mI (913190) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (913190) FLASH_CMD: base mem address = 0x0800e900[0m
+[0;32mI (913190) FLASH_CMD: bytes_so_far_sent:26880 -- bytes_remaining:69476[0m
+[0;32mI (913350) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (913350) FLASH_CMD: base mem address = 0x0800e980[0m
+[0;32mI (913350) FLASH_CMD: bytes_so_far_sent:27008 -- bytes_remaining:69348[0m
+[0;32mI (913510) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (913510) FLASH_CMD: base mem address = 0x0800ea00[0m
+[0;32mI (913510) FLASH_CMD: bytes_so_far_sent:27136 -- bytes_remaining:69220[0m
+[0;32mI (913670) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (913670) FLASH_CMD: base mem address = 0x0800ea80[0m
+[0;32mI (913670) FLASH_CMD: bytes_so_far_sent:27264 -- bytes_remaining:69092[0m
+[0;32mI (913830) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (913830) FLASH_CMD: base mem address = 0x0800eb00[0m
+[0;32mI (913830) FLASH_CMD: bytes_so_far_sent:27392 -- bytes_remaining:68964[0m
+[0;32mI (913990) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (913990) FLASH_CMD: base mem address = 0x0800eb80[0m
+[0;32mI (913990) FLASH_CMD: bytes_so_far_sent:27520 -- bytes_remaining:68836[0m
+[0;32mI (914150) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (914150) FLASH_CMD: base mem address = 0x0800ec00[0m
+[0;32mI (914150) FLASH_CMD: bytes_so_far_sent:27648 -- bytes_remaining:68708[0m
+[0;32mI (914310) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (914310) FLASH_CMD: base mem address = 0x0800ec80[0m
+[0;32mI (914310) FLASH_CMD: bytes_so_far_sent:27776 -- bytes_remaining:68580[0m
+[0;32mI (914470) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (914470) FLASH_CMD: base mem address = 0x0800ed00[0m
+[0;32mI (914470) FLASH_CMD: bytes_so_far_sent:27904 -- bytes_remaining:68452[0m
+[0;32mI (914630) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (914630) FLASH_CMD: base mem address = 0x0800ed80[0m
+[0;32mI (914630) FLASH_CMD: bytes_so_far_sent:28032 -- bytes_remaining:68324[0m
+[0;32mI (914790) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (914790) FLASH_CMD: base mem address = 0x0800ee00[0m
+[0;32mI (914790) FLASH_CMD: bytes_so_far_sent:28160 -- bytes_remaining:68196[0m
+[0;32mI (914950) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (914950) FLASH_CMD: base mem address = 0x0800ee80[0m
+[0;32mI (914950) FLASH_CMD: bytes_so_far_sent:28288 -- bytes_remaining:68068[0m
+[0;32mI (915110) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (915110) FLASH_CMD: base mem address = 0x0800ef00[0m
+[0;32mI (915110) FLASH_CMD: bytes_so_far_sent:28416 -- bytes_remaining:67940[0m
+[0;32mI (915270) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (915270) FLASH_CMD: base mem address = 0x0800ef80[0m
+[0;32mI (915270) FLASH_CMD: bytes_so_far_sent:28544 -- bytes_remaining:67812[0m
+[0;32mI (915430) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (915430) FLASH_CMD: base mem address = 0x0800f000[0m
+[0;32mI (915430) FLASH_CMD: bytes_so_far_sent:28672 -- bytes_remaining:67684[0m
+[0;32mI (915590) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (915590) FLASH_CMD: base mem address = 0x0800f080[0m
+[0;32mI (915590) FLASH_CMD: bytes_so_far_sent:28800 -- bytes_remaining:67556[0m
+[0;32mI (915750) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (915750) FLASH_CMD: Flash progress: 28928/96356 bytes (30%)[0m
+[0;32mI (915750) FLASH_CMD: base mem address = 0x0800f100[0m
+[0;32mI (915750) FLASH_CMD: bytes_so_far_sent:28928 -- bytes_remaining:67428[0m
+[0;32mI (915800) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58661[0m
+[0;32mI (915920) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (915920) FLASH_CMD: base mem address = 0x0800f180[0m
+[0;32mI (915920) FLASH_CMD: bytes_so_far_sent:29056 -- bytes_remaining:67300[0m
+[0;32mI (916080) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (916080) FLASH_CMD: base mem address = 0x0800f200[0m
+[0;32mI (916080) FLASH_CMD: bytes_so_far_sent:29184 -- bytes_remaining:67172[0m
+[0;32mI (916240) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (916240) FLASH_CMD: base mem address = 0x0800f280[0m
+[0;32mI (916240) FLASH_CMD: bytes_so_far_sent:29312 -- bytes_remaining:67044[0m
+[0;32mI (916400) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (916400) FLASH_CMD: base mem address = 0x0800f300[0m
+[0;32mI (916400) FLASH_CMD: bytes_so_far_sent:29440 -- bytes_remaining:66916[0m
+[0;32mI (916560) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (916560) FLASH_CMD: base mem address = 0x0800f380[0m
+[0;32mI (916560) FLASH_CMD: bytes_so_far_sent:29568 -- bytes_remaining:66788[0m
+[0;32mI (916720) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (916720) FLASH_CMD: base mem address = 0x0800f400[0m
+[0;32mI (916720) FLASH_CMD: bytes_so_far_sent:29696 -- bytes_remaining:66660[0m
+[0;32mI (916880) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (916880) FLASH_CMD: base mem address = 0x0800f480[0m
+[0;32mI (916880) FLASH_CMD: bytes_so_far_sent:29824 -- bytes_remaining:66532[0m
+[0;32mI (917040) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (917040) FLASH_CMD: base mem address = 0x0800f500[0m
+[0;32mI (917040) FLASH_CMD: bytes_so_far_sent:29952 -- bytes_remaining:66404[0m
+[0;32mI (917200) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (917200) FLASH_CMD: base mem address = 0x0800f580[0m
+[0;32mI (917200) FLASH_CMD: bytes_so_far_sent:30080 -- bytes_remaining:66276[0m
+[0;32mI (917360) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (917360) FLASH_CMD: base mem address = 0x0800f600[0m
+[0;32mI (917360) FLASH_CMD: bytes_so_far_sent:30208 -- bytes_remaining:66148[0m
+[0;32mI (917520) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (917520) FLASH_CMD: base mem address = 0x0800f680[0m
+[0;32mI (917520) FLASH_CMD: bytes_so_far_sent:30336 -- bytes_remaining:66020[0m
+[0;32mI (917680) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (917680) FLASH_CMD: base mem address = 0x0800f700[0m
+[0;32mI (917680) FLASH_CMD: bytes_so_far_sent:30464 -- bytes_remaining:65892[0m
+[0;32mI (917840) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (917840) FLASH_CMD: base mem address = 0x0800f780[0m
+[0;32mI (917840) FLASH_CMD: bytes_so_far_sent:30592 -- bytes_remaining:65764[0m
+[0;32mI (918000) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (918000) FLASH_CMD: base mem address = 0x0800f800[0m
+[0;32mI (918000) FLASH_CMD: bytes_so_far_sent:30720 -- bytes_remaining:65636[0m
+[0;32mI (918160) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (918160) FLASH_CMD: base mem address = 0x0800f880[0m
+[0;32mI (918160) FLASH_CMD: bytes_so_far_sent:30848 -- bytes_remaining:65508[0m
+[0;32mI (918320) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (918320) FLASH_CMD: base mem address = 0x0800f900[0m
+[0;32mI (918320) FLASH_CMD: bytes_so_far_sent:30976 -- bytes_remaining:65380[0m
+[0;32mI (918480) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (918480) FLASH_CMD: base mem address = 0x0800f980[0m
+[0;32mI (918480) FLASH_CMD: bytes_so_far_sent:31104 -- bytes_remaining:65252[0m
+[0;32mI (918640) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (918640) FLASH_CMD: base mem address = 0x0800fa00[0m
+[0;32mI (918640) FLASH_CMD: bytes_so_far_sent:31232 -- bytes_remaining:65124[0m
+[0;32mI (918800) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (918800) FLASH_CMD: base mem address = 0x0800fa80[0m
+[0;32mI (918800) FLASH_CMD: bytes_so_far_sent:31360 -- bytes_remaining:64996[0m
+[0;32mI (918960) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (918960) FLASH_CMD: base mem address = 0x0800fb00[0m
+[0;32mI (918960) FLASH_CMD: bytes_so_far_sent:31488 -- bytes_remaining:64868[0m
+[0;32mI (919120) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (919120) FLASH_CMD: base mem address = 0x0800fb80[0m
+[0;32mI (919120) FLASH_CMD: bytes_so_far_sent:31616 -- bytes_remaining:64740[0m
+[0;32mI (919280) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (919280) FLASH_CMD: base mem address = 0x0800fc00[0m
+[0;32mI (919280) FLASH_CMD: bytes_so_far_sent:31744 -- bytes_remaining:64612[0m
+[0;32mI (919440) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (919440) FLASH_CMD: base mem address = 0x0800fc80[0m
+[0;32mI (919440) FLASH_CMD: bytes_so_far_sent:31872 -- bytes_remaining:64484[0m
+[0;32mI (919600) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (919600) FLASH_CMD: base mem address = 0x0800fd00[0m
+[0;32mI (919600) FLASH_CMD: bytes_so_far_sent:32000 -- bytes_remaining:64356[0m
+[0;32mI (919760) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (919760) FLASH_CMD: base mem address = 0x0800fd80[0m
+[0;32mI (919760) FLASH_CMD: bytes_so_far_sent:32128 -- bytes_remaining:64228[0m
+[0;32mI (919920) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (919920) FLASH_CMD: base mem address = 0x0800fe00[0m
+[0;32mI (919920) FLASH_CMD: bytes_so_far_sent:32256 -- bytes_remaining:64100[0m
+[0;32mI (920080) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (920080) FLASH_CMD: base mem address = 0x0800fe80[0m
+[0;32mI (920080) FLASH_CMD: bytes_so_far_sent:32384 -- bytes_remaining:63972[0m
+[0;32mI (920240) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (920240) FLASH_CMD: base mem address = 0x0800ff00[0m
+[0;32mI (920240) FLASH_CMD: bytes_so_far_sent:32512 -- bytes_remaining:63844[0m
+[0;32mI (920400) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (920400) FLASH_CMD: base mem address = 0x0800ff80[0m
+[0;32mI (920400) FLASH_CMD: bytes_so_far_sent:32640 -- bytes_remaining:63716[0m
+[0;32mI (920560) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (920560) FLASH_CMD: base mem address = 0x08010000[0m
+[0;32mI (920560) FLASH_CMD: bytes_so_far_sent:32768 -- bytes_remaining:63588[0m
+[0;32mI (920720) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (920720) FLASH_CMD: base mem address = 0x08010080[0m
+[0;32mI (920720) FLASH_CMD: bytes_so_far_sent:32896 -- bytes_remaining:63460[0m
+[0;32mI (920880) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (920880) FLASH_CMD: base mem address = 0x08010100[0m
+[0;32mI (920880) FLASH_CMD: bytes_so_far_sent:33024 -- bytes_remaining:63332[0m
+[0;32mI (921040) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (921040) FLASH_CMD: base mem address = 0x08010180[0m
+[0;32mI (921040) FLASH_CMD: bytes_so_far_sent:33152 -- bytes_remaining:63204[0m
+[0;32mI (921200) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (921200) FLASH_CMD: base mem address = 0x08010200[0m
+[0;32mI (921200) FLASH_CMD: bytes_so_far_sent:33280 -- bytes_remaining:63076[0m
+[0;32mI (921360) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (921360) FLASH_CMD: base mem address = 0x08010280[0m
+[0;32mI (921360) FLASH_CMD: bytes_so_far_sent:33408 -- bytes_remaining:62948[0m
+[0;32mI (921520) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (921520) FLASH_CMD: base mem address = 0x08010300[0m
+[0;32mI (921520) FLASH_CMD: bytes_so_far_sent:33536 -- bytes_remaining:62820[0m
+[0;32mI (921680) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (921680) FLASH_CMD: base mem address = 0x08010380[0m
+[0;32mI (921680) FLASH_CMD: bytes_so_far_sent:33664 -- bytes_remaining:62692[0m
+[0;32mI (921840) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (921840) FLASH_CMD: base mem address = 0x08010400[0m
+[0;32mI (921840) FLASH_CMD: bytes_so_far_sent:33792 -- bytes_remaining:62564[0m
+[0;32mI (922000) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (922000) FLASH_CMD: base mem address = 0x08010480[0m
+[0;32mI (922000) FLASH_CMD: bytes_so_far_sent:33920 -- bytes_remaining:62436[0m
+[0;32mI (922160) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (922160) FLASH_CMD: base mem address = 0x08010500[0m
+[0;32mI (922160) FLASH_CMD: bytes_so_far_sent:34048 -- bytes_remaining:62308[0m
+[0;32mI (922320) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (922320) FLASH_CMD: base mem address = 0x08010580[0m
+[0;32mI (922320) FLASH_CMD: bytes_so_far_sent:34176 -- bytes_remaining:62180[0m
+[0;32mI (922480) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (922480) FLASH_CMD: base mem address = 0x08010600[0m
+[0;32mI (922480) FLASH_CMD: bytes_so_far_sent:34304 -- bytes_remaining:62052[0m
+[0;32mI (922640) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (922640) FLASH_CMD: base mem address = 0x08010680[0m
+[0;32mI (922640) FLASH_CMD: bytes_so_far_sent:34432 -- bytes_remaining:61924[0m
+[0;32mI (922800) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (922800) FLASH_CMD: base mem address = 0x08010700[0m
+[0;32mI (922800) FLASH_CMD: bytes_so_far_sent:34560 -- bytes_remaining:61796[0m
+[0;32mI (922960) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (922960) FLASH_CMD: base mem address = 0x08010780[0m
+[0;32mI (922960) FLASH_CMD: bytes_so_far_sent:34688 -- bytes_remaining:61668[0m
+[0;32mI (923120) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (923120) FLASH_CMD: base mem address = 0x08010800[0m
+[0;32mI (923120) FLASH_CMD: bytes_so_far_sent:34816 -- bytes_remaining:61540[0m
+[0;32mI (923280) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (923280) FLASH_CMD: base mem address = 0x08010880[0m
+[0;32mI (923280) FLASH_CMD: bytes_so_far_sent:34944 -- bytes_remaining:61412[0m
+[0;32mI (923440) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (923440) FLASH_CMD: base mem address = 0x08010900[0m
+[0;32mI (923440) FLASH_CMD: bytes_so_far_sent:35072 -- bytes_remaining:61284[0m
+[0;32mI (923600) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (923600) FLASH_CMD: base mem address = 0x08010980[0m
+[0;32mI (923600) FLASH_CMD: bytes_so_far_sent:35200 -- bytes_remaining:61156[0m
+[0;32mI (923760) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (923760) FLASH_CMD: base mem address = 0x08010a00[0m
+[0;32mI (923760) FLASH_CMD: bytes_so_far_sent:35328 -- bytes_remaining:61028[0m
+[0;32mI (923920) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (923920) FLASH_CMD: base mem address = 0x08010a80[0m
+[0;32mI (923920) FLASH_CMD: bytes_so_far_sent:35456 -- bytes_remaining:60900[0m
+[0;32mI (924080) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (924080) FLASH_CMD: base mem address = 0x08010b00[0m
+[0;32mI (924080) FLASH_CMD: bytes_so_far_sent:35584 -- bytes_remaining:60772[0m
+[0;32mI (924240) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (924240) FLASH_CMD: base mem address = 0x08010b80[0m
+[0;32mI (924240) FLASH_CMD: bytes_so_far_sent:35712 -- bytes_remaining:60644[0m
+[0;32mI (924400) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (924400) FLASH_CMD: base mem address = 0x08010c00[0m
+[0;32mI (924400) FLASH_CMD: bytes_so_far_sent:35840 -- bytes_remaining:60516[0m
+[0;32mI (924560) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (924560) FLASH_CMD: base mem address = 0x08010c80[0m
+[0;32mI (924560) FLASH_CMD: bytes_so_far_sent:35968 -- bytes_remaining:60388[0m
+[0;32mI (924720) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (924720) FLASH_CMD: base mem address = 0x08010d00[0m
+[0;32mI (924720) FLASH_CMD: bytes_so_far_sent:36096 -- bytes_remaining:60260[0m
+[0;32mI (924880) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (924880) FLASH_CMD: base mem address = 0x08010d80[0m
+[0;32mI (924880) FLASH_CMD: bytes_so_far_sent:36224 -- bytes_remaining:60132[0m
+[0;32mI (925040) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (925040) FLASH_CMD: base mem address = 0x08010e00[0m
+[0;32mI (925040) FLASH_CMD: bytes_so_far_sent:36352 -- bytes_remaining:60004[0m
+[0;32mI (925200) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (925200) FLASH_CMD: base mem address = 0x08010e80[0m
+[0;32mI (925200) FLASH_CMD: bytes_so_far_sent:36480 -- bytes_remaining:59876[0m
+[0;32mI (925360) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (925360) FLASH_CMD: base mem address = 0x08010f00[0m
+[0;32mI (925360) FLASH_CMD: bytes_so_far_sent:36608 -- bytes_remaining:59748[0m
+[0;32mI (925520) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (925520) FLASH_CMD: base mem address = 0x08010f80[0m
+[0;32mI (925520) FLASH_CMD: bytes_so_far_sent:36736 -- bytes_remaining:59620[0m
+[0;32mI (925680) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (925680) FLASH_CMD: base mem address = 0x08011000[0m
+[0;32mI (925680) FLASH_CMD: bytes_so_far_sent:36864 -- bytes_remaining:59492[0m
+[0;32mI (925840) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (925840) FLASH_CMD: base mem address = 0x08011080[0m
+[0;32mI (925840) FLASH_CMD: bytes_so_far_sent:36992 -- bytes_remaining:59364[0m
+[0;32mI (926000) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (926000) FLASH_CMD: base mem address = 0x08011100[0m
+[0;32mI (926000) FLASH_CMD: bytes_so_far_sent:37120 -- bytes_remaining:59236[0m
+[0;32mI (926160) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (926160) FLASH_CMD: base mem address = 0x08011180[0m
+[0;32mI (926160) FLASH_CMD: bytes_so_far_sent:37248 -- bytes_remaining:59108[0m
+[0;32mI (926320) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (926320) FLASH_CMD: base mem address = 0x08011200[0m
+[0;32mI (926320) FLASH_CMD: bytes_so_far_sent:37376 -- bytes_remaining:58980[0m
+[0;32mI (926480) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (926480) FLASH_CMD: base mem address = 0x08011280[0m
+[0;32mI (926480) FLASH_CMD: bytes_so_far_sent:37504 -- bytes_remaining:58852[0m
+[0;32mI (926640) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (926640) FLASH_CMD: base mem address = 0x08011300[0m
+[0;32mI (926640) FLASH_CMD: bytes_so_far_sent:37632 -- bytes_remaining:58724[0m
+[0;32mI (926800) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (926800) FLASH_CMD: base mem address = 0x08011380[0m
+[0;32mI (926800) FLASH_CMD: bytes_so_far_sent:37760 -- bytes_remaining:58596[0m
+[0;32mI (926960) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (926960) FLASH_CMD: base mem address = 0x08011400[0m
+[0;32mI (926960) FLASH_CMD: bytes_so_far_sent:37888 -- bytes_remaining:58468[0m
+[0;32mI (927120) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (927120) FLASH_CMD: base mem address = 0x08011480[0m
+[0;32mI (927120) FLASH_CMD: bytes_so_far_sent:38016 -- bytes_remaining:58340[0m
+[0;32mI (927280) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (927280) FLASH_CMD: base mem address = 0x08011500[0m
+[0;32mI (927280) FLASH_CMD: bytes_so_far_sent:38144 -- bytes_remaining:58212[0m
+[0;32mI (927440) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (927440) FLASH_CMD: base mem address = 0x08011580[0m
+[0;32mI (927440) FLASH_CMD: bytes_so_far_sent:38272 -- bytes_remaining:58084[0m
+[0;32mI (927600) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (927600) FLASH_CMD: base mem address = 0x08011600[0m
+[0;32mI (927600) FLASH_CMD: bytes_so_far_sent:38400 -- bytes_remaining:57956[0m
+[0;32mI (927760) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (927760) FLASH_CMD: base mem address = 0x08011680[0m
+[0;32mI (927760) FLASH_CMD: bytes_so_far_sent:38528 -- bytes_remaining:57828[0m
+[0;32mI (927920) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (927920) FLASH_CMD: Flash progress: 38656/96356 bytes (40%)[0m
+[0;32mI (927920) FLASH_CMD: base mem address = 0x08011700[0m
+[0;32mI (927920) FLASH_CMD: bytes_so_far_sent:38656 -- bytes_remaining:57700[0m
+[0;32mI (927970) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39908[0m
+[0;32mI (928090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (928090) FLASH_CMD: base mem address = 0x08011780[0m
+[0;32mI (928090) FLASH_CMD: bytes_so_far_sent:38784 -- bytes_remaining:57572[0m
+[0;32mI (928250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (928250) FLASH_CMD: base mem address = 0x08011800[0m
+[0;32mI (928250) FLASH_CMD: bytes_so_far_sent:38912 -- bytes_remaining:57444[0m
+[0;32mI (928410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (928410) FLASH_CMD: base mem address = 0x08011880[0m
+[0;32mI (928410) FLASH_CMD: bytes_so_far_sent:39040 -- bytes_remaining:57316[0m
+[0;32mI (928570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (928570) FLASH_CMD: base mem address = 0x08011900[0m
+[0;32mI (928570) FLASH_CMD: bytes_so_far_sent:39168 -- bytes_remaining:57188[0m
+[0;32mI (928730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (928730) FLASH_CMD: base mem address = 0x08011980[0m
+[0;32mI (928730) FLASH_CMD: bytes_so_far_sent:39296 -- bytes_remaining:57060[0m
+[0;32mI (928890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (928890) FLASH_CMD: base mem address = 0x08011a00[0m
+[0;32mI (928890) FLASH_CMD: bytes_so_far_sent:39424 -- bytes_remaining:56932[0m
+[0;32mI (929050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (929050) FLASH_CMD: base mem address = 0x08011a80[0m
+[0;32mI (929050) FLASH_CMD: bytes_so_far_sent:39552 -- bytes_remaining:56804[0m
+[0;32mI (929210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (929210) FLASH_CMD: base mem address = 0x08011b00[0m
+[0;32mI (929210) FLASH_CMD: bytes_so_far_sent:39680 -- bytes_remaining:56676[0m
+[0;32mI (929370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (929370) FLASH_CMD: base mem address = 0x08011b80[0m
+[0;32mI (929370) FLASH_CMD: bytes_so_far_sent:39808 -- bytes_remaining:56548[0m
+[0;32mI (929530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (929530) FLASH_CMD: base mem address = 0x08011c00[0m
+[0;32mI (929530) FLASH_CMD: bytes_so_far_sent:39936 -- bytes_remaining:56420[0m
+[0;32mI (929690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (929690) FLASH_CMD: base mem address = 0x08011c80[0m
+[0;32mI (929690) FLASH_CMD: bytes_so_far_sent:40064 -- bytes_remaining:56292[0m
+[0;32mI (929850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (929850) FLASH_CMD: base mem address = 0x08011d00[0m
+[0;32mI (929850) FLASH_CMD: bytes_so_far_sent:40192 -- bytes_remaining:56164[0m
+[0;32mI (930010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (930010) FLASH_CMD: base mem address = 0x08011d80[0m
+[0;32mI (930010) FLASH_CMD: bytes_so_far_sent:40320 -- bytes_remaining:56036[0m
+[0;32mI (930170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (930170) FLASH_CMD: base mem address = 0x08011e00[0m
+[0;32mI (930170) FLASH_CMD: bytes_so_far_sent:40448 -- bytes_remaining:55908[0m
+[0;32mI (930330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (930330) FLASH_CMD: base mem address = 0x08011e80[0m
+[0;32mI (930330) FLASH_CMD: bytes_so_far_sent:40576 -- bytes_remaining:55780[0m
+[0;32mI (930490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (930490) FLASH_CMD: base mem address = 0x08011f00[0m
+[0;32mI (930490) FLASH_CMD: bytes_so_far_sent:40704 -- bytes_remaining:55652[0m
+[0;32mI (930650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (930650) FLASH_CMD: base mem address = 0x08011f80[0m
+[0;32mI (930650) FLASH_CMD: bytes_so_far_sent:40832 -- bytes_remaining:55524[0m
+[0;32mI (930810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (930810) FLASH_CMD: base mem address = 0x08012000[0m
+[0;32mI (930810) FLASH_CMD: bytes_so_far_sent:40960 -- bytes_remaining:55396[0m
+[0;32mI (930970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (930970) FLASH_CMD: base mem address = 0x08012080[0m
+[0;32mI (930970) FLASH_CMD: bytes_so_far_sent:41088 -- bytes_remaining:55268[0m
+[0;32mI (931130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (931130) FLASH_CMD: base mem address = 0x08012100[0m
+[0;32mI (931130) FLASH_CMD: bytes_so_far_sent:41216 -- bytes_remaining:55140[0m
+[0;32mI (931290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (931290) FLASH_CMD: base mem address = 0x08012180[0m
+[0;32mI (931290) FLASH_CMD: bytes_so_far_sent:41344 -- bytes_remaining:55012[0m
+[0;32mI (931450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (931450) FLASH_CMD: base mem address = 0x08012200[0m
+[0;32mI (931450) FLASH_CMD: bytes_so_far_sent:41472 -- bytes_remaining:54884[0m
+[0;32mI (931610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (931610) FLASH_CMD: base mem address = 0x08012280[0m
+[0;32mI (931610) FLASH_CMD: bytes_so_far_sent:41600 -- bytes_remaining:54756[0m
+[0;32mI (931770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (931770) FLASH_CMD: base mem address = 0x08012300[0m
+[0;32mI (931770) FLASH_CMD: bytes_so_far_sent:41728 -- bytes_remaining:54628[0m
+[0;32mI (931930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (931930) FLASH_CMD: base mem address = 0x08012380[0m
+[0;32mI (931930) FLASH_CMD: bytes_so_far_sent:41856 -- bytes_remaining:54500[0m
+[0;32mI (932090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (932090) FLASH_CMD: base mem address = 0x08012400[0m
+[0;32mI (932090) FLASH_CMD: bytes_so_far_sent:41984 -- bytes_remaining:54372[0m
+[0;32mI (932250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (932250) FLASH_CMD: base mem address = 0x08012480[0m
+[0;32mI (932250) FLASH_CMD: bytes_so_far_sent:42112 -- bytes_remaining:54244[0m
+[0;32mI (932410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (932410) FLASH_CMD: base mem address = 0x08012500[0m
+[0;32mI (932410) FLASH_CMD: bytes_so_far_sent:42240 -- bytes_remaining:54116[0m
+[0;32mI (932570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (932570) FLASH_CMD: base mem address = 0x08012580[0m
+[0;32mI (932570) FLASH_CMD: bytes_so_far_sent:42368 -- bytes_remaining:53988[0m
+[0;32mI (932730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (932730) FLASH_CMD: base mem address = 0x08012600[0m
+[0;32mI (932730) FLASH_CMD: bytes_so_far_sent:42496 -- bytes_remaining:53860[0m
+[0;32mI (932890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (932890) FLASH_CMD: base mem address = 0x08012680[0m
+[0;32mI (932890) FLASH_CMD: bytes_so_far_sent:42624 -- bytes_remaining:53732[0m
+[0;32mI (933050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (933050) FLASH_CMD: base mem address = 0x08012700[0m
+[0;32mI (933050) FLASH_CMD: bytes_so_far_sent:42752 -- bytes_remaining:53604[0m
+[0;32mI (933210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (933210) FLASH_CMD: base mem address = 0x08012780[0m
+[0;32mI (933210) FLASH_CMD: bytes_so_far_sent:42880 -- bytes_remaining:53476[0m
+[0;32mI (933370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (933370) FLASH_CMD: base mem address = 0x08012800[0m
+[0;32mI (933370) FLASH_CMD: bytes_so_far_sent:43008 -- bytes_remaining:53348[0m
+[0;32mI (933530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (933530) FLASH_CMD: base mem address = 0x08012880[0m
+[0;32mI (933530) FLASH_CMD: bytes_so_far_sent:43136 -- bytes_remaining:53220[0m
+[0;32mI (933690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (933690) FLASH_CMD: base mem address = 0x08012900[0m
+[0;32mI (933690) FLASH_CMD: bytes_so_far_sent:43264 -- bytes_remaining:53092[0m
+[0;32mI (933850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (933850) FLASH_CMD: base mem address = 0x08012980[0m
+[0;32mI (933850) FLASH_CMD: bytes_so_far_sent:43392 -- bytes_remaining:52964[0m
+[0;32mI (934010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (934010) FLASH_CMD: base mem address = 0x08012a00[0m
+[0;32mI (934010) FLASH_CMD: bytes_so_far_sent:43520 -- bytes_remaining:52836[0m
+[0;32mI (934170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (934170) FLASH_CMD: base mem address = 0x08012a80[0m
+[0;32mI (934170) FLASH_CMD: bytes_so_far_sent:43648 -- bytes_remaining:52708[0m
+[0;32mI (934330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (934330) FLASH_CMD: base mem address = 0x08012b00[0m
+[0;32mI (934330) FLASH_CMD: bytes_so_far_sent:43776 -- bytes_remaining:52580[0m
+[0;32mI (934490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (934490) FLASH_CMD: base mem address = 0x08012b80[0m
+[0;32mI (934490) FLASH_CMD: bytes_so_far_sent:43904 -- bytes_remaining:52452[0m
+[0;32mI (934650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (934650) FLASH_CMD: base mem address = 0x08012c00[0m
+[0;32mI (934650) FLASH_CMD: bytes_so_far_sent:44032 -- bytes_remaining:52324[0m
+[0;32mI (934810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (934810) FLASH_CMD: base mem address = 0x08012c80[0m
+[0;32mI (934810) FLASH_CMD: bytes_so_far_sent:44160 -- bytes_remaining:52196[0m
+[0;32mI (934970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (934970) FLASH_CMD: base mem address = 0x08012d00[0m
+[0;32mI (934970) FLASH_CMD: bytes_so_far_sent:44288 -- bytes_remaining:52068[0m
+[0;32mI (935130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (935130) FLASH_CMD: base mem address = 0x08012d80[0m
+[0;32mI (935130) FLASH_CMD: bytes_so_far_sent:44416 -- bytes_remaining:51940[0m
+[0;32mI (935290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (935290) FLASH_CMD: base mem address = 0x08012e00[0m
+[0;32mI (935290) FLASH_CMD: bytes_so_far_sent:44544 -- bytes_remaining:51812[0m
+[0;32mI (935450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (935450) FLASH_CMD: base mem address = 0x08012e80[0m
+[0;32mI (935450) FLASH_CMD: bytes_so_far_sent:44672 -- bytes_remaining:51684[0m
+[0;32mI (935610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (935610) FLASH_CMD: base mem address = 0x08012f00[0m
+[0;32mI (935610) FLASH_CMD: bytes_so_far_sent:44800 -- bytes_remaining:51556[0m
+[0;32mI (935770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (935770) FLASH_CMD: base mem address = 0x08012f80[0m
+[0;32mI (935770) FLASH_CMD: bytes_so_far_sent:44928 -- bytes_remaining:51428[0m
+[0;32mI (935930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (935930) FLASH_CMD: base mem address = 0x08013000[0m
+[0;32mI (935930) FLASH_CMD: bytes_so_far_sent:45056 -- bytes_remaining:51300[0m
+[0;32mI (936090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (936090) FLASH_CMD: base mem address = 0x08013080[0m
+[0;32mI (936090) FLASH_CMD: bytes_so_far_sent:45184 -- bytes_remaining:51172[0m
+[0;32mI (936250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (936250) FLASH_CMD: base mem address = 0x08013100[0m
+[0;32mI (936250) FLASH_CMD: bytes_so_far_sent:45312 -- bytes_remaining:51044[0m
+[0;32mI (936410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (936410) FLASH_CMD: base mem address = 0x08013180[0m
+[0;32mI (936410) FLASH_CMD: bytes_so_far_sent:45440 -- bytes_remaining:50916[0m
+[0;32mI (936570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (936570) FLASH_CMD: base mem address = 0x08013200[0m
+[0;32mI (936570) FLASH_CMD: bytes_so_far_sent:45568 -- bytes_remaining:50788[0m
+[0;32mI (936730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (936730) FLASH_CMD: base mem address = 0x08013280[0m
+[0;32mI (936730) FLASH_CMD: bytes_so_far_sent:45696 -- bytes_remaining:50660[0m
+[0;32mI (936890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (936890) FLASH_CMD: base mem address = 0x08013300[0m
+[0;32mI (936890) FLASH_CMD: bytes_so_far_sent:45824 -- bytes_remaining:50532[0m
+[0;32mI (937050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (937050) FLASH_CMD: base mem address = 0x08013380[0m
+[0;32mI (937050) FLASH_CMD: bytes_so_far_sent:45952 -- bytes_remaining:50404[0m
+[0;32mI (937210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (937210) FLASH_CMD: base mem address = 0x08013400[0m
+[0;32mI (937210) FLASH_CMD: bytes_so_far_sent:46080 -- bytes_remaining:50276[0m
+[0;32mI (937370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (937370) FLASH_CMD: base mem address = 0x08013480[0m
+[0;32mI (937370) FLASH_CMD: bytes_so_far_sent:46208 -- bytes_remaining:50148[0m
+[0;32mI (937530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (937530) FLASH_CMD: base mem address = 0x08013500[0m
+[0;32mI (937530) FLASH_CMD: bytes_so_far_sent:46336 -- bytes_remaining:50020[0m
+[0;32mI (937690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (937690) FLASH_CMD: base mem address = 0x08013580[0m
+[0;32mI (937690) FLASH_CMD: bytes_so_far_sent:46464 -- bytes_remaining:49892[0m
+[0;32mI (937850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (937850) FLASH_CMD: base mem address = 0x08013600[0m
+[0;32mI (937850) FLASH_CMD: bytes_so_far_sent:46592 -- bytes_remaining:49764[0m
+[0;32mI (938010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (938010) FLASH_CMD: base mem address = 0x08013680[0m
+[0;32mI (938010) FLASH_CMD: bytes_so_far_sent:46720 -- bytes_remaining:49636[0m
+[0;32mI (938170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (938170) FLASH_CMD: base mem address = 0x08013700[0m
+[0;32mI (938170) FLASH_CMD: bytes_so_far_sent:46848 -- bytes_remaining:49508[0m
+[0;32mI (938330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (938330) FLASH_CMD: base mem address = 0x08013780[0m
+[0;32mI (938330) FLASH_CMD: bytes_so_far_sent:46976 -- bytes_remaining:49380[0m
+[0;32mI (938490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (938490) FLASH_CMD: base mem address = 0x08013800[0m
+[0;32mI (938490) FLASH_CMD: bytes_so_far_sent:47104 -- bytes_remaining:49252[0m
+[0;32mI (938650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (938650) FLASH_CMD: base mem address = 0x08013880[0m
+[0;32mI (938650) FLASH_CMD: bytes_so_far_sent:47232 -- bytes_remaining:49124[0m
+[0;32mI (938810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (938810) FLASH_CMD: base mem address = 0x08013900[0m
+[0;32mI (938810) FLASH_CMD: bytes_so_far_sent:47360 -- bytes_remaining:48996[0m
+[0;32mI (938970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (938970) FLASH_CMD: base mem address = 0x08013980[0m
+[0;32mI (938970) FLASH_CMD: bytes_so_far_sent:47488 -- bytes_remaining:48868[0m
+[0;32mI (939130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (939130) FLASH_CMD: base mem address = 0x08013a00[0m
+[0;32mI (939130) FLASH_CMD: bytes_so_far_sent:47616 -- bytes_remaining:48740[0m
+[0;32mI (939290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (939290) FLASH_CMD: base mem address = 0x08013a80[0m
+[0;32mI (939290) FLASH_CMD: bytes_so_far_sent:47744 -- bytes_remaining:48612[0m
+[0;32mI (939450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (939450) FLASH_CMD: base mem address = 0x08013b00[0m
+[0;32mI (939450) FLASH_CMD: bytes_so_far_sent:47872 -- bytes_remaining:48484[0m
+[0;32mI (939610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (939610) FLASH_CMD: base mem address = 0x08013b80[0m
+[0;32mI (939610) FLASH_CMD: bytes_so_far_sent:48000 -- bytes_remaining:48356[0m
+[0;32mI (939770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (939770) FLASH_CMD: base mem address = 0x08013c00[0m
+[0;32mI (939770) FLASH_CMD: bytes_so_far_sent:48128 -- bytes_remaining:48228[0m
+[0;32mI (939930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (939930) FLASH_CMD: Flash progress: 48256/96356 bytes (50%)[0m
+[0;32mI (939930) FLASH_CMD: base mem address = 0x08013c80[0m
+[0;32mI (939930) FLASH_CMD: bytes_so_far_sent:48256 -- bytes_remaining:48100[0m
+[0;32mI (940100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (940100) FLASH_CMD: base mem address = 0x08013d00[0m
+[0;32mI (940100) FLASH_CMD: bytes_so_far_sent:48384 -- bytes_remaining:47972[0m
+[0;32mI (940260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (940260) FLASH_CMD: base mem address = 0x08013d80[0m
+[0;32mI (940260) FLASH_CMD: bytes_so_far_sent:48512 -- bytes_remaining:47844[0m
+[0;32mI (940280) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=54914[0m
+[0;32mI (940420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (940420) FLASH_CMD: base mem address = 0x08013e00[0m
+[0;32mI (940420) FLASH_CMD: bytes_so_far_sent:48640 -- bytes_remaining:47716[0m
+[0;32mI (940580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (940580) FLASH_CMD: base mem address = 0x08013e80[0m
+[0;32mI (940580) FLASH_CMD: bytes_so_far_sent:48768 -- bytes_remaining:47588[0m
+[0;32mI (940740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (940740) FLASH_CMD: base mem address = 0x08013f00[0m
+[0;32mI (940740) FLASH_CMD: bytes_so_far_sent:48896 -- bytes_remaining:47460[0m
+[0;32mI (940900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (940900) FLASH_CMD: base mem address = 0x08013f80[0m
+[0;32mI (940900) FLASH_CMD: bytes_so_far_sent:49024 -- bytes_remaining:47332[0m
+[0;32mI (941060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (941060) FLASH_CMD: base mem address = 0x08014000[0m
+[0;32mI (941060) FLASH_CMD: bytes_so_far_sent:49152 -- bytes_remaining:47204[0m
+[0;32mI (941220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (941220) FLASH_CMD: base mem address = 0x08014080[0m
+[0;32mI (941220) FLASH_CMD: bytes_so_far_sent:49280 -- bytes_remaining:47076[0m
+[0;32mI (941380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (941380) FLASH_CMD: base mem address = 0x08014100[0m
+[0;32mI (941380) FLASH_CMD: bytes_so_far_sent:49408 -- bytes_remaining:46948[0m
+[0;32mI (941540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (941540) FLASH_CMD: base mem address = 0x08014180[0m
+[0;32mI (941540) FLASH_CMD: bytes_so_far_sent:49536 -- bytes_remaining:46820[0m
+[0;32mI (941700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (941700) FLASH_CMD: base mem address = 0x08014200[0m
+[0;32mI (941700) FLASH_CMD: bytes_so_far_sent:49664 -- bytes_remaining:46692[0m
+[0;32mI (941860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (941860) FLASH_CMD: base mem address = 0x08014280[0m
+[0;32mI (941860) FLASH_CMD: bytes_so_far_sent:49792 -- bytes_remaining:46564[0m
+[0;32mI (942020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (942020) FLASH_CMD: base mem address = 0x08014300[0m
+[0;32mI (942020) FLASH_CMD: bytes_so_far_sent:49920 -- bytes_remaining:46436[0m
+[0;32mI (942180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (942180) FLASH_CMD: base mem address = 0x08014380[0m
+[0;32mI (942180) FLASH_CMD: bytes_so_far_sent:50048 -- bytes_remaining:46308[0m
+[0;32mI (942340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (942340) FLASH_CMD: base mem address = 0x08014400[0m
+[0;32mI (942340) FLASH_CMD: bytes_so_far_sent:50176 -- bytes_remaining:46180[0m
+[0;32mI (942500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (942500) FLASH_CMD: base mem address = 0x08014480[0m
+[0;32mI (942500) FLASH_CMD: bytes_so_far_sent:50304 -- bytes_remaining:46052[0m
+[0;32mI (942660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (942660) FLASH_CMD: base mem address = 0x08014500[0m
+[0;32mI (942660) FLASH_CMD: bytes_so_far_sent:50432 -- bytes_remaining:45924[0m
+[0;32mI (942820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (942820) FLASH_CMD: base mem address = 0x08014580[0m
+[0;32mI (942820) FLASH_CMD: bytes_so_far_sent:50560 -- bytes_remaining:45796[0m
+[0;32mI (942980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (942980) FLASH_CMD: base mem address = 0x08014600[0m
+[0;32mI (942980) FLASH_CMD: bytes_so_far_sent:50688 -- bytes_remaining:45668[0m
+[0;32mI (943140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (943140) FLASH_CMD: base mem address = 0x08014680[0m
+[0;32mI (943140) FLASH_CMD: bytes_so_far_sent:50816 -- bytes_remaining:45540[0m
+[0;32mI (943300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (943300) FLASH_CMD: base mem address = 0x08014700[0m
+[0;32mI (943300) FLASH_CMD: bytes_so_far_sent:50944 -- bytes_remaining:45412[0m
+[0;32mI (943460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (943460) FLASH_CMD: base mem address = 0x08014780[0m
+[0;32mI (943460) FLASH_CMD: bytes_so_far_sent:51072 -- bytes_remaining:45284[0m
+[0;32mI (943620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (943620) FLASH_CMD: base mem address = 0x08014800[0m
+[0;32mI (943620) FLASH_CMD: bytes_so_far_sent:51200 -- bytes_remaining:45156[0m
+[0;32mI (943780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (943780) FLASH_CMD: base mem address = 0x08014880[0m
+[0;32mI (943780) FLASH_CMD: bytes_so_far_sent:51328 -- bytes_remaining:45028[0m
+[0;32mI (943940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (943940) FLASH_CMD: base mem address = 0x08014900[0m
+[0;32mI (943940) FLASH_CMD: bytes_so_far_sent:51456 -- bytes_remaining:44900[0m
+[0;32mI (944100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (944100) FLASH_CMD: base mem address = 0x08014980[0m
+[0;32mI (944100) FLASH_CMD: bytes_so_far_sent:51584 -- bytes_remaining:44772[0m
+[0;32mI (944260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (944260) FLASH_CMD: base mem address = 0x08014a00[0m
+[0;32mI (944260) FLASH_CMD: bytes_so_far_sent:51712 -- bytes_remaining:44644[0m
+[0;32mI (944420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (944420) FLASH_CMD: base mem address = 0x08014a80[0m
+[0;32mI (944420) FLASH_CMD: bytes_so_far_sent:51840 -- bytes_remaining:44516[0m
+[0;32mI (944580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (944580) FLASH_CMD: base mem address = 0x08014b00[0m
+[0;32mI (944580) FLASH_CMD: bytes_so_far_sent:51968 -- bytes_remaining:44388[0m
+[0;32mI (944740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (944740) FLASH_CMD: base mem address = 0x08014b80[0m
+[0;32mI (944740) FLASH_CMD: bytes_so_far_sent:52096 -- bytes_remaining:44260[0m
+[0;32mI (944900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (944900) FLASH_CMD: base mem address = 0x08014c00[0m
+[0;32mI (944900) FLASH_CMD: bytes_so_far_sent:52224 -- bytes_remaining:44132[0m
+[0;32mI (945060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (945060) FLASH_CMD: base mem address = 0x08014c80[0m
+[0;32mI (945060) FLASH_CMD: bytes_so_far_sent:52352 -- bytes_remaining:44004[0m
+[0;32mI (945220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (945220) FLASH_CMD: base mem address = 0x08014d00[0m
+[0;32mI (945220) FLASH_CMD: bytes_so_far_sent:52480 -- bytes_remaining:43876[0m
+[0;32mI (945380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (945380) FLASH_CMD: base mem address = 0x08014d80[0m
+[0;32mI (945380) FLASH_CMD: bytes_so_far_sent:52608 -- bytes_remaining:43748[0m
+[0;32mI (945540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (945540) FLASH_CMD: base mem address = 0x08014e00[0m
+[0;32mI (945540) FLASH_CMD: bytes_so_far_sent:52736 -- bytes_remaining:43620[0m
+[0;32mI (945700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (945700) FLASH_CMD: base mem address = 0x08014e80[0m
+[0;32mI (945700) FLASH_CMD: bytes_so_far_sent:52864 -- bytes_remaining:43492[0m
+[0;32mI (945860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (945860) FLASH_CMD: base mem address = 0x08014f00[0m
+[0;32mI (945860) FLASH_CMD: bytes_so_far_sent:52992 -- bytes_remaining:43364[0m
+[0;32mI (946020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (946020) FLASH_CMD: base mem address = 0x08014f80[0m
+[0;32mI (946020) FLASH_CMD: bytes_so_far_sent:53120 -- bytes_remaining:43236[0m
+[0;32mI (946180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (946180) FLASH_CMD: base mem address = 0x08015000[0m
+[0;32mI (946180) FLASH_CMD: bytes_so_far_sent:53248 -- bytes_remaining:43108[0m
+[0;32mI (946340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (946340) FLASH_CMD: base mem address = 0x08015080[0m
+[0;32mI (946340) FLASH_CMD: bytes_so_far_sent:53376 -- bytes_remaining:42980[0m
+[0;32mI (946500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (946500) FLASH_CMD: base mem address = 0x08015100[0m
+[0;32mI (946500) FLASH_CMD: bytes_so_far_sent:53504 -- bytes_remaining:42852[0m
+[0;32mI (946660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (946660) FLASH_CMD: base mem address = 0x08015180[0m
+[0;32mI (946660) FLASH_CMD: bytes_so_far_sent:53632 -- bytes_remaining:42724[0m
+[0;32mI (946820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (946820) FLASH_CMD: base mem address = 0x08015200[0m
+[0;32mI (946820) FLASH_CMD: bytes_so_far_sent:53760 -- bytes_remaining:42596[0m
+[0;32mI (946980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (946980) FLASH_CMD: base mem address = 0x08015280[0m
+[0;32mI (946980) FLASH_CMD: bytes_so_far_sent:53888 -- bytes_remaining:42468[0m
+[0;32mI (947140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (947140) FLASH_CMD: base mem address = 0x08015300[0m
+[0;32mI (947140) FLASH_CMD: bytes_so_far_sent:54016 -- bytes_remaining:42340[0m
+[0;32mI (947300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (947300) FLASH_CMD: base mem address = 0x08015380[0m
+[0;32mI (947300) FLASH_CMD: bytes_so_far_sent:54144 -- bytes_remaining:42212[0m
+[0;32mI (947460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (947460) FLASH_CMD: base mem address = 0x08015400[0m
+[0;32mI (947460) FLASH_CMD: bytes_so_far_sent:54272 -- bytes_remaining:42084[0m
+[0;32mI (947620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (947620) FLASH_CMD: base mem address = 0x08015480[0m
+[0;32mI (947620) FLASH_CMD: bytes_so_far_sent:54400 -- bytes_remaining:41956[0m
+[0;32mI (947780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (947780) FLASH_CMD: base mem address = 0x08015500[0m
+[0;32mI (947780) FLASH_CMD: bytes_so_far_sent:54528 -- bytes_remaining:41828[0m
+[0;32mI (947940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (947940) FLASH_CMD: base mem address = 0x08015580[0m
+[0;32mI (947940) FLASH_CMD: bytes_so_far_sent:54656 -- bytes_remaining:41700[0m
+[0;32mI (948100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (948100) FLASH_CMD: base mem address = 0x08015600[0m
+[0;32mI (948100) FLASH_CMD: bytes_so_far_sent:54784 -- bytes_remaining:41572[0m
+[0;32mI (948260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (948260) FLASH_CMD: base mem address = 0x08015680[0m
+[0;32mI (948260) FLASH_CMD: bytes_so_far_sent:54912 -- bytes_remaining:41444[0m
+[0;32mI (948420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (948420) FLASH_CMD: base mem address = 0x08015700[0m
+[0;32mI (948420) FLASH_CMD: bytes_so_far_sent:55040 -- bytes_remaining:41316[0m
+[0;32mI (948580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (948580) FLASH_CMD: base mem address = 0x08015780[0m
+[0;32mI (948580) FLASH_CMD: bytes_so_far_sent:55168 -- bytes_remaining:41188[0m
+[0;32mI (948740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (948740) FLASH_CMD: base mem address = 0x08015800[0m
+[0;32mI (948740) FLASH_CMD: bytes_so_far_sent:55296 -- bytes_remaining:41060[0m
+[0;32mI (948900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (948900) FLASH_CMD: base mem address = 0x08015880[0m
+[0;32mI (948900) FLASH_CMD: bytes_so_far_sent:55424 -- bytes_remaining:40932[0m
+[0;32mI (949060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (949060) FLASH_CMD: base mem address = 0x08015900[0m
+[0;32mI (949060) FLASH_CMD: bytes_so_far_sent:55552 -- bytes_remaining:40804[0m
+[0;32mI (949220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (949220) FLASH_CMD: base mem address = 0x08015980[0m
+[0;32mI (949220) FLASH_CMD: bytes_so_far_sent:55680 -- bytes_remaining:40676[0m
+[0;32mI (949380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (949380) FLASH_CMD: base mem address = 0x08015a00[0m
+[0;32mI (949380) FLASH_CMD: bytes_so_far_sent:55808 -- bytes_remaining:40548[0m
+[0;32mI (949540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (949540) FLASH_CMD: base mem address = 0x08015a80[0m
+[0;32mI (949540) FLASH_CMD: bytes_so_far_sent:55936 -- bytes_remaining:40420[0m
+[0;32mI (949700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (949700) FLASH_CMD: base mem address = 0x08015b00[0m
+[0;32mI (949700) FLASH_CMD: bytes_so_far_sent:56064 -- bytes_remaining:40292[0m
+[0;32mI (949860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (949860) FLASH_CMD: base mem address = 0x08015b80[0m
+[0;32mI (949860) FLASH_CMD: bytes_so_far_sent:56192 -- bytes_remaining:40164[0m
+[0;32mI (950020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (950020) FLASH_CMD: base mem address = 0x08015c00[0m
+[0;32mI (950020) FLASH_CMD: bytes_so_far_sent:56320 -- bytes_remaining:40036[0m
+[0;32mI (950180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (950180) FLASH_CMD: base mem address = 0x08015c80[0m
+[0;32mI (950180) FLASH_CMD: bytes_so_far_sent:56448 -- bytes_remaining:39908[0m
+[0;32mI (950340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (950340) FLASH_CMD: base mem address = 0x08015d00[0m
+[0;32mI (950340) FLASH_CMD: bytes_so_far_sent:56576 -- bytes_remaining:39780[0m
+[0;32mI (950500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (950500) FLASH_CMD: base mem address = 0x08015d80[0m
+[0;32mI (950500) FLASH_CMD: bytes_so_far_sent:56704 -- bytes_remaining:39652[0m
+[0;32mI (950660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (950660) FLASH_CMD: base mem address = 0x08015e00[0m
+[0;32mI (950660) FLASH_CMD: bytes_so_far_sent:56832 -- bytes_remaining:39524[0m
+[0;32mI (950820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (950820) FLASH_CMD: base mem address = 0x08015e80[0m
+[0;32mI (950820) FLASH_CMD: bytes_so_far_sent:56960 -- bytes_remaining:39396[0m
+[0;32mI (950980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (950980) FLASH_CMD: base mem address = 0x08015f00[0m
+[0;32mI (950980) FLASH_CMD: bytes_so_far_sent:57088 -- bytes_remaining:39268[0m
+[0;32mI (951140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (951140) FLASH_CMD: base mem address = 0x08015f80[0m
+[0;32mI (951140) FLASH_CMD: bytes_so_far_sent:57216 -- bytes_remaining:39140[0m
+[0;32mI (951300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (951300) FLASH_CMD: base mem address = 0x08016000[0m
+[0;32mI (951300) FLASH_CMD: bytes_so_far_sent:57344 -- bytes_remaining:39012[0m
+[0;32mI (951460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (951460) FLASH_CMD: base mem address = 0x08016080[0m
+[0;32mI (951460) FLASH_CMD: bytes_so_far_sent:57472 -- bytes_remaining:38884[0m
+[0;32mI (951620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (951620) FLASH_CMD: base mem address = 0x08016100[0m
+[0;32mI (951620) FLASH_CMD: bytes_so_far_sent:57600 -- bytes_remaining:38756[0m
+[0;32mI (951780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (951780) FLASH_CMD: base mem address = 0x08016180[0m
+[0;32mI (951780) FLASH_CMD: bytes_so_far_sent:57728 -- bytes_remaining:38628[0m
+[0;32mI (951940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (951940) FLASH_CMD: Flash progress: 57856/96356 bytes (60%)[0m
+[0;32mI (951940) FLASH_CMD: base mem address = 0x08016200[0m
+[0;32mI (951940) FLASH_CMD: bytes_so_far_sent:57856 -- bytes_remaining:38500[0m
+[0;32mI (952110) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (952110) FLASH_CMD: base mem address = 0x08016280[0m
+[0;32mI (952110) FLASH_CMD: bytes_so_far_sent:57984 -- bytes_remaining:38372[0m
+[0;32mI (952270) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (952270) FLASH_CMD: base mem address = 0x08016300[0m
+[0;32mI (952270) FLASH_CMD: bytes_so_far_sent:58112 -- bytes_remaining:38244[0m
+[0;32mI (952290) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47960[0m
+[0;32mI (952430) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (952430) FLASH_CMD: base mem address = 0x08016380[0m
+[0;32mI (952430) FLASH_CMD: bytes_so_far_sent:58240 -- bytes_remaining:38116[0m
+[0;32mI (952590) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (952590) FLASH_CMD: base mem address = 0x08016400[0m
+[0;32mI (952590) FLASH_CMD: bytes_so_far_sent:58368 -- bytes_remaining:37988[0m
+[0;32mI (952750) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (952750) FLASH_CMD: base mem address = 0x08016480[0m
+[0;32mI (952750) FLASH_CMD: bytes_so_far_sent:58496 -- bytes_remaining:37860[0m
+[0;32mI (952910) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (952910) FLASH_CMD: base mem address = 0x08016500[0m
+[0;32mI (952910) FLASH_CMD: bytes_so_far_sent:58624 -- bytes_remaining:37732[0m
+[0;32mI (953070) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (953070) FLASH_CMD: base mem address = 0x08016580[0m
+[0;32mI (953070) FLASH_CMD: bytes_so_far_sent:58752 -- bytes_remaining:37604[0m
+[0;32mI (953230) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (953230) FLASH_CMD: base mem address = 0x08016600[0m
+[0;32mI (953230) FLASH_CMD: bytes_so_far_sent:58880 -- bytes_remaining:37476[0m
+[0;32mI (953390) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (953390) FLASH_CMD: base mem address = 0x08016680[0m
+[0;32mI (953390) FLASH_CMD: bytes_so_far_sent:59008 -- bytes_remaining:37348[0m
+[0;32mI (953550) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (953550) FLASH_CMD: base mem address = 0x08016700[0m
+[0;32mI (953550) FLASH_CMD: bytes_so_far_sent:59136 -- bytes_remaining:37220[0m
+[0;32mI (953710) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (953710) FLASH_CMD: base mem address = 0x08016780[0m
+[0;32mI (953710) FLASH_CMD: bytes_so_far_sent:59264 -- bytes_remaining:37092[0m
+[0;32mI (953870) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (953870) FLASH_CMD: base mem address = 0x08016800[0m
+[0;32mI (953870) FLASH_CMD: bytes_so_far_sent:59392 -- bytes_remaining:36964[0m
+[0;32mI (954030) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (954030) FLASH_CMD: base mem address = 0x08016880[0m
+[0;32mI (954030) FLASH_CMD: bytes_so_far_sent:59520 -- bytes_remaining:36836[0m
+[0;32mI (954190) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (954190) FLASH_CMD: base mem address = 0x08016900[0m
+[0;32mI (954190) FLASH_CMD: bytes_so_far_sent:59648 -- bytes_remaining:36708[0m
+[0;32mI (954350) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (954350) FLASH_CMD: base mem address = 0x08016980[0m
+[0;32mI (954350) FLASH_CMD: bytes_so_far_sent:59776 -- bytes_remaining:36580[0m
+[0;32mI (954510) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (954510) FLASH_CMD: base mem address = 0x08016a00[0m
+[0;32mI (954510) FLASH_CMD: bytes_so_far_sent:59904 -- bytes_remaining:36452[0m
+[0;32mI (954670) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (954670) FLASH_CMD: base mem address = 0x08016a80[0m
+[0;32mI (954670) FLASH_CMD: bytes_so_far_sent:60032 -- bytes_remaining:36324[0m
+[0;32mI (954830) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (954830) FLASH_CMD: base mem address = 0x08016b00[0m
+[0;32mI (954830) FLASH_CMD: bytes_so_far_sent:60160 -- bytes_remaining:36196[0m
+[0;32mI (954990) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (954990) FLASH_CMD: base mem address = 0x08016b80[0m
+[0;32mI (954990) FLASH_CMD: bytes_so_far_sent:60288 -- bytes_remaining:36068[0m
+[0;32mI (955150) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (955150) FLASH_CMD: base mem address = 0x08016c00[0m
+[0;32mI (955150) FLASH_CMD: bytes_so_far_sent:60416 -- bytes_remaining:35940[0m
+[0;32mI (955310) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (955310) FLASH_CMD: base mem address = 0x08016c80[0m
+[0;32mI (955310) FLASH_CMD: bytes_so_far_sent:60544 -- bytes_remaining:35812[0m
+[0;32mI (955470) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (955470) FLASH_CMD: base mem address = 0x08016d00[0m
+[0;32mI (955470) FLASH_CMD: bytes_so_far_sent:60672 -- bytes_remaining:35684[0m
+[0;32mI (955630) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (955630) FLASH_CMD: base mem address = 0x08016d80[0m
+[0;32mI (955630) FLASH_CMD: bytes_so_far_sent:60800 -- bytes_remaining:35556[0m
+[0;32mI (955790) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (955790) FLASH_CMD: base mem address = 0x08016e00[0m
+[0;32mI (955790) FLASH_CMD: bytes_so_far_sent:60928 -- bytes_remaining:35428[0m
+[0;32mI (955950) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (955950) FLASH_CMD: base mem address = 0x08016e80[0m
+[0;32mI (955950) FLASH_CMD: bytes_so_far_sent:61056 -- bytes_remaining:35300[0m
+[0;32mI (956110) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (956110) FLASH_CMD: base mem address = 0x08016f00[0m
+[0;32mI (956110) FLASH_CMD: bytes_so_far_sent:61184 -- bytes_remaining:35172[0m
+[0;32mI (956270) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (956270) FLASH_CMD: base mem address = 0x08016f80[0m
+[0;32mI (956270) FLASH_CMD: bytes_so_far_sent:61312 -- bytes_remaining:35044[0m
+[0;32mI (956430) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (956430) FLASH_CMD: base mem address = 0x08017000[0m
+[0;32mI (956430) FLASH_CMD: bytes_so_far_sent:61440 -- bytes_remaining:34916[0m
+[0;32mI (956590) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (956590) FLASH_CMD: base mem address = 0x08017080[0m
+[0;32mI (956590) FLASH_CMD: bytes_so_far_sent:61568 -- bytes_remaining:34788[0m
+[0;32mI (956750) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (956750) FLASH_CMD: base mem address = 0x08017100[0m
+[0;32mI (956750) FLASH_CMD: bytes_so_far_sent:61696 -- bytes_remaining:34660[0m
+[0;32mI (956910) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (956910) FLASH_CMD: base mem address = 0x08017180[0m
+[0;32mI (956910) FLASH_CMD: bytes_so_far_sent:61824 -- bytes_remaining:34532[0m
+[0;32mI (957070) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (957070) FLASH_CMD: base mem address = 0x08017200[0m
+[0;32mI (957070) FLASH_CMD: bytes_so_far_sent:61952 -- bytes_remaining:34404[0m
+[0;32mI (957230) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (957230) FLASH_CMD: base mem address = 0x08017280[0m
+[0;32mI (957230) FLASH_CMD: bytes_so_far_sent:62080 -- bytes_remaining:34276[0m
+[0;32mI (957390) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (957390) FLASH_CMD: base mem address = 0x08017300[0m
+[0;32mI (957390) FLASH_CMD: bytes_so_far_sent:62208 -- bytes_remaining:34148[0m
+[0;32mI (957550) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (957550) FLASH_CMD: base mem address = 0x08017380[0m
+[0;32mI (957550) FLASH_CMD: bytes_so_far_sent:62336 -- bytes_remaining:34020[0m
+[0;32mI (957710) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (957710) FLASH_CMD: base mem address = 0x08017400[0m
+[0;32mI (957710) FLASH_CMD: bytes_so_far_sent:62464 -- bytes_remaining:33892[0m
+[0;32mI (957870) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (957870) FLASH_CMD: base mem address = 0x08017480[0m
+[0;32mI (957870) FLASH_CMD: bytes_so_far_sent:62592 -- bytes_remaining:33764[0m
+[0;32mI (958030) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (958030) FLASH_CMD: base mem address = 0x08017500[0m
+[0;32mI (958030) FLASH_CMD: bytes_so_far_sent:62720 -- bytes_remaining:33636[0m
+[0;32mI (958190) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (958190) FLASH_CMD: base mem address = 0x08017580[0m
+[0;32mI (958190) FLASH_CMD: bytes_so_far_sent:62848 -- bytes_remaining:33508[0m
+[0;32mI (958350) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (958350) FLASH_CMD: base mem address = 0x08017600[0m
+[0;32mI (958350) FLASH_CMD: bytes_so_far_sent:62976 -- bytes_remaining:33380[0m
+[0;32mI (958510) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (958510) FLASH_CMD: base mem address = 0x08017680[0m
+[0;32mI (958510) FLASH_CMD: bytes_so_far_sent:63104 -- bytes_remaining:33252[0m
+[0;32mI (958670) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (958670) FLASH_CMD: base mem address = 0x08017700[0m
+[0;32mI (958670) FLASH_CMD: bytes_so_far_sent:63232 -- bytes_remaining:33124[0m
+[0;32mI (958830) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (958830) FLASH_CMD: base mem address = 0x08017780[0m
+[0;32mI (958830) FLASH_CMD: bytes_so_far_sent:63360 -- bytes_remaining:32996[0m
+[0;32mI (958990) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (958990) FLASH_CMD: base mem address = 0x08017800[0m
+[0;32mI (958990) FLASH_CMD: bytes_so_far_sent:63488 -- bytes_remaining:32868[0m
+[0;32mI (959150) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (959150) FLASH_CMD: base mem address = 0x08017880[0m
+[0;32mI (959150) FLASH_CMD: bytes_so_far_sent:63616 -- bytes_remaining:32740[0m
+[0;32mI (959310) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (959310) FLASH_CMD: base mem address = 0x08017900[0m
+[0;32mI (959310) FLASH_CMD: bytes_so_far_sent:63744 -- bytes_remaining:32612[0m
+[0;32mI (959470) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (959470) FLASH_CMD: base mem address = 0x08017980[0m
+[0;32mI (959470) FLASH_CMD: bytes_so_far_sent:63872 -- bytes_remaining:32484[0m
+[0;32mI (959630) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (959630) FLASH_CMD: base mem address = 0x08017a00[0m
+[0;32mI (959630) FLASH_CMD: bytes_so_far_sent:64000 -- bytes_remaining:32356[0m
+[0;32mI (959790) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (959790) FLASH_CMD: base mem address = 0x08017a80[0m
+[0;32mI (959790) FLASH_CMD: bytes_so_far_sent:64128 -- bytes_remaining:32228[0m
+[0;32mI (959950) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (959950) FLASH_CMD: base mem address = 0x08017b00[0m
+[0;32mI (959950) FLASH_CMD: bytes_so_far_sent:64256 -- bytes_remaining:32100[0m
+[0;32mI (960110) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (960110) FLASH_CMD: base mem address = 0x08017b80[0m
+[0;32mI (960110) FLASH_CMD: bytes_so_far_sent:64384 -- bytes_remaining:31972[0m
+[0;32mI (960270) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (960270) FLASH_CMD: base mem address = 0x08017c00[0m
+[0;32mI (960270) FLASH_CMD: bytes_so_far_sent:64512 -- bytes_remaining:31844[0m
+[0;32mI (960430) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (960430) FLASH_CMD: base mem address = 0x08017c80[0m
+[0;32mI (960430) FLASH_CMD: bytes_so_far_sent:64640 -- bytes_remaining:31716[0m
+[0;32mI (960590) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (960590) FLASH_CMD: base mem address = 0x08017d00[0m
+[0;32mI (960590) FLASH_CMD: bytes_so_far_sent:64768 -- bytes_remaining:31588[0m
+[0;32mI (960750) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (960750) FLASH_CMD: base mem address = 0x08017d80[0m
+[0;32mI (960750) FLASH_CMD: bytes_so_far_sent:64896 -- bytes_remaining:31460[0m
+[0;32mI (960910) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (960910) FLASH_CMD: base mem address = 0x08017e00[0m
+[0;32mI (960910) FLASH_CMD: bytes_so_far_sent:65024 -- bytes_remaining:31332[0m
+[0;32mI (961070) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (961070) FLASH_CMD: base mem address = 0x08017e80[0m
+[0;32mI (961070) FLASH_CMD: bytes_so_far_sent:65152 -- bytes_remaining:31204[0m
+[0;32mI (961230) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (961230) FLASH_CMD: base mem address = 0x08017f00[0m
+[0;32mI (961230) FLASH_CMD: bytes_so_far_sent:65280 -- bytes_remaining:31076[0m
+[0;32mI (961390) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (961390) FLASH_CMD: base mem address = 0x08017f80[0m
+[0;32mI (961390) FLASH_CMD: bytes_so_far_sent:65408 -- bytes_remaining:30948[0m
+[0;32mI (961550) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (961550) FLASH_CMD: base mem address = 0x08018000[0m
+[0;32mI (961550) FLASH_CMD: bytes_so_far_sent:65536 -- bytes_remaining:30820[0m
+[0;32mI (961710) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (961710) FLASH_CMD: base mem address = 0x08018080[0m
+[0;32mI (961710) FLASH_CMD: bytes_so_far_sent:65664 -- bytes_remaining:30692[0m
+[0;32mI (961870) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (961870) FLASH_CMD: base mem address = 0x08018100[0m
+[0;32mI (961870) FLASH_CMD: bytes_so_far_sent:65792 -- bytes_remaining:30564[0m
+[0;32mI (962030) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (962030) FLASH_CMD: base mem address = 0x08018180[0m
+[0;32mI (962030) FLASH_CMD: bytes_so_far_sent:65920 -- bytes_remaining:30436[0m
+[0;32mI (962190) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (962190) FLASH_CMD: base mem address = 0x08018200[0m
+[0;32mI (962190) FLASH_CMD: bytes_so_far_sent:66048 -- bytes_remaining:30308[0m
+[0;32mI (962350) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (962350) FLASH_CMD: base mem address = 0x08018280[0m
+[0;32mI (962350) FLASH_CMD: bytes_so_far_sent:66176 -- bytes_remaining:30180[0m
+[0;32mI (962510) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (962510) FLASH_CMD: base mem address = 0x08018300[0m
+[0;32mI (962510) FLASH_CMD: bytes_so_far_sent:66304 -- bytes_remaining:30052[0m
+[0;32mI (962670) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (962670) FLASH_CMD: base mem address = 0x08018380[0m
+[0;32mI (962670) FLASH_CMD: bytes_so_far_sent:66432 -- bytes_remaining:29924[0m
+[0;32mI (962830) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (962830) FLASH_CMD: base mem address = 0x08018400[0m
+[0;32mI (962830) FLASH_CMD: bytes_so_far_sent:66560 -- bytes_remaining:29796[0m
+[0;32mI (962990) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (962990) FLASH_CMD: base mem address = 0x08018480[0m
+[0;32mI (962990) FLASH_CMD: bytes_so_far_sent:66688 -- bytes_remaining:29668[0m
+[0;32mI (963150) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (963150) FLASH_CMD: base mem address = 0x08018500[0m
+[0;32mI (963150) FLASH_CMD: bytes_so_far_sent:66816 -- bytes_remaining:29540[0m
+[0;32mI (963310) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (963310) FLASH_CMD: base mem address = 0x08018580[0m
+[0;32mI (963310) FLASH_CMD: bytes_so_far_sent:66944 -- bytes_remaining:29412[0m
+[0;32mI (963470) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (963470) FLASH_CMD: base mem address = 0x08018600[0m
+[0;32mI (963470) FLASH_CMD: bytes_so_far_sent:67072 -- bytes_remaining:29284[0m
+[0;32mI (963630) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (963630) FLASH_CMD: base mem address = 0x08018680[0m
+[0;32mI (963630) FLASH_CMD: bytes_so_far_sent:67200 -- bytes_remaining:29156[0m
+[0;32mI (963790) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (963790) FLASH_CMD: base mem address = 0x08018700[0m
+[0;32mI (963790) FLASH_CMD: bytes_so_far_sent:67328 -- bytes_remaining:29028[0m
+[0;32mI (963950) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (963950) FLASH_CMD: Flash progress: 67456/96356 bytes (70%)[0m
+[0;32mI (963950) FLASH_CMD: base mem address = 0x08018780[0m
+[0;32mI (963950) FLASH_CMD: bytes_so_far_sent:67456 -- bytes_remaining:28900[0m
+[0;32mI (964120) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (964120) FLASH_CMD: base mem address = 0x08018800[0m
+[0;32mI (964120) FLASH_CMD: bytes_so_far_sent:67584 -- bytes_remaining:28772[0m
+[0;32mI (964280) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (964280) FLASH_CMD: base mem address = 0x08018880[0m
+[0;32mI (964280) FLASH_CMD: bytes_so_far_sent:67712 -- bytes_remaining:28644[0m
+[0;32mI (964300) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=8066[0m
+[0;32mI (964440) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (964440) FLASH_CMD: base mem address = 0x08018900[0m
+[0;32mI (964440) FLASH_CMD: bytes_so_far_sent:67840 -- bytes_remaining:28516[0m
+[0;32mI (964600) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (964600) FLASH_CMD: base mem address = 0x08018980[0m
+[0;32mI (964600) FLASH_CMD: bytes_so_far_sent:67968 -- bytes_remaining:28388[0m
+[0;32mI (964760) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (964760) FLASH_CMD: base mem address = 0x08018a00[0m
+[0;32mI (964760) FLASH_CMD: bytes_so_far_sent:68096 -- bytes_remaining:28260[0m
+[0;32mI (964920) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (964920) FLASH_CMD: base mem address = 0x08018a80[0m
+[0;32mI (964920) FLASH_CMD: bytes_so_far_sent:68224 -- bytes_remaining:28132[0m
+[0;32mI (965080) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (965080) FLASH_CMD: base mem address = 0x08018b00[0m
+[0;32mI (965080) FLASH_CMD: bytes_so_far_sent:68352 -- bytes_remaining:28004[0m
+[0;32mI (965240) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (965240) FLASH_CMD: base mem address = 0x08018b80[0m
+[0;32mI (965240) FLASH_CMD: bytes_so_far_sent:68480 -- bytes_remaining:27876[0m
+[0;32mI (965400) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (965400) FLASH_CMD: base mem address = 0x08018c00[0m
+[0;32mI (965400) FLASH_CMD: bytes_so_far_sent:68608 -- bytes_remaining:27748[0m
+[0;32mI (965560) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (965560) FLASH_CMD: base mem address = 0x08018c80[0m
+[0;32mI (965560) FLASH_CMD: bytes_so_far_sent:68736 -- bytes_remaining:27620[0m
+[0;32mI (965720) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (965720) FLASH_CMD: base mem address = 0x08018d00[0m
+[0;32mI (965720) FLASH_CMD: bytes_so_far_sent:68864 -- bytes_remaining:27492[0m
+[0;32mI (965880) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (965880) FLASH_CMD: base mem address = 0x08018d80[0m
+[0;32mI (965880) FLASH_CMD: bytes_so_far_sent:68992 -- bytes_remaining:27364[0m
+[0;32mI (966040) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (966040) FLASH_CMD: base mem address = 0x08018e00[0m
+[0;32mI (966040) FLASH_CMD: bytes_so_far_sent:69120 -- bytes_remaining:27236[0m
+[0;32mI (966200) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (966200) FLASH_CMD: base mem address = 0x08018e80[0m
+[0;32mI (966200) FLASH_CMD: bytes_so_far_sent:69248 -- bytes_remaining:27108[0m
+[0;32mI (966360) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (966360) FLASH_CMD: base mem address = 0x08018f00[0m
+[0;32mI (966360) FLASH_CMD: bytes_so_far_sent:69376 -- bytes_remaining:26980[0m
+[0;32mI (966520) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (966520) FLASH_CMD: base mem address = 0x08018f80[0m
+[0;32mI (966520) FLASH_CMD: bytes_so_far_sent:69504 -- bytes_remaining:26852[0m
+[0;32mI (966680) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (966680) FLASH_CMD: base mem address = 0x08019000[0m
+[0;32mI (966680) FLASH_CMD: bytes_so_far_sent:69632 -- bytes_remaining:26724[0m
+[0;32mI (966840) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (966840) FLASH_CMD: base mem address = 0x08019080[0m
+[0;32mI (966840) FLASH_CMD: bytes_so_far_sent:69760 -- bytes_remaining:26596[0m
+[0;32mI (967000) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (967000) FLASH_CMD: base mem address = 0x08019100[0m
+[0;32mI (967000) FLASH_CMD: bytes_so_far_sent:69888 -- bytes_remaining:26468[0m
+[0;32mI (967160) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (967160) FLASH_CMD: base mem address = 0x08019180[0m
+[0;32mI (967160) FLASH_CMD: bytes_so_far_sent:70016 -- bytes_remaining:26340[0m
+[0;32mI (967320) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (967320) FLASH_CMD: base mem address = 0x08019200[0m
+[0;32mI (967320) FLASH_CMD: bytes_so_far_sent:70144 -- bytes_remaining:26212[0m
+[0;32mI (967480) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (967480) FLASH_CMD: base mem address = 0x08019280[0m
+[0;32mI (967480) FLASH_CMD: bytes_so_far_sent:70272 -- bytes_remaining:26084[0m
+[0;32mI (967640) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (967640) FLASH_CMD: base mem address = 0x08019300[0m
+[0;32mI (967640) FLASH_CMD: bytes_so_far_sent:70400 -- bytes_remaining:25956[0m
+[0;32mI (967800) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (967800) FLASH_CMD: base mem address = 0x08019380[0m
+[0;32mI (967800) FLASH_CMD: bytes_so_far_sent:70528 -- bytes_remaining:25828[0m
+[0;32mI (967960) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (967960) FLASH_CMD: base mem address = 0x08019400[0m
+[0;32mI (967960) FLASH_CMD: bytes_so_far_sent:70656 -- bytes_remaining:25700[0m
+[0;32mI (968120) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (968120) FLASH_CMD: base mem address = 0x08019480[0m
+[0;32mI (968120) FLASH_CMD: bytes_so_far_sent:70784 -- bytes_remaining:25572[0m
+[0;32mI (968280) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (968280) FLASH_CMD: base mem address = 0x08019500[0m
+[0;32mI (968280) FLASH_CMD: bytes_so_far_sent:70912 -- bytes_remaining:25444[0m
+[0;32mI (968440) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (968440) FLASH_CMD: base mem address = 0x08019580[0m
+[0;32mI (968440) FLASH_CMD: bytes_so_far_sent:71040 -- bytes_remaining:25316[0m
+[0;32mI (968600) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (968600) FLASH_CMD: base mem address = 0x08019600[0m
+[0;32mI (968600) FLASH_CMD: bytes_so_far_sent:71168 -- bytes_remaining:25188[0m
+[0;32mI (968760) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (968760) FLASH_CMD: base mem address = 0x08019680[0m
+[0;32mI (968760) FLASH_CMD: bytes_so_far_sent:71296 -- bytes_remaining:25060[0m
+[0;32mI (968920) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (968920) FLASH_CMD: base mem address = 0x08019700[0m
+[0;32mI (968920) FLASH_CMD: bytes_so_far_sent:71424 -- bytes_remaining:24932[0m
+[0;32mI (969080) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (969080) FLASH_CMD: base mem address = 0x08019780[0m
+[0;32mI (969080) FLASH_CMD: bytes_so_far_sent:71552 -- bytes_remaining:24804[0m
+[0;32mI (969240) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (969240) FLASH_CMD: base mem address = 0x08019800[0m
+[0;32mI (969240) FLASH_CMD: bytes_so_far_sent:71680 -- bytes_remaining:24676[0m
+[0;32mI (969400) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (969400) FLASH_CMD: base mem address = 0x08019880[0m
+[0;32mI (969400) FLASH_CMD: bytes_so_far_sent:71808 -- bytes_remaining:24548[0m
+[0;32mI (969560) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (969560) FLASH_CMD: base mem address = 0x08019900[0m
+[0;32mI (969560) FLASH_CMD: bytes_so_far_sent:71936 -- bytes_remaining:24420[0m
+[0;32mI (969720) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (969720) FLASH_CMD: base mem address = 0x08019980[0m
+[0;32mI (969720) FLASH_CMD: bytes_so_far_sent:72064 -- bytes_remaining:24292[0m
+[0;32mI (969880) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (969880) FLASH_CMD: base mem address = 0x08019a00[0m
+[0;32mI (969880) FLASH_CMD: bytes_so_far_sent:72192 -- bytes_remaining:24164[0m
+[0;32mI (970040) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (970040) FLASH_CMD: base mem address = 0x08019a80[0m
+[0;32mI (970040) FLASH_CMD: bytes_so_far_sent:72320 -- bytes_remaining:24036[0m
+[0;32mI (970200) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (970200) FLASH_CMD: base mem address = 0x08019b00[0m
+[0;32mI (970200) FLASH_CMD: bytes_so_far_sent:72448 -- bytes_remaining:23908[0m
+[0;32mI (970360) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (970360) FLASH_CMD: base mem address = 0x08019b80[0m
+[0;32mI (970360) FLASH_CMD: bytes_so_far_sent:72576 -- bytes_remaining:23780[0m
+[0;32mI (970520) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (970520) FLASH_CMD: base mem address = 0x08019c00[0m
+[0;32mI (970520) FLASH_CMD: bytes_so_far_sent:72704 -- bytes_remaining:23652[0m
+[0;32mI (970680) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (970680) FLASH_CMD: base mem address = 0x08019c80[0m
+[0;32mI (970680) FLASH_CMD: bytes_so_far_sent:72832 -- bytes_remaining:23524[0m
+[0;32mI (970840) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (970840) FLASH_CMD: base mem address = 0x08019d00[0m
+[0;32mI (970840) FLASH_CMD: bytes_so_far_sent:72960 -- bytes_remaining:23396[0m
+[0;32mI (971000) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (971000) FLASH_CMD: base mem address = 0x08019d80[0m
+[0;32mI (971000) FLASH_CMD: bytes_so_far_sent:73088 -- bytes_remaining:23268[0m
+[0;32mI (971160) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (971160) FLASH_CMD: base mem address = 0x08019e00[0m
+[0;32mI (971160) FLASH_CMD: bytes_so_far_sent:73216 -- bytes_remaining:23140[0m
+[0;32mI (971320) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (971320) FLASH_CMD: base mem address = 0x08019e80[0m
+[0;32mI (971320) FLASH_CMD: bytes_so_far_sent:73344 -- bytes_remaining:23012[0m
+[0;32mI (971480) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (971480) FLASH_CMD: base mem address = 0x08019f00[0m
+[0;32mI (971480) FLASH_CMD: bytes_so_far_sent:73472 -- bytes_remaining:22884[0m
+[0;32mI (971640) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (971640) FLASH_CMD: base mem address = 0x08019f80[0m
+[0;32mI (971640) FLASH_CMD: bytes_so_far_sent:73600 -- bytes_remaining:22756[0m
+[0;32mI (971800) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (971800) FLASH_CMD: base mem address = 0x0801a000[0m
+[0;32mI (971800) FLASH_CMD: bytes_so_far_sent:73728 -- bytes_remaining:22628[0m
+[0;32mI (971960) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (971960) FLASH_CMD: base mem address = 0x0801a080[0m
+[0;32mI (971960) FLASH_CMD: bytes_so_far_sent:73856 -- bytes_remaining:22500[0m
+[0;32mI (972120) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (972120) FLASH_CMD: base mem address = 0x0801a100[0m
+[0;32mI (972120) FLASH_CMD: bytes_so_far_sent:73984 -- bytes_remaining:22372[0m
+[0;32mI (972280) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (972280) FLASH_CMD: base mem address = 0x0801a180[0m
+[0;32mI (972280) FLASH_CMD: bytes_so_far_sent:74112 -- bytes_remaining:22244[0m
+[0;32mI (972440) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (972440) FLASH_CMD: base mem address = 0x0801a200[0m
+[0;32mI (972440) FLASH_CMD: bytes_so_far_sent:74240 -- bytes_remaining:22116[0m
+[0;32mI (972600) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (972600) FLASH_CMD: base mem address = 0x0801a280[0m
+[0;32mI (972600) FLASH_CMD: bytes_so_far_sent:74368 -- bytes_remaining:21988[0m
+[0;32mI (972760) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (972760) FLASH_CMD: base mem address = 0x0801a300[0m
+[0;32mI (972760) FLASH_CMD: bytes_so_far_sent:74496 -- bytes_remaining:21860[0m
+[0;32mI (972920) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (972920) FLASH_CMD: base mem address = 0x0801a380[0m
+[0;32mI (972920) FLASH_CMD: bytes_so_far_sent:74624 -- bytes_remaining:21732[0m
+[0;32mI (973080) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (973080) FLASH_CMD: base mem address = 0x0801a400[0m
+[0;32mI (973080) FLASH_CMD: bytes_so_far_sent:74752 -- bytes_remaining:21604[0m
+[0;32mI (973240) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (973240) FLASH_CMD: base mem address = 0x0801a480[0m
+[0;32mI (973240) FLASH_CMD: bytes_so_far_sent:74880 -- bytes_remaining:21476[0m
+[0;32mI (973400) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (973400) FLASH_CMD: base mem address = 0x0801a500[0m
+[0;32mI (973400) FLASH_CMD: bytes_so_far_sent:75008 -- bytes_remaining:21348[0m
+[0;32mI (973560) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (973560) FLASH_CMD: base mem address = 0x0801a580[0m
+[0;32mI (973560) FLASH_CMD: bytes_so_far_sent:75136 -- bytes_remaining:21220[0m
+[0;32mI (973720) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (973720) FLASH_CMD: base mem address = 0x0801a600[0m
+[0;32mI (973720) FLASH_CMD: bytes_so_far_sent:75264 -- bytes_remaining:21092[0m
+[0;32mI (973880) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (973880) FLASH_CMD: base mem address = 0x0801a680[0m
+[0;32mI (973880) FLASH_CMD: bytes_so_far_sent:75392 -- bytes_remaining:20964[0m
+[0;32mI (974040) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (974040) FLASH_CMD: base mem address = 0x0801a700[0m
+[0;32mI (974040) FLASH_CMD: bytes_so_far_sent:75520 -- bytes_remaining:20836[0m
+[0;32mI (974200) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (974200) FLASH_CMD: base mem address = 0x0801a780[0m
+[0;32mI (974200) FLASH_CMD: bytes_so_far_sent:75648 -- bytes_remaining:20708[0m
+[0;32mI (974360) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (974360) FLASH_CMD: base mem address = 0x0801a800[0m
+[0;32mI (974360) FLASH_CMD: bytes_so_far_sent:75776 -- bytes_remaining:20580[0m
+[0;32mI (974520) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (974520) FLASH_CMD: base mem address = 0x0801a880[0m
+[0;32mI (974520) FLASH_CMD: bytes_so_far_sent:75904 -- bytes_remaining:20452[0m
+[0;32mI (974680) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (974680) FLASH_CMD: base mem address = 0x0801a900[0m
+[0;32mI (974680) FLASH_CMD: bytes_so_far_sent:76032 -- bytes_remaining:20324[0m
+[0;32mI (974840) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (974840) FLASH_CMD: base mem address = 0x0801a980[0m
+[0;32mI (974840) FLASH_CMD: bytes_so_far_sent:76160 -- bytes_remaining:20196[0m
+[0;32mI (975000) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (975000) FLASH_CMD: base mem address = 0x0801aa00[0m
+[0;32mI (975000) FLASH_CMD: bytes_so_far_sent:76288 -- bytes_remaining:20068[0m
+[0;32mI (975160) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (975160) FLASH_CMD: base mem address = 0x0801aa80[0m
+[0;32mI (975160) FLASH_CMD: bytes_so_far_sent:76416 -- bytes_remaining:19940[0m
+[0;32mI (975320) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (975320) FLASH_CMD: base mem address = 0x0801ab00[0m
+[0;32mI (975320) FLASH_CMD: bytes_so_far_sent:76544 -- bytes_remaining:19812[0m
+[0;32mI (975480) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (975480) FLASH_CMD: base mem address = 0x0801ab80[0m
+[0;32mI (975480) FLASH_CMD: bytes_so_far_sent:76672 -- bytes_remaining:19684[0m
+[0;32mI (975640) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (975640) FLASH_CMD: base mem address = 0x0801ac00[0m
+[0;32mI (975640) FLASH_CMD: bytes_so_far_sent:76800 -- bytes_remaining:19556[0m
+[0;32mI (975800) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (975800) FLASH_CMD: base mem address = 0x0801ac80[0m
+[0;32mI (975800) FLASH_CMD: bytes_so_far_sent:76928 -- bytes_remaining:19428[0m
+[0;32mI (975960) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (975960) FLASH_CMD: base mem address = 0x0801ad00[0m
+[0;32mI (975960) FLASH_CMD: bytes_so_far_sent:77056 -- bytes_remaining:19300[0m
+[0;32mI (976120) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (976120) FLASH_CMD: Flash progress: 77184/96356 bytes (80%)[0m
+[0;32mI (976120) FLASH_CMD: base mem address = 0x0801ad80[0m
+[0;32mI (976120) FLASH_CMD: bytes_so_far_sent:77184 -- bytes_remaining:19172[0m
+[0;32mI (976290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (976290) FLASH_CMD: base mem address = 0x0801ae00[0m
+[0;32mI (976290) FLASH_CMD: bytes_so_far_sent:77312 -- bytes_remaining:19044[0m
+[0;32mI (976450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (976450) FLASH_CMD: base mem address = 0x0801ae80[0m
+[0;32mI (976450) FLASH_CMD: bytes_so_far_sent:77440 -- bytes_remaining:18916[0m
+[0;32mI (976480) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14388[0m
+[0;32mI (976610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (976610) FLASH_CMD: base mem address = 0x0801af00[0m
+[0;32mI (976610) FLASH_CMD: bytes_so_far_sent:77568 -- bytes_remaining:18788[0m
+[0;32mI (976770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (976770) FLASH_CMD: base mem address = 0x0801af80[0m
+[0;32mI (976770) FLASH_CMD: bytes_so_far_sent:77696 -- bytes_remaining:18660[0m
+[0;32mI (976930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (976930) FLASH_CMD: base mem address = 0x0801b000[0m
+[0;32mI (976930) FLASH_CMD: bytes_so_far_sent:77824 -- bytes_remaining:18532[0m
+[0;32mI (977090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (977090) FLASH_CMD: base mem address = 0x0801b080[0m
+[0;32mI (977090) FLASH_CMD: bytes_so_far_sent:77952 -- bytes_remaining:18404[0m
+[0;32mI (977250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (977250) FLASH_CMD: base mem address = 0x0801b100[0m
+[0;32mI (977250) FLASH_CMD: bytes_so_far_sent:78080 -- bytes_remaining:18276[0m
+[0;32mI (977410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (977410) FLASH_CMD: base mem address = 0x0801b180[0m
+[0;32mI (977410) FLASH_CMD: bytes_so_far_sent:78208 -- bytes_remaining:18148[0m
+[0;32mI (977570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (977570) FLASH_CMD: base mem address = 0x0801b200[0m
+[0;32mI (977570) FLASH_CMD: bytes_so_far_sent:78336 -- bytes_remaining:18020[0m
+[0;32mI (977730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (977730) FLASH_CMD: base mem address = 0x0801b280[0m
+[0;32mI (977730) FLASH_CMD: bytes_so_far_sent:78464 -- bytes_remaining:17892[0m
+[0;32mI (977890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (977890) FLASH_CMD: base mem address = 0x0801b300[0m
+[0;32mI (977890) FLASH_CMD: bytes_so_far_sent:78592 -- bytes_remaining:17764[0m
+[0;32mI (978050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (978050) FLASH_CMD: base mem address = 0x0801b380[0m
+[0;32mI (978050) FLASH_CMD: bytes_so_far_sent:78720 -- bytes_remaining:17636[0m
+[0;32mI (978210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (978210) FLASH_CMD: base mem address = 0x0801b400[0m
+[0;32mI (978210) FLASH_CMD: bytes_so_far_sent:78848 -- bytes_remaining:17508[0m
+[0;32mI (978370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (978370) FLASH_CMD: base mem address = 0x0801b480[0m
+[0;32mI (978370) FLASH_CMD: bytes_so_far_sent:78976 -- bytes_remaining:17380[0m
+[0;32mI (978530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (978530) FLASH_CMD: base mem address = 0x0801b500[0m
+[0;32mI (978530) FLASH_CMD: bytes_so_far_sent:79104 -- bytes_remaining:17252[0m
+[0;32mI (978690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (978690) FLASH_CMD: base mem address = 0x0801b580[0m
+[0;32mI (978690) FLASH_CMD: bytes_so_far_sent:79232 -- bytes_remaining:17124[0m
+[0;32mI (978850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (978850) FLASH_CMD: base mem address = 0x0801b600[0m
+[0;32mI (978850) FLASH_CMD: bytes_so_far_sent:79360 -- bytes_remaining:16996[0m
+[0;32mI (979010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (979010) FLASH_CMD: base mem address = 0x0801b680[0m
+[0;32mI (979010) FLASH_CMD: bytes_so_far_sent:79488 -- bytes_remaining:16868[0m
+[0;32mI (979170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (979170) FLASH_CMD: base mem address = 0x0801b700[0m
+[0;32mI (979170) FLASH_CMD: bytes_so_far_sent:79616 -- bytes_remaining:16740[0m
+[0;32mI (979330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (979330) FLASH_CMD: base mem address = 0x0801b780[0m
+[0;32mI (979330) FLASH_CMD: bytes_so_far_sent:79744 -- bytes_remaining:16612[0m
+[0;32mI (979490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (979490) FLASH_CMD: base mem address = 0x0801b800[0m
+[0;32mI (979490) FLASH_CMD: bytes_so_far_sent:79872 -- bytes_remaining:16484[0m
+[0;32mI (979650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (979650) FLASH_CMD: base mem address = 0x0801b880[0m
+[0;32mI (979650) FLASH_CMD: bytes_so_far_sent:80000 -- bytes_remaining:16356[0m
+[0;32mI (979810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (979810) FLASH_CMD: base mem address = 0x0801b900[0m
+[0;32mI (979810) FLASH_CMD: bytes_so_far_sent:80128 -- bytes_remaining:16228[0m
+[0;32mI (979970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (979970) FLASH_CMD: base mem address = 0x0801b980[0m
+[0;32mI (979970) FLASH_CMD: bytes_so_far_sent:80256 -- bytes_remaining:16100[0m
+[0;32mI (980130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (980130) FLASH_CMD: base mem address = 0x0801ba00[0m
+[0;32mI (980130) FLASH_CMD: bytes_so_far_sent:80384 -- bytes_remaining:15972[0m
+[0;32mI (980290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (980290) FLASH_CMD: base mem address = 0x0801ba80[0m
+[0;32mI (980290) FLASH_CMD: bytes_so_far_sent:80512 -- bytes_remaining:15844[0m
+[0;32mI (980450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (980450) FLASH_CMD: base mem address = 0x0801bb00[0m
+[0;32mI (980450) FLASH_CMD: bytes_so_far_sent:80640 -- bytes_remaining:15716[0m
+[0;32mI (980610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (980610) FLASH_CMD: base mem address = 0x0801bb80[0m
+[0;32mI (980610) FLASH_CMD: bytes_so_far_sent:80768 -- bytes_remaining:15588[0m
+[0;32mI (980770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (980770) FLASH_CMD: base mem address = 0x0801bc00[0m
+[0;32mI (980770) FLASH_CMD: bytes_so_far_sent:80896 -- bytes_remaining:15460[0m
+[0;32mI (980930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (980930) FLASH_CMD: base mem address = 0x0801bc80[0m
+[0;32mI (980930) FLASH_CMD: bytes_so_far_sent:81024 -- bytes_remaining:15332[0m
+[0;32mI (981090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (981090) FLASH_CMD: base mem address = 0x0801bd00[0m
+[0;32mI (981090) FLASH_CMD: bytes_so_far_sent:81152 -- bytes_remaining:15204[0m
+[0;32mI (981250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (981250) FLASH_CMD: base mem address = 0x0801bd80[0m
+[0;32mI (981250) FLASH_CMD: bytes_so_far_sent:81280 -- bytes_remaining:15076[0m
+[0;32mI (981410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (981410) FLASH_CMD: base mem address = 0x0801be00[0m
+[0;32mI (981410) FLASH_CMD: bytes_so_far_sent:81408 -- bytes_remaining:14948[0m
+[0;32mI (981570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (981570) FLASH_CMD: base mem address = 0x0801be80[0m
+[0;32mI (981570) FLASH_CMD: bytes_so_far_sent:81536 -- bytes_remaining:14820[0m
+[0;32mI (981730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (981730) FLASH_CMD: base mem address = 0x0801bf00[0m
+[0;32mI (981730) FLASH_CMD: bytes_so_far_sent:81664 -- bytes_remaining:14692[0m
+[0;32mI (981890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (981890) FLASH_CMD: base mem address = 0x0801bf80[0m
+[0;32mI (981890) FLASH_CMD: bytes_so_far_sent:81792 -- bytes_remaining:14564[0m
+[0;32mI (982050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (982050) FLASH_CMD: base mem address = 0x0801c000[0m
+[0;32mI (982050) FLASH_CMD: bytes_so_far_sent:81920 -- bytes_remaining:14436[0m
+[0;32mI (982210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (982210) FLASH_CMD: base mem address = 0x0801c080[0m
+[0;32mI (982210) FLASH_CMD: bytes_so_far_sent:82048 -- bytes_remaining:14308[0m
+[0;32mI (982370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (982370) FLASH_CMD: base mem address = 0x0801c100[0m
+[0;32mI (982370) FLASH_CMD: bytes_so_far_sent:82176 -- bytes_remaining:14180[0m
+[0;32mI (982530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (982530) FLASH_CMD: base mem address = 0x0801c180[0m
+[0;32mI (982530) FLASH_CMD: bytes_so_far_sent:82304 -- bytes_remaining:14052[0m
+[0;32mI (982690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (982690) FLASH_CMD: base mem address = 0x0801c200[0m
+[0;32mI (982690) FLASH_CMD: bytes_so_far_sent:82432 -- bytes_remaining:13924[0m
+[0;32mI (982850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (982850) FLASH_CMD: base mem address = 0x0801c280[0m
+[0;32mI (982850) FLASH_CMD: bytes_so_far_sent:82560 -- bytes_remaining:13796[0m
+[0;32mI (983010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (983010) FLASH_CMD: base mem address = 0x0801c300[0m
+[0;32mI (983010) FLASH_CMD: bytes_so_far_sent:82688 -- bytes_remaining:13668[0m
+[0;32mI (983170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (983170) FLASH_CMD: base mem address = 0x0801c380[0m
+[0;32mI (983170) FLASH_CMD: bytes_so_far_sent:82816 -- bytes_remaining:13540[0m
+[0;32mI (983330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (983330) FLASH_CMD: base mem address = 0x0801c400[0m
+[0;32mI (983330) FLASH_CMD: bytes_so_far_sent:82944 -- bytes_remaining:13412[0m
+[0;32mI (983490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (983490) FLASH_CMD: base mem address = 0x0801c480[0m
+[0;32mI (983490) FLASH_CMD: bytes_so_far_sent:83072 -- bytes_remaining:13284[0m
+[0;32mI (983650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (983650) FLASH_CMD: base mem address = 0x0801c500[0m
+[0;32mI (983650) FLASH_CMD: bytes_so_far_sent:83200 -- bytes_remaining:13156[0m
+[0;32mI (983810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (983810) FLASH_CMD: base mem address = 0x0801c580[0m
+[0;32mI (983810) FLASH_CMD: bytes_so_far_sent:83328 -- bytes_remaining:13028[0m
+[0;32mI (983970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (983970) FLASH_CMD: base mem address = 0x0801c600[0m
+[0;32mI (983970) FLASH_CMD: bytes_so_far_sent:83456 -- bytes_remaining:12900[0m
+[0;32mI (984130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (984130) FLASH_CMD: base mem address = 0x0801c680[0m
+[0;32mI (984130) FLASH_CMD: bytes_so_far_sent:83584 -- bytes_remaining:12772[0m
+[0;32mI (984290) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (984290) FLASH_CMD: base mem address = 0x0801c700[0m
+[0;32mI (984290) FLASH_CMD: bytes_so_far_sent:83712 -- bytes_remaining:12644[0m
+[0;32mI (984450) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (984450) FLASH_CMD: base mem address = 0x0801c780[0m
+[0;32mI (984450) FLASH_CMD: bytes_so_far_sent:83840 -- bytes_remaining:12516[0m
+[0;32mI (984610) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (984610) FLASH_CMD: base mem address = 0x0801c800[0m
+[0;32mI (984610) FLASH_CMD: bytes_so_far_sent:83968 -- bytes_remaining:12388[0m
+[0;32mI (984770) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (984770) FLASH_CMD: base mem address = 0x0801c880[0m
+[0;32mI (984770) FLASH_CMD: bytes_so_far_sent:84096 -- bytes_remaining:12260[0m
+[0;32mI (984930) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (984930) FLASH_CMD: base mem address = 0x0801c900[0m
+[0;32mI (984930) FLASH_CMD: bytes_so_far_sent:84224 -- bytes_remaining:12132[0m
+[0;32mI (985090) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (985090) FLASH_CMD: base mem address = 0x0801c980[0m
+[0;32mI (985090) FLASH_CMD: bytes_so_far_sent:84352 -- bytes_remaining:12004[0m
+[0;32mI (985250) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (985250) FLASH_CMD: base mem address = 0x0801ca00[0m
+[0;32mI (985250) FLASH_CMD: bytes_so_far_sent:84480 -- bytes_remaining:11876[0m
+[0;32mI (985410) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (985410) FLASH_CMD: base mem address = 0x0801ca80[0m
+[0;32mI (985410) FLASH_CMD: bytes_so_far_sent:84608 -- bytes_remaining:11748[0m
+[0;32mI (985570) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (985570) FLASH_CMD: base mem address = 0x0801cb00[0m
+[0;32mI (985570) FLASH_CMD: bytes_so_far_sent:84736 -- bytes_remaining:11620[0m
+[0;32mI (985730) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (985730) FLASH_CMD: base mem address = 0x0801cb80[0m
+[0;32mI (985730) FLASH_CMD: bytes_so_far_sent:84864 -- bytes_remaining:11492[0m
+[0;32mI (985890) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (985890) FLASH_CMD: base mem address = 0x0801cc00[0m
+[0;32mI (985890) FLASH_CMD: bytes_so_far_sent:84992 -- bytes_remaining:11364[0m
+[0;32mI (986050) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (986050) FLASH_CMD: base mem address = 0x0801cc80[0m
+[0;32mI (986050) FLASH_CMD: bytes_so_far_sent:85120 -- bytes_remaining:11236[0m
+[0;32mI (986210) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (986210) FLASH_CMD: base mem address = 0x0801cd00[0m
+[0;32mI (986210) FLASH_CMD: bytes_so_far_sent:85248 -- bytes_remaining:11108[0m
+[0;32mI (986370) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (986370) FLASH_CMD: base mem address = 0x0801cd80[0m
+[0;32mI (986370) FLASH_CMD: bytes_so_far_sent:85376 -- bytes_remaining:10980[0m
+[0;32mI (986530) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (986530) FLASH_CMD: base mem address = 0x0801ce00[0m
+[0;32mI (986530) FLASH_CMD: bytes_so_far_sent:85504 -- bytes_remaining:10852[0m
+[0;32mI (986690) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (986690) FLASH_CMD: base mem address = 0x0801ce80[0m
+[0;32mI (986690) FLASH_CMD: bytes_so_far_sent:85632 -- bytes_remaining:10724[0m
+[0;32mI (986850) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (986850) FLASH_CMD: base mem address = 0x0801cf00[0m
+[0;32mI (986850) FLASH_CMD: bytes_so_far_sent:85760 -- bytes_remaining:10596[0m
+[0;32mI (987010) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (987010) FLASH_CMD: base mem address = 0x0801cf80[0m
+[0;32mI (987010) FLASH_CMD: bytes_so_far_sent:85888 -- bytes_remaining:10468[0m
+[0;32mI (987170) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (987170) FLASH_CMD: base mem address = 0x0801d000[0m
+[0;32mI (987170) FLASH_CMD: bytes_so_far_sent:86016 -- bytes_remaining:10340[0m
+[0;32mI (987330) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (987330) FLASH_CMD: base mem address = 0x0801d080[0m
+[0;32mI (987330) FLASH_CMD: bytes_so_far_sent:86144 -- bytes_remaining:10212[0m
+[0;32mI (987490) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (987490) FLASH_CMD: base mem address = 0x0801d100[0m
+[0;32mI (987490) FLASH_CMD: bytes_so_far_sent:86272 -- bytes_remaining:10084[0m
+[0;32mI (987650) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (987650) FLASH_CMD: base mem address = 0x0801d180[0m
+[0;32mI (987650) FLASH_CMD: bytes_so_far_sent:86400 -- bytes_remaining:9956[0m
+[0;32mI (987810) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (987810) FLASH_CMD: base mem address = 0x0801d200[0m
+[0;32mI (987810) FLASH_CMD: bytes_so_far_sent:86528 -- bytes_remaining:9828[0m
+[0;32mI (987970) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (987970) FLASH_CMD: base mem address = 0x0801d280[0m
+[0;32mI (987970) FLASH_CMD: bytes_so_far_sent:86656 -- bytes_remaining:9700[0m
+[0;32mI (988130) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (988130) FLASH_CMD: Flash progress: 86784/96356 bytes (90%)[0m
+[0;32mI (988130) FLASH_CMD: base mem address = 0x0801d300[0m
+[0;32mI (988130) FLASH_CMD: bytes_so_far_sent:86784 -- bytes_remaining:9572[0m
+[0;32mI (988300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (988300) FLASH_CMD: base mem address = 0x0801d380[0m
+[0;32mI (988300) FLASH_CMD: bytes_so_far_sent:86912 -- bytes_remaining:9444[0m
+[0;32mI (988460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (988460) FLASH_CMD: base mem address = 0x0801d400[0m
+[0;32mI (988460) FLASH_CMD: bytes_so_far_sent:87040 -- bytes_remaining:9316[0m
+[0;32mI (988490) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=60054[0m
+[0;32mI (988620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (988620) FLASH_CMD: base mem address = 0x0801d480[0m
+[0;32mI (988620) FLASH_CMD: bytes_so_far_sent:87168 -- bytes_remaining:9188[0m
+[0;32mI (988780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (988780) FLASH_CMD: base mem address = 0x0801d500[0m
+[0;32mI (988780) FLASH_CMD: bytes_so_far_sent:87296 -- bytes_remaining:9060[0m
+[0;32mI (988940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (988940) FLASH_CMD: base mem address = 0x0801d580[0m
+[0;32mI (988940) FLASH_CMD: bytes_so_far_sent:87424 -- bytes_remaining:8932[0m
+[0;32mI (989100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (989100) FLASH_CMD: base mem address = 0x0801d600[0m
+[0;32mI (989100) FLASH_CMD: bytes_so_far_sent:87552 -- bytes_remaining:8804[0m
+[0;32mI (989260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (989260) FLASH_CMD: base mem address = 0x0801d680[0m
+[0;32mI (989260) FLASH_CMD: bytes_so_far_sent:87680 -- bytes_remaining:8676[0m
+[0;32mI (989420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (989420) FLASH_CMD: base mem address = 0x0801d700[0m
+[0;32mI (989420) FLASH_CMD: bytes_so_far_sent:87808 -- bytes_remaining:8548[0m
+[0;32mI (989580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (989580) FLASH_CMD: base mem address = 0x0801d780[0m
+[0;32mI (989580) FLASH_CMD: bytes_so_far_sent:87936 -- bytes_remaining:8420[0m
+[0;32mI (989740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (989740) FLASH_CMD: base mem address = 0x0801d800[0m
+[0;32mI (989740) FLASH_CMD: bytes_so_far_sent:88064 -- bytes_remaining:8292[0m
+[0;32mI (989900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (989900) FLASH_CMD: base mem address = 0x0801d880[0m
+[0;32mI (989900) FLASH_CMD: bytes_so_far_sent:88192 -- bytes_remaining:8164[0m
+[0;32mI (990060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (990060) FLASH_CMD: base mem address = 0x0801d900[0m
+[0;32mI (990060) FLASH_CMD: bytes_so_far_sent:88320 -- bytes_remaining:8036[0m
+[0;32mI (990220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (990220) FLASH_CMD: base mem address = 0x0801d980[0m
+[0;32mI (990220) FLASH_CMD: bytes_so_far_sent:88448 -- bytes_remaining:7908[0m
+[0;32mI (990380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (990380) FLASH_CMD: base mem address = 0x0801da00[0m
+[0;32mI (990380) FLASH_CMD: bytes_so_far_sent:88576 -- bytes_remaining:7780[0m
+[0;32mI (990540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (990540) FLASH_CMD: base mem address = 0x0801da80[0m
+[0;32mI (990540) FLASH_CMD: bytes_so_far_sent:88704 -- bytes_remaining:7652[0m
+[0;32mI (990700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (990700) FLASH_CMD: base mem address = 0x0801db00[0m
+[0;32mI (990700) FLASH_CMD: bytes_so_far_sent:88832 -- bytes_remaining:7524[0m
+[0;32mI (990860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (990860) FLASH_CMD: base mem address = 0x0801db80[0m
+[0;32mI (990860) FLASH_CMD: bytes_so_far_sent:88960 -- bytes_remaining:7396[0m
+[0;32mI (991020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (991020) FLASH_CMD: base mem address = 0x0801dc00[0m
+[0;32mI (991020) FLASH_CMD: bytes_so_far_sent:89088 -- bytes_remaining:7268[0m
+[0;32mI (991180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (991180) FLASH_CMD: base mem address = 0x0801dc80[0m
+[0;32mI (991180) FLASH_CMD: bytes_so_far_sent:89216 -- bytes_remaining:7140[0m
+[0;32mI (991340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (991340) FLASH_CMD: base mem address = 0x0801dd00[0m
+[0;32mI (991340) FLASH_CMD: bytes_so_far_sent:89344 -- bytes_remaining:7012[0m
+[0;32mI (991500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (991500) FLASH_CMD: base mem address = 0x0801dd80[0m
+[0;32mI (991500) FLASH_CMD: bytes_so_far_sent:89472 -- bytes_remaining:6884[0m
+[0;32mI (991660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (991660) FLASH_CMD: base mem address = 0x0801de00[0m
+[0;32mI (991660) FLASH_CMD: bytes_so_far_sent:89600 -- bytes_remaining:6756[0m
+[0;32mI (991820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (991820) FLASH_CMD: base mem address = 0x0801de80[0m
+[0;32mI (991820) FLASH_CMD: bytes_so_far_sent:89728 -- bytes_remaining:6628[0m
+[0;32mI (991980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (991980) FLASH_CMD: base mem address = 0x0801df00[0m
+[0;32mI (991980) FLASH_CMD: bytes_so_far_sent:89856 -- bytes_remaining:6500[0m
+[0;32mI (992140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (992140) FLASH_CMD: base mem address = 0x0801df80[0m
+[0;32mI (992140) FLASH_CMD: bytes_so_far_sent:89984 -- bytes_remaining:6372[0m
+[0;32mI (992300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (992300) FLASH_CMD: base mem address = 0x0801e000[0m
+[0;32mI (992300) FLASH_CMD: bytes_so_far_sent:90112 -- bytes_remaining:6244[0m
+[0;32mI (992460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (992460) FLASH_CMD: base mem address = 0x0801e080[0m
+[0;32mI (992460) FLASH_CMD: bytes_so_far_sent:90240 -- bytes_remaining:6116[0m
+[0;32mI (992620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (992620) FLASH_CMD: base mem address = 0x0801e100[0m
+[0;32mI (992620) FLASH_CMD: bytes_so_far_sent:90368 -- bytes_remaining:5988[0m
+[0;32mI (992780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (992780) FLASH_CMD: base mem address = 0x0801e180[0m
+[0;32mI (992780) FLASH_CMD: bytes_so_far_sent:90496 -- bytes_remaining:5860[0m
+[0;32mI (992940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (992940) FLASH_CMD: base mem address = 0x0801e200[0m
+[0;32mI (992940) FLASH_CMD: bytes_so_far_sent:90624 -- bytes_remaining:5732[0m
+[0;32mI (993100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (993100) FLASH_CMD: base mem address = 0x0801e280[0m
+[0;32mI (993100) FLASH_CMD: bytes_so_far_sent:90752 -- bytes_remaining:5604[0m
+[0;32mI (993260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (993260) FLASH_CMD: base mem address = 0x0801e300[0m
+[0;32mI (993260) FLASH_CMD: bytes_so_far_sent:90880 -- bytes_remaining:5476[0m
+[0;32mI (993420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (993420) FLASH_CMD: base mem address = 0x0801e380[0m
+[0;32mI (993420) FLASH_CMD: bytes_so_far_sent:91008 -- bytes_remaining:5348[0m
+[0;32mI (993580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (993580) FLASH_CMD: base mem address = 0x0801e400[0m
+[0;32mI (993580) FLASH_CMD: bytes_so_far_sent:91136 -- bytes_remaining:5220[0m
+[0;32mI (993740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (993740) FLASH_CMD: base mem address = 0x0801e480[0m
+[0;32mI (993740) FLASH_CMD: bytes_so_far_sent:91264 -- bytes_remaining:5092[0m
+[0;32mI (993900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (993900) FLASH_CMD: base mem address = 0x0801e500[0m
+[0;32mI (993900) FLASH_CMD: bytes_so_far_sent:91392 -- bytes_remaining:4964[0m
+[0;32mI (994060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (994060) FLASH_CMD: base mem address = 0x0801e580[0m
+[0;32mI (994060) FLASH_CMD: bytes_so_far_sent:91520 -- bytes_remaining:4836[0m
+[0;32mI (994220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (994220) FLASH_CMD: base mem address = 0x0801e600[0m
+[0;32mI (994220) FLASH_CMD: bytes_so_far_sent:91648 -- bytes_remaining:4708[0m
+[0;32mI (994380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (994380) FLASH_CMD: base mem address = 0x0801e680[0m
+[0;32mI (994380) FLASH_CMD: bytes_so_far_sent:91776 -- bytes_remaining:4580[0m
+[0;32mI (994540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (994540) FLASH_CMD: base mem address = 0x0801e700[0m
+[0;32mI (994540) FLASH_CMD: bytes_so_far_sent:91904 -- bytes_remaining:4452[0m
+[0;32mI (994700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (994700) FLASH_CMD: base mem address = 0x0801e780[0m
+[0;32mI (994700) FLASH_CMD: bytes_so_far_sent:92032 -- bytes_remaining:4324[0m
+[0;32mI (994860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (994860) FLASH_CMD: base mem address = 0x0801e800[0m
+[0;32mI (994860) FLASH_CMD: bytes_so_far_sent:92160 -- bytes_remaining:4196[0m
+[0;32mI (995020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (995020) FLASH_CMD: base mem address = 0x0801e880[0m
+[0;32mI (995020) FLASH_CMD: bytes_so_far_sent:92288 -- bytes_remaining:4068[0m
+[0;32mI (995180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (995180) FLASH_CMD: base mem address = 0x0801e900[0m
+[0;32mI (995180) FLASH_CMD: bytes_so_far_sent:92416 -- bytes_remaining:3940[0m
+[0;32mI (995340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (995340) FLASH_CMD: base mem address = 0x0801e980[0m
+[0;32mI (995340) FLASH_CMD: bytes_so_far_sent:92544 -- bytes_remaining:3812[0m
+[0;32mI (995500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (995500) FLASH_CMD: base mem address = 0x0801ea00[0m
+[0;32mI (995500) FLASH_CMD: bytes_so_far_sent:92672 -- bytes_remaining:3684[0m
+[0;32mI (995660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (995660) FLASH_CMD: base mem address = 0x0801ea80[0m
+[0;32mI (995660) FLASH_CMD: bytes_so_far_sent:92800 -- bytes_remaining:3556[0m
+[0;32mI (995820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (995820) FLASH_CMD: base mem address = 0x0801eb00[0m
+[0;32mI (995820) FLASH_CMD: bytes_so_far_sent:92928 -- bytes_remaining:3428[0m
+[0;32mI (995980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (995980) FLASH_CMD: base mem address = 0x0801eb80[0m
+[0;32mI (995980) FLASH_CMD: bytes_so_far_sent:93056 -- bytes_remaining:3300[0m
+[0;32mI (996140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (996140) FLASH_CMD: base mem address = 0x0801ec00[0m
+[0;32mI (996140) FLASH_CMD: bytes_so_far_sent:93184 -- bytes_remaining:3172[0m
+[0;32mI (996300) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (996300) FLASH_CMD: base mem address = 0x0801ec80[0m
+[0;32mI (996300) FLASH_CMD: bytes_so_far_sent:93312 -- bytes_remaining:3044[0m
+[0;32mI (996460) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (996460) FLASH_CMD: base mem address = 0x0801ed00[0m
+[0;32mI (996460) FLASH_CMD: bytes_so_far_sent:93440 -- bytes_remaining:2916[0m
+[0;32mI (996620) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (996620) FLASH_CMD: base mem address = 0x0801ed80[0m
+[0;32mI (996620) FLASH_CMD: bytes_so_far_sent:93568 -- bytes_remaining:2788[0m
+[0;32mI (996780) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (996780) FLASH_CMD: base mem address = 0x0801ee00[0m
+[0;32mI (996780) FLASH_CMD: bytes_so_far_sent:93696 -- bytes_remaining:2660[0m
+[0;32mI (996940) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (996940) FLASH_CMD: base mem address = 0x0801ee80[0m
+[0;32mI (996940) FLASH_CMD: bytes_so_far_sent:93824 -- bytes_remaining:2532[0m
+[0;32mI (997100) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (997100) FLASH_CMD: base mem address = 0x0801ef00[0m
+[0;32mI (997100) FLASH_CMD: bytes_so_far_sent:93952 -- bytes_remaining:2404[0m
+[0;32mI (997260) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (997260) FLASH_CMD: base mem address = 0x0801ef80[0m
+[0;32mI (997260) FLASH_CMD: bytes_so_far_sent:94080 -- bytes_remaining:2276[0m
+[0;32mI (997420) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (997420) FLASH_CMD: base mem address = 0x0801f000[0m
+[0;32mI (997420) FLASH_CMD: bytes_so_far_sent:94208 -- bytes_remaining:2148[0m
+[0;32mI (997580) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (997580) FLASH_CMD: base mem address = 0x0801f080[0m
+[0;32mI (997580) FLASH_CMD: bytes_so_far_sent:94336 -- bytes_remaining:2020[0m
+[0;32mI (997740) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (997740) FLASH_CMD: base mem address = 0x0801f100[0m
+[0;32mI (997740) FLASH_CMD: bytes_so_far_sent:94464 -- bytes_remaining:1892[0m
+[0;32mI (997900) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (997900) FLASH_CMD: base mem address = 0x0801f180[0m
+[0;32mI (997900) FLASH_CMD: bytes_so_far_sent:94592 -- bytes_remaining:1764[0m
+[0;32mI (998060) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (998060) FLASH_CMD: base mem address = 0x0801f200[0m
+[0;32mI (998060) FLASH_CMD: bytes_so_far_sent:94720 -- bytes_remaining:1636[0m
+[0;32mI (998220) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (998220) FLASH_CMD: base mem address = 0x0801f280[0m
+[0;32mI (998220) FLASH_CMD: bytes_so_far_sent:94848 -- bytes_remaining:1508[0m
+[0;32mI (998380) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (998380) FLASH_CMD: base mem address = 0x0801f300[0m
+[0;32mI (998380) FLASH_CMD: bytes_so_far_sent:94976 -- bytes_remaining:1380[0m
+[0;32mI (998540) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (998540) FLASH_CMD: base mem address = 0x0801f380[0m
+[0;32mI (998540) FLASH_CMD: bytes_so_far_sent:95104 -- bytes_remaining:1252[0m
+[0;32mI (998700) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (998700) FLASH_CMD: base mem address = 0x0801f400[0m
+[0;32mI (998700) FLASH_CMD: bytes_so_far_sent:95232 -- bytes_remaining:1124[0m
+[0;32mI (998860) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (998860) FLASH_CMD: base mem address = 0x0801f480[0m
+[0;32mI (998860) FLASH_CMD: bytes_so_far_sent:95360 -- bytes_remaining:996[0m
+[0;32mI (999020) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (999020) FLASH_CMD: base mem address = 0x0801f500[0m
+[0;32mI (999020) FLASH_CMD: bytes_so_far_sent:95488 -- bytes_remaining:868[0m
+[0;32mI (999180) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (999180) FLASH_CMD: base mem address = 0x0801f580[0m
+[0;32mI (999180) FLASH_CMD: bytes_so_far_sent:95616 -- bytes_remaining:740[0m
+[0;32mI (999340) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (999340) FLASH_CMD: base mem address = 0x0801f600[0m
+[0;32mI (999340) FLASH_CMD: bytes_so_far_sent:95744 -- bytes_remaining:612[0m
+[0;32mI (999500) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (999500) FLASH_CMD: base mem address = 0x0801f680[0m
+[0;32mI (999500) FLASH_CMD: bytes_so_far_sent:95872 -- bytes_remaining:484[0m
+[0;32mI (999660) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (999660) FLASH_CMD: base mem address = 0x0801f700[0m
+[0;32mI (999660) FLASH_CMD: bytes_so_far_sent:96000 -- bytes_remaining:356[0m
+[0;32mI (999820) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (999820) FLASH_CMD: base mem address = 0x0801f780[0m
+[0;32mI (999820) FLASH_CMD: bytes_so_far_sent:96128 -- bytes_remaining:228[0m
+[0;32mI (999980) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (999980) FLASH_CMD: base mem address = 0x0801f800[0m
+[0;32mI (999980) FLASH_CMD: bytes_so_far_sent:96256 -- bytes_remaining:100[0m
+[0;32mI (1000140) UART_CONFIG: CRC: SUCCESS Len: 1[0m
+[0;32mI (1000140) FLASH_CMD: Flash progress: 96356/96356 bytes (100%)[0m
+[0;32mI (1000140) FLASH_CMD: Step 5: Firmware write completed, sending RESET command[0m
+[0;32mI (1000150) FLASH_CMD: Command ==> BL_GO_TO_ADDR[0m
+[0;32mI (1000220) UART_CONFIG: CRC: SUCCESS Len: 0[0m
+[0;32mI (1000220) FLASH_CMD: Address Status: 0xcb[0m
+[0;32mI (1000220) FLASH_CMD: STM32 firmware update completed successfully![0m
+[0;32mI (1000220) ESP_APP: Firmware update completed successfully[0m
+[0;32mI (1000500) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=17032[0m
+[0;32mI (1000550) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=15940[0m
+[0;32mI (1000550) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23582[0m
+[0;32mI (1000560) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=33797[0m
+[0;32mI (1009340) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (1009340) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (1009350) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1009350) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1009390) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43808[0m
+[0;32mI (1009440) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=43077[0m
+[0;32mI (1009450) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=16008[0m
+[0;32mI (1009450) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=62281[0m
+[0;32mI (1029860) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1029860) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1029860) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1029880) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1029930) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=12289[0m
+[0;32mI (1035900) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1035910) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1035910) MQTT_HANDLER: DATA={"id":"4ltc01","wifi_led":1,"client_id":"jeyabalan@onwords.in","ip":"42.104.214.105","time_stamp":1754307273514}[0m
+[0;32mI (1035920) UART_CONFIG: Received JSON: {}[0m
+[0;32mI (1035980) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=56189[0m
+[0;32mI (1056740) UART_CONFIG: Received JSON: {"device1":1}[0m
+[0;32mI (1056750) UART_CONFIG: Received JSON: {"device2":1}[0m
+[0;32mI (1056790) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58108[0m
+[0;32mI (1056840) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=13085[0m
+[0;32mI (1063880) UART_CONFIG: Received JSON: {"device3":1}[0m
+[0;32mI (1064230) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=55118[0m
+[0;32mI (1064410) UART_CONFIG: Received JSON: {"device4":1}[0m
+[0;32mI (1064460) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=29901[0m
+[0;32mI (1068740) UART_CONFIG: Received JSON: {"device3":0}[0m
+[0;32mI (1069090) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=56261[0m
+[0;32mI (1069250) UART_CONFIG: Received JSON: {"device4":0}[0m
+[0;32mI (1069300) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=38269[0m
+[0;32mI (1069770) UART_CONFIG: Received JSON: {"device2":0}[0m
+[0;32mI (1069820) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=64883[0m
+[0;32mI (1070210) UART_CONFIG: Received JSON: {"device1":0}[0m
+[0;32mI (1070260) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=53330[0m
+[0;32mI (1275120) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1275120) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1275120) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1275140) UART_CONFIG: Received JSON: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1275190) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47747[0m

@@ -56,6 +56,8 @@ extern char *product_type;
 
 extern void start_ble_fallback(void);
 extern void stop_ble_fallback(void);
-
+extern void tts_idle_callback(void);
+extern void audio_samples_callback(int16_t *buffer, unsigned count);
+void speak_async(const char *text);
 
 #endif

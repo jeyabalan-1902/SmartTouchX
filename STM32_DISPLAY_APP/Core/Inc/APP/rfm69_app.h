@@ -24,7 +24,7 @@ typedef enum
 	SYS_SLEEP
 }Rf69_t;
 
-void RFM_Task(void);
+void RFM_Task(void *parameter);
 bool RF69_TxData(void);
 bool RF69_RxData(void);
 bool FailIndiCation(Rf69_t FailState);

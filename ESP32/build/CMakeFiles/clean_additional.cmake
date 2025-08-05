@@ -9,6 +9,8 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "ca_cert.pem.S"
   "config\\sdkconfig.cmake"
   "config\\sdkconfig.h"
+  "esp-idf\\esp-picotts\\picotts_sg.bin"
+  "esp-idf\\esp-picotts\\picotts_ta.bin"
   "esp-idf\\esptool_py\\flasher_args.json.in"
   "esp-idf\\mbedtls\\x509_crt_bundle"
   "esp_app.bin"
@@ -19,6 +21,8 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "flasher_args.json"
   "ldgen_libraries"
   "ldgen_libraries.in"
+  "picotts_sg.bin.S"
+  "picotts_ta.bin.S"
   "project_elf_src_esp32s3.c"
   "x509_crt_bundle.S"
   )
