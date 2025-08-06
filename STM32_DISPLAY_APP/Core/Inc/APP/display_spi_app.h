@@ -31,14 +31,18 @@ typedef enum {
     MENU_MAIN = 0,
     MENU_TOTAL_CONTROL,
     MENU_SEPARATE_CONTROL,
-    MENU_DEVICE_CONTROL
+    MENU_DEVICE_CONTROL,
+	MENU_AUDIO_MENU,
+	MENU_AUDIO_ACTION
 } menu_state_t;
 
 // Menu configuration
-#define MAIN_MENU_OPTIONS        2
+#define MAIN_MENU_OPTIONS        3
 #define TOTAL_CONTROL_OPTIONS    3
 #define SEPARATE_CONTROL_OPTIONS 5
 #define DEVICE_CONTROL_OPTIONS   4
+#define AUDIO_MENU               4
+#define AUDIO_ACTION_MENU        3
 
 
 #define MAX_DISPLAY_LINES 8
@@ -69,7 +73,8 @@ void displayMainMenu(void);
 void displayTotalControlMenu(void);
 void displaySeparateControlMenu(void);
 void displayDeviceControlMenu(void);
-
+void displayAudioMenu(void);
+void displayAudioActionPage(void);
 // Button drawing functions
 void drawButton(int x, int y, int width, int height, char* text, int selected);
 
@@ -101,5 +106,6 @@ void print_To_display(char *format,...);
 void DisplayMessage(const char* message);
 void ScrollDisplay(void);
 void ClearDisplay(void);
+
 
 #endif /* INC_APP_DISPLAY_SPI_APP_H_ */

@@ -23,7 +23,7 @@ int downbutton = 0, upbutton = 0, enter = 0;
 // 0=OFF, 1=ON
 int device_states[4] = {0, 0, 0, 0};
 int last_device_states[4] = {-1, -1, -1, -1};
-
+char selected_audio[20] = {0};
 bool menu_drawn = false;
 bool buttons_drawn = false;
 
@@ -61,6 +61,16 @@ void updateToDisplayMenu(void)
 		last_selection = current_selection;
 		displayDeviceControlMenu();
 	}
+	else if(current_menu == MENU_AUDIO_MENU)
+	{
+		last_selection = current_selection;
+		displayAudioMenu();
+	}
+	else if(current_menu == MENU_AUDIO_ACTION)
+	{
+		last_selection = current_selection;
+		displayAudioActionPage();
+	}
 }
 
 void displayMainMenu(void)
@@ -78,18 +88,76 @@ void displayMainMenu(void)
 	if (!buttons_drawn || last_selection != current_selection)
 	{
 		int start_y = TITLE_HEIGHT + 15;
-		button_count = 2;
+		button_count = 3;
 
 		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT,
 						"MASTER CONTROL", (current_selection == 0), 0);
 		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
 						"DEVICE LIST", (current_selection == 1), 1);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT,
+								"SPEAKER TEST", (current_selection == 2), 2);
 
 		buttons_drawn = true;
 	}
 
 	last_selection = current_selection;
 }
+
+void displayAudioMenu(void)
+{
+    if (current_menu != last_menu || !menu_drawn)
+    {
+        ST7735_SetRotation(1);
+        fillScreen(BLACK);
+        drawTitleBar("AUDIOS");
+        menu_drawn = true;
+        buttons_drawn = false;
+        last_menu = current_menu;
+    }
+
+    if (!buttons_drawn || last_selection != current_selection)
+    {
+        int start_y = TITLE_HEIGHT + 20;
+        button_count = 4;
+
+        drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, "HELLO", (current_selection == 0), 0);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "WELCOME", (current_selection == 1), 1);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "ONWORDS", (current_selection == 2), 2);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 3), 3);
+
+        buttons_drawn = true;
+    }
+
+    last_selection = current_selection;
+}
+
+void displayAudioActionPage(void)
+{
+    if (current_menu != last_menu || !menu_drawn)
+    {
+        ST7735_SetRotation(1);
+        fillScreen(BLACK);
+        drawTitleBar("AUDIO ACTION");
+        menu_drawn = true;
+        buttons_drawn = false;
+        last_menu = current_menu;
+    }
+
+    if (!buttons_drawn || last_selection != current_selection)
+    {
+        int start_y = TITLE_HEIGHT + 25;
+        button_count = 3;
+
+        drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, "PLAY", (current_selection == 0), 0);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 1), 1);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 2), 2);
+
+        buttons_drawn = true;
+    }
+
+    last_selection = current_selection;
+}
+
 
 void displayTotalControlMenu(void)
 {
@@ -242,6 +310,249 @@ void displayDeviceControlMenu(void) {
 	last_selection = current_selection;
 }
 
+void handleNavigation(void) {
+    int max_options;
+    char src_name[] = "DISPLAY";
+    switch(current_menu) {
+        case MENU_MAIN:
+            max_options = MAIN_MENU_OPTIONS;
+            break;
+        case MENU_TOTAL_CONTROL:
+            max_options = TOTAL_CONTROL_OPTIONS;
+            break;
+        case MENU_SEPARATE_CONTROL:
+            max_options = SEPARATE_CONTROL_OPTIONS;
+            break;
+        case MENU_DEVICE_CONTROL:
+            max_options = DEVICE_CONTROL_OPTIONS;
+            break;
+        case MENU_AUDIO_MENU:
+        	max_options = AUDIO_MENU;
+        	break;
+        case MENU_AUDIO_ACTION:
+        	max_options = AUDIO_ACTION_MENU;
+        	break;
+        default:
+            max_options = 2;
+            break;
+    }
+
+    if (upbutton) {
+        HAL_Delay(200);
+        int old_selection = current_selection;
+        current_selection = (current_selection - 1 + max_options) % max_options;
+        upbutton = 0;
+
+        // Quick highlight update instead of full redraw
+        switch(current_menu) {
+            case MENU_MAIN:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_TOTAL_CONTROL:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_SEPARATE_CONTROL:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_DEVICE_CONTROL:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_AUDIO_MENU:
+				updateButtonSelection(old_selection, current_selection);
+				last_selection = current_selection;
+				break;
+            case MENU_AUDIO_ACTION:
+				updateButtonSelection(old_selection, current_selection);
+				last_selection = current_selection;
+				break;
+        }
+    }
+
+    if (downbutton) {
+        HAL_Delay(200);
+        int old_selection = current_selection;
+        current_selection = (current_selection + 1) % max_options;
+        downbutton = 0;
+
+        switch(current_menu) {
+            case MENU_MAIN:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_TOTAL_CONTROL:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_SEPARATE_CONTROL:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_DEVICE_CONTROL:
+                updateButtonSelection(old_selection, current_selection);
+                last_selection = current_selection;
+                break;
+            case MENU_AUDIO_MENU:
+				updateButtonSelection(old_selection, current_selection);
+				last_selection = current_selection;
+				break;
+			case MENU_AUDIO_ACTION:
+				updateButtonSelection(old_selection, current_selection);
+				last_selection = current_selection;
+				break;
+        }
+    }
+
+    if (enter) {
+        HAL_Delay(200);
+        enter = 0;
+
+        switch(current_menu) {
+            case MENU_MAIN:
+                if (current_selection == 0) {
+                    current_menu = MENU_TOTAL_CONTROL;
+                    current_selection = 0;
+                    menu_drawn = false; // Force menu redraw
+                    displayTotalControlMenu();
+                } else if (current_selection == 1) {
+                    current_menu = MENU_SEPARATE_CONTROL;
+                    current_selection = 0;
+                    menu_drawn = false; // Force menu redraw
+                    displaySeparateControlMenu();
+                } else if (current_selection == 2) {
+                    current_menu = MENU_AUDIO_MENU;
+                    current_selection = 0;
+                    menu_drawn = false;
+                    displayAudioMenu();
+                }
+                break;
+
+            case MENU_TOTAL_CONTROL:
+                if (current_selection == 0) {
+                    setAllDevicesState(1, src_name);
+                } else if (current_selection == 1) {
+                    setAllDevicesState(0, src_name);
+                } else if (current_selection == 2) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false; // Force menu redraw
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
+                }
+                break;
+
+            case MENU_SEPARATE_CONTROL:
+                if (current_selection >= 0 && current_selection <= 3) {
+                    current_device = current_selection;
+                    current_menu = MENU_DEVICE_CONTROL;
+                    current_selection = 0;
+                    menu_drawn = false; // Force menu redraw
+                    displayDeviceControlMenu();
+                } else if (current_selection == 4) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false; // Force menu redraw
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
+                }
+                break;
+
+            case MENU_DEVICE_CONTROL:
+                if (current_selection == 0) {
+                    setDeviceState(current_device, 1);
+                } else if (current_selection == 1) {
+                    setDeviceState(current_device, 0);
+                } else if (current_selection == 2) {
+                    current_menu = MENU_SEPARATE_CONTROL;
+                    current_selection = current_device;
+                    menu_drawn = false; // Force menu redraw
+                    displaySeparateControlMenu();
+                }else if (current_selection == 3) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false; // Force menu redraw
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
+                }
+                break;
+
+            case MENU_AUDIO_MENU:
+                if (current_selection == 0) {
+                    strcpy(selected_audio, "HELLO\n");
+                    current_menu = MENU_AUDIO_ACTION;
+                } else if (current_selection == 1) {
+                    strcpy(selected_audio, "WELCOME\n");
+                    current_menu = MENU_AUDIO_ACTION;
+                } else if (current_selection == 2) {
+                    strcpy(selected_audio, "ONWORDS\n");
+                    current_menu = MENU_AUDIO_ACTION;
+                } else if (current_selection == 3) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false;
+                    displayOnwardsLogoOptimized();
+					HAL_Delay(600);
+					displayMainMenu();
+                }
+                current_selection = 0;
+                menu_drawn = false;
+                break;
+
+            case MENU_AUDIO_ACTION:
+                if (current_selection == 0) {
+                    HAL_UART_Transmit(&huart3, (uint8_t *)selected_audio, strlen(selected_audio), HAL_MAX_DELAY);
+                } else if (current_selection == 1) {
+                    // GO BACK
+                    current_menu = MENU_AUDIO_MENU;
+                    current_selection = 0;
+                    menu_drawn = false;
+                } else if (current_selection == 2) {
+                    // GO TO HOME
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false;
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
+                }
+                break;
+        }
+    }
+}
+
+
+void Menu_Handler(void)
+{
+    switch(current_menu)
+    {
+        case MENU_MAIN:
+            displayMainMenu();
+            break;
+        case MENU_TOTAL_CONTROL:
+            displayTotalControlMenu();
+            break;
+        case MENU_SEPARATE_CONTROL:
+            displaySeparateControlMenu();
+            break;
+        case MENU_DEVICE_CONTROL:
+            displayDeviceControlMenu();
+            break;
+        case MENU_AUDIO_MENU:
+			displayAudioMenu();
+			break;
+		case MENU_AUDIO_ACTION:
+			displayAudioActionPage();
+			break;
+    }
+    handleNavigation();
+}
+
 
 void setDeviceState(int device, int state) {
     GPIO_TypeDef* gpio_led_port;
@@ -309,7 +620,7 @@ void setDeviceState(int device, int state) {
 		cJSON_Delete(resp);
 
 		snprintf(msg, sizeof(msg), "Device %d turned %s\n", device + 1, state ? "ON" : "OFF");
-		HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+		//HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
 
 		safe_printf("DISPLAY: Device %d set to %s\n",  device + 1, state ? "ON" : "OFF");
 	}
@@ -399,177 +710,6 @@ void showActionFeedback(char* message, uint16_t color) {
     fillRect(MARGIN_X, DISPLAY_HEIGHT - 15, BUTTON_WIDTH, 12, BLACK);
 }
 
-
-void handleNavigation(void) {
-    int max_options;
-    char src_name[] = "DISPLAY";
-    switch(current_menu) {
-        case MENU_MAIN:
-            max_options = MAIN_MENU_OPTIONS;
-            break;
-        case MENU_TOTAL_CONTROL:
-            max_options = TOTAL_CONTROL_OPTIONS;
-            break;
-        case MENU_SEPARATE_CONTROL:
-            max_options = SEPARATE_CONTROL_OPTIONS;
-            break;
-        case MENU_DEVICE_CONTROL:
-            max_options = DEVICE_CONTROL_OPTIONS;
-            break;
-        default:
-            max_options = 2;
-            break;
-    }
-
-    if (upbutton) {
-        HAL_Delay(200);
-        int old_selection = current_selection;
-        current_selection = (current_selection - 1 + max_options) % max_options;
-        upbutton = 0;
-
-        // Quick highlight update instead of full redraw
-        switch(current_menu) {
-            case MENU_MAIN:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-            case MENU_TOTAL_CONTROL:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-            case MENU_SEPARATE_CONTROL:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-            case MENU_DEVICE_CONTROL:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-        }
-    }
-
-    if (downbutton) {
-        HAL_Delay(200);
-        int old_selection = current_selection;
-        current_selection = (current_selection + 1) % max_options;
-        downbutton = 0;
-
-        switch(current_menu) {
-            case MENU_MAIN:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-            case MENU_TOTAL_CONTROL:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-            case MENU_SEPARATE_CONTROL:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-            case MENU_DEVICE_CONTROL:
-                updateButtonSelection(old_selection, current_selection);
-                last_selection = current_selection;
-                break;
-        }
-    }
-
-    if (enter) {
-        HAL_Delay(200);
-        enter = 0;
-
-        switch(current_menu) {
-            case MENU_MAIN:
-                if (current_selection == 0) {
-                    current_menu = MENU_TOTAL_CONTROL;
-                    current_selection = 0;
-                    menu_drawn = false; // Force menu redraw
-                    displayTotalControlMenu();
-                } else if (current_selection == 1) {
-                    current_menu = MENU_SEPARATE_CONTROL;
-                    current_selection = 0;
-                    menu_drawn = false; // Force menu redraw
-                    displaySeparateControlMenu();
-                }
-                break;
-
-            case MENU_TOTAL_CONTROL:
-                if (current_selection == 0) {
-                    setAllDevicesState(1, src_name);
-                } else if (current_selection == 1) {
-                    setAllDevicesState(0, src_name);
-                } else if (current_selection == 2) {
-                    current_menu = MENU_MAIN;
-                    current_selection = 0;
-                    menu_drawn = false; // Force menu redraw
-                    displayOnwardsLogoOptimized();
-                    HAL_Delay(600);
-                    displayMainMenu();
-                }
-                break;
-
-            case MENU_SEPARATE_CONTROL:
-                if (current_selection >= 0 && current_selection <= 3) {
-                    current_device = current_selection;
-                    current_menu = MENU_DEVICE_CONTROL;
-                    current_selection = 0;
-                    menu_drawn = false; // Force menu redraw
-                    displayDeviceControlMenu();
-                } else if (current_selection == 4) {
-                    current_menu = MENU_MAIN;
-                    current_selection = 0;
-                    menu_drawn = false; // Force menu redraw
-                    displayOnwardsLogoOptimized();
-                    HAL_Delay(600);
-                    displayMainMenu();
-                }
-                break;
-
-            case MENU_DEVICE_CONTROL:
-                if (current_selection == 0) {
-                    setDeviceState(current_device, 1);
-                } else if (current_selection == 1) {
-                    setDeviceState(current_device, 0);
-                } else if (current_selection == 2) {
-                    current_menu = MENU_SEPARATE_CONTROL;
-                    current_selection = current_device;
-                    menu_drawn = false; // Force menu redraw
-                    displaySeparateControlMenu();
-                }else if (current_selection == 3) {
-                    current_menu = MENU_MAIN;
-                    current_selection = 0;
-                    menu_drawn = false; // Force menu redraw
-                    displayOnwardsLogoOptimized();
-                    HAL_Delay(600);
-                    displayMainMenu();
-                }
-                break;
-        }
-    }
-}
-
-
-void Menu_Handler(void)
-{
-    switch(current_menu)
-    {
-        case MENU_MAIN:
-            displayMainMenu();
-            break;
-        case MENU_TOTAL_CONTROL:
-            displayTotalControlMenu();
-            break;
-        case MENU_SEPARATE_CONTROL:
-            displaySeparateControlMenu();
-            break;
-        case MENU_DEVICE_CONTROL:
-            displayDeviceControlMenu();
-            break;
-    }
-
-    handleNavigation();
-}
-
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
     if (GPIO_Pin == GPIO_PIN_10) { // ENTER button
         downbutton = 0;
@@ -605,6 +745,7 @@ void initializeMenu(void)
     for (int i = 0; i < 4; i++) {
         device_states[i] = 0;
         last_device_states[i] = -1;
+
         //setDeviceState(i, 0);
     }
     displayMainMenu();

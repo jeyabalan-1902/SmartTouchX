@@ -44,7 +44,7 @@ void tts_idle_callback(void)
 static void tts_task(void *arg)
 {
     char msg[TTS_MSG_MAX_LEN];
-
+    char last_msg[TTS_MSG_MAX_LEN];
     bsp_audio_init();
     tts_done_sem = xSemaphoreCreateBinary();
     picotts_set_idle_notify(tts_idle_callback);
@@ -52,6 +52,11 @@ static void tts_task(void *arg)
 
     while (1) {
         if (xQueueReceive(tts_queue, msg, portMAX_DELAY)) {
+
+            while (xQueueReceive(tts_queue, &msg, pdMS_TO_TICKS(300))) {
+                strncpy(last_msg, msg, TTS_MSG_MAX_LEN);
+            }
+
             ESP_LOGI("TTS", "Speaking: %s", msg);
             picotts_add(msg, strlen(msg) + 1);
             xSemaphoreTake(tts_done_sem, portMAX_DELAY);
@@ -61,8 +66,10 @@ static void tts_task(void *arg)
 
 void speak_async(const char *text)
 {
-    if (tts_queue && strlen(text) < TTS_MSG_MAX_LEN) {
-        xQueueSend(tts_queue, text, portMAX_DELAY);
+    if (tts_queue) {
+        char msg[TTS_MSG_MAX_LEN];
+        snprintf(msg, TTS_MSG_MAX_LEN, "%s", text);
+        xQueueSend(tts_queue, &msg, 0); 
     }
 }
 

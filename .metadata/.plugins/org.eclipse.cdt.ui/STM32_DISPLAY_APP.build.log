@@ -1,10 +1,10 @@
-17:05:31 **** Incremental Build of configuration Debug for project STM32_DISPLAY_APP ****
+15:27:43 **** Incremental Build of configuration Debug for project STM32_DISPLAY_APP ****
 make -j8 all 
 arm-none-eabi-size  STM32_DISPLAY_APP.elf 
    text	   data	    bss	    dec	    hex	filename
-  96216	    612	  83948	 180776	  2c228	STM32_DISPLAY_APP.elf
+  97680	    612	  84044	 182336	  2c840	STM32_DISPLAY_APP.elf
 Finished building: default.size.stdout
  
 
-17:05:32 Build Finished. 0 errors, 0 warnings. (took 520ms)
+15:27:43 Build Finished. 0 errors, 0 warnings. (took 532ms)
 

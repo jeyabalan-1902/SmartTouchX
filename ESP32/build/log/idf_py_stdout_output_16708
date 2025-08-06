@@ -131,4 +131,144 @@ entry 0x403c8928
 [0;32mI (4240) wifi:security: WPA2-PSK, phy: bgn, rssi: -53[0m
 [0;32mI (4250) wifi:pm start, type: 1[0m
 
-[0;32mI (4250) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[
+[0;32mI (4250) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4250) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (4330) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5280) esp_netif_handlers: sta ip: 192.168.1.227, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5280) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (5280) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (5280) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -53[0m
+[0;32mI (5290) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (5290) main_task: Returned from app_main()[0m
+[0;32mI (5300) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5690) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (5730) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=40008[0m
+[0;32mI (5770) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=47370[0m
+[0;32mI (5770) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=20207[0m
+[0;32mI (5770) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=20406[0m
+[0;32mI (5780) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=39243[0m
+[0;32mI (5780) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=31673[0m
+[0;32mI (9020) UART_CONFIG: Received: Device 1 turned ON[0m
+[0;32mI (9020) TTS: Speaking: Device 1 turned ON[0m
+[0;32mI (9020) UART_CONFIG: Received: {"device1":1}[0m
+[0;32mI (9070) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=45541[0m
+[0;32mI (13660) UART_CONFIG: Received: Device 1 turned OFF[0m
+[0;32mI (13660) TTS: Speaking: Device 1 turned OFF[0m
+[0;32mI (13660) UART_CONFIG: Received: {"device1":0}[0m
+[0;32mI (13700) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=19956[0m
+[0;32mI (17240) UART_CONFIG: Received: Device 3 turned ON[0m
+[0;32mI (17240) TTS: Speaking: Device 3 turned ON[0m
+[0;32mI (17250) UART_CONFIG: Received: {"device3":1}[0m
+[0;32mI (17290) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27999[0m
+[0;32mI (20900) UART_CONFIG: Received: Device 3 turned OFF[0m
+[0;32mI (20900) TTS: Speaking: Device 3 turned OFF[0m
+[0;32mI (20900) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (20940) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=409[0m
+[0;32mI (713330) UART_CONFIG: Received: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (713330) UART_CONFIG: Received: All devices turned ON[0m
+[0;32mI (713330) TTS: Speaking: All devices turned ON[0m
+[0;32mI (713670) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47345[0m
+[0;32mI (718910) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (718910) UART_CONFIG: Received: All devices turned OFF[0m
+[0;32mI (718910) TTS: Speaking: All devices turned OFF[0m
+[0;32mI (720760) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=6575[0m
+[0;32mI (754470) UART_CONFIG: Received: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (754480) UART_CONFIG: Received: All devices turned ON[0m
+[0;32mI (754480) TTS: Speaking: All devices turned ON[0m
+[0;32mI (756180) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=59476[0m
+[0;32mI (758800) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (758800) UART_CONFIG: Received: All devices turned OFF[0m
+[0;32mI (758800) TTS: Speaking: All devices turned OFF[0m
+[0;32mI (759140) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=41811[0m
+[0;32mI (1072600) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1072600) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1072600) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1072610) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1072660) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=45417[0m
+[0;32mI (1081510) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1081510) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1081510) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1081520) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1081570) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=17406[0m
+[0;32mI (3234940) UART_CONFIG: Received: Device 4 turned ON[0m
+[0;32mI (3234940) TTS: Speaking: Device 4 turned ON[0m
+[0;32mI (3234940) UART_CONFIG: Received: {"device4":1}[0m
+[0;32mI (3235280) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=9897[0m
+[0;32mI (3238410) UART_CONFIG: Received: Device 4 turned OFF[0m
+[0;32mI (3238410) TTS: Speaking: Device 4 turned OFF[0m
+[0;32mI (3238410) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (3238750) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=38802[0m
+[0;32mI (3241320) UART_CONFIG: Received: Device 3 turned ON[0m
+[0;32mI (3241330) TTS: Speaking: Device 3 turned ON[0m
+[0;32mI (3241330) UART_CONFIG: Received: {"device3":1}[0m
+[0;32mI (3241330) UART_CONFIG: Received: Device 3 turned OFF[0m
+[0;32mI (3241330) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (3241370) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=9638[0m
+[0;32mI (3241420) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=46512[0m
+[0;32mI (3244090) UART_CONFIG: Received: Device 1 turned ON[0m
+[0;32mI (3244090) UART_CONFIG: Received: {"device1":1}[0m
+[0;32mI (3244100) UART_CONFIG: Received: Device 1 turned OFF[0m
+[0;32mI (3244100) UART_CONFIG: Received: {"device1":0}[0m
+[0;32mI (3244100) UART_CONFIG: Received: Device 2 turned ON[0m
+[0;32mI (3244110) UART_CONFIG: Received: {"device2":1}[0m
+[0;32mI (3244140) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=42914[0m
+[0;32mI (3244180) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58449[0m
+[0;32mI (3244180) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39281[0m
+[0;32mI (3244370) UART_CONFIG: Received: Device 2 turned OFF[0m
+[0;32mI (3244370) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (3244420) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52191[0m
+[0;32mI (3244490) TTS: Speaking: Device 3 turned OFF[0m
+[0;32mI (3247520) UART_CONFIG: Received: Device 4 turned ON[0m
+[0;32mI (3247520) UART_CONFIG: Received: {"device4":1}[0m
+[0;32mI (3247520) UART_CONFIG: Received: Device 4 turned OFF[0m
+[0;32mI (3247840) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=56799[0m
+[0;32mI (3247910) TTS: Speaking: Device 1 turned ON[0m
+[0;32mI (3247910) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (3247960) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=63332[0m
+[0;32mI (3250910) UART_CONFIG: Received: Device 4 turned ON[0m
+[0;32mI (3250960) TTS: Speaking: Device 1 turned OFF[0m
+[0;32mI (3250960) UART_CONFIG: Received: {"device4":1}[0m
+[0;32mI (3251300) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=4152[0m
+[0;32mI (3253860) UART_CONFIG: Received: Device 3 turned ON[0m
+[0;32mI (3254260) TTS: Speaking: Device 2 turned ON[0m
+[0;32mI (3254260) UART_CONFIG: Received: {"device3":1}[0m
+[0;32mI (3254260) UART_CONFIG: Received: Device 1 turned ON[0m
+[0;32mI (3254600) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=12304[0m
+[0;32mI (3257320) TTS: Speaking: Device 2 turned OFF[0m
+[0;32mI (3257320) UART_CONFIG: Received: {"device1":1}[0m
+[0;32mI (3257320) UART_CONFIG: Received: Device 2 turned ON[0m
+[0;32mI (3257660) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27341[0m
+[0;32mI (3260650) TTS: Speaking: Device 4 turned ON[0m
+[0;32mI (3260650) UART_CONFIG: Received: {"device2":1}[0m
+[0;32mI (3260650) UART_CONFIG: Received: Device 4 turned OFF[0m
+[0;32mI (3260990) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=21111[0m
+[0;32mI (3263730) TTS: Speaking: Device 4 turned OFF[0m
+[0;32mI (3263730) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (3263730) UART_CONFIG: Received: Device 3 turned OFF[0m
+[0;32mI (3263770) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=30558[0m
+[0;32mI (3267060) TTS: Speaking: Device 4 turned ON[0m
+[0;32mI (3267060) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (3267060) UART_CONFIG: Received: Device 1 turned OFF[0m
+[0;32mI (3267400) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58916[0m
+[0;32mI (3270140) TTS: Speaking: Device 3 turned ON[0m
+[0;32mI (3270140) UART_CONFIG: Received: {"device1":0}[0m
+[0;32mI (3270140) UART_CONFIG: Received: Device 2 turned OFF[0m
+[0;32mI (3270490) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=8439[0m
+[0;32mI (3273310) TTS: Speaking: Device 1 turned ON[0m
+[0;32mI (3273310) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (3273350) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=63181[0m
+[0;32mI (3276350) TTS: Speaking: Device 2 turned ON[0m
+[0;32mI (3279430) TTS: Speaking: Device 4 turned OFF[0m
+[0;32mI (3282760) TTS: Speaking: Device 3 turned OFF[0m
+[0;32mI (3285790) UART_CONFIG: Received: [0m
+[0;32mI (3286190) TTS: Speaking: Device 1 turned OFF[0m
+[0;32mI (3289490) TTS: Speaking: Device 2 turned OFF[0m
+[0;32mI (3292810) TTS: Speaking: [0m
+[0;32mI (3493500) UART_CONFIG: Received: [0m
+[0;32mI (3493500) TTS: Speaking: [0m
+[0;32mI (3493500) UART_CONFIG: Received: All devices turned ON[0m
+[0;32mI (3493930) TTS: Speaking: All devices turned ON[0m
+[0;32mI (3504970) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (3504980) UART_CONFIG: Received: All devices turned OFF[0m
+[0;32mI (3504980) TTS: Speaking: All devices turned OFF[0m
+[0;32mI (3505320) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=62634[0m

@@ -98,7 +98,7 @@ void process_spi_json(uint8_t *jsonBuffer)
 				cJSON_AddNumberToObject(status, devices[deviceIndex], global_device_states[deviceIndex]);
 				safe_printf("TOUCH: Device %d set to %s\n", deviceIndex + 1, global_device_states[deviceIndex] ? "ON" : "OFF");
 				snprintf(msg, sizeof(msg), "Device %d turned %s\n", deviceIndex + 1, global_device_states[deviceIndex] ? "ON" : "OFF");
-				HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+				//HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
 				xSemaphoreGive(deviceStateMutex);
 			}
 			updateToDisplayMenu();
