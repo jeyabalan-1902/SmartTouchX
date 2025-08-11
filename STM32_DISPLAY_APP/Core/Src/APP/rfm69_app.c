@@ -139,7 +139,7 @@ bool RF69_RxData(void)
 				buf[len] = 0;
 			}
 
-			//safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
+			safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
 			safe_printf("RFM RSSI: %d\n", lastRssi());
 
 			if (strstr((char *)buf, "Control#1"))

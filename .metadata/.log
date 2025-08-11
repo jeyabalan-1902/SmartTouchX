@@ -6293,3 +6293,51 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-06 09:40:17.496
 !MESSAGE Started RMI Server, listening on port 41338
+!SESSION 2025-08-07 10:01:28.804 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-07 10:02:27.907
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-07 10:02:27.910
+!MESSAGE Log4j2 initialized with config file C:\Users\kjeya\Documents\MCU_INTEGRATION\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-07 10:02:37.601
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-08-08 10:02:42.071 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-08 10:03:24.364
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-08 10:03:24.367
+!MESSAGE Log4j2 initialized with config file C:\Users\kjeya\Documents\MCU_INTEGRATION\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-08 10:03:33.389
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-08-11 14:10:59.908 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-11 14:11:15.435
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-11 14:11:15.439
+!MESSAGE Log4j2 initialized with config file C:\Users\kjeya\Documents\MCU_INTEGRATION\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-11 14:11:26.260
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-11 16:27:54.217
+!MESSAGE Indexed 'WIRELESS_RF_SWITCH' (23 sources, 114 headers) in 4.15 sec: 10,421 declarations; 56,409 references; 2 unresolved inclusions; 26 syntax errors; 147 unresolved names (0.22%)
