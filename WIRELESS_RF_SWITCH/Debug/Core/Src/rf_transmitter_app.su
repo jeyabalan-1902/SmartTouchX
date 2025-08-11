@@ -1,0 +1,4 @@
+../Core/Src/rf_transmitter_app.c:30:7:RF69_ModuleHandler	8	static
+../Core/Src/rf_transmitter_app.c:35:6:UserFsm	8	static
+../Core/Src/rf_transmitter_app.c:123:6:RF69_TxData	72	static
+../Core/Src/rf_transmitter_app.c:161:6:FailIndiCation	16	static
