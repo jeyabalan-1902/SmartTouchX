@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00013efc  080081d0  080081d0  000011d0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00002a68  0801c0d0  0801c0d0  000150d0  2**3
+  2 .rodata       00002a70  0801c0d0  0801c0d0  000150d0  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  0801eb38  0801eb38  00018260  2**0
+  3 .ARM.extab    00000000  0801eb40  0801eb40  00018260  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  0801eb38  0801eb38  00017b38  2**2
+  4 .ARM          00000008  0801eb40  0801eb40  00017b40  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  0801eb40  0801eb40  00018260  2**0
+  5 .preinit_array 00000000  0801eb48  0801eb48  00018260  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  0801eb40  0801eb40  00017b40  2**2
+  6 .init_array   00000004  0801eb48  0801eb48  00017b48  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  0801eb44  0801eb44  00017b44  2**2
+  7 .fini_array   00000004  0801eb4c  0801eb4c  00017b4c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000260  20000000  0801eb48  00018000  2**2
+  8 .data         00000260  20000000  0801eb50  00018000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00014234  20000260  0801eda8  00018260  2**2
+  9 .bss          00014234  20000260  0801edb0  00018260  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20014494  0801eda8  00018494  2**0
+ 10 ._user_heap_stack 00000604  20014494  0801edb0  00018494  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00018260  2**0
                   CONTENTS, READONLY
@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 0000190c  00000000  00000000  00043268  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00029513  00000000  00000000  00044b74  2**0
+ 16 .debug_macro  0002951b  00000000  00000000  00044b74  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00027927  00000000  00000000  0006e087  2**0
+ 17 .debug_line   00027a13  00000000  00000000  0006e08f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000e588f  00000000  00000000  000959ae  2**0
+ 18 .debug_str    000e588f  00000000  00000000  00095aa2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0017b23d  2**0
+ 19 .comment      00000043  00000000  00000000  0017b331  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00009c9c  00000000  00000000  0017b280  2**2
+ 20 .debug_frame  00009c9c  00000000  00000000  0017b374  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000069  00000000  00000000  00184f1c  2**0
+ 21 .debug_line_str 00000069  00000000  00000000  00185010  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -6285,7 +6285,7 @@ bool RF69_RxData(void)
  800b2fa:	f005 fea7 	bl	801104c <HAL_GPIO_ReadPin>
  800b2fe:	4603      	mov	r3, r0
  800b300:	f887 3047 	strb.w	r3, [r7, #71]	@ 0x47
-				safe_printf("RFM: Display Backlit is %s ",(state == GPIO_PIN_SET) ? "ON" : "OFF");
+				safe_printf("RFM: Display Backlit is %s \n",(state == GPIO_PIN_SET) ? "ON" : "OFF");
  800b304:	f897 3047 	ldrb.w	r3, [r7, #71]	@ 0x47
  800b308:	2b01      	cmp	r3, #1
  800b30a:	d101      	bne.n	800b310 <RF69_RxData+0x114>
@@ -6323,7 +6323,7 @@ bool RF69_RxData(void)
  800b34c:	0801c56c 	.word	0x0801c56c
  800b350:	0801c570 	.word	0x0801c570
  800b354:	0801c574 	.word	0x0801c574
- 800b358:	0801c590 	.word	0x0801c590
+ 800b358:	0801c594 	.word	0x0801c594
 
 0800b35c <FailIndiCation>:
 
@@ -6389,12 +6389,12 @@ bool FailIndiCation(Rf69_t FailState)
  800b3be:	46bd      	mov	sp, r7
  800b3c0:	bd80      	pop	{r7, pc}
  800b3c2:	bf00      	nop
- 800b3c4:	0801c5a0 	.word	0x0801c5a0
- 800b3c8:	0801c5b4 	.word	0x0801c5b4
- 800b3cc:	0801c5c8 	.word	0x0801c5c8
- 800b3d0:	0801c5dc 	.word	0x0801c5dc
- 800b3d4:	0801c5f0 	.word	0x0801c5f0
- 800b3d8:	0801c604 	.word	0x0801c604
+ 800b3c4:	0801c5a4 	.word	0x0801c5a4
+ 800b3c8:	0801c5b8 	.word	0x0801c5b8
+ 800b3cc:	0801c5cc 	.word	0x0801c5cc
+ 800b3d0:	0801c5e0 	.word	0x0801c5e0
+ 800b3d4:	0801c5f4 	.word	0x0801c5f4
+ 800b3d8:	0801c608 	.word	0x0801c608
 
 0800b3dc <SPI_Handler>:
 volatile uint16_t spiHead = 0;
@@ -6539,7 +6539,7 @@ void SPI_Handler(void *param)
  800b4d0:	20000568 	.word	0x20000568
  800b4d4:	2000056a 	.word	0x2000056a
  800b4d8:	200004e8 	.word	0x200004e8
- 800b4dc:	0801c618 	.word	0x0801c618
+ 800b4dc:	0801c61c 	.word	0x0801c61c
 
 0800b4e0 <process_spi_json>:
     }
@@ -6790,16 +6790,16 @@ void process_spi_json(uint8_t *jsonBuffer)
  800b706:	37a4      	adds	r7, #164	@ 0xa4
  800b708:	46bd      	mov	sp, r7
  800b70a:	bd90      	pop	{r4, r7, pc}
- 800b70c:	0801c62c 	.word	0x0801c62c
- 800b710:	0801c634 	.word	0x0801c634
- 800b714:	0801c638 	.word	0x0801c638
- 800b718:	0801c63c 	.word	0x0801c63c
- 800b71c:	0801c640 	.word	0x0801c640
- 800b720:	0801c644 	.word	0x0801c644
+ 800b70c:	0801c630 	.word	0x0801c630
+ 800b710:	0801c638 	.word	0x0801c638
+ 800b714:	0801c63c 	.word	0x0801c63c
+ 800b718:	0801c640 	.word	0x0801c640
+ 800b71c:	0801c644 	.word	0x0801c644
+ 800b720:	0801c648 	.word	0x0801c648
  800b724:	40020000 	.word	0x40020000
- 800b728:	0801c648 	.word	0x0801c648
- 800b72c:	0801c64c 	.word	0x0801c64c
- 800b730:	0801c650 	.word	0x0801c650
+ 800b728:	0801c64c 	.word	0x0801c64c
+ 800b72c:	0801c650 	.word	0x0801c650
+ 800b730:	0801c654 	.word	0x0801c654
  800b734:	20000570 	.word	0x20000570
  800b738:	20000038 	.word	0x20000038
  800b73c:	20000058 	.word	0x20000058
@@ -6807,8 +6807,8 @@ void process_spi_json(uint8_t *jsonBuffer)
  800b744:	20000060 	.word	0x20000060
  800b748:	20000738 	.word	0x20000738
  800b74c:	20000028 	.word	0x20000028
- 800b750:	0801c670 	.word	0x0801c670
- 800b754:	0801c68c 	.word	0x0801c68c
+ 800b750:	0801c674 	.word	0x0801c674
+ 800b754:	0801c690 	.word	0x0801c690
 
 0800b758 <HAL_SPI_RxCpltCallback>:
 
@@ -6893,7 +6893,7 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
  800b7dc:	2000056a 	.word	0x2000056a
  800b7e0:	2000056c 	.word	0x2000056c
  800b7e4:	200004e8 	.word	0x200004e8
- 800b7e8:	0801c6a4 	.word	0x0801c6a4
+ 800b7e8:	0801c6a8 	.word	0x0801c6a8
  800b7ec:	20001380 	.word	0x20001380
 
 0800b7f0 <setup_freeRTOS>:
@@ -6961,10 +6961,10 @@ void setup_freeRTOS(void)
  800b84c:	bf00      	nop
  800b84e:	e7fd      	b.n	800b84c <setup_freeRTOS+0x5c>
 
-	status = xTaskCreate(RFM_Task, "RFM69Handler", 256, NULL, 6, NULL);
+	status = xTaskCreate(RFM_Task, "RFM69Handler", 256, NULL, 7, NULL);
  800b850:	2300      	movs	r3, #0
  800b852:	9301      	str	r3, [sp, #4]
- 800b854:	2306      	movs	r3, #6
+ 800b854:	2307      	movs	r3, #7
  800b856:	9300      	str	r3, [sp, #0]
  800b858:	2300      	movs	r3, #0
  800b85a:	f44f 7280 	mov.w	r2, #256	@ 0x100
@@ -7022,10 +7022,10 @@ void setup_freeRTOS(void)
 	//status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
 	//configASSERT(status == pdPASS);
 
-	status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 7, NULL);
+	status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 6, NULL);
  800b8c8:	2300      	movs	r3, #0
  800b8ca:	9301      	str	r3, [sp, #4]
- 800b8cc:	2307      	movs	r3, #7
+ 800b8cc:	2306      	movs	r3, #6
  800b8ce:	9300      	str	r3, [sp, #0]
  800b8d0:	2300      	movs	r3, #0
  800b8d2:	f44f 6280 	mov.w	r2, #1024	@ 0x400
@@ -7064,14 +7064,14 @@ void setup_freeRTOS(void)
  800b91c:	20001430 	.word	0x20001430
  800b920:	200004e4 	.word	0x200004e4
  800b924:	20001508 	.word	0x20001508
- 800b928:	0801c6e0 	.word	0x0801c6e0
+ 800b928:	0801c6e4 	.word	0x0801c6e4
  800b92c:	0800b3dd 	.word	0x0800b3dd
  800b930:	20000574 	.word	0x20000574
- 800b934:	0801c6ec 	.word	0x0801c6ec
+ 800b934:	0801c6f0 	.word	0x0801c6f0
  800b938:	0800b051 	.word	0x0800b051
- 800b93c:	0801c6fc 	.word	0x0801c6fc
+ 800b93c:	0801c700 	.word	0x0801c700
  800b940:	0800ab59 	.word	0x0800ab59
- 800b944:	0801c708 	.word	0x0801c708
+ 800b944:	0801c70c 	.word	0x0801c70c
  800b948:	08008fe1 	.word	0x08008fe1
 
 0800b94c <user_app_init>:
@@ -7185,7 +7185,7 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
  800ba12:	bf00      	nop
  800ba14:	e7fd      	b.n	800ba12 <vApplicationStackOverflowHook+0x12>
  800ba16:	bf00      	nop
- 800ba18:	0801c718 	.word	0x0801c718
+ 800ba18:	0801c71c 	.word	0x0801c71c
 
 0800ba1c <safe_printf>:
     safe_printf("%s\n", taskList);
@@ -8873,9 +8873,9 @@ void ST7735_Init(uint8_t rotation)
  800c5e2:	3708      	adds	r7, #8
  800c5e4:	46bd      	mov	sp, r7
  800c5e6:	bd80      	pop	{r7, pc}
- 800c5e8:	0801cad8 	.word	0x0801cad8
- 800c5ec:	0801cb10 	.word	0x0801cb10
- 800c5f0:	0801cb20 	.word	0x0801cb20
+ 800c5e8:	0801cadc 	.word	0x0801cadc
+ 800c5ec:	0801cb14 	.word	0x0801cb14
+ 800c5f0:	0801cb24 	.word	0x0801cb24
  800c5f4:	2000074d 	.word	0x2000074d
  800c5f8:	2000074e 	.word	0x2000074e
 
@@ -9567,8 +9567,8 @@ void displayOnwardsLogoOptimized(void) {
  800ca84:	bd80      	pop	{r7, pc}
  800ca86:	bf00      	nop
  800ca88:	20000070 	.word	0x20000070
- 800ca8c:	0801c778 	.word	0x0801c778
- 800ca90:	0801c77c 	.word	0x0801c77c
+ 800ca8c:	0801c77c 	.word	0x0801c77c
+ 800ca90:	0801c780 	.word	0x0801c780
 
 0800ca94 <showStartupLogoAndMenu>:
     HAL_Delay(3000);
@@ -10272,13 +10272,13 @@ void Sim800_RxCallBack(void)
  800cea4:	2000075c 	.word	0x2000075c
  800cea8:	200004e5 	.word	0x200004e5
  800ceac:	20000580 	.word	0x20000580
- 800ceb0:	0801c974 	.word	0x0801c974
+ 800ceb0:	0801c978 	.word	0x0801c978
  800ceb4:	20000d14 	.word	0x20000d14
- 800ceb8:	0801c978 	.word	0x0801c978
- 800cebc:	0801c988 	.word	0x0801c988
- 800cec0:	0801c994 	.word	0x0801c994
- 800cec4:	0801c9a0 	.word	0x0801c9a0
- 800cec8:	0801c9a8 	.word	0x0801c9a8
+ 800ceb8:	0801c97c 	.word	0x0801c97c
+ 800cebc:	0801c98c 	.word	0x0801c98c
+ 800cec0:	0801c998 	.word	0x0801c998
+ 800cec4:	0801c9a4 	.word	0x0801c9a4
+ 800cec8:	0801c9ac 	.word	0x0801c9ac
  800cecc:	20000d12 	.word	0x20000d12
  800ced0:	200012c8 	.word	0x200012c8
  800ced4:	20001430 	.word	0x20001430
@@ -10736,7 +10736,7 @@ bool RF69_init()
  800d1c0:	40020400 	.word	0x40020400
  800d1c4:	200012ca 	.word	0x200012ca
  800d1c8:	200012cb 	.word	0x200012cb
- 800d1cc:	0801c9bc 	.word	0x0801c9bc
+ 800d1cc:	0801c9c0 	.word	0x0801c9c0
  800d1d0:	43d90000 	.word	0x43d90000
 
 0800d1d4 <readFifo>:
@@ -11035,7 +11035,7 @@ void setOpMode(uint8_t mode)
  800d3da:	3710      	adds	r7, #16
  800d3dc:	46bd      	mov	sp, r7
  800d3de:	bd80      	pop	{r7, pc}
- 800d3e0:	0801c9cc 	.word	0x0801c9cc
+ 800d3e0:	0801c9d0 	.word	0x0801c9d0
 
 0800d3e4 <setModeIdle>:
 
@@ -11383,7 +11383,7 @@ bool setModemConfig(ModemConfigChoice index)
  800d5f6:	46bd      	mov	sp, r7
  800d5f8:	bd80      	pop	{r7, pc}
  800d5fa:	bf00      	nop
- 800d5fc:	0801e604 	.word	0x0801e604
+ 800d5fc:	0801e608 	.word	0x0801e608
 
 0800d600 <setPreambleLength>:
 
@@ -11492,7 +11492,7 @@ void setSyncWords(const uint8_t* syncWords, uint8_t len)
  800d6aa:	46bd      	mov	sp, r7
  800d6ac:	bd80      	pop	{r7, pc}
  800d6ae:	bf00      	nop
- 800d6b0:	0801c9e4 	.word	0x0801c9e4
+ 800d6b0:	0801c9e8 	.word	0x0801c9e8
 
 0800d6b4 <setEncryptionKey>:
 
@@ -11801,7 +11801,7 @@ static int case_insensitive_strcmp(const unsigned char *string1, const unsigned 
  800d89c:	46bd      	mov	sp, r7
  800d89e:	f85d 7b04 	ldr.w	r7, [sp], #4
  800d8a2:	4770      	bx	lr
- 800d8a4:	0801e938 	.word	0x0801e938
+ 800d8a4:	0801e940 	.word	0x0801e940
 
 0800d8a8 <cJSON_strdup>:
 #define static_strlen(string_literal) (sizeof(string_literal) - sizeof(""))
@@ -12883,11 +12883,11 @@ static cJSON_bool print_number(const cJSON * const item, printbuffer * const out
  800df3c:	bdf0      	pop	{r4, r5, r6, r7, pc}
  800df3e:	bf00      	nop
  800df40:	7fefffff 	.word	0x7fefffff
- 800df44:	0801ca64 	.word	0x0801ca64
- 800df48:	0801ca6c 	.word	0x0801ca6c
- 800df4c:	0801ca70 	.word	0x0801ca70
- 800df50:	0801ca78 	.word	0x0801ca78
- 800df54:	0801ca7c 	.word	0x0801ca7c
+ 800df44:	0801ca68 	.word	0x0801ca68
+ 800df48:	0801ca70 	.word	0x0801ca70
+ 800df4c:	0801ca74 	.word	0x0801ca74
+ 800df50:	0801ca7c 	.word	0x0801ca7c
+ 800df54:	0801ca80 	.word	0x0801ca80
 
 0800df58 <parse_hex4>:
 
@@ -14138,9 +14138,9 @@ static cJSON_bool print_string_ptr(const unsigned char * const input, printbuffe
  800e6ca:	46bd      	mov	sp, r7
  800e6cc:	bd80      	pop	{r7, pc}
  800e6ce:	bf00      	nop
- 800e6d0:	0801ca84 	.word	0x0801ca84
+ 800e6d0:	0801ca88 	.word	0x0801ca88
  800e6d4:	04000037 	.word	0x04000037
- 800e6d8:	0801ca88 	.word	0x0801ca88
+ 800e6d8:	0801ca8c 	.word	0x0801ca8c
 
 0800e6dc <print_string>:
 
@@ -14325,7 +14325,7 @@ static parse_buffer *skip_utf8_bom(parse_buffer * const buffer)
  800e7da:	3708      	adds	r7, #8
  800e7dc:	46bd      	mov	sp, r7
  800e7de:	bd80      	pop	{r7, pc}
- 800e7e0:	0801ca90 	.word	0x0801ca90
+ 800e7e0:	0801ca94 	.word	0x0801ca94
 
 0800e7e4 <cJSON_ParseWithOpts>:
 
@@ -14816,7 +14816,7 @@ fail:
  800ea76:	46bd      	mov	sp, r7
  800ea78:	bd80      	pop	{r7, pc}
  800ea7a:	bf00      	nop
- 800ea7c:	0801e6dc 	.word	0x0801e6dc
+ 800ea7c:	0801e6e0 	.word	0x0801e6e0
 
 0800ea80 <cJSON_PrintUnformatted>:
 {
@@ -15123,9 +15123,9 @@ static cJSON_bool parse_value(cJSON * const item, parse_buffer * const input_buf
  800ec66:	46bd      	mov	sp, r7
  800ec68:	bd80      	pop	{r7, pc}
  800ec6a:	bf00      	nop
- 800ec6c:	0801ca64 	.word	0x0801ca64
- 800ec70:	0801ca94 	.word	0x0801ca94
- 800ec74:	0801ca9c 	.word	0x0801ca9c
+ 800ec6c:	0801ca68 	.word	0x0801ca68
+ 800ec70:	0801ca98 	.word	0x0801ca98
+ 800ec74:	0801caa0 	.word	0x0801caa0
 
 0800ec78 <print_value>:
 
@@ -15377,9 +15377,9 @@ static cJSON_bool print_value(const cJSON * const item, printbuffer * const outp
  800ee2e:	46bd      	mov	sp, r7
  800ee30:	bd80      	pop	{r7, pc}
  800ee32:	bf00      	nop
- 800ee34:	0801ca64 	.word	0x0801ca64
- 800ee38:	0801ca94 	.word	0x0801ca94
- 800ee3c:	0801ca9c 	.word	0x0801ca9c
+ 800ee34:	0801ca68 	.word	0x0801ca68
+ 800ee38:	0801ca98 	.word	0x0801ca98
+ 800ee3c:	0801caa0 	.word	0x0801caa0
 
 0800ee40 <parse_array>:
 
@@ -19945,7 +19945,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8010710:	20000260 	.word	0x20000260
   ldr r2, =_sidata
- 8010714:	0801eb48 	.word	0x0801eb48
+ 8010714:	0801eb50 	.word	0x0801eb50
   ldr r2, =_sbss
  8010718:	20000260 	.word	0x20000260
   ldr r4, =_ebss
@@ -22112,7 +22112,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(const RCC_ClkInitTypeDef  *RCC_ClkInitStru
  80113aa:	bf00      	nop
  80113ac:	40023c00 	.word	0x40023c00
  80113b0:	40023800 	.word	0x40023800
- 80113b4:	0801e6e0 	.word	0x0801e6e0
+ 80113b4:	0801e6e4 	.word	0x0801e6e4
  80113b8:	20000088 	.word	0x20000088
  80113bc:	2000008c 	.word	0x2000008c
 
@@ -22160,7 +22160,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  80113f4:	4618      	mov	r0, r3
  80113f6:	bd80      	pop	{r7, pc}
  80113f8:	40023800 	.word	0x40023800
- 80113fc:	0801e6f0 	.word	0x0801e6f0
+ 80113fc:	0801e6f4 	.word	0x0801e6f4
 
 08011400 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -22186,7 +22186,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  801141c:	4618      	mov	r0, r3
  801141e:	bd80      	pop	{r7, pc}
  8011420:	40023800 	.word	0x40023800
- 8011424:	0801e6f0 	.word	0x0801e6f0
+ 8011424:	0801e6f4 	.word	0x0801e6f4
 
 08011428 <HAL_RCC_GetClockConfig>:
   * will be configured.
@@ -34286,12 +34286,12 @@ void vTaskStartScheduler( void )
  8015910:	46bd      	mov	sp, r7
  8015912:	bd80      	pop	{r7, pc}
  8015914:	200016d8 	.word	0x200016d8
- 8015918:	0801caa4 	.word	0x0801caa4
+ 8015918:	0801caa8 	.word	0x0801caa8
  801591c:	08015fa1 	.word	0x08015fa1
  8015920:	200016d4 	.word	0x200016d4
  8015924:	200016c0 	.word	0x200016c0
  8015928:	200016b8 	.word	0x200016b8
- 801592c:	0801e6f8 	.word	0x0801e6f8
+ 801592c:	0801e6fc 	.word	0x0801e6fc
 
 08015930 <vTaskSuspendAll>:
     vPortEndScheduler();
@@ -36618,7 +36618,7 @@ static void prvAddCurrentTaskToDelayedList( TickType_t xTicksToWait,
  801658e:	bf00      	nop
  8016590:	20001710 	.word	0x20001710
  8016594:	20001714 	.word	0x20001714
- 8016598:	0801cabc 	.word	0x0801cabc
+ 8016598:	0801cac0 	.word	0x0801cac0
  801659c:	080166d9 	.word	0x080166d9
 
 080165a0 <xTimerGenericCommand>:
@@ -37683,7 +37683,7 @@ static void prvAddCurrentTaskToDelayedList( TickType_t xTicksToWait,
  8016b64:	200016f4 	.word	0x200016f4
  8016b68:	20001708 	.word	0x20001708
  8016b6c:	2000170c 	.word	0x2000170c
- 8016b70:	0801cac4 	.word	0x0801cac4
+ 8016b70:	0801cac8 	.word	0x0801cac8
 
 08016b74 <pxPortInitialiseStack>:
  * See header file for description.
@@ -39762,8 +39762,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  80178e0:	e782      	b.n	80177e8 <_strtod_l+0x190>
  80178e2:	f04f 0c01 	mov.w	ip, #1
  80178e6:	e7f8      	b.n	80178da <_strtod_l+0x282>
- 80178e8:	0801e8fc 	.word	0x0801e8fc
- 80178ec:	0801e6fc 	.word	0x0801e6fc
+ 80178e8:	0801e900 	.word	0x0801e900
+ 80178ec:	0801e700 	.word	0x0801e700
  80178f0:	7ff00000 	.word	0x7ff00000
  80178f4:	9a19      	ldr	r2, [sp, #100]	@ 0x64
  80178f6:	1c51      	adds	r1, r2, #1
@@ -40053,13 +40053,13 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8017bcc:	f04f 0b00 	mov.w	fp, #0
  8017bd0:	6013      	str	r3, [r2, #0]
  8017bd2:	e76b      	b.n	8017aac <_strtod_l+0x454>
- 8017bd4:	0801e70b 	.word	0x0801e70b
- 8017bd8:	0801e8e8 	.word	0x0801e8e8
- 8017bdc:	0801e703 	.word	0x0801e703
- 8017be0:	0801e73b 	.word	0x0801e73b
- 8017be4:	0801e8e5 	.word	0x0801e8e5
- 8017be8:	0801ea70 	.word	0x0801ea70
- 8017bec:	0801ea48 	.word	0x0801ea48
+ 8017bd4:	0801e70f 	.word	0x0801e70f
+ 8017bd8:	0801e8ec 	.word	0x0801e8ec
+ 8017bdc:	0801e707 	.word	0x0801e707
+ 8017be0:	0801e73f 	.word	0x0801e73f
+ 8017be4:	0801e8e9 	.word	0x0801e8e9
+ 8017be8:	0801ea78 	.word	0x0801ea78
+ 8017bec:	0801ea50 	.word	0x0801ea50
  8017bf0:	7ff00000 	.word	0x7ff00000
  8017bf4:	7ca00000 	.word	0x7ca00000
  8017bf8:	7fefffff 	.word	0x7fefffff
@@ -40345,7 +40345,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8017ea6:	2322      	movs	r3, #34	@ 0x22
  8017ea8:	6013      	str	r3, [r2, #0]
  8017eaa:	e603      	b.n	8017ab4 <_strtod_l+0x45c>
- 8017eac:	0801e910 	.word	0x0801e910
+ 8017eac:	0801e918 	.word	0x0801e918
  8017eb0:	fffffc02 	.word	0xfffffc02
  8017eb4:	39500000 	.word	0x39500000
  8017eb8:	7ff00000 	.word	0x7ff00000
@@ -41097,11 +41097,11 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801863c:	e7ee      	b.n	801861c <_printf_float+0x2a4>
  801863e:	bf00      	nop
  8018640:	7fefffff 	.word	0x7fefffff
- 8018644:	0801e702 	.word	0x0801e702
- 8018648:	0801e6fe 	.word	0x0801e6fe
- 801864c:	0801e70a 	.word	0x0801e70a
- 8018650:	0801e706 	.word	0x0801e706
- 8018654:	0801e8a5 	.word	0x0801e8a5
+ 8018644:	0801e706 	.word	0x0801e706
+ 8018648:	0801e702 	.word	0x0801e702
+ 801864c:	0801e70e 	.word	0x0801e70e
+ 8018650:	0801e70a 	.word	0x0801e70a
+ 8018654:	0801e8a9 	.word	0x0801e8a9
  8018658:	6da3      	ldr	r3, [r4, #88]	@ 0x58
  801865a:	f8dd a028 	ldr.w	sl, [sp, #40]	@ 0x28
  801865e:	4553      	cmp	r3, sl
@@ -41579,8 +41579,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8018ad4:	2500      	movs	r5, #0
  8018ad6:	f104 0619 	add.w	r6, r4, #25
  8018ada:	e7f5      	b.n	8018ac8 <_printf_i+0x220>
- 8018adc:	0801e70e 	.word	0x0801e70e
- 8018ae0:	0801e71f 	.word	0x0801e71f
+ 8018adc:	0801e712 	.word	0x0801e712
+ 8018ae0:	0801e723 	.word	0x0801e723
 
 08018ae4 <std>:
  8018ae4:	2300      	movs	r3, #0
@@ -42298,10 +42298,10 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8019116:	4798      	blx	r3
  8019118:	3601      	adds	r6, #1
  801911a:	e7f2      	b.n	8019102 <__libc_init_array+0x1e>
- 801911c:	0801eb40 	.word	0x0801eb40
- 8019120:	0801eb40 	.word	0x0801eb40
- 8019124:	0801eb40 	.word	0x0801eb40
- 8019128:	0801eb44 	.word	0x0801eb44
+ 801911c:	0801eb48 	.word	0x0801eb48
+ 8019120:	0801eb48 	.word	0x0801eb48
+ 8019124:	0801eb48 	.word	0x0801eb48
+ 8019128:	0801eb4c 	.word	0x0801eb4c
 
 0801912c <__retarget_lock_init_recursive>:
  801912c:	4770      	bx	lr
@@ -42716,15 +42716,15 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8019534:	3fc68a28 	.word	0x3fc68a28
  8019538:	509f79fb 	.word	0x509f79fb
  801953c:	3fd34413 	.word	0x3fd34413
- 8019540:	0801e745 	.word	0x0801e745
- 8019544:	0801e75c 	.word	0x0801e75c
+ 8019540:	0801e749 	.word	0x0801e749
+ 8019544:	0801e760 	.word	0x0801e760
  8019548:	7ff00000 	.word	0x7ff00000
- 801954c:	0801e8a6 	.word	0x0801e8a6
+ 801954c:	0801e8aa 	.word	0x0801e8aa
  8019550:	3ff80000 	.word	0x3ff80000
- 8019554:	0801ea70 	.word	0x0801ea70
- 8019558:	0801e7b4 	.word	0x0801e7b4
- 801955c:	0801e741 	.word	0x0801e741
- 8019560:	0801e8a5 	.word	0x0801e8a5
+ 8019554:	0801ea78 	.word	0x0801ea78
+ 8019558:	0801e7b8 	.word	0x0801e7b8
+ 801955c:	0801e745 	.word	0x0801e745
+ 8019560:	0801e8a9 	.word	0x0801e8a9
  8019564:	f8d9 301c 	ldr.w	r3, [r9, #28]
  8019568:	6018      	str	r0, [r3, #0]
  801956a:	9b03      	ldr	r3, [sp, #12]
@@ -42953,8 +42953,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  80197e8:	e9cd 0104 	strd	r0, r1, [sp, #16]
  80197ec:	e7c4      	b.n	8019778 <_dtoa_r+0x508>
  80197ee:	bf00      	nop
- 80197f0:	0801ea70 	.word	0x0801ea70
- 80197f4:	0801ea48 	.word	0x0801ea48
+ 80197f0:	0801ea78 	.word	0x0801ea78
+ 80197f4:	0801ea50 	.word	0x0801ea50
  80197f8:	3ff00000 	.word	0x3ff00000
  80197fc:	40240000 	.word	0x40240000
  8019800:	401c0000 	.word	0x401c0000
@@ -43583,8 +43583,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8019e00:	f000 fbfe 	bl	801a600 <__multadd>
  8019e04:	9002      	str	r0, [sp, #8]
  8019e06:	e7eb      	b.n	8019de0 <_dtoa_r+0xb70>
- 8019e08:	0801e7b4 	.word	0x0801e7b4
- 8019e0c:	0801e738 	.word	0x0801e738
+ 8019e08:	0801e7b8 	.word	0x0801e7b8
+ 8019e0c:	0801e73c 	.word	0x0801e73c
 
 08019e10 <_free_r>:
  8019e10:	b538      	push	{r3, r4, r5, lr}
@@ -44024,9 +44024,9 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a21e:	2b00      	cmp	r3, #0
  801a220:	d1dd      	bne.n	801a1de <__gethex+0x26a>
  801a222:	e7ee      	b.n	801a202 <__gethex+0x28e>
- 801a224:	0801e6fc 	.word	0x0801e6fc
- 801a228:	0801e7b4 	.word	0x0801e7b4
- 801a22c:	0801e7c5 	.word	0x0801e7c5
+ 801a224:	0801e700 	.word	0x0801e700
+ 801a228:	0801e7b8 	.word	0x0801e7b8
+ 801a22c:	0801e7c9 	.word	0x0801e7c9
  801a230:	1e6f      	subs	r7, r5, #1
  801a232:	f1b9 0f00 	cmp.w	r9, #0
  801a236:	d130      	bne.n	801a29a <__gethex+0x326>
@@ -44161,7 +44161,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a38a:	42b0      	cmp	r0, r6
  801a38c:	dbe7      	blt.n	801a35e <__gethex+0x3ea>
  801a38e:	e7f0      	b.n	801a372 <__gethex+0x3fe>
- 801a390:	0801e7b4 	.word	0x0801e7b4
+ 801a390:	0801e7b8 	.word	0x0801e7b8
 
 0801a394 <L_shift>:
  801a394:	f1c2 0208 	rsb	r2, r2, #8
@@ -44400,8 +44400,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a5ac:	e9c0 3303 	strd	r3, r3, [r0, #12]
  801a5b0:	e7f7      	b.n	801a5a2 <_Balloc+0x66>
  801a5b2:	bf00      	nop
- 801a5b4:	0801e745 	.word	0x0801e745
- 801a5b8:	0801e825 	.word	0x0801e825
+ 801a5b4:	0801e749 	.word	0x0801e749
+ 801a5b8:	0801e829 	.word	0x0801e829
 
 0801a5bc <_Bfree>:
  801a5bc:	b570      	push	{r4, r5, r6, lr}
@@ -44429,8 +44429,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a5f0:	6021      	str	r1, [r4, #0]
  801a5f2:	f843 4022 	str.w	r4, [r3, r2, lsl #2]
  801a5f6:	bd70      	pop	{r4, r5, r6, pc}
- 801a5f8:	0801e745 	.word	0x0801e745
- 801a5fc:	0801e825 	.word	0x0801e825
+ 801a5f8:	0801e749 	.word	0x0801e749
+ 801a5fc:	0801e829 	.word	0x0801e829
 
 0801a600 <__multadd>:
  801a600:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
@@ -44484,8 +44484,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a67c:	6125      	str	r5, [r4, #16]
  801a67e:	4620      	mov	r0, r4
  801a680:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
- 801a684:	0801e7b4 	.word	0x0801e7b4
- 801a688:	0801e825 	.word	0x0801e825
+ 801a684:	0801e7b8 	.word	0x0801e7b8
+ 801a688:	0801e829 	.word	0x0801e829
 
 0801a68c <__s2b>:
  801a68c:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -44546,8 +44546,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a710:	f7ff ff76 	bl	801a600 <__multadd>
  801a714:	e7ee      	b.n	801a6f4 <__s2b+0x68>
  801a716:	bf00      	nop
- 801a718:	0801e7b4 	.word	0x0801e7b4
- 801a71c:	0801e825 	.word	0x0801e825
+ 801a718:	0801e7b8 	.word	0x0801e7b8
+ 801a71c:	0801e829 	.word	0x0801e829
 
 0801a720 <__hi0bits>:
  801a720:	f5b0 3f80 	cmp.w	r0, #65536	@ 0x10000
@@ -44637,8 +44637,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a7d6:	6103      	str	r3, [r0, #16]
  801a7d8:	bd10      	pop	{r4, pc}
  801a7da:	bf00      	nop
- 801a7dc:	0801e7b4 	.word	0x0801e7b4
- 801a7e0:	0801e825 	.word	0x0801e825
+ 801a7dc:	0801e7b8 	.word	0x0801e7b8
+ 801a7e0:	0801e829 	.word	0x0801e829
 
 0801a7e4 <__multiply>:
  801a7e4:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -44757,8 +44757,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a91a:	e79f      	b.n	801a85c <__multiply+0x78>
  801a91c:	3e01      	subs	r6, #1
  801a91e:	e7a1      	b.n	801a864 <__multiply+0x80>
- 801a920:	0801e7b4 	.word	0x0801e7b4
- 801a924:	0801e825 	.word	0x0801e825
+ 801a920:	0801e7b8 	.word	0x0801e7b8
+ 801a924:	0801e829 	.word	0x0801e829
 
 0801a928 <__pow5mult>:
  801a928:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -44826,9 +44826,9 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801a9c8:	4630      	mov	r0, r6
  801a9ca:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
  801a9ce:	bf00      	nop
- 801a9d0:	0801ea3c 	.word	0x0801ea3c
- 801a9d4:	0801e745 	.word	0x0801e745
- 801a9d8:	0801e825 	.word	0x0801e825
+ 801a9d0:	0801ea44 	.word	0x0801ea44
+ 801a9d4:	0801e749 	.word	0x0801e749
+ 801a9d8:	0801e829 	.word	0x0801e829
 
 0801a9dc <__lshift>:
  801a9dc:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -44907,8 +44907,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801aaa6:	d8f9      	bhi.n	801aa9c <__lshift+0xc0>
  801aaa8:	e7ea      	b.n	801aa80 <__lshift+0xa4>
  801aaaa:	bf00      	nop
- 801aaac:	0801e7b4 	.word	0x0801e7b4
- 801aab0:	0801e825 	.word	0x0801e825
+ 801aaac:	0801e7b8 	.word	0x0801e7b8
+ 801aab0:	0801e829 	.word	0x0801e829
 
 0801aab4 <__mcmp>:
  801aab4:	690a      	ldr	r2, [r1, #16]
@@ -45044,8 +45044,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801ac06:	3f01      	subs	r7, #1
  801ac08:	e7e7      	b.n	801abda <__mdiff+0xee>
  801ac0a:	bf00      	nop
- 801ac0c:	0801e7b4 	.word	0x0801e7b4
- 801ac10:	0801e825 	.word	0x0801e825
+ 801ac0c:	0801e7b8 	.word	0x0801e7b8
+ 801ac10:	0801e829 	.word	0x0801e829
 
 0801ac14 <__ulp>:
  801ac14:	b082      	sub	sp, #8
@@ -45195,8 +45195,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801ad92:	f7ff fcc5 	bl	801a720 <__hi0bits>
  801ad96:	ebc0 1042 	rsb	r0, r0, r2, lsl #5
  801ad9a:	e7e5      	b.n	801ad68 <__d2b+0x74>
- 801ad9c:	0801e7b4 	.word	0x0801e7b4
- 801ada0:	0801e825 	.word	0x0801e825
+ 801ad9c:	0801e7b8 	.word	0x0801e7b8
+ 801ada0:	0801e829 	.word	0x0801e829
 
 0801ada4 <__ratio>:
  801ada4:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -45591,11 +45591,11 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801b14c:	4638      	mov	r0, r7
  801b14e:	f7fd fbab 	bl	80188a8 <_printf_i>
  801b152:	e7ed      	b.n	801b130 <_svfiprintf_r+0x1c0>
- 801b154:	0801e87e 	.word	0x0801e87e
- 801b158:	0801e888 	.word	0x0801e888
+ 801b154:	0801e882 	.word	0x0801e882
+ 801b158:	0801e88c 	.word	0x0801e88c
  801b15c:	08018379 	.word	0x08018379
  801b160:	0801aebb 	.word	0x0801aebb
- 801b164:	0801e884 	.word	0x0801e884
+ 801b164:	0801e888 	.word	0x0801e888
 
 0801b168 <_sungetc_r>:
  801b168:	b538      	push	{r3, r4, r5, lr}
@@ -45957,8 +45957,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801b4c6:	bf00      	nop
  801b4c8:	0801b169 	.word	0x0801b169
  801b4cc:	0801b1e3 	.word	0x0801b1e3
- 801b4d0:	0801e939 	.word	0x0801e939
- 801b4d4:	0801e884 	.word	0x0801e884
+ 801b4d0:	0801e941 	.word	0x0801e941
+ 801b4d4:	0801e888 	.word	0x0801e888
  801b4d8:	4b0a      	ldr	r3, [pc, #40]	@ (801b504 <__ssvfiscanf_r+0x2e8>)
  801b4da:	2b00      	cmp	r3, #0
  801b4dc:	f43f aec6 	beq.w	801b26c <__ssvfiscanf_r+0x50>
@@ -46059,7 +46059,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801b5b0:	2000      	movs	r0, #0
  801b5b2:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
  801b5b6:	bf00      	nop
- 801b5b8:	0801e939 	.word	0x0801e939
+ 801b5b8:	0801e941 	.word	0x0801e941
 
 0801b5bc <_scanf_i>:
  801b5bc:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -46253,10 +46253,10 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801b78e:	2001      	movs	r0, #1
  801b790:	e7f2      	b.n	801b778 <_scanf_i+0x1bc>
  801b792:	bf00      	nop
- 801b794:	0801cacc 	.word	0x0801cacc
+ 801b794:	0801cad0 	.word	0x0801cad0
  801b798:	0801bc79 	.word	0x0801bc79
  801b79c:	0801bd59 	.word	0x0801bd59
- 801b7a0:	0801e89f 	.word	0x0801e89f
+ 801b7a0:	0801e8a3 	.word	0x0801e8a3
 
 0801b7a4 <__sflush_r>:
  801b7a4:	f9b1 200c 	ldrsh.w	r2, [r1, #12]
@@ -46672,9 +46672,9 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801bb48:	e7f3      	b.n	801bb32 <__assert_func+0x12>
  801bb4a:	bf00      	nop
  801bb4c:	20000210 	.word	0x20000210
- 801bb50:	0801e8aa 	.word	0x0801e8aa
- 801bb54:	0801e8b7 	.word	0x0801e8b7
- 801bb58:	0801e8e5 	.word	0x0801e8e5
+ 801bb50:	0801e8ae 	.word	0x0801e8ae
+ 801bb54:	0801e8bb 	.word	0x0801e8bb
+ 801bb58:	0801e8e9 	.word	0x0801e8e9
 
 0801bb5c <_calloc_r>:
  801bb5c:	b570      	push	{r4, r5, r6, lr}
@@ -46795,7 +46795,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801bc6c:	d1f6      	bne.n	801bc5c <_strtol_l.isra.0+0xd8>
  801bc6e:	f8c8 1000 	str.w	r1, [r8]
  801bc72:	e794      	b.n	801bb9e <_strtol_l.isra.0+0x1a>
- 801bc74:	0801e939 	.word	0x0801e939
+ 801bc74:	0801e941 	.word	0x0801e941
 
 0801bc78 <_strtol_r>:
  801bc78:	f7ff bf84 	b.w	801bb84 <_strtol_l.isra.0>
@@ -46888,7 +46888,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801bd4e:	1e69      	subs	r1, r5, #1
  801bd50:	6011      	str	r1, [r2, #0]
  801bd52:	e7f5      	b.n	801bd40 <_strtoul_l.isra.0+0xc4>
- 801bd54:	0801e939 	.word	0x0801e939
+ 801bd54:	0801e941 	.word	0x0801e941
 
 0801bd58 <_strtoul_r>:
  801bd58:	f7ff bf90 	b.w	801bc7c <_strtoul_l.isra.0>
@@ -47179,11 +47179,11 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  801bff4:	4630      	mov	r0, r6
  801bff6:	f7fc fc57 	bl	80188a8 <_printf_i>
  801bffa:	e7e4      	b.n	801bfc6 <_vfiprintf_r+0x1e6>
- 801bffc:	0801e87e 	.word	0x0801e87e
- 801c000:	0801e888 	.word	0x0801e888
+ 801bffc:	0801e882 	.word	0x0801e882
+ 801c000:	0801e88c 	.word	0x0801e88c
  801c004:	08018379 	.word	0x08018379
  801c008:	0801bdbd 	.word	0x0801bdbd
- 801c00c:	0801e884 	.word	0x0801e884
+ 801c00c:	0801e888 	.word	0x0801e888
 
 0801c010 <_raise_r>:
  801c010:	291f      	cmp	r1, #31

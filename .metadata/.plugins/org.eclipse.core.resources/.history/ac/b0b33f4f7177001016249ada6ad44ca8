@@ -166,7 +166,7 @@ bool RF69_RxData(void)
 			else if (strstr((char *)buf, "Control_DISP")){
 				HAL_GPIO_TogglePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
 				GPIO_PinState state = HAL_GPIO_ReadPin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
-				safe_printf("RFM: Display Backlit is %s \n",(state == GPIO_PIN_SET) ? "ON" : "OFF");
+				safe_printf("RFM: Display Backlit is %s ",(state == GPIO_PIN_SET) ? "ON" : "OFF");
 			}
 		}
 		else
