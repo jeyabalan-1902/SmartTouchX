@@ -36,6 +36,12 @@ typedef enum {
 	MENU_AUDIO_ACTION
 } menu_state_t;
 
+typedef enum {
+    BTN_EVENT_UP,
+    BTN_EVENT_DOWN,
+    BTN_EVENT_ENTER
+} ButtonEvent_t;
+
 // Menu configuration
 #define MAIN_MENU_OPTIONS        3
 #define TOTAL_CONTROL_OPTIONS    3

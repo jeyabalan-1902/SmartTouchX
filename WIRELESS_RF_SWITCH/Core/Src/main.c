@@ -34,7 +34,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define DEBOUNCE_DELAY_MS 50
+#define LONG_PRESS_TIME_MS 1000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,9 +49,17 @@ SPI_HandleTypeDef hspi1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-bool up_bt_interrupt = false;
-bool enter_bt_interrupt = false;
-bool down_bt_interrupt = false;
+volatile uint32_t last_up_press    = 0;
+volatile uint32_t last_enter_press = 0;
+volatile uint32_t last_down_press  = 0;
+
+volatile uint32_t enter_press_start = 0;
+volatile bool enter_short_press = false;
+volatile bool enter_long_press  = false;
+
+volatile bool up_bt_interrupt    = false;
+volatile bool down_bt_interrupt  = false;
+volatile bool enter_bt_interrupt = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -75,22 +84,55 @@ UART_printf
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	if(GPIO_Pin == UP_BUTTON_Pin)
-	{
-		printf("int up\n");
-		up_bt_interrupt = true;
-	}
-	else if(GPIO_Pin == ENTER_BUTTON_Pin)
-	{
-		printf("int enter\n");
-		enter_bt_interrupt = true;
-	}
-	else if(GPIO_Pin == DOWN_BUTTON_Pin)
-	{
-		printf("int down\n");
-		down_bt_interrupt = true;
-	}
+    uint32_t now = HAL_GetTick();
+
+    if (GPIO_Pin == UP_BUTTON_Pin)
+    {
+        if ((now - last_up_press) > DEBOUNCE_DELAY_MS)
+        {
+            up_bt_interrupt = true;
+            last_up_press = now;
+        }
+    }
+    else if (GPIO_Pin == ENTER_BUTTON_Pin)
+        {
+            if ((now - last_enter_press) < DEBOUNCE_DELAY_MS)
+            {
+                return;
+            }
+            last_enter_press = now;
+
+            GPIO_PinState state = HAL_GPIO_ReadPin(ENTER_BUTTON_GPIO_Port, ENTER_BUTTON_Pin);
+
+            if (state == GPIO_PIN_SET)
+            {
+                enter_press_start = now;
+            }
+            else
+            {
+                uint32_t press_duration = now - enter_press_start;
+
+                if (press_duration >= LONG_PRESS_TIME_MS)
+                {
+                    enter_long_press = true;
+                }
+                else if (press_duration > DEBOUNCE_DELAY_MS)
+                {
+                    enter_short_press = true;
+                }
+                enter_bt_interrupt = true;
+            }
+        }
+    else if (GPIO_Pin == DOWN_BUTTON_Pin)
+    {
+        if ((now - last_down_press) > DEBOUNCE_DELAY_MS)
+        {
+            down_bt_interrupt = true;
+            last_down_press = now;
+        }
+    }
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -285,11 +327,17 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : ENTER_BUTTON_Pin UP_BUTTON_Pin */
-  GPIO_InitStruct.Pin = ENTER_BUTTON_Pin|UP_BUTTON_Pin;
+  /*Configure GPIO pin : ENTER_BUTTON_Pin */
+  GPIO_InitStruct.Pin = ENTER_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(ENTER_BUTTON_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : UP_BUTTON_Pin */
+  GPIO_InitStruct.Pin = UP_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(UP_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : DOWN_BUTTON_Pin */
   GPIO_InitStruct.Pin = DOWN_BUTTON_Pin;

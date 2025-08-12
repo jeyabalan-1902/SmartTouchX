@@ -455,7 +455,7 @@ Discarded input sections
                 0x00000000       0x28 examples/src/spi_basic_example.o
  .debug_ranges  0x00000000       0x18 examples/src/spi_basic_example.o
  .debug_line    0x00000000      0x11d examples/src/spi_basic_example.o
- .debug_str     0x00000000      0x24c examples/src/spi_basic_example.o
+ .debug_str     0x00000000      0x21a examples/src/spi_basic_example.o
  .comment       0x00000000       0x31 examples/src/spi_basic_example.o
  .debug_frame   0x00000000       0x34 examples/src/spi_basic_example.o
  .text          0x00000000        0x0 examples/src/touch_example.o
@@ -473,7 +473,7 @@ Discarded input sections
                 0x00000000       0x28 examples/src/touch_example.o
  .debug_ranges  0x00000000       0x18 examples/src/touch_example.o
  .debug_line    0x00000000      0x11b examples/src/touch_example.o
- .debug_str     0x00000000      0x223 examples/src/touch_example.o
+ .debug_str     0x00000000      0x1f1 examples/src/touch_example.o
  .comment       0x00000000       0x31 examples/src/touch_example.o
  .debug_frame   0x00000000       0x34 examples/src/touch_example.o
  .text          0x00000000        0x0 examples/src/usart_basic_example.o
@@ -491,7 +491,7 @@ Discarded input sections
                 0x00000000       0x20 examples/src/usart_basic_example.o
  .debug_ranges  0x00000000       0x10 examples/src/usart_basic_example.o
  .debug_line    0x00000000      0x13e examples/src/usart_basic_example.o
- .debug_str     0x00000000      0x204 examples/src/usart_basic_example.o
+ .debug_str     0x00000000      0x1d2 examples/src/usart_basic_example.o
  .comment       0x00000000       0x31 examples/src/usart_basic_example.o
  .debug_frame   0x00000000       0x48 examples/src/usart_basic_example.o
  .text          0x00000000        0x0 main.o
@@ -1792,31 +1792,31 @@ END GROUP
  .debug_frame   0x00001550       0x24 src/tc8.o
  .debug_frame   0x00001574       0xc4 src/usart_basic.o
 
-.debug_str      0x00000000     0x26c2
+.debug_str      0x00000000     0x263d
  *(.debug_str)
  .debug_str     0x00000000      0x35a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.6.364/gcc/dev/atmega324pb/avr5/crtatmega324pb.o
- .debug_str     0x0000035a      0x19e atmel_start.o
-                                0x1d2 (size before relaxing)
- .debug_str     0x000004f8      0xd54 cJSON.o
+ .debug_str     0x0000035a      0x16c atmel_start.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x000004c6      0xd01 cJSON.o
                                 0xf12 (size before relaxing)
- .debug_str     0x0000124c       0x37 driver_isr.o
-                                0x1ce (size before relaxing)
- .debug_str     0x00001283      0x1e7 main.o
+ .debug_str     0x000011c7       0x37 driver_isr.o
+                                0x19c (size before relaxing)
+ .debug_str     0x000011fe      0x1e7 main.o
                                 0x447 (size before relaxing)
- .debug_str     0x0000146a      0x1a5 qtouch/datastreamer/datastreamer_UART_avr.o
-                                0x37d (size before relaxing)
- .debug_str     0x0000160f      0xb9b qtouch/touch.o
-                                0xee2 (size before relaxing)
- .debug_str     0x000021aa      0x25d src/driver_init.o
-                                0x457 (size before relaxing)
- .debug_str     0x00002407      0x224 src/spi_basic.o
+ .debug_str     0x000013e5      0x1a5 qtouch/datastreamer/datastreamer_UART_avr.o
+                                0x34b (size before relaxing)
+ .debug_str     0x0000158a      0xb9b qtouch/touch.o
+                                0xeb0 (size before relaxing)
+ .debug_str     0x00002125      0x25d src/driver_init.o
+                                0x425 (size before relaxing)
+ .debug_str     0x00002382      0x224 src/spi_basic.o
                                 0x36b (size before relaxing)
- .debug_str     0x0000262b        0xe src/tc16.o
+ .debug_str     0x000025a6        0xe src/tc16.o
                                 0x192 (size before relaxing)
- .debug_str     0x00002639        0xd src/tc8.o
+ .debug_str     0x000025b4        0xd src/tc8.o
                                 0x18f (size before relaxing)
- .debug_str     0x00002646       0x7c src/usart_basic.o
-                                0x267 (size before relaxing)
+ .debug_str     0x000025c1       0x7c src/usart_basic.o
+                                0x235 (size before relaxing)
 
 .debug_loc      0x00000000     0x80cd
  *(.debug_loc)

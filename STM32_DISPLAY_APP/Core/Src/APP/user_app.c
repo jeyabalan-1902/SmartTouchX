@@ -5,19 +5,20 @@
  *      Author: kjeyabalan
  */
 
-#include <APP/gsm_app.h>
-#include <APP/user_app.h>
-#include <display_spi_app.h>
-#include <DISPLAY/onwords_logo.h>
-#include <esp32_uart_app.h>
-#include <MQTTSim800.h>
-#include <rfm69_app.h>
-#include <touch_spi_app.h>
+#include "gsm_app.h"
+#include "user_app.h"
+#include "display_spi_app.h"
+#include "onwords_logo.h"
+#include "esp32_uart_app.h"
+#include "MQTTSim800.h"
+#include "rfm69_app.h"
+#include "touch_spi_app.h"
 
 
 SemaphoreHandle_t deviceStateMutex;
 BaseType_t status;
 SemaphoreHandle_t uartMutex;
+QueueHandle_t btnEventQueue;
 
 SIM800_t SIM800;
 const char *devices[DEVICE_COUNT] = {"device1", "device2", "device3", "device4"};
@@ -44,10 +45,10 @@ void setup_freeRTOS(void)
 	status = xTaskCreate(UART_Handler, "UARTHandler", 1024, NULL, 4, NULL);
 	configASSERT(status == pdPASS);
 
-//	status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
-//	configASSERT(status == pdPASS);
+	//status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
+	//configASSERT(status == pdPASS);
 
-	status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 3, NULL);
+	status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 7, NULL);
 	configASSERT(status == pdPASS);
 
 	vTaskStartScheduler();
@@ -65,6 +66,8 @@ void user_app_init(void)
 	  device_states[i] = 0;
 	}
 	uartMutex = xSemaphoreCreateMutex();
+	btnEventQueue = xQueueCreate(10, sizeof(ButtonEvent_t));
+	configASSERT(btnEventQueue != NULL);
 	initializeMenu();
 	GSM_init();
 	setup_freeRTOS();

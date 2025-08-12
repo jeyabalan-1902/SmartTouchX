@@ -2,4 +2,4 @@
 ../Core/Src/APP/rfm69_app.c:39:6:RF69_ModuleHandler	8	static
 ../Core/Src/APP/rfm69_app.c:118:6:RF69_TxData	4	static
 ../Core/Src/APP/rfm69_app.c:123:6:RF69_RxData	80	static
-../Core/Src/APP/rfm69_app.c:174:6:FailIndiCation	16	static
+../Core/Src/APP/rfm69_app.c:180:6:FailIndiCation	16	static

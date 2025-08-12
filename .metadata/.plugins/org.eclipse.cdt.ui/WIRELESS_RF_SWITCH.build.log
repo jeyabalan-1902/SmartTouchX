@@ -1,10 +1,10 @@
-17:36:19 **** Incremental Build of configuration Debug for project WIRELESS_RF_SWITCH ****
+10:48:34 **** Incremental Build of configuration Debug for project WIRELESS_RF_SWITCH ****
 make -j8 all 
 arm-none-eabi-size  WIRELESS_RF_SWITCH.elf 
    text	   data	    bss	    dec	    hex	filename
-  29364	    124	   2148	  31636	   7b94	WIRELESS_RF_SWITCH.elf
+  29672	    124	   2164	  31960	   7cd8	WIRELESS_RF_SWITCH.elf
 Finished building: default.size.stdout
  
 
-17:36:20 Build Finished. 0 errors, 0 warnings. (took 323ms)
+10:48:34 Build Finished. 0 errors, 0 warnings. (took 347ms)
 

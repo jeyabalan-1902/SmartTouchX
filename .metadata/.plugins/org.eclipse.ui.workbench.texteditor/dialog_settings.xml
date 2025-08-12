@@ -3,9 +3,11 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="replacehistory">
+		<item value="hspi1"/>
 		<item value="safe_printf"/>
 	</list>
 	<list key="searchhistory">
+		<item value="hspi3"/>
 		<item value="printf"/>
 	</list>
 </section>

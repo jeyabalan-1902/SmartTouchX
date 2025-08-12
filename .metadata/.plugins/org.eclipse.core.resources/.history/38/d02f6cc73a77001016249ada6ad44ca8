@@ -1,0 +1,193 @@
+/*
+ * rf_transmitter_app.c
+ *
+ *  Created on: Aug 11, 2025
+ *      Author: kjeyabalan
+ */
+
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "rf69.h"
+#include "main.h"
+#include "rf_transmitter_app.h"
+#include "stm32l0xx_hal.h"
+
+extern volatile uint32_t enter_press_start;
+extern volatile bool enter_short_press;
+extern volatile bool enter_long_press;
+
+extern volatile bool up_bt_interrupt;
+extern volatile bool down_bt_interrupt;
+extern volatile bool enter_bt_interrupt;
+
+extern SPI_HandleTypeDef hspi1;
+extern UART_HandleTypeDef huart2;
+
+extern void SystemClock_Config(void);
+
+static uint8_t _DeviceState = STATE_INIT;
+static uint8_t PrevState = 0;
+uint8_t EncryptionKey[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
+		0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+
+void  RF69_ModuleHandler(void)
+{
+	UserFsm();
+}
+
+void UserFsm(void)
+{
+
+	if(_DeviceState == STATE_INIT)
+	{
+		PrevState = STATE_INIT;
+		if(RF69_init() == true)
+		{
+			_DeviceState = SET_FREQ;
+			printf("RF69_InitSuccess\n");
+		}
+		else
+			_DeviceState = FAIL_STATE;
+	}
+	else if(_DeviceState == SET_FREQ)
+	{
+		PrevState =	SET_FREQ;
+		if(setFrequency(RF69_FREQ) == true)
+		{
+			_DeviceState = SET_POW;
+			printf("RF69_FreqSetSuccess\n");
+		}
+		else
+			_DeviceState = FAIL_STATE;
+	}
+	else if(_DeviceState == SET_POW)
+	{
+		PrevState = SET_POW;
+		setTxPower(20, true);
+		_DeviceState = SET_ENCKEY;
+		printf("RF69_PowerSetSuccess\n");
+	}
+	else if(_DeviceState == SET_ENCKEY)
+	{
+		PrevState = SET_ENCKEY;
+		setEncryptionKey(&EncryptionKey[0]);
+		_DeviceState = TX_DATA;
+		printf("RF69_setEncryptionKeySuccess\n");
+	}
+	else if(_DeviceState == TX_DATA)
+	{
+		PrevState = TX_DATA;
+		if(up_bt_interrupt || enter_bt_interrupt || down_bt_interrupt)
+        {
+
+//			HAL_ResumeTick();
+//			HAL_SPI_Init(&hspi1);
+//            HAL_Delay(500);
+        	if(RF69_TxData() == true)
+        		_DeviceState = SYS_REST;
+
+        	up_bt_interrupt = false;
+        	enter_long_press = false;
+        	enter_short_press = false;
+        	down_bt_interrupt = false;
+        }
+	}
+	else if(_DeviceState == FAIL_STATE)
+	{
+		if(FailIndiCation(PrevState) == true)
+		{
+			printf("Module Going To Restart\n");
+			HAL_Delay(3000);
+			_DeviceState = SYS_RESTART;
+		}
+	}
+	else if(_DeviceState == SYS_RESTART)
+	{
+		_DeviceState = STATE_INIT;
+		printf("SYS_Restarted\n");
+	}
+	else if(_DeviceState == SYS_REST)
+	{
+		_DeviceState = SYS_SLEEP;
+	}
+	else if(_DeviceState == SYS_SLEEP)
+	{
+//		setSleep();
+//		HAL_SPI_DeInit(&hspi1);
+//		HAL_UART_DeInit(&huart2);
+//		HAL_SuspendTick();
+////		__HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU);
+////		HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+//		HAL_PWR_EnterSLEEPMode(PWR_LOWPOWERREGULATOR_ON,PWR_SLEEPENTRY_WFI);
+		_DeviceState = TX_DATA;
+	}
+}
+
+
+bool RF69_TxData(void)
+{
+//	int packetnum = 0;
+	char radiopacket[64];
+	printf("RF69_ReadyToTransmit\n");
+
+	if(up_bt_interrupt == true)
+		sprintf(radiopacket, "Control_UP");
+	if(enter_short_press == true)
+		sprintf(radiopacket, "Control_ENTER");
+	if(down_bt_interrupt == true)
+		sprintf(radiopacket, "Control_DOWN");
+	if(enter_long_press == true)
+		sprintf(radiopacket, "Control_DISP");
+
+	printf("Sending %s\n", radiopacket);
+
+
+	// Send a message!
+	send1((uint8_t *)radiopacket, strlen(radiopacket));
+
+	if(waitPacketSent())
+	{
+		if( up_bt_interrupt == true )
+		{
+			printf("up button data transmitted\n");
+		}
+		else if( enter_short_press == true )
+		{
+			printf("enter button data transmitted\n");
+		}
+		else if( enter_long_press == true )
+		{
+			printf("enter button data transmitted\n");
+		}
+		else if( down_bt_interrupt == true )
+		{
+			printf("down button data transmitted\n");
+		}
+		return true;
+	}
+	return true; //Never Reach Here
+}
+
+bool FailIndiCation(Rf69_t FailState)
+{
+	if(FailState == STATE_INIT)
+		printf("ModuleInit_Failed\n");
+	else if(FailState == SET_FREQ)
+		printf("FreqSetOp_Failed\n");
+	else if(FailState == SET_POW)
+		printf("PowerSetOp_Failed\n");
+	else if(FailState == SET_ENCKEY)
+		printf("EncKeySetOp_Failed\n");
+	else if(FailState == TX_DATA)
+		printf("DataTxOp_Failed\n");
+	else if(FailState == RX_DATA)
+		printf("DataRxOp_Failed\n");
+
+	return true;
+}
+
+

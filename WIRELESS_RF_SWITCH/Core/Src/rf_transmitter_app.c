@@ -16,7 +16,14 @@
 #include "rf_transmitter_app.h"
 #include "stm32l0xx_hal.h"
 
-extern bool up_bt_interrupt, enter_bt_interrupt, down_bt_interrupt;
+extern volatile uint32_t enter_press_start;
+extern volatile bool enter_short_press;
+extern volatile bool enter_long_press;
+
+extern volatile bool up_bt_interrupt;
+extern volatile bool down_bt_interrupt;
+extern volatile bool enter_bt_interrupt;
+
 extern SPI_HandleTypeDef hspi1;
 extern UART_HandleTypeDef huart2;
 
@@ -74,7 +81,7 @@ void UserFsm(void)
 	else if(_DeviceState == TX_DATA)
 	{
 		PrevState = TX_DATA;
-		if(up_bt_interrupt || enter_bt_interrupt || down_bt_interrupt)
+		if(up_bt_interrupt || enter_short_press || enter_long_press || down_bt_interrupt || enter_bt_interrupt)
         {
 
 //			HAL_ResumeTick();
@@ -85,6 +92,8 @@ void UserFsm(void)
 
         	up_bt_interrupt = false;
         	enter_bt_interrupt = false;
+        	enter_long_press = false;
+        	enter_short_press = false;
         	down_bt_interrupt = false;
         }
 	}
@@ -128,10 +137,12 @@ bool RF69_TxData(void)
 
 	if(up_bt_interrupt == true)
 		sprintf(radiopacket, "Control_UP");
-	if(enter_bt_interrupt == true)
-			sprintf(radiopacket, "Control_ENTER");
+	if(enter_short_press == true)
+		sprintf(radiopacket, "Control_ENTER");
 	if(down_bt_interrupt == true)
-			sprintf(radiopacket, "Control_DOWN");
+		sprintf(radiopacket, "Control_DOWN");
+	if(enter_long_press == true)
+		sprintf(radiopacket, "Control_DISP");
 
 	printf("Sending %s\n", radiopacket);
 
@@ -145,7 +156,11 @@ bool RF69_TxData(void)
 		{
 			printf("up button data transmitted\n");
 		}
-		else if( enter_bt_interrupt == true )
+		else if( enter_short_press == true )
+		{
+			printf("enter button data transmitted\n");
+		}
+		else if( enter_long_press == true )
 		{
 			printf("enter button data transmitted\n");
 		}

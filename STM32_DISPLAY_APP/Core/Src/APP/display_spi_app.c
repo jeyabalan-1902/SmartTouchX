@@ -38,8 +38,27 @@ int button_count = 0;
 
 void Display_Handler(void *param)
 {
+	ButtonEvent_t evt;
+
 	while(1)
 	{
+		if (xQueueReceive(btnEventQueue, &evt, 0) == pdPASS) {
+		    if (evt == BTN_EVENT_UP) {
+		        upbutton = 1;
+		        downbutton = 0;
+		        enter = 0;
+		    }
+		    else if (evt == BTN_EVENT_DOWN) {
+		        upbutton = 0;
+		        downbutton = 1;
+		        enter = 0;
+		    }
+		    else if (evt == BTN_EVENT_ENTER) {
+		        upbutton = 0;
+		        downbutton = 0;
+		        enter = 1;
+		    }
+		}
 		Menu_Handler();
 	}
 }
@@ -746,7 +765,7 @@ void initializeMenu(void)
         device_states[i] = 0;
         last_device_states[i] = -1;
 
-        //setDeviceState(i, 0);
+        setDeviceState(i, 0);
     }
     displayMainMenu();
 }

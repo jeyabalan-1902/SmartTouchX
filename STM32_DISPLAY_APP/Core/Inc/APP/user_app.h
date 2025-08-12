@@ -42,6 +42,7 @@ extern UART_HandleTypeDef huart3;
 extern UART_HandleTypeDef huart4;
 extern SemaphoreHandle_t deviceStateMutex;
 extern uint32_t lastKeepAliveTime;
+extern QueueHandle_t btnEventQueue;
 
 void setup_freeRTOS(void);
 void SPI_handler(void *param);

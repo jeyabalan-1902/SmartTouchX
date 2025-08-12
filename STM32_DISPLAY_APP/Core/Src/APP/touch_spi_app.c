@@ -5,10 +5,10 @@
  *      Author: kjeyabalan
  */
 
-#include <APP/user_app.h>
-#include <APP/touch_spi_app.h>
-#include <APP/display_spi_app.h>
-#include <APP/esp32_uart_app.h>
+#include "user_app.h"
+#include "touch_spi_app.h"
+#include "display_spi_app.h"
+#include "esp32_uart_app.h"
 
 uint8_t spiRingBuffer[SPI_RING_BUFFER_SIZE];
 volatile uint16_t spiHead = 0;
@@ -41,7 +41,7 @@ void SPI_Handler(void *param)
         			if(byte == '}')
         			{
         				jsonBuffer[index] = '\0';
-        				//safe_printf("JSON received: %s\n", jsonBuffer);
+        				safe_printf("JSON received: %s\n", jsonBuffer);
         				process_spi_json(jsonBuffer);
         				collecting = false;
         				index = 0;
@@ -82,7 +82,7 @@ void process_spi_json(uint8_t *jsonBuffer)
 			{
 				HAL_GPIO_TogglePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
 				GPIO_PinState state = HAL_GPIO_ReadPin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
-				safe_printf("TOUCH: Display Backlit is %s ",(state == GPIO_PIN_SET) ? "ON" : "OFF");
+				safe_printf("TOUCH: Display Backlit is %s \n",(state == GPIO_PIN_SET) ? "ON" : "OFF");
 			}
 		}
 		if(deviceIndex != -1)

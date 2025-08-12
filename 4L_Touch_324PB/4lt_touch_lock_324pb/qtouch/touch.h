@@ -89,19 +89,19 @@ extern "C" {
  */
 #define NODE_0_PARAMS                                                                                                  \
 	{                                                                                                                  \
-		X_NONE, Y(3), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_4, GAIN_4), FILTER_LEVEL_64                                    \
+		X_NONE, Y(3), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_2, GAIN_2), FILTER_LEVEL_64                                    \
 	}
 #define NODE_1_PARAMS                                                                                                  \
 	{                                                                                                                  \
-		X_NONE, Y(5), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_4, GAIN_4), FILTER_LEVEL_64                                   \
+		X_NONE, Y(5), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_2, GAIN_2), FILTER_LEVEL_64                                   \
 	}
 #define NODE_2_PARAMS                                                                                                  \
 	{                                                                                                                  \
-		X_NONE, Y(2), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_4, GAIN_4), FILTER_LEVEL_64                                    \
+		X_NONE, Y(2), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_2, GAIN_2), FILTER_LEVEL_64                                    \
 	}
 #define NODE_3_PARAMS                                                                                                  \
 	{                                                                                                                  \
-		X_NONE, Y(6), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_4, GAIN_4), FILTER_LEVEL_64                                   \
+		X_NONE, Y(6), 0, PRSC_DIV_SEL_8, NODE_GAIN(GAIN_2, GAIN_2), FILTER_LEVEL_64                                   \
 	}
 
 /**********************************************************/
@@ -137,14 +137,14 @@ extern "C" {
  * Range: 0 to 255.
  * Default value: 4.
  */
-#define DEF_TOUCH_DET_INT 3
+#define DEF_TOUCH_DET_INT 4
 
 /* De-bounce counter for additional measurements to confirm away from touch signal
  * to initiate Away from touch re-calibration.
  * Range: 0 to 255.
  * Default value: 5.
  */
-#define DEF_ANTI_TCH_DET_INT 4
+#define DEF_ANTI_TCH_DET_INT 5
 
 /* Threshold beyond with automatic sensor recalibration is initiated.
  * Range: RECAL_100/ RECAL_50 / RECAL_25 / RECAL_12_5 / RECAL_6_25 / MAX_RECAL

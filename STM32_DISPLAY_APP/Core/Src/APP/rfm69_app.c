@@ -139,28 +139,34 @@ bool RF69_RxData(void)
 				buf[len] = 0;
 			}
 
-			safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
-			safe_printf("RFM RSSI: %d\n", lastRssi());
+//			safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
+//			safe_printf("RFM RSSI: %d\n", lastRssi());
 
-			if (strstr((char *)buf, "Control#1"))
-			{
-				count++;
-				if(count == 1)
-				{
-					setAllDevicesState(1, src_name);
-				}
-				else if(count == 2)
-				{
-					setAllDevicesState(0, src_name);
-					count = 0;
-				}
-
+			if (strstr((char *)buf, "Control_DOWN")) {
+			    ButtonEvent_t evt = BTN_EVENT_DOWN;
+			    if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
+			    {
+			    	safe_printf("queue send failed\n");
+			    }
 			}
-			else if(strstr((char *)buf, "Control#0"))
-			{
+			else if (strstr((char *)buf, "Control_UP")) {
+			    ButtonEvent_t evt = BTN_EVENT_UP;
+			    if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
+			    {
+			    	safe_printf("queue send failed\n");
+			    }
+			}
+			else if (strstr((char *)buf, "Control_ENTER")) {
+			    ButtonEvent_t evt = BTN_EVENT_ENTER;
+			    if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
+			    {
+			    	safe_printf("queue send failed\n");
+			    }
+			}
+			else if (strstr((char *)buf, "Control_DISP")){
 				HAL_GPIO_TogglePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
 				GPIO_PinState state = HAL_GPIO_ReadPin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
-				safe_printf("RFM: Display Backlit is %s",(state == GPIO_PIN_SET) ? "ON" : "OFF");
+				safe_printf("RFM: Display Backlit is %s ",(state == GPIO_PIN_SET) ? "ON" : "OFF");
 			}
 		}
 		else
