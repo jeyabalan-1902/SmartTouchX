@@ -33,7 +33,7 @@ void RFM_Task(void *parameter)
 	while(1)
 	{
 		RF69_ModuleHandler();
-		vTaskDelay(pdMS_TO_TICKS(1));
+		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 }
 
@@ -133,10 +133,14 @@ bool RF69_RxData(void)
 		uint8_t len = sizeof(buf);
 		char src_name[] = "RFM";
 		//safe_printf("Data Available..\r\n");
-		if (recv1(buf, &len)) {
-		    if (len >= sizeof(buf)) len = sizeof(buf) - 1;
-		    buf[len] = '\0'; // always terminate
-		    safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
+		if (recv1(buf, &len))
+		{
+			if (!len)
+			{
+				buf[len] = 0;
+			}
+
+//			safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
 //			safe_printf("RFM RSSI: %d\n", lastRssi());
 
 			if (strstr((char *)buf, "Control_DOWN")) {
@@ -170,7 +174,6 @@ bool RF69_RxData(void)
 		{
 			safe_printf("Receive failed\n");
 		}
-		setModeRx();
 	}
 	return true;
 }

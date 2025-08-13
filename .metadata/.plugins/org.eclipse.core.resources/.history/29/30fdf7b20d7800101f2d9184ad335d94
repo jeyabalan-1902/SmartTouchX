@@ -175,7 +175,6 @@ int main(void)
   while (1)
   {
 	  RF69_ModuleHandler();
-	  HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
