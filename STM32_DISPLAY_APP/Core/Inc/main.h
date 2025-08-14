@@ -79,6 +79,9 @@ void Error_Handler(void);
 #define L_RELAY_2_GPIO_Port GPIOC
 #define L_RELAY_1_Pin GPIO_PIN_9
 #define L_RELAY_1_GPIO_Port GPIOC
+#define RFM_DIO0_Pin GPIO_PIN_9
+#define RFM_DIO0_GPIO_Port GPIOA
+#define RFM_DIO0_EXTI_IRQn EXTI9_5_IRQn
 #define RF_SCK_Pin GPIO_PIN_3
 #define RF_SCK_GPIO_Port GPIOB
 #define RF_MISO_Pin GPIO_PIN_4

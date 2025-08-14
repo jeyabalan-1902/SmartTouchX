@@ -231,6 +231,21 @@ void setIdleMode(uint8_t idleMode)
 	_idleMode = idleMode;
 }
 
+
+void RF69_ForceRxMode(void)
+{
+    // Map DIO0 to PayloadReady (RX) / PacketSent (TX)
+    spiWrite(RH_RF69_REG_25_DIOMAPPING1, RH_RF69_DIOMAPPING1_DIO0MAPPING_00);
+
+    // Enable AutoRxRestartOn (so RX restarts automatically after packet read)
+    uint8_t pc2 = spiRead(RH_RF69_REG_3D_PACKETCONFIG2);
+    spiWrite(RH_RF69_REG_3D_PACKETCONFIG2, pc2 | RH_RF69_PACKETCONFIG2_AUTORXRESTARTON);
+
+    // Enter RX mode
+    setModeRx();
+}
+
+
 bool RF69_init()
 {
 
@@ -290,7 +305,7 @@ bool RF69_init()
 	setTxPower(13, RH_RF69_DEFAULT_HIGHPOWER);
 
 	spiWrite(RH_RF69_REG_25_DIOMAPPING1, RH_RF69_DIOMAPPING1_DIO0MAPPING_00 );
-
+	RF69_ForceRxMode();
 	return true;
 }
 
@@ -583,20 +598,32 @@ bool waitAvailableTimeout(uint16_t timeout)
 }
 
 
+//bool recv1(uint8_t* buf, uint8_t* len)
+//{
+//	if (!available())
+//	return false;
+//
+//	if (buf && len)
+//	{
+//	if (*len > _bufLen)
+//		*len = _bufLen;
+//	memcpy(buf, _buf, *len);
+//	}
+//	_rxBufValid = false; // Got the most recent message
+////	  printBuffer("recv:", buf, *len);
+//	return true;
+//}
+
 bool recv1(uint8_t* buf, uint8_t* len)
 {
-	if (!available())
-	return false;
-
-	if (buf && len)
-	{
-	if (*len > _bufLen)
-		*len = _bufLen;
-	memcpy(buf, _buf, *len);
-	}
-	_rxBufValid = false; // Got the most recent message
-//	  printBuffer("recv:", buf, *len);
-	return true;
+    if (_rxBufValid)  // already validated by DIO0 ISR
+    {
+        if (*len > _bufLen) *len = _bufLen;
+        memcpy(buf, _buf, *len);
+        _rxBufValid = false;
+        return true;
+    }
+    return false;
 }
 
 bool send1(const uint8_t* data, uint8_t len)

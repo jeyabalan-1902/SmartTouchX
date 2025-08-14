@@ -82,6 +82,23 @@ UART_printf
 }
 #endif
 
+
+//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+//{
+//	if(GPIO_Pin == UP_BUTTON_Pin)
+//	{
+//		up_bt_interrupt = true;
+//	}
+//	else if(GPIO_Pin == ENTER_BUTTON_Pin)
+//	{
+//		enter_bt_interrupt = true;
+//	}
+//	else if(GPIO_Pin == DOWN_BUTTON_Pin)
+//	{
+//		down_bt_interrupt = true;
+//	}
+//}
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     uint32_t now = HAL_GetTick();
@@ -175,7 +192,6 @@ int main(void)
   while (1)
   {
 	  RF69_ModuleHandler();
-	  HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

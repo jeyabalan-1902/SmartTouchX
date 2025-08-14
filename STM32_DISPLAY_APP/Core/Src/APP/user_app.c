@@ -39,14 +39,14 @@ void setup_freeRTOS(void)
 	status = xTaskCreate(SPI_Handler, "SPIHandler", 512, NULL, 5, NULL);
 	configASSERT(status == pdPASS);
 
-	status = xTaskCreate(RFM_Task, "RFM69Handler", 256, NULL, 7, NULL);
+	status = xTaskCreate(RFM_Task, "RFM69Handler", 256, NULL, 3, NULL);
 	configASSERT(status == pdPASS);
 
 	status = xTaskCreate(UART_Handler, "UARTHandler", 1024, NULL, 4, NULL);
 	configASSERT(status == pdPASS);
 
-	//status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
-	//configASSERT(status == pdPASS);
+	status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
+	configASSERT(status == pdPASS);
 
 	status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 6, NULL);
 	configASSERT(status == pdPASS);
