@@ -8,4 +8,5 @@
 ../Core/Src/stm32f4xx_it.c:182:6:TIM1_UP_TIM10_IRQHandler	8	static
 ../Core/Src/stm32f4xx_it.c:196:6:SPI2_IRQHandler	8	static
 ../Core/Src/stm32f4xx_it.c:210:6:USART3_IRQHandler	8	static
-../Core/Src/stm32f4xx_it.c:224:6:UART4_IRQHandler	8	static
+../Core/Src/stm32f4xx_it.c:224:6:EXTI15_10_IRQHandler	8	static
+../Core/Src/stm32f4xx_it.c:239:6:UART4_IRQHandler	8	static

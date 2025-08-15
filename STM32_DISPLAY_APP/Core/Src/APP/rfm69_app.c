@@ -28,40 +28,14 @@ uint8_t EncryptionKey[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
 		0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
 int count;
 
-TaskHandle_t rfmTaskHandle = NULL;
-
-
-void RFM_Task(void *arg)
+void RFM_Task(void *parameter)
 {
-    uint8_t buf[64];
-    uint8_t len;
-
-    rfmTaskHandle = xTaskGetCurrentTaskHandle();
-
-
-    // Force RX mode at startup
-    RF69_ForceRxMode();
-
-    for (;;)
-    {
-    	RF69_ModuleHandler();
-        // Wait forever for DIO0 interrupt
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-
-        // Try to read packet
-        len = sizeof(buf);
-        if (recv1(buf, &len))
-        {
-            if (len >= sizeof(buf)) len = sizeof(buf) - 1;
-            buf[len] = '\0';
-            safe_printf("RFM RX: %s\r\n", buf);
-        }
-
-        // Re-arm RX mode for the next packet
-        RF69_ForceRxMode();
-    }
+	while(1)
+	{
+		RF69_ModuleHandler();
+		vTaskDelay(pdMS_TO_TICKS(1));
+	}
 }
-
 
 void RF69_ModuleHandler(void)
 {
@@ -99,7 +73,6 @@ void RF69_ModuleHandler(void)
 	{
 		PrevState = SET_ENCKEY;
 		setEncryptionKey(&EncryptionKey[0]);
-		setModeRx();
 		_DeviceState = RX_DATA;
 		safe_printf("RF69_setEncryptionKeySuccess\n");
 	}
@@ -110,10 +83,9 @@ void RF69_ModuleHandler(void)
 	else if(_DeviceState == RX_DATA)
 	{
 		PrevState = RX_DATA;
-		if (RF69_RxData() != true)
-		{
-			safe_printf("RX failed or no data\n");
-		}
+
+		if(RF69_RxData() != true)
+			_DeviceState = SYS_RESTART;
 	}
 	else if(_DeviceState == FAIL_STATE)
 	{
@@ -135,11 +107,11 @@ void RF69_ModuleHandler(void)
 	}
 	else if(_DeviceState == SYS_SLEEP)
 	{
-//		setSleep();
-//		HAL_SPI_DeInit(&hspi3);
-//		HAL_UART_DeInit(&huart2);
-//		HAL_SuspendTick();
-//		HAL_PWR_EnterSLEEPMode(PWR_LOWPOWERREGULATOR_ON,PWR_SLEEPENTRY_WFI);
+		setSleep();
+		HAL_SPI_DeInit(&hspi3);
+		HAL_UART_DeInit(&huart2);
+		HAL_SuspendTick();
+		HAL_PWR_EnterSLEEPMode(PWR_LOWPOWERREGULATOR_ON,PWR_SLEEPENTRY_WFI);
 		_DeviceState = RX_DATA;
 	}
 }
@@ -153,48 +125,53 @@ bool RF69_RxData(void)
 {
 //	printf("RF69 StartReceiving\n");
 //	HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
-	uint8_t buf[RH_RF69_MAX_MESSAGE_LEN];
-	uint8_t len = sizeof(buf);
-	//safe_printf("Data Available..\r\n");
-	if (recv1(buf, &len)) {
-		if (len >= sizeof(buf)) len = sizeof(buf) - 1;
-		buf[len] = '\0'; // always terminate
-		safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
+
+	if (available())
+	{
+
+		uint8_t buf[RH_RF69_MAX_MESSAGE_LEN];
+		uint8_t len = sizeof(buf);
+		char src_name[] = "RFM";
+		//safe_printf("Data Available..\r\n");
+		if (recv1(buf, &len)) {
+		    if (len >= sizeof(buf)) len = sizeof(buf) - 1;
+		    buf[len] = '\0'; // always terminate
+		    safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
 //			safe_printf("RFM RSSI: %d\n", lastRssi());
 
-		if (strstr((char *)buf, "Control_DOWN")) {
-			ButtonEvent_t evt = BTN_EVENT_DOWN;
-			if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
-			{
-				safe_printf("queue send failed\n");
+			if (strstr((char *)buf, "Control_DOWN")) {
+			    ButtonEvent_t evt = BTN_EVENT_DOWN;
+			    if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
+			    {
+			    	safe_printf("queue send failed\n");
+			    }
+			}
+			else if (strstr((char *)buf, "Control_UP")) {
+			    ButtonEvent_t evt = BTN_EVENT_UP;
+			    if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
+			    {
+			    	safe_printf("queue send failed\n");
+			    }
+			}
+			else if (strstr((char *)buf, "Control_ENTER")) {
+			    ButtonEvent_t evt = BTN_EVENT_ENTER;
+			    if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
+			    {
+			    	safe_printf("queue send failed\n");
+			    }
+			}
+			else if (strstr((char *)buf, "Control_DISP")){
+				HAL_GPIO_TogglePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
+				GPIO_PinState state = HAL_GPIO_ReadPin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
+				safe_printf("RFM: Display Backlit is %s \n",(state == GPIO_PIN_SET) ? "ON" : "OFF");
 			}
 		}
-		else if (strstr((char *)buf, "Control_UP")) {
-			ButtonEvent_t evt = BTN_EVENT_UP;
-			if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
-			{
-				safe_printf("queue send failed\n");
-			}
-		}
-		else if (strstr((char *)buf, "Control_ENTER")) {
-			ButtonEvent_t evt = BTN_EVENT_ENTER;
-			if(xQueueSend(btnEventQueue, &evt, 0) != pdPASS)
-			{
-				safe_printf("queue send failed\n");
-			}
-		}
-		else if (strstr((char *)buf, "Control_DISP")){
-			HAL_GPIO_TogglePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
-			GPIO_PinState state = HAL_GPIO_ReadPin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin);
-			safe_printf("RFM: Display Backlit is %s \n",(state == GPIO_PIN_SET) ? "ON" : "OFF");
+		else
+		{
+			safe_printf("Receive failed\n");
 		}
 		setModeRx();
 	}
-	else
-	{
-		safe_printf("Receive failed\n");
-	}
-
 	return true;
 }
 
@@ -213,14 +190,4 @@ bool FailIndiCation(Rf69_t FailState)
 	else if(FailState == RX_DATA)
 		safe_printf("DataRxOp_Failed\n");
 	return true;
-}
-
-void HAL_GPIO_EXTI_Callback(uint16_t pin)
-{
-    if (pin == RFM_DIO0_Pin && rfmTaskHandle != NULL)
-    {
-        BaseType_t hpw = pdFALSE;
-        vTaskNotifyGiveFromISR(rfmTaskHandle, &hpw);
-        portYIELD_FROM_ISR(hpw);
-    }
 }

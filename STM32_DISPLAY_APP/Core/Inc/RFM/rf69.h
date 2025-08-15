@@ -808,7 +808,7 @@
     /// If current mode is Tx or Idle, changes it to Rx.
     /// Starts the receiver in the RF69.
     void           setModeRx();
-    void RF69_ForceRxMode(void);
+
     /// If current mode is Rx or Idle, changes it to Rx. F
     /// Starts the transmitter in the RF69.
     void           setModeTx();

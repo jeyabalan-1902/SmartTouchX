@@ -1,4 +1,4 @@
-../Core/Src/APP/user_app.c:33:6:setup_freeRTOS	40	static,ignoring_inline_asm
+../Core/Src/APP/user_app.c:33:6:setup_freeRTOS	32	static,ignoring_inline_asm
 ../Core/Src/APP/user_app.c:57:6:user_app_init	16	static,ignoring_inline_asm
 ../Core/Src/APP/user_app.c:77:6:vApplicationStackOverflowHook	16	static
 ../Core/Src/APP/user_app.c:83:6:print_task_info	520	static

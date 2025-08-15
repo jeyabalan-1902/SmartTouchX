@@ -729,6 +729,27 @@ void showActionFeedback(char* message, uint16_t color) {
     fillRect(MARGIN_X, DISPLAY_HEIGHT - 15, BUTTON_WIDTH, 12, BLACK);
 }
 
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+    if (GPIO_Pin == GPIO_PIN_10) { // ENTER button
+        downbutton = 0;
+        upbutton = 0;
+        enter = 1;
+    }
+
+    if (GPIO_Pin == GPIO_PIN_11) { // DOWN button
+        downbutton = 1;
+        upbutton = 0;
+        enter = 0;
+    }
+
+    if (GPIO_Pin == GPIO_PIN_9) { // UP button
+        downbutton = 0;
+        upbutton = 1;
+        enter = 0;
+    }
+}
+
+
 void initializeMenu(void)
 {
     safe_printf("display_init\n\r");
