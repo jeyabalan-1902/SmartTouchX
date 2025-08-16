@@ -14,65 +14,128 @@
 #include "rfm69_app.h"
 #include "touch_spi_app.h"
 
-
+// -------------------- Global Resources --------------------
 SemaphoreHandle_t deviceStateMutex;
-BaseType_t status;
 SemaphoreHandle_t uartMutex;
 QueueHandle_t btnEventQueue;
+BaseType_t status;
 
 SIM800_t SIM800;
+
 const char *devices[DEVICE_COUNT] = {"device1", "device2", "device3", "device4"};
-GPIO_TypeDef* led_ports[DEVICE_COUNT] = {TOUCH_LED1_GPIO_Port, TOUCH_LED2_GPIO_Port, TOUCH_LED3_GPIO_Port, TOUCH_LED4_GPIO_Port};
+
+GPIO_TypeDef* led_ports[DEVICE_COUNT]   = {TOUCH_LED1_GPIO_Port, TOUCH_LED2_GPIO_Port, TOUCH_LED3_GPIO_Port, TOUCH_LED4_GPIO_Port};
 GPIO_TypeDef* relay_ports[DEVICE_COUNT] = {L_RELAY_1_GPIO_Port, L_RELAY_2_GPIO_Port, L_RELAY_3_GPIO_Port, L_RELAY_4_GPIO_Port};
-uint16_t led_pins[DEVICE_COUNT] = {TOUCH_LED1_Pin, TOUCH_LED2_Pin, TOUCH_LED3_Pin, TOUCH_LED4_Pin};
+
+uint16_t led_pins[DEVICE_COUNT]   = {TOUCH_LED1_Pin, TOUCH_LED2_Pin, TOUCH_LED3_Pin, TOUCH_LED4_Pin};
 uint16_t relay_pins[DEVICE_COUNT] = {L_RELAY_1_Pin, L_RELAY_2_Pin, L_RELAY_3_Pin, L_RELAY_4_Pin};
-volatile int global_device_states[4] = {0, 0, 0, 0};
+
+volatile int global_device_states[DEVICE_COUNT] = {0, 0, 0, 0};
 uint32_t lastKeepAliveTime = 0;
 
+// ==========================================================
+//                INIT MODULES (Modular Approach)
+// ==========================================================
 
-void setup_freeRTOS(void)
-{
-	HAL_SPI_Receive_IT(&hspi2, &spiRxByte, 1);
-	HAL_UART_Receive_IT(&huart4, &rx_data, 1);
-	HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
+/**
+ * @brief Initialize display and menu system
+ */
 
-	status = xTaskCreate(SPI_Handler, "SPIHandler", 512, NULL, 5, NULL);
-	configASSERT(status == pdPASS);
-
-	status = xTaskCreate(RFM_Task, "RFM69Handler", 256, NULL, 7, NULL);
-	configASSERT(status == pdPASS);
-
-	status = xTaskCreate(UART_Handler, "UARTHandler", 1024, NULL, 4, NULL);
-	configASSERT(status == pdPASS);
-
-	//status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
-	//configASSERT(status == pdPASS);
-
-	status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 6, NULL);
-	configASSERT(status == pdPASS);
-
-	vTaskStartScheduler();
-}
-
-void user_app_init(void)
+static void init_st7735(void)
 {
 	ST7735_Init(0);
 	ST7735_SetRotation(1);
 	fillScreen(BLACK);
 	showStartupLogoAndMenu();
-	deviceStateMutex = xSemaphoreCreateMutex();
-	for (int i = 0; i < 4; i++) {
-	  global_device_states[i] = 0;
-	  device_states[i] = 0;
-	}
-	uartMutex = xSemaphoreCreateMutex();
-	btnEventQueue = xQueueCreate(10, sizeof(ButtonEvent_t));
-	configASSERT(btnEventQueue != NULL);
-	initializeMenu();
-	GSM_init();
-	setup_freeRTOS();
 }
 
+static void init_display_app(void)
+{
+    initializeMenu();
+}
+
+/**
+ * @brief Initialize synchronization primitives
+ */
+static void init_os_primitives(void)
+{
+    deviceStateMutex = xSemaphoreCreateMutex();
+    configASSERT(deviceStateMutex != NULL);
+
+    uartMutex = xSemaphoreCreateMutex();
+    configASSERT(uartMutex != NULL);
+
+    btnEventQueue = xQueueCreate(10, sizeof(ButtonEvent_t));
+    configASSERT(btnEventQueue != NULL);
+}
+
+/**
+ * @brief Initialize device states
+ */
+static void init_device_states(void)
+{
+    for (int i = 0; i < DEVICE_COUNT; i++) {
+        global_device_states[i] = 0;
+        device_states[i] = 0;
+    }
+}
+
+/**
+ * @brief Initialize communication peripherals
+ */
+static void init_interrupts(void)
+{
+    HAL_SPI_Receive_IT(&hspi2, &spiRxByte, 1);
+    HAL_UART_Receive_IT(&huart4, &rx_data, 1);
+    HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
+}
+
+/**
+ * @brief Create FreeRTOS tasks
+ */
+static void init_tasks(void)
+{
+    status = xTaskCreate(SPI_Handler, "SPIHandler", 512, NULL, 5, NULL);
+    configASSERT(status == pdPASS);
+
+    status = xTaskCreate(RFM_Task, "RFM69Handler", 256, NULL, 7, NULL);
+    configASSERT(status == pdPASS);
+
+    status = xTaskCreate(UART_Handler, "UARTHandler", 1024, NULL, 4, NULL);
+    configASSERT(status == pdPASS);
+
+    // Optional GSM MQTT Task
+    // status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
+    // configASSERT(status == pdPASS);
+
+    status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 6, NULL);
+    configASSERT(status == pdPASS);
+}
+
+/**
+ * @brief Start FreeRTOS scheduler
+ */
+static void start_scheduler(void)
+{
+    vTaskStartScheduler();
+}
+
+// ==========================================================
+//                PUBLIC FUNCTIONS
+// ==========================================================
+
+void user_app_init(void)
+{
+	printf("********* SmartTouchX ********\n");
+	init_st7735();
+	init_os_primitives();
+	init_interrupts();
+	init_device_states();
+    init_display_app();
+    GSM_init();           // GSM module setup
+    init_tasks();
+    start_scheduler();
+}
 
 void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
 {
@@ -88,7 +151,6 @@ void print_task_info(void)
     safe_printf("%s\n", taskList);
 }
 
-
 void safe_printf(const char *fmt, ...)
 {
     if (uartMutex != NULL && xSemaphoreTake(uartMutex, pdMS_TO_TICKS(200)) == pdTRUE)
@@ -103,6 +165,7 @@ void safe_printf(const char *fmt, ...)
         xSemaphoreGive(uartMutex);
     }
 }
+
 
 
 

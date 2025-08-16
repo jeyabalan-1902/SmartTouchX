@@ -44,11 +44,6 @@ extern SemaphoreHandle_t deviceStateMutex;
 extern uint32_t lastKeepAliveTime;
 extern QueueHandle_t btnEventQueue;
 
-void setup_freeRTOS(void);
-void SPI_handler(void *param);
-void Display_Handler(void *param);
-void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi);
-void updateToDisplayMenu(void);
 void user_app_init(void);
 void print_task_info(void);
 void safe_printf(const char *fmt, ...);

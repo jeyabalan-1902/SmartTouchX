@@ -1,3 +1,12 @@
+
+/*
+ * display_spi_app.c
+ *
+ *  Created on: Jul 8, 2025
+ *      Author: kjeyabalan
+ */
+
+
 #include "user_app.h"
 #include "display_spi_app.h"
 #include "onwords_logo.h"
@@ -37,19 +46,16 @@ void Display_Handler(void *param)
 	{
 		if (xQueueReceive(btnEventQueue, &evt, 0) == pdPASS) {
 		    if (evt == BTN_EVENT_UP) {
-		    	safe_printf("eventUP\n");
 		        upbutton = 1;
 		        downbutton = 0;
 		        enter = 0;
 		    }
 		    else if (evt == BTN_EVENT_DOWN) {
-		    	safe_printf("eventDOWN\n");
 		        upbutton = 0;
 		        downbutton = 1;
 		        enter = 0;
 		    }
 		    else if (evt == BTN_EVENT_ENTER) {
-		    	safe_printf("eventENTER\n");
 		        upbutton = 0;
 		        downbutton = 0;
 		        enter = 1;

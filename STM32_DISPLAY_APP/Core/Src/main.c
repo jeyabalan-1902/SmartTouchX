@@ -70,7 +70,14 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+#ifdef __GNUC__
+#define UART_printf   int __io_putchar(int ch)
+UART_printf
+{
+	HAL_UART_Transmit(&huart2, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
+	return ch;
+}
+#endif
 /* USER CODE END 0 */
 
 /**
