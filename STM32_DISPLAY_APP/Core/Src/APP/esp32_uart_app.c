@@ -5,21 +5,29 @@
  *      Author: kjeyabalan
  */
 
-#include <APP/user_app.h>
-#include <APP/display_spi_app.h>
-#include <APP/esp32_uart_app.h>
-#include <MQTTSim800.h>
+#include "user_app.h"
+#include "display_spi_app.h"
+#include "esp32_uart_app.h"
+#include "MQTTSim800.h"
 
 uint8_t uartRingBuffer[UART_RING_BUFFER_SIZE];
 volatile uint16_t uartHead = 0;
 volatile uint16_t uartTail = 0;
 uint8_t uartRxByte;
 
+typedef enum
+{
+	UART_IDLE,
+	UART_COLLECT_JSON,
+	UART_PROCESS_JSON
+}UartState_t;
+
+static UartState_t uartState = UART_IDLE;
+
 void UART_Handler(void *param)
 {
     uint8_t jsonBuffer[JSON_BUFFER_SIZE];
     uint8_t index = 0;
-    bool collecting = false;
     while (1)
     {
         if (uartHead != uartTail)
@@ -27,36 +35,45 @@ void UART_Handler(void *param)
             uint8_t byte = uartRingBuffer[uartTail];
             uartTail = (uartTail + 1) % UART_RING_BUFFER_SIZE;
 
-            if (byte == '{')
+            switch(uartState)
             {
-                collecting = true;
-                index = 0;
-                jsonBuffer[index++] = byte;
-            }
-            else if (collecting)
-            {
-                if (index < JSON_BUFFER_SIZE - 1)
-                {
-                    jsonBuffer[index++] = byte;
+				case UART_IDLE:
+					if (byte == '{')
+					{
+						index = 0;
+						jsonBuffer[index++] = byte;
+						uartState = UART_COLLECT_JSON;
+					}
+					else if(byte == BOOT_CMD)
+					{
+						NVIC_SystemReset();
+					}
+					break;
 
-                    if (byte == '}')
-                    {
-                        jsonBuffer[index] = '\0';
-                       // safe_printf("JSON received: %s\n", jsonBuffer);
-                        process_json(jsonBuffer);
-                        collecting = false;
-                        index = 0;
-                    }
-                }
-                else
-                {
-                    collecting = false;
-                    index = 0;
-                }
-            }
-            else if (byte == BOOT_CMD)
-            {
-                NVIC_SystemReset();
+				case UART_COLLECT_JSON:
+					if (index < JSON_BUFFER_SIZE - 1)
+					{
+						jsonBuffer[index++] = byte;
+
+						if (byte == '}')
+						{
+							jsonBuffer[index] = '\0';
+						    uartState = UART_PROCESS_JSON;
+						}
+					}
+					else
+					{
+						safe_printf("UART JSON buffer overflow, resetting...\n");
+						index = 0;
+						uartState = UART_IDLE;
+					}
+					break;
+
+				case UART_PROCESS_JSON:
+					process_json(jsonBuffer);
+					index = 0;
+					uartState = UART_IDLE;
+					break;
             }
         }
         else

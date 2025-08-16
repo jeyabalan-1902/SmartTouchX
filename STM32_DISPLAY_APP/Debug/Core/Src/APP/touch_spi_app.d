@@ -47,7 +47,8 @@ Core/Src/APP/touch_spi_app.o: ../Core/Src/APP/touch_spi_app.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/display_spi_app.h \
  ../Core/Inc/DISPLAY/fonts.h ../Core/Inc/DISPLAY/GFX_FUNCTIONS.h \
  ../Core/Inc/DISPLAY/ST7735.h \
- C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h \
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/cJSON/cJSON.h
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/user_app.h:
 ../Core/Inc/cJSON/cJSON.h:
 ../Core/Inc/main.h:
@@ -99,3 +100,4 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/display_
 ../Core/Inc/DISPLAY/GFX_FUNCTIONS.h:
 ../Core/Inc/DISPLAY/ST7735.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h:
+C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/cJSON/cJSON.h:

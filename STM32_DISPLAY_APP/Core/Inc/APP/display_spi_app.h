@@ -8,13 +8,15 @@
 #ifndef INC_APP_DISPLAY_SPI_APP_H_
 #define INC_APP_DISPLAY_SPI_APP_H_
 
-#include <DISPLAY/fonts.h>
-#include <DISPLAY/GFX_FUNCTIONS.h>
-#include <DISPLAY/ST7735.h>
+
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
 #include "stm32f4xx_hal.h"
+
+#include "fonts.h"
+#include "GFX_FUNCTIONS.h"
+#include "ST7735.h"
 
 
 // Display dimensions for 1.8" ST7735

@@ -116,11 +116,6 @@ void RF69_ModuleHandler(void)
 	}
 }
 
-bool RF69_TxData(void)
-{
-	return true; //Never Reach Here
-}
-
 bool RF69_RxData(void)
 {
 //	printf("RF69 StartReceiving\n");
@@ -131,7 +126,6 @@ bool RF69_RxData(void)
 
 		uint8_t buf[RH_RF69_MAX_MESSAGE_LEN];
 		uint8_t len = sizeof(buf);
-		char src_name[] = "RFM";
 		//safe_printf("Data Available..\r\n");
 		if (recv1(buf, &len)) {
 		    if (len >= sizeof(buf)) len = sizeof(buf) - 1;
