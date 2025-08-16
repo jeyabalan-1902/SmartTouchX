@@ -69,8 +69,6 @@ extern int downbutton, upbutton, enter;
 extern int device_states[4];
 
 
-// Function prototypes
-
 // Core menu functions
 void Menu_Handler(void);
 void initializeMenu(void);

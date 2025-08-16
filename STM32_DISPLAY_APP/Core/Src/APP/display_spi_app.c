@@ -1,10 +1,3 @@
-/*
- * display_ctrl.c
- *
- *  Created on: Jul 8, 2025
- *      Author: kjeyabalan
- */
-
 #include "user_app.h"
 #include "display_spi_app.h"
 #include "onwords_logo.h"
@@ -44,16 +37,19 @@ void Display_Handler(void *param)
 	{
 		if (xQueueReceive(btnEventQueue, &evt, 0) == pdPASS) {
 		    if (evt == BTN_EVENT_UP) {
+		    	safe_printf("eventUP\n");
 		        upbutton = 1;
 		        downbutton = 0;
 		        enter = 0;
 		    }
 		    else if (evt == BTN_EVENT_DOWN) {
+		    	safe_printf("eventDOWN\n");
 		        upbutton = 0;
 		        downbutton = 1;
 		        enter = 0;
 		    }
 		    else if (evt == BTN_EVENT_ENTER) {
+		    	safe_printf("eventENTER\n");
 		        upbutton = 0;
 		        downbutton = 0;
 		        enter = 1;
@@ -729,25 +725,25 @@ void showActionFeedback(char* message, uint16_t color) {
     fillRect(MARGIN_X, DISPLAY_HEIGHT - 15, BUTTON_WIDTH, 12, BLACK);
 }
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-    if (GPIO_Pin == GPIO_PIN_10) { // ENTER button
-        downbutton = 0;
-        upbutton = 0;
-        enter = 1;
-    }
-
-    if (GPIO_Pin == GPIO_PIN_11) { // DOWN button
-        downbutton = 1;
-        upbutton = 0;
-        enter = 0;
-    }
-
-    if (GPIO_Pin == GPIO_PIN_9) { // UP button
-        downbutton = 0;
-        upbutton = 1;
-        enter = 0;
-    }
-}
+//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+//    if (GPIO_Pin == GPIO_PIN_10) { // ENTER button
+//        downbutton = 0;
+//        upbutton = 0;
+//        enter = 1;
+//    }
+//
+//    if (GPIO_Pin == GPIO_PIN_11) { // DOWN button
+//        downbutton = 1;
+//        upbutton = 0;
+//        enter = 0;
+//    }
+//
+//    if (GPIO_Pin == GPIO_PIN_9) { // UP button
+//        downbutton = 0;
+//        upbutton = 1;
+//        enter = 0;
+//    }
+//}
 
 
 void initializeMenu(void)
@@ -1011,5 +1007,3 @@ void drawStatusInfo(char* status, uint16_t color) {
     fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
     ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
 }
-
-

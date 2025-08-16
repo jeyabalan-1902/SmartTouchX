@@ -8,7 +8,7 @@
 #ifndef INC_APP_TOUCH_SPI_APP_H_
 #define INC_APP_TOUCH_SPI_APP_H_
 
-#include <cJSON/cJSON.h>
+#include "cJSON.h"
 #include "main.h"
 
 #include <stdio.h>
