@@ -15,48 +15,61 @@ volatile uint16_t spiHead = 0;
 volatile uint16_t spiTail = 0;
 uint8_t spiRxByte;
 
+typedef enum
+{
+	SPI_IDLE,
+	SPI_COLLECT_JSON,
+	SPI_PROCESS_JSON
+}SpiState_t;
+
+static SpiState_t spiState = SPI_IDLE;
+
 void SPI_Handler(void *param)
 {
     uint8_t jsonBuffer[SPI_RING_BUFFER_SIZE];
     uint8_t index = 0;
-    bool collecting = false;
+
     while (1)
     {
-        if(spiHead != spiTail)
+        if (spiHead != spiTail)
         {
-        	uint8_t byte = spiRingBuffer[spiTail];
-        	spiTail = (spiTail + 1) % SPI_RING_BUFFER_SIZE;
+            uint8_t byte = spiRingBuffer[spiTail];
+            spiTail = (spiTail + 1) % SPI_RING_BUFFER_SIZE;
 
-        	if(byte == '{')
-        	{
-        		collecting = true;
-        		index = 0;
-        		jsonBuffer[index++] = byte;
-        	}
-        	else if(collecting)
-        	{
-        		if(index < SPI_RING_BUFFER_SIZE - 1)
-        		{
-        			jsonBuffer[index++] = byte;
-        			if(byte == '}')
-        			{
-        				jsonBuffer[index] = '\0';
-        				safe_printf("JSON received: %s\n", jsonBuffer);
-        				process_spi_json(jsonBuffer);
-        				collecting = false;
-        				index = 0;
-        			}
-        		}
-        		else
-        		{
-        			collecting = false;
-        			index = 0;
-        		}
-        	}
+            switch (spiState)
+            {
+                case SPI_IDLE:
+                    if (byte == '{') {
+                        index = 0;
+                        jsonBuffer[index++] = byte;
+                        spiState = SPI_COLLECT_JSON;
+                    }
+                    break;
+
+                case SPI_COLLECT_JSON:
+                    if (index < SPI_RING_BUFFER_SIZE - 1) {
+                        jsonBuffer[index++] = byte;
+
+                        if (byte == '}') {
+                            jsonBuffer[index] = '\0';
+                            spiState = SPI_PROCESS_JSON;
+                        }
+                    }
+                    else {
+                        safe_printf("SPI JSON buffer overflow, resetting...\n");
+                        index = 0;
+                        spiState = SPI_IDLE;
+                    }
+                    break;
+
+                case SPI_PROCESS_JSON:
+                    process_spi_json(jsonBuffer);
+                    spiState = SPI_IDLE;
+                    break;
+            }
         }
-        else
-        {
-        	vTaskDelay(pdMS_TO_TICKS(5));
+        else {
+            vTaskDelay(pdMS_TO_TICKS(5));
         }
     }
 }
