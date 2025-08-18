@@ -13,7 +13,7 @@
 uint8_t uartRingBuffer[UART_RING_BUFFER_SIZE];
 volatile uint16_t uartHead = 0;
 volatile uint16_t uartTail = 0;
-uint8_t uartRxByte;
+volatile uint8_t uartRxByte;
 
 typedef enum
 {

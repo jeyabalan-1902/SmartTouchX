@@ -33,7 +33,7 @@ extern UART_HandleTypeDef huart3;
 extern uint8_t uartRingBuffer[UART_RING_BUFFER_SIZE];
 extern volatile uint16_t uartHead;
 extern volatile uint16_t uartTail;
-extern uint8_t uartRxByte;
+extern volatile uint8_t uartRxByte;
 
 void UART_Handler(void *param);
 void send_json_response(cJSON *jsonObj);

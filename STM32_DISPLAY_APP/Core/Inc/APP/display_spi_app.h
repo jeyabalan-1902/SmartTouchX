@@ -53,14 +53,6 @@ typedef enum {
 #define AUDIO_ACTION_MENU        3
 
 
-#define MAX_DISPLAY_LINES 8
-#define LINE_HEIGHT       12
-#define CHAR_WIDTH        7
-
-#define BL_DEBUG_MSG_EN
-
-extern uint8_t current_line;
-extern char display_buffer[MAX_DISPLAY_LINES][23];
 extern int current_menu;
 extern int current_selection;
 extern int current_device;
@@ -94,24 +86,13 @@ void updateDeviceStatusText(int device_index, bool is_on);
 void updateDeviceCount(int total_on);
 void updateDeviceControlStatus(int device, bool is_on);
 
-// Fast update functions
-void fastUpdateDeviceList(void);
-void fastUpdateTotalControl(void);
-void fastUpdateDeviceControl(void);
-
 // Device control functions
 void setDeviceState(int device, int state);
 void setAllDevicesState(int state, char *source);
 void syncDisplayDeviceStates(void);
 void Display_Handler(void *param);
 void updateToDisplayMenu(void);
-// GPIO interrupt callback
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 
-void print_To_display(char *format,...);
-void DisplayMessage(const char* message);
-void ScrollDisplay(void);
-void ClearDisplay(void);
 
 
 #endif /* INC_APP_DISPLAY_SPI_APP_H_ */

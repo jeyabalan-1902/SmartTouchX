@@ -8,6 +8,21 @@
 #ifndef INC_DISPLAY_GFX_FUNCTIONS_H_
 #define INC_DISPLAY_GFX_FUNCTIONS_H_
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+#define MAX_DISPLAY_LINES 8
+#define LINE_HEIGHT       12
+#define CHAR_WIDTH        7
+#define BL_DEBUG_MSG_EN
+
+#define DISPLAY_WIDTH  160
+#define DISPLAY_HEIGHT 128
+
+extern uint8_t current_line;
+extern char display_buffer[MAX_DISPLAY_LINES][23];
 
 void drawPixel(int16_t x, int16_t y, uint16_t color);
 void writeLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
@@ -37,5 +52,11 @@ void testRoundRects();
 void testFilledRoundRects();
 void testFillScreen();
 void testAll (void);
+
+
+void print_To_display(char *format,...);
+void DisplayMessage(const char* message);
+void ScrollDisplay(void);
+void ClearDisplay(void);
 
 #endif /* INC_DISPLAY_GFX_FUNCTIONS_H_ */

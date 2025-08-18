@@ -16,8 +16,6 @@ int current_menu = MENU_MAIN;
 int current_selection = 0;
 int current_device = 0;
 int last_selection = -1;
-uint8_t current_line = 0;
-char display_buffer[MAX_DISPLAY_LINES][23];
 int last_menu = -1;
 
 int downbutton = 0, upbutton = 0, enter = 0;
@@ -724,34 +722,6 @@ void syncDisplayDeviceStates(void) {
     }
 }
 
-void showActionFeedback(char* message, uint16_t color) {
-    fillRect(MARGIN_X, DISPLAY_HEIGHT - 15, BUTTON_WIDTH, 12, BLACK);
-    ST7735_WriteString(MARGIN_X + 2, DISPLAY_HEIGHT - 13, message, Font_7x10, color, BLACK);
-    HAL_Delay(800);
-    fillRect(MARGIN_X, DISPLAY_HEIGHT - 15, BUTTON_WIDTH, 12, BLACK);
-}
-
-//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-//    if (GPIO_Pin == GPIO_PIN_10) { // ENTER button
-//        downbutton = 0;
-//        upbutton = 0;
-//        enter = 1;
-//    }
-//
-//    if (GPIO_Pin == GPIO_PIN_11) { // DOWN button
-//        downbutton = 1;
-//        upbutton = 0;
-//        enter = 0;
-//    }
-//
-//    if (GPIO_Pin == GPIO_PIN_9) { // UP button
-//        downbutton = 0;
-//        upbutton = 1;
-//        enter = 0;
-//    }
-//}
-
-
 void initializeMenu(void)
 {
     safe_printf("display_init\n\r");
@@ -772,115 +742,6 @@ void initializeMenu(void)
     displayMainMenu();
 }
 
-void fastUpdateDeviceList(void) {
-    if (current_menu == MENU_SEPARATE_CONTROL)
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            if (device_states[i] != last_device_states[i])
-            {
-                updateDeviceStatusText(i, device_states[i]);
-                last_device_states[i] = device_states[i];
-            }
-        }
-    }
-}
-
-// Fast status update for total control
-void fastUpdateTotalControl(void) {
-    if (current_menu == MENU_TOTAL_CONTROL) {
-        int total_on = 0;
-        for (int i = 0; i < 4; i++) {
-            if (device_states[i]) total_on++;
-        }
-        updateDeviceCount(total_on);
-    }
-}
-
-// Fast status update for device control
-void fastUpdateDeviceControl(void) {
-    if (current_menu == MENU_DEVICE_CONTROL) {
-        updateDeviceControlStatus(current_device, device_states[current_device]);
-    }
-}
-
-void ClearDisplay(void)
-{
-    fillScreen(BLACK);
-    current_line = 0;
-
-    // Redraw header
-    ST7735_WriteString(5, 5, "-ONWORDS TOUCH BOARD-", Font_7x10, YELLOW, BLACK);
-	ST7735_WriteString(5, 18, "    VERSION v3.0", Font_7x10, RED, BLACK);
-
-    // Clear display buffer
-    for(int i = 0; i < MAX_DISPLAY_LINES; i++) {
-        memset(display_buffer[i], 0, 23);
-    }
-}
-
-void ScrollDisplay(void)
-{
-    for(int i = 0; i < MAX_DISPLAY_LINES - 1; i++) {
-        strcpy(display_buffer[i], display_buffer[i + 1]);
-    }
-
-    // Clear the last line
-    memset(display_buffer[MAX_DISPLAY_LINES - 1], 0, 23);
-
-    // Redraw all lines
-    fillRect(0, 30, DISPLAY_WIDTH, MAX_DISPLAY_LINES * LINE_HEIGHT, BLACK);
-
-    for(int i = 0; i < MAX_DISPLAY_LINES; i++) {
-        if(strlen(display_buffer[i]) > 0) {
-            ST7735_WriteString(5, 30 + (i * LINE_HEIGHT), display_buffer[i], Font_7x10, WHITE, BLACK);
-        }
-    }
-}
-
-
-void DisplayMessage(const char* message)
-{
-    if(!message) return;
-
-    // If we've reached the bottom, scroll up
-    if(current_line >= MAX_DISPLAY_LINES) {
-        ClearDisplay();
-        //current_line = MAX_DISPLAY_LINES - 1;
-        current_line = 0;
-    }
-
-    strncpy(display_buffer[current_line], message, 22);
-    display_buffer[current_line][22] = '\0';
-
-    // Display the message
-    ST7735_WriteString(5, 30 + (current_line * LINE_HEIGHT), display_buffer[current_line], Font_7x10, WHITE, BLACK);
-
-    current_line++;
-}
-
-void print_To_display(char *format,...)
-{
-#ifdef BL_DEBUG_MSG_EN
-	char str[80];
-
-	/*Extract the the argument list using VA apis */
-	va_list args;
-	va_start(args, format);
-	vsprintf(str, format,args);
-	// Also display on screen
-	DisplayMessage(str);
-	va_end(args);
-#else
-    // If debug is disabled, still show on display
-    char str[80];
-    va_list args;
-    va_start(args, format);
-    vsprintf(str, format, args);
-    DisplayMessage(str);
-    va_end(args);
-#endif
-}
 
 
 void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id)
@@ -1009,7 +870,4 @@ void drawTitleBar(char* title) {
     drawLine(0, TITLE_HEIGHT, DISPLAY_WIDTH, TITLE_HEIGHT, WHITE);
 }
 
-void drawStatusInfo(char* status, uint16_t color) {
-    fillRect(MARGIN_X, TITLE_HEIGHT + 5, BUTTON_WIDTH, 12, BLACK);
-    ST7735_WriteString(MARGIN_X + 2, TITLE_HEIGHT + 7, status, Font_7x10, color, BLACK);
-}
+

@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/APP/RTC_app.c \
 ../Core/Src/APP/display_spi_app.c \
 ../Core/Src/APP/esp32_uart_app.c \
 ../Core/Src/APP/gsm_app.c \
@@ -13,6 +14,7 @@ C_SRCS += \
 ../Core/Src/APP/user_app.c 
 
 OBJS += \
+./Core/Src/APP/RTC_app.o \
 ./Core/Src/APP/display_spi_app.o \
 ./Core/Src/APP/esp32_uart_app.o \
 ./Core/Src/APP/gsm_app.o \
@@ -21,6 +23,7 @@ OBJS += \
 ./Core/Src/APP/user_app.o 
 
 C_DEPS += \
+./Core/Src/APP/RTC_app.d \
 ./Core/Src/APP/display_spi_app.d \
 ./Core/Src/APP/esp32_uart_app.d \
 ./Core/Src/APP/gsm_app.d \
@@ -36,7 +39,7 @@ Core/Src/APP/%.o Core/Src/APP/%.su Core/Src/APP/%.cyclo: ../Core/Src/APP/%.c Cor
 clean: clean-Core-2f-Src-2f-APP
 
 clean-Core-2f-Src-2f-APP:
-	-$(RM) ./Core/Src/APP/display_spi_app.cyclo ./Core/Src/APP/display_spi_app.d ./Core/Src/APP/display_spi_app.o ./Core/Src/APP/display_spi_app.su ./Core/Src/APP/esp32_uart_app.cyclo ./Core/Src/APP/esp32_uart_app.d ./Core/Src/APP/esp32_uart_app.o ./Core/Src/APP/esp32_uart_app.su ./Core/Src/APP/gsm_app.cyclo ./Core/Src/APP/gsm_app.d ./Core/Src/APP/gsm_app.o ./Core/Src/APP/gsm_app.su ./Core/Src/APP/rfm69_app.cyclo ./Core/Src/APP/rfm69_app.d ./Core/Src/APP/rfm69_app.o ./Core/Src/APP/rfm69_app.su ./Core/Src/APP/touch_spi_app.cyclo ./Core/Src/APP/touch_spi_app.d ./Core/Src/APP/touch_spi_app.o ./Core/Src/APP/touch_spi_app.su ./Core/Src/APP/user_app.cyclo ./Core/Src/APP/user_app.d ./Core/Src/APP/user_app.o ./Core/Src/APP/user_app.su
+	-$(RM) ./Core/Src/APP/RTC_app.cyclo ./Core/Src/APP/RTC_app.d ./Core/Src/APP/RTC_app.o ./Core/Src/APP/RTC_app.su ./Core/Src/APP/display_spi_app.cyclo ./Core/Src/APP/display_spi_app.d ./Core/Src/APP/display_spi_app.o ./Core/Src/APP/display_spi_app.su ./Core/Src/APP/esp32_uart_app.cyclo ./Core/Src/APP/esp32_uart_app.d ./Core/Src/APP/esp32_uart_app.o ./Core/Src/APP/esp32_uart_app.su ./Core/Src/APP/gsm_app.cyclo ./Core/Src/APP/gsm_app.d ./Core/Src/APP/gsm_app.o ./Core/Src/APP/gsm_app.su ./Core/Src/APP/rfm69_app.cyclo ./Core/Src/APP/rfm69_app.d ./Core/Src/APP/rfm69_app.o ./Core/Src/APP/rfm69_app.su ./Core/Src/APP/touch_spi_app.cyclo ./Core/Src/APP/touch_spi_app.d ./Core/Src/APP/touch_spi_app.o ./Core/Src/APP/touch_spi_app.su ./Core/Src/APP/user_app.cyclo ./Core/Src/APP/user_app.d ./Core/Src/APP/user_app.o ./Core/Src/APP/user_app.su
 
 .PHONY: clean-Core-2f-Src-2f-APP
 
