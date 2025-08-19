@@ -229,10 +229,11 @@ void mqtt_topics(void)
 void mqtt_app_start(char *product_id) {
     mqtt_topics();
     esp_mqtt_client_config_t mqtt_cfg = {
-        .broker.address.uri = MQTT_URL,
-        .credentials.client_id = product_id,
+         .broker.address.uri = MQTT_URL,
+         .credentials.client_id = product_id,
+         .session.keepalive = 60,
+         .session.disable_clean_session = true,
     };
-    mqtt_cfg.session.keepalive = 30;
     mqtt_client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(mqtt_client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(mqtt_client);
