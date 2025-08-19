@@ -201,16 +201,16 @@ static void MX_RTC_Init(void)
 
   /* USER CODE END RTC_Init 0 */
 
-  RTC_TimeTypeDef sTime = {0};
-  RTC_DateTypeDef sDate = {0};
-  RTC_AlarmTypeDef sAlarm = {0};
-
-  /* USER CODE BEGIN RTC_Init 1 */
-
-  /* USER CODE END RTC_Init 1 */
-
-  /** Initialize RTC Only
-  */
+//  RTC_TimeTypeDef sTime = {0};
+//  RTC_DateTypeDef sDate = {0};
+//  RTC_AlarmTypeDef sAlarm = {0};
+//
+//  /* USER CODE BEGIN RTC_Init 1 */
+//
+//  /* USER CODE END RTC_Init 1 */
+//
+//  /** Initialize RTC Only
+//  */
   hrtc.Instance = RTC;
   hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
   hrtc.Init.AsynchPrediv = 127;
@@ -222,13 +222,13 @@ static void MX_RTC_Init(void)
   {
     Error_Handler();
   }
-
-  /* USER CODE BEGIN Check_RTC_BKUP */
-
-  /* USER CODE END Check_RTC_BKUP */
-
-  /** Initialize RTC and set the Time and Date
-  */
+//
+//  /* USER CODE BEGIN Check_RTC_BKUP */
+//
+//  /* USER CODE END Check_RTC_BKUP */
+//
+//  /** Initialize RTC and set the Time and Date
+//  */
 //  sTime.Hours = 0x0;
 //  sTime.Minutes = 0x0;
 //  sTime.Seconds = 0x0;
@@ -261,6 +261,14 @@ static void MX_RTC_Init(void)
 //  sAlarm.AlarmDateWeekDaySel = RTC_ALARMDATEWEEKDAYSEL_DATE;
 //  sAlarm.AlarmDateWeekDay = 0x1;
 //  sAlarm.Alarm = RTC_ALARM_A;
+//  if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BCD) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+//
+//  /** Enable the Alarm B
+//  */
+//  sAlarm.Alarm = RTC_ALARM_B;
 //  if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BCD) != HAL_OK)
 //  {
 //    Error_Handler();

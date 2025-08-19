@@ -6,6 +6,6 @@
 ../Core/Src/APP/user_app.c:97:13:init_tasks	6
 ../Core/Src/APP/user_app.c:123:13:start_scheduler	1
 ../Core/Src/APP/user_app.c:132:6:user_app_init	1
-../Core/Src/APP/user_app.c:146:6:vApplicationStackOverflowHook	1
-../Core/Src/APP/user_app.c:152:6:print_task_info	1
-../Core/Src/APP/user_app.c:160:6:safe_printf	3
+../Core/Src/APP/user_app.c:145:6:vApplicationStackOverflowHook	1
+../Core/Src/APP/user_app.c:151:6:print_task_info	1
+../Core/Src/APP/user_app.c:159:6:safe_printf	3

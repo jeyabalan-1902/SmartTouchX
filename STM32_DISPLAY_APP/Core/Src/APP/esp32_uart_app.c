@@ -13,7 +13,8 @@
 uint8_t uartRingBuffer[UART_RING_BUFFER_SIZE];
 volatile uint16_t uartHead = 0;
 volatile uint16_t uartTail = 0;
-volatile uint8_t uartRxByte;
+uint8_t uartRxByte;
+TaskHandle_t uartTaskHandle = NULL;
 
 typedef enum
 {
@@ -26,62 +27,68 @@ static UartState_t uartState = UART_IDLE;
 
 void UART_Handler(void *param)
 {
+    uartTaskHandle = xTaskGetCurrentTaskHandle();
     uint8_t jsonBuffer[JSON_BUFFER_SIZE];
     uint8_t index = 0;
+    uint8_t braceCount = 0;
+
     while (1)
     {
-        if (uartHead != uartTail)
+        // Wait until ISR notifies us
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+
+        while (uartHead != uartTail)
         {
             uint8_t byte = uartRingBuffer[uartTail];
             uartTail = (uartTail + 1) % UART_RING_BUFFER_SIZE;
 
             switch(uartState)
             {
-				case UART_IDLE:
-					if (byte == '{')
-					{
-						index = 0;
-						jsonBuffer[index++] = byte;
-						uartState = UART_COLLECT_JSON;
-					}
-					else if(byte == BOOT_CMD)
-					{
-						NVIC_SystemReset();
-					}
-					break;
+                case UART_IDLE:
+                    if (byte == '{')
+                    {
+                        index = 0;
+                        jsonBuffer[index++] = byte;
+                        braceCount = 1;
+                        uartState = UART_COLLECT_JSON;
+                    }
+                    else if (byte == BOOT_CMD)
+                    {
+                        NVIC_SystemReset();
+                    }
+                    break;
 
-				case UART_COLLECT_JSON:
-					if (index < JSON_BUFFER_SIZE - 1)
-					{
-						jsonBuffer[index++] = byte;
+                case UART_COLLECT_JSON:
+                    if (index < JSON_BUFFER_SIZE - 1)
+                    {
+                        jsonBuffer[index++] = byte;
+                        if (byte == '{') braceCount++;
+                        else if (byte == '}') braceCount--;
 
-						if (byte == '}')
-						{
-							jsonBuffer[index] = '\0';
-						    uartState = UART_PROCESS_JSON;
-						}
-					}
-					else
-					{
-						safe_printf("UART JSON buffer overflow, resetting...\n");
-						index = 0;
-						uartState = UART_IDLE;
-					}
-					break;
+                        if (braceCount == 0)
+                        {
+                            jsonBuffer[index] = '\0';
+                            uartState = UART_PROCESS_JSON;
+                        }
+                    }
+                    else
+                    {
+                        safe_printf("UART JSON buffer overflow\n");
+                        index = 0;
+                        uartState = UART_IDLE;
+                    }
+                    break;
 
-				case UART_PROCESS_JSON:
-					process_json(jsonBuffer);
-					index = 0;
-					uartState = UART_IDLE;
-					break;
+                case UART_PROCESS_JSON:
+                    process_json(jsonBuffer);
+                    index = 0;
+                    uartState = UART_IDLE;
+                    break;
             }
-        }
-        else
-        {
-            vTaskDelay(pdMS_TO_TICKS(5));
         }
     }
 }
+
 
 
 void send_json_response(cJSON *jsonObj)
@@ -171,18 +178,24 @@ void process_json(uint8_t *jsonBuffer)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    if (huart->Instance == USART3)
-    {
-        uint16_t nextHead = (uartHead + 1) % UART_RING_BUFFER_SIZE;
-        if (nextHead != uartTail)
-        {
-            uartRingBuffer[uartHead] = uartRxByte;
-            uartHead = nextHead;
-        } else {
-            safe_printf("UART ring buffer overflow!\n");
-        }
-        HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
-    }
+	if (huart->Instance == USART3)
+	{
+		uint16_t nextHead = (uartHead + 1) % UART_RING_BUFFER_SIZE;
+		if (nextHead != uartTail)
+		{
+			uartRingBuffer[uartHead] = uartRxByte;
+			uartHead = nextHead;
+		}
+		else
+		{
+			safe_printf("ring buffer overflowed\n");
+		}
+		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		vTaskNotifyGiveFromISR(uartTaskHandle, &xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+
+		HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
+	}
 
     else if(huart == UART_SIM800)
     {

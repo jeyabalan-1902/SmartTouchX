@@ -1,7 +1,6 @@
 Core/Src/DISPLAY/onwords_logo.o: ../Core/Src/DISPLAY/onwords_logo.c \
  ../Core/Inc/DISPLAY/onwords_logo.h ../Core/Inc/APP/user_app.h \
- ../Core/Inc/cJSON/cJSON.h ../Core/Inc/main.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -45,11 +44,11 @@ Core/Src/DISPLAY/onwords_logo.o: ../Core/Src/DISPLAY/onwords_logo.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h \
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/cJSON/cJSON.h \
  ../Core/Inc/DISPLAY/GFX_FUNCTIONS.h ../Core/Inc/DISPLAY/ST7735.h \
  ../Core/Inc/DISPLAY/fonts.h
 ../Core/Inc/DISPLAY/onwords_logo.h:
 ../Core/Inc/APP/user_app.h:
-../Core/Inc/cJSON/cJSON.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -95,6 +94,7 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/task.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/semphr.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/RTOS/freeRTOS/include/queue.h:
+C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/cJSON/cJSON.h:
 ../Core/Inc/DISPLAY/GFX_FUNCTIONS.h:
 ../Core/Inc/DISPLAY/ST7735.h:
 ../Core/Inc/DISPLAY/fonts.h:

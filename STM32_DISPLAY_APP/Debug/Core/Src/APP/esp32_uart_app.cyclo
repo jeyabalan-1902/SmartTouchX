@@ -1,7 +1,7 @@
 ../Drivers/CMSIS/Include/core_cm4.h:1938:34:__NVIC_SystemReset	1
-../Core/Src/APP/esp32_uart_app.c:27:6:UART_Handler	9
-../Core/Src/APP/esp32_uart_app.c:87:6:send_json_response	2
-../Core/Src/APP/esp32_uart_app.c:99:6:handle_get_status_request	3
-../Core/Src/APP/esp32_uart_app.c:114:6:handle_device_control	8
-../Core/Src/APP/esp32_uart_app.c:151:6:process_json	4
-../Core/Src/APP/esp32_uart_app.c:172:6:HAL_UART_RxCpltCallback	5
+../Core/Src/APP/esp32_uart_app.c:28:6:UART_Handler	11
+../Core/Src/APP/esp32_uart_app.c:94:6:send_json_response	2
+../Core/Src/APP/esp32_uart_app.c:106:6:handle_get_status_request	3
+../Core/Src/APP/esp32_uart_app.c:121:6:handle_device_control	8
+../Core/Src/APP/esp32_uart_app.c:158:6:process_json	4
+../Core/Src/APP/esp32_uart_app.c:179:6:HAL_UART_RxCpltCallback	6

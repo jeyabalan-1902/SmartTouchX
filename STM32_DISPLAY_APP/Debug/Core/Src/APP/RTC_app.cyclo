@@ -1,7 +1,9 @@
-../Core/Src/APP/RTC_app.c:17:6:RTC_init	2
-../Core/Src/APP/RTC_app.c:29:6:RTC_Task	1
-../Core/Src/APP/RTC_app.c:40:6:set_time	2
-../Core/Src/APP/RTC_app.c:55:6:set_date	2
-../Core/Src/APP/RTC_app.c:72:6:set_alarm	2
-../Core/Src/APP/RTC_app.c:92:6:get_time_date	1
-../Core/Src/APP/RTC_app.c:109:6:HAL_RTC_AlarmAEventCallback	1
+../Core/Src/APP/RTC_app.c:35:6:RTC_Task	11
+../Core/Src/APP/RTC_app.c:101:6:RTC_init	2
+../Core/Src/APP/RTC_app.c:111:6:set_time	2
+../Core/Src/APP/RTC_app.c:127:6:set_date	2
+../Core/Src/APP/RTC_app.c:144:6:set_alarmA	2
+../Core/Src/APP/RTC_app.c:161:6:set_alarmB	2
+../Core/Src/APP/RTC_app.c:178:6:get_time_date	1
+../Core/Src/APP/RTC_app.c:189:6:HAL_RTC_AlarmAEventCallback	2
+../Core/Src/APP/RTC_app.c:198:6:HAL_RTCEx_AlarmBEventCallback	2

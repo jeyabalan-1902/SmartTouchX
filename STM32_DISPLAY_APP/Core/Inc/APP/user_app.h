@@ -8,7 +8,6 @@
 #ifndef INC_APP_USER_APP_H_
 #define INC_APP_USER_APP_H_
 
-#include <cJSON/cJSON.h>
 #include "main.h"
 
 #include <stdio.h>
@@ -22,6 +21,8 @@
 #include "queue.h"
 #include "semphr.h"
 
+#include "cJSON.h"
+
 
 #define SPI_BUFFER_SIZE       64
 #define DEVICE_COUNT          4
@@ -29,10 +30,10 @@
 
 
 extern const char *devices[DEVICE_COUNT];
-extern const GPIO_TypeDef* led_ports[DEVICE_COUNT];
-extern const uint16_t led_pins[DEVICE_COUNT];
-extern const GPIO_TypeDef* relay_ports[DEVICE_COUNT];
-extern const uint16_t relay_pins[DEVICE_COUNT];
+extern GPIO_TypeDef* led_ports[DEVICE_COUNT];
+extern uint16_t led_pins[DEVICE_COUNT];
+extern GPIO_TypeDef* relay_ports[DEVICE_COUNT];
+extern uint16_t relay_pins[DEVICE_COUNT];
 extern volatile int global_device_states[4];
 extern SPI_HandleTypeDef hspi1;
 extern SPI_HandleTypeDef hspi2;

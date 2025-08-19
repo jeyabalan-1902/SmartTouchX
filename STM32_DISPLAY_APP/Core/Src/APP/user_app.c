@@ -25,11 +25,11 @@ SIM800_t SIM800;
 
 const char *devices[DEVICE_COUNT] = {"device1", "device2", "device3", "device4"};
 
-const GPIO_TypeDef* led_ports[DEVICE_COUNT]   = {TOUCH_LED1_GPIO_Port, TOUCH_LED2_GPIO_Port, TOUCH_LED3_GPIO_Port, TOUCH_LED4_GPIO_Port};
-const GPIO_TypeDef* relay_ports[DEVICE_COUNT] = {L_RELAY_1_GPIO_Port, L_RELAY_2_GPIO_Port, L_RELAY_3_GPIO_Port, L_RELAY_4_GPIO_Port};
+GPIO_TypeDef* led_ports[DEVICE_COUNT]   = {TOUCH_LED1_GPIO_Port, TOUCH_LED2_GPIO_Port, TOUCH_LED3_GPIO_Port, TOUCH_LED4_GPIO_Port};
+GPIO_TypeDef* relay_ports[DEVICE_COUNT] = {L_RELAY_1_GPIO_Port, L_RELAY_2_GPIO_Port, L_RELAY_3_GPIO_Port, L_RELAY_4_GPIO_Port};
 
-const uint16_t led_pins[DEVICE_COUNT]   = {TOUCH_LED1_Pin, TOUCH_LED2_Pin, TOUCH_LED3_Pin, TOUCH_LED4_Pin};
-const uint16_t relay_pins[DEVICE_COUNT] = {L_RELAY_1_Pin, L_RELAY_2_Pin, L_RELAY_3_Pin, L_RELAY_4_Pin};
+uint16_t led_pins[DEVICE_COUNT]   = {TOUCH_LED1_Pin, TOUCH_LED2_Pin, TOUCH_LED3_Pin, TOUCH_LED4_Pin};
+uint16_t relay_pins[DEVICE_COUNT] = {L_RELAY_1_Pin, L_RELAY_2_Pin, L_RELAY_3_Pin, L_RELAY_4_Pin};
 
 volatile int global_device_states[DEVICE_COUNT] = {0, 0, 0, 0};
 uint32_t lastKeepAliveTime = 0;
@@ -108,7 +108,7 @@ static void init_tasks(void)
     status = xTaskCreate(Display_Handler, "DisplayHandler", 1024, NULL, 2, NULL);
 	configASSERT(status == pdPASS);
 
-	status = xTaskCreate(RTC_Task, "RTC_TaskHandler", 256, NULL, 2, NULL);
+	status = xTaskCreate(RTC_Task, "RTC_TaskHandler", 512, NULL, 2, NULL);
 	configASSERT(status == pdPASS);
 
     // Optional GSM MQTT Task
@@ -137,7 +137,6 @@ void user_app_init(void)
 	init_interrupts();
 	init_device_states();
     init_display_app();
-    RTC_init();
     GSM_init();
     init_tasks();
     start_scheduler();

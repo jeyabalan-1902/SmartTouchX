@@ -15,12 +15,15 @@ extern RTC_HandleTypeDef hrtc;
 extern char timeData[15];
 extern char dateData[15];
 
-void RTC_init(void);
+bool RTC_init(void);
 void set_time (uint8_t hr, uint8_t min, uint8_t sec);
 void set_date (uint8_t year, uint8_t month, uint8_t date, uint8_t day);
-void set_alarm (uint8_t hr, uint8_t min, uint8_t sec, uint8_t date);
+void set_alarm (uint8_t hr, uint8_t min, uint8_t sec);
 void get_time_date(char *time, char *date);
 void RTC_Task(void *param);
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc);
+void HAL_RTCEx_AlarmBEventCallback(RTC_HandleTypeDef *hrtc);
+void set_alarmB(uint8_t hr, uint8_t min, uint8_t sec);
+void set_alarmA(uint8_t hr, uint8_t min, uint8_t sec);
 
 #endif /* INC_APP_RTC_APP_H_ */
