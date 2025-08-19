@@ -34,7 +34,6 @@ void UART_Handler(void *param)
 
     while (1)
     {
-        // Wait until ISR notifies us
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
         while (uartHead != uartTail)

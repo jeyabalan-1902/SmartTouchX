@@ -15,6 +15,8 @@ volatile uint16_t spiHead = 0;
 volatile uint16_t spiTail = 0;
 uint8_t spiRxByte;
 
+TaskHandle_t spiTaskHandle = NULL;
+
 typedef enum
 {
 	SPI_IDLE,
@@ -26,12 +28,14 @@ static SpiState_t spiState = SPI_IDLE;
 
 void SPI_Handler(void *param)
 {
+	spiTaskHandle = xTaskGetCurrentTaskHandle();
     uint8_t jsonBuffer[SPI_RING_BUFFER_SIZE];
     uint8_t index = 0;
 
     while (1)
     {
-        if (spiHead != spiTail)
+    	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        while(spiHead != spiTail)
         {
             uint8_t byte = spiRingBuffer[spiTail];
             spiTail = (spiTail + 1) % SPI_RING_BUFFER_SIZE;
@@ -67,9 +71,6 @@ void SPI_Handler(void *param)
                     spiState = SPI_IDLE;
                     break;
             }
-        }
-        else {
-            vTaskDelay(pdMS_TO_TICKS(5));
         }
     }
 }
@@ -135,6 +136,9 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
         {
         	safe_printf("SPI ring buffer overflow\n");
         }
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		vTaskNotifyGiveFromISR(spiTaskHandle, &xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
         HAL_SPI_Receive_IT(&hspi2, &spiRxByte, 1);
     }
     __HAL_SPI_CLEAR_OVRFLAG(hspi);

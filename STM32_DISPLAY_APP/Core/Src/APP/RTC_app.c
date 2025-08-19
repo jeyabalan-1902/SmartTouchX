@@ -43,12 +43,12 @@ void RTC_Task(void *param)
 		{
 			case RTC_INIT:
 				int init = RTC_init();
-				rtcState = init == 1 ? RTC_SET_ALARM : RTC_SET_TIME;
-				//rtcState = RTC_SET_TIME;
+				rtcState = init == 1 ? RTC_IDLE : RTC_SET_TIME;
+//				rtcState = RTC_SET_TIME;
 				break;
 
 			case RTC_SET_TIME:
-				set_time(11, 56, 0);
+				set_time(16, 44, 0);
 				rtcState = RTC_SET_DATE;
 				break;
 
@@ -58,8 +58,8 @@ void RTC_Task(void *param)
 				break;
 
 			case RTC_SET_ALARM:
-				set_alarmA(12, 55, 0);
-				set_alarmB(12, 56, 0);
+				set_alarmA(16, 45, 0);
+				set_alarmB(16, 46, 0);
 				rtcState = RTC_GET_DATE_TIME;
 				break;
 

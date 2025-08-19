@@ -53,7 +53,8 @@ Core/Src/APP/display_spi_app.o: ../Core/Src/APP/display_spi_app.c \
  C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/DISPLAY/onwords_logo.h \
  ../Core/Inc/APP/user_app.h ../Core/Inc/DISPLAY/GFX_FUNCTIONS.h \
  ../Core/Inc/DISPLAY/ST7735.h \
- C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h \
+ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/RTC_app.h
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/user_app.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -111,3 +112,4 @@ C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/DISPLAY/onwo
 ../Core/Inc/DISPLAY/GFX_FUNCTIONS.h:
 ../Core/Inc/DISPLAY/ST7735.h:
 C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/esp32_uart_app.h:
+C:/Users/kjeya/Documents/MCU_INTEGRATION/STM32_DISPLAY_APP/Core/Inc/APP/RTC_app.h:

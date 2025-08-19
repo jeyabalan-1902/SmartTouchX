@@ -35,7 +35,18 @@ typedef enum {
     MENU_SEPARATE_CONTROL,
     MENU_DEVICE_CONTROL,
 	MENU_AUDIO_MENU,
-	MENU_AUDIO_ACTION
+	MENU_AUDIO_ACTION,
+	MENU_CLOCK_SETTINGS,
+	MENU_SET_TIME,
+	MENU_SET_DATE,
+	MENU_SET_ALARM,
+	MENU_HOUR_SELECT,
+	MENU_MINUTE_SELECT,
+	MENU_SECOND_SELECT,
+	MENU_DATE_SELECT,
+	MENU_MONTH_SELECT,
+	MENU_YEAR_SELECT,
+	MENU_DAY_SELECT
 } menu_state_t;
 
 typedef enum {
@@ -49,8 +60,17 @@ typedef enum {
 #define TOTAL_CONTROL_OPTIONS    3
 #define SEPARATE_CONTROL_OPTIONS 5
 #define DEVICE_CONTROL_OPTIONS   4
-#define AUDIO_MENU               4
-#define AUDIO_ACTION_MENU        3
+#define CLOCK_SETTINGS_OPTIONS   4
+#define SET_TIME_OPTIONS         5
+#define SET_DATE_OPTIONS         5
+#define SET_ALARM_OPTIONS        5
+#define HOUR_SELECT_OPTIONS      6
+#define MINUTE_SELECT_OPTIONS    10
+#define SECOND_SELECT_OPTIONS    10
+#define DATE_SELECT_OPTIONS      10
+#define MONTH_SELECT_OPTIONS     14
+#define YEAR_SELECT_OPTIONS      10
+#define DAY_SELECT_OPTIONS       9
 
 
 extern int current_menu;
@@ -92,6 +112,20 @@ void setAllDevicesState(int state, char *source);
 void syncDisplayDeviceStates(void);
 void Display_Handler(void *param);
 void updateToDisplayMenu(void);
+
+
+void displayDaySelectMenu(void);
+void displayYearSelectMenu(void);
+void displayMonthSelectMenu(void);
+void displayDateSelectMenu(void);
+void displaySecondSelectMenu(void);
+void displayMinuteSelectMenu(void);
+void displayHourSelectMenu(void);
+void displaySetTimeMenu(void);
+void displaySetDateMenu(void);
+void displaySetAlarmMenu(void);
+void displayClockSettingsMenu(void);
+
 
 
 
