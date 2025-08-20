@@ -200,17 +200,17 @@ static void MX_RTC_Init(void)
   /* USER CODE BEGIN RTC_Init 0 */
 
   /* USER CODE END RTC_Init 0 */
-
+//
 //  RTC_TimeTypeDef sTime = {0};
 //  RTC_DateTypeDef sDate = {0};
 //  RTC_AlarmTypeDef sAlarm = {0};
+
+  /* USER CODE BEGIN RTC_Init 1 */
 //
-//  /* USER CODE BEGIN RTC_Init 1 */
-//
-//  /* USER CODE END RTC_Init 1 */
-//
-//  /** Initialize RTC Only
-//  */
+  /* USER CODE END RTC_Init 1 */
+
+  /** Initialize RTC Only
+  */
   hrtc.Instance = RTC;
   hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
   hrtc.Init.AsynchPrediv = 127;
@@ -222,13 +222,13 @@ static void MX_RTC_Init(void)
   {
     Error_Handler();
   }
+
+  /* USER CODE BEGIN Check_RTC_BKUP */
 //
-//  /* USER CODE BEGIN Check_RTC_BKUP */
-//
-//  /* USER CODE END Check_RTC_BKUP */
-//
-//  /** Initialize RTC and set the Time and Date
-//  */
+  /* USER CODE END Check_RTC_BKUP */
+
+  /** Initialize RTC and set the Time and Date
+  */
 //  sTime.Hours = 0x0;
 //  sTime.Minutes = 0x0;
 //  sTime.Seconds = 0x0;
@@ -247,9 +247,9 @@ static void MX_RTC_Init(void)
 //  {
 //    Error_Handler();
 //  }
-//
-//  /** Enable the Alarm A
-//  */
+
+  /** Enable the Alarm A
+  */
 //  sAlarm.AlarmTime.Hours = 0x0;
 //  sAlarm.AlarmTime.Minutes = 0x0;
 //  sAlarm.AlarmTime.Seconds = 0x0;
@@ -265,9 +265,9 @@ static void MX_RTC_Init(void)
 //  {
 //    Error_Handler();
 //  }
-//
-//  /** Enable the Alarm B
-//  */
+
+  /** Enable the Alarm B
+  */
 //  sAlarm.Alarm = RTC_ALARM_B;
 //  if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BCD) != HAL_OK)
 //  {
@@ -546,7 +546,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, TOUCH_LED2_Pin|TOUCH_LED1_Pin|GPIO_PIN_4|L_RELAY_4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4|RF_REC_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, RF_CS_Pin|RF_RST_Pin|TOUCH_LED3_Pin|TOUCH_LED4_Pin, GPIO_PIN_RESET);
@@ -566,8 +566,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : DISP_BACKLIT_Pin PA1 PA4 */
-  GPIO_InitStruct.Pin = DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4;
+  /*Configure GPIO pins : DISP_BACKLIT_Pin PA1 PA4 RF_REC_LED_Pin */
+  GPIO_InitStruct.Pin = DISP_BACKLIT_Pin|GPIO_PIN_1|GPIO_PIN_4|RF_REC_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

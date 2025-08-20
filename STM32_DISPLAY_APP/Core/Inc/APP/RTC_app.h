@@ -15,6 +15,17 @@ extern RTC_HandleTypeDef hrtc;
 extern char timeData[15];
 extern char dateData[15];
 
+
+bool rtc_request_set_time(uint8_t hour, uint8_t minute, uint8_t second);
+bool rtc_request_set_date(uint8_t year, uint8_t month, uint8_t date, uint8_t day);
+bool rtc_request_set_alarm_a(uint8_t hour, uint8_t minute, uint8_t second);
+bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second);
+
+void set_time_external(uint8_t hr, uint8_t min, uint8_t sec);
+void set_date_external(uint8_t year, uint8_t month, uint8_t date, uint8_t day);
+void set_alarmA_external(uint8_t hr, uint8_t min, uint8_t sec);
+void set_alarmB_external(uint8_t hr, uint8_t min, uint8_t sec);
+
 bool RTC_init(void);
 void set_time (uint8_t hr, uint8_t min, uint8_t sec);
 void set_date (uint8_t year, uint8_t month, uint8_t date, uint8_t day);

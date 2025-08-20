@@ -1,0 +1,14 @@
+../Core/Src/DISPLAY/menu_UI.c:31:6:displayMainMenu	5
+../Core/Src/DISPLAY/menu_UI.c:67:6:displayTotalControlMenu	10
+../Core/Src/DISPLAY/menu_UI.c:124:6:displaySeparateControlMenu	10
+../Core/Src/DISPLAY/menu_UI.c:170:6:displayDeviceControlMenu	7
+../Core/Src/DISPLAY/menu_UI.c:218:6:displayClockSettingsMenu	5
+../Core/Src/DISPLAY/menu_UI.c:247:6:displaySetAlarmMenu	5
+../Core/Src/DISPLAY/menu_UI.c:279:6:displaySetTimeMenu	11
+../Core/Src/DISPLAY/menu_UI.c:336:6:displaySetDateMenu	13
+../Core/Src/DISPLAY/menu_UI.c:400:6:handleIncrementDecrement	28
+../Core/Src/DISPLAY/menu_UI.c:483:6:drawCleanButton	2
+../Core/Src/DISPLAY/menu_UI.c:499:6:drawTitleBar	2
+../Core/Src/DISPLAY/menu_UI.c:512:6:drawSingleButton	3
+../Core/Src/DISPLAY/menu_UI.c:542:6:updateButtonSelection	5
+../Core/Src/DISPLAY/menu_UI.c:571:6:ST7735_WriteCenteredTimeDate	1

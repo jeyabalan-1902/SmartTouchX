@@ -42,6 +42,7 @@ extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
 extern UART_HandleTypeDef huart4;
 extern SemaphoreHandle_t deviceStateMutex;
+extern SemaphoreHandle_t rfled_semaphore;
 extern uint32_t lastKeepAliveTime;
 extern QueueHandle_t btnEventQueue;
 

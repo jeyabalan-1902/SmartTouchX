@@ -1,0 +1,14 @@
+../Core/Src/DISPLAY/menu_UI.c:31:6:displayMainMenu	32	static
+../Core/Src/DISPLAY/menu_UI.c:67:6:displayTotalControlMenu	48	static
+../Core/Src/DISPLAY/menu_UI.c:124:6:displaySeparateControlMenu	64	static
+../Core/Src/DISPLAY/menu_UI.c:170:6:displayDeviceControlMenu	64	static
+../Core/Src/DISPLAY/menu_UI.c:218:6:displayClockSettingsMenu	32	static
+../Core/Src/DISPLAY/menu_UI.c:247:6:displaySetAlarmMenu	56	static
+../Core/Src/DISPLAY/menu_UI.c:279:6:displaySetTimeMenu	112	static
+../Core/Src/DISPLAY/menu_UI.c:336:6:displaySetDateMenu	128	static
+../Core/Src/DISPLAY/menu_UI.c:400:6:handleIncrementDecrement	8	static
+../Core/Src/DISPLAY/menu_UI.c:483:6:drawCleanButton	48	static
+../Core/Src/DISPLAY/menu_UI.c:499:6:drawTitleBar	48	static
+../Core/Src/DISPLAY/menu_UI.c:512:6:drawSingleButton	48	static
+../Core/Src/DISPLAY/menu_UI.c:542:6:updateButtonSelection	48	static
+../Core/Src/DISPLAY/menu_UI.c:571:6:ST7735_WriteCenteredTimeDate	88	static

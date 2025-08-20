@@ -8,18 +8,21 @@ C_SRCS += \
 ../Core/Src/DISPLAY/GFX_FUNCTIONS.c \
 ../Core/Src/DISPLAY/ST7735.c \
 ../Core/Src/DISPLAY/fonts.c \
+../Core/Src/DISPLAY/menu_UI.c \
 ../Core/Src/DISPLAY/onwords_logo.c 
 
 OBJS += \
 ./Core/Src/DISPLAY/GFX_FUNCTIONS.o \
 ./Core/Src/DISPLAY/ST7735.o \
 ./Core/Src/DISPLAY/fonts.o \
+./Core/Src/DISPLAY/menu_UI.o \
 ./Core/Src/DISPLAY/onwords_logo.o 
 
 C_DEPS += \
 ./Core/Src/DISPLAY/GFX_FUNCTIONS.d \
 ./Core/Src/DISPLAY/ST7735.d \
 ./Core/Src/DISPLAY/fonts.d \
+./Core/Src/DISPLAY/menu_UI.d \
 ./Core/Src/DISPLAY/onwords_logo.d 
 
 
@@ -30,7 +33,7 @@ Core/Src/DISPLAY/%.o Core/Src/DISPLAY/%.su Core/Src/DISPLAY/%.cyclo: ../Core/Src
 clean: clean-Core-2f-Src-2f-DISPLAY
 
 clean-Core-2f-Src-2f-DISPLAY:
-	-$(RM) ./Core/Src/DISPLAY/GFX_FUNCTIONS.cyclo ./Core/Src/DISPLAY/GFX_FUNCTIONS.d ./Core/Src/DISPLAY/GFX_FUNCTIONS.o ./Core/Src/DISPLAY/GFX_FUNCTIONS.su ./Core/Src/DISPLAY/ST7735.cyclo ./Core/Src/DISPLAY/ST7735.d ./Core/Src/DISPLAY/ST7735.o ./Core/Src/DISPLAY/ST7735.su ./Core/Src/DISPLAY/fonts.cyclo ./Core/Src/DISPLAY/fonts.d ./Core/Src/DISPLAY/fonts.o ./Core/Src/DISPLAY/fonts.su ./Core/Src/DISPLAY/onwords_logo.cyclo ./Core/Src/DISPLAY/onwords_logo.d ./Core/Src/DISPLAY/onwords_logo.o ./Core/Src/DISPLAY/onwords_logo.su
+	-$(RM) ./Core/Src/DISPLAY/GFX_FUNCTIONS.cyclo ./Core/Src/DISPLAY/GFX_FUNCTIONS.d ./Core/Src/DISPLAY/GFX_FUNCTIONS.o ./Core/Src/DISPLAY/GFX_FUNCTIONS.su ./Core/Src/DISPLAY/ST7735.cyclo ./Core/Src/DISPLAY/ST7735.d ./Core/Src/DISPLAY/ST7735.o ./Core/Src/DISPLAY/ST7735.su ./Core/Src/DISPLAY/fonts.cyclo ./Core/Src/DISPLAY/fonts.d ./Core/Src/DISPLAY/fonts.o ./Core/Src/DISPLAY/fonts.su ./Core/Src/DISPLAY/menu_UI.cyclo ./Core/Src/DISPLAY/menu_UI.d ./Core/Src/DISPLAY/menu_UI.o ./Core/Src/DISPLAY/menu_UI.su ./Core/Src/DISPLAY/onwords_logo.cyclo ./Core/Src/DISPLAY/onwords_logo.d ./Core/Src/DISPLAY/onwords_logo.o ./Core/Src/DISPLAY/onwords_logo.su
 
 .PHONY: clean-Core-2f-Src-2f-DISPLAY
 

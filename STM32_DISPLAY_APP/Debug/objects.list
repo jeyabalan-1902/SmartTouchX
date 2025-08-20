@@ -8,6 +8,7 @@
 "./Core/Src/DISPLAY/GFX_FUNCTIONS.o"
 "./Core/Src/DISPLAY/ST7735.o"
 "./Core/Src/DISPLAY/fonts.o"
+"./Core/Src/DISPLAY/menu_UI.o"
 "./Core/Src/DISPLAY/onwords_logo.o"
 "./Core/Src/MQTT/MQTTConnectClient.o"
 "./Core/Src/MQTT/MQTTDeserializePublish.o"

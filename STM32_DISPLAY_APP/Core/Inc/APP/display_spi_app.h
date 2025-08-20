@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include "main.h"
 #include "stm32f4xx_hal.h"
 
@@ -39,14 +40,7 @@ typedef enum {
 	MENU_CLOCK_SETTINGS,
 	MENU_SET_TIME,
 	MENU_SET_DATE,
-	MENU_SET_ALARM,
-	MENU_HOUR_SELECT,
-	MENU_MINUTE_SELECT,
-	MENU_SECOND_SELECT,
-	MENU_DATE_SELECT,
-	MENU_MONTH_SELECT,
-	MENU_YEAR_SELECT,
-	MENU_DAY_SELECT
+	MENU_SET_ALARM
 } menu_state_t;
 
 typedef enum {
@@ -56,21 +50,17 @@ typedef enum {
 } ButtonEvent_t;
 
 // Menu configuration
-#define MAIN_MENU_OPTIONS        3
-#define TOTAL_CONTROL_OPTIONS    3
-#define SEPARATE_CONTROL_OPTIONS 5
-#define DEVICE_CONTROL_OPTIONS   4
-#define CLOCK_SETTINGS_OPTIONS   4
-#define SET_TIME_OPTIONS         5
-#define SET_DATE_OPTIONS         5
-#define SET_ALARM_OPTIONS        5
-#define HOUR_SELECT_OPTIONS      6
-#define MINUTE_SELECT_OPTIONS    10
-#define SECOND_SELECT_OPTIONS    10
-#define DATE_SELECT_OPTIONS      10
-#define MONTH_SELECT_OPTIONS     14
-#define YEAR_SELECT_OPTIONS      10
-#define DAY_SELECT_OPTIONS       9
+#define MAIN_MENU_OPTIONS           3
+#define TOTAL_CONTROL_OPTIONS       3
+#define SEPARATE_CONTROL_OPTIONS    5
+#define DEVICE_CONTROL_OPTIONS      4
+#define AUDIO_MENU                  4
+#define AUDIO_ACTION_MENU           3
+#define CLOCK_SETTINGS_OPTIONS      4
+#define SET_TIME_OPTIONS            5
+#define SET_DATE_OPTIONS            6
+#define SET_ALARM_OPTIONS           3
+
 
 
 extern int current_menu;
@@ -80,25 +70,22 @@ extern int last_selection;
 extern int downbutton, upbutton, enter;
 extern int device_states[4];
 
+extern int current_menu;
+extern int current_selection;
+extern int current_device;
+extern int last_selection;
+extern int last_menu;
+
+extern bool menu_drawn;
+extern bool buttons_drawn;
+
+extern int device_states[4];
+extern int last_device_states[4];
 
 // Core menu functions
 void Menu_Handler(void);
 void initializeMenu(void);
 void handleNavigation(void);
-
-// Menu display functions
-void displayMainMenu(void);
-void displayTotalControlMenu(void);
-void displaySeparateControlMenu(void);
-void displayDeviceControlMenu(void);
-void displayAudioMenu(void);
-void displayAudioActionPage(void);
-// Button drawing functions
-void drawButton(int x, int y, int width, int height, char* text, int selected);
-
-void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id);
-void updateButtonSelection(int old_selection, int new_selection);
-void drawTitleBar(char* title);
 
 // Optimized update functions
 void updateStatusInfo(char* status, uint16_t color);
@@ -112,21 +99,6 @@ void setAllDevicesState(int state, char *source);
 void syncDisplayDeviceStates(void);
 void Display_Handler(void *param);
 void updateToDisplayMenu(void);
-
-
-void displayDaySelectMenu(void);
-void displayYearSelectMenu(void);
-void displayMonthSelectMenu(void);
-void displayDateSelectMenu(void);
-void displaySecondSelectMenu(void);
-void displayMinuteSelectMenu(void);
-void displayHourSelectMenu(void);
-void displaySetTimeMenu(void);
-void displaySetDateMenu(void);
-void displaySetAlarmMenu(void);
-void displayClockSettingsMenu(void);
-
-
 
 
 #endif /* INC_APP_DISPLAY_SPI_APP_H_ */

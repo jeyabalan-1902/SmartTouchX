@@ -37,6 +37,19 @@ void RFM_Task(void *parameter)
 	}
 }
 
+void RF_REC_LED_Task(void *parameter)
+{
+	while(1)
+	{
+		if(xSemaphoreTake(rfled_semaphore, portMAX_DELAY) == pdTRUE)
+		{
+			HAL_GPIO_WritePin(RF_REC_LED_GPIO_Port, RF_REC_LED_Pin, GPIO_PIN_SET);
+			vTaskDelay(pdMS_TO_TICKS(100));
+			HAL_GPIO_WritePin(RF_REC_LED_GPIO_Port, RF_REC_LED_Pin, GPIO_PIN_RESET);
+		}
+	}
+}
+
 void RF69_ModuleHandler(void)
 {
 
@@ -130,8 +143,11 @@ bool RF69_RxData(void)
 		if (recv1(buf, &len)) {
 		    if (len >= sizeof(buf)) len = sizeof(buf) - 1;
 		    buf[len] = '\0'; // always terminate
-		    safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
+
+		    //safe_printf("ReceivedData [%d]:%s\n", len, (char*)buf);
 //			safe_printf("RFM RSSI: %d\n", lastRssi());
+
+		    xSemaphoreGive(rfled_semaphore);
 
 			if (strstr((char *)buf, "Control_DOWN")) {
 			    ButtonEvent_t evt = BTN_EVENT_DOWN;

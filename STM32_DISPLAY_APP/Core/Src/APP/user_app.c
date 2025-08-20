@@ -18,6 +18,7 @@
 // -------------------- Global Resources --------------------
 SemaphoreHandle_t deviceStateMutex;
 SemaphoreHandle_t uartMutex;
+SemaphoreHandle_t rfled_semaphore;
 QueueHandle_t btnEventQueue;
 BaseType_t status;
 
@@ -44,6 +45,7 @@ uint32_t lastKeepAliveTime = 0;
 
 static void init_st7735(void)
 {
+	HAL_GPIO_WritePin(DISP_BACKLIT_GPIO_Port, DISP_BACKLIT_Pin, GPIO_PIN_SET);
 	ST7735_Init(0);
 	ST7735_SetRotation(1);
 	fillScreen(BLACK);
@@ -68,6 +70,9 @@ static void init_os_primitives(void)
 
     btnEventQueue = xQueueCreate(10, sizeof(ButtonEvent_t));
     configASSERT(btnEventQueue != NULL);
+
+    rfled_semaphore = xSemaphoreCreateBinary();
+    configASSERT(rfled_semaphore != NULL);
 }
 
 /**
@@ -111,7 +116,9 @@ static void init_tasks(void)
 	status = xTaskCreate(RTC_Task, "RTC_TaskHandler", 512, NULL, 2, NULL);
 	configASSERT(status == pdPASS);
 
-    // Optional GSM MQTT Task
+	status = xTaskCreate(RF_REC_LED_Task, "RF_LED_Task", 128, NULL, 2, NULL);
+	configASSERT(status == pdPASS);
+
     // status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
     // configASSERT(status == pdPASS);
 

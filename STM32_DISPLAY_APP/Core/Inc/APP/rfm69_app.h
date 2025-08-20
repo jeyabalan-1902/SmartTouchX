@@ -29,5 +29,6 @@ bool RF69_TxData(void);
 bool RF69_RxData(void);
 bool FailIndiCation(Rf69_t FailState);
 void RF69_ModuleHandler(void);
+void RF_REC_LED_Task(void *parameter);
 
 #endif /* INC_APP_RFM69_APP_H_ */
