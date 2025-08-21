@@ -13,14 +13,27 @@
 
 char timeData[15];
 char dateData[15];
+char alarm_A_data[15];
+char alarm_B_data[15];
+
+
 char source[] = "RTC";
 
 TaskHandle_t rtcTaskHandle = NULL;
+QueueHandle_t rtcRequestQueue = NULL;
 volatile uint8_t alarmEvent = 0;
 
-// External request structure
+
+typedef enum
+{
+	RTC_REQUEST_SET_TIME = 1,
+	RTC_REQUEST_SET_DATE,
+	RTC_REQUEST_SET_ALARM_A,
+	RTC_REQUEST_SET_ALARM_B
+}EXT_RTC_REC;
+
 typedef struct {
-    uint8_t request_type;  // 1=SET_TIME, 2=SET_DATE, 3=SET_ALARM_A, 4=SET_ALARM_B
+    EXT_RTC_REC request_type;
     uint8_t hour;
     uint8_t minute;
     uint8_t second;
@@ -28,17 +41,8 @@ typedef struct {
     uint8_t month;
     uint8_t year;
     uint8_t day;
-    uint8_t alarm_type;  // 0=Alarm A, 1=Alarm B
+    uint8_t alarm_type;
 } rtc_request_t;
-
-// Queue for external requests
-QueueHandle_t rtcRequestQueue = NULL;
-
-// Request types
-#define RTC_REQUEST_SET_TIME    1
-#define RTC_REQUEST_SET_DATE    2
-#define RTC_REQUEST_SET_ALARM_A 3
-#define RTC_REQUEST_SET_ALARM_B 4
 
 typedef enum
 {
@@ -165,6 +169,16 @@ void RTC_Task(void *param)
 }
 
 
+bool RTC_init(void)
+{
+	if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1) != 0x2345)
+	{
+		  return false;
+	}
+	return true;
+}
+
+
 bool rtc_request_set_time(uint8_t hour, uint8_t minute, uint8_t second)
 {
 	if (rtcRequestQueue == NULL) return false;
@@ -208,7 +222,7 @@ bool rtc_request_set_alarm_a(uint8_t hour, uint8_t minute, uint8_t second)
 		.minute = minute,
 		.second = second
 	};
-
+	snprintf(alarm_A_data, sizeof(alarm_A_data), "%02d:%02d", hour, minute);
 	BaseType_t result = xQueueSend(rtcRequestQueue, &request, pdMS_TO_TICKS(100));
 	return (result == pdPASS);
 }
@@ -224,7 +238,7 @@ bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second)
 		.minute = minute,
 		.second = second
 	};
-
+	snprintf(alarm_B_data, sizeof(alarm_B_data), "%02d:%02d", hour, minute);
 	BaseType_t result = xQueueSend(rtcRequestQueue, &request, pdMS_TO_TICKS(100));
 	return (result == pdPASS);
 }
@@ -250,14 +264,6 @@ void set_alarmB_external(uint8_t hr, uint8_t min, uint8_t sec)
 	rtc_request_set_alarm_b(hr, min, sec);
 }
 
-bool RTC_init(void)
-{
-	if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1) != 0x2345)
-	{
-		  return false;
-	}
-	return true;
-}
 
 void set_time (uint8_t hr, uint8_t min, uint8_t sec)
 {

@@ -14,6 +14,8 @@ extern RTC_HandleTypeDef hrtc;
 
 extern char timeData[15];
 extern char dateData[15];
+extern char alarm_A_data[15];
+extern char alarm_B_data[15];
 
 
 bool rtc_request_set_time(uint8_t hour, uint8_t minute, uint8_t second);

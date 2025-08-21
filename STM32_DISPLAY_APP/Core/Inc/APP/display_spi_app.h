@@ -40,7 +40,10 @@ typedef enum {
 	MENU_CLOCK_SETTINGS,
 	MENU_SET_TIME,
 	MENU_SET_DATE,
-	MENU_SET_ALARM
+	MENU_SET_ALARM,
+	MENU_SET_SCHEDULE_A,
+	MENU_SET_SCHEDULE_B,
+	MENU_SELECT_DEVICES
 } menu_state_t;
 
 typedef enum {
@@ -54,12 +57,12 @@ typedef enum {
 #define TOTAL_CONTROL_OPTIONS       3
 #define SEPARATE_CONTROL_OPTIONS    5
 #define DEVICE_CONTROL_OPTIONS      4
-#define AUDIO_MENU                  4
-#define AUDIO_ACTION_MENU           3
 #define CLOCK_SETTINGS_OPTIONS      4
 #define SET_TIME_OPTIONS            5
 #define SET_DATE_OPTIONS            6
-#define SET_ALARM_OPTIONS           3
+#define SET_ALARM_OPTIONS           4
+#define SET_SCHEDULE_A              4
+#define SET_SCHEDULE_B              4
 
 
 

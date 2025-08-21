@@ -109,7 +109,7 @@ void displayTotalControlMenu(void)
 		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT,
 						"TOTAL OFF", (current_selection == 1), 1);
 		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING*2, BUTTON_WIDTH, BUTTON_HEIGHT,
-						"GO BACK", (current_selection == 2), 2);
+						"GO TO HOME", (current_selection == 2), 2);
 
 		buttons_drawn = true;
 	}
@@ -157,7 +157,7 @@ void displaySeparateControlMenu(void)
 		}
 
 		drawSingleButton(MARGIN_X, start_y + 4 * 20, BUTTON_WIDTH, 16,
-					   "GO BACK", (current_selection == 4), 4);
+					   "GO TO HOME", (current_selection == 4), 4);
 
 		buttons_drawn = true;
 	} else if (last_selection != current_selection) {
@@ -235,7 +235,7 @@ void displayClockSettingsMenu(void)
         drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, "SET TIME", (current_selection == 0), 0);
         drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "SET DATE", (current_selection == 1), 1);
         drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "SET SCHEDULE", (current_selection == 2), 2);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 3), 3);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
 
         buttons_drawn = true;
     }
@@ -243,6 +243,61 @@ void displayClockSettingsMenu(void)
     last_selection = current_selection;
 }
 
+void alarm_A_setMenu(void)
+{
+	if (current_menu != last_menu || !menu_drawn)
+	{
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
+		drawTitleBar("SCHEDULE-A");
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+	}
+
+	if (!buttons_drawn || last_selection != current_selection)
+	{
+		int start_y = TITLE_HEIGHT + 15;
+		button_count = 4;
+
+		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, "SET TIME", (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "SELECT DEVICES", (current_selection == 1), 1);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 2), 2);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
+
+		buttons_drawn = true;
+	}
+
+	last_selection = current_selection;
+}
+
+void alarm_B_setMenu(void)
+{
+	if (current_menu != last_menu || !menu_drawn)
+	{
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
+		drawTitleBar("SCHEDULE-B");
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+	}
+
+	if (!buttons_drawn || last_selection != current_selection)
+	{
+		int start_y = TITLE_HEIGHT + 15;
+		button_count = 4;
+
+		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, "SET TIME", (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "SELECT DEVICES", (current_selection == 1), 1);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 2), 2);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
+
+		buttons_drawn = true;
+	}
+
+	last_selection = current_selection;
+}
 
 void displaySetAlarmMenu(void)
 {
@@ -258,22 +313,24 @@ void displaySetAlarmMenu(void)
 
     if (!buttons_drawn || last_selection != current_selection)
     {
-        int start_y = TITLE_HEIGHT + 25;
-        button_count = 3;
+        int start_y = TITLE_HEIGHT + 15;
+        button_count = 4;
 
-        char schedule1[25];
-        snprintf(schedule1, sizeof(schedule1), "SCHEDULE-A[%02d:%02d]", temp_hour, temp_minute);
+        char schedule1[30];
+        char schedule2[30];
+        snprintf(schedule1, sizeof(schedule1), "SCHEDULE-A[%s]", alarm_A_data);
+        snprintf(schedule2, sizeof(schedule2), "SCHEDULE-B[%s]", alarm_B_data);
 
         drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, schedule1, (current_selection == 0), 0);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "SCHEDULE B", (current_selection == 1), 1);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, schedule2, (current_selection == 1), 1);
         drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 2), 2);
+        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
 
         buttons_drawn = true;
     }
 
     last_selection = current_selection;
 }
-
 
 
 void displaySetTimeMenu(void)
@@ -292,7 +349,7 @@ void displaySetTimeMenu(void)
 
     if (!buttons_drawn || last_selection != current_selection)
     {
-        int start_y = TITLE_HEIGHT + 15;
+        int start_y = TITLE_HEIGHT + 10;
         button_count = 5;
         get_time_date(timeData, dateData);
         char time_display[30];
@@ -320,11 +377,21 @@ void displaySetTimeMenu(void)
             snprintf(second_text, sizeof(second_text), "SEC (%02d)", temp_second);
         }
 
-        drawSingleButton(MARGIN_X, start_y + 15, BUTTON_WIDTH, BUTTON_HEIGHT, hour_text, (current_selection == 0), 0);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING + 15, BUTTON_WIDTH, BUTTON_HEIGHT, minute_text, (current_selection == 1), 1);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2 + 15, BUTTON_WIDTH, BUTTON_HEIGHT, second_text, (current_selection == 2), 2);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3 + 15, BUTTON_WIDTH, BUTTON_HEIGHT, "APPLY", (current_selection == 3), 3);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 4 + 15, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 4), 4);
+        // Reduced button height and spacing to fit all buttons
+        int button_height = 16;
+        int button_spacing = 18;
+
+        // Draw time field buttons with reduced spacing
+        drawSingleButton(MARGIN_X, start_y + 15, BUTTON_WIDTH, button_height, hour_text, (current_selection == 0), 0);
+        drawSingleButton(MARGIN_X, start_y + button_spacing + 15, BUTTON_WIDTH, button_height, minute_text, (current_selection == 1), 1);
+        drawSingleButton(MARGIN_X, start_y + button_spacing * 2 + 15, BUTTON_WIDTH, button_height, second_text, (current_selection == 2), 2);
+
+        // Draw APPLY and GO BACK buttons in parallel (side by side)
+        int parallel_y = start_y + button_spacing * 3 + 20;
+        int button_width_half = (BUTTON_WIDTH - 5) / 2; // Split width with small gap
+
+        drawSingleButton(MARGIN_X, parallel_y, button_width_half, button_height, "APPLY", (current_selection == 3), 3);
+        drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, button_height, "GO BACK", (current_selection == 4), 4);
 
         buttons_drawn = true;
     }
@@ -332,7 +399,6 @@ void displaySetTimeMenu(void)
     last_selection = current_selection;
 }
 
-// Modified displaySetDateMenu function
 void displaySetDateMenu(void)
 {
     if (current_menu != last_menu || !menu_drawn)
@@ -349,7 +415,7 @@ void displaySetDateMenu(void)
 
     if (!buttons_drawn || last_selection != current_selection)
     {
-        int start_y = TITLE_HEIGHT + 15;
+        int start_y = TITLE_HEIGHT + 10;
         button_count = 6;
         get_time_date(timeData, dateData);
         char date_display[30];
@@ -372,9 +438,9 @@ void displaySetDateMenu(void)
         }
 
         if (increment_mode && selected_field == 2) {
-            snprintf(year_text, sizeof(year_text), "YEAR [%04d]", temp_year);
+            snprintf(year_text, sizeof(year_text), "YEAR [%02d]", temp_year);
         } else {
-            snprintf(year_text, sizeof(year_text), "YEAR (%04d)", temp_year);
+            snprintf(year_text, sizeof(year_text), "YEAR (%02d)", temp_year);
         }
 
         if (increment_mode && selected_field == 3) {
@@ -383,12 +449,22 @@ void displaySetDateMenu(void)
             snprintf(day_text, sizeof(day_text), "DAY (%02d)", temp_day);
         }
 
-        drawSingleButton(MARGIN_X, start_y + 15, BUTTON_WIDTH, BUTTON_HEIGHT-5, date_text, (current_selection == 0), 0);
-        drawSingleButton(MARGIN_X, start_y + (BUTTON_SPACING-5) + 15, BUTTON_WIDTH, BUTTON_HEIGHT-5, month_text, (current_selection == 1), 1);
-        drawSingleButton(MARGIN_X, start_y + (BUTTON_SPACING-5) * 2 + 15, BUTTON_WIDTH, BUTTON_HEIGHT-5, year_text, (current_selection == 2), 2);
-        drawSingleButton(MARGIN_X, start_y + (BUTTON_SPACING-5) * 3 + 15, BUTTON_WIDTH, BUTTON_HEIGHT-5, day_text, (current_selection == 3), 3);
-        drawSingleButton(MARGIN_X, start_y + (BUTTON_SPACING-5) * 4 + 15, BUTTON_WIDTH, BUTTON_HEIGHT-5, "APPLY", (current_selection == 4), 4);
-        drawSingleButton(MARGIN_X, start_y + (BUTTON_SPACING-5) * 5 + 15, BUTTON_WIDTH, BUTTON_HEIGHT-5, "GO BACK", (current_selection == 5), 5);
+        // Reduced button height and spacing to fit all buttons
+        int button_height = 14;
+        int button_spacing = 16;
+
+        // Draw date field buttons with reduced spacing
+        drawSingleButton(MARGIN_X, start_y + 15, BUTTON_WIDTH, button_height, date_text, (current_selection == 0), 0);
+        drawSingleButton(MARGIN_X, start_y + button_spacing + 15, BUTTON_WIDTH, button_height, month_text, (current_selection == 1), 1);
+        drawSingleButton(MARGIN_X, start_y + button_spacing * 2 + 15, BUTTON_WIDTH, button_height, year_text, (current_selection == 2), 2);
+        drawSingleButton(MARGIN_X, start_y + button_spacing * 3 + 15, BUTTON_WIDTH, button_height, day_text, (current_selection == 3), 3);
+
+        // Draw APPLY and GO BACK buttons in parallel (side by side)
+        int parallel_y = start_y + button_spacing * 4 + 20;
+        int button_width_half = (BUTTON_WIDTH - 5) / 2; // Split width with small gap
+
+        drawSingleButton(MARGIN_X, parallel_y, button_width_half, button_height, "APPLY", (current_selection == 4), 4);
+        drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, button_height, "GO BACK", (current_selection == 5), 5);
 
         buttons_drawn = true;
     }
@@ -396,7 +472,7 @@ void displaySetDateMenu(void)
     last_selection = current_selection;
 }
 
-// Add this new function to handle increment/decrement logic
+
 void handleIncrementDecrement(void)
 {
     if (!increment_mode) return;
@@ -474,7 +550,6 @@ void handleIncrementDecrement(void)
             }
         }
 
-        // Force redraw to show updated values
         buttons_drawn = false;
         last_selection = -1;
     }

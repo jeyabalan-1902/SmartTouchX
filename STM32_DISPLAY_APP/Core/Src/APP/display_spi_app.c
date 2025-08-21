@@ -88,6 +88,12 @@ void Menu_Handler(void)
         case MENU_SET_ALARM:
             displaySetAlarmMenu();
             break;
+        case MENU_SET_SCHEDULE_A:
+            alarm_A_setMenu();
+            break;
+        case MENU_SET_SCHEDULE_B:
+        	alarm_B_setMenu();
+        	break;
     }
     handleNavigation();
 }
@@ -208,6 +214,12 @@ void handleNavigation(void) {
         case MENU_SET_ALARM:
             max_options = SET_ALARM_OPTIONS;
             break;
+        case MENU_SET_SCHEDULE_A:
+        	max_options = SET_SCHEDULE_A;
+        	break;
+        case MENU_SET_SCHEDULE_B:
+        	max_options = SET_SCHEDULE_B;
+        	break;
         default:
             max_options = 2;
             break;
@@ -295,25 +307,34 @@ void handleNavigation(void) {
                     buttons_drawn = false;
                     last_selection = -1;
                 } else if (current_selection == 3) {
-                    // Go back
+                	current_selection = 0;
+					menu_drawn = false;
                 	if (current_alarm == 1) {
-						// Setting Alarm A
 						rtc_request_set_alarm_a(temp_hour, temp_minute, temp_second);
+						current_menu = MENU_SET_SCHEDULE_A;
+						alarm_A_setMenu();
 					} else if (current_alarm == 2) {
-						// Setting Alarm B
 						rtc_request_set_alarm_b(temp_hour, temp_minute, temp_second);
+						current_menu = MENU_SET_SCHEDULE_B;
+						alarm_B_setMenu();
 					} else {
 						rtc_request_set_time(temp_hour, temp_minute, temp_second);
+						current_menu = MENU_CLOCK_SETTINGS;
+						displayClockSettingsMenu();
 					}
-                    current_menu = MENU_SET_TIME;
-                    current_selection = 0;
-                    menu_drawn = false;
-                    displaySetTimeMenu();
                 } else if (current_selection == 4) {
-                    current_menu = MENU_CLOCK_SETTINGS;
                     current_selection = 0;
                     menu_drawn = false;
-                    displayClockSettingsMenu();
+                    if (current_alarm == 1) {
+						current_menu = MENU_SET_SCHEDULE_A;
+						alarm_A_setMenu();
+					} else if (current_alarm == 2) {
+						current_menu = MENU_SET_SCHEDULE_B;
+						alarm_B_setMenu();
+					} else {
+						current_menu = MENU_CLOCK_SETTINGS;;
+						displayClockSettingsMenu();
+					}
                 }
                 break;
 
@@ -326,10 +347,10 @@ void handleNavigation(void) {
                     last_selection = -1;
                 } else if (current_selection == 4) {
                 	rtc_request_set_date(temp_year, temp_month, temp_date, temp_day);
-                    current_menu = MENU_SET_DATE;
+                    current_menu = MENU_CLOCK_SETTINGS;
                     current_selection = 0;
                     menu_drawn = false;
-                    displaySetDateMenu();
+                    displayClockSettingsMenu();
                 } else if (current_selection == 5) {
                     current_menu = MENU_CLOCK_SETTINGS;
                     current_selection = 0;
@@ -340,26 +361,83 @@ void handleNavigation(void) {
 
             case MENU_SET_ALARM:
                 if (current_selection == 0) {
-                    current_alarm = 1; // Alarm A
-                    current_menu = MENU_SET_TIME; // Reuse set time menu for alarm
+                    current_menu = MENU_SET_SCHEDULE_A;
                     current_selection = 0;
-                    temp_hour = 0; temp_minute = 0; temp_second = 0;
                     menu_drawn = false;
-                    displaySetTimeMenu();
+                    alarm_A_setMenu();
                 } else if (current_selection == 1) {
-                    current_alarm = 2; // Alarm B
-                    current_menu = MENU_SET_TIME; // Reuse set time menu for alarm
+                    current_menu = MENU_SET_SCHEDULE_B;
                     current_selection = 0;
-                    temp_hour = 0; temp_minute = 0; temp_second = 0;
                     menu_drawn = false;
-                    displaySetTimeMenu();
+                    alarm_B_setMenu();
                 } else if (current_selection == 2) {
                     current_menu = MENU_CLOCK_SETTINGS;
                     current_selection = 0;
                     menu_drawn = false;
                     displayClockSettingsMenu();
+                } else if (current_selection == 3) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false;
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
                 }
                 break;
+
+            case MENU_SET_SCHEDULE_A:
+            	if(current_selection == 0){
+            		current_menu = MENU_SET_TIME;
+            		current_selection = 0;
+            		menu_drawn = false;
+            		current_alarm = 1;
+            		temp_hour = 0; temp_minute = 0; temp_second = 0;
+            		displaySetTimeMenu();
+            	} else if(current_selection == 1){
+            		current_menu = MENU_SELECT_DEVICES;
+            		current_selection = 0;
+            		menu_drawn = false;
+            	} else if(current_selection == 2){
+            		current_menu = MENU_SET_ALARM;
+            		current_selection = 0;
+            		menu_drawn = false;
+            		displaySetAlarmMenu();
+            	} else if (current_selection == 3) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false;
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
+                }
+            	break;
+
+            case MENU_SET_SCHEDULE_B:
+				if(current_selection == 0){
+					current_menu = MENU_SET_TIME;
+					current_selection = 0;
+					menu_drawn = false;
+					current_alarm = 2;
+					temp_hour = 0; temp_minute = 0; temp_second = 0;
+					displaySetTimeMenu();
+				} else if(current_selection == 1){
+					current_menu = MENU_SELECT_DEVICES;
+					current_selection = 0;
+					menu_drawn = false;
+				} else if(current_selection == 2){
+					current_menu = MENU_SET_ALARM;
+					current_selection = 0;
+					menu_drawn = false;
+					displaySetAlarmMenu();
+				} else if (current_selection == 3) {
+                    current_menu = MENU_MAIN;
+                    current_selection = 0;
+                    menu_drawn = false;
+                    displayOnwardsLogoOptimized();
+                    HAL_Delay(600);
+                    displayMainMenu();
+                }
+				break;
 
             case MENU_TOTAL_CONTROL:
                 if (current_selection == 0) {
