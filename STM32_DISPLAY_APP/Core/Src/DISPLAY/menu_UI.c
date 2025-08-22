@@ -52,10 +52,10 @@ void displayMainMenu(void)
 		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT,
 								"CLOCK SETTINGS", (current_selection == 2), 2);
 		buttons_drawn = true;
-
-		get_time_date(timeData, dateData);
-		ST7735_WriteString(4, DISPLAY_HEIGHT - 18, dateData, Font_7x10, WHITE, BLACK);
 	}
+
+	get_time_date(timeData, dateData);
+	ST7735_WriteString(4, DISPLAY_HEIGHT - 18, dateData, Font_7x10, WHITE, BLACK);
 
 	get_time_date(timeData, dateData);
 	ST7735_WriteString(DISPLAY_WIDTH/2 + 2, DISPLAY_HEIGHT - 18, timeData, Font_7x10, YELLOW, BLACK);
@@ -123,49 +123,56 @@ void displayTotalControlMenu(void)
 
 void displaySeparateControlMenu(void)
 {
-	bool states_changed = false;
-	syncDisplayDeviceStates();
+    syncDisplayDeviceStates();
 
-	for (int i = 0; i < 4; i++) {
-		if (device_states[i] != last_device_states[i]) {
-			states_changed = true;
-			last_device_states[i] = device_states[i];
-		}
-	}
+    if (current_menu != last_menu || !menu_drawn) {
+        ST7735_SetRotation(1);
+        fillScreen(BLACK);
+        drawTitleBar("DEVICE LIST");
+        menu_drawn = true;
+        buttons_drawn = false;
+        last_menu = current_menu;
+    }
 
-	if (current_menu != last_menu || !menu_drawn) {
-		ST7735_SetRotation(1);
-		fillScreen(BLACK);
-		drawTitleBar("DEVICE LIST");
-		menu_drawn = true;
-		buttons_drawn = false;
-		last_menu = current_menu;
-		states_changed = true;
-	}
+    int start_y = TITLE_HEIGHT + 10;
+    button_count = 5;
 
-	if (!buttons_drawn || states_changed) {
-		int start_y = TITLE_HEIGHT + 10;
-		button_count = 5;
+    if (!buttons_drawn) {
+        for (int i = 0; i < 4; i++) {
+            last_device_states[i] = device_states[i];
+            char device_text[20];
+            snprintf(device_text, sizeof(device_text), "DEVICE %d [%s]",
+                     i + 1, device_states[i] ? "ON" : "OFF");
+            drawSingleButton(MARGIN_X, start_y + i * 20, BUTTON_WIDTH, 16,
+                             device_text, (current_selection == i), i);
+        }
 
-		for (int i = 0; i < 4; i++)
-		{
-			char device_text[20];
-			snprintf(device_text, sizeof(device_text), "DEVICE %d [%s]",
-					i + 1, device_states[i] ? "ON" : "OFF");
-			drawSingleButton(MARGIN_X, start_y + i * 20, BUTTON_WIDTH, 16,
-						   device_text, (current_selection == i), i);
-		}
+        drawSingleButton(MARGIN_X, start_y + 4 * 20, BUTTON_WIDTH, 16,
+                         "GO TO HOME", (current_selection == 4), 4);
 
-		drawSingleButton(MARGIN_X, start_y + 4 * 20, BUTTON_WIDTH, 16,
-					   "GO TO HOME", (current_selection == 4), 4);
+        buttons_drawn = true;
+    }
+    else {
+        for (int i = 0; i < 4; i++) {
+            if (device_states[i] != last_device_states[i]) {
+                last_device_states[i] = device_states[i];
 
-		buttons_drawn = true;
-	} else if (last_selection != current_selection) {
-		updateButtonSelection(last_selection, current_selection);
-	}
+                char device_text[20];
+                snprintf(device_text, sizeof(device_text), "DEVICE %d [%s]",
+                         i + 1, device_states[i] ? "ON" : "OFF");
 
-	last_selection = current_selection;
+                drawSingleButton(MARGIN_X, start_y + i * 20, BUTTON_WIDTH, 16,
+                                 device_text, (current_selection == i), i);
+            }
+        }
+        if (last_selection != current_selection) {
+            updateButtonSelection(last_selection, current_selection);
+        }
+    }
+
+    last_selection = current_selection;
 }
+
 
 void displayDeviceControlMenu(void) {
 	bool state_changed = false;

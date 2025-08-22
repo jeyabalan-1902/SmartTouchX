@@ -9,6 +9,7 @@
 #include "display_spi_app.h"
 #include "esp32_uart_app.h"
 #include "MQTTSim800.h"
+#include "RTC_app.h"
 
 uint8_t uartRingBuffer[UART_RING_BUFFER_SIZE];
 volatile uint16_t uartHead = 0;
@@ -79,6 +80,7 @@ void UART_Handler(void *param)
                     break;
 
                 case UART_PROCESS_JSON:
+                	//safe_printf("%s", jsonBuffer);
                     process_json(jsonBuffer);
                     index = 0;
                     uartState = UART_IDLE;
@@ -154,6 +156,62 @@ void handle_device_control(cJSON *json)
 	cJSON_Delete(resp);
 }
 
+static void setAlarm_A(cJSON *alarmA)
+{
+	int hour, minute, second;
+	if (sscanf(alarmA->valuestring, "%d:%d:%d", &hour, &minute, &second) == 3)
+	{
+		safe_printf("Parsed AlarmA: %02d:%02d:%02d\n", hour, minute, second);
+		rtc_request_set_alarm_a((uint8_t)hour, (uint8_t)minute, (uint8_t)second);
+	}
+	else
+	{
+		safe_printf("Invalid AlarmA format!\n");
+	}
+}
+
+static void setAlarm_B(cJSON *alarmB)
+{
+	int hour, minute, second;
+	if (sscanf(alarmB->valuestring, "%d:%d:%d", &hour, &minute, &second) == 3)
+	{
+		safe_printf("Parsed AlarmB: %02d:%02d:%02d\n", hour, minute, second);
+		rtc_request_set_alarm_b((uint8_t)hour, (uint8_t)minute, (uint8_t)second);
+	}
+	else
+	{
+		safe_printf("Invalid AlarmB format!\n");
+	}
+}
+
+static void setDate(cJSON *setdate)
+{
+	int year, month, date, day;
+	if (sscanf(setdate->valuestring, "%d:%d:%d:%d", &year, &month, &date, &day) == 4)
+	{
+		safe_printf("Parsed date: %02d-%02d-%02d-%02d\n", day, date, month, year);
+		rtc_request_set_date((uint8_t)year, (uint8_t)month, (uint8_t)date, (uint8_t)day);
+	}
+	else
+	{
+		safe_printf("Invalid date format!\n");
+	}
+}
+
+static void setTime(cJSON *settime)
+{
+	int hour, minute, second;
+	if (sscanf(settime->valuestring, "%d:%d:%d", &hour, &minute, &second) == 3)
+	{
+		safe_printf("Parsed time: %02d:%02d:%02d\n", hour, minute, second);
+		rtc_request_set_time((uint8_t)hour, (uint8_t)minute, (uint8_t)second);
+	}
+	else
+	{
+		safe_printf("Invalid time format!\n");
+	}
+}
+
 void process_json(uint8_t *jsonBuffer)
 {
     cJSON *json = cJSON_Parse((char *)jsonBuffer);
@@ -164,7 +222,28 @@ void process_json(uint8_t *jsonBuffer)
     }
 
     cJSON *request = cJSON_GetObjectItem(json, "request");
-    if (cJSON_IsString(request) && strcmp(request->valuestring, "getCurrentStatus") == 0)
+    cJSON *alarmA = cJSON_GetObjectItem(json, "setAlarmA");
+    cJSON *alarmB = cJSON_GetObjectItem(json, "setAlarmB");
+    cJSON *setdate = cJSON_GetObjectItem(json, "setDate");
+    cJSON *settime = cJSON_GetObjectItem(json, "setTime");
+
+	if (cJSON_IsString(alarmA))
+	{
+		setAlarm_A(alarmA);
+	}
+	else if (cJSON_IsString(alarmB))
+	{
+		setAlarm_B(alarmB);
+	}
+	else if(cJSON_IsString(setdate))
+	{
+		setDate(setdate);
+	}
+	else if(cJSON_IsString(settime))
+	{
+		setTime(settime);
+	}
+	else if (cJSON_IsString(request) && strcmp(request->valuestring, "getCurrentStatus") == 0)
     {
         handle_get_status_request();
     }
