@@ -16,6 +16,7 @@ char firmware_stm[50];
 char update_status[50];
 char pid[50];
 char credentials[50];
+char rtc_config[50];
 time_t now;
 
 
@@ -33,6 +34,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         esp_mqtt_client_subscribe(client, soft_Reset, 1);
         esp_mqtt_client_subscribe(client, firmware_stm, 1);
         esp_mqtt_client_subscribe(client, firmware_esp, 1);
+        esp_mqtt_client_subscribe(client, rtc_config, 1);
         send_mqtt_status(current_status, "Connected", "Device connected with Mqtt Broker");
         break;
     case MQTT_EVENT_DISCONNECTED:
@@ -95,6 +97,18 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                     ota_status_led = 1;
                 }
             }
+        }
+        else if(strncmp(rtc_config, event->topic, event->topic_len) == 0)
+        {
+            char *json_string = malloc(event->data_len + 1);
+            if(json_string)
+            {
+                memcpy(json_string, event->data, event->data_len);
+                json_string[event->data_len] = '\0';
+                uart_write_bytes(UART_PORT_NUM, json_string, strlen(json_string));
+                uart_write_bytes(UART_PORT_NUM, "\n", 1);
+                memset(json_string, 0, sizeof(json_string));
+            } 
         }
         else if(strncmp(get_current_status, event->topic, event->topic_len) == 0)
         {
@@ -224,6 +238,7 @@ void mqtt_topics(void)
     sprintf(update_status,"onwords/%s/otaStatus",product_id);
     sprintf(pid,"onwords/%s/pid",product_id); 
     sprintf(credentials, "onwords/%s/credentials", product_id);
+    sprintf(rtc_config, "onwords/%s/rtc", product_id);
 }
 
 void mqtt_app_start(char *product_id) {

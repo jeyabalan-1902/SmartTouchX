@@ -1,0 +1,488 @@
+5
+[0;32mI (34) boot.esp32s3: Boot�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug  5 2025 12:56:53[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00600000[0m
+[0;32mI (78) boot:  3 ota_0            OTA app          00 10 00610000 00600000[0m
+[0;32mI (85) boot:  4 spiffs           Unknown data     01 82 00c10000 003f0000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c140020 size=12fc38h (1244216) map[0m
+[0;32mI (321) esp_image: segment 1: paddr=0013fc60 vaddr=3fca0700 size=003b8h (   952) load[0m
+[0;32mI (322) esp_image: segment 2: paddr=00140020 vaddr=42000020 size=1327a8h (1255336) map[0m
+[0;32mI (547) esp_image: segment 3: paddr=002727d0 vaddr=3fca0ab8 size=05578h ( 21880) load[0m
+[0;32mI (551) esp_image: segment 4: paddr=00277d50 vaddr=40374000 size=1c65ch (116316) load[0m
+[0;32mI (577) esp_image: segment 5: paddr=002943b4 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (588) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (588) boot: Disabling RNG early entropy source...[0m
+[0;32mI (598) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (599) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (599) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (601) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (605) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (609) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (613) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (618) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (623) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (628) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (633) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (637) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (641) esp_psram: Speed: 40MHz[0m
+[0;32mI (644) cpu_start: Multicore app[0m
+[0;32mI (1378) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1387) cpu_start: Pro cpu start user code[0m
+[0;32mI (1387) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1387) app_init: Application information:[0m
+[0;32mI (1387) app_init: Project name:     esp_app[0m
+[0;32mI (1391) app_init: App version:      ca27378-dirty[0m
+[0;32mI (1395) app_init: Compile time:     Aug 22 2025 16:14:25[0m
+[0;32mI (1401) app_init: ELF file SHA256:  b7d5b5c43...[0m
+[0;32mI (1405) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (1409) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1413) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1417) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1421) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1428) heap_init: At 3FCADEF8 len 0003B818 (238 KiB): RAM[0m
+[0;32mI (1433) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1438) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1443) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (1449) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1456) spi_flash: detected chip: boya[0m
+[0;32mI (1459) spi_flash: flash io: dio[0m
+[0;33mW (1462) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (1474) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1480) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1487) coexist: coex firmware version: e727207[0m
+[0;32mI (1499) coexist: coexist rom version e7ae62f[0m
+[0;32mI (1500) main_task: Started on CPU0[0m
+[0;32mI (1510) main_task: Calling app_main()[0m
+[0;32mI (1530) ESP_APP: STM32 Bootloader with MQTT starting...[0m
+[0;32mI (1530) GPIO: GPIO Initialization![0m
+[0;32mI (1530) ESP_APP: UART initialized[0m
+[0;32mI (1530) NVS: WiFi credentials found. SSID: Rnd, connecting......[0m
+[0;32mI (1540) picotts: Loading text analysis resource from 0x3c170fca[0m
+[0;32mI (1540) NVS: From nvs ssid is Rnd [0m
+[0;32mI (1540) picotts: Loading signal generator resource from 0x3c1d5a26[0m
+[0;32mI (1550) NVS: From nvs password is nikhil8182[0m
+[0;32mI (1560) WIFI_HANDLER: wifi ssid Rnd password nikhil8182[0m
+[0;32mI (1560) picotts: Task started[0m
+[0;32mI (1560) WIFI: Hostname set to Onwords-4ltc01[0m
+[0;32mI (1570) pp: pp rom version: e7ae62f[0m
+[0;32mI (1570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1590) wifi:wifi driver task: 3fcc3ee4, prio:23, stack:6656, core=0[0m
+[0;32mI (1600) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (1600) wifi:wifi certification version: v7.0[0m
+[0;32mI (1600) wifi:config NVS flash: enabled[0m
+[0;32mI (1600) wifi:config nano formatting: disabled[0m
+[0;32mI (1600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1610) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1610) wifi:Init management short buffer num: 32[0m
+[0;32mI (1620) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1630) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1640) wifi_init: rx ba win: 6[0m
+[0;32mI (1640) wifi_init: accept mbox: 6[0m
+[0;32mI (1640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1640) wifi_init: udp mbox: 6[0m
+[0;32mI (1650) wifi_init: tcp mbox: 6[0m
+[0;32mI (1650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1650) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1660) wifi_init: tcp mss: 1440[0m
+[0;32mI (1660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1660) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1670) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (1710) wifi:mode : sta (cc:8d:a2:0c:e2:20)[0m
+[0;32mI (1710) wifi:enable tsf[0m
+[0;32mI (1710) WIFI_HANDLER: wifi_init_sta finished.[0m
+[0;32mI (1720) wifi:new:<10,0>, old:<1,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1720) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1730) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1780) wifi:state: assoc -> init (0x2c0)[0m
+[0;32mI (1790) wifi:new:<10,0>, old:<10,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1790) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (1790) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (4200) WIFI_HANDLER: retry to connect to the AP[0m
+[0;32mI (4200) WIFI_HANDLER: connect to the AP fail[0m
+[0;32mI (4210) wifi:new:<10,0>, old:<10,0>, ap:<255,255>, sta:<10,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4210) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4220) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4230) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4260) wifi:connected with Rnd, aid = 9, channel 10, BW20, bssid = 3c:64:cf:a6:cf:96[0m
+[0;32mI (4260) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (4260) wifi:pm start, type: 1[0m
+
+[0;32mI (4260) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4270) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (4300) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5300) esp_netif_handlers: sta ip: 192.168.1.227, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5300) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (5300) WIFI_HANDLER: got ip:192.168.1.227[0m
+[0;32mI (5300) WIFI_HANDLER: connected to ap SSID:Rnd password:nikhil8182 rssi value : -57[0m
+[0;32mI (5310) MQTT_HANDLER: Other event id:7[0m
+[0;32mI (5310) main_task: Returned from app_main()[0m
+[0;32mI (5320) wifi:<ba-add>idx:0 (ifx:0, 3c:64:cf:a6:cf:96), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5660) wifi:<ba-add>idx:1 (ifx:0, 3c:64:cf:a6:cf:96), tid:2, ssn:0, winSize:64[0m
+[0;32mI (6000) MQTT_HANDLER: MQTT_SERVER_CONNECTED[0m
+[0;32mI (6040) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=53365[0m
+[0;32mI (6060) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=6748[0m
+[0;32mI (6070) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=37060[0m
+[0;32mI (6110) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=55081[0m
+[0;32mI (6110) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=9682[0m
+[0;32mI (6120) MQTT_HANDLER: MQTT_EVENT_SUBSCRIBED, msg_id=18978[0m
+[0;32mI (6120) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=38621[0m
+[0;32mI (374360) UART_CONFIG: Received: ��[0m
+[0;32mI (374420) UART_CONFIG: Received: [0m
+[0;32mI (374720) TTS: Speaking: [0m
+[0;32mI (375240) UART_CONFIG: Received: [0m
+[0;32mI (375540) TTS: Speaking: [0m
+[0;32mI (377480) UART_CONFIG: Received: [0m
+[0;32mI (377780) TTS: Speaking: [0m
+[0;32mI (378200) UART_CONFIG: Received: [0m
+[0;32mI (378500) TTS: Speaking: [0m
+[0;32mI (380180) UART_CONFIG: Received: [0m
+[0;32mI (380260) UART_CONFIG: Received: �[0m
+[0;32mI (380560) TTS: Speaking: �[0m
+[0;32mI (381780) UART_CONFIG: Received: [0m
+[0;32mI (382080) TTS: Speaking: [0m
+[0;32mI (382340) UART_CONFIG: Received: [0m
+[0;32mI (382640) TTS: Speaking: [0m
+[0;32mI (382940) UART_CONFIG: Received: [0m
+[0;32mI (383240) TTS: Speaking: [0m
+[0;32mI (388180) UART_CONFIG: Received: [0m
+[0;32mI (388180) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (388190) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (388190) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (388220) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=57998[0m
+[0;32mI (388250) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=32691[0m
+[0;32mI (388250) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=58214[0m
+[0;32mI (388480) TTS: Speaking: [0m
+[0;32mI (410550) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (410550) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (410550) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (410570) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (410600) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=20486[0m
+[0;32mI (511510) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (511510) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (511510) MQTT_HANDLER: DATA={"setAlarm": "17:05:00"}[0m
+[0;32mI (511520) UART_CONFIG: Received: {}[0m
+[0;32mI (511550) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23003[0m
+[0;32mI (531500) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (531500) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (531500) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (531520) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (531680) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=1207[0m
+[0;32mI (533120) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (533120) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (533120) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861403429}[0m
+[0;32mI (533140) UART_CONFIG: Received: {"device1":1}[0m
+[0;32mI (533170) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27346[0m
+[0;32mI (535600) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (535610) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (535610) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861405813}[0m
+[0;32mI (535630) UART_CONFIG: Received: {"device3":1}[0m
+[0;32mI (535660) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=44800[0m
+[0;32mI (536810) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (536810) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (536810) MQTT_HANDLER: DATA={"device4":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861407098}[0m
+[0;32mI (536830) UART_CONFIG: Received: {"device4":1}[0m
+[0;32mI (536870) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47602[0m
+[0;32mI (537970) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (537970) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (537970) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861408297}[0m
+[0;32mI (537990) UART_CONFIG: Received: {"device1":0}[0m
+[0;32mI (538030) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=62934[0m
+[0;32mI (538860) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (538860) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (538860) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861409180}[0m
+[0;32mI (538880) UART_CONFIG: Received: {"device2":1}[0m
+[0;32mI (538920) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40457[0m
+[0;32mI (539670) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (539670) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (539670) MQTT_HANDLER: DATA={"device3":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861409945}[0m
+[0;32mI (539690) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (539730) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=3019[0m
+[0;32mI (542740) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (542740) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (542740) MQTT_HANDLER: DATA={"device4":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861413007}[0m
+[0;32mI (542760) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (542810) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=6181[0m
+[0;32mI (543470) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (543470) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (543470) MQTT_HANDLER: DATA={"device2":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861413663}[0m
+[0;32mI (543490) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (543520) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=50009[0m
+[0;32mI (656550) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (656550) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (656550) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (656570) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (656600) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40790[0m
+[0;32mI (681000) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (681000) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (681000) MQTT_HANDLER: DATA={"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861551329,"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (681050) UART_CONFIG: Received: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (681080) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=38515[0m
+[0;32mI (697700) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (697700) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (697700) MQTT_HANDLER: DATA={"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861567911,"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (697750) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (697780) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=19112[0m
+[0;32mI (720940) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (720940) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (720940) MQTT_HANDLER: DATA={"setAlarm": "17:05:00"}[0m
+[0;32mI (720950) UART_CONFIG: Received: {}[0m
+[0;32mI (720980) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=33662[0m
+[0;32mI (722800) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (722800) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (722800) MQTT_HANDLER: DATA={"setAlarm": "17:05:00"}[0m
+[0;32mI (722810) UART_CONFIG: Received: {}[0m
+[0;32mI (722840) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52526[0m
+[0;32mI (723900) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (723900) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (723900) MQTT_HANDLER: DATA={"setAlarm": "17:05:00"}[0m
+[0;32mI (723900) UART_CONFIG: Received: {}[0m
+[0;32mI (723940) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=25790[0m
+[0;32mI (1065000) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1065000) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1065000) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1065020) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1065060) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=6732[0m
+[0;32mI (1066540) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1066540) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1066540) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861936852}[0m
+[0;32mI (1066560) UART_CONFIG: Received: {"device1":1}[0m
+[0;32mI (1066590) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=11652[0m
+[0;32mI (1068110) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1068120) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1068120) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861938399}[0m
+[0;32mI (1068140) UART_CONFIG: Received: {"device2":1}[0m
+[0;32mI (1068190) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=31445[0m
+[0;32mI (1071050) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1071050) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1071050) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861941210}[0m
+[0;32mI (1071070) UART_CONFIG: Received: {"device3":1}[0m
+[0;32mI (1071120) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=39254[0m
+[0;32mI (1073960) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1073960) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1073960) MQTT_HANDLER: DATA={"device4":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861944236}[0m
+[0;32mI (1073980) UART_CONFIG: Received: {"device4":1}[0m
+[0;32mI (1074040) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=18384[0m
+[0;32mI (1074760) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1074760) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1074760) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861945000}[0m
+[0;32mI (1074780) UART_CONFIG: Received: {"device1":0}[0m
+[0;32mI (1074950) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=19438[0m
+[0;32mI (1076780) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1076780) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1076780) MQTT_HANDLER: DATA={"device2":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861947048}[0m
+[0;32mI (1076800) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (1076850) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=41823[0m
+[0;32mI (1077390) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1077390) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1077390) MQTT_HANDLER: DATA={"device3":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861947628}[0m
+[0;32mI (1077420) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (1077520) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=48038[0m
+[0;32mI (1078540) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1078540) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (1078540) MQTT_HANDLER: DATA={"device4":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755861948836}[0m
+[0;32mI (1078560) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (1078610) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=45707[0m
+[0;32mI (1095430) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1095430) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (1095430) MQTT_HANDLER: DATA={"setAlarmA": "17:05:00"}[0m
+[0;32mI (1095440) UART_CONFIG: Received: {}[0m
+[0;32mI (1095480) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=14383[0m
+[0;32mI (1617350) UART_CONFIG: Received: ���u@[0m
+[0;32mI (1617650) TTS: Speaking: ���u@[0m
+[0;32mI (1618840) UART_CONFIG: Received: [0m
+[0;32mI (1619140) TTS: Speaking: [0m
+[0;32mI (1619710) UART_CONFIG: Received: [0m
+[0;32mI (1620010) TTS: Speaking: [0m
+[0;32mI (1620550) UART_CONFIG: Received: [0m
+[0;32mI (1620850) TTS: Speaking: [0m
+[0;32mI (1620910) UART_CONFIG: Received: [0m
+[0;32mI (1621630) TTS: Speaking: [0m
+[0;32mI (1622200) UART_CONFIG: Received: [0m
+[0;32mI (1622360) UART_CONFIG: Received: [0m
+[0;32mI (1622580) UART_CONFIG: Received: [0m
+[0;32mI (1622880) TTS: Speaking: [0m
+[0;32mI (1623060) UART_CONFIG: Received: [0m
+[0;32mI (1623630) TTS: Speaking: [0m
+[0;32mI (1623640) UART_CONFIG: Received: [0m
+[0;32mI (1624260) UART_CONFIG: Received: [0m
+[0;32mI (1624560) TTS: Speaking: [0m
+[0;32mI (1630580) UART_CONFIG: Received: [0m
+[0;32mI (1630580) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (1630580) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (1630590) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (1630630) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=27985[0m
+[0;32mI (1630660) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35848[0m
+[0;32mI (1630660) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40930[0m
+[0;32mI (1630880) TTS: Speaking: [0m
+[0;32mI (1637850) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1637850) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (1637850) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (1637870) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (1637900) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=30771[0m
+[0;32mI (1649110) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1649110) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (1649110) MQTT_HANDLER: DATA={"setAlarmA": "17:10:00"}[0m
+[0;32mI (1717410) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (1717410) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (1717410) MQTT_HANDLER: DATA={"setAlarmB": "17:11:00"}[0m
+[0;32mI (1951840) UART_CONFIG: Received: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (1951840) UART_CONFIG: Received: All devices turned ON[0m
+[0;32mI (1951870) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=47266[0m
+[0;32mI (1952140) TTS: Speaking: All devices turned ON[0m
+[0;32mI (2011840) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (2011850) UART_CONFIG: Received: All devices turned OFF[0m
+[0;32mI (2011870) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=33675[0m
+[0;32mI (2012150) TTS: Speaking: All devices turned OFF[0m
+[0;32mI (3628740) UART_CONFIG: Received: [0m
+[0;32mI (3629040) TTS: Speaking: [0m
+[0;32mI (3631500) UART_CONFIG: Received: [0m
+[0;32mI (3631800) TTS: Speaking: [0m
+[0;32mI (3637430) UART_CONFIG: Received: [0m
+[0;32mI (3637650) UART_CONFIG: Received: [0m
+[0;32mI (3637950) TTS: Speaking: [0m
+[0;32mI (3638970) UART_CONFIG: Received: [0m
+[0;32mI (3639270) TTS: Speaking: [0m
+[0;32mI (3644050) UART_CONFIG: Received: [0m
+[0;32mI (3644050) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (3644060) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (3644060) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (3644090) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=17671[0m
+[0;32mI (3644120) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=28373[0m
+[0;32mI (3644120) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=35436[0m
+[0;32mI (3644350) TTS: Speaking: [0m
+[0;32mI (3688070) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (3688070) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (3688070) MQTT_HANDLER: DATA={"setTime": "17:39:05"}[0m
+[0;32mI (3753300) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (3753300) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (3753300) MQTT_HANDLER: DATA={"setAlarmA": "17:41:05"}[0m
+[0;32mI (3766300) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (3766300) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (3766300) MQTT_HANDLER: DATA={"setAlarmB": "17:42:05"}[0m
+[0;32mI (3809310) UART_CONFIG: Received: {"device1":1,"device2":1,"device3":1,"device4":1}[0m
+[0;32mI (3809320) UART_CONFIG: Received: All devices turned ON[0m
+[0;32mI (3809350) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=51646[0m
+[0;32mI (3809620) TTS: Speaking: All devices turned ON[0m
+[0;32mI (3869310) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (3869320) UART_CONFIG: Received: All devices turned OFF[0m
+[0;32mI (3869350) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=50112[0m
+[0;32mI (3869620) TTS: Speaking: All devices turned OFF[0m
+[0;32mI (3933360) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (3933360) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (3933370) MQTT_HANDLER: DATA={"setDate": "25:08:22:5"}[0m
+[0;32mI (3955540) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (3955540) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (3955540) MQTT_HANDLER: DATA={"setDate": "25:08:23:5"}[0m
+[0;32mI (4052630) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4052630) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (4052630) MQTT_HANDLER: DATA={"setTime": "17:40:00"}[0m
+[0;32mI (4070770) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4070770) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (4070770) MQTT_HANDLER: DATA={"setTime": "17:45:10"}[0m
+[0;32mI (4175530) UART_CONFIG: Received: [0m
+[0;32mI (4175830) TTS: Speaking: [0m
+[0;32mI (4176750) UART_CONFIG: Received: [0m
+[0;32mI (4177050) TTS: Speaking: [0m
+[0;32mI (4177630) UART_CONFIG: Received: [0m
+[0;32mI (4177930) TTS: Speaking: [0m
+[0;32mI (4178500) UART_CONFIG: Received: [0m
+[0;32mI (4178680) UART_CONFIG: Received: [0m
+[0;32mI (4178980) TTS: Speaking: [0m
+[0;32mI (4179940) UART_CONFIG: Received: [0m
+[0;32mI (4180240) TTS: Speaking: [0m
+[0;32mI (4184330) UART_CONFIG: Received: [0m
+[0;32mI (4184630) TTS: Speaking: [0m
+[0;32mI (4189700) UART_CONFIG: Received: [0m
+[0;32mI (4189710) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (4189710) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (4189720) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (4189750) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=30384[0m
+[0;32mI (4189780) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=54704[0m
+[0;32mI (4189790) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=34920[0m
+[0;32mI (4190000) TTS: Speaking: [0m
+[0;32mI (4222820) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4222820) MQTT_HANDLER: TOPIC=onwords/4ltc01/rtc[0m
+[0;32mI (4222820) MQTT_HANDLER: DATA={"setDate": "25:08:22:05"}[0m
+[0;32mI (4267260) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4267260) MQTT_HANDLER: TOPIC=onwords/4ltc01/getCurrentStatus[0m
+[0;32mI (4267260) MQTT_HANDLER: DATA={"request":"getCurrentStatus"}[0m
+[0;32mI (4267280) UART_CONFIG: Received: {"device1":0,"device2":0,"device3":0,"device4":0}[0m
+[0;32mI (4267310) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=16990[0m
+[0;32mI (4270020) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4270020) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4270020) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865140196}[0m
+[0;32mI (4270050) UART_CONFIG: Received: {"device1":1}[0m
+[0;32mI (4270080) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=40125[0m
+[0;32mI (4271150) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4271150) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4271150) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865141314}[0m
+[0;32mI (4271170) UART_CONFIG: Received: {"device2":1}[0m
+[0;32mI (4271210) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=63313[0m
+[0;32mI (4271770) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4271770) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4271770) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865141979}[0m
+[0;32mI (4271790) UART_CONFIG: Received: {"device3":1}[0m
+[0;32mI (4271820) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=64933[0m
+[0;32mI (4272990) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4272990) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4272990) MQTT_HANDLER: DATA={"device4":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865143212}[0m
+[0;32mI (4273020) UART_CONFIG: Received: {"device4":1}[0m
+[0;32mI (4273050) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=15895[0m
+[0;32mI (4274330) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4274330) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4274330) MQTT_HANDLER: DATA={"device1":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865144462}[0m
+[0;32mI (4274350) UART_CONFIG: Received: {"device1":0}[0m
+[0;32mI (4274380) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=44789[0m
+[0;32mI (4274840) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4274840) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4274840) MQTT_HANDLER: DATA={"device2":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865145046}[0m
+[0;32mI (4274860) UART_CONFIG: Received: {"device2":0}[0m
+[0;32mI (4274890) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=52882[0m
+[0;32mI (4275260) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4275260) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4275260) MQTT_HANDLER: DATA={"device3":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865145519}[0m
+[0;32mI (4275290) UART_CONFIG: Received: {"device3":0}[0m
+[0;32mI (4275320) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=16912[0m
+[0;32mI (4275880) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4275880) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4275880) MQTT_HANDLER: DATA={"device4":0,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865146130}[0m
+[0;32mI (4275910) UART_CONFIG: Received: {"device4":0}[0m
+[0;32mI (4275940) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=23704[0m
+[0;32mI (4278520) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4278520) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4278520) MQTT_HANDLER: DATA={"device1":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865148672}[0m
+[0;32mI (4278550) UART_CONFIG: Received: {"device1":1}[0m
+[0;32mI (4278580) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=38233[0m
+[0;32mI (4280580) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4280580) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4280580) MQTT_HANDLER: DATA={"device2":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":1755865150752}[0m
+[0;32mI (4280600) UART_CONFIG: Received: {"device2":1}[0m
+[0;32mI (4280630) MQTT_HANDLER: MQTT_EVENT_PUBLISHED, msg_id=36040[0m
+[0;32mI (4282420) MQTT_HANDLER: MQTT_EVENT_DATA[0m
+[0;32mI (4282420) MQTT_HANDLER: TOPIC=onwords/4ltc01/status[0m
+[0;32mI (4282420) MQTT_HANDLER: DATA={"device3":1,"id":"4ltc01","client_id":"jeyabalan@onwords.in","ip":"42.104.211.149","time_stamp":17558651
