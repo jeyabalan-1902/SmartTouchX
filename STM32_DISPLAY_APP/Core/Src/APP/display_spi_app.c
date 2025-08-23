@@ -94,6 +94,9 @@ void Menu_Handler(void)
         case MENU_SET_SCHEDULE_B:
         	alarm_B_setMenu();
         	break;
+        case MENU_SELECT_DEVICES:
+        	displayDeviceSelectForAlarm();
+        	break;
     }
     handleNavigation();
 }
@@ -220,6 +223,9 @@ void handleNavigation(void) {
         case MENU_SET_SCHEDULE_B:
         	max_options = SET_SCHEDULE_B;
         	break;
+        case MENU_SELECT_DEVICES:
+        	max_options = SET_SELECT_DEVICES;
+        	break;
         default:
             max_options = 2;
             break;
@@ -338,6 +344,42 @@ void handleNavigation(void) {
                 }
                 break;
 
+            case MENU_SELECT_DEVICES:
+            	if (current_selection >= 0 && current_selection <= 3) {
+					// Enter increment/decrement mode for time fields
+					increment_mode = true;
+					selected_field = current_selection;
+					buttons_drawn = false;
+					last_selection = -1;
+				} else if (current_selection == 4) {
+					current_selection = 0;
+					menu_drawn = false;
+					if (current_alarm == 1) {
+						rtc_request_set_alarm_a(temp_hour, temp_minute, temp_second);
+						current_menu = MENU_SET_SCHEDULE_A;
+						alarm_A_setMenu();
+					} else if (current_alarm == 2) {
+						rtc_request_set_alarm_b(temp_hour, temp_minute, temp_second);
+						current_menu = MENU_SET_SCHEDULE_B;
+						alarm_B_setMenu();
+					} else {
+						rtc_request_set_time(temp_hour, temp_minute, temp_second);
+						current_menu = MENU_CLOCK_SETTINGS;
+						displayClockSettingsMenu();
+					}
+				} else if (current_selection == 5) {
+					current_selection = 0;
+					menu_drawn = false;
+					if (current_alarm == 1) {
+						current_menu = MENU_SET_SCHEDULE_A;
+						alarm_A_setMenu();
+					} else if (current_alarm == 2) {
+						current_menu = MENU_SET_SCHEDULE_B;
+						alarm_B_setMenu();
+					}
+				}
+				break;
+
             case MENU_SET_DATE:
                 if (current_selection >= 0 && current_selection <= 3) {
                     // Enter increment/decrement mode for date fields
@@ -397,6 +439,7 @@ void handleNavigation(void) {
             		current_menu = MENU_SELECT_DEVICES;
             		current_selection = 0;
             		menu_drawn = false;
+            		displayDeviceSelectForAlarm();
             	} else if(current_selection == 2){
             		current_menu = MENU_SET_ALARM;
             		current_selection = 0;
@@ -493,8 +536,6 @@ void handleNavigation(void) {
         }
     }
 }
-
-
 
 
 void setDeviceState(int device, int state) {

@@ -44,6 +44,14 @@ typedef struct {
     uint8_t alarm_type;
 } rtc_request_t;
 
+typedef struct
+{
+	uint8_t setAlarm_A;
+	uint8_t setAlarm_B;
+}selectAlarm;
+
+
+
 typedef enum
 {
 	RTC_INIT,
@@ -243,6 +251,11 @@ bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second)
 	return (result == pdPASS);
 }
 
+
+bool rtc_request_select_devices(uint8_t dev1, uint8_t dev2, uint8_t dev3, uint8_t dev4)
+{
+	if(rtcRequestQueue == NULL) return false;
+}
 
 void set_time_external(uint8_t hr, uint8_t min, uint8_t sec)
 {

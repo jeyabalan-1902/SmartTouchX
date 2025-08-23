@@ -19,8 +19,8 @@ extern int downbutton, upbutton, enter;
 extern int device_states[4];
 
 extern int temp_hour, temp_minute, temp_second;
-extern int temp_date, temp_month, temp_year;
-extern int temp_day;
+extern int temp_date, temp_month, temp_year, temp_day;
+extern int temp_device1, temp_device2, temp_device3, temp_device4;
 extern int current_alarm; // 0 for Alarm A, 1 for Alarm B
 extern int scroll_offset;
 
@@ -39,6 +39,7 @@ void displayClockSettingsMenu(void);
 void handleIncrementDecrement(void);
 void alarm_A_setMenu(void);
 void alarm_B_setMenu(void);
+void displayDeviceSelectForAlarm(void);
 
 void ST7735_WriteCenteredTimeDate(uint16_t y, const char* dateStr, const char* timeStr, FontDef font, uint16_t color, uint16_t bgcolor);
 void drawButton(int x, int y, int width, int height, char* text, int selected);

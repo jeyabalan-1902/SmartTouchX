@@ -63,6 +63,7 @@ typedef enum {
 #define SET_ALARM_OPTIONS           4
 #define SET_SCHEDULE_A              4
 #define SET_SCHEDULE_B              4
+#define SET_SELECT_DEVICES           5
 
 
 

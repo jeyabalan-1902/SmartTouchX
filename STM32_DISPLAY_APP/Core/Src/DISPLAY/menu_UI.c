@@ -12,8 +12,8 @@
 
 // Clock settings variables
 int temp_hour = 0, temp_minute = 0, temp_second = 0;
-int temp_date = 1, temp_month = 1, temp_year = 2025;
-int temp_day = 1;
+int temp_date = 1, temp_month = 1, temp_year = 25, temp_day = 1;
+int temp_device1 = 0, temp_device2 = 0, temp_device3 = 0, temp_device4 = 0;
 int current_alarm = 0; // 0 for Alarm A, 1 for Alarm B
 
 bool increment_mode = false;  // Flag to indicate we're in increment/decrement mode
@@ -402,9 +402,9 @@ void displaySetTimeMenu(void)
 
         buttons_drawn = true;
     }
-
     last_selection = current_selection;
 }
+
 
 void displaySetDateMenu(void)
 {
@@ -480,6 +480,75 @@ void displaySetDateMenu(void)
 }
 
 
+void displayDeviceSelectForAlarm(void) {
+
+	if (current_menu != last_menu || !menu_drawn)
+	{
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
+		drawTitleBar("SET DATE");
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+		increment_mode = false;  // Reset increment mode when entering menu
+		selected_field = -1;
+	}
+
+	if (!buttons_drawn || last_selection != current_selection)
+	{
+		int start_y = TITLE_HEIGHT + 10;
+		button_count = 6;
+		// Show current values and indicate which field is being modified
+		char date_text[15], month_text[15], year_text[15], day_text[15];
+
+		if (increment_mode && selected_field == 0) {
+			snprintf(date_text, sizeof(date_text), "DEVICE 1 [%02d]", temp_date);
+		} else {
+			snprintf(date_text, sizeof(date_text), "DEVICE 1 (%02d)", temp_date);
+		}
+
+		if (increment_mode && selected_field == 1) {
+			snprintf(month_text, sizeof(month_text), "DEVICE 2 [%02d]", temp_month);
+		} else {
+			snprintf(month_text, sizeof(month_text), "DEVICE 2 (%02d)", temp_month);
+		}
+
+		if (increment_mode && selected_field == 2) {
+			snprintf(year_text, sizeof(year_text), "DEVICE 3 [%02d]", temp_year);
+		} else {
+			snprintf(year_text, sizeof(year_text), "DEVICE 3 (%02d)", temp_year);
+		}
+
+		if (increment_mode && selected_field == 3) {
+			snprintf(day_text, sizeof(day_text), "DEVICE 4 [%02d]", temp_day);
+		} else {
+			snprintf(day_text, sizeof(day_text), "DEVICE 4 (%02d)", temp_day);
+		}
+
+		// Reduced button height and spacing to fit all buttons
+		int button_height = 14;
+		int button_spacing = 18;
+
+		// Draw date field buttons with reduced spacing
+		drawSingleButton(MARGIN_X, start_y , BUTTON_WIDTH, button_height, date_text, (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X, start_y + button_spacing + 15, BUTTON_WIDTH, button_height, month_text, (current_selection == 1), 1);
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 2 + 15, BUTTON_WIDTH, button_height, year_text, (current_selection == 2), 2);
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 3 + 15, BUTTON_WIDTH, button_height, day_text, (current_selection == 3), 3);
+
+		// Draw APPLY and GO BACK buttons in parallel (side by side)
+		int parallel_y = start_y + button_spacing * 4 + 20;
+		int button_width_half = (BUTTON_WIDTH - 5) / 2; // Split width with small gap
+
+		drawSingleButton(MARGIN_X, parallel_y, button_width_half, button_height, "APPLY", (current_selection == 4), 4);
+		drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, button_height, "GO BACK", (current_selection == 5), 5);
+
+		buttons_drawn = true;
+	}
+
+	last_selection = current_selection;
+}
+
+
 void handleIncrementDecrement(void)
 {
     if (!increment_mode) return;
@@ -517,8 +586,23 @@ void handleIncrementDecrement(void)
                     break;
             }
         }
+        else if (current_menu == MENU_SELECT_DEVICES) {
+			switch(selected_field) {
+				case 0: // Device 1
+					temp_device1 = !(temp_device1);
+					break;
+				case 1: // Device 2
+					temp_device2 = !(temp_device2);
+					break;
+				case 2: // Device 3
+					temp_device3 = !(temp_device3);
+					break;
+				case 3: // Device 4
+					temp_device4 = !(temp_device4);
+					break;
+			}
+		}
 
-        // Force redraw to show updated values
         buttons_drawn = false;
         last_selection = -1;
     }
@@ -556,6 +640,22 @@ void handleIncrementDecrement(void)
                     break;
             }
         }
+        else if (current_menu == MENU_SELECT_DEVICES) {
+			switch(selected_field) {
+				case 0: // Device 1
+					temp_device1 = !(temp_device1);
+					break;
+				case 1: // Device 2
+					temp_device2 = !(temp_device2);
+					break;
+				case 2: // Device 3
+					temp_device3 = !(temp_device3);
+					break;
+				case 3: // Device 4
+					temp_device4 = !(temp_device4);
+					break;
+			}
+		}
 
         buttons_drawn = false;
         last_selection = -1;

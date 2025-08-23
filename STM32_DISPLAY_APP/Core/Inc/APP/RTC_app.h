@@ -9,9 +9,11 @@
 #define INC_APP_RTC_APP_H_
 
 #include "main.h"
+#include "user_app.h"
+
 
 extern RTC_HandleTypeDef hrtc;
-
+extern selectAlarm deviceAlarm[DEVICE_COUNT];
 extern char timeData[15];
 extern char dateData[15];
 extern char alarm_A_data[15];
