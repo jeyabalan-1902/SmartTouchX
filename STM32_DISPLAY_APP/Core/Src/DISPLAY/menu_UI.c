@@ -13,7 +13,7 @@
 // Clock settings variables
 int temp_hour = 0, temp_minute = 0, temp_second = 0;
 int temp_date = 1, temp_month = 1, temp_year = 25, temp_day = 1;
-int temp_device1 = 0, temp_device2 = 0, temp_device3 = 0, temp_device4 = 0;
+uint8_t temp_device1 = 0, temp_device2 = 0, temp_device3 = 0, temp_device4 = 0;
 int current_alarm = 0; // 0 for Alarm A, 1 for Alarm B
 
 bool increment_mode = false;  // Flag to indicate we're in increment/decrement mode
@@ -265,12 +265,15 @@ void alarm_A_setMenu(void)
 	if (!buttons_drawn || last_selection != current_selection)
 	{
 		int start_y = TITLE_HEIGHT + 15;
-		button_count = 4;
+		button_count = 5;
 
 		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, "SET TIME", (current_selection == 0), 0);
 		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "SELECT DEVICES", (current_selection == 1), 1);
-		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 2), 2);
-		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "APPLY", (current_selection == 2), 2);
+		int parallel_y = start_y + BUTTON_SPACING * 3;
+		int button_width_half = (BUTTON_WIDTH - 5) / 2;
+		drawSingleButton(MARGIN_X, parallel_y, button_width_half, BUTTON_HEIGHT, "GO BACK", (current_selection == 3), 3);
+		drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, BUTTON_HEIGHT, "GO TO MENU", (current_selection == 4), 4);
 
 		buttons_drawn = true;
 	}
@@ -293,12 +296,16 @@ void alarm_B_setMenu(void)
 	if (!buttons_drawn || last_selection != current_selection)
 	{
 		int start_y = TITLE_HEIGHT + 15;
-		button_count = 4;
+		button_count = 5;
 
 		drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, "SET TIME", (current_selection == 0), 0);
 		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, "SELECT DEVICES", (current_selection == 1), 1);
-		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 2), 2);
-		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
+		drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "APPLY", (current_selection == 2), 2);
+
+		int parallel_y = start_y + BUTTON_SPACING * 3;
+		int button_width_half = (BUTTON_WIDTH - 5) / 2;
+		drawSingleButton(MARGIN_X, parallel_y, button_width_half, BUTTON_HEIGHT, "GO BACK", (current_selection == 3), 3);
+		drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, BUTTON_HEIGHT, "GO TO MENU", (current_selection == 4), 4);
 
 		buttons_drawn = true;
 	}
@@ -405,6 +412,72 @@ void displaySetTimeMenu(void)
     last_selection = current_selection;
 }
 
+void displayAlarmSetTimeMenu(void)
+{
+    if (current_menu != last_menu || !menu_drawn)
+    {
+        ST7735_SetRotation(1);
+        fillScreen(BLACK);
+        drawTitleBar("SET SCHEDULE TIME");
+        menu_drawn = true;
+        buttons_drawn = false;
+        last_menu = current_menu;
+        increment_mode = false;  // Reset increment mode when entering menu
+        selected_field = -1;
+    }
+
+    if (!buttons_drawn || last_selection != current_selection)
+    {
+        int start_y = TITLE_HEIGHT + 10;
+        button_count = 4;
+        get_time_date(timeData, dateData);
+        char time_display[30];
+        snprintf(time_display, sizeof(time_display), "TIME: %s", timeData);
+        updateStatusInfo(time_display, WHITE);
+
+        // Show current values and indicate which field is being modified
+        char hour_text[15], minute_text[15], second_text[15];
+
+        if (increment_mode && selected_field == 0) {
+            snprintf(hour_text, sizeof(hour_text), "HOUR [%02d]", temp_hour);
+        } else {
+            snprintf(hour_text, sizeof(hour_text), "HOUR (%02d)", temp_hour);
+        }
+
+        if (increment_mode && selected_field == 1) {
+            snprintf(minute_text, sizeof(minute_text), "MIN [%02d]", temp_minute);
+        } else {
+            snprintf(minute_text, sizeof(minute_text), "MIN (%02d)", temp_minute);
+        }
+
+        if (increment_mode && selected_field == 2) {
+            snprintf(second_text, sizeof(second_text), "SEC [%02d]", temp_second);
+        } else {
+            snprintf(second_text, sizeof(second_text), "SEC (%02d)", temp_second);
+        }
+
+        // Reduced button height and spacing to fit all buttons
+        int button_height = 16;
+        int button_spacing = 18;
+
+        // Draw time field buttons with reduced spacing
+        drawSingleButton(MARGIN_X, start_y + 15, BUTTON_WIDTH, button_height, hour_text, (current_selection == 0), 0);
+        drawSingleButton(MARGIN_X, start_y + button_spacing + 15, BUTTON_WIDTH, button_height, minute_text, (current_selection == 1), 1);
+        drawSingleButton(MARGIN_X, start_y + button_spacing * 2 + 15, BUTTON_WIDTH, button_height, second_text, (current_selection == 2), 2);
+        drawSingleButton(MARGIN_X, start_y + button_spacing * 3 + 15, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 3), 3);
+//
+//        // Draw APPLY and GO BACK buttons in parallel (side by side)
+//        int parallel_y = start_y + button_spacing * 3 + 20;
+//        int button_width_half = (BUTTON_WIDTH - 5) / 2; // Split width with small gap
+//
+//        drawSingleButton(MARGIN_X, parallel_y, button_width_half, button_height, "APPLY", (current_selection == 3), 3);
+//        drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, button_height, "GO BACK", (current_selection == 4), 4);
+
+        buttons_drawn = true;
+    }
+    last_selection = current_selection;
+}
+
 
 void displaySetDateMenu(void)
 {
@@ -486,7 +559,7 @@ void displayDeviceSelectForAlarm(void) {
 	{
 		ST7735_SetRotation(1);
 		fillScreen(BLACK);
-		drawTitleBar("SET DATE");
+		drawTitleBar("SELECT DEVICES");
 		menu_drawn = true;
 		buttons_drawn = false;
 		last_menu = current_menu;
@@ -497,32 +570,32 @@ void displayDeviceSelectForAlarm(void) {
 	if (!buttons_drawn || last_selection != current_selection)
 	{
 		int start_y = TITLE_HEIGHT + 10;
-		button_count = 6;
+		button_count = 5;
 		// Show current values and indicate which field is being modified
-		char date_text[15], month_text[15], year_text[15], day_text[15];
+		char device1_text[15], device2_text[15], device3_text[15], device4_text[15];
 
 		if (increment_mode && selected_field == 0) {
-			snprintf(date_text, sizeof(date_text), "DEVICE 1 [%02d]", temp_date);
+			snprintf(device1_text, sizeof(device1_text), "DEVICE 1 [%d]", temp_device1);
 		} else {
-			snprintf(date_text, sizeof(date_text), "DEVICE 1 (%02d)", temp_date);
+			snprintf(device1_text, sizeof(device1_text), "DEVICE 1 (%d)", temp_device1);
 		}
 
 		if (increment_mode && selected_field == 1) {
-			snprintf(month_text, sizeof(month_text), "DEVICE 2 [%02d]", temp_month);
+			snprintf(device2_text, sizeof(device2_text), "DEVICE 2 [%d]", temp_device2);
 		} else {
-			snprintf(month_text, sizeof(month_text), "DEVICE 2 (%02d)", temp_month);
+			snprintf(device2_text, sizeof(device2_text), "DEVICE 2 (%d)", temp_device2);
 		}
 
 		if (increment_mode && selected_field == 2) {
-			snprintf(year_text, sizeof(year_text), "DEVICE 3 [%02d]", temp_year);
+			snprintf(device3_text, sizeof(device3_text), "DEVICE 3 [%d]", temp_device3);
 		} else {
-			snprintf(year_text, sizeof(year_text), "DEVICE 3 (%02d)", temp_year);
+			snprintf(device3_text, sizeof(device3_text), "DEVICE 3 (%d)", temp_device3);
 		}
 
 		if (increment_mode && selected_field == 3) {
-			snprintf(day_text, sizeof(day_text), "DEVICE 4 [%02d]", temp_day);
+			snprintf(device4_text, sizeof(device4_text), "DEVICE 4 [%d]", temp_device4);
 		} else {
-			snprintf(day_text, sizeof(day_text), "DEVICE 4 (%02d)", temp_day);
+			snprintf(device4_text, sizeof(device4_text), "DEVICE 4 (%d)", temp_device4);
 		}
 
 		// Reduced button height and spacing to fit all buttons
@@ -530,17 +603,18 @@ void displayDeviceSelectForAlarm(void) {
 		int button_spacing = 18;
 
 		// Draw date field buttons with reduced spacing
-		drawSingleButton(MARGIN_X, start_y , BUTTON_WIDTH, button_height, date_text, (current_selection == 0), 0);
-		drawSingleButton(MARGIN_X, start_y + button_spacing + 15, BUTTON_WIDTH, button_height, month_text, (current_selection == 1), 1);
-		drawSingleButton(MARGIN_X, start_y + button_spacing * 2 + 15, BUTTON_WIDTH, button_height, year_text, (current_selection == 2), 2);
-		drawSingleButton(MARGIN_X, start_y + button_spacing * 3 + 15, BUTTON_WIDTH, button_height, day_text, (current_selection == 3), 3);
+		drawSingleButton(MARGIN_X, start_y , BUTTON_WIDTH, button_height, device1_text, (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X, start_y + button_spacing, BUTTON_WIDTH, button_height, device2_text, (current_selection == 1), 1);
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 2, BUTTON_WIDTH, button_height, device3_text, (current_selection == 2), 2);
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 3, BUTTON_WIDTH, button_height, device4_text, (current_selection == 3), 3);
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 4, BUTTON_WIDTH, button_height, "GO BACK", (current_selection == 4), 4);
 
-		// Draw APPLY and GO BACK buttons in parallel (side by side)
-		int parallel_y = start_y + button_spacing * 4 + 20;
-		int button_width_half = (BUTTON_WIDTH - 5) / 2; // Split width with small gap
-
-		drawSingleButton(MARGIN_X, parallel_y, button_width_half, button_height, "APPLY", (current_selection == 4), 4);
-		drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, button_height, "GO BACK", (current_selection == 5), 5);
+//		// Draw APPLY and GO BACK buttons in parallel (side by side)
+//		int parallel_y = start_y + button_spacing * 4 + 20;
+//		int button_width_half = (BUTTON_WIDTH - 5) / 2; // Split width with small gap
+//
+//		drawSingleButton(MARGIN_X, parallel_y, button_width_half, button_height, "APPLY", (current_selection == 4), 4);
+//		drawSingleButton(MARGIN_X + button_width_half + 5, parallel_y, button_width_half, button_height, "GO BACK", (current_selection == 5), 5);
 
 		buttons_drawn = true;
 	}
@@ -678,6 +752,7 @@ void drawCleanButton(int x, int y, int width, int height, char* text, int select
     }
 }
 
+
 void drawTitleBar(char* title) {
     fillRect(0, 0, DISPLAY_WIDTH, TITLE_HEIGHT, BLUE);
     int title_length = strlen(title);
@@ -690,6 +765,7 @@ void drawTitleBar(char* title) {
 
     drawLine(0, TITLE_HEIGHT, DISPLAY_WIDTH, TITLE_HEIGHT, WHITE);
 }
+
 
 void drawSingleButton(int x, int y, int width, int height, char* text, int selected, int button_id)
 {

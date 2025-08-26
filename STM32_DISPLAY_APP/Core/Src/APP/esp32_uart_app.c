@@ -162,7 +162,7 @@ static void setAlarm_A(cJSON *alarmA)
 	if (sscanf(alarmA->valuestring, "%d:%d:%d", &hour, &minute, &second) == 3)
 	{
 		safe_printf("Parsed AlarmA: %02d:%02d:%02d\n", hour, minute, second);
-		rtc_request_set_alarm_a((uint8_t)hour, (uint8_t)minute, (uint8_t)second);
+		//rtc_request_set_alarm_a((uint8_t)hour, (uint8_t)minute, (uint8_t)second);
 	}
 	else
 	{
@@ -176,7 +176,7 @@ static void setAlarm_B(cJSON *alarmB)
 	if (sscanf(alarmB->valuestring, "%d:%d:%d", &hour, &minute, &second) == 3)
 	{
 		safe_printf("Parsed AlarmB: %02d:%02d:%02d\n", hour, minute, second);
-		rtc_request_set_alarm_b((uint8_t)hour, (uint8_t)minute, (uint8_t)second);
+		//rtc_request_set_alarm_b((uint8_t)hour, (uint8_t)minute, (uint8_t)second);
 	}
 	else
 	{

@@ -35,13 +35,6 @@ uint16_t relay_pins[DEVICE_COUNT] = {L_RELAY_1_Pin, L_RELAY_2_Pin, L_RELAY_3_Pin
 volatile int global_device_states[DEVICE_COUNT] = {0, 0, 0, 0};
 uint32_t lastKeepAliveTime = 0;
 
-// ==========================================================
-//                INIT MODULES (Modular Approach)
-// ==========================================================
-
-/**
- * @brief Initialize display and menu system
- */
 
 static void init_st7735(void)
 {
@@ -57,9 +50,6 @@ static void init_display_app(void)
     initializeMenu();
 }
 
-/**
- * @brief Initialize synchronization primitives
- */
 static void init_os_primitives(void)
 {
     deviceStateMutex = xSemaphoreCreateMutex();
@@ -75,9 +65,7 @@ static void init_os_primitives(void)
     configASSERT(rfled_semaphore != NULL);
 }
 
-/**
- * @brief Initialize device states
- */
+
 static void init_device_states(void)
 {
     for (int i = 0; i < DEVICE_COUNT; i++) {
@@ -86,9 +74,6 @@ static void init_device_states(void)
     }
 }
 
-/**
- * @brief Initialize communication peripherals
- */
 static void init_interrupts(void)
 {
     HAL_SPI_Receive_IT(&hspi2, &spiRxByte, 1);
@@ -96,9 +81,6 @@ static void init_interrupts(void)
     HAL_UART_Receive_IT(&huart3, &uartRxByte, 1);
 }
 
-/**
- * @brief Create FreeRTOS tasks
- */
 static void init_tasks(void)
 {
     status = xTaskCreate(SPI_Handler, "SPIHandler", 512, NULL, 2, NULL);
@@ -124,17 +106,11 @@ static void init_tasks(void)
 
 }
 
-/**
- * @brief Start FreeRTOS scheduler
- */
+
 static void start_scheduler(void)
 {
     vTaskStartScheduler();
 }
-
-// ==========================================================
-//                PUBLIC FUNCTIONS
-// ==========================================================
 
 void user_app_init(void)
 {

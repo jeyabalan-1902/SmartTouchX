@@ -42,14 +42,8 @@ typedef struct {
     uint8_t year;
     uint8_t day;
     uint8_t alarm_type;
+    uint8_t deviceMask;
 } rtc_request_t;
-
-typedef struct
-{
-	uint8_t setAlarm_A;
-	uint8_t setAlarm_B;
-}selectAlarm;
-
 
 
 typedef enum
@@ -67,6 +61,8 @@ static RTC_MACHINE rtcState = RTC_INIT;
 
 static rtc_request_t pending_request = {0};
 static bool has_pending_request = false;
+static uint8_t alarmA_device_mask = 0;
+static uint8_t alarmB_device_mask = 0;
 
 void RTC_Task(void *param)
 {
@@ -136,16 +132,20 @@ void RTC_Task(void *param)
 							break;
 
 						case RTC_REQUEST_SET_ALARM_A:
-							safe_printf("RTC: External Alarm A set request - %02d:%02d:%02d\n",
-								pending_request.hour, pending_request.minute, pending_request.second);
-							set_alarmA(pending_request.hour, pending_request.minute, pending_request.second);
-							break;
+						    safe_printf("RTC: External Alarm A set request - %02d:%02d:%02d, mask=0x%02X\n",
+						        pending_request.hour, pending_request.minute, pending_request.second, pending_request.deviceMask);
+
+						    set_alarmA(pending_request.hour, pending_request.minute, pending_request.second);
+						    alarmA_device_mask = pending_request.deviceMask;   // Save selected devices
+						    break;
 
 						case RTC_REQUEST_SET_ALARM_B:
-							safe_printf("RTC: External Alarm B set request - %02d:%02d:%02d\n",
-								pending_request.hour, pending_request.minute, pending_request.second);
-							set_alarmB(pending_request.hour, pending_request.minute, pending_request.second);
-							break;
+						    safe_printf("RTC: External Alarm B set request - %02d:%02d:%02d, mask=0x%02X\n",
+						        pending_request.hour, pending_request.minute, pending_request.second, pending_request.deviceMask);
+
+						    set_alarmB(pending_request.hour, pending_request.minute, pending_request.second);
+						    alarmB_device_mask = pending_request.deviceMask;   // Save selected devices
+						    break;
 					}
 					has_pending_request = false;
 				}
@@ -155,20 +155,23 @@ void RTC_Task(void *param)
 			case RTC_IDLE:
 				if (ulTaskNotifyTake(pdTRUE, 0) > 0)
 				{
-					if (alarmEvent == 1)
-					{
-						setAllDevicesState(1, source);
-						safe_printf("Alarm A triggered Devices ON\n");
-					}
-					else if (alarmEvent == 2)
-					{
-						setAllDevicesState(0, source);
-						safe_printf("Alarm B triggered Devices OFF\n");
-					}
-					alarmEvent = 0;
-				}
-				if (has_pending_request) {
-					rtcState = RTC_PROCESS_EXTERNAL_REQUEST;
+				    if (alarmEvent == 1)   // Alarm A triggered
+				    {
+				        for (int i = 0; i < 8; i++) {
+				            int state = (alarmA_device_mask >> i) & 0x01;  // Extract bit -> state
+				            setDeviceState(i, state);
+				        }
+				        safe_printf("Alarm A triggered - Applied mask=0x%02X\n", alarmA_device_mask);
+				    }
+				    else if (alarmEvent == 2)  // Alarm B triggered
+				    {
+				        for (int i = 0; i < 8; i++) {
+				            int state = (alarmB_device_mask >> i) & 0x01;  // Extract bit -> state
+				            setDeviceState(i, state);
+				        }
+				        safe_printf("Alarm B triggered - Applied mask=0x%02X\n", alarmB_device_mask);
+				    }
+				    alarmEvent = 0;
 				}
 				break;
 		}
@@ -220,23 +223,26 @@ bool rtc_request_set_date(uint8_t year, uint8_t month, uint8_t date, uint8_t day
 }
 
 
-bool rtc_request_set_alarm_a(uint8_t hour, uint8_t minute, uint8_t second)
+bool rtc_request_set_alarm_a(uint8_t hour, uint8_t minute, uint8_t second, uint8_t device_mask)
 {
-	if (rtcRequestQueue == NULL) return false;
+    if (rtcRequestQueue == NULL) return false;
 
-	rtc_request_t request = {
-		.request_type = RTC_REQUEST_SET_ALARM_A,
-		.hour = hour,
-		.minute = minute,
-		.second = second
-	};
-	snprintf(alarm_A_data, sizeof(alarm_A_data), "%02d:%02d", hour, minute);
-	BaseType_t result = xQueueSend(rtcRequestQueue, &request, pdMS_TO_TICKS(100));
-	return (result == pdPASS);
+    rtc_request_t request = {
+        .request_type = RTC_REQUEST_SET_ALARM_A,
+        .hour = hour,
+        .minute = minute,
+        .second = second,
+        .deviceMask = device_mask
+    };
+
+    snprintf(alarm_A_data, sizeof(alarm_A_data), "%02d:%02d", hour, minute);
+
+    BaseType_t result = xQueueSend(rtcRequestQueue, &request, pdMS_TO_TICKS(100));
+    return (result == pdPASS);
 }
 
 
-bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second)
+bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second, uint8_t device_mask)
 {
 	if (rtcRequestQueue == NULL) return false;
 
@@ -244,17 +250,12 @@ bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second)
 		.request_type = RTC_REQUEST_SET_ALARM_B,
 		.hour = hour,
 		.minute = minute,
-		.second = second
+		.second = second,
+		.deviceMask = device_mask
 	};
 	snprintf(alarm_B_data, sizeof(alarm_B_data), "%02d:%02d", hour, minute);
 	BaseType_t result = xQueueSend(rtcRequestQueue, &request, pdMS_TO_TICKS(100));
 	return (result == pdPASS);
-}
-
-
-bool rtc_request_select_devices(uint8_t dev1, uint8_t dev2, uint8_t dev3, uint8_t dev4)
-{
-	if(rtcRequestQueue == NULL) return false;
 }
 
 void set_time_external(uint8_t hr, uint8_t min, uint8_t sec)
@@ -267,15 +268,15 @@ void set_date_external(uint8_t year, uint8_t month, uint8_t date, uint8_t day)
 	rtc_request_set_date(year, month, date, day);
 }
 
-void set_alarmA_external(uint8_t hr, uint8_t min, uint8_t sec)
-{
-	rtc_request_set_alarm_a(hr, min, sec);
-}
-
-void set_alarmB_external(uint8_t hr, uint8_t min, uint8_t sec)
-{
-	rtc_request_set_alarm_b(hr, min, sec);
-}
+//void set_alarmA_external(uint8_t hr, uint8_t min, uint8_t sec)
+//{
+//	rtc_request_set_alarm_a(hr, min, sec);
+//}
+//
+//void set_alarmB_external(uint8_t hr, uint8_t min, uint8_t sec)
+//{
+//	rtc_request_set_alarm_b(hr, min, sec);
+//}
 
 
 void set_time (uint8_t hr, uint8_t min, uint8_t sec)

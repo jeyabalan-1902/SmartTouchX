@@ -97,6 +97,9 @@ void Menu_Handler(void)
         case MENU_SELECT_DEVICES:
         	displayDeviceSelectForAlarm();
         	break;
+        case MENU_SET_ALARM_TIME:
+        	displayAlarmSetTimeMenu();
+        	break;
     }
     handleNavigation();
 }
@@ -223,6 +226,8 @@ void handleNavigation(void) {
         case MENU_SET_SCHEDULE_B:
         	max_options = SET_SCHEDULE_B;
         	break;
+        case MENU_SET_ALARM_TIME:
+        	max_options = SET_ALARM_TIME_OPTIONS;
         case MENU_SELECT_DEVICES:
         	max_options = SET_SELECT_DEVICES;
         	break;
@@ -315,19 +320,18 @@ void handleNavigation(void) {
                 } else if (current_selection == 3) {
                 	current_selection = 0;
 					menu_drawn = false;
-                	if (current_alarm == 1) {
-						rtc_request_set_alarm_a(temp_hour, temp_minute, temp_second);
+					if (current_alarm == 1) {
 						current_menu = MENU_SET_SCHEDULE_A;
 						alarm_A_setMenu();
 					} else if (current_alarm == 2) {
-						rtc_request_set_alarm_b(temp_hour, temp_minute, temp_second);
 						current_menu = MENU_SET_SCHEDULE_B;
 						alarm_B_setMenu();
-					} else {
+					}else{
 						rtc_request_set_time(temp_hour, temp_minute, temp_second);
 						current_menu = MENU_CLOCK_SETTINGS;
 						displayClockSettingsMenu();
 					}
+
                 } else if (current_selection == 4) {
                     current_selection = 0;
                     menu_drawn = false;
@@ -337,12 +341,32 @@ void handleNavigation(void) {
 					} else if (current_alarm == 2) {
 						current_menu = MENU_SET_SCHEDULE_B;
 						alarm_B_setMenu();
-					} else {
+					}else{
 						current_menu = MENU_CLOCK_SETTINGS;;
 						displayClockSettingsMenu();
 					}
                 }
                 break;
+
+            case MENU_SET_ALARM_TIME:
+				if (current_selection >= 0 && current_selection <= 2) {
+					// Enter increment/decrement mode for time fields
+					increment_mode = true;
+					selected_field = current_selection;
+					buttons_drawn = false;
+					last_selection = -1;
+				} else if (current_selection == 3) {
+					current_selection = 0;
+					menu_drawn = false;
+					if (current_alarm == 1) {
+						current_menu = MENU_SET_SCHEDULE_A;
+						alarm_A_setMenu();
+					} else if (current_alarm == 2) {
+						current_menu = MENU_SET_SCHEDULE_B;
+						alarm_B_setMenu();
+					}
+				}
+				break;
 
             case MENU_SELECT_DEVICES:
             	if (current_selection >= 0 && current_selection <= 3) {
@@ -352,22 +376,6 @@ void handleNavigation(void) {
 					buttons_drawn = false;
 					last_selection = -1;
 				} else if (current_selection == 4) {
-					current_selection = 0;
-					menu_drawn = false;
-					if (current_alarm == 1) {
-						rtc_request_set_alarm_a(temp_hour, temp_minute, temp_second);
-						current_menu = MENU_SET_SCHEDULE_A;
-						alarm_A_setMenu();
-					} else if (current_alarm == 2) {
-						rtc_request_set_alarm_b(temp_hour, temp_minute, temp_second);
-						current_menu = MENU_SET_SCHEDULE_B;
-						alarm_B_setMenu();
-					} else {
-						rtc_request_set_time(temp_hour, temp_minute, temp_second);
-						current_menu = MENU_CLOCK_SETTINGS;
-						displayClockSettingsMenu();
-					}
-				} else if (current_selection == 5) {
 					current_selection = 0;
 					menu_drawn = false;
 					if (current_alarm == 1) {
@@ -404,11 +412,13 @@ void handleNavigation(void) {
             case MENU_SET_ALARM:
                 if (current_selection == 0) {
                     current_menu = MENU_SET_SCHEDULE_A;
+                    current_alarm = 1;
                     current_selection = 0;
                     menu_drawn = false;
                     alarm_A_setMenu();
                 } else if (current_selection == 1) {
                     current_menu = MENU_SET_SCHEDULE_B;
+                    current_alarm = 2;
                     current_selection = 0;
                     menu_drawn = false;
                     alarm_B_setMenu();
@@ -441,11 +451,18 @@ void handleNavigation(void) {
             		menu_drawn = false;
             		displayDeviceSelectForAlarm();
             	} else if(current_selection == 2){
+            		uint8_t mask = buildDeviceMask();
+            		rtc_request_set_alarm_a(temp_hour, temp_minute, temp_second, mask);
             		current_menu = MENU_SET_ALARM;
             		current_selection = 0;
             		menu_drawn = false;
             		displaySetAlarmMenu();
-            	} else if (current_selection == 3) {
+            	} else if(current_selection == 3){
+            		current_menu = MENU_SET_ALARM;
+					current_selection = 0;
+					menu_drawn = false;
+					displaySetAlarmMenu();
+            	}else if (current_selection == 4) {
                     current_menu = MENU_MAIN;
                     current_selection = 0;
                     menu_drawn = false;
@@ -467,12 +484,20 @@ void handleNavigation(void) {
 					current_menu = MENU_SELECT_DEVICES;
 					current_selection = 0;
 					menu_drawn = false;
+					displayDeviceSelectForAlarm();
 				} else if(current_selection == 2){
+					uint8_t mask = buildDeviceMask();
+					rtc_request_set_alarm_b(temp_hour, temp_minute, temp_second, mask);
 					current_menu = MENU_SET_ALARM;
 					current_selection = 0;
 					menu_drawn = false;
 					displaySetAlarmMenu();
-				} else if (current_selection == 3) {
+				} else if(current_selection == 3){
+            		current_menu = MENU_SET_ALARM;
+					current_selection = 0;
+					menu_drawn = false;
+					displaySetAlarmMenu();
+            	}else if (current_selection == 4) {
                     current_menu = MENU_MAIN;
                     current_selection = 0;
                     menu_drawn = false;
@@ -725,6 +750,16 @@ void updateDeviceControlStatus(int device, bool is_on)
     snprintf(status, sizeof(status), "Status: %s", is_on ? "ON" : "OFF");
     uint16_t status_color = is_on ? GREEN : RED;
     updateStatusInfo(status, status_color);
+}
+
+uint8_t buildDeviceMask(void)
+{
+    uint8_t mask = 0;
+    if (temp_device1) mask |= (1 << 0);
+    if (temp_device2) mask |= (1 << 1);
+    if (temp_device3) mask |= (1 << 2);
+    if (temp_device4) mask |= (1 << 3);
+    return mask;
 }
 
 

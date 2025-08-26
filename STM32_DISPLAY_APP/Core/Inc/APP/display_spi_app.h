@@ -43,6 +43,7 @@ typedef enum {
 	MENU_SET_ALARM,
 	MENU_SET_SCHEDULE_A,
 	MENU_SET_SCHEDULE_B,
+	MENU_SET_ALARM_TIME,
 	MENU_SELECT_DEVICES
 } menu_state_t;
 
@@ -61,9 +62,10 @@ typedef enum {
 #define SET_TIME_OPTIONS            5
 #define SET_DATE_OPTIONS            6
 #define SET_ALARM_OPTIONS           4
-#define SET_SCHEDULE_A              4
-#define SET_SCHEDULE_B              4
-#define SET_SELECT_DEVICES           5
+#define SET_SCHEDULE_A              5
+#define SET_SCHEDULE_B              5
+#define SET_SELECT_DEVICES          5
+#define SET_ALARM_TIME_OPTIONS      4
 
 
 
@@ -103,6 +105,7 @@ void setAllDevicesState(int state, char *source);
 void syncDisplayDeviceStates(void);
 void Display_Handler(void *param);
 void updateToDisplayMenu(void);
+uint8_t buildDeviceMask(void);
 
 
 #endif /* INC_APP_DISPLAY_SPI_APP_H_ */

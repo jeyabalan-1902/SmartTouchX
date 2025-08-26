@@ -12,6 +12,12 @@
 #include "user_app.h"
 
 
+typedef struct
+{
+	uint8_t setAlarm_A;
+	uint8_t setAlarm_B;
+}selectAlarm;
+
 extern RTC_HandleTypeDef hrtc;
 extern selectAlarm deviceAlarm[DEVICE_COUNT];
 extern char timeData[15];
@@ -22,8 +28,8 @@ extern char alarm_B_data[15];
 
 bool rtc_request_set_time(uint8_t hour, uint8_t minute, uint8_t second);
 bool rtc_request_set_date(uint8_t year, uint8_t month, uint8_t date, uint8_t day);
-bool rtc_request_set_alarm_a(uint8_t hour, uint8_t minute, uint8_t second);
-bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second);
+bool rtc_request_set_alarm_a(uint8_t hour, uint8_t minute, uint8_t second, uint8_t device_mask);
+bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second, uint8_t device_mask);
 
 void set_time_external(uint8_t hr, uint8_t min, uint8_t sec);
 void set_date_external(uint8_t year, uint8_t month, uint8_t date, uint8_t day);
