@@ -37,6 +37,7 @@ void Display_Handler(void *param)
 
 	while(1)
 	{
+		displayAlive = true;
 		if (xQueueReceive(btnEventQueue, &evt, 0) == pdPASS) {
 		    if (evt == BTN_EVENT_UP) {
 		        upbutton = 1;
@@ -97,9 +98,6 @@ void Menu_Handler(void)
         case MENU_SELECT_DEVICES:
         	displayDeviceSelectForAlarm();
         	break;
-        case MENU_SET_ALARM_TIME:
-        	displayAlarmSetTimeMenu();
-        	break;
     }
     handleNavigation();
 }
@@ -124,6 +122,7 @@ void initializeMenu(void)
     temp_month = 1;
     temp_year = 25;
     temp_day = 1;
+    current_alarm = 0;
 
     for (int i = 0; i < 4; i++) {
         device_states[i] = 0;

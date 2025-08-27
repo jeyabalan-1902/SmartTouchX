@@ -29,7 +29,9 @@ typedef enum
 	RTC_REQUEST_SET_TIME = 1,
 	RTC_REQUEST_SET_DATE,
 	RTC_REQUEST_SET_ALARM_A,
-	RTC_REQUEST_SET_ALARM_B
+	RTC_REQUEST_SET_ALARM_B,
+	RTC_REQUEST_ADD_ALARM,
+	RTC_REQUEST_CLEAR_ALARM
 }EXT_RTC_REC;
 
 typedef struct {
@@ -43,6 +45,7 @@ typedef struct {
     uint8_t day;
     uint8_t alarm_type;
     uint8_t deviceMask;
+    uint8_t alarm_index;
 } rtc_request_t;
 
 
@@ -57,8 +60,20 @@ typedef enum
 	RTC_PROCESS_EXTERNAL_REQUEST
 }RTC_MACHINE;
 
-static RTC_MACHINE rtcState = RTC_INIT;
 
+typedef struct {
+    uint8_t hour;
+    uint8_t minute;
+    uint8_t second;
+    uint8_t deviceMask;
+    bool active;
+    bool repeat_daily;
+} alarm_entry_t;
+
+static alarm_entry_t allAlarms[MAX_ALARMS] = {0};
+
+
+static RTC_MACHINE rtcState = RTC_INIT;
 static rtc_request_t pending_request = {0};
 static bool has_pending_request = false;
 static uint8_t alarmA_device_mask = 0;
@@ -77,6 +92,7 @@ void RTC_Task(void *param)
 
 	while(1)
 	{
+		rtcAlive = true;
 		rtc_request_t request;
 		if (xQueueReceive(rtcRequestQueue, &request, 0) == pdPASS) {
 			pending_request = request;
@@ -136,7 +152,7 @@ void RTC_Task(void *param)
 						        pending_request.hour, pending_request.minute, pending_request.second, pending_request.deviceMask);
 
 						    set_alarmA(pending_request.hour, pending_request.minute, pending_request.second);
-						    alarmA_device_mask = pending_request.deviceMask;   // Save selected devices
+						    alarmA_device_mask = pending_request.deviceMask;
 						    break;
 
 						case RTC_REQUEST_SET_ALARM_B:
@@ -144,7 +160,33 @@ void RTC_Task(void *param)
 						        pending_request.hour, pending_request.minute, pending_request.second, pending_request.deviceMask);
 
 						    set_alarmB(pending_request.hour, pending_request.minute, pending_request.second);
-						    alarmB_device_mask = pending_request.deviceMask;   // Save selected devices
+						    alarmB_device_mask = pending_request.deviceMask;
+						    break;
+
+						case RTC_REQUEST_ADD_ALARM:
+						    if (pending_request.alarm_index < MAX_ALARMS) {
+						        allAlarms[pending_request.alarm_index].hour       = pending_request.hour;
+						        allAlarms[pending_request.alarm_index].minute     = pending_request.minute;
+						        allAlarms[pending_request.alarm_index].second     = pending_request.second;
+						        allAlarms[pending_request.alarm_index].deviceMask = pending_request.deviceMask;
+						        allAlarms[pending_request.alarm_index].active     = true;
+
+						        safe_printf("RTC: Added Alarm[%d] %02d:%02d:%02d mask=0x%02X\n",
+						            pending_request.alarm_index,
+						            pending_request.hour, pending_request.minute, pending_request.second,
+						            pending_request.deviceMask);
+
+						        program_next_alarms();
+						    }
+						    break;
+
+						case RTC_REQUEST_CLEAR_ALARM:
+						    if (pending_request.alarm_index < MAX_ALARMS) {
+						        allAlarms[pending_request.alarm_index].active = false;
+
+						        safe_printf("RTC: Cleared Alarm[%d]\n", pending_request.alarm_index);
+						        program_next_alarms();
+						    }
 						    break;
 					}
 					has_pending_request = false;
@@ -155,23 +197,27 @@ void RTC_Task(void *param)
 			case RTC_IDLE:
 				if (ulTaskNotifyTake(pdTRUE, 0) > 0)
 				{
-				    if (alarmEvent == 1)   // Alarm A triggered
-				    {
-				        for (int i = 0; i < 8; i++) {
-				            int state = (alarmA_device_mask >> i) & 0x01;  // Extract bit -> state
-				            setDeviceState(i, state);
-				        }
-				        safe_printf("Alarm A triggered - Applied mask=0x%02X\n", alarmA_device_mask);
-				    }
-				    else if (alarmEvent == 2)  // Alarm B triggered
-				    {
-				        for (int i = 0; i < 8; i++) {
-				            int state = (alarmB_device_mask >> i) & 0x01;  // Extract bit -> state
-				            setDeviceState(i, state);
-				        }
-				        safe_printf("Alarm B triggered - Applied mask=0x%02X\n", alarmB_device_mask);
-				    }
-				    alarmEvent = 0;
+					if (alarmEvent == 1 || alarmEvent == 2) {
+					    handle_alarm_trigger(alarmEvent);  // pass 1=AlarmA, 2=AlarmB
+					    alarmEvent = 0;
+					}
+//				    if (alarmEvent == 1)
+//				    {
+//				        for (int i = 0; i < 4; i++) {
+//				            int state = (alarmA_device_mask >> i) & 0x01;
+//				            setDeviceState(i, state);
+//				        }
+//				        safe_printf("Alarm A triggered - Applied mask=0x%02X\n", alarmA_device_mask);
+//				    }
+//				    else if (alarmEvent == 2)
+//				    {
+//				        for (int i = 0; i < 4; i++) {
+//				            int state = (alarmB_device_mask >> i) & 0x01;
+//				            setDeviceState(i, state);
+//				        }
+//				        safe_printf("Alarm B triggered - Applied mask=0x%02X\n", alarmB_device_mask);
+//				    }
+//				    alarmEvent = 0;
 				}
 				break;
 		}
@@ -258,25 +304,111 @@ bool rtc_request_set_alarm_b(uint8_t hour, uint8_t minute, uint8_t second, uint8
 	return (result == pdPASS);
 }
 
-void set_time_external(uint8_t hr, uint8_t min, uint8_t sec)
+
+bool rtc_request_add_alarm(uint8_t index, uint8_t hour, uint8_t minute, uint8_t second, uint8_t device_mask, bool repeat_daily)
 {
-	rtc_request_set_time(hr, min, sec);
+    if (rtcRequestQueue == NULL || index >= MAX_ALARMS) return false;
+
+    rtc_request_t request = {
+        .request_type = RTC_REQUEST_ADD_ALARM,
+        .hour = hour,
+        .minute = minute,
+        .second = second,
+        .deviceMask = device_mask,
+        .alarm_index = index,
+        .alarm_type = repeat_daily ? 1 : 0
+    };
+
+    return (xQueueSend(rtcRequestQueue, &request, pdMS_TO_TICKS(100)) == pdPASS);
 }
 
-void set_date_external(uint8_t year, uint8_t month, uint8_t date, uint8_t day)
+bool rtc_request_clear_alarm(uint8_t index)
 {
-	rtc_request_set_date(year, month, date, day);
+    if (rtcRequestQueue == NULL || index >= MAX_ALARMS) return false;
+
+    rtc_request_t request = {
+        .request_type = RTC_REQUEST_CLEAR_ALARM,
+        .alarm_index  = index
+    };
+
+    BaseType_t result = xQueueSend(rtcRequestQueue, &request, pdMS_TO_TICKS(100));
+    return (result == pdPASS);
 }
 
-//void set_alarmA_external(uint8_t hr, uint8_t min, uint8_t sec)
-//{
-//	rtc_request_set_alarm_a(hr, min, sec);
-//}
-//
-//void set_alarmB_external(uint8_t hr, uint8_t min, uint8_t sec)
-//{
-//	rtc_request_set_alarm_b(hr, min, sec);
-//}
+
+
+void program_next_alarms(void)
+{
+    RTC_TimeTypeDef gTime;
+    RTC_DateTypeDef gDate;
+    HAL_RTC_GetTime(&hrtc, &gTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &gDate, RTC_FORMAT_BIN);
+
+    int nextA = -1, nextB = -1;
+    uint32_t minDiffA = UINT32_MAX, minDiffB = UINT32_MAX;
+
+    uint32_t nowSec = gTime.Hours*3600 + gTime.Minutes*60 + gTime.Seconds;
+
+    for (int i = 0; i < MAX_ALARMS; i++) {
+        if (!allAlarms[i].active) continue;
+
+        uint32_t alarmSec = allAlarms[i].hour*3600 + allAlarms[i].minute*60 + allAlarms[i].second;
+        uint32_t diff = (alarmSec >= nowSec) ? (alarmSec - nowSec) : (86400 - nowSec + alarmSec);
+
+        if (diff < minDiffA) {
+            minDiffB = minDiffA; nextB = nextA;
+            minDiffA = diff; nextA = i;
+        } else if (diff < minDiffB) {
+            minDiffB = diff; nextB = i;
+        }
+    }
+
+    if (nextA != -1) {
+        set_alarmA(allAlarms[nextA].hour, allAlarms[nextA].minute, allAlarms[nextA].second);
+    }
+
+    if (nextB != -1) {
+        set_alarmB(allAlarms[nextB].hour, allAlarms[nextB].minute, allAlarms[nextB].second);
+    }
+}
+
+void handle_alarm_trigger(uint8_t whichAlarm)
+{
+    RTC_TimeTypeDef gTime;
+    RTC_DateTypeDef gDate;
+    HAL_RTC_GetTime(&hrtc, &gTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &gDate, RTC_FORMAT_BIN);
+
+    uint8_t hr  = gTime.Hours;
+    uint8_t min = gTime.Minutes;
+    uint8_t sec = gTime.Seconds;
+
+    for (int i = 0; i < MAX_ALARMS; i++) {
+        if (allAlarms[i].active &&
+            allAlarms[i].hour == hr &&
+            allAlarms[i].minute == min &&
+            allAlarms[i].second == sec) {
+
+            for (int d = 0; d < 4; d++) {
+                int state = (allAlarms[i].deviceMask >> d) & 0x01;
+                setDeviceState(d, state);
+            }
+
+            safe_printf("Alarm[%d] %s triggered at %02d:%02d:%02d mask=0x%02X (from HW %c)\n",
+                        i,
+                        allAlarms[i].repeat_daily ? "Daily" : "One-shot",
+                        hr, min, sec,
+                        allAlarms[i].deviceMask,
+                        whichAlarm == 1 ? 'A' : 'B');
+
+            if (!allAlarms[i].repeat_daily) {
+                allAlarms[i].active = false;
+            }
+        }
+    }
+    program_next_alarms();
+}
+
 
 
 void set_time (uint8_t hr, uint8_t min, uint8_t sec)
@@ -308,6 +440,7 @@ void set_date (uint8_t year, uint8_t month, uint8_t date, uint8_t day)  // monda
 
 	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, 0x2345);  // backup register
 }
+
 
 void set_alarmA(uint8_t hr, uint8_t min, uint8_t sec)
 {

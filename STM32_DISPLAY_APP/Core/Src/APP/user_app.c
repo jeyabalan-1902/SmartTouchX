@@ -35,6 +35,10 @@ uint16_t relay_pins[DEVICE_COUNT] = {L_RELAY_1_Pin, L_RELAY_2_Pin, L_RELAY_3_Pin
 volatile int global_device_states[DEVICE_COUNT] = {0, 0, 0, 0};
 uint32_t lastKeepAliveTime = 0;
 
+volatile bool rfmAlive = false;
+volatile bool rtcAlive = false;
+volatile bool displayAlive = false;
+
 
 static void init_st7735(void)
 {
@@ -101,6 +105,9 @@ static void init_tasks(void)
 	status = xTaskCreate(RF_REC_LED_Task, "RF_LED_Task", 128, NULL, 2, NULL);
 	configASSERT(status == pdPASS);
 
+	status = xTaskCreate(Watchdog_Task, "WDT", 256, NULL, 8, NULL);
+	configASSERT(status == pdPASS);
+
     // status = xTaskCreate(GSM_MQTT_Task, "GSM_MQTT_Task", 1024, NULL, 7, NULL);
     // configASSERT(status == pdPASS);
 
@@ -115,6 +122,7 @@ static void start_scheduler(void)
 void user_app_init(void)
 {
 	printf("********* SmartTouchX ********\n");
+	//HAL_IWDG_Refresh(&hiwdg);
 	init_st7735();
 	init_os_primitives();
 	init_interrupts();
@@ -152,6 +160,25 @@ void safe_printf(const char *fmt, ...)
         HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
         xSemaphoreGive(uartMutex);
     }
+}
+
+void Watchdog_Task(void *parameter)
+{
+	MX_IWDG_Init();
+	while(1)
+	{
+		if (rtcAlive && rfmAlive && displayAlive)
+		{
+			HAL_IWDG_Refresh(&hiwdg);
+			displayAlive = rfmAlive = rtcAlive = false;
+		}
+		else
+		{
+			// If any flag missing → do not refresh → system reset
+		}
+
+		vTaskDelay(pdMS_TO_TICKS(1000));
+	}
 }
 
 

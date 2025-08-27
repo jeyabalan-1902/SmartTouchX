@@ -32,6 +32,7 @@ void RFM_Task(void *parameter)
 {
 	while(1)
 	{
+		rfmAlive = true;
 		RF69_ModuleHandler();
 		vTaskDelay(pdMS_TO_TICKS(1));
 	}
