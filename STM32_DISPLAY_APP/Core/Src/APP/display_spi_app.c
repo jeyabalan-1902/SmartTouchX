@@ -184,7 +184,7 @@ void handleNavigation(void) {
 
         // Handle enter button in increment mode (exit increment mode)
         if (enter) {
-            HAL_Delay(200);
+            vTaskDelay(pdMS_TO_TICKS(200));
             enter = 0;
             increment_mode = false;
             selected_field = -1;
@@ -319,12 +319,9 @@ void handleNavigation(void) {
                 } else if (current_selection == 3) {
                 	current_selection = 0;
 					menu_drawn = false;
-					if (current_alarm == 1) {
+					if (current_alarm) {
 						current_menu = MENU_SET_SCHEDULE_A;
 						alarm_A_setMenu();
-					} else if (current_alarm == 2) {
-						current_menu = MENU_SET_SCHEDULE_B;
-						alarm_B_setMenu();
 					}else{
 						rtc_request_set_time(temp_hour, temp_minute, temp_second);
 						current_menu = MENU_CLOCK_SETTINGS;
@@ -334,38 +331,15 @@ void handleNavigation(void) {
                 } else if (current_selection == 4) {
                     current_selection = 0;
                     menu_drawn = false;
-                    if (current_alarm == 1) {
+                    if (current_alarm) {
 						current_menu = MENU_SET_SCHEDULE_A;
 						alarm_A_setMenu();
-					} else if (current_alarm == 2) {
-						current_menu = MENU_SET_SCHEDULE_B;
-						alarm_B_setMenu();
 					}else{
-						current_menu = MENU_CLOCK_SETTINGS;;
+						current_menu = MENU_CLOCK_SETTINGS;
 						displayClockSettingsMenu();
 					}
                 }
                 break;
-
-            case MENU_SET_ALARM_TIME:
-				if (current_selection >= 0 && current_selection <= 2) {
-					// Enter increment/decrement mode for time fields
-					increment_mode = true;
-					selected_field = current_selection;
-					buttons_drawn = false;
-					last_selection = -1;
-				} else if (current_selection == 3) {
-					current_selection = 0;
-					menu_drawn = false;
-					if (current_alarm == 1) {
-						current_menu = MENU_SET_SCHEDULE_A;
-						alarm_A_setMenu();
-					} else if (current_alarm == 2) {
-						current_menu = MENU_SET_SCHEDULE_B;
-						alarm_B_setMenu();
-					}
-				}
-				break;
 
             case MENU_SELECT_DEVICES:
             	if (current_selection >= 0 && current_selection <= 3) {
@@ -377,13 +351,8 @@ void handleNavigation(void) {
 				} else if (current_selection == 4) {
 					current_selection = 0;
 					menu_drawn = false;
-					if (current_alarm == 1) {
-						current_menu = MENU_SET_SCHEDULE_A;
-						alarm_A_setMenu();
-					} else if (current_alarm == 2) {
-						current_menu = MENU_SET_SCHEDULE_B;
-						alarm_B_setMenu();
-					}
+					current_menu = MENU_SET_SCHEDULE_A;
+					alarm_A_setMenu();
 				}
 				break;
 
@@ -409,24 +378,18 @@ void handleNavigation(void) {
                 break;
 
             case MENU_SET_ALARM:
-                if (current_selection == 0) {
+                if (current_selection >=0 && current_selection <= 7) {
                     current_menu = MENU_SET_SCHEDULE_A;
-                    current_alarm = 1;
+                    current_alarm = current_selection + 1;
                     current_selection = 0;
                     menu_drawn = false;
                     alarm_A_setMenu();
-                } else if (current_selection == 1) {
-                    current_menu = MENU_SET_SCHEDULE_B;
-                    current_alarm = 2;
-                    current_selection = 0;
-                    menu_drawn = false;
-                    alarm_B_setMenu();
-                } else if (current_selection == 2) {
+                } else if (current_selection == 8) {
                     current_menu = MENU_CLOCK_SETTINGS;
                     current_selection = 0;
                     menu_drawn = false;
                     displayClockSettingsMenu();
-                } else if (current_selection == 3) {
+                } else if (current_selection == 9) {
                     current_menu = MENU_MAIN;
                     current_selection = 0;
                     menu_drawn = false;
@@ -441,7 +404,6 @@ void handleNavigation(void) {
             		current_menu = MENU_SET_TIME;
             		current_selection = 0;
             		menu_drawn = false;
-            		current_alarm = 1;
             		temp_hour = 0; temp_minute = 0; temp_second = 0;
             		displaySetTimeMenu();
             	} else if(current_selection == 1){
@@ -451,7 +413,8 @@ void handleNavigation(void) {
             		displayDeviceSelectForAlarm();
             	} else if(current_selection == 2){
             		uint8_t mask = buildDeviceMask();
-            		rtc_request_set_alarm_a(temp_hour, temp_minute, temp_second, mask);
+            		alarmType = true;
+            		rtc_request_add_alarm(current_alarm - 1, temp_hour, temp_minute, temp_second, mask, alarmType);
             		current_menu = MENU_SET_ALARM;
             		current_selection = 0;
             		menu_drawn = false;

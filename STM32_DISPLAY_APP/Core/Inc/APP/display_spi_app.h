@@ -61,7 +61,7 @@ typedef enum {
 #define CLOCK_SETTINGS_OPTIONS      4
 #define SET_TIME_OPTIONS            5
 #define SET_DATE_OPTIONS            6
-#define SET_ALARM_OPTIONS           4
+#define SET_ALARM_OPTIONS           10
 #define SET_SCHEDULE_A              5
 #define SET_SCHEDULE_B              5
 #define SET_SELECT_DEVICES          5

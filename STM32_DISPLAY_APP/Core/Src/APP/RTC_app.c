@@ -22,6 +22,7 @@ char source[] = "RTC";
 TaskHandle_t rtcTaskHandle = NULL;
 QueueHandle_t rtcRequestQueue = NULL;
 volatile uint8_t alarmEvent = 0;
+volatile bool alarmType = false;
 
 
 typedef enum
@@ -426,6 +427,8 @@ void set_time (uint8_t hr, uint8_t min, uint8_t sec)
 	}
 }
 
+
+
 void set_date (uint8_t year, uint8_t month, uint8_t date, uint8_t day)  // monday = 1
 {
 	RTC_DateTypeDef sDate = {0};
@@ -440,6 +443,7 @@ void set_date (uint8_t year, uint8_t month, uint8_t date, uint8_t day)  // monda
 
 	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, 0x2345);  // backup register
 }
+
 
 
 void set_alarmA(uint8_t hr, uint8_t min, uint8_t sec)
@@ -458,6 +462,7 @@ void set_alarmA(uint8_t hr, uint8_t min, uint8_t sec)
     }
 }
 
+
 void set_alarmB(uint8_t hr, uint8_t min, uint8_t sec)
 {
     RTC_AlarmTypeDef sAlarm = {0};
@@ -474,6 +479,7 @@ void set_alarmB(uint8_t hr, uint8_t min, uint8_t sec)
     }
 }
 
+
 void get_time_date(char *time, char *date)
 {
 	RTC_DateTypeDef gDate;
@@ -484,6 +490,7 @@ void get_time_date(char *time, char *date)
 	sprintf((char*)date,"%02d-%02d-%2d",gDate.Date, gDate.Month, 2000 + gDate.Year);
 }
 
+
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
     alarmEvent = 1;
@@ -491,6 +498,7 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
     vTaskNotifyGiveFromISR(rtcTaskHandle, &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
+
 
 void HAL_RTCEx_AlarmBEventCallback(RTC_HandleTypeDef *hrtc)
 {

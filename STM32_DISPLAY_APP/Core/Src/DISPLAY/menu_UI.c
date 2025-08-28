@@ -250,13 +250,17 @@ void displayClockSettingsMenu(void)
     last_selection = current_selection;
 }
 
+
+
 void alarm_A_setMenu(void)
 {
 	if (current_menu != last_menu || !menu_drawn)
 	{
 		ST7735_SetRotation(1);
 		fillScreen(BLACK);
-		drawTitleBar("SCHEDULE-A");
+		char scheduleType[50];
+		snprintf(scheduleType, sizeof(scheduleType), "SCHEDULE-%d", current_alarm);
+		drawTitleBar(scheduleType);
 		menu_drawn = true;
 		buttons_drawn = false;
 		last_menu = current_menu;
@@ -313,38 +317,89 @@ void alarm_B_setMenu(void)
 	last_selection = current_selection;
 }
 
+
 void displaySetAlarmMenu(void)
 {
-    if (current_menu != last_menu || !menu_drawn)
-    {
-        ST7735_SetRotation(1);
-        fillScreen(BLACK);
-        drawTitleBar("SET ALARM");
-        menu_drawn = true;
-        buttons_drawn = false;
-        last_menu = current_menu;
-    }
+	if (current_menu != last_menu || !menu_drawn)
+	{
+		ST7735_SetRotation(1);
+		fillScreen(BLACK);
+		drawTitleBar("SET SCHEDULE");
+		menu_drawn = true;
+		buttons_drawn = false;
+		last_menu = current_menu;
+		increment_mode = false;
+		selected_field = -1;
+	}
 
-    if (!buttons_drawn || last_selection != current_selection)
-    {
-        int start_y = TITLE_HEIGHT + 15;
-        button_count = 4;
+	if (!buttons_drawn || last_selection != current_selection)
+	{
+		int start_y = TITLE_HEIGHT + 10;
+		button_count = 10;  // total 10 buttons
 
-        char schedule1[30];
-        char schedule2[30];
-        snprintf(schedule1, sizeof(schedule1), "SCHEDULE-A[%s]", alarm_A_data);
-        snprintf(schedule2, sizeof(schedule2), "SCHEDULE-B[%s]", alarm_B_data);
+		// Button geometry
+		int button_height = 14;
+		int button_spacing = 18;
+		int button_width_half = (BUTTON_WIDTH - 5) / 2;
 
-        drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, schedule1, (current_selection == 0), 0);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, schedule2, (current_selection == 1), 1);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 2), 2);
-        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
+		// Row 1 -> Alarm 1, Alarm 2
+		drawSingleButton(MARGIN_X, start_y, button_width_half, button_height, "SCHE-1", (current_selection == 0), 0);
+		drawSingleButton(MARGIN_X + button_width_half + 5, start_y, button_width_half, button_height, "SCHE-2", (current_selection == 1), 1);
 
-        buttons_drawn = true;
-    }
+		// Row 2 -> Alarm 3, Alarm 4
+		drawSingleButton(MARGIN_X, start_y + button_spacing, button_width_half, button_height, "SCHE-3", (current_selection == 2), 2);
+		drawSingleButton(MARGIN_X + button_width_half + 5, start_y + button_spacing, button_width_half, button_height, "SCHE-4", (current_selection == 3), 3);
 
-    last_selection = current_selection;
+		// Row 3 -> Alarm 5, Alarm 6
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 2, button_width_half, button_height, "SCHE-5", (current_selection == 4), 4);
+		drawSingleButton(MARGIN_X + button_width_half + 5, start_y + button_spacing * 2, button_width_half, button_height, "SCHE-6", (current_selection == 5), 5);
+
+		// Row 4 -> Alarm 7, Alarm 8
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 3, button_width_half, button_height, "SCHE-7", (current_selection == 6), 6);
+		drawSingleButton(MARGIN_X + button_width_half + 5, start_y + button_spacing * 3, button_width_half, button_height, "SCHE-8", (current_selection == 7), 7);
+
+		// Row 5 -> GO BACK, GO HOME
+		drawSingleButton(MARGIN_X, start_y + button_spacing * 4, button_width_half, button_height, "GO BACK", (current_selection == 8), 8);
+		drawSingleButton(MARGIN_X + button_width_half + 5, start_y + button_spacing * 4, button_width_half, button_height, "GO HOME", (current_selection == 9), 9);
+
+		buttons_drawn = true;
+	}
+
+	last_selection = current_selection;
 }
+
+//void displaySetAlarmMenu(void)
+//{
+//    if (current_menu != last_menu || !menu_drawn)
+//    {
+//        ST7735_SetRotation(1);
+//        fillScreen(BLACK);
+//        drawTitleBar("SET ALARM");
+//        menu_drawn = true;
+//        buttons_drawn = false;
+//        last_menu = current_menu;
+//    }
+//
+//    if (!buttons_drawn || last_selection != current_selection)
+//    {
+//        int start_y = TITLE_HEIGHT + 15;
+//        button_count = 4;
+//
+//        char schedule1[30];
+//        char schedule2[30];
+//        snprintf(schedule1, sizeof(schedule1), "SCHEDULE-A[%s]", alarm_A_data);
+//        snprintf(schedule2, sizeof(schedule2), "SCHEDULE-B[%s]", alarm_B_data);
+//
+//        drawSingleButton(MARGIN_X, start_y, BUTTON_WIDTH, BUTTON_HEIGHT, schedule1, (current_selection == 0), 0);
+//        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT, schedule2, (current_selection == 1), 1);
+//        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 2, BUTTON_WIDTH, BUTTON_HEIGHT, "GO BACK", (current_selection == 2), 2);
+//        drawSingleButton(MARGIN_X, start_y + BUTTON_SPACING * 3, BUTTON_WIDTH, BUTTON_HEIGHT, "GO TO HOME", (current_selection == 3), 3);
+//
+//        buttons_drawn = true;
+//    }
+//
+//    last_selection = current_selection;
+//}
 
 
 void displaySetTimeMenu(void)
@@ -718,7 +773,7 @@ void drawSingleButton(int x, int y, int width, int height, char* text, int selec
     }
 
     // Store button position AND TEXT for future updates
-    if (button_id < 6)
+    if (button_id < 10)
     {
         current_buttons[button_id].x = x;
         current_buttons[button_id].y = y;
